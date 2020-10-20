@@ -38,10 +38,26 @@ Here are the files used in the video below if you don't have your own:
 
 Muy bien! 🇪🇸
 
-Let's see our new application in action.
+Let's see what's been automatically created for us in the frontend of our app.
 
-## Viewing Our App
+## Frontend
+Navigate over to the "Frontend" tab in the builder. You will notice that some [screens](../../../design/screens.md) have been created for us when we created our Countries table.
+- **Countries - New**: A screen with a form that can be used to create a brand new country.
+- **Countries - List**: A screen with a table containing all the countries in your countries table.
+- **Countries - Detail**: A screen used to represent a single country. When you click the **View** button in the Countries List table, you will be navigated to the detail page for that country.
 
+Let's preview our application and interact with our attachments! Click the preview button on the top right of the builder. You will be navigated to your app in your default browser. Log in with the credentials that you set up when you initially created your app and you will see the homepage of your new app. Navigate to the automatically created "Countries" link in your navbar - you should see your countries listed in a table:
 
-## Creating More Countries from the App
+![](countries.png)
 
+Let's dive into some of the different ways we can interact with attachments in our application.
+
+### Edit Country Attachments
+Let's edit our Spain row to add another travel guide. This involves navigating to the detail view for Spain and adding another PDF file. 
+
+{% embed url="https://www.loom.com/share/a14e97fe11434f6b9293e9d7196846c0" %}
+
+### Delete Country Attachments 
+You can delete an attachment from the Country table or the Country Detail Screen. Let's delete one of our travel guides from the table view, and the other one from the detail view.
+
+{% embed url="https://www.loom.com/share/869744c20764415ea6bf6f7a49974c6c" %}

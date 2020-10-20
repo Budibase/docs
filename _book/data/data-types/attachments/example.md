@@ -38,10 +38,16 @@ Here are the files used in the video below if you don't have your own:
 
 Muy bien! 🇪🇸
 
-Let's see our new application in action.
+Let's see what's been automatically created for us in the frontend of our app.
 
-## Viewing Our App
+## Frontend
 
 
-## Creating More Countries from the App
+## Using Attachments in our App
+
+### Create New Country
+
+### Edit a Country
+
+### Delete a Country
 
