@@ -14,21 +14,7 @@ next:
 ---
 You can open the command interface with `⌘` + `K` on Mac or `Ctrl` + `K` on Windows. Using this keyboard shortcut should open an interface similar to the one shown below. (Note: Some browsers may not support this functionality.)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fda6ab4-Screenshot_2024-07-08_at_10.17.12.png",
-        "",
-        "An image showing the Budibase command interface. Some of its functions are included."
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/fda6ab4-Screenshot_2024-07-08_at_10.17.12.png" />
 
 The command interface allows you to navigate around the page without having to click. It is fully searchable, enabling users to quickly reach any part of their app. Additionally, it allows users to perform various functions, such as publishing their app, viewing preview or published versions, inviting users, or changing the builder theme.
 
@@ -36,67 +22,67 @@ The command interface allows you to navigate around the page without having to c
 
 Manage who has access to your app. This section allows you to [invite new users](doc:adding-users) and set their permissions.
 
-- Invite users and manage app access
+* Invite users and manage app access
 
 ## Navigate
 
 Quickly move to different areas of the app for various functions:
 
-- **Navigate**: Portal - Navigates the portal area were all your apps are located in Budibase
-- **Navigate**: Data - Navigates to the [Data area](doc:data) (Datasource, table, query creation and view)
-- **Navigate**: Design - Navigates to the [Design area](doc:working-with-data) (Screen creation) 
-- **Navigate**: Automations - Navigates to the [Automations](doc:automation-steps) area
+* **Navigate**: Portal - Navigates the portal area were all your apps are located in Budibase
+* **Navigate**: Data - Navigates to the [Data area](doc:data) (Datasource, table, query creation and view)
+* **Navigate**: Design - Navigates to the [Design area](doc:working-with-data) (Screen creation) 
+* **Navigate**: Automations - Navigates to the [Automations](doc:automation-steps) area
 
 ## Publish
 
 Control the publication of your app:
 
-- **Publish**: App
+* **Publish**: App
 
 ## Preview
 
-- **Preview**: App (Opens a preview window of your app)
-- **Preview**: Published App (Opens your published app)
+* **Preview**: App (Opens a preview window of your app)
+* **Preview**: Published App (Opens your published app)
 
 ## Support
 
 Navigates to our Github repository to report issues or start discussions
 
-- **Support**: [Raise GitHub Discussions](https://github.com/Budibase/budibase/discussions/new/choose)
-- **Support**: [Raise A Bug](https://github.com/Budibase/budibase/issues/new/choose)
+* **Support**: [Raise GitHub Discussions](https://github.com/Budibase/budibase/discussions/new/choose)
+* **Support**: [Raise A Bug](https://github.com/Budibase/budibase/issues/new/choose)
 
 ## Datasource
 
 Access all data sources within the app. Clicking these will take you to the respective data source section:
 
-- **Datasource**: Budibase DB
-- **Datasource**: MS SQL Server
-- **Datasource**: MySQL
-- **Datasource**: REST API
-- **Datasource**: Postgres
-- **Datasource**: MongoDB
+* **Datasource**: Budibase DB
+* **Datasource**: MS SQL Server
+* **Datasource**: MySQL
+* **Datasource**: REST API
+* **Datasource**: Postgres
+* **Datasource**: MongoDB
 
 ## Table
 
 This shows a list of all tables you have fetched within an app. Allows you to easily navigate to any table in the list.
 
-- **Table**: Users
-- **Table**: Employees
+* **Table**: Users
+* **Table**: Employees
 
 ## Query
 
 Find all [queries](doc:postgresql#better-approach-using-a-custom-query) related to data sources here. Navigate to view and manage these queries.
 
-- **Query**: Create Row
-- **Query**: Get User Record
+* **Query**: Create Row
+* **Query**: Get User Record
 
 ## Screen
 
 Navigate to any [screen](doc:screens) created within the app.
 
-- **Navigate**: /home
-- **Navigate**: /employees
-- **Navigate**: /employees/:id
+* **Navigate**: /home
+* **Navigate**: /employees
+* **Navigate**: /employees/:id
 
 ## Automation
 
@@ -106,9 +92,9 @@ Navigate to any [automation](doc:automation-steps) contained within your current
 
 Change the appearance of the builder interface by selecting a [theme](doc:app-theming#theme).
 
-- **Change Builder Theme**: Lightest
-- **Change Builder Theme**: Light
-- **Change Builder Theme**: Dark
-- **Change Builder Theme**: Darkest
-- **Change Builder Theme**: Nord
-- **Change Builder Theme**: Midnight
+* **Change Builder Theme**: Lightest
+* **Change Builder Theme**: Light
+* **Change Builder Theme**: Dark
+* **Change Builder Theme**: Darkest
+* **Change Builder Theme**: Nord
+* **Change Builder Theme**: Midnight
