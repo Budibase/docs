@@ -221,7 +221,7 @@ Example:
 {{#some [1, 'b', 3] isString}} string found {{else}} No string found {{/some}} -> string found
 ```
 
-In the above example, the "some" function is used to check if there is any string value in the array [1, 'b', 3]. The "isString" callback function is applied to each element of the array. If the callback function returns true for any string value in the array, the block "string found" is rendered. Otherwise, the "No string found" block is rendered.
+In the above example, the "some" function is used to check if there is any string value in the array \[1, 'b', 3]. The "isString" callback function is applied to each element of the array. If the callback function returns true for any string value in the array, the block "string found" is rendered. Otherwise, the "No string found" block is rendered.
 
 ## Sort
 
