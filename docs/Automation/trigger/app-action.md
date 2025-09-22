@@ -15,11 +15,9 @@ next:
 The App Action trigger is intended to be called from the UI of your Budibase application. 
 
 > 📘 Fire and forget
-> 
+>
 > Automations run asynchronously on a background thread, therefore once an automation is triggered from the client, there will be no returned response by default. 
-> 
-> 
-> 
+>
 > To receive a response you can make use of [Synchronous automations 🔒](doc:synchronous-automations).
 
 ## Creating the Automation
@@ -44,7 +42,7 @@ You can use these fields in the next steps, check the [Working with data in auto
 
 Now that you have defined fields to be used in your automation, you can call this automation from the UI and populate the fields you just defined.
 
-First, add a button to your application in the Design Section of Budibase. Then, head over to the `Define Actions` button in the <<glossary:Settings Panel>>.
+First, add a button to your application in the Design Section of Budibase. Then, head over to the `Define Actions` button in the <Glossary>Settings Panel</Glossary>.
 
 ![](https://files.readme.io/e3f52b1-define-actions.png "define-actions.png")
 
@@ -66,7 +64,7 @@ Whatever you choose for bindings, you will receive the result back in your autom
 
 This subject touches upon [working with data in automations](doc:data-in-automations), but I wanted to highlight the specific data that comes in with this trigger.
 
-One popular thing to do with an `App Action trigger` is to create one, or multiple, rows in the database. You could use this action to populate multiple tables, or even <<glossary:Data Sources>> at once.
+One popular thing to do with an `App Action trigger` is to create one, or multiple, rows in the database. You could use this action to populate multiple tables, or even <Glossary>Data Sources</Glossary> at once.
 
 Let's take a look at the `Create Row` action. Select the table you want to create a row in, and then use [Bindings](doc:bindings) to use the `trigger.fields.` object to populate the data you want.
 
@@ -78,8 +76,6 @@ And if you want, at this stage, you could create another `Create Row`, or other 
 
 ## Video tutorial
 
-[block:html]
-{
-  "html": "<iframe src=\"https://player.vimeo.com/video/746819221?h=7d0a827590&title=0&portrait=0&byline=0\" style=\"margin-top: -100px;\" width=\"640\" height=\"564\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
-}
-[/block]
+<HTMLBlock>{`
+<iframe src="https://player.vimeo.com/video/746819221?h=7d0a827590&title=0&portrait=0&byline=0" style="margin-top: -100px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+`}</HTMLBlock>
