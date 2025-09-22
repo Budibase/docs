@@ -1,3 +1,4 @@
 - rowcreate
 - rowupdate
 - rowdestroy
+- rowgetbyid
