@@ -17,20 +17,17 @@ next:
       slug: reverse-proxy
       title: Reverse proxy
 ---
-[block:html]
-{
-  "html": "<div style=\"padding:65% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/712765075?h=b87fb892b5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"k8-deployment.mp4\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>"
-}
-[/block]
-
+<HTMLBlock>{`
+<div style="padding:65% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/712765075?h=b87fb892b5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="k8-deployment.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+`}</HTMLBlock>
 
 There are a few command-line utilities we have to set up before we can get started with Budibase on Kubernetes. Follow the guides below to set up Kubectl and Helm.
 
-- [helm CLI](https://helm.sh/docs/intro/install/)
-- [kubectl CLI](https://kubernetes.io/docs/tasks/tools/#kubectl)
+* [helm CLI](https://helm.sh/docs/intro/install/)
+* [kubectl CLI](https://kubernetes.io/docs/tasks/tools/#kubectl)
 
 > 📘 Info
-> 
+>
 > We recommend running on Kubernetes nodes with at least 1GB of memory, but we recommend larger instances for higher volume use cases.
 
 ***
@@ -39,11 +36,11 @@ There are a few command-line utilities we have to set up before we can get start
 
 If you don't already have an existing Kubernetes cluster, follow one of the guides below for your provider.
 
-- [AWS guide](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html)
-- [Google Cloud guide](https://cloud.google.com/kubernetes-engine/docs/how-to)
-- [Minikube](https://minikube.sigs.k8s.io/docs/start/)
-- [K3S](https://rancher.com/docs/k3s/latest/en/quick-start/)
-- [MicroK8S](https://microk8s.io/docs)
+* [AWS guide](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html)
+* [Google Cloud guide](https://cloud.google.com/kubernetes-engine/docs/how-to)
+* [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+* [K3S](https://rancher.com/docs/k3s/latest/en/quick-start/)
+* [MicroK8S](https://microk8s.io/docs)
 
 Depending on what provider you use, you may also need to install an [Ingress controller](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/) and a [Storage provisioner](https://kubernetes.io/docs/concepts/storage/storage-classes/). 
 
@@ -51,15 +48,15 @@ Here are some good default choices for each.
 
 **Ingress controllers:**
 
-- If you're on AWS EKS, the [AWS load balancer controller](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) is a good choice. It provisions AWS Application Load Balancers for your Ingress resources.
-- Google Cloud has the [HttpLoadBalancer add-on.](https://cloud.google.com/kubernetes-engine/docs/how-to/load-balance-ingress)
-- For anything else, the [ingress-nginx](https://kubernetes.github.io/ingress-nginx/) project should work well.
+* If you're on AWS EKS, the [AWS load balancer controller](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) is a good choice. It provisions AWS Application Load Balancers for your Ingress resources.
+* Google Cloud has the [HttpLoadBalancer add-on.](https://cloud.google.com/kubernetes-engine/docs/how-to/load-balance-ingress)
+* For anything else, the [ingress-nginx](https://kubernetes.github.io/ingress-nginx/) project should work well.
 
 **Storage provisioners:**
 
-- If you're on AWS EKS, the [EBS CSI driver](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html) can manage provisioning EBS volumes for your `PersistentVolumeClaim` resources.
-- Google Cloud have the [Compute Engine persistent disk CSI driver.](https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/gce-pd-csi-driver) 
-- Homelab clusters might consider using something like the [NFS provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner).
+* If you're on AWS EKS, the [EBS CSI driver](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html) can manage provisioning EBS volumes for your `PersistentVolumeClaim` resources.
+* Google Cloud have the [Compute Engine persistent disk CSI driver.](https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/gce-pd-csi-driver) 
+* Homelab clusters might consider using something like the [NFS provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner).
 
 If you want to make use of `HorizontalPodAutoscaler` resources you will also need to install [metrics-server](https://github.com/kubernetes-sigs/metrics-server) into your cluster.
 
@@ -115,22 +112,9 @@ ingress-budibase   <none>   *       4372843243278.eu-west-1.elb.amazonaws.com   
 
 Visit the Ingress address in your browser and you will see that your Budibase installation is up and running.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/694ff03-CleanShot_2023-12-05_at_13.59.34.png",
-        null,
-        "Budibase admin interface"
-      ],
-      "align": "center",
-      "caption": "Budibase admin interface"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Budibase admin interface" align="center" src="https://files.readme.io/694ff03-CleanShot_2023-12-05_at_13.59.34.png">
+  Budibase admin interface
+</Image>
 
 If you'd like to set up HTTPS, you can also create a certificate using [AWS ACM](https://aws.amazon.com/certificate-manager/) and specify the certificate ARN on your Ingress resource:
 
@@ -256,10 +240,10 @@ services:
 
 If you have createSecrets set to true in your `values.yaml`, Budibase will create the following credentials for you:
 
-- An internal API key, that can be used for API requests.
-- a JWT secret
-- Object store access key (if using MinIO)
-- Object store secret key (if using MinIO)  
+* An internal API key, that can be used for API requests.
+* a JWT secret
+* Object store access key (if using MinIO)
+* Object store secret key (if using MinIO)\
   If you need to read the value of your secrets, you can do so using `kubectl` and the following commands to read the values out from your k8s secrets:
 
 ```shell
@@ -324,7 +308,7 @@ For documentation on all other options available for your `values.yaml` file, yo
 
 If you need a hand or have discovered a bug, please [raise a discussion on our GitHub discussions forum](https://github.com/Budibase/budibase/discussions). For Kubernetes installations, try to include the following information in your discussion:
 
-- Which Kubernetes provider you are using (EKS/GKE/MiniKube etc.)
-- Screenshots/Logs of errors that are occurring
-- A copy of your `values.yaml` if you have changed any configuration (please be careful not to share anything sensitive, like passwords!)
-- Anything else that is relevant to the issue you are having.
+* Which Kubernetes provider you are using (EKS/GKE/MiniKube etc.)
+* Screenshots/Logs of errors that are occurring
+* A copy of your `values.yaml` if you have changed any configuration (please be careful not to share anything sensitive, like passwords!)
+* Anything else that is relevant to the issue you are having.
