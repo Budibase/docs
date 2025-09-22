@@ -11,7 +11,7 @@ next:
   description: ''
 ---
 > 📘 Schema JSON changes in development
-> 
+>
 > Changes saved to the schema.json file are not hot reloaded. The app builder must be refreshed.
 
 The datasource schema is one of the critical elements that is required for developing a custom datasource. The first step to creating your plugin is defining everything that your datasource will require/return. Below is an example of a basic datasource schema - this is the same schema that is provided if you initialise a new datasource plugin from the Budibase CLI.
@@ -65,8 +65,6 @@ The datasource schema is one of the critical elements that is required for devel
   }
 }
 ```
-
-
 
 ### Properties
 
@@ -148,8 +146,6 @@ When a query takes a fields input type it must specify what fields it expects, a
 ```
 
 The structure of each of the fields is as follows:
-
-
 
 | Property | Type                                                               | Description                                                                                                                                                  |
 | :------- | :----------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
