@@ -23,7 +23,7 @@ When you already have existing data, you can import this using a CSV file when c
 3. Click `Upload` and select the CSV or JSON file you want to import.
 
 > 📘 Column names
-> 
+>
 > When importing a CSV, the first row will be used to determine the column names.
 
 In the example below I imported a CSV with 4 columns representing a table of countries. After the file uploaded the screen below was shown.
@@ -54,28 +54,14 @@ Click `Import` to pull in the new rows.
 
 This is done in a similar fashion to importing a CSV for creating rows. The only difference being, is a toggle at the bottom which needs checked `Update existing rows`. Additionally, an identifier field needs selected. The purpose of this field is to check for records that are already existing. If one is found in the database that matches the CSV. Then this record will be updated with the CSV's data instead of a new record being created.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/56ab4dd-Screenshot_2023-09-20_at_15.43.18.png",
-        "",
-        "An image depicting how to use the CSV import to update fields instead of creating new ones."
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/56ab4dd-Screenshot_2023-09-20_at_15.43.18.png" />
 
 > 🚧 Duplicate records
-> 
+>
 > As an **\_id** field is only assigned upon import, Budibase does not determine if a row has previously been imported. It will always import any rows provided in the CSV/JSON file.
 
 <br />
 
 > 👍 Reading CSV data from an S3 bucket
-> 
+>
 > If you have a CSV file in an S3 bucket, you can use the [S3](https://docs.budibase.com/docs/s3#read-csv) connector to read the CSV data.
