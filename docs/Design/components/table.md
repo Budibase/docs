@@ -12,16 +12,16 @@ next:
 ---
 ![](https://files.readme.io/d373575-countries-table.png "countries-table.png")
 
-The Table component inside Budibase is great for displaying data to users. It's highly configurable, performant and customizable. Most apps built with Budibase involve displaying data within a table, and interacting with that data. 
+The Table component inside Budibase is great for displaying data to users. It's highly configurable, performant and customizable. Most apps built with Budibase involve displaying data within a table, and interacting with that data.
 
 ## Getting data into a table
 
 To get data into the Table, you need to have the table nested in a [Data Provider](doc:data-provider).
 
 > 👍 Blocks
-> 
+>
 > Want to quickly load a table with data, plus add search and filter options? Use the [Table block](doc:table-block).
-> 
+>
 > Alternatively if your users simply need a data interface without actions, then use the [Grid block](doc:grid-block).
 
 In the <<glossary:Settings Panel>> you will find a lot of options of customization for the Table component. You can find all the definitions below.
@@ -50,7 +50,7 @@ There are several general settings for Table, most of which are shared with othe
     "6-0": "Compact",
     "6-1": "Makes all the margins and paddings smaller, allowing for more data on screen at once.",
     "7-0": "Allow row selection",
-    "7-1": "Adds checkboxes in front of rows, allowing your users to select one or more rows.  \n  \nThis will enable the `{{ <table-name>.Selected rows }}` binding.  \n  \n_Row selection is only compatible with internal or SQL tables_"
+    "7-1": "Adds checkboxes in front of rows, allowing your users to select one or more rows.  \n  \nThis will enable the `{ <table-name>.Selected rows }` binding.  \n  \n_Row selection is only compatible with internal or SQL tables_"
   },
   "cols": 2,
   "rows": 8,
@@ -78,7 +78,7 @@ After you've added columns to your table, you can customize the label displayed 
 
 ### Sorting columns
 
-In front of every column you can see a small dotted icon, dragging this allows you to reposition the columns in every order you want. 
+In front of every column you can see a small dotted icon, dragging this allows you to reposition the columns in every order you want.
 
 ### Advanced column customization
 
@@ -102,11 +102,11 @@ The width of every column can be customized here. There are different modes supp
 
 #### Alignment
 
-This setting allows you to align the text. By default `left` alignment is used, but now you can also select `center` and `right`. 
+This setting allows you to align the text. By default `left` alignment is used, but now you can also select `center` and `right`.
 
 #### Value
 
-The value field allows you to override the value using [Bindings](doc:bindings). A great example of what you could do here is to convert a `cents` column to be displayed with currency symbol and decimals. So if you have 499 in your `cents` column, you could input this in the `Value` field 
+The value field allows you to override the value using [Bindings](doc:bindings). A great example of what you could do here is to convert a `cents` column to be displayed with currency symbol and decimals. So if you have 499 in your `cents` column, you could input this in the `Value` field
 
 ```handlebars
 $ {{ divide Value 100 }}
@@ -128,7 +128,7 @@ Adding components, such as buttons and links, to your table rows is simple. Addi
 
 Click `Define actions` to run [Actions](doc:actions) on click of a row.
 
-You will be able to use the `{{ Clicked row }}` <<glossary:Binding>> to access the object data of the clicked row. 
+You will be able to use the `{ Clicked row }` <<glossary:Binding>> to access the object data of the clicked row.
 
 ![](https://files.readme.io/d0d0c99-Screenshot_2022-12-14_at_10.35.58.png)
 
@@ -136,6 +136,6 @@ You will be able to use the `{{ Clicked row }}` <<glossary:Binding>> to access t
 
 ## Advanced settings
 
-If you need more out of your table such as footers, resizeable and searchable columns, and  [conditional cell UI](https://github.com/Budibase/budibase/discussions/10204), you can check out the community [Super Table](https://github.com/poirazis/bb-component-SuperTable). 
+If you need more out of your table such as footers, resizeable and searchable columns, and [conditional cell UI](https://github.com/Budibase/budibase/discussions/10204), you can check out the community [Super Table](https://github.com/poirazis/bb-component-SuperTable).
 
 Read more about [Custom plugins](doc:custom-plugin).
