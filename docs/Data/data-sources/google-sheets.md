@@ -35,7 +35,7 @@ Allow Budibase to access your Google account.
 ![](https://files.readme.io/b32a6e1-Screenshot_2022-09-05_at_11.29.01.png)
 
 > 🚧 Self-hosting
-> 
+>
 > If you are self-hosted, you will need to setup [Google SSO](https://docs.budibase.com/docs/sso-with-google)
 
 You will then be redirected to the Google sheets configuration page in Budibase. Enter a useful name for the spreadsheet and paste in the URL.
@@ -86,10 +86,10 @@ Simply returns all the rows of a specified sheet. The transformer allows you to 
 
 ### Update
 
-Similar to _Create_ in that you must provide a payload of data, however you must also provide a row index to be overwritten. 
+Similar to *Create* in that you must provide a payload of data, however you must also provide a row index to be overwritten. 
 
 > 📘 Row index
-> 
+>
 > Row indexing starts from zero - the first row below the header row (usually the second row).
 
 ![](https://files.readme.io/ed9e641-Screenshot_2022-09-05_at_17.04.58.png)
@@ -98,7 +98,7 @@ Similar to _Create_ in that you must provide a payload of data, however you must
 
 ### Delete
 
-The same as _Update_, a sheet name and row index must be provided. That row will be deleted.
+The same as *Update*, a sheet name and row index must be provided. That row will be deleted.
 
 ![](https://files.readme.io/d755faf-Screenshot_2022-09-05_at_17.07.56.png)
 
