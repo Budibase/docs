@@ -19,32 +19,21 @@ When you create a View within Budibase, it presents you with all the data from i
 3. Calculations
 
 When designing your UI, you can reference data from your Views. So, if you have a table of sales people and their total sales, you can create a View and a Calculation which gives you the total sales of all sales people. You can then reference the data from this View in the design section of Budibase, and display the answer to the calculation.
-[block:api-header]
-{
-  "title": "How to create a new view"
-}
-[/block]
 
-[block:callout]
-{
-  "type": "info",
-  "body": "You must have a Table before you can create a View"
-}
-[/block]
+## How to create a new view
+
+> 📘 You must have a Table before you can create a View
+
 To create a new table, click the `create new view` button, and give it a name.
 
 By default, a view will display all the data in your table. You should add a filter and/or a calculation to change data is displayed.
-[block:html]
-{
-  "html": "<div style=\"padding:75% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/728551346?h=c61332fc57&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"filter-view.mov\"></iframe></div>"
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Filters"
-}
-[/block]
+<HTMLBlock>{`
+<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/728551346?h=c61332fc57&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="filter-view.mov"></iframe></div>
+`}</HTMLBlock>
+
+## Filters
+
 One of the core features of views is the ability to filter rows according to particular criteria. When a Row is filtered, it is not deleted—it's just hidden from the particular View you're using and remains within the table (Views are virtual tables!).
 
 Try adding filters when:
@@ -77,12 +66,9 @@ To create a new Filter:
 Within Budibase, calculations are predefined formulas. Instead of writing the formulas, you can simply select from the list of predefined options.
 
 ### How to create a new Calculation
-[block:callout]
-{
-  "type": "info",
-  "body": "You must have an active Calculation to use the Group feature"
-}
-[/block]
+
+> 📘 You must have an active Calculation to use the Group feature
+
 To create a new Group:
 
 * [ ] Click the `Group` button
