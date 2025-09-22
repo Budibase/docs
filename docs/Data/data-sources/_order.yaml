@@ -3,3 +3,4 @@
 - couchdb
 - couchdb-copy
 - csv-import
+- dynamodb
