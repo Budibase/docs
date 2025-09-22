@@ -12,30 +12,25 @@ next:
 ---
 DynamoDB is a fast and flexible NoSQL database service offered by Amazon Web Services (AWS). 
 
-Setup
------
+## Setup
 
 To connect to DynamoDB you will need to know the **region** that your database is located.
 
 In addition, you will need an **access key** and **secret key**. Both of these can be obtained by following this [guide](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html).
 
-Connect
--------
+## Connect
 
 Add a new datasource, and select DynamoDB. 
 
 ![](https://files.readme.io/849b8bf-Screenshot_2022-08-16_at_18.04.34.png)
 
-
-
 You will be prompted to enter in the necessary credentials.
 
-It is important to note that if you are hosting on _amazonaws.com_ then your **region** field should match the region used in the **endpoint** field.
+It is important to note that if you are hosting on *amazonaws.com* then your **region** field should match the region used in the **endpoint** field.
 
 ![](https://files.readme.io/87ecfb2-Screenshot_2022-08-16_at_16.19.18.png)
 
-Query types
------------
+## Query types
 
 The DynamoDB connector has a variety of query types beyond the typical CRUD options. 
 
@@ -53,10 +48,9 @@ More information on the client library used can be found [here](https://github.c
 
 DynamoDB query operations are further detailed [here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.html).
 
-Create
-------
+## Create
 
-To create an item, select the _Create_ function, enter a table name, and provide an _Item_ object with the appropriate table fields.
+To create an item, select the *Create* function, enter a table name, and provide an *Item* object with the appropriate table fields.
 
 ![](https://files.readme.io/9bbe739-Screenshot_2022-08-16_at_17.15.04.png)
 
@@ -73,16 +67,11 @@ If the primary key in your query matches an existing record, then Create will up
 }
 ```
 
- 
-
 ![](https://files.readme.io/2061cf2-Screenshot_2022-08-16_at_18.01.15.png)
 
-Furthermore, any additional fields that are included within the _Item_ payload will be added to your documents. 
+Furthermore, any additional fields that are included within the *Item* payload will be added to your documents. 
 
-
-
-Scan
-----
+## Scan
 
 If you exclude the payload, then the scan query will simply return all rows of the specified table.
 
@@ -98,10 +87,7 @@ You can however provide a filter expression in the query box such as:
 
 ![](https://files.readme.io/0ded3d5-Screenshot_2022-08-16_at_17.54.26.png)
 
-
-
-Get
----
+## Get
 
 This function will return a single item based on a primary key specified as follows:
 
@@ -117,12 +103,9 @@ To return the item data, a minor change will be required in the [Transformer](ht
 
 ![](https://files.readme.io/109a215-Screenshot_2022-08-16_at_18.11.24.png)
 
+## Update
 
-
-Update
-------
-
-Similar to the _Get_ function, _Update_ requires a key and thus only updates one item at a time.
+Similar to the *Get* function, *Update* requires a key and thus only updates one item at a time.
 
 To perform an update, an update expression must also be provided. For example:
 
@@ -132,12 +115,9 @@ To perform an update, an update expression must also be provided. For example:
 
 As you can see, you can also include [bindings](https://docs.budibase.com/docs/custom-queries#using-query-bindings) within your expressions. 
 
+## Delete
 
-
-Delete
-------
-
-To delete a single item, select the _Delete_ function, and provide the primary key of the document within your query payload.
+To delete a single item, select the *Delete* function, and provide the primary key of the document within your query payload.
 
 ```json
 {
