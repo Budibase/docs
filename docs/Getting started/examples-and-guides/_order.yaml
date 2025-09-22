@@ -7,3 +7,4 @@
 - lookup-record
 - notify-user-if-rest-query-fails
 - passing-bindings-in-url-parameters
+- populate-form-fields-on-select
