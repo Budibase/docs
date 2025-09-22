@@ -12,21 +12,7 @@ next:
 ---
 The container now has two different layouts. You can toggle between these two modes by switching between the icons of the layout setting. By default, the grid-based layout is selected. If you wish to use the old layout, you must click the first displayed icon.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5ba8f036594f72b3efc52e3927395031f7080b238d1ad4f7ce71d022b6cffe54-Screenshot_2024-09-10_at_12.20.36.png",
-        "",
-        "Grid layout settings"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/5ba8f036594f72b3efc52e3927395031f7080b238d1ad4f7ce71d022b6cffe54-Screenshot_2024-09-10_at_12.20.36.png" />
 
 ## Grid-based
 
@@ -41,7 +27,7 @@ A Container is a `div` with pre-defined styles. They are the building blocks of 
 ![](https://files.readme.io/fe98df8-CleanShot_2022-03-23_at_13.31.27.png "CleanShot 2022-03-23 at 13.31.27.png")
 
 > 📘 Learn Flexbox
-> 
+>
 > Budibase containers use flexbox to layout components. A great resource for learning flexbox is [flexbox froggy.](https://flexboxfroggy.com/)
 
 ## Container settings
@@ -50,55 +36,119 @@ A Container is a `div` with pre-defined styles. They are the building blocks of 
 
 There are several general settings for the container component, most of which are shared with other components as well.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1588d53762edc3de0efa54001d8f6223c51d20760bee64def91dc810a438729f-Screenshot_2024-09-10_at_12.21.10.png",
-        "container-settings.png",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/1588d53762edc3de0efa54001d8f6223c51d20760bee64def91dc810a438729f-Screenshot_2024-09-10_at_12.21.10.png" />
 
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Setting
+      </th>
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Setting",
-    "h-1": "Description",
-    "0-0": "Layout",
-    "0-1": "Switch between the flexbox and grid-base layouts.",
-    "1-0": "Name",
-    "1-1": "Change the name of your component, and how it reads within the component tree.",
-    "2-0": "Direction",
-    "2-1": "Change the direction of the components nested within your container. You can layout your components in a row (→) or a column (↓).",
-    "3-0": "Horizontal align",
-    "3-1": "The horizontal. align setting is used to align the items on the main axis, the direction in which flex-direction has set the flow. The initial value is **left** which will line the items up at the start edge of the container, but you could also set the value to **right** to line them up at the end, or **center** to line them up in the center.  \n  \nYou can also use the value **stretch** to take all the spare space between the items, and share it out evenly between the items so there will be an equal amount of space between each item.",
-    "4-0": "Vertical align",
-    "4-1": "The vertical align property will align the items on the cross axis. The initial value is **top** which aligns the items along the top of the container (like they're handing from a roof), but you could also set the value to the **bottom** to align the items along the bottom (like they're standing on the floor), or **middle** to line them up in the center.  \n  \nYou can also use the value to **stretch**, to stretch the items to fill the height of the container.",
-    "5-0": "Size",
-    "5-1": "Where the **grow** option deals with adding space in the main axis, the **shrink** property controls how it is taken away.",
-    "6-0": "Gap",
-    "6-1": "The **gap** property sets the gaps (gutters) between items stored within a container. You can select the different sizes of gaps you would like between your items.",
-    "7-0": "Wrap",
-    "7-1": "Select the **wrap** to wrap your components onto multiple lines. This is critical when designing for mobile resolutions.  \n  \nWith **nowrap**, the items are laid out in a single line which may cause the flex container to overflow.",
-    "8-0": "On click",
-    "8-1": "By defining [actions](https://docs.budibase.com/docs/actions)  within the `On Click` setting, the container will be treated like a button including the cursor change. Any click events of buttons or other containers within a container with _On Click_ actions set will be ignored."
-  },
-  "cols": 2,
-  "rows": 9,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
 
+  <tbody>
+    <tr>
+      <td>
+        Layout
+      </td>
+
+      <td>
+        Switch between the flexbox and grid-base layouts.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Name
+      </td>
+
+      <td>
+        Change the name of your component, and how it reads within the component tree.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Direction
+      </td>
+
+      <td>
+        Change the direction of the components nested within your container. You can layout your components in a row (→) or a column (↓).
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Horizontal align
+      </td>
+
+      <td>
+        The horizontal. align setting is used to align the items on the main axis, the direction in which flex-direction has set the flow. The initial value is **left** which will line the items up at the start edge of the container, but you could also set the value to **right** to line them up at the end, or **center** to line them up in the center.  
+
+        You can also use the value **stretch** to take all the spare space between the items, and share it out evenly between the items so there will be an equal amount of space between each item.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Vertical align
+      </td>
+
+      <td>
+        The vertical align property will align the items on the cross axis. The initial value is **top** which aligns the items along the top of the container (like they're handing from a roof), but you could also set the value to the **bottom** to align the items along the bottom (like they're standing on the floor), or **middle** to line them up in the center.  
+
+        You can also use the value to **stretch**, to stretch the items to fill the height of the container.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Size
+      </td>
+
+      <td>
+        Where the **grow** option deals with adding space in the main axis, the **shrink** property controls how it is taken away.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Gap
+      </td>
+
+      <td>
+        The **gap** property sets the gaps (gutters) between items stored within a container. You can select the different sizes of gaps you would like between your items.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Wrap
+      </td>
+
+      <td>
+        Select the **wrap** to wrap your components onto multiple lines. This is critical when designing for mobile resolutions.  
+
+        With **nowrap**, the items are laid out in a single line which may cause the flex container to overflow.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        On click
+      </td>
+
+      <td>
+        By defining [actions](https://docs.budibase.com/docs/actions)  within the `On Click` setting, the container will be treated like a button including the cursor change. Any click events of buttons or other containers within a container with *On Click* actions set will be ignored.
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 ### Container background colour
 
@@ -110,24 +160,181 @@ To clear the selected color, click on the `X` in the bottom right of the panel.
 
 For additional flare, there are a range of gradients available.
 
-| Title            | Gradient                                                                            |
-| :--------------- | :---------------------------------------------------------------------------------- |
-| Warm Flame       | <img src="https://files.readme.io/1a42339-Screenshot_2022-04-28_at_09.58.00.png" /> |
-| Night Fade       | <img src="https://files.readme.io/fc0fe3c-Screenshot_2022-04-28_at_10.04.07.png" /> |
-| Spring Warmth    | <img src="https://files.readme.io/b17c898-Screenshot_2022-04-28_at_10.00.24.png" /> |
-| Sunny Morning    | <img src="https://files.readme.io/6d1c984-Screenshot_2022-04-28_at_10.00.59.png" /> |
-| Winter Neva      | <img src="https://files.readme.io/be3cf7c-Screenshot_2022-04-28_at_10.01.13.png" /> |
-| Tempting Azure   | <img src="https://files.readme.io/b91a8a2-Screenshot_2022-04-28_at_10.01.36.png" /> |
-| Heavy Rain       | <img src="https://files.readme.io/8d459f9-Screenshot_2022-04-28_at_10.02.02.png" /> |
-| Deep Blue        | <img src="https://files.readme.io/de2f85d-Screenshot_2022-04-28_at_10.02.20.png" /> |
-| Near Moon        | <img src="https://files.readme.io/dfe425f-Screenshot_2022-04-28_at_10.04.59.png" /> |
-| Wild Apple       | <img src="https://files.readme.io/35ae5bb-Screenshot_2022-04-28_at_10.05.20.png" /> |
-| Plum Plate       | <img src="https://files.readme.io/59146cd-Screenshot_2022-04-28_at_10.05.44.png" /> |
-| Peach Kiss       | <img src="https://files.readme.io/2d10e99-Screenshot_2022-04-28_at_10.06.03.png" /> |
-| Flamingo Sunrise | <img src="https://files.readme.io/cd3f175-Screenshot_2022-04-28_at_10.06.31.png" /> |
-| Bud Mist         | <img src="https://files.readme.io/6b32daa-Screenshot_2022-04-28_at_10.06.56.png" /> |
-| Ballet Slipper   | <img src="https://files.readme.io/2d88d97-Screenshot_2022-04-28_at_10.07.20.png" /> |
-| Black Noir       | <img src="https://files.readme.io/6fccf79-Screenshot_2022-04-28_at_10.07.41.png" /> |
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Title
+      </th>
+
+      <th>
+        Gradient
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Warm Flame
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/1a42339-Screenshot_2022-04-28_at_09.58.00.png" />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Night Fade
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/fc0fe3c-Screenshot_2022-04-28_at_10.04.07.png" />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Spring Warmth
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/b17c898-Screenshot_2022-04-28_at_10.00.24.png" />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Sunny Morning
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/6d1c984-Screenshot_2022-04-28_at_10.00.59.png" />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Winter Neva
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/be3cf7c-Screenshot_2022-04-28_at_10.01.13.png" />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Tempting Azure
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/b91a8a2-Screenshot_2022-04-28_at_10.01.36.png" />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Heavy Rain
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/8d459f9-Screenshot_2022-04-28_at_10.02.02.png" />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Deep Blue
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/de2f85d-Screenshot_2022-04-28_at_10.02.20.png" />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Near Moon
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/dfe425f-Screenshot_2022-04-28_at_10.04.59.png" />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Wild Apple
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/35ae5bb-Screenshot_2022-04-28_at_10.05.20.png" />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Plum Plate
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/59146cd-Screenshot_2022-04-28_at_10.05.44.png" />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Peach Kiss
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/2d10e99-Screenshot_2022-04-28_at_10.06.03.png" />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Flamingo Sunrise
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/cd3f175-Screenshot_2022-04-28_at_10.06.31.png" />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Bud Mist
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/6b32daa-Screenshot_2022-04-28_at_10.06.56.png" />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Ballet Slipper
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/2d88d97-Screenshot_2022-04-28_at_10.07.20.png" />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Black Noir
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/6fccf79-Screenshot_2022-04-28_at_10.07.41.png" />
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 You can also add background colors to your [Screens](doc:screens)
 
@@ -135,60 +342,21 @@ You can also add background colors to your [Screens](doc:screens)
 
 ## Component layout
 
-When using containers to layout your components, the most important setting is _Direction_ as this will determine the flow of components.
+When using containers to layout your components, the most important setting is *Direction* as this will determine the flow of components.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6a3ed4ea25275ae9c048553ce2b154f6adbf1bf467d933f9c00acd8195aafa83-Screenshot_2024-09-12_at_12.35.34.png",
-        null,
-        "Screen column layout"
-      ],
-      "align": "center",
-      "caption": "Container column layout"
-    }
-  ]
-}
-[/block]
+<Image alt="Screen column layout" align="center" src="https://files.readme.io/6a3ed4ea25275ae9c048553ce2b154f6adbf1bf467d933f9c00acd8195aafa83-Screenshot_2024-09-12_at_12.35.34.png">
+  Container column layout
+</Image>
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/32ffd44b23c9d4964031606dfd4818f3871922b3a9a77b45f54672fc9e759336-Screenshot_2024-09-12_at_12.35.50.png",
-        null,
-        "Screen row layout"
-      ],
-      "align": "center",
-      "caption": "Container row layout"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Screen row layout" align="center" src="https://files.readme.io/32ffd44b23c9d4964031606dfd4818f3871922b3a9a77b45f54672fc9e759336-Screenshot_2024-09-12_at_12.35.50.png">
+  Container row layout
+</Image>
 
 If you need additional layout you can add additional containers. For example what if we wanted to group 'THREE' and 'FOUR' in column direction, but have an overall row layout for the screen. In this case we need to add a container and nest P3 and P4 like so:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a1c8a0e071fab3bf20021674399edfaae2a66b11f27c2201783ac11f2508ac7d-Screenshot_2024-09-12_at_12.38.14.png",
-        null,
-        "Combining row and column directions"
-      ],
-      "align": "center",
-      "caption": "Multi-container row column directions"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Combining row and column directions" align="center" src="https://files.readme.io/a1c8a0e071fab3bf20021674399edfaae2a66b11f27c2201783ac11f2508ac7d-Screenshot_2024-09-12_at_12.38.14.png">
+  Multi-container row column directions
+</Image>
 
 Containers are a really flexible way to arrange your components in the **Design** section. You can nest any number of containers with different styles and layout options.
 
