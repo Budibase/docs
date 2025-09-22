@@ -14,22 +14,9 @@ Occasionally as part of a Budibase update we will need to make an update to the 
 
 Budibase will warn you that your installation is not up to date/is missing components of the infrastructure, this warning will look like:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ab77c2a-image.png",
-        null,
-        "Your installation requires an upgrade"
-      ],
-      "align": "center",
-      "caption": "Your installation requires an upgrade"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Your installation requires an upgrade" align="center" src="https://files.readme.io/ab77c2a-image.png">
+  Your installation requires an upgrade
+</Image>
 
 Below is a list of migrations which may be needed for your installation.
 
@@ -63,7 +50,7 @@ couchdb-service:
 
 ### Kubernetes
 
-You will need to make sure you are using the latest version of the Budibase Helm chart alongside the latest version of the Budibase images. **If your upgrade workflow for Kubernetes involves just updating image tags in your `values.yaml` file, this will break your installation.**
+You will need to make sure you are using the latest version of the Budibase Helm chart alongside the latest version of the Budibase images. **If your upgrade workflow for Kubernetes involves just updating image tags in your`values.yaml` file, this will break your installation.**
 
 If you followed the steps in [Kubernetes](doc:kubernetes-k8s), you'll need to run the following commands to update your Helm chart.
 
