@@ -12,8 +12,7 @@ next:
 ---
 Budibase produces a number of events when operations of interest occur within the application. For example when a new app is created an `app:created` event is created, when the app is published an `app:published` event is created. Events are used for a number of purposes, such as audit logging and analytics that help Budibase create a better product for our users. 
 
-Identities
-----------
+## Identities
 
 Every event has an associated identity to indicate who or what triggered the event. 
 
@@ -79,8 +78,7 @@ An installation has attached metadata:
 }
 ```
 
-Event properties
-----------------
+## Event properties
 
 There are some properties that are included in every event:
 
@@ -124,14 +122,13 @@ Example: `2d714b1745b1-40d7b36f539e214d8170_default`
 
 Indicator of the hosting type. The value can be either `self` for self hosted installs or `cloud` for the budibase cloud environment. 
 
-Types of events
----------------
+## Types of events
 
 All events that are currently produced are listed below. In addition to the common event properties from above each event may also contain additional properties. 
 
 ### User
 
-- `user:created`
+* `user:created`
 
 ```json
 {
@@ -139,7 +136,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `user:updated`
+* `user:updated`
 
 ```json
 {
@@ -147,7 +144,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `user:deleted`
+* `user:deleted`
 
 ```json
 {
@@ -155,7 +152,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `user:admin:assigned`
+* `user:admin:assigned`
 
 ```json
 {
@@ -163,7 +160,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `user:admin:removed`
+* `user:admin:removed`
 
 ```json
 {
@@ -171,7 +168,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `user:builder:assigned`
+* `user:builder:assigned`
 
 ```json
 {
@@ -179,7 +176,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `user:builder:removed`
+* `user:builder:removed`
 
 ```json
 {
@@ -187,8 +184,8 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `user:invited`
-- `user:invite:accepted`
+* `user:invited`
+* `user:invite:accepted`
 
 ```json
 {
@@ -196,7 +193,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `user:password:force:reset`
+* `user:password:force:reset`
 
 ```json
 {
@@ -204,7 +201,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `user:password:updated`
+* `user:password:updated`
 
 ```json
 {
@@ -212,7 +209,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `user:password:reset:requested`
+* `user:password:reset:requested`
 
 ```json
 {
@@ -220,7 +217,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `user:password:reset`
+* `user:password:reset`
 
 ```json
 {
@@ -230,12 +227,12 @@ All events that are currently produced are listed below. In addition to the comm
 
 ### Email
 
-- `email:smtp:created`
-- `email:smtp:updated`
+* `email:smtp:created`
+* `email:smtp:updated`
 
 ### Auth
 
-- `auth:sso:created`
+* `auth:sso:created`
 
 ```json
 {
@@ -243,7 +240,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `auth:sso:updated`
+* `auth:sso:updated`
 
 ```json
 {
@@ -251,7 +248,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `auth:sso:activated`
+* `auth:sso:activated`
 
 ```json
 {
@@ -259,7 +256,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `auth:sso:deactivated`
+* `auth:sso:deactivated`
 
 ```json
 {
@@ -267,7 +264,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `auth:login`
+* `auth:login`
 
 ```json
 {
@@ -276,7 +273,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `auth:logout`
+* `auth:logout`
 
 ```json
 {
@@ -286,13 +283,13 @@ All events that are currently produced are listed below. In addition to the comm
 
 ### Org
 
-- `org:info:name:updated`
-- `org:info:logo:updated`
-- `org:platformurl:updated`
+* `org:info:name:updated`
+* `org:info:logo:updated`
+* `org:platformurl:updated`
 
 ### Installation
 
-- `installation:version:checked`
+* `installation:version:checked`
 
 ```json
 {
@@ -300,7 +297,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `installation:version:upgraded`
+* `installation:version:upgraded`
 
 ```json
 {
@@ -309,7 +306,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `installation:version:downgraded`
+* `installation:version:downgraded`
 
 ```json
 {
@@ -318,16 +315,16 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `installation:firstStartup`
+* `installation:firstStartup`
 
 ### App
 
-- `app:created`
-- `app:updated`
-- `app:deleted`
-- `app:published`
-- `app:unpublished`
-- `app:template:imported`
+* `app:created`
+* `app:updated`
+* `app:deleted`
+* `app:published`
+* `app:unpublished`
+* `app:template:imported`
 
 ```json
 {
@@ -335,7 +332,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `app:file:imported`
+* `app:file:imported`
 
 ```json
 {
@@ -343,7 +340,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `app:version:updated`
+* `app:version:updated`
 
 ```json
 {
@@ -352,7 +349,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `app:version:reverted`
+* `app:version:reverted`
 
 ```json
 {
@@ -361,12 +358,12 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `app:reverted`
-- `app:exported`
+* `app:reverted`
+* `app:exported`
 
 ### Role
 
-- `role:created`
+* `role:created`
 
 ```json
 {
@@ -376,7 +373,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `role:updated`
+* `role:updated`
 
 ```json
 {
@@ -386,7 +383,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `role:deleted`
+* `role:deleted`
 
 ```json
 {
@@ -396,7 +393,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `role:assigned`
+* `role:assigned`
 
 ```json
 {
@@ -405,7 +402,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `role:unassigned`
+* `role:unassigned`
 
 ```json
 {
@@ -416,8 +413,8 @@ All events that are currently produced are listed below. In addition to the comm
 
 ### Serve
 
-- `served:builder`
-- `served:app`
+* `served:builder`
+* `served:app`
 
 ```json
 {
@@ -425,7 +422,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `served:app:preview`
+* `served:app:preview`
 
 ```json
 {
@@ -435,7 +432,7 @@ All events that are currently produced are listed below. In addition to the comm
 
 ### Datasource
 
-- `datasource:created`
+* `datasource:created`
 
 ```json
 {
@@ -444,7 +441,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `datasource:updated`
+* `datasource:updated`
 
 ```json
 {
@@ -453,7 +450,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `datasource:deleted`
+* `datasource:deleted`
 
 ```json
 {
@@ -464,7 +461,7 @@ All events that are currently produced are listed below. In addition to the comm
 
 ### Query
 
-- `query:created`
+* `query:created`
 
 ```json
 {
@@ -475,7 +472,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `query:updated`
+* `query:updated`
 
 ```json
 {
@@ -486,7 +483,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `query:deleted`
+* `query:deleted`
 
 ```json
 {
@@ -497,7 +494,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `query:import`
+* `query:import`
 
 ```json
 {
@@ -508,7 +505,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `queries:run`
+* `queries:run`
 
 ```json
 {
@@ -516,7 +513,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `query:previewed`
+* `query:previewed`
 
 ```json
 {
@@ -529,7 +526,7 @@ All events that are currently produced are listed below. In addition to the comm
 
 ### Table
 
-- `table:created`
+* `table:created`
 
 ```json
 {
@@ -537,7 +534,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `table:updated`
+* `table:updated`
 
 ```json
 {
@@ -545,7 +542,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `table:deleted`
+* `table:deleted`
 
 ```json
 {
@@ -553,7 +550,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `table:exported`
+* `table:exported`
 
 ```json
 {
@@ -562,7 +559,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `table:imported`
+* `table:imported`
 
 ```json
 {
@@ -573,7 +570,7 @@ All events that are currently produced are listed below. In addition to the comm
 
 ### View
 
-- `view:created`
+* `view:created`
 
 ```json
 {
@@ -581,7 +578,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `view:updated`
+* `view:updated`
 
 ```json
 {
@@ -589,7 +586,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `view:deleted`
+* `view:deleted`
 
 ```json
 {
@@ -597,7 +594,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `view:exported`
+* `view:exported`
 
 ```json
 {
@@ -606,7 +603,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `view:filter:created`
+* `view:filter:created`
 
 ```json
 {
@@ -614,7 +611,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `view:filter:updated`
+* `view:filter:updated`
 
 ```json
 {
@@ -622,7 +619,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `view:filter:deleted`
+* `view:filter:deleted`
 
 ```json
 {
@@ -630,7 +627,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `view:calculation:created`
+* `view:calculation:created`
 
 ```json
 {
@@ -639,7 +636,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `view:calculation:updated`
+* `view:calculation:updated`
 
 ```json
 {
@@ -648,7 +645,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `view:calculation:deleted`
+* `view:calculation:deleted`
 
 ```json
 {
@@ -659,7 +656,7 @@ All events that are currently produced are listed below. In addition to the comm
 
 ### Rows
 
-- `rows:created`
+* `rows:created`
 
 ```json
 {
@@ -667,7 +664,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `rows:imported`
+* `rows:imported`
 
 ```json
 {
@@ -679,7 +676,7 @@ All events that are currently produced are listed below. In addition to the comm
 
 ### Component
 
-- `component:created`
+* `component:created`
 
 ```json
 {
@@ -687,7 +684,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `component:deleted`
+* `component:deleted`
 
 ```json
 {
@@ -697,7 +694,7 @@ All events that are currently produced are listed below. In addition to the comm
 
 ### Screen
 
-- `screen:created`
+* `screen:created`
 
 ```json
 {
@@ -707,7 +704,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `screen:deleted`
+* `screen:deleted`
 
 ```json
 {
@@ -719,7 +716,7 @@ All events that are currently produced are listed below. In addition to the comm
 
 ### Layout
 
-- `layout:created`
+* `layout:created`
 
 ```json
 {
@@ -727,7 +724,7 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `layout:deleted`
+* `layout:deleted`
 
 ```json
 {
@@ -737,7 +734,7 @@ All events that are currently produced are listed below. In addition to the comm
 
 ### Automation
 
-- `automation:created`
+* `automation:created`
 
 ```json
 {
@@ -797,7 +794,7 @@ All events that are currently produced are listed below. In addition to the comm
 
 ### Account
 
-- `account:created`
+* `account:created`
 
 ```json
 {
@@ -805,5 +802,5 @@ All events that are currently produced are listed below. In addition to the comm
 }
 ```
 
-- `account:deleted`
-- `account:verified`
+* `account:deleted`
+* `account:verified`
