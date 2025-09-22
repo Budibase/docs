@@ -16,7 +16,7 @@ Forms are the primary building blocks of any data-heavy application. With Budiba
 
 1. **Form component**
 2. **Field group component**
-3. ** Input components**
+3. **Input components**
 
 <br />
 
@@ -30,23 +30,23 @@ Forms have a **Schema** setting which is optional. The schema for a form can be 
 
 Choosing a form schema has the following advantages:
 
-- When adding fields, field names can be chosen from a dropdown rather than being typed
-- Field validation is automatically added to match the schema
-- If you want to create rows in a table using your form data, you'll need to choose the correct schema for the table you'll be saving your data to
-- Fields will be able to automatically prevent you entering an illegal field name for a certain data type
-- Form components can be automatically generated to match the schema
+* When adding fields, field names can be chosen from a dropdown rather than being typed
+* Field validation is automatically added to match the schema
+* If you want to create rows in a table using your form data, you'll need to choose the correct schema for the table you'll be saving your data to
+* Fields will be able to automatically prevent you entering an illegal field name for a certain data type
+* Form components can be automatically generated to match the schema
 
 > 🚧 Schema from query
-> 
+>
 > When using a [custom query](https://docs.budibase.com/docs/custom-queries) or [REST query](https://docs.budibase.com/docs/rest-queries) as the schema source, the form fields cannot be linked to the query schema.
 
 ### Form type
 
 A form can be in 'Create' mode or 'Update' mode. 
 
-In _Create_ mode, the form fields will be initially blank, with the exception of those with an assigned <<glossary:Default Value>> 
+In *Create* mode, the form fields will be initially blank, with the exception of those with an assigned <Glossary>Default Value</Glossary> 
 
-In _Update_ mode, the form fields will automatically be populated from the parent [Repeater](doc:repeater) data, assuming the form schema is not set to custom.
+In *Update* mode, the form fields will automatically be populated from the parent [Repeater](doc:repeater) data, assuming the form schema is not set to custom.
 
 ![](https://files.readme.io/48e7ee1-update-create-form-type.gif "update-create-form-type.gif")
 
@@ -58,45 +58,19 @@ Each input component represents a single field in the form. There are different 
 
 ### Custom Inputs / Fields
 
-Whether your form has a schema or not, you can always add custom fields that don't exist in the schema by free typing the name of the field. Data <<glossary:Binding>>s will always reflect the names of all the fields in your form - so even if you don't have a schema on your form, you'll be able to bind to any of your fields.
+Whether your form has a schema or not, you can always add custom fields that don't exist in the schema by free typing the name of the field. Data <Glossary>Binding</Glossary>s will always reflect the names of all the fields in your form - so even if you don't have a schema on your form, you'll be able to bind to any of your fields.
 
 ### Help text setting
 
 To add some context to your form fields, you can add some 'Help text'. For example, you may want to pro-actively inform your users about the [validation](doc:form-validation) of your fields. If a validation error is triggered, then the help text will be replaced with the red error message. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6e77788-Screenshot_2023-11-22_at_09.36.32.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "caption": "Adding some 'Help text'"
-    }
-  ]
-}
-[/block]
+<Image alt="Adding some 'Help text'" align="center" src="https://files.readme.io/6e77788-Screenshot_2023-11-22_at_09.36.32.png">
+  Adding some 'Help text'
+</Image>
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/738a73d-Screenshot_2023-11-22_at_09.44.44.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "caption": "Help text on the form field"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Help text on the form field" align="center" src="https://files.readme.io/738a73d-Screenshot_2023-11-22_at_09.44.44.png">
+  Help text on the form field
+</Image>
 
 <br />
 
@@ -108,8 +82,6 @@ Forms can contain any components, not just fields. A handy way to manage layout 
 
 ## Video tutorial
 
-[block:html]
-{
-  "html": "<iframe src=\"https://player.vimeo.com/video/746819373?h=9e45332e9c&title=0&portrait=0&byline=0\" style=\"margin-top: -100px;\" width=\"640\" height=\"564\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
-}
-[/block]
+<HTMLBlock>{`
+<iframe src="https://player.vimeo.com/video/746819373?h=9e45332e9c&title=0&portrait=0&byline=0" style="margin-top: -100px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+`}</HTMLBlock>
