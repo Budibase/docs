@@ -19,7 +19,7 @@ next:
 Budibase is a low-code tool, which means, you can use code to improve your applications! But it also means in certain situations writing code is necessary. Budibase supports the use of JavaScript in several places to customize your applications.
 
 > 🚧 Limitations
-> 
+>
 > JavaScript within Budibase is server-side synchronous only. Async interactions (such as API calls, or `await`) aren't supported. There also is no DOM-interaction as the code is executed server-side.
 
 ## Using JavaScript code in Bindings
@@ -51,13 +51,11 @@ return "Total Fuel Cost: $ " + totalFuelCost;
 
 We've used the binding `Data Provider.Rows` as that is the default binding that returns all the rows from the [Data Provider](doc:data-provider).
 
-
-
 > 👍 Autocomplete
-> 
+>
 > When working with JavaScript bindings, typing the **$** key will bring up a suggestion window, which will filter as you type. Use the up/down arrow keys to select a binding, and press **Tab** to complete.
-> 
-> [block:image]{"images":[{"image":["https://files.readme.io/4591935-Screenshot_2024-01-17_at_08.29.44.png","",""],"align":"center"}]}[/block]
+>
+> <Image align="center" src="https://files.readme.io/4591935-Screenshot_2024-01-17_at_08.29.44.png" />
 
 After entering the code, you can click "Save" on the top-right, and the binding should work automatically.
 
@@ -85,6 +83,6 @@ You can learn about using data in automations in this [Data in Automations](doc:
 
 ## Using JavaScript with Transformers
 
-When dealing with external <<glossary:Data Sources>> you can create custom queries. But with queries comes the ability to transform the data in a way your app can consume it easier. For example, when querying a [REST API](doc:rest), you could transform the data using JavaScript to a format that only returns what you want to return.
+When dealing with external <Glossary>Data Sources</Glossary> you can create custom queries. But with queries comes the ability to transform the data in a way your app can consume it easier. For example, when querying a [REST API](doc:rest), you could transform the data using JavaScript to a format that only returns what you want to return.
 
 There's an [In Depth Guide](doc:transformers) for you to dive into how to use transformers with JavaScript.
