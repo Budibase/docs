@@ -13,26 +13,22 @@ next:
 This tutorial will take less than 5 minutes, and at the end, you will have successfully built a complete CRUD application.
 
 In this tutorial, we will use Budibase DB to create a Vehicle Maintenance Log app, consisting of:
-- A Vehicles table, to view vehicles
-- A Service Log table, to record the service history of a vehicle
 
----
+* A Vehicles table, to view vehicles
+* A Service Log table, to record the service history of a vehicle
+
+***
 
 ## Getting started
+
 1. Download the following CSV
-[block:embed]
-{
-  "html": false,
-  "url": "https://docs.google.com/spreadsheets/d/1Ni1ah_VU1pRZKuNxzby7ldznlnznS7z6f7jTs0_NPck/edit?usp=sharing",
-  "title": "bb-quickstart-vehicles",
-  "favicon": "https://ssl.gstatic.com/docs/spreadsheets/favicon3.ico",
-  "image": "https://lh5.googleusercontent.com/U6qEet-Quae0hvq1-TRpsoVJr9D4reteZXFatsgz-q9nRD-y2QOXsGA_I9X4crWi0L5d1o_kkbMT5g=w1200-h630-p"
-}
-[/block]
-2. Create a new account at https://account.budibase.app/register (onboarding takes a few seconds)
+
+<Embed url="https://docs.google.com/spreadsheets/d/1Ni1ah_VU1pRZKuNxzby7ldznlnznS7z6f7jTs0_NPck/edit?usp=sharing" title="bb-quickstart-vehicles" favicon="https://ssl.gstatic.com/docs/spreadsheets/favicon3.ico" image="https://lh5.googleusercontent.com/U6qEet-Quae0hvq1-TRpsoVJr9D4reteZXFatsgz-q9nRD-y2QOXsGA_I9X4crWi0L5d1o_kkbMT5g=w1200-h630-p" provider="docs.google.com" href="https://docs.google.com/spreadsheets/d/1Ni1ah_VU1pRZKuNxzby7ldznlnznS7z6f7jTs0_NPck/edit?usp=sharing" />
+
+2. Create a new account at [https://account.budibase.app/register](https://account.budibase.app/register) (onboarding takes a few seconds)
 3. Once onboarded, create a new app and call it: *Vehicle Maintenance Log*
 
----
+***
 
 ## Data
 
@@ -42,50 +38,88 @@ In this tutorial, we will use Budibase DB to create a Vehicle Maintenance Log ap
 5. Name your table: *Vehicles*
 6. Click the CSV upload button
 7. Upload the CSV you downloaded in step 1
-[block:embed]
-{
-  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FWPadw3_wYFE%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DWPadw3_wYFE&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FWPadw3_wYFE%2Fhqdefault.jpg&key=f2aa6fc3595946d0afc3d76cbbd25dc3&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
-  "url": "https://www.youtube.com/watch?v=WPadw3_wYFE&ab_channel=Budibase",
-  "title": "How to: Importing data from a CSV file",
-  "favicon": "https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico",
-  "image": "https://i.ytimg.com/vi/WPadw3_wYFE/hqdefault.jpg"
-}
-[/block]
+
+<Embed url="https://www.youtube.com/watch?v=WPadw3_wYFE&ab_channel=Budibase" title="How to: Importing data from a CSV file" favicon="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" image="https://i.ytimg.com/vi/WPadw3_wYFE/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=WPadw3_wYFE&ab_channel=Budibase" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FWPadw3_wYFE%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DWPadw3_wYFE%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252FWPadw3_wYFE%252Fhqdefault.jpg%26key%3Df2aa6fc3595946d0afc3d76cbbd25dc3%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
+
 ### Add service log table (from scratch)
 
 8. Click on **Budibase DB**, and create a new table. Call your table *Service Log*, and uncheck “Generate screens in design section” - we will add these manually.
 9. Create the following columns:
-[block:parameters]
-{
-  "data": {
-    "h-0": "Column name",
-    "h-1": "Column type",
-    "0-0": "Description",
-    "0-1": "Text",
-    "1-0": "Vehicle",
-    "1-1": "Relationship (one Vehicle has Many Service Logs)",
-    "2-0": "Service Date",
-    "2-1": "Datetime",
-    "3-0": "Category",
-    "3-1": "Options - Our options are; \nBrakes, Tyres, Engine, Transmission\n*Use a new line when listing each option.",
-    "4-0": "Mileage",
-    "4-1": "Number"
-  },
-  "cols": 2,
-  "rows": 5
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Column name
+      </th>
+
+      <th>
+        Column type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Description
+      </td>
+
+      <td>
+        Text
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Vehicle
+      </td>
+
+      <td>
+        Relationship (one Vehicle has Many Service Logs)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Service Date
+      </td>
+
+      <td>
+        Datetime
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Category
+      </td>
+
+      <td>
+        Options - Our options are;\
+        Brakes, Tyres, Engine, Transmission
+
+        * Use a new line when listing each option.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Mileage
+      </td>
+
+      <td>
+        Number
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 10. Finally, create some rows in the Service Log table, so that we have data to test with.
-[block:embed]
-{
-  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FaRXbLqQYtkA%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DaRXbLqQYtkA&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FaRXbLqQYtkA%2Fhqdefault.jpg&key=f2aa6fc3595946d0afc3d76cbbd25dc3&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
-  "url": "https://www.youtube.com/watch?v=aRXbLqQYtkA&ab_channel=Budibase",
-  "title": "How to: Create a table from scratch",
-  "favicon": "https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico",
-  "image": "https://i.ytimg.com/vi/aRXbLqQYtkA/hqdefault.jpg"
-}
-[/block]
----
+
+<Embed url="https://www.youtube.com/watch?v=aRXbLqQYtkA&ab_channel=Budibase" title="How to: Create a table from scratch" favicon="https://www.youtube.com/s/desktop/d8ff51a7/img/favicon.ico" image="https://i.ytimg.com/vi/aRXbLqQYtkA/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=aRXbLqQYtkA&ab_channel=Budibase" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FaRXbLqQYtkA%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DaRXbLqQYtkA%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252FaRXbLqQYtkA%252Fhqdefault.jpg%26key%3Df2aa6fc3595946d0afc3d76cbbd25dc3%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
+
+***
 
 ## Designing our UI
 
@@ -94,10 +128,7 @@ In this tutorial, we will use Budibase DB to create a Vehicle Maintenance Log ap
 11. Click the **Design** tab, and click the **Add screen** button.
 12. Under autogenerated screens select Vehicles and Service log table, then click **Add screens**
 13. Click the preview button and view your new Vehicle Maintenance Log app
-[block:callout]
-{
-  "type": "success",
-  "body": "You now have a fully working Vehicle Maintenance Log app.",
-  "title": "Success!"
-}
-[/block]
+
+> 👍 Success!
+>
+> You now have a fully working Vehicle Maintenance Log app.
