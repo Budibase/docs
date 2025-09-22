@@ -17,7 +17,7 @@ This quick guide demonstrates how to create a JavaScript snippet that converts d
 1. Create a Budibase internal table this should include some form of date (In my case I will theme this around a blog)
 2. Add data to your table 
 
-   [block:image]{"images":[{"image":["https://files.readme.io/742dc97-Screenshot_2024-04-19_at_13.48.04.png","","An image showcasing the data structure of a table in the Budibase data view."],"align":"center"}]}[/block]
+   <Image align="center" src="https://files.readme.io/742dc97-Screenshot_2024-04-19_at_13.48.04.png" />
 3. Go to the design screen and add a [Card block](doc:card)
 4. Fill in the relevant bindings for Title, description etc
 5. Go to the subtitle bindable area.
@@ -63,33 +63,8 @@ return function(pastTimeString) {
 9. Click the snippet and add the date binding you wish to use inside its brackets
 10. Then click save
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/af76113-Screenshot_2024-04-05_at_13.21.07.png",
-        "",
-        "An image showing this snippet being called."
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/af76113-Screenshot_2024-04-05_at_13.21.07.png" />
 
 ## The end result!
 
-[block:embed]
-{
-  "html": false,
-  "url": "https://plugins.budibase.app/embed/snippet-demos#/timeago",
-  "provider": "plugins.budibase.app",
-  "href": "https://plugins.budibase.app/embed/snippet-demos#/timeago",
-  "typeOfEmbed": "iframe",
-  "height": "300px",
-  "width": "100%",
-  "iframe": true
-}
-[/block]
+<Embed url="https://plugins.budibase.app/embed/snippet-demos#/timeago" provider="plugins.budibase.app" href="https://plugins.budibase.app/embed/snippet-demos#/timeago" typeOfEmbed="iframe" height="300px" width="100%" iframe="true" title="undefined" />
