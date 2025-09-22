@@ -22,19 +22,17 @@ Below is a few examples of actions that exist today however there may be many mo
 1. **Create row** - this will create a new row in a specified table
 2. **Update row** - can be used to update a row that was triggered upon
 3. **Delete row** - delete a specified row from a table, like something that was triggered upon
-4. **Send email **- as it suggests, send an email based on the specified inputs
-5. **Send Discord notification **- send a notification to Discord
+4. **Send email** - as it suggests, send an email based on the specified inputs
+5. **Send Discord notification** - send a notification to Discord
 6. [Slack](doc:slack-notification) - send a notification to Slack
-7. **Connect to Integromat ** - connect to Integromat
-8. **Connect to Zapier ** - connect to Zapier
+7. **Connect to Integromat** - connect to Integromat
+8. **Connect to Zapier** - connect to Zapier
 9. **JS scripting** - add JS scripts to an automation
-10. **Query rows ** - query rows / records
+10. **Query rows** - query rows / records
 
 The real power in actions is the ability to make use of outputs from previous steps; how to do this will be covered in the [Contextual bindings](doc:contextual-bindings) section.
 
 ***
-
-
 
 ## Adding logic
 
