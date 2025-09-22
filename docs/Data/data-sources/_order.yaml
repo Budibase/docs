@@ -4,3 +4,4 @@
 - csv-import
 - dynamodb
 - elasticsearch
+- firestore
