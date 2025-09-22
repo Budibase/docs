@@ -20,8 +20,8 @@ In the [Azure Portal](https://portal.azure.com/), choose **App Services**, then 
 
 When creating the service choose values that meet your app requirements such as redundancy, resource group and SKU size, but set the following fields to these values:
 
-- Publish: Choose **Docker Container**
-- Operating System: **Linux**
+* Publish: Choose **Docker Container**
+* Operating System: **Linux**
 
 ![](https://files.readme.io/4b0edd35ecebaa7eea812c5222bbe09ebe766ca8e78eab6f976b83ae29fd78ca-image.png)
 
@@ -61,7 +61,7 @@ Fill in the required details, and **note down the name of the storage account**.
 
 ![](https://files.readme.io/6aedb9bab053d011dd908da1217c5fc6927cff4b2f75923ae9cd66957fb33911-image.png)
 
-After successfully creating the Storage Service Account, navigate to its dashboard and find the **Security + Networking **section in the drawer. Under it, you will find the **Access keys** tab.
+After successfully creating the Storage Service Account, navigate to its dashboard and find the **Security + Networking** section in the drawer. Under it, you will find the **Access keys** tab.
 
 ![](https://files.readme.io/435bddb3dffc59d20d0524c4f1fa722baf199a92be46e93ac13074ee7e66d629-image.png)
 
@@ -71,10 +71,10 @@ Grab **key1** or **key2** value and keep it someplace since you will need it lat
 
 There are four required environment variables for the app to be able to launch and run, as well as, make sure that data persistence is achieved.
 
-- `AZURE_STORAGE_ACCOUNT`
-- `AZURE_STORAGE_KEY`
-- `MINIO_ACCESS_KEY`
-- `MINIO_SECRET_KEY`
+* `AZURE_STORAGE_ACCOUNT`
+* `AZURE_STORAGE_KEY`
+* `MINIO_ACCESS_KEY`
+* `MINIO_SECRET_KEY`
 
 For `AZURE_STORAGE_ACCOUNT` and `MINIO_ACCESS_KEY` use the name of the Storage account you just created, or reuse one of the existing ones in your account.
 
