@@ -1,3 +1,4 @@
 - post_applications
 - put_applications-appid
 - delete_applications-appid
+- get_applications-appid
