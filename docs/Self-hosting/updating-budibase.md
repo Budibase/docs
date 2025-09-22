@@ -18,7 +18,6 @@ There are several ways to update your budibase installation, based on your chose
 
 If you set up budibase using the [Budibase CLI Install](doc:budibase-cli-setup), you can update your budibase installation directly by navigating to the directory where you installed budibase (with your `docker-compose.yaml`, `.env` file etc) and run the following CLI commands.
 
-
 [block:tutorial-tile]
 {
   "backgroundColor": "#018FF4",
@@ -30,20 +29,17 @@ If you set up budibase using the [Budibase CLI Install](doc:budibase-cli-setup),
 }
 [/block]
 
-
-
-
 ## Standard Docker Upgrade
 
-If you prefer, you can also just use standard docker commands to upgrade your budibase installation. 
+If you prefer, you can also just use standard docker commands to upgrade your budibase installation.
 
 #### Upgrading a [Docker](doc:docker) Single Image Installation
 
 First, stop and remove your container running budibase with:
 
 ```shell
-docker stop <budibase-container-id>
-docker rm <budibase-container-id>
+docker stop `<budibase-container-id>`
+docker rm `<budibase-container-id>`
 ```
 
 Then run the following to get the latest version of the budibase container:
@@ -55,9 +51,9 @@ docker pull budibase/budibase
 With the latest version of your container, you can now run the same `docker run` command that you ran to set up budibase in the first place.
 
 > 📘 Note
-> 
-> Tools like <https://www.portainer.io/>  and <https://github.com/containrrr/watchtower> can be a powerful way to simplify and automate container management for you. 
-> 
+>
+> Tools like [https://www.portainer.io/](https://www.portainer.io/) and [https://github.com/containrrr/watchtower](https://github.com/containrrr/watchtower) can be a powerful way to simplify and automate container management for you.
+>
 > Another option is to migrate your single image installation to using docker-compose, as described [here](https://docs.budibase.com/docs/docker#method-2---docker-compose). Which will let you take advantage of the next method below.
 
 #### Upgrading a [Docker compose](doc:docker-compose) Installation
@@ -73,8 +69,6 @@ You can then run the following commands. (You may need to use `docker-compose` o
 docker compose pull 
 docker compose up -d
 ```
-
-
 
 ## Kubernetes
 
