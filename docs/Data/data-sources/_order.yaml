@@ -13,3 +13,4 @@
 - postgresql
 - redis
 - s3
+- snowflake
