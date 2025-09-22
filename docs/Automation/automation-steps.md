@@ -17,8 +17,8 @@ Budibase's Automation section gives you the ability to build your backend logic 
 Once configured, your automation will run as part of your app in the Budibase hosting platform making this a backend process that will run at any time when triggered. 
 
 > 🚧 Publish app
-> 
-> Automations will only run in published apps.  
+>
+> Automations will only run in published apps.\
 > You can however [Test](doc:activating-and-testing) your automations before publishing.
 
 ## Getting started
@@ -27,8 +27,6 @@ To get started with Automations click into the Automate tab in the builder, from
 
 The next sections will cover the two major components of an automation, [Triggers](doc:trigger) and [Actions](doc:actions) . It will also cover [Contextual bindings](doc:contextual-bindings) , allowing chaining of the various automation steps together.
 
-[block:html]
-{
-  "html": "<iframe src=\"https://player.vimeo.com/video/746819272?h=378f19afc5&title=0&portrait=0&byline=0\" style=\"margin-top: -100px;\" width=\"640\" height=\"564\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
-}
-[/block]
+<HTMLBlock>{`
+<iframe src="https://player.vimeo.com/video/746819272?h=378f19afc5&title=0&portrait=0&byline=0" style="margin-top: -100px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+`}</HTMLBlock>
