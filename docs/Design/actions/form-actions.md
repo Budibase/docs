@@ -16,9 +16,9 @@ next:
 ---
 ## Update Field Value
 
-This action will update the value of a form field with a literal value or <<glossary:Binding>>.
+This action will update the value of a form field with a literal value or <Glossary>Binding</Glossary>.
 
-The _Reset to default value_ type will change the value of the chosen field to its <<glossary:Default Value>>.
+The *Reset to default value* type will change the value of the chosen field to its <Glossary>Default Value</Glossary>.
 
 ![](https://files.readme.io/759ee62-Screenshot_2022-05-09_at_16.41.45.png "Screenshot 2022-05-09 at 16.41.45.png")
 
@@ -28,21 +28,7 @@ This action lets you scroll to any form field on the page. Attach it to componen
 
 To set it up, select the form containing your item and choose the field to scroll to when the action occurs. In the example below, a form component is linked to a button click event, causing it to scroll to the specified form field.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a12b108-20231109_140526.gif",
-        "",
-        "Showing how to attach the scroll to field action up."
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/a12b108-20231109_140526.gif" />
 
 ## Validate Form
 
@@ -63,7 +49,7 @@ This action lets you select the form you wish to change the current step of. It 
 1. `Next step` this simply increments the step of the form by 1.
 2. `Previous step` this will decrease the form step by 1.
 3. `First step` this sets the form step to the initial step.
-4. `Specific step` this adds a new option when selected, which allows you to type in a number that you want the step changed to.  
+4. `Specific step` this adds a new option when selected, which allows you to type in a number that you want the step changed to.\
    ![](https://files.readme.io/8cc0bd4-Screenshot_2023-05-19_at_13.23.02.png)
 
 ## Clear Form
@@ -84,4 +70,4 @@ Specifically, [Pickers](doc:pickers) will update on selection, whereas [Text inp
 
 ![](https://files.readme.io/f13e9d1-Screenshot_2022-05-09_at_16.48.42.png "Screenshot 2022-05-09 at 16.48.42.png")
 
-In addition, there is a convenient <<glossary:Binding>> `{{ Field Value }}` which represents the value of the trigger form field.
+In addition, there is a convenient <Glossary>Binding</Glossary> `{{ Field Value }}` which represents the value of the trigger form field.
