@@ -26,105 +26,49 @@ Then, click `Save` and a new automation will be created with a `Cron Trigger`.
 
 The cron job expression is a series of numbers or stars. The order is from small to big:
 
-- Minutes
-- Hours
-- Day of the Month
-- Month
-- Day of the Week
+* Minutes
+* Hours
+* Day of the Month
+* Month
+* Day of the Week
 
 We have presets available that can be selected to generate a cron expression for you. Additionally, there is an AI column that you can prompt to generate CRON expressions for you.
 
 Cron Scheduling can be very powerful, but you'll need to understand syntax. For every field you can use the following expressions:
 
-- Plain numbers: From 0 to 59 for minutes, 0-23 for hours and 1-12 for Months.
-- Ranges: `5-10` in the minutes section would mean every minute from the 5th until the 10th minute
-- Separations: Multiple numbers or ranges, like `4,8,12` in the months column would be the 4th, 8th and 12th month only. Separations can also have ranges, such as `5-10,35-40` in the minutes column would be every minute between the 5th and 10th minute, AND every minute between the 35th and 40th minute.
-- A `*`: This means `every`. So if you have only stars everywhere, that means every minute, of every hour, of every day of every month.
+* Plain numbers: From 0 to 59 for minutes, 0-23 for hours and 1-12 for Months.
+* Ranges: `5-10` in the minutes section would mean every minute from the 5th until the 10th minute
+* Separations: Multiple numbers or ranges, like `4,8,12` in the months column would be the 4th, 8th and 12th month only. Separations can also have ranges, such as `5-10,35-40` in the minutes column would be every minute between the 5th and 10th minute, AND every minute between the 35th and 40th minute.
+* A `*`: This means `every`. So if you have only stars everywhere, that means every minute, of every hour, of every day of every month.
 
 Combinations of everything can lead to complicated schedules! 
 
 For example, we will run this cronjob every working day, at 3AM. We end up with this cron expression: `0 3 * * 1-5`
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3aed433b970beb44af5720a8d01f335ac783ddb4aa1f44635777b15146680566-Screenshot_2025-04-04_at_12.05.06.png",
-        "cron-trigger-setup.png",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/3aed433b970beb44af5720a8d01f335ac783ddb4aa1f44635777b15146680566-Screenshot_2025-04-04_at_12.05.06.png" />
 
 The last section of the CRON automation shows a summary of when the automation is going to the next trigger. This extra layer helps you understand what your CRON expression is doing after writing it.
 
 ## Timestamp binding
 
-A binding is available for the timestamp of when the cron job was triggered.  
+A binding is available for the timestamp of when the cron job was triggered.\
 This returns the number of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime">epoch milliseconds</a>
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/515145ac4ecde0dc4606a400b931e3a9b3418b263d6e90316a05d33e26be20c1-Screenshot_2024-10-24_at_13.12.55.png",
-        "Screenshot_2022-05-18_at_16.03.46.png",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/515145ac4ecde0dc4606a400b931e3a9b3418b263d6e90316a05d33e26be20c1-Screenshot_2024-10-24_at_13.12.55.png" />
 
 ## Performing an API call
 
-Now that we've set up our `Cron Trigger` it is time to perform a REST call to fetch some information. For this tutorial we've created a new [REST API](doc:rest) Data Source, added [Bindings](doc:rest-bindings) to the API call to allow customization, and we've set up a [Transformer](doc:transformers) to turn the data in quick usable data. But you can set up whatever you want here, even regular queries to <<glossary:Data Sources>>.
+Now that we've set up our `Cron Trigger` it is time to perform a REST call to fetch some information. For this tutorial we've created a new [REST API](doc:rest) Data Source, added [Bindings](doc:rest-bindings) to the API call to allow customization, and we've set up a [Transformer](doc:transformers) to turn the data in quick usable data. But you can set up whatever you want here, even regular queries to <Glossary>Data Sources</Glossary>.
 
 If you want to read more about setting up a REST API, Bindings and Transformers we recommend checking out the linked pages.
 
 We end up with something like this:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ba9b2965c4714bb101db89f12134a4de44d98a63a1bbb3b8eda90da1aa2d5a00-Screenshot_2025-04-04_at_13.19.34.png",
-        "api-call.png",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/ba9b2965c4714bb101db89f12134a4de44d98a63a1bbb3b8eda90da1aa2d5a00-Screenshot_2025-04-04_at_13.19.34.png" />
 
 When running a test you can see the API call and the transformer worked as expected, and it returns the stargazer count of the Github repository of choice.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/291389b40583576d7816695bef54c51114c47e85e5a63ea44cc0fa9d28a36ef9-Screenshot_2025-04-04_at_13.21.16.png",
-        "api-call-result.png",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/291389b40583576d7816695bef54c51114c47e85e5a63ea44cc0fa9d28a36ef9-Screenshot_2025-04-04_at_13.21.16.png" />
 
 For reference, we've transformed the result from the public <a href="https://docs.github.com/en/rest/search#search-repositories" target="_blank">Github Search API</a> like this:
 
@@ -138,21 +82,7 @@ Now we have a scheduled Cron Trigger, and an API call is done at that exact time
 
 First, we're retrieving a DIscord Webhook URL, setting the botname, optionally add a nice profile picture, and then set the binding to display the number of stars.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/578debdb33a09a9b35ce92cb7b0a33a92a43cdf756668b35e6c66f723f07af7e-Screenshot_2025-04-04_at_13.21.46.png",
-        "discord-setup.png",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/578debdb33a09a9b35ce92cb7b0a33a92a43cdf756668b35e6c66f723f07af7e-Screenshot_2025-04-04_at_13.21.46.png" />
 
 As you can see, we formulated a nice message, and used the `value` from the API call from `step 1`. Our binding ends up to look like this:
 
