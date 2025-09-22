@@ -24,10 +24,10 @@ At its core, our application is based around submission and approval workflows f
 
 This includes:
 
-- Enabling **App Users** to submit new risks, incidents, or improvements. They also can view and cancel their own previous submissions.
-- Routing submissions to **Power Users** for review and approval.
-- Providing records of all ongoing and previous submissions.
-- Notifying stakeholders of changes to the status of submissions or when there are new submissions that need their attention.
+* Enabling **App Users** to submit new risks, incidents, or improvements. They also can view and cancel their own previous submissions.
+* Routing submissions to **Power Users** for review and approval.
+* Providing records of all ongoing and previous submissions.
+* Notifying stakeholders of changes to the status of submissions or when there are new submissions that need their attention.
 
 Our template utilizes simple approval flows for each type of submission, with two distinct user roles in addition to our **App Admin** role.
 
@@ -55,7 +55,7 @@ This works the same way for **Improvements, Risks**, and **Incidents**.
 
 They can also carry out **Update** actions relating to certain fields.
 
-Specifically, they can use **Row Actions** to either **Approve** or **Reject** the row in question, updating its status attribute. At the same time, they can use a form UI to populate the **Feedback** column**.**
+Specifically, they can use **Row Actions** to either **Approve** or **Reject** the row in question, updating its status attribute. At the same time, they can use a form UI to populate the **Feedback** colum&#x6E;**.**
 
 If a submission is **Approved**, it can also be assigned to a specific **Improvement Project** for implementation by populating a relationship column.
 
@@ -99,21 +99,7 @@ Users with the **App User** role can primarily create submissions across our thr
 
 Roles are configured using Budibase’s visual RBAC editor. We can use branch UIs to define how roles relate to one another, including permission inheritance.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/589a3b1728c81e8149fcf339b17ceb551280d7ce4f7f5d7a2b69eb030194d471-Risk_Management_Template_4_RBAC.png",
-        null,
-        "RBAC"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/589a3b1728c81e8149fcf339b17ceb551280d7ce4f7f5d7a2b69eb030194d471-Risk_Management_Template_4_RBAC.png" />
 
 We can use this to define which actions and data each role is permitted to access from within the data section, as we’ll see in the following section.
 
@@ -133,11 +119,11 @@ Let’s break it down.
 
 As we said earlier, our template utilizes five internal tables. These are:
 
-- **Glossary** - Storing definitions of our different kinds of submissions. This is provided as a reference for **App Admins**.
-- **Risks** - For storing submissions relating to potential risks.
-- **Incidents** - Where incidents are recorded and tracked.
-- **Improvements** - Allowing customers to suggest new improvement initiatives.
-- **Improvement Projects** - Which accepted Risks, Incidents, or Improvements can be related to.
+* **Glossary** - Storing definitions of our different kinds of submissions. This is provided as a reference for **App Admins**.
+* **Risks** - For storing submissions relating to potential risks.
+* **Incidents** - Where incidents are recorded and tracked.
+* **Improvements** - Allowing customers to suggest new improvement initiatives.
+* **Improvement Projects** - Which accepted Risks, Incidents, or Improvements can be related to.
 
 Our app also relies on Budibase’s internal **Users** table to enable individual rows across these to be assigned to specific users, as we’ll see in the next section.
 
@@ -147,61 +133,61 @@ Each of our other tables stores data that’s required to record and process sub
 
 **Improvement Projects:**
 
-- **title** - Text,
-- **id** - Number,
-- **created_by** - Single User,
-- **last_updated_by** - Single User,
-- **description** - Long Forn Text,
-- **created_at** - Date,
-- **status** - Single Select,
-- **start_date** - Date,
-- **end_date** - Date,
-- **project_manager** - Single User,
-- **improvement** - Relationship,
-- **risks** - Relationship,
-- **incidents** - Relationship,
-- **updated_at** - Date.
+* **title** - Text,
+* **id** - Number,
+* **created\_by** - Single User,
+* **last\_updated\_by** - Single User,
+* **description** - Long Forn Text,
+* **created\_at** - Date,
+* **status** - Single Select,
+* **start\_date** - Date,
+* **end\_date** - Date,
+* **project\_manager** - Single User,
+* **improvement** - Relationship,
+* **risks** - Relationship,
+* **incidents** - Relationship,
+* **updated\_at** - Date.
 
 **Improvements:**
 
-- **title** - Text,
-- **id** - Number,
-- **start_date** - Date,
-- **end_date** - Date,
-- **created_at** - Date,
-- **updated_at** - Date,
-- **description** - Long Form Text,
-- **created_by** - Single User,
-- **last_updated_by** - Single User,
-- **Improvement Project** - Relationship,
-- **status** - Single Select.
-- **feedback -** Long Form Text.
+* **title** - Text,
+* **id** - Number,
+* **start\_date** - Date,
+* **end\_date** - Date,
+* **created\_at** - Date,
+* **updated\_at** - Date,
+* **description** - Long Form Text,
+* **created\_by** - Single User,
+* **last\_updated\_by** - Single User,
+* **Improvement Project** - Relationship,
+* **status** - Single Select.
+* **feedback -** Long Form Text.
 
 **Risks:**
 
-- **title** - Text,
-- **id** - Number,
-- **created_at** - Date,
-- **updated_at** - Date,
-- **created_by** - Single User,
-- **last_updated_by** - Single User,
-- **description** - Long Forn Text,
-- **improvement_project** - Relationship,
-- **status** - Single Select,
-- **feedback** - Long Form Text.
+* **title** - Text,
+* **id** - Number,
+* **created\_at** - Date,
+* **updated\_at** - Date,
+* **created\_by** - Single User,
+* **last\_updated\_by** - Single User,
+* **description** - Long Forn Text,
+* **improvement\_project** - Relationship,
+* **status** - Single Select,
+* **feedback** - Long Form Text.
 
 **Incidents:**
 
-- **title** - Text,
-- **id** - Number,
-- **reported_by** - Single User,
-- **employee_involved** - Single User,
-- **date_of_incident** - Date,
-- **date_created** - Date,
-- **notes** - Long Form Text,
-- **status** - Single Select,
-- **Improvement Project** - Relationship,
-- **feedback** - Long Form Text.
+* **title** - Text,
+* **id** - Number,
+* **reported\_by** - Single User,
+* **employee\_involved** - Single User,
+* **date\_of\_incident** - Date,
+* **date\_created** - Date,
+* **notes** - Long Form Text,
+* **status** - Single Select,
+* **Improvement Project** - Relationship,
+* **feedback** - Long Form Text.
 
 #### Relationships
 
@@ -219,21 +205,7 @@ In Budbase, we have two dedicated columns for linking tables to **User** records
 
 Our app utilizes Single User columns across each of our tables to represent various relationships with users. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a83343fccca7b29cb054707ca3d7f373dd5a75db81e418ab5a39994aafe66198-Risk_Management_Template_6_Single_User.png",
-        null,
-        "Single User Column"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/a83343fccca7b29cb054707ca3d7f373dd5a75db81e418ab5a39994aafe66198-Risk_Management_Template_6_Single_User.png" />
 
 #### Views
 
@@ -243,21 +215,7 @@ In Budibase, these are used to centrally configure what each user role can do wi
 
 Our underlying tables have their **Access** settings to only be readable or writable by **App Admins**. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4440dc24826254b47ba77c2905d2ff0a1f8f357cc3097078638aaad04a577a14-Risk_Management_Template_7_Access.png",
-        null,
-        "Access"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/4440dc24826254b47ba77c2905d2ff0a1f8f357cc3097078638aaad04a577a14-Risk_Management_Template_7_Access.png" />
 
 Each of our tables has distinct Views for each of our two core user roles. 
 
@@ -277,41 +235,13 @@ For instance, we have a **View** called **My Improvements Count**. Using the **C
 
 This will return each unique status, along with the number of relevant entries in our table.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4baa0d4546379966139bfd4f60e098bd00a11dd48089e3e6e3a0039b8c4eb150-Risk_Management_Template_Configure_Calculations.png",
-        null,
-        "Calculation View"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/4baa0d4546379966139bfd4f60e098bd00a11dd48089e3e6e3a0039b8c4eb150-Risk_Management_Template_Configure_Calculations.png" />
 
 However, we don’t want to include any submissions that have either been canceled or rejected. We also only want to include the rows that are related to the current user in the front end.
 
 So, we’ve applied three filtering rules. The first includes rows that have been submitted by the current user. The other two exclude rows where the **status** is **Rejected** or **Canceled**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/bad0a5ab39cba567fd070cf756e74b7d96f3c16dbb9a96301490e368d4e1cb2f-Risk_Management_Template_Calculation_Filters.png",
-        null,
-        "Calculation Filters"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/bad0a5ab39cba567fd070cf756e74b7d96f3c16dbb9a96301490e368d4e1cb2f-Risk_Management_Template_Calculation_Filters.png" />
 
 These are then displayed on the home screen for App Users, as we’ll see in a moment.
 
@@ -341,21 +271,7 @@ First, we have a **Paragraph** component that displays the total number of each 
 
 The My Improvements Data Provider has a filtering expression to exclude entries where the **status** is set to **canceled**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d83258cc1235619afa57c55999c98ebe5ce6600ea36a64d639e084f9685e7140-Risk_Management_Template_Home_Screen_Count_of_all_Submissions.png",
-        null,
-        "Count of Submissions"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/d83258cc1235619afa57c55999c98ebe5ce6600ea36a64d639e084f9685e7140-Risk_Management_Template_Home_Screen_Count_of_all_Submissions.png" />
 
 Beneath this, we have a second **Paragraph** component which is wrapped in a **Data Provider** and **Repeater**. 
 
@@ -365,21 +281,7 @@ These components will connect to a data source and display each of the elements 
 {{ Improvements Counts Repeater.My Improvements Counts.Count id }} {{ Improvements Counts Repeater.My Improvements Counts.status }}
 ```
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7fb8e31bc4f513fa66cbb883d366a05545c1d8c50c44ffa999bc421f3eef3f95-Risk_Management_Template_View_Calculation_UI.png",
-        null,
-        "View Calculation UI"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/7fb8e31bc4f513fa66cbb883d366a05545c1d8c50c44ffa999bc421f3eef3f95-Risk_Management_Template_View_Calculation_UI.png" />
 
 **App Users** can also use buttons to navigate to either the submission form or table UI for each respective type of submission.
 
@@ -413,21 +315,7 @@ Lastly, we’ve built an Automation called **Outstanding Attributes**, using a *
 
 We’ve set our Cron Trigger manually, but we also have the option of using AI to generate an expression.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/800382d96bb2e70e56b300cbbe19dfd9b057b22b5a4fb38df443d9923e7e61cc-Risk_Management_Template_Outstanding_Automation.png",
-        null,
-        "Outstanding Automation"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/800382d96bb2e70e56b300cbbe19dfd9b057b22b5a4fb38df443d9923e7e61cc-Risk_Management_Template_Outstanding_Automation.png" />
 
 This uses three **Query Rows** steps to return all of the rows from our **Risks**, **Incidents**, and **Improvements** tables with **Status** attributes set to **Pending**.
 
@@ -439,21 +327,7 @@ Alternatively, we could configure this to notify all users with a particular rol
 
 By default, this Automation is set to **Paused**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1a37f54ab1288f7e7c9b46fce6148d3f47480052fdf722a036048b85b3b1ea18-Risk_Management_Templaet_Outstanding_Automation_2.png",
-        null,
-        "Automation Flow"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/1a37f54ab1288f7e7c9b46fce6148d3f47480052fdf722a036048b85b3b1ea18-Risk_Management_Templaet_Outstanding_Automation_2.png" />
 
 ## Customizing our risk management template
 
@@ -469,7 +343,7 @@ If we wanted to connect to an external SQL database, for example, we could recre
 
 We can also easily modify the schema of our existing database, including adding, removing, or editing existing tables and columns, using the spreadsheet-like interface in Budibase’s Data section.
 
-For example, say we wanted to add a new Long Form Text column to our **Risks** table, called inspector_notes.
+For example, say we wanted to add a new Long Form Text column to our **Risks** table, called inspector\_notes.
 
 We could do this by hitting the **+** icon at the top of our table.
 
@@ -477,21 +351,7 @@ We could do this by hitting the **+** icon at the top of our table.
 
 At the same time, we might update our existing **status** attribute by adding an option called **Inspected**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/45f4c2550ebc002186b44615696fde813d65dc97fd028da3fe09bc3ef59d2f70-Risk_Management_Template_16.5_Inspected_Status_Option.png",
-        null,
-        "Inspected Status"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/45f4c2550ebc002186b44615696fde813d65dc97fd028da3fe09bc3ef59d2f70-Risk_Management_Template_16.5_Inspected_Status_Option.png" />
 
 ### Adding and altering user roles
 
@@ -501,57 +361,15 @@ We’re going to create a new role called **Inspector** this will inherit permis
 
 This means that **Inspectors** will be able to create any submissions that **App Users** can, as well as whatever additional permissions we grant them. However, this will be unrelated to the existing **Power User** role’s permissions.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e702861d6223edd2093d90efcd98f6dfddc5e8b692660d60959fe101fcdef0c6-Risk_Management_Template_16_Inspector_ROle.png",
-        null,
-        "Inspector Role"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/e702861d6223edd2093d90efcd98f6dfddc5e8b692660d60959fe101fcdef0c6-Risk_Management_Template_16_Inspector_ROle.png" />
 
 To go along with this, we’ll create a new **View** and set its **Access** to the **Inspector** role. We’ll then make all columns except for **Inspector Notes** read-only.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f6ccf942d0ba2f87347182686e20f5e856690370fcf81f113d0f36afbe4eda98-Risk_Management_Template_17_Inspector_Notes.png",
-        null,
-        "Permissions"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/f6ccf942d0ba2f87347182686e20f5e856690370fcf81f113d0f36afbe4eda98-Risk_Management_Template_17_Inspector_Notes.png" />
 
 We’ll also set a filter to only include entries where the **status** is set to **Pending**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7ff81ef735ee52482e5a7f5e508531c278d981e187b0c950cca1ff29a16d26d8-Risk_Management_Template_18_Filter.png",
-        null,
-        "Filter"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/7ff81ef735ee52482e5a7f5e508531c278d981e187b0c950cca1ff29a16d26d8-Risk_Management_Template_18_Filter.png" />
 
 Now, **Inspectors** have permission to view all pending **Risks** entries, and add their notes.
 
@@ -567,21 +385,7 @@ From our new view, we’ll start by autogenerating a **Table** screen with the *
 
 Then, within the Design section, we’ll make a couple of UX tweaks. Specifically, we want to remove the **Create Form**. On our remaining **Edit** form, we’ll remove the **Delete** button and set all fields except for **Inspector Notes** to **Disabled**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/18a7551e6903d4eb45d0a5bf27f0c5f7d78b0a6748422bbcdf7be519601dc3c2-Risk_Management_Template_20_Form.png",
-        null,
-        "Form"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/18a7551e6903d4eb45d0a5bf27f0c5f7d78b0a6748422bbcdf7be519601dc3c2-Risk_Management_Template_20_Form.png" />
 
 ### Adding your own business rules
 
@@ -597,37 +401,10 @@ We’ll then mimic the structure of our existing **Row Actions**, first adding a
 
 To update our row, we’ll set the **ID** to our trigger ID and the **status** to **Inspected**. We’ll populate the **Send To, Subject**, and **Body** fields of our **Email** action too.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/85983e0989b3f488977fa4014b86abb3a514ebeed9e7351c3a71f76f3aad4192-Risk_Management_Template_22_Inspect_Action_Flow.png",
-        null,
-        "Inspect Action Flow"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/85983e0989b3f488977fa4014b86abb3a514ebeed9e7351c3a71f76f3aad4192-Risk_Management_Template_22_Inspect_Action_Flow.png" />
 
 Next, we need to provide a way to trigger this automation from our app’s UI. Head back to the Design section, and we’ll add a **Button Action** to the form on our **Inspection** screen. 
 
 Here, we’ll add a **Row Action** step. Our **Form Block** has an attribute called **RowID**, which we’ll copy into the corresponding field on our button action.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d3a87a64eb9383c51f92925de12a94ee8202c28ad18ea21fb23d4e497f9ffa26-Risk_Management_Template_23_Button_Action.png",
-        null,
-        "Button Action"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/d3a87a64eb9383c51f92925de12a94ee8202c28ad18ea21fb23d4e497f9ffa26-Risk_Management_Template_23_Button_Action.png" />
