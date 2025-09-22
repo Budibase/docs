@@ -13,37 +13,35 @@ next:
 Budibase is focused on building data-centric applications - to be able to do this you need a way to manipulate data. To do this Budibase has the ability to bind data into any design or automation element through the use of <a href="https://handlebarsjs.com/" target="_blank">Handlebars syntax</a> or [JavaScript](doc:javascript) 
 
 > 👍 Handlebars Helpers
-> 
+>
 > For much more detailed documentation on all the handlebars helpers Budibase provides, you can find the entire suite of Budibase handlebars helpers in the <a href="https://github.com/Budibase/handlebars-helpers" target="_blank">handlebars-helpers repository on Github</a>
 
 There are a number of places that bindings can be utilized throughout the Budibase Builder such as:
 
 1. External data source queries - when building a query it is possible to utilize Handlebars syntax to specify where parameters should be inserted, e.g. `SELECT * FROM users WHERE username = {{ value }}`
 2. The value of components in design - the values of most components in the design can be populated with bindings; anywhere that a value in the components setting has a lightning bolt next to it a binding can be inserted. Clicking the binding button (the bolt) will open the binding drawer.
-3. Automation steps - automations have the ability to make use of data from previous steps, this can be found in the binding panel; opened in the same manner as with the design bindings.  
+3. Automation steps - automations have the ability to make use of data from previous steps, this can be found in the binding panel; opened in the same manner as with the design bindings.\
    When making use of bindings it is possible to manipulate the data using the Budibase Handlebars helpers, these allow performing calculations, carrying out some basic logical comparisons, and some array/string functions. The full list of options available is as follows:
 
-- Arrays - the ability to sort, slice, get an item at a specific index, etc.
-- Comparison - simple logic such as greater than, equal to, less than, contains, etc.
-- Dates - the ability to format dates as you desire, using syntax like `"DD-MM-YYYY"` - there is only one helper for this and it can be used as such: `{{ date tableName.dateProperty "DD-MM-YYYY" }}` you can also use now instead of a table/data source data property if desired.
-- Math - math functions like adding, subtracting, averaging, etc.
-- Number - these helpers allow formatting numbers, for example setting precision, setting to an exponential, adding commas, etc.
-- String - the ability to manipulate strings, such as splitting them (useful with the array helpers), appending, capitalization, etc.
-- URL - the ability to encode/decode URI and escape URLs.
+* Arrays - the ability to sort, slice, get an item at a specific index, etc.
+* Comparison - simple logic such as greater than, equal to, less than, contains, etc.
+* Dates - the ability to format dates as you desire, using syntax like `"DD-MM-YYYY"` - there is only one helper for this and it can be used as such: `{{ date tableName.dateProperty "DD-MM-YYYY" }}` you can also use now instead of a table/data source data property if desired.
+* Math - math functions like adding, subtracting, averaging, etc.
+* Number - these helpers allow formatting numbers, for example setting precision, setting to an exponential, adding commas, etc.
+* String - the ability to manipulate strings, such as splitting them (useful with the array helpers), appending, capitalization, etc.
+* URL - the ability to encode/decode URI and escape URLs.
 
 For more information, the full catalogue of helpers is available <a href="https://github.com/helpers/handlebars-helpers#helpers">here</a>
 
 > 🚧 Handlebars helpers and queries
-> 
+>
 > Handlebars helpers can be used in automations, the design, and data table formula columns, but they cannot be used as part of data source queries - as part of a query you can only use singular Handlebars statements like `{{ value }}`.
 
 Below is a video showing some of the capabilities of Budibase bindings in the design panel - showing how to add a repeater to make use of table data and then displaying some date values as well as carrying out some complex string manipulation.
 
-[block:html]
-{
-  "html": "<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/699021696?h=8154e27b30&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Repeater Bindings\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>"
-}
-[/block]
+<HTMLBlock>{`
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/699021696?h=8154e27b30&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Repeater Bindings"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+`}</HTMLBlock>
 
 ## Tips and tricks
 
