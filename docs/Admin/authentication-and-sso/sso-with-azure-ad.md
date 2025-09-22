@@ -11,7 +11,7 @@ next:
   description: ''
 ---
 > 📘 OpenID Connect
-> 
+>
 > To become familiar with OpenID Connect in Budibase, see: [OpenID Connect](doc:openid-connect)
 
 ## Configuration
@@ -20,21 +20,7 @@ next:
 
 Create the Budibase application using a new 'App Registration'
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b6cb55f-image.png",
-        "azure-add-application.png",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/b6cb55f-image.png" />
 
 Add the application name
 
@@ -52,10 +38,10 @@ Visit 'Overview' > 'Endpoints'.
 
 Use the **OpenID Connect metadata document** field as your Configuration URL in Budibase.
 
-> 📘 
-> 
+> 📘
+>
 > Newer versions of Azure Portal may include a generic OpenID URL like: `https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration`
-> 
+>
 > In that case you will need to manually edit the URL and include the Azure Tenant ID: `https://login.microsoftonline.com/[AZURE_TENANT_ID]/.well-known/openid-configuration`
 
 ![](https://files.readme.io/7fc1142-azure-configurationurl.png "azure-configurationurl.png")
@@ -72,21 +58,7 @@ Use the **Application (client) ID** field as your Client ID in Budibase.
 
 Visit 'Certificates & secrets', click on 'Add client secret', give your secret a description/expiry, and save.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5b4c282-image.png",
-        "azure-clientsecret.png",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/5b4c282-image.png" />
 
 View your newly created secret
 
@@ -98,21 +70,7 @@ Use the **Value** field as your Client Secret in Budibase.
 
 Navigate to Settings -> Auth within Budibase. Scroll down to where it says "OpenID Connect" and find the field labeled `Callback URL`.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5bb0daa-Screenshot_2024-02-23_at_11.52.38.png",
-        "",
-        "Show casing were to get the callback url within Budibase"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/5bb0daa-Screenshot_2024-02-23_at_11.52.38.png" />
 
 If you are using our cloud service, the URL contained within is exactly what you need.
 
@@ -122,17 +80,4 @@ For self-hosted users, it will likely display `http://localhost:10000/api/global
 
 Visit 'Authentication' and click 'Add a platform' -> 'Web'. Enter your callback URL.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ed49ac4-f46c0b9-azure-callback.png",
-        "azure-callback.png",
-        "Callback for azure ad"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/ed49ac4-f46c0b9-azure-callback.png" />
