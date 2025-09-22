@@ -32,8 +32,8 @@ You can likely avoid these performance issues by taking a step back, considering
 
 ### General Tips:
 
-- **Consolidate Data Providers**: Use a single data provider where possible and filter or manipulate data locally.  
+* **Consolidate Data Providers**: Use a single data provider where possible and filter or manipulate data locally.\
   Minimise Nesting: Avoid nesting repeaters and data providers within each other. Instead, fetch all necessary data upfront and then bind it to the UI components.
-- **Optimise Data Requests**: Limit the amount of data requested by using filters and pagination to handle large datasets efficiently.
+* **Optimise Data Requests**: Limit the amount of data requested by using filters and pagination to handle large datasets efficiently.
 
 By implementing these best practices, you can significantly improve the performance of your applications, providing a smoother and more responsive user experience.
