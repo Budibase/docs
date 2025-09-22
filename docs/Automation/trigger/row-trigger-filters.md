@@ -27,7 +27,7 @@ Both "Row Created" and "Row Updated" triggers now support filters. Filters allow
 
 ### Example filter
 
-[block:image]{"images":[{"image":["https://files.readme.io/5d62030df4ee9a6fa32df5b9417c3eb3f500a7dfcd7a780b7ddcb55388646aa0-Screenshot_2024-11-06_at_13.38.15.png",null,null],"align":"center"}]}[/block]
+<Image align="center" src="https://files.readme.io/5d62030df4ee9a6fa32df5b9417c3eb3f500a7dfcd7a780b7ddcb55388646aa0-Screenshot_2024-11-06_at_13.38.15.png" />
 
 This filter would cause the trigger to fire only when the Approved column of the affected row equals "true".
 
@@ -41,8 +41,8 @@ By default, the trigger will only fire when a row transitions from not meeting t
 
 Consider a filter: `Status = Approved`
 
-- The trigger will fire when a row's status changes from "Requested" to "Approved".
-- The trigger will not fire if a row's status is already "Approved" and some other field (like "Due Date") changes.
+* The trigger will fire when a row's status changes from "Requested" to "Approved".
+* The trigger will not fire if a row's status is already "Approved" and some other field (like "Due Date") changes.
 
 This behavior ensures that the trigger only fires when the specific condition you're interested in is met, rather than on any update to a row that already meets the condition.
 
