@@ -16,84 +16,24 @@ The Budibase docker repo has a docker image specific for Azure app service with 
 
 ### Create new app service
 
-In the [Azure Portal](https://portal.azure.com/), choose** App Services**, then **Create**:
+In the [Azure Portal](https://portal.azure.com/), choose **App Services**, then **Create**:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4c41aac-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/4c41aac-image.png" />
 
 When creating the service choose values that meet your app requirements such as redundancy, resource group and SKU size, but set the following fields to these values:
 
-- Publish: Choose **Docker Container**
-- Operating System: **Linux**
+* Publish: Choose **Docker Container**
+* Operating System: **Linux**
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/15efcf4-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
+<Image width="400px" src="https://files.readme.io/15efcf4-image.png" />
 
-
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d1624ee-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/d1624ee-image.png" />
 
 ### Docker settings
 
 Choose to pull the image from the Docker Hub were it has been published by Budibase under the tag: `budibase-aas`
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/cc7da2f-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/cc7da2f-image.png" />
 
 ### Networking and Monitoring
 
@@ -103,45 +43,15 @@ Proceed through the Networking, Monitoring and Tags sections accepting the defau
 
 On the Review tab choose the **Create** button.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c71f56d-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/c71f56d-image.png" />
 
 The deployment will take some minutes to complete.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/306d218-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/306d218-image.png" />
 
 Choose the **Go to Resource** button to get information about your deployment including the web address. Visit the website address you opted for during creation e.g. 
 
-e.g. <https://mybudibase.azurewebsites.com>
+e.g. [https://mybudibase.azurewebsites.com](https://mybudibase.azurewebsites.com)
 
 ### Troubleshooting
 
@@ -149,41 +59,11 @@ e.g. <https://mybudibase.azurewebsites.com>
 
 Click into the deployed resource as shown below:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1a41735-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/1a41735-image.png" />
 
 Then from the left menu choose SSH:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/dff8c7d-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/dff8c7d-image.png" />
 
 Alternatively go to the web address directly:
 
@@ -191,9 +71,9 @@ Alternatively go to the web address directly:
 
 This will only work if:
 
-- SSH is listening on port 2222
-- root user password is set to `Docker!`
-- SSH config matches MS requirements
+* SSH is listening on port 2222
+* root user password is set to `Docker!`
+* SSH config matches MS requirements
 
 These settings are configured in the Budibase single image build for AAS so SSH should work if using our image.
 
@@ -206,42 +86,12 @@ az webapp create-remote-connection
     -n budibase-aas &
 ```
 
-
-
 You will then be prompted to login as the root user e.g.:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6f3b563-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/6f3b563-image.png" />
 
 #### Logs
 
 Logs should be available from the Azure Portal as shown below:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ac9c2d4-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
+<Image width="400px" src="https://files.readme.io/ac9c2d4-image.png" />
