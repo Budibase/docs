@@ -18,104 +18,52 @@ Components are the UI elements of your Budibase apps. They are used to construct
 
 There are a few different ways to add a component. One is to click the plus symbol to the right of the word "components," where your components are found. If you have no components added, in the middle of your screen, there will be some text as well as a button that will allow you to add a component. The last way to add a component is to click the plus symbol found at the bottom right of your screen.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d9599cbb6286e4834c6f79cf8b9d6c61d028dc718dc30ba2051c0f3e6755f294-Screenshot_2024-09-25_at_07.59.26.png",
-        "",
-        "Add component in the component tree"
-      ],
-      "align": "center",
-      "caption": "Add component in the component tree"
-    }
-  ]
-}
-[/block]
+<Image alt="Add component in the component tree" align="center" src="https://files.readme.io/d9599cbb6286e4834c6f79cf8b9d6c61d028dc718dc30ba2051c0f3e6755f294-Screenshot_2024-09-25_at_07.59.26.png">
+  Add component in the component tree
+</Image>
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/638dc230ea5e1b6d0fad1ee5b5ce633010a18441ed38ceb9add5aafcd8242879-Screenshot_2024-09-25_at_07.59.32.png",
-        "",
-        "Add component on at screen level"
-      ],
-      "align": "center",
-      "caption": "Add component on at screen level"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Add component on at screen level" align="center" src="https://files.readme.io/638dc230ea5e1b6d0fad1ee5b5ce633010a18441ed38ceb9add5aafcd8242879-Screenshot_2024-09-25_at_07.59.32.png">
+  Add component on at screen level
+</Image>
 
 Clicking any of the above options will present a searchable and grouped list of components in the right-hand panel.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/602e401-add_comp.png",
-        null,
-        "Component list"
-      ],
-      "align": "center",
-      "caption": "Component list"
-    }
-  ]
-}
-[/block]
+<Image alt="Component list" align="center" src="https://files.readme.io/602e401-add_comp.png">
+  Component list
+</Image>
 
+<Image alt="Searching for a component" align="center" src="https://files.readme.io/713782d-search.png">
+  Searching for a component
+</Image>
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/713782d-search.png",
-        null,
-        "Searching for a component"
-      ],
-      "align": "center",
-      "caption": "Searching for a component"
-    }
-  ]
-}
-[/block]
-
-
-When you search for a component, add it immediately by pressing the _Enter_ key.
+When you search for a component, add it immediately by pressing the *Enter* key.
 
 You can also see the available [Blocks](doc:blocks) from the blocks category.
 
 ## Deleting a component
 
-The easiest way to delete a component is to select it and press the **delete** or **backspace** key.  
+The easiest way to delete a component is to select it and press the **delete** or **backspace** key.\
 You will be prompted to confirm the deletion.
 
 Alternatively, you can click on the three dots `...` and then click the delete action inside the opened context menu.
 
 ## Component tree
 
-The component tree displays the layout and hierarchy of your components.  
+The component tree displays the layout and hierarchy of your components.\
 Components can either be below one another, or nested inside a parent component. 
 
-Parent components include those related to a <<glossary:Datasource>> or some variety of container:
+Parent components include those related to a <Glossary>Datasource</Glossary> or some variety of container:
 
-- [Data Provider](doc:data-provider) 
-- [Repeater](doc:repeater) 
-- [Forms](doc:forms), [Form steps](doc:form-steps) and [Field groups](doc:field-groups)
-- [Container](doc:container)
-- [Sections](doc:using-sections)
-- [Side Panel](doc:side-panel)
-- Modal
-- [Field Group](docs:field-groups)
+* [Data Provider](doc:data-provider) 
+* [Repeater](doc:repeater) 
+* [Forms](doc:forms), [Form steps](doc:form-steps) and [Field groups](doc:field-groups)
+* [Container](doc:container)
+* [Sections](doc:using-sections)
+* [Side Panel](doc:side-panel)
+* Modal
+* [Field Group](docs:field-groups)
 
-Components can be re-arranged within the component tree with drag-and-drop.  
+Components can be re-arranged within the component tree with drag-and-drop.\
 To assist with rearrangement, a green line will highlight the destination whilst a green box indicates that a component will be dropped inside that component. 
 
 ![](https://files.readme.io/c3e6a74-component-tree.gif "component-tree.gif")
@@ -130,13 +78,13 @@ Within the component tree you can also delete, copy and move components by click
 
 In the above screenshot, you can see a range of keyboard shortcuts related to components. The above shows the following. You can replace the `⌘` (command) button on Mac with `CTRL` on Windows if you wish to use the shortcuts on Windows.
 
-- **Delete** - Backspace `←` - Allows quicker deletion of a selected component
-- **Move up** - `⌘`+ `↑`- Allows the user to move a component up in the component tree
-- **Move down** - `⌘` + `↓`- Allows the user to move a component down in the component tree
-- **Duplicate** - `⌘` + `D`- Duplicate component with all settings added
-- **Cut** - `⌘` + `X`- Removes the component, saves it for pasting elsewhere
-- **Copy** - `⌘` + `C`- Copies a component and allows it to be pasted elsewhere, e.g a new screen
-- **Paste** - `⌘` +  `V`- Pastes a copied/cut component in the component tree
+* **Delete** - Backspace `←` - Allows quicker deletion of a selected component
+* **Move up** - `⌘`+ `↑`- Allows the user to move a component up in the component tree
+* **Move down** - `⌘` + `↓`- Allows the user to move a component down in the component tree
+* **Duplicate** - `⌘` + `D`- Duplicate component with all settings added
+* **Cut** - `⌘` + `X`- Removes the component, saves it for pasting elsewhere
+* **Copy** - `⌘` + `C`- Copies a component and allows it to be pasted elsewhere, e.g a new screen
+* **Paste** - `⌘` +  `V`- Pastes a copied/cut component in the component tree
 
 There are a range of other ways to speed up navigate or perform additional actions more quickly. This is mainly done via the [Command Interface](doc:command-interface)
 
@@ -146,21 +94,7 @@ Sometimes, it's helpful to organise your component tree in a way that clearly re
 
 To rename a component, first select it. Then, locate the component's settings at the top in the side panel. Click the current name, delete it, and enter your desired name. The gif below should help guide you through this process.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b7f78123eaf865e89c5c933f23610c768d52f79f6928fe21b79690cdef3cdeda-20240926_123851.gif",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/b7f78123eaf865e89c5c933f23610c768d52f79f6928fe21b79690cdef3cdeda-20240926_123851.gif" />
 
 ## Using components
 
@@ -170,8 +104,6 @@ When you have added a component you will be able to see the options that you can
 
 ## Video tutorial
 
-[block:html]
-{
-  "html": "<iframe src=\"https://player.vimeo.com/video/746819442?h=b3b536fe48&title=0&portrait=0&byline=0\" style=\"margin-top: -100px;\" width=\"640\" height=\"564\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
-}
-[/block]
+<HTMLBlock>{`
+<iframe src="https://player.vimeo.com/video/746819442?h=b3b536fe48&title=0&portrait=0&byline=0" style="margin-top: -100px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+`}</HTMLBlock>
