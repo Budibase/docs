@@ -13,114 +13,38 @@ next:
 There are several ways in which you can customise the branding of your Budibase instance and, of course, your applications!  
 
 > 📘 Licensing🔒
-> 
+>
 > The following features are only available to customers with a **Business** or **Enterprise** plan.
-> 
+>
 > You can view more details on [our pricing page.](https://budibase.com/pricing/)
 
 In the Budibase **admin portal**, navigate to the to the branding section, **Settings > Branding**. In here you can manage all available elements of your Budibase branding configuration.
 
-[block:html]
-{
-  "html": "<style type=\"text/css\">\n  .markdown-body>.img:not(.lightbox.open) img{ float: none!important;margin-left: 0;}\n</style>"
-}
-[/block]
+<HTMLBlock>{`
+<style type="text/css">
+  .markdown-body>.img:not(.lightbox.open) img{ float: none!important;margin-left: 0;}
+</style>
+`}</HTMLBlock>
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/39a92e9-branding_section.png",
-        null,
-        ""
-      ],
-      "align": "left",
-      "sizing": "600px"
-    }
-  ]
-}
-[/block]
-
+<Image align="left" width="600px" src="https://files.readme.io/39a92e9-branding_section.png" />
 
 ### Logo
 
 Easily the most impactful part of your branding. Your custom logo will be visible in the **portal header**:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/88aa87d-portal_header.png",
-        null,
-        ""
-      ],
-      "align": "left",
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
+<Image align="left" width="400px" src="https://files.readme.io/88aa87d-portal_header.png" />
 
 and the **app navigation**
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a2d6c19-header.png",
-        null,
-        ""
-      ],
-      "align": "left",
-      "sizing": "600px"
-    }
-  ]
-}
-[/block]
-
+<Image align="left" width="600px" src="https://files.readme.io/a2d6c19-header.png" />
 
 You can, of course, update the logo on a per application basis. In the **builder design section**, you can override the global branding and configure a logo especially for your application navigation.  
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8fceb19-custom-logo.png",
-        null,
-        ""
-      ],
-      "align": "left",
-      "sizing": "600px"
-    }
-  ]
-}
-[/block]
-
+<Image align="left" width="600px" src="https://files.readme.io/8fceb19-custom-logo.png" />
 
 For **self host** environments, your logo will also appear in your Budibase login page!
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fe44e69-login.png",
-        null,
-        ""
-      ],
-      "align": "left",
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
-
+<Image align="left" width="500px" src="https://files.readme.io/fe44e69-login.png" />
 
 ### Favicon
 
@@ -138,22 +62,7 @@ For **self host** environments, the title attribute can be used to customise the
 
 Emails sent from Budibase will carry our branding header, as shown below.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d128885-Screenshot_2023-03-21_at_10.56.00.png",
-        null,
-        ""
-      ],
-      "align": "left",
-      "border": true
-    }
-  ]
-}
-[/block]
-
+<Image align="left" className="border" border={true} src="https://files.readme.io/d128885-Screenshot_2023-03-21_at_10.56.00.png" />
 
 If you would like to remove this from your Budibase emails and customise your correspondence, simply flip the toggle.
 
@@ -167,9 +76,9 @@ With a self hosted instance of Budibase you can further customise elements of th
 
 #### Available options
 
-- **Header** - the main text below your branding. Currently this defaults to **Log in to Budibase**
-- **Button** - the text displayed on the login button. Currently this defaults to **Log in to Budibase**.
-- **Remove Testimonials** - Testimonials currently default to **enabled** but you can flip the toggle and remove them if you wish
+* **Header** - the main text below your branding. Currently this defaults to **Log in to Budibase**
+* **Button** - the text displayed on the login button. Currently this defaults to **Log in to Budibase**.
+* **Remove Testimonials** - Testimonials currently default to **enabled** but you can flip the toggle and remove them if you wish
 
 Your fully customised home page:
 
@@ -181,41 +90,11 @@ Meta tags are primarily used to describe your application to search engines or w
 
 If you post the link to your application on e.g **Facebook**, **Twitter** or **Slack**, you would typically see a card that looks something like this:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/43f5560-meta.png",
-        null,
-        ""
-      ],
-      "align": "left",
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
+<Image align="left" width="400px" src="https://files.readme.io/43f5560-meta.png" />
 
 In the branding section, you can customise the look and feel of your applications meta data with the following **optional** properties.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0df050e-Screenshot_2023-03-21_at_16.58.11.png",
-        null,
-        ""
-      ],
-      "align": "left",
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
-
+<Image align="left" width="500px" src="https://files.readme.io/0df050e-Screenshot_2023-03-21_at_16.58.11.png" />
 
 #### Image URL
 
@@ -227,7 +106,7 @@ Lastly, be mindful of the **availability** of the file when configuring this pro
 
 #### Title
 
-The default behaviour for the meta title combines the **application name**  with **"- built with budibase."**.  
+The default behaviour for the meta title combines the **application name**  with **"- built with budibase."**.\
 For example, if your application was called "My Expenses Portal", it would be displayed as **"My Expenses Portal - built with budibase."**
 
 You can use the **Title** property to override this behaviour. Any value set here will **override all app titles** displayed in meta cards.
@@ -240,18 +119,4 @@ The description field is entirely optional. A description typically provides sup
 
 The following is an example of some of the custom meta card elements in action. Our custom branding has replaced the Budibase default and we now have our own description.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b13d9f4-Screenshot_2023-03-21_at_16.40.01.png",
-        null,
-        ""
-      ],
-      "align": "left",
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
+<Image align="left" width="400px" src="https://files.readme.io/b13d9f4-Screenshot_2023-03-21_at_16.40.01.png" />
