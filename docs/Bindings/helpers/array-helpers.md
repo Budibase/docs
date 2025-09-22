@@ -116,10 +116,10 @@ The forEach function is used to iterate over each item in an array and expose th
 
 Within the inner block, you can access the properties of the current array item using dot notation. In addition to the current array item, the forEach function also exposes several variables to the inner block:
 
-- index: Represents the index of the current item being iterated.
-- total: Represents the total number of items in the array.
-- isFirst: Indicates whether the current item is the first item in the array.
-- isLast: Indicates whether the current item is the last item in the array.
+* index: Represents the index of the current item being iterated.
+* total: Represents the total number of items in the array.
+* isFirst: Indicates whether the current item is the first item in the array.
+* isLast: Indicates whether the current item is the last item in the array.
 
 ```Text handleBars
 {{#forEach [{ 'name': 'John' }] }}
@@ -338,7 +338,7 @@ Example:
 {{#some [1, 'b', 3] isString}} string found {{else}} No string found {{/some}} -> string found
 ```
 
-In the above example, the "some" function is used to check if there is any string value in the array [1, 'b', 3]. The "isString" callback function is applied to each element of the array. If the callback function returns true for any string value in the array, the block "string found" is rendered. Otherwise, the "No string found" block is rendered.
+In the above example, the "some" function is used to check if there is any string value in the array \[1, 'b', 3]. The "isString" callback function is applied to each element of the array. If the callback function returns true for any string value in the array, the block "string found" is rendered. Otherwise, the "No string found" block is rendered.
 
 ## Sort
 
