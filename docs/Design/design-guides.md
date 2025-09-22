@@ -21,12 +21,8 @@ Within this section, we will cover several design workflows that promote great d
 | [Adding search](doc:adding-a-search-field)       |
 | [Adding filtering](doc:searchfilter-data)        |
 
-
-
 ## Video tutorial
 
-[block:html]
-{
-  "html": "<iframe src=\"https://player.vimeo.com/video/746819427?h=26a098b2be&title=0&portrait=0&byline=0\" style=\"margin-top: -100px;\" width=\"640\" height=\"564\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
-}
-[/block]
+<HTMLBlock>{`
+<iframe src="https://player.vimeo.com/video/746819427?h=26a098b2be&title=0&portrait=0&byline=0" style="margin-top: -100px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+`}</HTMLBlock>
