@@ -12,64 +12,25 @@ next:
 ---
 The data provider component is one of the most important components in Budibase. It exposes data to any components that expect data input on that particular screen. In previous versions of Budibase, only components nested inside Data Providers could access the data, but that is no longer the case.
 
-For example, all components under the _Data_ section can be provided data. 
+For example, all components under the *Data* section can be provided data. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/af2aa63-Screenshot_2022-10-07_at_11.16.05.png",
-        null,
-        "Add component: Data section"
-      ],
-      "align": "center",
-      "caption": "Add component: Data section"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Add component: Data section" align="center" src="https://files.readme.io/af2aa63-Screenshot_2022-10-07_at_11.16.05.png">
+  Add component: Data section
+</Image>
 
 In addition, the following components can make use of data providers:
 
-- [Options pickers](https://docs.budibase.com/docs/option-picker#displaying-options-in-the-options-picker)
-- [Blocks](https://docs.budibase.com/docs/blocks)
-- [Charts](doc:chart)
+* [Options pickers](https://docs.budibase.com/docs/option-picker#displaying-options-in-the-options-picker)
+* [Blocks](https://docs.budibase.com/docs/blocks)
+* [Charts](doc:chart)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/be54d51-data_provider_nested.png",
-        null,
-        "All of these nested components can access the New Data Provider"
-      ],
-      "align": "center",
-      "caption": "All of these nested components can access the New Data Provider"
-    }
-  ]
-}
-[/block]
+<Image alt="All of these nested components can access the New Data Provider" align="center" src="https://files.readme.io/be54d51-data_provider_nested.png">
+  All of these nested components can access the New Data Provider
+</Image>
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/381cfaf-Screenshot_2022-10-07_at_12.01.14.png",
-        null,
-        "Selecting a Data Provider"
-      ],
-      "align": "center",
-      "caption": "Selecting a Data Provider"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Selecting a Data Provider" align="center" src="https://files.readme.io/381cfaf-Screenshot_2022-10-07_at_12.01.14.png">
+  Selecting a Data Provider
+</Image>
 
 <br />
 
@@ -77,34 +38,21 @@ In addition, the following components can make use of data providers:
 
 A data provider can make all [Datasources](doc:data-sources) available for consumption within your apps. This includes, but is not limited to:
 
-- The internal [Budibase DB](doc:budibasedb) tables
-- External [SQL Datasources](doc:sql-datasource)
-- [Custom queries](https://docs.budibase.com/docs/custom-queries)
-- [REST API](doc:rest)
+* The internal [Budibase DB](doc:budibasedb) tables
+* External [SQL Datasources](doc:sql-datasource)
+* [Custom queries](https://docs.budibase.com/docs/custom-queries)
+* [REST API](doc:rest)
 
-Once you have added your data provider you need to select which datasource you want to use. Simply click on the _Data_ dropdown.
+Once you have added your data provider you need to select which datasource you want to use. Simply click on the *Data* dropdown.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/cf5976e2b6ced99e339048791acd4f2a65cb929a34ead243fde1c7241bdc30ad-Screenshot_2024-10-23_at_15.17.22.png",
-        "datasource.png",
-        "Providing data from the ServiceLog table"
-      ],
-      "align": "center",
-      "caption": "Providing data from the Users table"
-    }
-  ]
-}
-[/block]
-
+<Image title="datasource.png" alt="Providing data from the ServiceLog table" align="center" src="https://files.readme.io/cf5976e2b6ced99e339048791acd4f2a65cb929a34ead243fde1c7241bdc30ad-Screenshot_2024-10-23_at_15.17.22.png">
+  Providing data from the Users table
+</Image>
 
 > 🚧 Nested data provider
-> 
+>
 > Whilst you can nest data providers, you may find there to be some performance issues. 
-> 
+>
 > It is worth considering if you could display the additional data in another [Screen](doc:screens) or [Modal](https://docs.budibase.com/docs/screens#modal-screen).
 
 <br />
@@ -115,41 +63,13 @@ In addition to controlling which datasource that should be available to your chi
 
 ## Pagination and sorting
 
-To determine the sorting of the data rows provided, select a _Sort Column_ and _Sort Order_. 
+To determine the sorting of the data rows provided, select a *Sort Column* and *Sort Order*. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4b30f599334bc7f971e2e8e764c1a11b8709461946b544415949bc2605f1de38-Screenshot_2024-10-23_at_15.28.03.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/4b30f599334bc7f971e2e8e764c1a11b8709461946b544415949bc2605f1de38-Screenshot_2024-10-23_at_15.28.03.png" />
 
 In this instance, the [Table](https://docs.budibase.com/docs/table) component can override the default sorting set by the data provider, however with other components the sorting will be static.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5dd8b90529e27ac3cf464e488d493f612654b6d7bc4d50a6142c6b896e9c4e6f-Screenshot_2024-10-23_at_15.28.48.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/5dd8b90529e27ac3cf464e488d493f612654b6d7bc4d50a6142c6b896e9c4e6f-Screenshot_2024-10-23_at_15.28.48.png" />
 
 You can also see that a **limit** of 5 has been set. This sets the maximum number of rows that can be presented per page. 
 
@@ -165,41 +85,13 @@ With pagination checked, this can be used by not only tables, but all components
 
 To add filters to a data provider, click **Define filters**. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3c1c350736c0243469bec5996c110d633b23b16ffd27fe3d62345afe34737d8a-Screenshot_2024-10-23_at_15.39.08.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/3c1c350736c0243469bec5996c110d633b23b16ffd27fe3d62345afe34737d8a-Screenshot_2024-10-23_at_15.39.08.png" />
 
-
-This will bring up a drawer from which you can select _match all_ or _match any_ mode.
+This will bring up a drawer from which you can select *match all* or *match any* mode.
 
 You can then select the column you wish to filter on, alongside the operator. Click **Add filter** to filter on additional columns. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3709bba6df6956bb7a48c1f3c9acae7f6fd4afefe50a44781aa6f1c4c5990a63-Screenshot_2024-10-23_at_15.47.50.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/3709bba6df6956bb7a48c1f3c9acae7f6fd4afefe50a44781aa6f1c4c5990a63-Screenshot_2024-10-23_at_15.47.50.png" />
 
 Click [here](https://docs.budibase.com/docs/searchfilter-data) for more on filtering. In this example, we are using a form component with a single text field in it, as seen in the builder screenshots above.
 
@@ -211,17 +103,4 @@ Similar to sorting, filtering will be performed server side for SQL datasource a
 
 If you want to build something a bit more custom than a table; maybe you want a container with some buttons that trigger an action or automation, then you will need the [Repeater](doc:repeater) component. Here's an example of a list of improvements suggested by staff that could help minimize risks and improve safety. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9787e977924a35030afbd62f797cbaa6d4913c92759c3e51daf636431b7cb844-Screenshot_2024-10-23_at_15.58.53.png",
-        "data-provider-repeater-example.png",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/9787e977924a35030afbd62f797cbaa6d4913c92759c3e51daf636431b7cb844-Screenshot_2024-10-23_at_15.58.53.png" />
