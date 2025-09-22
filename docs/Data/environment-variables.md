@@ -33,7 +33,7 @@ Once the modal opens you'll be able to set the environment variable name and its
 ![](https://files.readme.io/543d5d3-image.png)
 
 > 🚧 Environment variable naming
-> 
+>
 > It is important to pick recognisable names for your environment variables, as these will be how you pick which variables to use within your apps. Your variables also cannot contain spaces, we recommend the use of underscores instead.
 
 At this point you should have created your required environment variables and they should have appeared within the variable table list. From here you can also edit or delete an environment variable, it is important to note the change will be immediate, if you change a value or remove an environment variable, production apps will be affected.
@@ -42,21 +42,7 @@ At this point you should have created your required environment variables and th
 
 To edit or delete an existing environment variables, click the `Edit` button.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/31a150a-Screenshot_2023-08-29_at_10.04.42.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/31a150a-Screenshot_2023-08-29_at_10.04.42.png" />
 
 ## Using environment variables in datasources
 
@@ -94,4 +80,4 @@ These can also be used in an [SQL query](https://docs.budibase.com/docs/data-sou
 
 The last place that variables can be accessed is as part of an [automation](doc:automation-steps) run. This can be very useful if connecting to an external service, or triggering a notification e.g. Slack or Discord. Like queries environment variables can be used as [bindings](doc:bindings) within automation steps. Below we have configured a Discord step in an automation, which utilises an environment variable for the webhook URL. Not only is this more re-usable and secure, but it also allows using different URLs for testing and for production.
 
-[block:image]{"images":[{"image":["https://files.readme.io/2d3fc10b86748f3a3a4097218d3218735f093d87bbaf457ba325727ab9e799d9-Screenshot_2024-09-20_at_15.00.48.png",null,null],"align":"center"}]}[/block]
+<Image align="center" src="https://files.readme.io/2d3fc10b86748f3a3a4097218d3218735f093d87bbaf457ba325727ab9e799d9-Screenshot_2024-09-20_at_15.00.48.png" />
