@@ -32,18 +32,4 @@ To ensure you obtain the intended outcome, you should check the automation-debug
 
 In the event that an automation doesn't run as expected, you should consult the "Errors" panel, where you should see an error message that helps to debug the issue.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6b1a8b3bbf6de49008a48c48ad0d6b1a25b194ae3242e89ad0a436df75663a96-image.png",
-        null,
-        null
-      ],
-      "align": "center",
-      "caption": ""
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/6b1a8b3bbf6de49008a48c48ad0d6b1a25b194ae3242e89ad0a436df75663a96-image.png" />
