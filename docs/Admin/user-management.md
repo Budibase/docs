@@ -23,10 +23,8 @@ In Budibase, users are shared across your whole Budibase installation. Users can
 
 ![](https://files.readme.io/951c6fd-CleanShot_2022-03-11_at_16.11.532x.png "CleanShot 2022-03-11 at 16.11.53@2x.png")
 
-
-
 > 📘 Adding new users
-> 
+>
 > You can add new users by either email invites or basic invites. Read more about that in the [Adding Users](doc:adding-users) guide.
 
 ## Resetting passwords
@@ -35,22 +33,16 @@ If you need to reset a users' password, you need to click the `Force password re
 
 ![](https://files.readme.io/85d6176-editusers.png "editusers.png")
 
-
-
 ## Configure user roles
 
 Users can have roles for both the Budibase installation and app-specific, read more about that in [User Roles](doc:user-roles).
 
 ## Deleting a user
 
-At the bottom of the user page, you can find a Delete user section. Click the `delete user` button and confirm in the dialogue. Keep in mind deleting users _cannot_ be undone.
-
-
+At the bottom of the user page, you can find a Delete user section. Click the `delete user` button and confirm in the dialogue. Keep in mind deleting users *cannot* be undone.
 
 ## Video tutorial
 
-[block:html]
-{
-  "html": "<iframe src=\"https://player.vimeo.com/video/746819125?h=49c4ba3fa4&title=0&portrait=0&byline=0\" style=\"margin-top: -100px;\" width=\"640\" height=\"564\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
-}
-[/block]
+<HTMLBlock>{`
+<iframe src="https://player.vimeo.com/video/746819125?h=49c4ba3fa4&title=0&portrait=0&byline=0" style="margin-top: -100px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+`}</HTMLBlock>
