@@ -15,8 +15,8 @@ Use the methods below to move a Budibase App from one Budibase installation to a
 The exported file will include all [Budibase DB](doc:budibasedb) data, data connector configurations, query configs and builder data for all your screens.  
 
 > ❗️ Security
-> 
-> If it is a production app, be vigilant about whom you share the app export files with.  
+>
+> If it is a production app, be vigilant about whom you share the app export files with.\
 > Are you confident you won't be leaking database credentials, user identity information, authentication keys, or any other sensitive information?
 
 ## Export an App
@@ -27,12 +27,12 @@ To export an app, click on the **Manage** button in the app list
 
 This will bring you to the overview screen. From here you can expand the ellipsis and choose:
 
-- **Export latest** will export the development version of your app including any changes since your last publish
-- **Export published** will export only the last published version of your app
+* **Export latest** will export the development version of your app including any changes since your last publish
+* **Export published** will export only the last published version of your app
 
 ![](https://files.readme.io/49a7010-Screenshot_2022-10-13_at_10.03.02.png)
 
-After choosing an export option you will be given the choice for _Exclude Rows_. This will exclude all the data rows from your internal [Budibase DB](doc:budibasedb)  tables in the export, however datasource **configuration and credentials will still be exported**.
+After choosing an export option you will be given the choice for *Exclude Rows*. This will exclude all the data rows from your internal [Budibase DB](doc:budibasedb)  tables in the export, however datasource **configuration and credentials will still be exported**.
 
 ![](https://files.readme.io/1d92916-Screenshot_2022-10-13_at_10.21.43.png)
 
@@ -40,7 +40,7 @@ After choosing an export option you will be given the choice for _Exclude Rows_.
 
 You can create an app by importing an app export file.
 
-Within the _Apps_ screen, click the **Create new app** button. From here, click on the **Import app** button:
+Within the *Apps* screen, click the **Create new app** button. From here, click on the **Import app** button:
 
 ![](https://files.readme.io/129750f-Screenshot_2022-06-14_at_16.03.04.png "Screenshot 2022-06-14 at 16.03.04.png")
 
