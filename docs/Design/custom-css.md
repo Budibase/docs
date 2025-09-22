@@ -12,17 +12,17 @@ next:
 ---
 All [Components](doc:components), including [Screens](doc:screens), have the option to add custom css. 
 
-To do so, click on a component, and in the <<glossary:Settings Panel>> click on the _Styles_ tab. Finally click on the  _Edit custom CSS_ button
+To do so, click on a component, and in the <Glossary>Settings Panel</Glossary> click on the *Styles* tab. Finally click on the  *Edit custom CSS* button
 
 ![](https://files.readme.io/ea72d9a-Screenshot_2023-07-04_at_14.17.18.png)
 
-This will present a box in which you can enter CSS for the selected component.  
+This will present a box in which you can enter CSS for the selected component.\
 For example:
 
 ![](https://files.readme.io/82dd3a4-Screenshot_2023-07-04_at_14.21.30.png)
 
 > 🚧 Inline CSS
-> 
+>
 > Selectors cannot be used here, and you must enter inline CSS.
 
 ## Global styling
@@ -41,24 +41,24 @@ This will open a drawer in which you can enter the style:
 
 This CSS code above demonstrates how to use a class selector, but the **button** element selector could be interchanged.
 
-As Budibase uses the Spectrum design system, you can see the list of available classes here: <https://opensource.adobe.com/spectrum-css/get-started.html>
+As Budibase uses the Spectrum design system, you can see the list of available classes here: [https://opensource.adobe.com/spectrum-css/get-started.html](https://opensource.adobe.com/spectrum-css/get-started.html)
 
 Alternatively, you can right-click and inspect the elements.  
 
 > 🚧 !Important
-> 
-> To override the existing styles, the important tags must be added.  
+>
+> To override the existing styles, the important tags must be added.\
 > This will also override the styles of the builder UI itself, so it is advisable to use component level custom CSS to avoid conflicts.
 
 The end result is that you are able to style many elements without needing to duplicate the CSS:
 
-[block:image]{"images":[{"image":["https://files.readme.io/708a7ba73bcb9cc860b31668f3ed13217d90bfa66e2be26a9adf29a48b6a75d6-Screenshot_2024-09-12_at_11.50.30.png","Screenshot 2022-05-12 at 10.40.30.png",null],"align":"center"}]}[/block]
+<Image align="center" src="https://files.readme.io/708a7ba73bcb9cc860b31668f3ed13217d90bfa66e2be26a9adf29a48b6a75d6-Screenshot_2024-09-12_at_11.50.30.png" />
 
 ## Bindings
 
-If you need to dynamically set styling, you can do that through the use of a <<glossary:Binding>>.
+If you need to dynamically set styling, you can do that through the use of a <Glossary>Binding</Glossary>.
 
-For example, you could set the background color of a container, via _Custom CSS_ based on [App state](doc:app-state) as follows:
+For example, you could set the background color of a container, via *Custom CSS* based on [App state](doc:app-state) as follows:
 
 ![](https://files.readme.io/4388466-Screenshot_2023-07-04_at_14.27.11.png)
 
