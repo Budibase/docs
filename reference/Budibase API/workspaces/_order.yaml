@@ -3,3 +3,4 @@
 - workspacedestroy
 - workspacegetbyid
 - workspacepublish
+- workspaceunpublish
