@@ -33,8 +33,8 @@ In Budibase, depending on the field type, you can update the type of a column to
 
 In this instance, a Barcode/QR can be updated to any of the following and vice versa.
 
-- [Text]
-- [Options]
-- [Long Form Text]
+* [Text]
+* [Options]
+* [Long Form Text]
 
 This can be handy when you've been manually entering QR code and Barcode data for years as `Text` and you finally switch the field type to Barcode/QR!
