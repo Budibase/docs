@@ -12,7 +12,7 @@ next:
 ---
 If you are running budibase in an environment where you need to use a proxy, such as inside an organisational network you can have budibase proxy all it's backend requests through a proxy of your choice. This functionality is driven by the `global-agent` package:
 
-<https://github.com/gajus/global-agent>
+[https://github.com/gajus/global-agent](https://github.com/gajus/global-agent)
 
 ### Configuration
 
@@ -63,12 +63,12 @@ budibase/budibase:latest
 
 To use your Budibase deployment, you must allow a list of outbound connections. These are as follows:
 
-| URL                                                      | Purpose                                            |
-| :------------------------------------------------------- | :------------------------------------------------- |
-| <https://cdn.jsdelivr.net>                               | Fonts                                              |
-| <https://fonts.gstatic.com>                              | Fonts                                              |
-| <https://rsms.me>                                        | Fonts                                              |
-| <https://maxcdn.bootstrapcdn.com>                        | Fonts                                              |
-| <https://prod-budi-templates.s3-eu-west-1.amazonaws.com> | App Templates                                      |
-| <https://account.budibase.app>                           | License check (only required for paying customers) |
-| <https://budibase.docker.scarf.sh>                       | Docker image download                              |
+| URL                                                                                                              | Purpose                                            |
+| :--------------------------------------------------------------------------------------------------------------- | :------------------------------------------------- |
+| [https://cdn.jsdelivr.net](https://cdn.jsdelivr.net)                                                             | Fonts                                              |
+| [https://fonts.gstatic.com](https://fonts.gstatic.com)                                                           | Fonts                                              |
+| [https://rsms.me](https://rsms.me)                                                                               | Fonts                                              |
+| [https://maxcdn.bootstrapcdn.com](https://maxcdn.bootstrapcdn.com)                                               | Fonts                                              |
+| [https://prod-budi-templates.s3-eu-west-1.amazonaws.com](https://prod-budi-templates.s3-eu-west-1.amazonaws.com) | App Templates                                      |
+| [https://account.budibase.app](https://account.budibase.app)                                                     | License check (only required for paying customers) |
+| [https://budibase.docker.scarf.sh](https://budibase.docker.scarf.sh)                                             | Docker image download                              |
