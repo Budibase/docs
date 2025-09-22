@@ -27,16 +27,14 @@ Please note that automation action plugins can only be used in self host install
 Once that's done, we need to initialise a template for our automation action. 
 
 > 📘 Automation actions - not triggers
-> 
-> It is important to note that you can only build automation actions, triggers are built into Budibase and can only be extended through the core project. If you need a new automation trigger type please create an [issue](https://github.com/Budibase/budibase/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=) describing what you need.
+>
+> It is important to note that you can only build automation actions, triggers are built into Budibase and can only be extended through the core project. If you need a new automation trigger type please create an [issue](https://github.com/Budibase/budibase/issues/new?assignees=\&labels=enhancement\&template=feature_request.md\&title=) describing what you need.
 
 Navigate to the folder location you want to create your plugin, and execute the following command:
 
 ```shell
 budi plugins --init automation
 ```
-
-
 
 Next you will receive a series of prompts to enter details about your automation. You can press enter without providing a value if you are happy to use the placeholder.
 
@@ -57,9 +55,7 @@ package.json: The version, license and dependencies for your automation action.
 schema.json: The metadata which describes your automation action - like settings displayed in builder.
 ```
 
-
-
- There will be a lot of generated files/directories, such as `node_modules` and build/test configuration files - you will not usually need to edit these, if you do need to change these it may be worth raising an [issue](https://github.com/Budibase/budibase/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=).
+ There will be a lot of generated files/directories, such as `node_modules` and build/test configuration files - you will not usually need to edit these, if you do need to change these it may be worth raising an [issue](https://github.com/Budibase/budibase/issues/new?assignees=\&labels=enhancement\&template=feature_request.md\&title=).
 
 ## Building your automation
 
@@ -69,8 +65,6 @@ After you have created your new automation action directory, execute the followi
 cd budibase-automation
 yarn build
 ```
-
-
 
 Assuming you have [updated the server env variable](https://docs.budibase.com/docs/custom-plugin#hot-reloading-developers-only) you should now be able to see your automation plugin in Budibase:
 
