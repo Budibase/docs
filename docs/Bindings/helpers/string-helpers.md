@@ -178,7 +178,7 @@ The lowercase function converts all characters in the given string to lowercase.
 
 ### Parameters
 
-- str (String): The string you want to convert to lowercase.
+* str (String): The string you want to convert to lowercase.
 
 **Example**
 
@@ -344,7 +344,7 @@ The "sentence" function is useful when you want to format a string to have prope
 
 ## Snake case
 
-The "snakecase" function is used to convert the given string into snake_case, where spaces and non-word characters are replaced with underscores.
+The "snakecase" function is used to convert the given string into snake\_case, where spaces and non-word characters are replaced with underscores.
 
 Example:
 
@@ -352,7 +352,7 @@ Example:
 {{ snakecase 'a-b-c d_e' }}
 ```
 
-In this example, the string `a-b-c d_e` will be converted to snake_case. The resulting string will be `a_b_c_d_e`.
+In this example, the string `a-b-c d_e` will be converted to snake\_case. The resulting string will be `a_b_c_d_e`.
 
 The "snakecase" function is commonly used when you want to format a string to have consistent lowercase letters separated by underscores, which is a common naming convention in programming.
 
@@ -504,7 +504,7 @@ The lorem function generates a string of Lorem Ipsum text based on the specified
 
 ### Parameters
 
-- num (Number): The number of characters of Lorem Ipsum text you want to generate.
+* num (Number): The number of characters of Lorem Ipsum text you want to generate.
 
 **Example**
 
