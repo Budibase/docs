@@ -34,7 +34,7 @@ Name your app (only use letters, no spaces or special characters) - we'll name o
 
 For demonstration purposes, we will use the Budibase DB as our data source. This is the easiest and fastest way to build a public form with Budibase.
 
-_You can also build forms using MySQL, Postgres, Airtable, MongoDB, Rest APIs, and more. We'll cover each of these data sources in a different tutorial._
+*You can also build forms using MySQL, Postgres, Airtable, MongoDB, Rest APIs, and more. We'll cover each of these data sources in a different tutorial.*
 
 Click Budibase DB, then click 'Continue'. Name your table: `Public Form`. And finally, click the 'Create' button.
 
@@ -42,14 +42,14 @@ Click Budibase DB, then click 'Continue'. Name your table: `Public Form`. And fi
 
 Now that we've set up our database, we need to build its structure by adding fields/columns.
 
-- Click the 'Create column' button, and name it `Name`. Then click 'Save column'.
-- Click the 'Create column' button, and name it `Email`. Then click 'Save column'.
-- Click the 'Create column' button, and name it `Company`. Then click 'Save column'.
-- Click the 'Create column' button, and name it `Company size`.  Click the Type dropdown and select 'Options'. In the options text box (bottom) add the following (one per line):
-- `1 - 10`
-- `11 - 100`
-- `101 - 1000`
-- `1001+`
+* Click the 'Create column' button, and name it `Name`. Then click 'Save column'.
+* Click the 'Create column' button, and name it `Email`. Then click 'Save column'.
+* Click the 'Create column' button, and name it `Company`. Then click 'Save column'.
+* Click the 'Create column' button, and name it `Company size`.  Click the Type dropdown and select 'Options'. In the options text box (bottom) add the following (one per line):
+* `1 - 10`
+* `11 - 100`
+* `101 - 1000`
+* `1001+`
 
 Then click 'Save column'.
 
@@ -95,7 +95,7 @@ We now need to tell our button what to do when clicked. To do this, under the la
 
 ### Step 8. Style our new form
 
-Our form is looking a little lustreless. Let's bring it to life with some style updates. First, we'll remove our navigation by clicking on the Screen tab, and then in the settings panel, toggle off _Show navigation_.
+Our form is looking a little lustreless. Let's bring it to life with some style updates. First, we'll remove our navigation by clicking on the Screen tab, and then in the settings panel, toggle off *Show navigation*.
 
 ![](https://files.readme.io/8f9ffc7-public-form-navigation-off.gif)
 
@@ -115,26 +115,26 @@ Click on the component tree root and add a new container. Drag the form componen
 
 Click the 'New Container' component, and in its settings panel:
 
-- Under the Horiz. Align label, select 'Left'.  
+* Under the Horiz. Align label, select 'Left'.\
   Under PADDING, change:
 
-- Top to 64px
+* Top to 64px
 
-- Right to 16px
+* Right to 16px
 
-- Bottom to 128px
+* Bottom to 128px
 
-- Left to 16px
+* Left to 16px
 
 Set your form component width to 100%.
 
 #### Update the theme
 
-- Click the Theme tab
+* Click the Theme tab
 
 ![](https://files.readme.io/99af3ff-Screenshot_2022-07-21_at_15.19.57.png)
 
-- Beside the 'Theme' label, drag the circle to the darkest setting
+* Beside the 'Theme' label, drag the circle to the darkest setting
 
 ![](https://files.readme.io/5aaecf6-theme-slider.gif)
 
@@ -142,22 +142,22 @@ Set your form component width to 100%.
 
 ##### Logo
 
-- Add an [Image](https://docs.budibase.com/docs/image) component
-- In the settings panel, under URL, link to your image. We will use [this image](https://res.cloudinary.com/daog6scxm/image/upload/v1647010468/logo/white-budibase-icon_yfgiy7.svg)
-- Under Size, change the width to `48px`.
+* Add an [Image](https://docs.budibase.com/docs/image) component
+* In the settings panel, under URL, link to your image. We will use [this image](https://res.cloudinary.com/daog6scxm/image/upload/v1647010468/logo/white-budibase-icon_yfgiy7.svg)
+* Under Size, change the width to `48px`.
 
 ##### Header
 
-- Add a Header component
-- In the settings panel, change the Text to `Contact sales`
-- Update the Size to 'Large'.
+* Add a Header component
+* In the settings panel, change the Text to `Contact sales`
+* Update the Size to 'Large'.
 
 ##### Description
 
-- Add a [Paragraph](https://docs.budibase.com/docs/paragraph) component
-- In the settings panel, under Text, add description text. We will add:  
+* Add a [Paragraph](https://docs.budibase.com/docs/paragraph) component
+* In the settings panel, under Text, add description text. We will add:\
   `Please complete the form below and we will respond as soon as possible.`
-- Change the Color to a lighter grey (see screenshot below)
+* Change the Color to a lighter grey (see screenshot below)
 
 ![](https://files.readme.io/ddab350-CleanShot_2022-04-25_at_11.01.21_2x_d7l7jv.png "CleanShot_2022-04-25_at_11.01.21_2x_d7l7jv.png")
 
@@ -173,10 +173,10 @@ Your new public form should look something like this:
 
 You can now test your form. Fill out your form with the following information and click the submit button.
 
-- Name - `Joe Bloggs`
-- Email - `joe@bloggs.com`
-- Company - `Budibase`
-- Company size - `1001+`
+* Name - `Joe Bloggs`
+* Email - `joe@bloggs.com`
+* Company - `Budibase`
+* Company size - `1001+`
 
 After submitting the form, if you navigate back to Budibase, and look at your Public Form table in the data section, you will see our test entry.
 
@@ -208,13 +208,13 @@ For our first step, we don't want our button to say Submit, we want it to say Ne
 
 What we want to do next, is tell Budibase to update our button text to say next if the current step is 1. To do this, we add the following values to our Conditions settings:
 
-- Update setting
-- Text
-- Next
-- Click the lightning bolt, and on the left hand side, select 'New Form.Current Step', and select Save.
-- Equals
-- Number
-- 1
+* Update setting
+* Text
+* Next
+* Click the lightning bolt, and on the left hand side, select 'New Form.Current Step', and select Save.
+* Equals
+* Number
+* 1
 
 See the image below for guidance:
 
@@ -226,13 +226,13 @@ Click 'Save', and the Button should be updated.
 
 Our button currently has an action to Save a row, but we don't want to save a row for the first step. So, we will tell Budibase, when the user is on step 1, don't save, and instead, move them to the next step when the button is clicked. To do this, we must go back into our button Conditions, and enter the following:
 
-- Update setting
-- On Click
-- Click the 'Define actions' button, then click Add Action, select 'Change form step'. Then change Form to 'New Form' (should be selected), and Step to 'Next Step'. Click 'Save'.
-- Click the lightning bolt, and on the left-hand side, select 'New Form.Current Step', and select Save.
-- Equals
-- Number
-- 1
+* Update setting
+* On Click
+* Click the 'Define actions' button, then click Add Action, select 'Change form step'. Then change Form to 'New Form' (should be selected), and Step to 'Next Step'. Click 'Save'.
+* Click the lightning bolt, and on the left-hand side, select 'New Form.Current Step', and select Save.
+* Equals
+* Number
+* 1
 
 ![](https://files.readme.io/6a16400-CleanShot_2022-04-25_at_11.50.36_2x_zl189i.png "CleanShot_2022-04-25_at_11.50.36_2x_zl189i.png")
 
