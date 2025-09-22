@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-Within this section we will discuss how to troubleshoot issues with your SQL database - this will likely be with the help of a member of the Budibase team. If you are experiencing an issue one of the best ways to resolve it is to raise an [issue on Github](https://github.com/Budibase/budibase/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=).
+Within this section we will discuss how to troubleshoot issues with your SQL database - this will likely be with the help of a member of the Budibase team. If you are experiencing an issue one of the best ways to resolve it is to raise an [issue on Github](https://github.com/Budibase/budibase/issues/new?assignees=\&labels=bug\&projects=\&template=bug_report.md\&title=).
 
 ## Minimum SQL versions
 
@@ -29,7 +29,7 @@ Other dialect "compatible" databases may work, but we cannot guarantee support f
 ## Log SQL queries
 
 > 📘 SQL query logging
-> 
+>
 > This feature is designed for investigating issues with Budibase accessing data in your SQL database, we recommend only enabling this when needed and disabling in production environments.
 
 It is possible to log the queries that Budibase is sending to your SQL database, to investigate issues or performance problems you're encountering when accessing a database. This can only be enabled in self host environments. To enable this set the environment variable `SQL_LOGGING_ENABLE` to `1` on your app services (docker-compose or Kubernetes) or if using the single image simply supply this environment variable to the container. Once you have restarted the server/container you will see SQL queries being logged in a format like:
@@ -39,10 +39,10 @@ It is possible to log the queries that Budibase is sending to your SQL database,
 ## SQL Schema export
 
 > 📘 Schema export is designed for debugging
-> 
+>
 > This feature is designed to help the Budibase team resolve issues with your schema - we want to provide the best experience possible for every user out of the box and providing your schema helps to debug issues with typing, relations and other unique scenarios.
 
-In this article we will cover how to export the schema of your database through Budibase - this can be done manually with tools like `pg_dump` for Postgres, but we have provided a tool within Budibase to export what is most helpful when debugging issues. We would also like to highlight that this export is _only_ the structure and schema of your tables and does not contain any data; however if you have any sensitive table or column names please discuss this with the Budibase team.
+In this article we will cover how to export the schema of your database through Budibase - this can be done manually with tools like `pg_dump` for Postgres, but we have provided a tool within Budibase to export what is most helpful when debugging issues. We would also like to highlight that this export is *only* the structure and schema of your tables and does not contain any data; however if you have any sensitive table or column names please discuss this with the Budibase team.
 
 It is worth noting while the export is a good representation of your data, it is not designed to be used to replicate your data within a production environment, we have designed this to extract the information needed for debugging, not a perfect mirror of the database.
 
