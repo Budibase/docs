@@ -32,8 +32,8 @@ Enter the URL of the API endpoint you are using. The URL is the requested resour
 
 ![](https://files.readme.io/d3b6ce9-Screenshot_2022-01-04_at_13.20.07.png "Screenshot 2022-01-04 at 13.20.07.png")
 
-> 📘 
-> 
+> 📘
+>
 > If you are trying to connect to a service on the same host, please look at this page: [docs.docker.com/desktop/networking](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host)
 
 ***
@@ -42,10 +42,10 @@ Enter the URL of the API endpoint you are using. The URL is the requested resour
 
 Select the HTTP method used by the API endpoint you are using. 
 
-- GET retrieves data from an API.
-- POST sends new data to an API.
-- PATCH and PUT update existing data.
-- DELETE removes existing data.
+* GET retrieves data from an API.
+* POST sends new data to an API.
+* PATCH and PUT update existing data.
+* DELETE removes existing data.
 
 ![](https://files.readme.io/a124afd-Screenshot_2022-01-04_at_11.37.37.png "Screenshot 2022-01-04 at 11.37.37.png")
 
@@ -63,8 +63,8 @@ Select the access level required by the logged-in end-user. If the user visits a
 
  URL parameters can be configured in the params tab. 
 
-- Parameters are appended to the end of the request URL, following _?_ and listed in key value pairs, separated by _&_ using the following syntax: _?status=all&other=value_
-- Parameters can be hardcoded or they can use bindings or variables. 
+* Parameters are appended to the end of the request URL, following *?* and listed in key value pairs, separated by *&* using the following syntax: *?status=all\&other=value*
+* Parameters can be hardcoded or they can use bindings or variables. 
 
 ![](https://files.readme.io/fc4c06e-Screenshot_2022-01-04_at_13.34.14.png "Screenshot 2022-01-04 at 13.34.14.png")
 
@@ -72,7 +72,7 @@ Select the access level required by the logged-in end-user. If the user visits a
 
 ### Bindings
 
-Use bindings to supply additional information to the query at runtime. Using the example from above we can replace the hardcoded value of _all_ with a binding named _status_ that has a default value of _all_. Now we can change the value of _status_ by supplying it from within an application using the query. 
+Use bindings to supply additional information to the query at runtime. Using the example from above we can replace the hardcoded value of *all* with a binding named *status* that has a default value of *all*. Now we can change the value of *status* by supplying it from within an application using the query. 
 
 ![](https://files.readme.io/3600cb6-Screenshot_2022-01-04_at_13.31.34.png "Screenshot 2022-01-04 at 13.31.34.png")
 
@@ -82,8 +82,8 @@ Use bindings to supply additional information to the query at runtime. Using the
 
 Use headers to supply key-value pairs accepted by your API. 
 
-- Switch the Active toggle to off to prevent the headers from being sent while keeping it's configuration. 
-- Headers can be hardcoded or they can use [REST Bindings](doc:rest-bindings)  or [REST Variables](doc:rest-variables).
+* Switch the Active toggle to off to prevent the headers from being sent while keeping it's configuration. 
+* Headers can be hardcoded or they can use [REST Bindings](doc:rest-bindings)  or [REST Variables](doc:rest-variables).
 
 ![](https://files.readme.io/0569efd-Screenshot_2022-01-04_at_15.38.48.png "Screenshot 2022-01-04 at 15.38.48.png")
 
@@ -93,12 +93,12 @@ Use headers to supply key-value pairs accepted by your API.
 
 Use a request body to send information to an API endpoint. 
 
-- The Content-Type header will automatically be set when using:
-  - raw(JSON) / application/json
-  - raw(XML) / application/xml
-  - raw(Text) / text/plain
-- If you manually select a Content-Type header, that value will be overridden by the body type
-- The body can be hardcoded or it can use [REST Bindings](doc:rest-bindings) or [REST Variables](doc:rest-variables) .
+* The Content-Type header will automatically be set when using:
+  * raw(JSON) / application/json
+  * raw(XML) / application/xml
+  * raw(Text) / text/plain
+* If you manually select a Content-Type header, that value will be overridden by the body type
+* The body can be hardcoded or it can use [REST Bindings](doc:rest-bindings) or [REST Variables](doc:rest-variables) .
 
 ![](https://files.readme.io/6762fb3-Screenshot_2022-01-04_at_15.44.42.png "Screenshot 2022-01-04 at 15.44.42.png")
 
@@ -146,8 +146,8 @@ The saved query can then be used as the data source of a [Data Provider](doc:dat
 
 The response schema may be updated by:
 
-- Adding or removing fields
-- Changing the data type used when displaying the result in tables
+* Adding or removing fields
+* Changing the data type used when displaying the result in tables
 
 ![](https://files.readme.io/496ce40-Screenshot_2022-01-04_at_16.03.14.png "Screenshot 2022-01-04 at 16.03.14.png")
 
@@ -211,74 +211,20 @@ return {
 
 Click `Send` and `Save`. Looking at the `Schema` we can see that the 'from' and 'to' sections appear as type **Array**. Behind the scenes Budibase understands that the items are objects and will generate appropriate types based on the data.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4757704-Screenshot_2024-02-21_at_16.17.08.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/4757704-Screenshot_2024-02-21_at_16.17.08.png" />
 
 With our query created, and schema generated, navigate to the **Design** section. Add a Repeater [Block](doc:blocks) and select the query as the data source.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e19dcd9-Screenshot_2024-02-21_at_16.23.50.png",
-        "",
-        "Repeater block with REST query data source"
-      ],
-      "align": "center",
-      "caption": "Repeater block with REST query data source"
-    }
-  ]
-}
-[/block]
+<Image alt="Repeater block with REST query data source" align="center" src="https://files.readme.io/e19dcd9-Screenshot_2024-02-21_at_16.23.50.png">
+  Repeater block with REST query data source
+</Image>
 
+Next add a [Table block](doc:table-block) and nest it under the repeater block. Under the *JSON Arrays* header, select the 'fromSections' as the data source.
 
-Next add a [Table block](doc:table-block) and nest it under the repeater block. Under the _JSON Arrays_ header, select the 'fromSections' as the data source.
+<Image align="center" src="https://files.readme.io/df5c127-Screenshot_2024-02-21_at_17.11.41.png" />
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/df5c127-Screenshot_2024-02-21_at_17.11.41.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
-
-Click the lightning bolt under the _Title_ and select the 'fromId' binding: `FROM: {{ Revision Repeater Block.api_wikimedia_org revision.fromId }}`
+Click the lightning bolt under the *Title* and select the 'fromId' binding: `FROM: {{ Revision Repeater Block.api_wikimedia_org revision.fromId }}`
 
 Finally [duplicate](https://docs.budibase.com/docs/components#editing) the table block, and rename 'from' into 'to', selecting 'toSections' as the data source.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/25559c2-Screenshot_2024-02-21_at_17.15.43.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/25559c2-Screenshot_2024-02-21_at_17.15.43.png" />
