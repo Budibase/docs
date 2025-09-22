@@ -63,21 +63,7 @@ This provides a clear record of how requests progress through our approval proce
 
 We can view these records using a dedicated History UI, which is accessible only to users with the **Admin** role.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0f6c7989323350ae70dbab848ac743512f0d0f12f8d05d0b2ac35b8e47bc5dbf-Change_Request_Management_Template_4_Request_History_Screen.png",
-        null,
-        "Admin Screen"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/0f6c7989323350ae70dbab848ac743512f0d0f12f8d05d0b2ac35b8e47bc5dbf-Change_Request_Management_Template_4_Request_History_Screen.png" />
 
 ### Automated emails
 
@@ -103,21 +89,7 @@ The permissions associated with each of our roles are as follows.
 
 **Admins** can manage application settings, users, and roles. They also have full CRUD permissions across all connected data.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/062df7631d9a6e6fb17a9dc643797d3951d87b7f59c9e8b308c154ee44b86423-Screenshot_2025-08-18_at_13.19.55.png",
-        null,
-        "RBAC"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/062df7631d9a6e6fb17a9dc643797d3951d87b7f59c9e8b308c154ee44b86423-Screenshot_2025-08-18_at_13.19.55.png" />
 
 ## How does it work?
 
@@ -145,31 +117,31 @@ The other is **Status History**, which stores information about how the Status a
 
 The **Change Request** table stores the following attributes:
 
-- **Title** - Text,
-- **Description** - Long Form Text,
-- **Change type** - Single Select,
-- **Submitted date** - Date,
-- **Date required** - Date,
-- **Status** - Single Select,
-- **Submitted by** - Single User,
-- **Priority** - Single Select,
-- **Reason for change** - Long Form Text,
-- **Attachments** - Attachment,
-- **References** - Text,
-- **Date signed** - Date,
-- **Status history** - Relationship,
-- **Review signature** - Signature,
-- **Rejection reason** - Long Form Text,
-- **Completion date** - Date,
-- **CrId** - Number.
+* **Title** - Text,
+* **Description** - Long Form Text,
+* **Change type** - Single Select,
+* **Submitted date** - Date,
+* **Date required** - Date,
+* **Status** - Single Select,
+* **Submitted by** - Single User,
+* **Priority** - Single Select,
+* **Reason for change** - Long Form Text,
+* **Attachments** - Attachment,
+* **References** - Text,
+* **Date signed** - Date,
+* **Status history** - Relationship,
+* **Review signature** - Signature,
+* **Rejection reason** - Long Form Text,
+* **Completion date** - Date,
+* **CrId** - Number.
 
 Meanwhile, the **Status** **History** table maintains a record of updates to the **Status** attribute on our **Change Request** table, with the following attributes:
 
-- **New status** - Text,
-- **Previous status** - Text,
-- **Timestamp** - Date,
-- **Changed by** - Single User,
-- **Change request** - Relationship.
+* **New status** - Text,
+* **Previous status** - Text,
+* **Timestamp** - Date,
+* **Changed by** - Single User,
+* **Change request** - Relationship.
 
 Whereas the **Change Request** table is primarily populated manually by users, entries on the **Status History** table are created automatically when the **Status** is updated. We’ll see how this works a little later.
 
@@ -177,23 +149,9 @@ Whereas the **Change Request** table is primarily populated manually by users, e
 
 Our data model relies on a relationship between our two database tables and between each of these and Budibase’s internal Users table.
 
-The ** Relationship ** table allows us to configure links between rows across tables in BudibaseDB. Our application uses a **One-To-Many** relationship from our **Change Request** table to **Status History**.
+The **Relationship** table allows us to configure links between rows across tables in BudibaseDB. Our application uses a **One-To-Many** relationship from our **Change Request** table to **Status History**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1ed7a7af65f1bf30998f1ff0d01d8b28f1a791d315b68a67ef31dc468c88832e-Screenshot_2025-08-18_at_13.23.28.png",
-        null,
-        "Relationship"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/1ed7a7af65f1bf30998f1ff0d01d8b28f1a791d315b68a67ef31dc468c88832e-Screenshot_2025-08-18_at_13.23.28.png" />
 
 Budibase also allows us to set up relationships between our database and the internal **Users** table. For instance, to assign a row to a particular record, or track who has created a row.
 
@@ -203,21 +161,7 @@ We can do this with two special data types, the **Single User** and **Multi User
 
 Across our two tables, we’ve included several **Single User** columns, primarily to track actions. For instance, the **Submitted by** column on our **Change request** table.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/cacfd8f7e504749d83f791cd942dd58170145d6ad6a4e2aeb3f27cae016a2d00-Screenshot_2025-08-18_at_13.24.12.png",
-        null,
-        "Submitted By"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/cacfd8f7e504749d83f791cd942dd58170145d6ad6a4e2aeb3f27cae016a2d00-Screenshot_2025-08-18_at_13.24.12.png" />
 
 #### Views
 
@@ -227,79 +171,21 @@ We’ve created three **Views** based on our **Change Request** table to provide
 
 **Employees** can submit data or view their own previous submissions using a **View** called **My Requests**. This uses a filter expression to only return the rows where the **Submitted by** attribute is set to the **Current User** in app’s front-end.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/af41586e420031c986e6033cf0b2e278851ebcbf69850b9ded67f9872825364c-Screenshot_2025-08-18_at_13.24.50.png",
-        null,
-        "Filter"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/af41586e420031c986e6033cf0b2e278851ebcbf69850b9ded67f9872825364c-Screenshot_2025-08-18_at_13.24.50.png" />
 
 Under the **Columns** tab, we’ve granted **Write** permissions for all attributes required to create an initial change request, as well as **Read** access for the **Status** column.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/158d6f4d8520f60ffc5b65e6c2d3abe30d8740b88dc577b2324f95035a4c3314-Screenshot_2025-08-18_at_13.25.13.png",
-        null,
-        "Columns"
-      ],
-      "align": "center",
-      "sizing": "450px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="450px" src="https://files.readme.io/158d6f4d8520f60ffc5b65e6c2d3abe30d8740b88dc577b2324f95035a4c3314-Screenshot_2025-08-18_at_13.25.13.png" />
 
 Our **Manager Approval** and **Reviewer Approval** views include rows irrespective of which user created them. Instead, they’re filtered by their current **Status**, enabling these users to access requests that are at an appropriate stage in our workflow for their role.
 
 **Managers** can access rows where the **Status** is **Submitted** while the **Reviewer Approval** View returns requests that are **In Review**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/65b921ac1246a23f00f9719b857fde19290657af82cfd97e294c6e2ef05ffb73-Screenshot_2025-08-18_at_13.25.42.png",
-        null,
-        "Request status filter"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/65b921ac1246a23f00f9719b857fde19290657af82cfd97e294c6e2ef05ffb73-Screenshot_2025-08-18_at_13.25.42.png" />
 
 They also each have **Read** and **Write** permissions for the columns that are required for each of them to respond to requests.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f95c92fabd9f3950054658fe0d531e59bd1e40f171e1d4b3b7f15ae82bd574bb-Screenshot_2025-08-18_at_13.25.55.png",
-        null,
-        "Permissions"
-      ],
-      "align": "center",
-      "sizing": "450px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="450px" src="https://files.readme.io/f95c92fabd9f3950054658fe0d531e59bd1e40f171e1d4b3b7f15ae82bd574bb-Screenshot_2025-08-18_at_13.25.55.png" />
 
 Users with the **Admin** role have full **Read** and **Write** permissions for both our **Change Request** and **Status History** tables.
 
@@ -313,97 +199,27 @@ These inherit the access roles of the tables or views they’re based on.
 
 For **Employees**, the app’s home screen is **CRUD** **UI**. This has been auto-generated from the **My Requests** View, using the **Table** layout with separate form screens.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c45d32d612a3d84af0b4d424cc89964727849055028b88beb117850ee791b09a-Change_Request_Management_Template_9_My_Requests_Table.png",
-        null,
-        "My Change Requests"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/c45d32d612a3d84af0b4d424cc89964727849055028b88beb117850ee791b09a-Change_Request_Management_Template_9_My_Requests_Table.png" />
 
 Our template uses a single screen for handling both **Manager** and **Reviewer** actions. This displays relevant **Change Request** records for each type of user within a **Table** UI where they can open modal forms to **Approve** or **Reject** submissions and provide notes.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b0e768276a6a00facc3692f74d8f58f9450c777b31b36540bf6a05b3324dd588-Screenshot_2025-08-18_at_14.14.45.png",
-        null,
-        "Modal Form"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/b0e768276a6a00facc3692f74d8f58f9450c777b31b36540bf6a05b3324dd588-Screenshot_2025-08-18_at_14.14.45.png" />
 
 In the Budibase builder, this screen actually contains two separate tables. We’re using conditionality rules to determine which one to display in the end-user app, depending on the current user’s role.
 
 Take a look at our documentation on [working with data in design](https://docs.budibase.com/docs/working-with-data) to learn more about how this works.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/414a4899e7901b68b95ae0a03c2861ef11341ec846600a2531f4c0dfba2c96fb-Screenshot_2025-08-18_at_14.15.42.png",
-        null,
-        "Conditional UI"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/414a4899e7901b68b95ae0a03c2861ef11341ec846600a2531f4c0dfba2c96fb-Screenshot_2025-08-18_at_14.15.42.png" />
 
 The specific **form** that loads within the **modal** is determined by which action the user has selected. This works by setting an in-app state when they initially hit **Approve** or **Reject** and applying a conditionality rule to our forms based on this.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e302b4dafb73a1383809e7c7f8f40510a854436ed06aaba4028393b0b6987eef-Screenshot_2025-08-18_at_14.16.33.png",
-        null,
-        "Condition"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/e302b4dafb73a1383809e7c7f8f40510a854436ed06aaba4028393b0b6987eef-Screenshot_2025-08-18_at_14.16.33.png" />
 
 Lastly, our **Administration** screen is also based on an autogenerated **Table** layout with some important modifications. Firstly, we’ve nested our table inside a form and added filter expressions based on user selections in the provided form fields.
 
 This means that our table can be filtered from the front-end, so **Admins** can more easily find the history of specific **Change Request** records.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b98988f6d97267422ad83575d36eca69c5ad2b816cc99a935baad8fffefc3972-Screenshot_2025-08-18_at_14.17.39.png",
-        null,
-        "Front end filtering"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/b98988f6d97267422ad83575d36eca69c5ad2b816cc99a935baad8fffefc3972-Screenshot_2025-08-18_at_14.17.39.png" />
 
 Secondly, rather than opening an **Update** form, when a user clicks a row, it opens a custom screen to expand the details of the specific **Change Request**.
 
@@ -429,41 +245,13 @@ This flow contains three steps. First, we use a **Query Rows** action to return 
 
 Thirdly, we use an **Email** action to notify all **Managers** that there’s a new request that requires their attention.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c5abb139345f5131b9a38af6635bbddcfd1d04aa395a817f01db60396a3c5623-Screenshot_2025-08-18_at_14.19.00.png",
-        null,
-        "Automation flow"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/c5abb139345f5131b9a38af6635bbddcfd1d04aa395a817f01db60396a3c5623-Screenshot_2025-08-18_at_14.19.00.png" />
 
 We’ve also included a **Cancel** row action. This uses an **Update Row** step to change the **Status** attribute of the trigger row to **Cancelled**, before emailing the original submitter to confirm that this has been successful.
 
 This is triggerable from the front-end using a dedicated **Cancel** button within the **Update Form** for **Requesters**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/178cf2af03f78b182eb79372978e2a4b05ce551ba36429c29e292345045cb36f-Screenshot_2025-08-18_at_14.19.43.png",
-        null,
-        "Automation Flow"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/178cf2af03f78b182eb79372978e2a4b05ce551ba36429c29e292345045cb36f-Screenshot_2025-08-18_at_14.19.43.png" />
 
 #### Approval/rejection
 
@@ -477,21 +265,7 @@ Specifically, we’ve created two sets of **Approve** and **Reject** actions for
 
 Both of these are triggerable from the **Managers** version of our review screen, using button actions.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b30cbddd8a990b88bfa1a3cf9bca3091694368b17bff48bf78cd5273c936d0a1-Screenshot_2025-08-18_at_14.20.33.png",
-        null,
-        "App Preview"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/b30cbddd8a990b88bfa1a3cf9bca3091694368b17bff48bf78cd5273c936d0a1-Screenshot_2025-08-18_at_14.20.33.png" />
 
 **Reviewer: Approve** and **Reviewer: Reject** follow the same pattern as **Manager: Reject.**
 
@@ -499,21 +273,7 @@ These update the **Status** to **Approved** or **Rejected**, respectively. Both 
 
 They’re triggerable from the **Reviewer** UI.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/381e34455c86b14b045e7322e49aa180cda8364e3575865597e090c1c3373824-Screenshot_2025-08-18_at_14.21.13.png",
-        null,
-        "Approval Flow"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/381e34455c86b14b045e7322e49aa180cda8364e3575865597e090c1c3373824-Screenshot_2025-08-18_at_14.21.13.png" />
 
 #### Change history
 
@@ -541,22 +301,7 @@ At the most basic level, we might want to make adjustments to existing attribute
 
 Alternatively, we could remove certain attributes or add entirely new ones. For example, we could create a **Number** column called **Estimated Cost** on our **Change Requests** table using the plus icon.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4106776e3b024f78c2f425dea2ae6c65d7e6eb770d6f6f4a0c7c8af383b1c355-Screenshot_2025-08-18_at_14.22.27.png",
-        null,
-        "Add a column"
-      ],
-      "align": "center",
-      "sizing": "450px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="450px" src="https://files.readme.io/4106776e3b024f78c2f425dea2ae6c65d7e6eb770d6f6f4a0c7c8af383b1c355-Screenshot_2025-08-18_at_14.22.27.png" />
 
 Alternatively, you might want to make more wholesale changes to our app’s backend, such as entirely swapping out the database.
 
@@ -576,21 +321,7 @@ We want our CTO to inherit all of the permissions that our **Reviewer** role has
 
 Therefore, we’re placing our CTO in the same branch as our existing roles, to the right of **Reviewer**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/533feb213d4c64cbf5ad2e78f86e504f745e0bef7ebff01509ae4c2ec9d34614-Screenshot_2025-08-18_at_14.23.18.png",
-        null,
-        "Configure Roles"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/533feb213d4c64cbf5ad2e78f86e504f745e0bef7ebff01509ae4c2ec9d34614-Screenshot_2025-08-18_at_14.23.18.png" />
 
 ### Adding your own business rules
 
@@ -602,22 +333,7 @@ Then, we’ll create a new view and call it **CTO** **Approval**. We’ll assign
 
 Here, we want to recreate our **Reviewer View** but omit the filtering expression for the **status** attribute.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c3258e058c07ae7fdc02896a2dab3b844ae82a2f3a1d1bc2e15a3733596742a9-Screenshot_2025-08-18_at_14.24.27.png",
-        null,
-        "Acces"
-      ],
-      "align": "center",
-      "sizing": "450px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="450px" src="https://files.readme.io/c3258e058c07ae7fdc02896a2dab3b844ae82a2f3a1d1bc2e15a3733596742a9-Screenshot_2025-08-18_at_14.24.27.png" />
 
 ### Creating new user actions
 
@@ -625,26 +341,12 @@ Currently, our **Reviewers** approve or reject requests, using **Row Actions**, 
 
 We’ll start by hitting **Row Actions** and creating an action called **CTO: Approve**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/bc25fbb601641a256a9de42090a0b09804773cf046bae80c051c91066851a571-Screenshot_2025-08-18_at_14.25.02.png",
-        null,
-        "Add Row Action"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/bc25fbb601641a256a9de42090a0b09804773cf046bae80c051c91066851a571-Screenshot_2025-08-18_at_14.25.02.png" />
 
 Within the Automation section, we can follow the same pattern as our existing Automations, adding the following steps:
 
-- **Update Row** - Updating the original **Change Request’s** Status to approved.
-- **Email** - To notify the original Requester of this update.
+* **Update Row** - Updating the original **Change Request’s** Status to approved.
+* **Email** - To notify the original Requester of this update.
 
 We could also add a corresponding **CTO: Reject** rule using the same process.
 
@@ -654,20 +356,6 @@ Lastly, we’ll need to add an appropriate UI for our CTO role. This will essent
 
 We can achieve this by duplicating one of the existing tables on our Review screen, and updating the Data Source for the new one to our CTO View, making sure to also update the corresponding conditionality rule and button actions.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/458b0223a6542aefcd7748f967f897955f563f237f6ffc0fb136f208729eba9f-Screenshot_2025-08-18_at_14.26.23.png",
-        null,
-        "Duplicate Table"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/458b0223a6542aefcd7748f967f897955f563f237f6ffc0fb136f208729eba9f-Screenshot_2025-08-18_at_14.26.23.png" />
 
 We’ll then repeat this process to provide conditional forms for our **CTO: Approve** and **CTO: Reject** row actions, mimicking our current settings, including setting an app state as one of the initial button actions.
