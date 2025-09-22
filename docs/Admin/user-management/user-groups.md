@@ -24,7 +24,7 @@ You can click [Upgrade](doc:usage) to unlock User groups or click `View Plans` t
 
 ## Creating a user group
 
-A searchable table of user groups can be found under the _Manage_ section of the [Portal](doc:portal).
+A searchable table of user groups can be found under the *Manage* section of the [Portal](doc:portal).
 
 ![](https://files.readme.io/e037c72-Screenshot_2022-10-20_at_15.32.00.png)
 
@@ -54,7 +54,7 @@ When you click `Add user` you will be presented with a searchable list of all th
 
 To remove users, click the entries with the blue tick to unselect them.
 
-Alternatively, you can add a user to a group from the users' detail page, which you can access by clicking on a user within the users list of the group. Alternatively you can select `Users` under the _Manage_ section of the portal, and then click on a user from the users table.
+Alternatively, you can add a user to a group from the users' detail page, which you can access by clicking on a user within the users list of the group. Alternatively you can select `Users` under the *Manage* section of the portal, and then click on a user from the users table.
 
 Here you will be able to see the user groups the selected user belongs to:
 
@@ -92,15 +92,13 @@ For example, consider this app:
 
 ![](https://files.readme.io/36b7420-Screenshot_2022-10-20_at_16.22.09.png)
 
-Harold is a member of the Super group which has _Power_ access to this app. However he is also an _Admin_ user of this app. Therefore the highest role is chosen, and he will have _Admin_ access.
+Harold is a member of the Super group which has *Power* access to this app. However he is also an *Admin* user of this app. Therefore the highest role is chosen, and he will have *Admin* access.
 
-On the other hand, consider the case where Harold has _Basic_ permissions for the app.
+On the other hand, consider the case where Harold has *Basic* permissions for the app.
 
 ![](https://files.readme.io/9e33a8e-Screenshot_2022-10-20_at_16.25.42.png)
 
-Because Harold is a member of the Super group, he will be given _Power_ permissions. 
-
-
+Because Harold is a member of the Super group, he will be given *Power* permissions. 
 
 <br />
 
@@ -108,21 +106,8 @@ Because Harold is a member of the Super group, he will be given _Power_ permissi
 
 Some plans have a limit on the number of available user groups, for example the **Pro plan** offers five user groups. As you approach your limit, you should receive a warning email similar to the following:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d2a8ed2-Screenshot_2022-10-20_at_16.49.41.png",
-        null,
-        null
-      ],
-      "caption": "Email notification"
-    }
-  ]
-}
-[/block]
-
-
+<Image alt="Email notification" src="https://files.readme.io/d2a8ed2-Screenshot_2022-10-20_at_16.49.41.png">
+  Email notification
+</Image>
 
 You may need to [upgrade](doc:usage) your plan, or delete unused user groups.
