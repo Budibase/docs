@@ -26,7 +26,7 @@ The [Date picker](https://docs.budibase.com/docs/date-picker) component, for exa
 
 ## Constraints
 
-You can provide an **earliest** and **latest** date within your date/time column. This allows you to enforce a constraint such that dates added must fall _before the latest_ and _after the earliest_ dates specified. 
+You can provide an **earliest** and **latest** date within your date/time column. This allows you to enforce a constraint such that dates added must fall *before the latest* and *after the earliest* dates specified. 
 
 As with all other fields you can make it **required**.
 
@@ -38,16 +38,16 @@ These constraints can easily be edited after creation by hovering over the date 
 
 When this option is checked, the values selected in date pickers will be saved exactly as they are represented into the target database. Regardless of the timezone the browser is in, you will always see the same exact timestamp when this option is selected.
 
-As an example, here is a snippet of a table where the browsers locale was changed to 3 different timezones and the time 12:00 was picked in each. You can see that the column "BB no timezone" (which has _Ignore time zones_ enabled) will always show the same time, whereas the "BB normal" column (where the flag is toggled off) reflects the browser timezone changes.
+As an example, here is a snippet of a table where the browsers locale was changed to 3 different timezones and the time 12:00 was picked in each. You can see that the column "BB no timezone" (which has *Ignore time zones* enabled) will always show the same time, whereas the "BB normal" column (where the flag is toggled off) reflects the browser timezone changes.
 
 ![](https://files.readme.io/1efd0f2-Screenshot_2022-08-31_at_13.03.11.png)
 
-It is possible, but not recommended, to change the _Ignore time zones_ flag on tables that already have dates with timezones. Changing this flag does not change existing data, but it will change how your existing data is presented in the browser.
+It is possible, but not recommended, to change the *Ignore time zones* flag on tables that already have dates with timezones. Changing this flag does not change existing data, but it will change how your existing data is presented in the browser.
 
 By default this setting is toggled off.
 
-> 📘 
-> 
+> 📘
+>
 > This setting is also available for PostgreSQL and MySQL tables.
 
 ## Working with dates
@@ -56,13 +56,13 @@ As mentioned above, dates in Budibase are given as standard ISO 8601 date/time s
 
 ### Tutorial: Calculating the duration of an event
 
-Say we have a table _Events_ with two date columns: _Start Time_ and _End Time_. To calculate the duration of each event, we can create a Formula column and then use Bindings to calculate the difference between the two dates.
+Say we have a table *Events* with two date columns: *Start Time* and *End Time*. To calculate the duration of each event, we can create a Formula column and then use Bindings to calculate the difference between the two dates.
 
 It's not possible to perform mathematical operations on a date string, so the first step is to convert the date into milliseconds. The value is a count of how many milliseconds the date is before or after [the UNIX epoch in 1970](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#the_epoch_timestamps_and_invalid_date). We can do this using the **date helper** where bindings are available. The date helper takes the date value, the desired output format and an optional timezone as arguments.
 
-To format _Start Time_ in milliseconds using the date helper, pass the Start Time value and 'x' as the date format. You can see the other available output formats in the [Day.js format documentation,](https://day.js.org/docs/en/display/format) which is what the date helper uses behind the scenes. Our Handlebars expression is `{{ date Start Time 'x' }}` and the output is **1685100000000**.
+To format *Start Time* in milliseconds using the date helper, pass the Start Time value and 'x' as the date format. You can see the other available output formats in the [Day.js format documentation,](https://day.js.org/docs/en/display/format) which is what the date helper uses behind the scenes. Our Handlebars expression is `{{ date Start Time 'x' }}` and the output is **1685100000000**.
 
-The next step is to do the same for _End Time_ and then using the **subtract helper**, subtract the ms value for  _Start Time_ from it. This will return the length of the event in milliseconds. Here's how it looks with the helpers chained up: 
+The next step is to do the same for *End Time* and then using the **subtract helper**, subtract the ms value for  *Start Time* from it. This will return the length of the event in milliseconds. Here's how it looks with the helpers chained up: 
 
 `{{ subtract (date End Time 'x' ) ( date Start Time 'x' ) }}`
 
@@ -84,24 +84,10 @@ In all cases, subtract the earliest date from the latest date. For working out h
 
 `{{ duration (subtract (date now 'x' )( date Start Time 'x' )) "milliseconds" }} ago`
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c6ef418-image.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "380px"
-    }
-  ]
-}
-[/block]
+<Image align="center" width="380px" src="https://files.readme.io/c6ef418-image.png" />
 
 ### Further reading
 
-- [Bindings Tutorial: Calculate age from Date of Birth field](https://docs.budibase.com/docs/form-bindings#tutorial-calculate-age-from-dob-field)
-- [Handlebars Bindings: The date helper and chaining helpers ](https://docs.budibase.com/docs/bindings)
-- [JavaScript Bindings: Using a date column](https://docs.budibase.com/docs/javascript#using-a-date-column)
+* [Bindings Tutorial: Calculate age from Date of Birth field](https://docs.budibase.com/docs/form-bindings#tutorial-calculate-age-from-dob-field)
+* [Handlebars Bindings: The date helper and chaining helpers ](https://docs.budibase.com/docs/bindings)
+* [JavaScript Bindings: Using a date column](https://docs.budibase.com/docs/javascript#using-a-date-column)
