@@ -10,119 +10,145 @@ metadata:
 next:
   description: ''
 ---
-This tutorial will take between 5 and 10 minutes, and at the end, you will have successfully built a complete CRUD application.
+This tutorial will take between 5 and 10 minutes, and at the end, you will have successfully built a complete CRUD application.\
 This guide will take show you how to build a “Vehicle Maintenance Log” application. For this guide, we will use Postgres. As far as Budibase is concerned, the process is the same, regardless of your database.
 
 In this tutorial, we will create a Vehicle Maintenance Log app, consisting of:
-- A Vehicles table, to view vehicles
-- A Service Log table, to record the service history of a vehicle
+
+* A Vehicles table, to view vehicles
+* A Service Log table, to record the service history of a vehicle
 
 We will use the following table structure:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ceaf9f6-Vehicles.png",
-        "Vehicles.png",
-        633,
-        195,
-        "#f3f3f3"
-      ]
-    }
-  ]
-}
-[/block]
----
+
+![633](https://files.readme.io/ceaf9f6-Vehicles.png "Vehicles.png")
+
+***
 
 ## Getting started
+
 1. Run the following script
-[block:code]
-{
-  "codes": [
-    {
-      "code": "CREATE TABLE public.\"Vehicles\" (\n  \"id\" SERIAL PRIMARY KEY,\n  \"Registration\" TEXT NULL,\n  \"Make\" TEXT NULL,\n  \"Model\" TEXT NULL,\n  \"Colour\" TEXT NULL,\n  \"Year\" INT NULL);\n  \n\nCREATE TABLE public.\"ServiceLog\" (\n  \"id\" SERIAL PRIMARY KEY,\n  \"Description\" TEXT NULL,\n  \"VehicleId\" INT NULL,\n  \"ServiceDate\" TIMESTAMP NULL,\n  \"Category\" TEXT NULL,\n  \"Mileage\" INT NULL);\n\n\nINSERT INTO public.\"Vehicles\"(\"Registration\", \"Make\", \"Model\", \"Colour\", \"Year\")\nVALUES ('FAZ 9837','Volkswagen','Polo','White',2002);\nINSERT INTO public.\"Vehicles\"(\"Registration\", \"Make\", \"Model\", \"Colour\", \"Year\")\nVALUES ('JHI 8827','BMW','M3','Black',2013);\nINSERT INTO public.\"Vehicles\"(\"Registration\", \"Make\", \"Model\", \"Colour\", \"Year\")\nVALUES ('D903PI','Volvo','XC40','Grey',2014);\nINSERT INTO public.\"Vehicles\"(\"Registration\", \"Make\", \"Model\", \"Colour\", \"Year\")\nVALUES ('YFI002','Volkswagen','Golf','Dark Blue',2018);\nINSERT INTO public.\"Vehicles\"(\"Registration\", \"Make\", \"Model\", \"Colour\", \"Year\")\nVALUES ('HGT5677','Skoda','Octavia','Graphite',2009);\nINSERT INTO public.\"Vehicles\"(\"Registration\", \"Make\", \"Model\", \"Colour\", \"Year\")\nVALUES ('PPF9276','Skoda','Octavia','Graphite',2021);\nINSERT INTO public.\"Vehicles\"(\"Registration\", \"Make\", \"Model\", \"Colour\", \"Year\")\nVALUES ('J893FT','Toyota','Corolla','Red',2015);\nINSERT INTO public.\"Vehicles\"(\"Registration\", \"Make\", \"Model\", \"Colour\", \"Year\")\nVALUES ('MJK776','Honda','HR-V','Silver',2015);\n\n\nINSERT INTO public.\"ServiceLog\"(\"Description\", \"VehicleId\", \"ServiceDate\", \"Category\", \"Mileage\")\nVALUES ('Change front brakes', 1, '2021-05-04', 'Brakes', 20667);\nINSERT INTO public.\"ServiceLog\"(\"Description\", \"VehicleId\", \"ServiceDate\", \"Category\", \"Mileage\")\nVALUES ('Tyres - full set', 1, '2021-05-04', 'Tyres', 20667);\nINSERT INTO public.\"ServiceLog\"(\"Description\", \"VehicleId\", \"ServiceDate\", \"Category\", \"Mileage\")\nVALUES ('Engine tune up', 2, '2021-07-14', 'Engine', 50889);\nINSERT INTO public.\"ServiceLog\"(\"Description\", \"VehicleId\", \"ServiceDate\", \"Category\", \"Mileage\")\nVALUES ('Replace transmission', 3, '2021-09-26', 'Transmission', 98002);",
-      "language": "sql"
-    }
-  ]
-}
-[/block]
-2. Create a new account at https://account.budibase.app/register (onboarding takes a few seconds)
+
+```sql
+CREATE TABLE public."Vehicles" (
+  "id" SERIAL PRIMARY KEY,
+  "Registration" TEXT NULL,
+  "Make" TEXT NULL,
+  "Model" TEXT NULL,
+  "Colour" TEXT NULL,
+  "Year" INT NULL);
+  
+
+CREATE TABLE public."ServiceLog" (
+  "id" SERIAL PRIMARY KEY,
+  "Description" TEXT NULL,
+  "VehicleId" INT NULL,
+  "ServiceDate" TIMESTAMP NULL,
+  "Category" TEXT NULL,
+  "Mileage" INT NULL);
+
+
+INSERT INTO public."Vehicles"("Registration", "Make", "Model", "Colour", "Year")
+VALUES ('FAZ 9837','Volkswagen','Polo','White',2002);
+INSERT INTO public."Vehicles"("Registration", "Make", "Model", "Colour", "Year")
+VALUES ('JHI 8827','BMW','M3','Black',2013);
+INSERT INTO public."Vehicles"("Registration", "Make", "Model", "Colour", "Year")
+VALUES ('D903PI','Volvo','XC40','Grey',2014);
+INSERT INTO public."Vehicles"("Registration", "Make", "Model", "Colour", "Year")
+VALUES ('YFI002','Volkswagen','Golf','Dark Blue',2018);
+INSERT INTO public."Vehicles"("Registration", "Make", "Model", "Colour", "Year")
+VALUES ('HGT5677','Skoda','Octavia','Graphite',2009);
+INSERT INTO public."Vehicles"("Registration", "Make", "Model", "Colour", "Year")
+VALUES ('PPF9276','Skoda','Octavia','Graphite',2021);
+INSERT INTO public."Vehicles"("Registration", "Make", "Model", "Colour", "Year")
+VALUES ('J893FT','Toyota','Corolla','Red',2015);
+INSERT INTO public."Vehicles"("Registration", "Make", "Model", "Colour", "Year")
+VALUES ('MJK776','Honda','HR-V','Silver',2015);
+
+
+INSERT INTO public."ServiceLog"("Description", "VehicleId", "ServiceDate", "Category", "Mileage")
+VALUES ('Change front brakes', 1, '2021-05-04', 'Brakes', 20667);
+INSERT INTO public."ServiceLog"("Description", "VehicleId", "ServiceDate", "Category", "Mileage")
+VALUES ('Tyres - full set', 1, '2021-05-04', 'Tyres', 20667);
+INSERT INTO public."ServiceLog"("Description", "VehicleId", "ServiceDate", "Category", "Mileage")
+VALUES ('Engine tune up', 2, '2021-07-14', 'Engine', 50889);
+INSERT INTO public."ServiceLog"("Description", "VehicleId", "ServiceDate", "Category", "Mileage")
+VALUES ('Replace transmission', 3, '2021-09-26', 'Transmission', 98002);
+```
+
+2. Create a new account at [https://account.budibase.app/register](https://account.budibase.app/register) (onboarding takes a few seconds)
 3. Once onboarded, create a new app and call it: *Vehicle Maintenance Log*
 
----
+***
 
-##  Connecting to your SQL tables
+## Connecting to your SQL tables
+
 4. When asked what database you would like to use, select PostgreSQL
 5. Complete the configuration to connect to your PostgreSQL database
-[block:callout]
-{
-  "type": "info",
-  "body": "Note that if you are connecting to a database on `localhost`, your host should be set to `host.docker.internal`, or `172.17.0.1` if running on Linux."
-}
-[/block]
+
+> 📘 Note that if you are connecting to a database on `localhost`, your host should be set to `host.docker.internal`, or `172.17.0.1` if running on Linux.
+
 6. Once you have added your connection details, click **Fetch tables from database**. This will read the tables in your database.
-[block:html]
-{
-  "html": "<div style=\"padding:75% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/728549524?h=3d62ed1832&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"fetch-postgres-tables.mov\"></iframe></div><div></div>"
-}
-[/block]
----
+
+<HTMLBlock>{`
+<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/728549524?h=3d62ed1832&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="fetch-postgres-tables.mov"></iframe></div><div></div>
+`}</HTMLBlock>
+
+***
 
 ## Creating Screens from your SQL tables
+
 Once Budibase knows about your SQL tables, it can autogenerate screens (the user interface) that allows listing, creating, editing a deleting of records from tables.  Of course, these generated screens are completely customizable - but Budibase gives you a huge headstart.
 
 7. Go to the “Design” section.
 8. Create a new screen, and from the list of autogenerated screens, select **Vehicle**.
 
----
+***
 
 ## Using relationships between SQL tables
-Budibase allows you to declare relationships between your table. We are going to set up our one-to-many relationship between Vehicles and Deals.
-[block:callout]
-{
-  "type": "info",
-  "body": "Budibase does not modify your tables. We are simply telling Budibase about your existing database structure."
-}
-[/block]
-To define a relationship:
-9. Select your SQL datasource
-10. Click on **Define Relationship**, then:
-- Set relationship type to “One”. 
-- The from (“One”) table is “Vehicles”. 
-- The to (“Many”) table is “Service Logs”. 
-- The “From Table Column” is how your relationship will be named in your Vehicles table. We will call this **Service Logs**.  
-- The “To Table Column” is how your relationship will be named in your Service Log table. We will call this “Vehicle”
 
-The relationship is now created, and by default the first columns of each table will be used as the display columns. 
+Budibase allows you to declare relationships between your table. We are going to set up our one-to-many relationship between Vehicles and Deals.
+
+> 📘 Budibase does not modify your tables. We are simply telling Budibase about your existing database structure.
+
+To define a relationship:\
+9\. Select your SQL datasource\
+10\. Click on **Define Relationship**, then:
+
+* Set relationship type to “One”. 
+* The from (“One”) table is “Vehicles”. 
+* The to (“Many”) table is “Service Logs”. 
+* The “From Table Column” is how your relationship will be named in your Vehicles table. We will call this **Service Logs**.  
+* The “To Table Column” is how your relationship will be named in your Service Log table. We will call this “Vehicle”
+
+The relationship is now created, and by default the first columns of each table will be used as the display columns.\
 The display columns tell Budibase how to describe the Vehicle from the Service Log table, and vice versa. This is equivalent to a column alias:
+
 ```
 SELECT ServiceLog.*,  Registration as Vehicle 
 FROM ServiceLog 
 INNER JOIN Vehicles on ServiceLog.VehicleId = Vehicles.id
 ```
-To change the display columns
-11. Select the Service Log table
-12. Click the “Edit” icon beside the “Category” column
-13. Toggle “Use as table display column”
-14. Click “Save Column”
+
+To change the display columns\
+11\. Select the Service Log table\
+12\. Click the “Edit” icon beside the “Category” column\
+13\. Toggle “Use as table display column”\
+14\. Click “Save Column”
 
 Now the Vehicles table should show the Service Log category, rather than the description. 
-[block:html]
-{
-  "html": "<div style=\"padding:75% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/728550171?h=d84f2c7845&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"define-relationships-postgres.mov\"></iframe></div>"
-}
-[/block]
----
+
+<HTMLBlock>{`
+<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/728550171?h=d84f2c7845&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="define-relationships-postgres.mov"></iframe></div>
+`}</HTMLBlock>
+
+***
 
 ## Add Service Logs CRUD screens
+
 15. Go to the “Design” section.
 16. Create a new screen, and from the list of autogenerated screens, select **Service Logs**.
 17. Click the preview button and view your new Vehicle Maintenance Log app
-[block:callout]
-{
-  "type": "success",
-  "body": "You now have a fully working Vehicle Maintenance Log app.",
-  "title": "Success"
-}
-[/block]
+
+> 👍 Success
+>
+> You now have a fully working Vehicle Maintenance Log app.
