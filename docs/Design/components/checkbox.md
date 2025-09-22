@@ -24,7 +24,7 @@ To add a `Checkbox` component to your app, you need to click `Form > Checkbox`
 
 ## Customising the Checkbox
 
-To customise the checkbox, there are several settings in the <<glossary:Settings Panel>> that can be used.
+To customise the checkbox, there are several settings in the <Glossary>Settings Panel</Glossary> that can be used.
 
 | Setting              | Description                                                                                 |
 | :------------------- | :------------------------------------------------------------------------------------------ |
