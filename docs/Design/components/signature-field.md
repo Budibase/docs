@@ -26,12 +26,11 @@ next:
         ""
       ],
       "align": "center",
-      "sizing": "50% "
+      "sizing": "50%"
     }
   ]
 }
 [/block]
-
 
 A `Signature` component will automatically populate when a `Form` block is used with a data source that includes a signature field. The Signature type can be added to columns in tables. 
 
@@ -54,7 +53,6 @@ When building forms manually, start by adding the `Form` component and selecting
 }
 [/block]
 
-
 [block:image]
 {
   "images": [
@@ -71,9 +69,6 @@ When building forms manually, start by adding the `Form` component and selecting
 }
 [/block]
 
-
-### 
-
 Once published, clicking the signature field presents a pop-over in which the user can use their mouse to click-and-drag to create a signature. Clicking confirm closes the pop-over and displays the user's signature as part of the form. Signatures can also be added in the `Data` tab.
 
 [block:image]
@@ -86,12 +81,11 @@ Once published, clicking the signature field presents a pop-over in which the us
         ""
       ],
       "align": "center",
-      "sizing": "50% "
+      "sizing": "50%"
     }
   ]
 }
 [/block]
-
 
 ### General Settings
 
