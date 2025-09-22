@@ -20,28 +20,15 @@ Visually the `S3 File Upload` component looks the same as the [Attachment](doc:a
 
 The `S3 File Upload` component requires a [Form](doc:forms) element to be a parent.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2d5c5e5-Screenshot_2023-02-06_at_14.05.48.png",
-        null,
-        "Adding an S3 File Upload component"
-      ],
-      "align": "center",
-      "caption": "Adding an S3 File Upload component"
-    }
-  ]
-}
-[/block]
+<Image alt="Adding an S3 File Upload component" align="center" src="https://files.readme.io/2d5c5e5-Screenshot_2023-02-06_at_14.05.48.png">
+  Adding an S3 File Upload component
+</Image>
 
-
-An [S3 datasource](doc:s3) must also have been added to the **Data** section in Budibase. After the S3 connection is established, you can select the <<glossary:Datasource>>, and enter a bucket and file name in the <<glossary:Settings Panel>>.
+An [S3 datasource](doc:s3) must also have been added to the **Data** section in Budibase. After the S3 connection is established, you can select the <Glossary>Datasource</Glossary>, and enter a bucket and file name in the <Glossary>Settings Panel</Glossary>.
 
 You will also need to provide a custom field name.
 
-[block:image]{"images":[{"image":["https://files.readme.io/3330f48f0873c2e60ccc74d1a86415b2b7062c0cfc9e8bba4dc280673fe441ad-Screenshot_2024-09-27_at_14.16.25.png",null,null],"align":"center"}]}[/block]
+<Image align="center" src="https://files.readme.io/3330f48f0873c2e60ccc74d1a86415b2b7062c0cfc9e8bba4dc280673fe441ad-Screenshot_2024-09-27_at_14.16.25.png" />
 
 ## Upload File to S3 action
 
