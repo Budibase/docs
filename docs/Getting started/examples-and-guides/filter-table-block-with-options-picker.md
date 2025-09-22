@@ -12,25 +12,20 @@ next:
 ---
 ## Try it out!
 
-[block:html]
-{
-  "html": "<iframe width=\"800\" height=\"600\" frameborder=\"0\" allow=\"clipboard-write;camera;geolocation;fullscreen\" src=\"https://cprem.budibase.app/embed/guide-filter-table-block-with-options-picker\"></iframe>"
-}
-[/block]
-
+<HTMLBlock>{`
+<iframe width="800" height="600" frameborder="0" allow="clipboard-write;camera;geolocation;fullscreen" src="https://cprem.budibase.app/embed/guide-filter-table-block-with-options-picker"></iframe>
+`}</HTMLBlock>
 
 ## Scenario
 
 The Table component allows you to use the head of each column as a search field, however there are cases were you may want to use different type of field for searching, such as an [Options picker](doc:option-picker). 
 
-This guide will show you how to add search that will display results for a selected _Region_ from a preset list of values, or countries matching a _Country_ field.
+This guide will show you how to add search that will display results for a selected *Region* from a preset list of values, or countries matching a *Country* field.
 
-[block:html]
-{
-  "html": "<u><b style=\"font-size: 14px;\">Challenge: </b></u><br />\n<span style=\"position: relative; font-size: 24px; color: currentColor;\">★★☆☆☆</span>"
-}
-[/block]
-
+<HTMLBlock>{`
+<u><b style="font-size: 14px;">Challenge: </b></u><br />
+<span style="position: relative; font-size: 24px; color: currentColor;">★★☆☆☆</span>
+`}</HTMLBlock>
 
 ***
 
@@ -39,7 +34,7 @@ This guide will show you how to add search that will display results for a selec
 1. Download the following .csv file containing the sample data for this guide [Sample Data](https://drive.google.com/file/d/1Pl8WQ14L4_7jVzD4UgHLMc032TfKlK0y/view?usp=sharing)
 2. In the Data tab of your Budibase workspace, click "Create new table", and select the "Create a Table from a CSV or JSON file" to upload the sample data. You may need to reject columns that have been unsuccessfully imported, and choose a display column.
 
-   1. [block:image]{"images":[{"image":["https://files.readme.io/140d16e413f621ab46a48571d87c2532d0810448bbf170ae2801ea9d0814df07-Screenshot_2025-08-15_at_10.29.58.png",null,""],"align":"center"}]}[/block]
+   1. <Image align="center" src="https://files.readme.io/140d16e413f621ab46a48571d87c2532d0810448bbf170ae2801ea9d0814df07-Screenshot_2025-08-15_at_10.29.58.png" />
 3. You may need to reject columns that were unsuccessfully imported, and select a Display Column. 
 
    ![](https://files.readme.io/8452873586fc5d800ad6bfd9ccd0213bb9d6089213b56e7212cf5d1a73ec5e8e-image.png)
@@ -47,8 +42,8 @@ This guide will show you how to add search that will display results for a selec
 5. Create a new app
 6. Create a new blank screen. Add a new Table component, and set the Data option to Sales. 
 
-   [block:image]{"images":[{"image":["https://files.readme.io/697e98e30e1a21f25af67cb7e9a5fe179e404e0578e90d5a96f1fe6bcb5c21bd-Screenshot_2025-08-15_at_10.35.14.png",null,null],"align":"center"}]}[/block]
-7. Next, add a Form component\* and add an Options Picker as a child of the form.  
+   <Image align="center" src="https://files.readme.io/697e98e30e1a21f25af67cb7e9a5fe179e404e0578e90d5a96f1fe6bcb5c21bd-Screenshot_2025-08-15_at_10.35.14.png" />
+7. Next, add a Form component\* and add an Options Picker as a child of the form.\
    \*Form components are not to be confused with Form Blocks
 8. In the settings of the Options Picker, you'll need to add a field value, and you should add a label - we'll set both to "Region".
 9. Set the Options Source to Custom.  
@@ -78,10 +73,29 @@ You may also decide that you want to filter by multiple region, for example when
 
 ## App export
 
-_Downloads may take a few seconds._
+*Downloads may take a few seconds.*
 
-[block:html]
-{
-  "html": "<!-- Add icon library -->\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n\n<!-- Full width -->\n<button class=\"btn\" onclick=\"window.open('https://drive.google.com/file/d/13NI6ECG4ay4njmM9e8TbgQXI5ZhMBcGM/view?usp=sharing', 'Download app export')\" style=\"width:100%\"><i class=\"fa fa-download\"></i> Download</button>\n\n<style>\n  /* Style buttons */\n.btn {\n  background-color: #3571de;\n  border: none;\n  color: white;\n  padding: 12px 30px;\n  cursor: pointer;\n  font-size: 16px;\n}\n\n/* Darker background on mouse-over */\n.btn:hover {\n  background-color: #2e64c9;\n}\n</style>"
+<HTMLBlock>{`
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Full width -->
+<button class="btn" onclick="window.open('https://drive.google.com/file/d/13NI6ECG4ay4njmM9e8TbgQXI5ZhMBcGM/view?usp=sharing', 'Download app export')" style="width:100%"><i class="fa fa-download"></i> Download</button>
+
+<style>
+  /* Style buttons */
+.btn {
+  background-color: #3571de;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 16px;
 }
-[/block]
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: #2e64c9;
+}
+</style>
+`}</HTMLBlock>
