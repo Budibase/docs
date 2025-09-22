@@ -44,12 +44,12 @@ The "compare" helper is used to perform a comparison between two values and rend
 
 The `a` and `b` arguments are the values to be compared. The operator argument specifies the arithmetic operator to use for the comparison. The available operators are:
 
-- `== `or `===` : Equal to (strict equality)
-- `!=` or `!==` : Not equal to (strict inequality)
-- `<` : Less than
-- `>` : Greater than
-- `<=` : Less than or equal to
-- `=` : Greater than or equal to
+* `== `or `===` : Equal to (strict equality)
+* `!=` or `!==` : Not equal to (strict inequality)
+* `<` : Less than
+* `>` : Greater than
+* `<=` : Less than or equal to
+* `=` : Greater than or equal to
 
 Example usage:
 
