@@ -43,21 +43,7 @@ The core of our app is allowing different types of users to carry out defined CR
 
 Firstly, **Employees** can view expenseable events and create new claims using a dedicated data collection form.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0068a35a9b25a19e1c1c00ad3ecd5b1627ef03354f56219901fecca0f2e4293d-Expense_Management_Template_1_Gif.gif",
-        null,
-        "Expense Management Template"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/0068a35a9b25a19e1c1c00ad3ecd5b1627ef03354f56219901fecca0f2e4293d-Expense_Management_Template_1_Gif.gif" />
 
 They can also view their own previous claims, including their current statuses, but not the claims of their colleagues. 
 
@@ -65,21 +51,7 @@ Within existing claims, they can update the **Status** attribute to **Cancelled*
 
 Users with the higher **Manager** role inherit all permissions from **Employees**. On top of this, they can view all claims, as well as carrying out update actions, enabling them to approve or reject submissions.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ed31ff426be74816f288de99392a4598a4db9e99d4b6fd18128b382b8f097a99-Expense_Management_Template_2_Approve_Screen.png",
-        null,
-        "Approve Screen"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/ed31ff426be74816f288de99392a4598a4db9e99d4b6fd18128b382b8f097a99-Expense_Management_Template_2_Approve_Screen.png" />
 
 ### Receipt uploads
 
@@ -101,21 +73,7 @@ Within any approval workflow, tracking the status of submissions as they progres
 
 **Employees** can view their previous expense claims to check if the status has updated when a reviewer responds. As we’ll see in the next section, they’ll also be notified when the **status** of their claim is updated.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9b05b3aef3e58b6d33d329084b20813f6626772e60bc3e34ad655300ba88725f-Expense_Management_Template_3_My_Claims_Screen.png",
-        null,
-        "My Claims"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/9b05b3aef3e58b6d33d329084b20813f6626772e60bc3e34ad655300ba88725f-Expense_Management_Template_3_My_Claims_Screen.png" />
 
 ### Automated emails
 
@@ -171,36 +129,36 @@ Additionally, our template’s data model uses the **Single User** data type to 
 
 The Events table stores columns with the following names and data types:
 
-- **Title** - Text,
-- **Description** - Long-Form Text,
-- **Location** - Text,
-- **Start Date** - Date,
-- **End Date** - Date,
-- **Claim Deadline** - Date,
-- **Max Claim** - Number,
-- **Claims** - Relationship,
-- **Image** - Single Attachment.
+* **Title** - Text,
+* **Description** - Long-Form Text,
+* **Location** - Text,
+* **Start Date** - Date,
+* **End Date** - Date,
+* **Claim Deadline** - Date,
+* **Max Claim** - Number,
+* **Claims** - Relationship,
+* **Image** - Single Attachment.
 
 The Expense Claim table stores:
 
-- **Summary** - Formula,
-- **Submitter** - Single User,
-- **Reviewer** - Single User,
-- **Status** - Single Select,
-- **Date** - Date,
-- **Expense Items** - Relationship,
-- **Event** - Relationship,
-- **Total** - Number,
-- **Submitter Notes** - Long-Form Text,
-- **Reviewer Notes** - Long-Form Text.
+* **Summary** - Formula,
+* **Submitter** - Single User,
+* **Reviewer** - Single User,
+* **Status** - Single Select,
+* **Date** - Date,
+* **Expense Items** - Relationship,
+* **Event** - Relationship,
+* **Total** - Number,
+* **Submitter Notes** - Long-Form Text,
+* **Reviewer Notes** - Long-Form Text.
 
 Lastly, our Expense Item table stores the following attributes:
 
-- **Description** - Text,
-- **Price** - Number,
-- **Category** - Single-Select,
-- **Claim** - Relationship,
-- **Receipt** - Single Attachment.
+* **Description** - Text,
+* **Price** - Number,
+* **Category** - Single-Select,
+* **Claim** - Relationship,
+* **Receipt** - Single Attachment.
 
 We’ll check out some examples of how you might want to modify these later.
 
@@ -212,31 +170,17 @@ This allows us to define how individual entries across each of our tables relate
 
 Our app relies on two Relationships:
 
-- **A Many-To-One Relationship** from the **Expense Item** table to the **Expense Claim** table.
-- **A Many-To-One Relationship** from the **Expsense Claim** table to the **Events** table.
+* **A Many-To-One Relationship** from the **Expense Item** table to the **Expense Claim** table.
+* **A Many-To-One Relationship** from the **Expsense Claim** table to the **Events** table.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9064c029ce1d91f753439cf91bf6536afc4fa309f816f37dc4ffaf19b027bd17-Expense_Approval_Template_Relationship_Configuration.png",
-        null,
-        "Relationship"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/9064c029ce1d91f753439cf91bf6536afc4fa309f816f37dc4ffaf19b027bd17-Expense_Approval_Template_Relationship_Configuration.png" />
 
 As we said a second ago, we also use **Single User** attributes to link specific pieces of data to users within Budibase’s internal **Users** table.
 
 There are two instances of this in our app, both within the **Expense Claim** table:
 
-- **Submitter** - An attribute that links each entry to the **User** that initially created the request. The value of this is set automatically, using the _default to current user_ option.
-- **Reviewer** - An attribute that assigns records the **Reviewer** of the expense request.
+* **Submitter** - An attribute that links each entry to the **User** that initially created the request. The value of this is set automatically, using the *default to current user* option.
+* **Reviewer** - An attribute that assigns records the **Reviewer** of the expense request.
 
 #### Views
 
@@ -254,21 +198,7 @@ Within the **Expense Claims** table, we’ve created three views, called **Claim
 
 The **Claims to Review** View is reserved for the **Manager** role for both **Read** and **Write** actions. It also uses a filtering expression to only include the rows where the **Status** attribute is equal to **Submitted**. All columns are writable except **Submitter Notes**, which is read-only.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c50338d4b8caebf3e379732b0241e19fd9f2028809516fe0ecb9c0aeea0e361a-Expense_Management_Template_6_Filter.png",
-        null,
-        "Filter View"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/c50338d4b8caebf3e379732b0241e19fd9f2028809516fe0ecb9c0aeea0e361a-Expense_Management_Template_6_Filter.png" />
 
 The **Submitted Claims** View provides **Read-Only** access to **Employees**, using a filtering expression to only include rows where the **Status** is **Submitted** and the **Submitter** is equal to the **Current User**.
 
@@ -294,21 +224,7 @@ Take a look at our documentation on [working with data in design](https://docs.b
 
 **App Admins** can access a dedicated CRUD screen for creating, viewing, and editing **Events**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/728e36bd87a23a585f0534807868ae7504bbc8a0d649a5f321e4984517cdad13-Expense_Management_Template_9_Admin_Events.png",
-        null,
-        "Admin Events"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/728e36bd87a23a585f0534807868ae7504bbc8a0d649a5f321e4984517cdad13-Expense_Management_Template_9_Admin_Events.png" />
 
 Managers are able to view the details of submitted claims and either approve or reject them using **Row Actions**, as we’ll see in the following section.
 
@@ -320,41 +236,13 @@ The majority of these are created using **Row Actions**. These are user-triggera
 
 Our **Employees** can trigger two automations. The first of these, **Submit**, triggers when a user submits their claim, setting the **Date** to the current timestamp and the **Status** to **Submitted**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/03245e6f2a20217cdaa4e1f78ad4ed97b0c8a11772ccea3efd27802af8a7a619-Expense_Management_Template_10_Submit_Automation.png",
-        null,
-        "Submit Automation"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/03245e6f2a20217cdaa4e1f78ad4ed97b0c8a11772ccea3efd27802af8a7a619-Expense_Management_Template_10_Submit_Automation.png" />
 
 The other attributes, including the linked **Expense Items,** are then populated with a **Save Row** button action on the form UI itself.
 
 **Employees** can also trigger a **Row Action** called **Cancel**. With a button push, they can update the **Status** of their claim to **Cancelled**, removing it from the review process without deleting the original record.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/576f14982f9d479bd6b8160320d75ef99625d26d362dfd1236e1b69e601ee9f1-Expense_Management_Template_11_Cancel.png",
-        null,
-        "Cancel"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/576f14982f9d479bd6b8160320d75ef99625d26d362dfd1236e1b69e601ee9f1-Expense_Management_Template_11_Cancel.png" />
 
 **Managers** also use **Row Actions** to respond to claims. Depending on whether they hit **Approve** or **Reject**, the **Status** is updated to **Approved** or **Rejected**. Then, the original requestor is emailed, notifying them.
 
@@ -376,21 +264,7 @@ Alternatively, we can alter the schema of our existing tables using the Data sec
 
 Say we wanted to add a new **Text** column to our **Expense Items** table, to store the **Vendor**, for more detailed records. We could do so using the **Plus** icon.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4adc6d57800e15bb17eccffc06768208e99ceceef46136612f0af64ea5fdd2ee-Expense_Management_Template_13_Add_Column.png",
-        null,
-        "Add Column"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/4adc6d57800e15bb17eccffc06768208e99ceceef46136612f0af64ea5fdd2ee-Expense_Management_Template_13_Add_Column.png" />
 
 ### Adding and altering user roles
 
@@ -406,21 +280,7 @@ To achieve this, we’d create a parallel branch of permissions.
 
 We’d then need to create **Auditor** Views of our data tables and assign read-only access to all attributes under the **Columns** tab.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/87e3699b6f647a683b13cfaca61b689996ecc8b4f14a079432d1bc775aca1390-Expense_Management_Template_15_Auditor_View.png",
-        null,
-        "Auditor View"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/87e3699b6f647a683b13cfaca61b689996ecc8b4f14a079432d1bc775aca1390-Expense_Management_Template_15_Auditor_View.png" />
 
 ### Adding extra screens
 
@@ -430,39 +290,11 @@ Let’s carry on with our example of providing **Read-Only** access to our **Exp
 
 From our **Auditor View**, we’d hit Screens to generate a table UI with side panels.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2f00f172f4af5081bef9eef1f47694f925c139b4f2c5c392f41f72d5b0a96357-Expense_Management_Template_16_Auditor_Screen_Generation.png",
-        null,
-        "Screen Generation"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/2f00f172f4af5081bef9eef1f47694f925c139b4f2c5c392f41f72d5b0a96357-Expense_Management_Template_16_Auditor_Screen_Generation.png" />
 
 Then, all we need to do is make a few tweaks to the screen that’s outputted, including removing the **Create** form and setting the **Update** form to **View**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/12adc35b4be9623aa4ab705b429b3c31cf1849a4ac6533a7174102151e48c7fe-Expense_Management_Template_17_Auditor_Screen.png",
-        null,
-        "Auditor Screen"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/12adc35b4be9623aa4ab705b429b3c31cf1849a4ac6533a7174102151e48c7fe-Expense_Management_Template_17_Auditor_Screen.png" />
 
 ### Adding your own business rules
 
@@ -472,89 +304,20 @@ For example, we could provide an action to allow our auditor to flag certain sub
 
 To do this, we’d start by adding a **Row Action** to our new **Auditor View**. We’ll call this **Flag Expense**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/abc5a5a3bc98ce1d29509bafdfbf1e7979e085d89c1be31ab35ca6bac1dd9f31-Expense_Management_Template_20_Flag_Expense.png",
-        null,
-        "Flag Expense"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/abc5a5a3bc98ce1d29509bafdfbf1e7979e085d89c1be31ab35ca6bac1dd9f31-Expense_Management_Template_20_Flag_Expense.png" />
 
 We’re then brought to the automation editor.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d4c4086094ad7b2c62c503ed84e7180201ac3928ab8a8ff62c558e8dca7dceba-Expense_Management_Template_21_Flag_automation.png",
-        null,
-        "Automation Flow"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/d4c4086094ad7b2c62c503ed84e7180201ac3928ab8a8ff62c558e8dca7dceba-Expense_Management_Template_21_Flag_automation.png" />
 
 Back in the Data section, we’ll update the **Status** column on our **Expense Claims** table, adding an option called **Flagged**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/af0a2982e6073aaf55c06707efbb9d127d1a89ede87119c0b8ab765bdc292a9e-Expense_Management_Automation_21_Flagged_Status.png",
-        null,
-        "Flagged Status"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/af0a2982e6073aaf55c06707efbb9d127d1a89ede87119c0b8ab765bdc292a9e-Expense_Management_Automation_21_Flagged_Status.png" />
 
 Within our **Row Action**, we’ll then use the same flow as our existing automation rules, only this time we’ll update the relevant row’s **Status** to **Flagged**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a7bda6964ad97beea32650985f1353a3ee87d8bbdae4ee63a9e7ac105b352708-Expense_Management_Template_22_Flag_Flow.png",
-        null,
-        "Flag Flow"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/a7bda6964ad97beea32650985f1353a3ee87d8bbdae4ee63a9e7ac105b352708-Expense_Management_Template_22_Flag_Flow.png" />
 
 Lastly, on our new **Auditor** screen, we’ll add a **Button** to the existing **Table** component, allowing them to trigger our **Row Action**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b5ef956298a78e5e9a6d8bdf38260da7833211623988a93f2b275bcfd984985f-Expense_Management_Template_23_Flag_Expense_Button.png",
-        null,
-        "Flag Expense Button"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/b5ef956298a78e5e9a6d8bdf38260da7833211623988a93f2b275bcfd984985f-Expense_Management_Template_23_Flag_Expense_Button.png" />
