@@ -51,7 +51,7 @@ Primary color allows you to select using the Color Picker or specify a hex value
 <br />
 
 > 📘 A note on Barcode Styles
-> 
+>
 > In order to ensure the best possible outcomes when scanning a Barcode, there are no styling/color options. The bars must remain black on a white background.
 
 ## Usage
