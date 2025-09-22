@@ -32,7 +32,7 @@ Here's an example usage of the "date" helper:
 {{date now "DD-MM-YYYY" "America/New_York"}}
 ```
 
-In this example, the "now" variable represents the current date and time. The date will be formatted using the "DD-MM-YYYY" format and converted to the "America/New_York" timezone.
+In this example, the "now" variable represents the current date and time. The date will be formatted using the "DD-MM-YYYY" format and converted to the "America/New\_York" timezone.
 
 The "date" helper is particularly useful when you need to display formatted dates in your templates, such as showing the creation date of a post or the last modified date of a document.
 
