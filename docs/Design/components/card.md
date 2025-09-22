@@ -25,7 +25,7 @@ Cards are highly flexible and have a lot of configuration options. We'll dive in
 ![](https://files.readme.io/0b85713-design-like-a-pro.gif "design-like-a-pro.gif")
 
 > 📘 Cards Block
-> 
+>
 > Want to quickly convert your data to a list of cards? Use the Cards [Block](doc:blocks) instead
 
 ## Layout
@@ -36,51 +36,27 @@ For example purposes, I've loaded a list of countries into the database, with fl
 
 ### Vertical Mode
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/acd2e6c-cards-vertical.png",
-        "cards-vertical.png",
-        2126
-      ],
-      "align": "center",
-      "caption": "Vertical Cards Mode"
-    }
-  ]
-}
-[/block]
+<Image title="cards-vertical.png" alt={2126} align="center" src="https://files.readme.io/acd2e6c-cards-vertical.png">
+  Vertical Cards Mode
+</Image>
 
 As you can see, there's 3 items per row. However, this is purely dependent on the screen size. When you change the width of your browser window this can easily change to 1 (narrow or mobile), or 4 (or more) when you make your window wider.
 
-The vertical mode is enabled by default, but in case horizontal mode is enabled, all you have to do is deselect "Horizontal" from the <<glossary:Settings Panel>>.
+The vertical mode is enabled by default, but in case horizontal mode is enabled, all you have to do is deselect "Horizontal" from the <Glossary>Settings Panel</Glossary>.
 
 The order of elements visible in a card is from top to bottom, Image, Title, Subtitle and Description.
 
 ### Horizontal Mode
 
-To enable horizontal mode, you need to check `Horizontal` in the <<glossary:Settings Panel>>.
+To enable horizontal mode, you need to check `Horizontal` in the <Glossary>Settings Panel</Glossary>.
 
 ![](https://files.readme.io/8158dd0-horizontal-mode.png "horizontal-mode.png")
 
 Immediately, the design will change into horizontal mode, which looks like the following screenshot
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/69d8f87-cards-horizontal.png",
-        "cards-horizontal.png",
-        2116
-      ],
-      "align": "center",
-      "caption": "Horizontal Cards Mode"
-    }
-  ]
-}
-[/block]
+<Image title="cards-horizontal.png" alt={2116} align="center" src="https://files.readme.io/69d8f87-cards-horizontal.png">
+  Horizontal Cards Mode
+</Image>
 
 As you can see, the image has shifted to the left of the text elements, where the text elements themselves have not changed.
 
@@ -108,7 +84,7 @@ The button text can be configured through [Bindings](doc:bindings), or simply te
 Right now the button doesn't do anything yet, when you click it, but that can be configured through the `Define Actions` button in the settings panel. 
 
 > 👍 Define Actions
-> 
+>
 > To learn more about defining actions, read the [Actions](doc:actions) documentation
 
 ## Tutorial
@@ -116,11 +92,11 @@ Right now the button doesn't do anything yet, when you click it, but that can be
 This tutorial is primarily going to focus on the card component itself as the `Card Block` variant has already been discussed above. This tutorial will be broken down into steps, going from a blank screen to multiple cards and related details shown. Lastly, this tutorial will be using the inbuilt [Budibase DB](doc:budibasedb) as well as the sample data which it provides. 
 
 1. Add a data provider component (In this case I'm going to use the Employee's table).
-2. Add a repeater component nested inside the data provider.  
+2. Add a repeater component nested inside the data provider.\
    ![Repeater nested inside the data provider](https://files.readme.io/f62036f-small-Screenshot_2023-05-17_at_12.49.19.png)
-3. Add the card component nested inside the new repeater which you created.  
+3. Add the card component nested inside the new repeater which you created.\
    ![Card component added nested within the repeater.](https://files.readme.io/ed833f2-small-Screenshot_2023-05-17_at_12.53.13.png)
-4. Bind up all relevant information you wish to display within the card. From the title to the link, or even add a button with relevant actions you want to perform when clicked. For this example I was just show some basic information contained within the employee's table.  
+4. Bind up all relevant information you wish to display within the card. From the title to the link, or even add a button with relevant actions you want to perform when clicked. For this example I was just show some basic information contained within the employee's table.\
    ![Showing the bindings of the title field, using the first name and last name of the employee.](https://files.readme.io/2da14f1-small-Screenshot_2023-05-17_at_13.10.41.png)
 
 At the end you should have a screen similar to the image below. 
