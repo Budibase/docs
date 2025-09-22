@@ -12,25 +12,20 @@ next:
 ---
 ## Try it out!
 
-[block:html]
-{
-  "html": "<iframe width=\"800\" height=\"600\" frameborder=\"0\" allow=\"clipboard-write;camera;geolocation;fullscreen\" src=\"https://cprem.budibase.app/embed/guide-calculate-field-value-on-save-export\"></iframe>"
-}
-[/block]
-
+<HTMLBlock>{`
+<iframe width="800" height="600" frameborder="0" allow="clipboard-write;camera;geolocation;fullscreen" src="https://cprem.budibase.app/embed/guide-calculate-field-value-on-save-export"></iframe>
+`}</HTMLBlock>
 
 ## Scenario
 
 [Forms](doc:forms) will often have [number fields](https://docs.budibase.com/docs/text-inputs#number-field) for inputting measurements, which could be in different units such as ounces and kilograms, centimetres and inches, or even different currencies. 
 
-This guide will demonstrate how to allow an <<glossary:End User>> to select a unit of measurement, that will automatically convert the value, but making sure that any row saved will use a standardised unit of meters.
+This guide will demonstrate how to allow an <Glossary>End User</Glossary> to select a unit of measurement, that will automatically convert the value, but making sure that any row saved will use a standardised unit of meters.
 
-[block:html]
-{
-  "html": "<u><b style=\"font-size: 14px;\">Challenge: </b></u><br />\n<span style=\"position: relative; font-size: 24px; color: #000000;\">★★★☆☆</span>"
-}
-[/block]
-
+<HTMLBlock>{`
+<u><b style="font-size: 14px;">Challenge: </b></u><br />
+<span style="position: relative; font-size: 24px; color: #000000;">★★★☆☆</span>
+`}</HTMLBlock>
 
 ***
 
@@ -65,11 +60,11 @@ This guide will demonstrate how to allow an <<glossary:End User>> to select a un
 6. Be sure to set the default value to 1, and uncheck "Alphabetical"
 
    ![](https://files.readme.io/6a97dab617ba4799da2137dd8c2b41bd0597483d6adf3e151797cca920729647-image.png)
-7. Add an "On change" action to the options picker using the "Update Field Value" action  
-   i. Select the _Form_  
-   ii. Set _Type_ to 'Set value'  
-   iii. Select the _Distance_ form field  
-   iv. Click the lightning bolt and select the _JavaScript_ tab. Add the following:
+7. Add an "On change" action to the options picker using the "Update Field Value" action\
+   i. Select the *Form*\
+   ii. Set *Type* to 'Set value'\
+   iii. Select the *Distance* form field\
+   iv. Click the lightning bolt and select the *JavaScript* tab. Add the following:
 
    ```javascript JavaScript
    const previousUnit = $("New Form.Fields.units");
@@ -80,12 +75,12 @@ This guide will demonstrate how to allow an <<glossary:End User>> to select a un
    ```
 
 > 📘 Previous and new values on change
-> 
+>
 > It's worth bringing attention to the use of the options picker bindings. 
-> 
+>
 > `$("New Form.Fields.UnitPicker")` will get the value of the field before the change occurs.
-> 
-> `$("Field Value")` is the new value that will update the field when the _on change_ finishes.
+>
+> `$("Field Value")` is the new value that will update the field when the *on change* finishes.
 
 <br />
 
@@ -95,22 +90,7 @@ This guide will demonstrate how to allow an <<glossary:End User>> to select a un
 
 9. As a child-component of your form, and a sibling of your field group, add a new button. Update the button text to "Save", and add an Icon "save-3-fill".
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/721fac584ff7a9811d090112d4571a02cf71a90bcba65ab08dd6af111726a8ed-image.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "50% "
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="50% " src="https://files.readme.io/721fac584ff7a9811d090112d4571a02cf71a90bcba65ab08dd6af111726a8ed-image.png" />
 
 10. Add an On Click action "Save Row" to save the information from your form into your table - (If you don't specify any columns, all fields will be saved by default). In our case we want to select the 'Distance column' and provide the following binding: `{{ multiply New Form.Fields.Distance Form.Fields.units }}` in order to save all distances in meters.
 
@@ -140,10 +120,29 @@ This guide will demonstrate how to allow an <<glossary:End User>> to select a un
 
 ## App export
 
-_Downloads may take a few seconds._
+*Downloads may take a few seconds.*
 
-[block:html]
-{
-  "html": "<!-- Add icon library -->\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n\n<!-- Full width -->\n<button class=\"btn\" onclick=\"window.open('https://drive.google.com/file/d/1k9c3g4pjFxySGNc1QhV7kVKtWt3KfJ5X/view?usp=sharing')\" style=\"width:100%\"><i class=\"fa fa-download\"></i> Download</button>\n\n<style>\n  /* Style buttons */\n.btn {\n  background-color: #3571de;\n  border: none;\n  color: white;\n  padding: 12px 30px;\n  cursor: pointer;\n  font-size: 16px;\n}\n\n/* Darker background on mouse-over */\n.btn:hover {\n  background-color: #2e64c9;\n}\n</style>"
+<HTMLBlock>{`
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Full width -->
+<button class="btn" onclick="window.open('https://drive.google.com/file/d/1k9c3g4pjFxySGNc1QhV7kVKtWt3KfJ5X/view?usp=sharing')" style="width:100%"><i class="fa fa-download"></i> Download</button>
+
+<style>
+  /* Style buttons */
+.btn {
+  background-color: #3571de;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 16px;
 }
-[/block]
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: #2e64c9;
+}
+</style>
+`}</HTMLBlock>
