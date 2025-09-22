@@ -17,8 +17,6 @@ Use the button component to encourage users to take action and make choices with
 
 ![](https://files.readme.io/de769ea-CleanShot_2022-03-09_at_17.26.19.png "CleanShot 2022-03-09 at 17.26.19.png")
 
-
-
 ## Customizing the button
 
 | Setting  | Description                                                                                                                                                                  |
@@ -33,9 +31,9 @@ Use the button component to encourage users to take action and make choices with
 
 ## Adding buttons to table rows
 
-Simply click on the table and then add the Button component.  
+Simply click on the table and then add the Button component.\
 A similar example can be found [here](https://docs.budibase.com/docs/table#add-components-to-your-table).
 
 > 🚧 Table block
-> 
+>
 > You cannot add buttons to the rows of a <a href="https://docs.budibase.com/docs/blocks#table-block">Table Block</a>, however you can still add row links.
