@@ -26,14 +26,12 @@ There are fewer actions of this kind compared to data and application actions. W
 
 ## Logic actions
 
-Currently there is only one action of this type, this is the [Continue If / Stop if](<>).
+Currently there is only one action of this type, this is the [Continue If / Stop if]().
 
 ***
 
 ## Tutorial video
 
-[block:html]
-{
-  "html": "<iframe src=\"https://player.vimeo.com/video/746819363?h=a950be3e5d&title=0&byline=0&portrait=0\" style=\"margin-top: -100px;\" width=\"640\" height=\"564\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
-}
-[/block]
+<HTMLBlock>{`
+<iframe src="https://player.vimeo.com/video/746819363?h=a950be3e5d&title=0&byline=0&portrait=0" style="margin-top: -100px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+`}</HTMLBlock>
