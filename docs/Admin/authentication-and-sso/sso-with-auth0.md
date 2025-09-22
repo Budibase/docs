@@ -11,7 +11,7 @@ next:
   description: ''
 ---
 > 📘 OpenID Connect
-> 
+>
 > To become familiar with OpenID Connect in Budibase, see: [OpenID Connect](doc:openid-connect)
 
 ## Configuration
@@ -24,7 +24,7 @@ Create the budibase application in your Applications list.
 
 Select the 'web' tab, then click create.
 
-[block:image]{"images":[{"image":["https://files.readme.io/f99b2ea-Screenshot_2024-04-03_at_08.35.49.png","auth0-regular-web.png",null],"align":"center"}]}[/block]
+<Image align="center" src="https://files.readme.io/f99b2ea-Screenshot_2024-04-03_at_08.35.49.png" />
 
 ### Find your configuration details
 
@@ -48,21 +48,7 @@ Use the **Client Secret** field as your Client Secret in Budibase.
 
 Navigate to Settings -> Auth within Budibase. Scroll down to where it says "OpenID Connect" and find the field labeled `Callback URL`.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5bb0daa-Screenshot_2024-02-23_at_11.52.38.png",
-        "",
-        "Show casing were to get the callback url within Budibase"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/5bb0daa-Screenshot_2024-02-23_at_11.52.38.png" />
 
 If you are using our cloud service, the URL contained within is exactly what you need.
 
@@ -72,17 +58,4 @@ For self-hosted users, it will likely display `http://localhost:10000/api/global
 
 Scroll down to the 'Application URIs' section and enter your callback URL
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0a31fcd-34b880b-auth0-callback.png",
-        "auth0-callback.png",
-        "Azure auth0 callback url"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/0a31fcd-34b880b-auth0-callback.png" />
