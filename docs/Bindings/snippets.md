@@ -18,21 +18,7 @@ This premium feature empowers you to craft reusable JavaScript code that can be 
 
 To access this feature, navigate to any drawer opened by clicking on a lightning bolt icon. Within this drawer, you will initially be presented with text (Handlebars syntax) by default. To utilise JavaScript snippets, select the JavaScript option provided. Subsequently, a new icon `<\>` should appear on the right-hand side. Clicking on this icon will enable you to view and start creating your JavaScript snippets. The GIF below will demonstrate where to find and access these snippets.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d7adefc-20240328_131654.gif",
-        "",
-        "A gif showcasing how to access Javascript snippets"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/d7adefc-20240328_131654.gif" />
 
 ## Creating a snippet
 
@@ -40,21 +26,7 @@ At the outset, you have two options since you don't have any snippets yet. You c
 
 After clicking either of the above methods, the snippet drawer will now be open. An image illustrating this can be found below.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b53c938-Screenshot_2024-03-28_at_13.30.55.png",
-        "",
-        "Snippet drawer image"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/b53c938-Screenshot_2024-03-28_at_13.30.55.png" />
 
 Within this drawer, several key elements are worth noting. Firstly, there's the `Name` field. Utilise this field to assign a descriptive name to your snippet, such as `oddOrEven` for a function that checks if a value is odd or even.
 
@@ -72,21 +44,7 @@ return function(n) {
 
 After you have finished entering your snippet's code, click the 'Save' button. This action will redirect you back to the previous screen, displaying the new snippet that you have created.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/bd2f072-Screenshot_2024-04-02_at_09.41.40.png",
-        "",
-        "How snippets appear in the ui after being added."
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/bd2f072-Screenshot_2024-04-02_at_09.41.40.png" />
 
 ## Using a snippet
 
@@ -94,17 +52,4 @@ Now that you have set up a snippet, you can use it similarly to how [helpers](do
 
 A simple example image of this can be found below.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c628923-Screenshot_2024-04-02_at_09.40.45.png",
-        "",
-        "Showcasing how to use a simple snippet with a binding."
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/c628923-Screenshot_2024-04-02_at_09.40.45.png" />
