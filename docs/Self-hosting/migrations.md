@@ -14,22 +14,9 @@ Occasionally as part of a Budibase update we will need to make an update to the 
 
 Budibase will warn you that your installation is not up to date/is missing components of the infrastructure, this warning will look like:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ab77c2a-image.png",
-        null,
-        "Your installation requires an upgrade"
-      ],
-      "align": "center",
-      "caption": "Your installation requires an upgrade"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Your installation requires an upgrade" align="center" src="https://files.readme.io/ab77c2a-image.png">
+  Your installation requires an upgrade
+</Image>
 
 Below is a list of migrations which may be needed for your installation.
 
@@ -39,7 +26,7 @@ If you have reached this page then you have been alerted to an issue with your s
 
 If you are using any of the [single image/docker install methods](/docs/docker) then you will not need to make any changes, the updates to CouchDB are included in the image. If you are using Kubernetes or docker-compose then you may be impacted.
 
-Docker-compose installations are likely to be affected, to update to this version you will need to update your docker-compose installation - the quickest way to do this is using the [Budibase CLI](/docs/updating-budibase#budibase-cli-docker-compose). If you wish to do this manually then you will need to make sure your CouchDB installation is using the latest version of the `budibase/couchdb` image instead of whatever it is currently using, if you are using an old IBM image you can simply swap the image for this. You will also need to make sure that your app and worker services contain the environment variable:  
+Docker-compose installations are likely to be affected, to update to this version you will need to update your docker-compose installation - the quickest way to do this is using the [Budibase CLI](/docs/updating-budibase#budibase-cli-docker-compose). If you wish to do this manually then you will need to make sure your CouchDB installation is using the latest version of the `budibase/couchdb` image instead of whatever it is currently using, if you are using an old IBM image you can simply swap the image for this. You will also need to make sure that your app and worker services contain the environment variable:\
  `COUCH_DB_SQL_URL: http://couchdb-service:4984`
 
 If you have updated your CouchDB image to `budibase/couchdb`, made sure you have the latest version of it downloaded and updated the server/worker services to have the new environment variable then the migration is complete.
