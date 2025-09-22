@@ -40,11 +40,11 @@ From the side navigation press the `Upgrade` tab, alternatively you can click on
 ![](https://files.readme.io/708c964-Screenshot_2022-09-28_at_10.07.18.png)
 
 > 📘 Accessing the account portal
-> 
-> Only the account holder will be able to access the account portal. The account holder is the user who first created the budibase account and chose the domain e.g. acme.budibase.app. All other users will be prompted to contact the account holder to perform an upgrade. If your account holder is no longer available please contact support@budibase.com
+>
+> Only the account holder will be able to access the account portal. The account holder is the user who first created the budibase account and chose the domain e.g. acme.budibase.app. All other users will be prompted to contact the account holder to perform an upgrade. If your account holder is no longer available please contact [support@budibase.com](mailto:support@budibase.com)
 
-This will take you to the account upgrade page where you can select your plan.  
-A detailed view of what's included is presented. The information available on the upgrade page is also available on <https://budibase.com/pricing/>.
+This will take you to the account upgrade page where you can select your plan.\
+A detailed view of what's included is presented. The information available on the upgrade page is also available on [https://budibase.com/pricing/](https://budibase.com/pricing/).
 
 ![](https://files.readme.io/0739e19-image.png)
 
@@ -55,24 +55,12 @@ Click the 'Upgrade' button on your selected plan and complete checkout via Strip
 From the side navigation press click on the `Account` tab to visit the account portal. Unlike cloud where only the account holder will be able to perform an upgrade, any self hosted account can be used to upgrade a self hosted installation. 
 
 > 🚧 Self hosted vs Cloud Account
-> 
-> It's important that when registering on <https://account.budibase.app/> that the "Self-Host" option is chosen. A cloud account cannot be used to upgrade a self hosted installation as a license key will not be generated.
+>
+> It's important that when registering on [https://account.budibase.app/](https://account.budibase.app/) that the "Self-Host" option is chosen. A cloud account cannot be used to upgrade a self hosted installation as a license key will not be generated.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/449ece9-Screenshot_2023-06-12_at_10.27.15.png",
-        null,
-        "Signing up for a Self-Host account"
-      ],
-      "align": "center",
-      "caption": "Signing up for a Self-Host account"
-    }
-  ]
-}
-[/block]
+<Image alt="Signing up for a Self-Host account" align="center" src="https://files.readme.io/449ece9-Screenshot_2023-06-12_at_10.27.15.png">
+  Signing up for a Self-Host account
+</Image>
 
 #### Accessing your license key
 
