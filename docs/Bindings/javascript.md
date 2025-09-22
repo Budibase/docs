@@ -19,7 +19,7 @@ next:
 Budibase is a low-code tool, which means, you can use code to improve your applications! But it also means in certain situations writing code is necessary. Budibase supports the use of JavaScript in several places to customize your applications.
 
 > 🚧 Limitations
-> 
+>
 > JavaScript within Budibase is server-side synchronous only. Async interactions (such as API calls, or `await`) aren't supported. There also is no DOM-interaction as the code is executed server-side.
 
 ## Using JavaScript code in Bindings
@@ -30,7 +30,7 @@ JavaScript inside bindings is executed server-side and synchronous. This means t
 
 To use JavaScript anywhere in [Bindings](doc:bindings), you need to press the Lightning icon on any field that supports it, and then click the "JavaScript" tab.
 
-[block:image]{"images":[{"image":["https://files.readme.io/47e80c6f01eca8acf19b2675e6f9e2120c19685ccb3201596ff04b70904c1b1c-Screenshot_2024-09-18_at_12.23.30.png","javascript-tab.png",null],"align":"center"}]}[/block]
+<Image align="center" src="https://files.readme.io/47e80c6f01eca8acf19b2675e6f9e2120c19685ccb3201596ff04b70904c1b1c-Screenshot_2024-09-18_at_12.23.30.png" />
 
 In essence, the JavaScript box is a synchronous function. It expects a value to be returned and can use values from bindings, which are all listed on the left.
 
@@ -52,10 +52,10 @@ return "Total Fuel Cost: $ " + totalFuelCost;
 We've used the binding `Data Provider.Rows` as that is the default binding that returns all the rows from the [Data Provider](doc:data-provider).
 
 > 👍 Autocomplete
-> 
+>
 > When working with JavaScript bindings, typing the **$** key will bring up a suggestion window, which will filter as you type. Use the up/down arrow keys to select a binding, and press **Tab** to complete.
-> 
-> [block:image]{"images":[{"image":["https://files.readme.io/d9ef780eb350f04c3a3a65f3265b06ce66f1c91b7b24a3da16a0c183b7259aeb-Screenshot_2024-09-18_at_12.24.02.png","",""],"align":"center"}]}[/block]
+>
+> <Image align="center" src="https://files.readme.io/d9ef780eb350f04c3a3a65f3265b06ce66f1c91b7b24a3da16a0c183b7259aeb-Screenshot_2024-09-18_at_12.24.02.png" />
 
 After entering the code, you can click "Save" on the top-right, and the binding should work automatically.
 
@@ -83,6 +83,6 @@ You can learn about using data in automations in this [Data in Automations](doc:
 
 ## Using JavaScript with Transformers
 
-When dealing with external <<glossary:Data Sources>> you can create custom queries. But with queries comes the ability to transform the data in a way your app can consume it easier. For example, when querying a [REST API](doc:rest), you could transform the data using JavaScript to a format that only returns what you want to return.
+When dealing with external <Glossary>Data Sources</Glossary> you can create custom queries. But with queries comes the ability to transform the data in a way your app can consume it easier. For example, when querying a [REST API](doc:rest), you could transform the data using JavaScript to a format that only returns what you want to return.
 
 There's an [In Depth Guide](doc:transformers) for you to dive into how to use transformers with JavaScript.
