@@ -10,46 +10,43 @@ metadata:
 next:
   description: ''
 ---
-What are External Data Connectors?
-----------------------------------
+## What are External Data Connectors?
 
 **External data connectors** are modules that allow you to connect your Budibase application to a whole host of database and API technologies. You can connect your budibase apps to relational databases, HTTP APIs and more. You can find a list of all the currently supported Budibase data connectors [here](https://github.com/Budibase/budibase/blob/master/packages/server/src/integrations/index.ts).
 
-Data connector structure
-------------------------
+## Data connector structure
 
 > 📘 Existing connectors
-> 
+>
 > To see real-world examples of data connectors in Budibase, have a look through the [existing ones](https://github.com/Budibase/budibase/blob/master/packages/server/src/integrations/index.ts) in our repository on Github.
 
 Data connectors are made up of **datasources** and **queries**.
 
 A `datasource` usually points to a single database instance or API.
 
-`Queries` are the different data fetching operations _against_ a data source.
+`Queries` are the different data fetching operations *against* a data source.
 
 For example, your local PostgreSQL instance would be a data source, and you can create a whole host of different queries against that PostgreSQL instance. You can bind Budibase UI components to queries - such as grids, tables, repeaters, and more.
 
 When writing a data connector, you need to define **two** things in your code:
 
-- **Schema -** This defines the options for the data connector.
-- **Integration Code** - A JavaScript class containing the actual code that will be executed by budibase when executing operations against the datasource. The integration class must contain **create, read, update** and **delete** methods.
+* **Schema -** This defines the options for the data connector.
+* **Integration Code** - A JavaScript class containing the actual code that will be executed by budibase when executing operations against the datasource. The integration class must contain **create, read, update** and **delete** methods.
 
-Tutorial: Creating a MySQL data connector
------------------------------------------
+## Tutorial: Creating a MySQL data connector
 
-Let's walk through an example. We are going to create a Budibase data connector for **MySQL**, the popular RDBMS**.**
+Let's walk through an example. We are going to create a Budibase data connector for **MySQL**, the popular RDBM&#x53;**.**
 
 ### Steps
 
-- Create schema and integration code
-- Add an icon for the integration
-- Test our integration
+* Create schema and integration code
+* Add an icon for the integration
+* Test our integration
 
 ### Setup
 
 > 🚧 Already have a MySQL setup?
-> 
+>
 > If you already have MySQL setup, feel free to skip this section and use your own existing MySQL database for this tutorial.
 
 If you haven't installed MySQL, you will need to install it (docs [here](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)). Alternatively, you can run MySQL inside docker, which is the approach we are going to take. 
@@ -102,19 +99,7 @@ Ok, we are now ready to write our data connector!
 
 To implement our data connector, we need a library that will allow the Budibase server (Built on NodeJS) to connect to our database. The simplest choice here would be to just use the official MySQL node connector, a hugely popular and mature library.
 
-
-[block:embed]
-{
-  "html": false,
-  "url": "https://github.com/mysqljs/mysql",
-  "title": "GitHub - mysqljs/mysql: A pure node.js JavaScript Client implementing the MySQL protocol.",
-  "favicon": "https://github.com/favicon.ico",
-  "image": "https://opengraph.githubassets.com/847557d8737efb5f7c84b08468af33b17743f7777be3ea7e7de5bd2ebe7647c5/mysqljs/mysql",
-  "provider": "github.com",
-  "href": "https://github.com/mysqljs/mysql"
-}
-[/block]
-
+<Embed url="https://github.com/mysqljs/mysql" title="GitHub - mysqljs/mysql: A pure node.js JavaScript Client implementing the MySQL protocol." favicon="https://github.com/favicon.ico" image="https://opengraph.githubassets.com/847557d8737efb5f7c84b08468af33b17743f7777be3ea7e7de5bd2ebe7647c5/mysqljs/mysql" provider="github.com" href="https://github.com/mysqljs/mysql" />
 
 Let's install this library in the server directory.
 
@@ -209,10 +194,10 @@ module.exports = {
 
 Following our schema configuration, the next part is to create a **query.** We are going to create a simple query to allow us to read data from our MySQL instance. As mentioned in the **Data Connector Structure** section, integration methods must be one of the following:
 
-- create()
-- read()
-- update()
-- delete()
+* create()
+* read()
+* update()
+* delete()
 
 Let's write the code for our **read()** method.
 
@@ -463,8 +448,7 @@ Our icon has been added! Now when we open the data source creation menu, the bui
 
 ![](https://files.readme.io/2a3a143-data-connector-3.png "data-connector-3.png")
 
-Data connector schema reference
--------------------------------
+## Data connector schema reference
 
 Here is the total schema for budibase data connectors. This is written using the TypeScript type notation.
 
@@ -507,8 +491,7 @@ interface IntegrationSchema = {
 }
 ```
 
-Making a contribution
----------------------
+## Making a contribution
 
 We are always excited to hear ideas from the community and to accept contributions for new Budibase data connectors.
 
