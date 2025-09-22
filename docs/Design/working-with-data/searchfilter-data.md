@@ -38,10 +38,8 @@ In the data provider, select the define filters button. Next, add an expression 
 
 ## Video tutorial: filter with two option pickers
 
-[block:html]
-{
-  "html": "<div style=\"padding:50% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/742702875?h=69fa04afed&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"filter-with-options-pickers.mov\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>"
-}
-[/block]
+<HTMLBlock>{`
+<div style="padding:50% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/742702875?h=69fa04afed&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="filter-with-options-pickers.mov"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+`}</HTMLBlock>
 
 You can also filter using a [relationship picker](https://docs.budibase.com/docs/filter-by-relationships).
