@@ -20,71 +20,218 @@ next:
 
 ## Data Shortcuts
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Key",
-    "h-1": "Function",
-    "0-0": "⌘ + Enter  \nCTRL + Enter",
-    "0-1": "Create new row  \nSave current row (while editing a row)",
-    "1-0": "ESCAPE",
-    "1-1": "Cancels edit",
-    "2-0": "⇥ (TAB)",
-    "2-1": "Shift focus one cell to the right",
-    "3-0": "SHIFT + Click",
-    "3-1": "With a cell selected, SHIFT + CLICK will select all cells between",
-    "4-0": "SHIFT + ↑↓←→",
-    "4-1": "With a cell selected, SHIFT + ↑↓←→ will select another row or column depending on which arrow pressed"
-  },
-  "cols": 2,
-  "rows": 5,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Key
+      </th>
 
+      <th>
+        Function
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        ⌘ + Enter
+        CTRL + Enter
+      </td>
+
+      <td>
+        Create new row\
+        Save current row (while editing a row)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ESCAPE
+      </td>
+
+      <td>
+        Cancels edit
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ⇥ (TAB)
+      </td>
+
+      <td>
+        Shift focus one cell to the right
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        SHIFT + Click
+      </td>
+
+      <td>
+        With a cell selected, SHIFT + CLICK will select all cells between
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        SHIFT + ↑↓←→
+      </td>
+
+      <td>
+        With a cell selected, SHIFT + ↑↓←→ will select another row or column depending on which arrow pressed
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 <br />
 
 ## Component Tree Shortcuts
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Key",
-    "h-1": "Function",
-    "0-0": "⌘ + ↑  \nCTRL + ↑",
-    "0-1": "Move the component up",
-    "1-0": "↑",
-    "1-1": "Select the next component above",
-    "2-0": "⌘ + ↓  \nCTRL + ↓",
-    "2-1": "Move the component down",
-    "3-0": "↓",
-    "3-1": "Select the next component below",
-    "4-0": "⌘ + D  \nCTRL + D",
-    "4-1": "Duplicate the component (and it's children)",
-    "5-0": "⌘ + X  \nCTRL + X",
-    "5-1": "Cut the component (and it's children)",
-    "6-0": "⌘ + C  \nCTRL + C",
-    "6-1": "Copy the component (and it's children)",
-    "7-0": "⌘ + V  \nCTRL + V",
-    "7-1": "Paste from the clipboard (clipboard must hold a component, component must be valid child-component for the location)",
-    "8-0": "⌘ + ←  \nCTRL + ←",
-    "8-1": "Collapse all nested components",
-    "9-0": "←",
-    "9-1": "Collapse selected component",
-    "10-0": "⌘ + →  \nCTRL + →",
-    "10-1": "Expand all nested components",
-    "11-0": "→",
-    "11-1": "Expand selected component"
-  },
-  "cols": 2,
-  "rows": 12,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Key
+      </th>
+
+      <th>
+        Function
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        ⌘ + ↑
+        CTRL + ↑
+      </td>
+
+      <td>
+        Move the component up
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ↑
+      </td>
+
+      <td>
+        Select the next component above
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ⌘ + ↓\
+        CTRL + ↓
+      </td>
+
+      <td>
+        Move the component down
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ↓
+      </td>
+
+      <td>
+        Select the next component below
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ⌘ + D\
+        CTRL + D
+      </td>
+
+      <td>
+        Duplicate the component (and it's children)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ⌘ + X\
+        CTRL + X
+      </td>
+
+      <td>
+        Cut the component (and it's children)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ⌘ + C\
+        CTRL + C
+      </td>
+
+      <td>
+        Copy the component (and it's children)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ⌘ + V\
+        CTRL + V
+      </td>
+
+      <td>
+        Paste from the clipboard (clipboard must hold a component, component must be valid child-component for the location)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ⌘ + ←\
+        CTRL + ←
+      </td>
+
+      <td>
+        Collapse all nested components
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ←
+      </td>
+
+      <td>
+        Collapse selected component
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ⌘ + →\
+        CTRL + →
+      </td>
+
+      <td>
+        Expand all nested components
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        →
+      </td>
+
+      <td>
+        Expand selected component
+      </td>
+    </tr>
+  </tbody>
+</Table>
