@@ -61,26 +61,10 @@ return function(pastTimeString) {
 9. Click the snippet and add the date binding you wish to use inside its brackets
 10. Then click save
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/af76113-Screenshot_2024-04-05_at_13.21.07.png",
-        "",
-        "An image showing this snippet being called."
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/af76113-Screenshot_2024-04-05_at_13.21.07.png" />
 
 ## The end result!
 
-[block:html]
-{
-  "html": "<iframe width=\"800\" height=\"600\" frameborder=\"0\" allow=\"clipboard-write;camera;geolocation;fullscreen\" src=\"https://plugins.budibase.app/embed/snippet-demos#/timeago\"></iframe>"
-}
-[/block]
+<HTMLBlock>{`
+<iframe width="800" height="600" frameborder="0" allow="clipboard-write;camera;geolocation;fullscreen" src="https://plugins.budibase.app/embed/snippet-demos#/timeago"></iframe>
+`}</HTMLBlock>
