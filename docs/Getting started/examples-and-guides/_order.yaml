@@ -7,3 +7,4 @@
 - notify-user-if-rest-query-fails
 - populate-form-fields-on-select
 - scroll-to-form-field
+- update-date-field-on-change
