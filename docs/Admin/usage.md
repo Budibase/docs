@@ -12,21 +12,7 @@ next:
 ---
 The `Usage` tab allows you to see if you are nearing any limits for your current plan. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/77acbd4-Screenshot_2024-04-26_at_21.40.37.png",
-        null,
-        "Updated usage tab area."
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/77acbd4-Screenshot_2024-04-26_at_21.40.37.png" />
 
 For example, in the screenshot above, you can see it has a link to the account area which allows you to [Upgrade](https://docs.budibase.com/docs/usage#upgrading).
 
@@ -51,44 +37,16 @@ The table below outlines each of the different usage limits.
 
 From the side navigation press the `Upgrade` tab, alternatively you can click on the `Account` tab to visit the account portal and then click on the `Upgrade` tab. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2fa1062-account.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/2fa1062-account.png" />
 
 > 📘 Accessing the account portal
-> 
+>
 > Only the account holder will be able to access the account portal. The account holder is the user who first created the budibase account and chose the domain e.g. acme.budibase.app. All other users will be prompted to contact the account holder to perform an upgrade. If your account holder is no longer available please contact [support@budibase.com](mailto:support@budibase.com)
 
-This will take you to the account upgrade page where you can select your plan.  
-A detailed view of what's included is presented. The information available on the upgrade page is also available on <https://budibase.com/pricing/>.
+This will take you to the account upgrade page where you can select your plan.\
+A detailed view of what's included is presented. The information available on the upgrade page is also available on [https://budibase.com/pricing/](https://budibase.com/pricing/).
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c7840b2-Screenshot_2024-01-24_at_08.48.21.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/c7840b2-Screenshot_2024-01-24_at_08.48.21.png" />
 
 Click the 'Upgrade' button on your selected plan and complete checkout via Stripe to finish upgrading your account. 
 
@@ -97,25 +55,12 @@ Click the 'Upgrade' button on your selected plan and complete checkout via Strip
 From the side navigation press click on the `Account` tab to visit the account portal. Unlike cloud where only the account holder will be able to perform an upgrade, any self hosted account can be used to upgrade a self hosted installation. 
 
 > 🚧 Self-hosted vs Cloud account
-> 
-> It's important that when registering on <https://account.budibase.app/> that the "self-host" option is chosen. A cloud account cannot be used to upgrade a self hosted installation as a license key will not be generated.
+>
+> It's important that when registering on [https://account.budibase.app/](https://account.budibase.app/) that the "self-host" option is chosen. A cloud account cannot be used to upgrade a self hosted installation as a license key will not be generated.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ab29ac1-usage_highlight.png",
-        null,
-        "Signing up for a Self-Host account"
-      ],
-      "align": "center",
-      "caption": "Signing up for a self-host account"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Signing up for a Self-Host account" align="center" src="https://files.readme.io/ab29ac1-usage_highlight.png">
+  Signing up for a self-host account
+</Image>
 
 #### Accessing your license key
 
