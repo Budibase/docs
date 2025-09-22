@@ -44,7 +44,7 @@ Configuration of blocks is done by clicking the block you just added. Immediatel
 
 ![](https://files.readme.io/b3dcd71-table-block-settings.png "table-block-settings.png")
 
-In this panel, all configuration options are displayed in a structured manner. The most important selection you will have to make first is picking which data table you want to be displayed. This will automatically give you all options of all the available <<glossary:Data Sources>>.
+In this panel, all configuration options are displayed in a structured manner. The most important selection you will have to make first is picking which data table you want to be displayed. This will automatically give you all options of all the available <Glossary>Data Sources</Glossary>.
 
 All other options available to you in the settings panel are comprised of the different [Components](doc:components) that were merged within the block you just selected. To learn about which components are used for each block, look at the respective section below.
 
@@ -58,13 +58,13 @@ The [Table block](doc:table-block) is the easiest way to quickly display and act
 
 ### Cards block
 
-The _Cards Block_ is a useful block that merges three different components into one. In order, it uses [Data Provider](doc:data-provider), [Repeater](doc:repeater) and [Card](doc:card) components. 
+The *Cards Block* is a useful block that merges three different components into one. In order, it uses [Data Provider](doc:data-provider), [Repeater](doc:repeater) and [Card](doc:card) components. 
 
 All the configuration options relevant to all three components are available in the sidebar. 
 
 ### Repeater block
 
-The _Repeater Block_ is a quick way to have both the [Data Provider](doc:data-provider) and the [Repeater](doc:repeater) component into one. This way you can still configure _what_ exactly is repeated within the repeater, but don't have to worry about having both the repeater component and the datasource component.
+The *Repeater Block* is a quick way to have both the [Data Provider](doc:data-provider) and the [Repeater](doc:repeater) component into one. This way you can still configure *what* exactly is repeated within the repeater, but don't have to worry about having both the repeater component and the datasource component.
 
 ### Form block
 
@@ -72,7 +72,7 @@ The [Form Block](https://docs.budibase.com/docs/form-block) is a comprehensive c
 
 ### Chart block
 
-The _Chart Block_ combines a [Data Provider](doc:data-provider) with a nested [Chart](doc:chart) that matches the type chosen from the _Chart Type_ dropdown menu.
+The *Chart Block* combines a [Data Provider](doc:data-provider) with a nested [Chart](doc:chart) that matches the type chosen from the *Chart Type* dropdown menu.
 
 ### Row explorer block
 
@@ -82,55 +82,22 @@ Allows you to view data in an alternative way. It combines a searchable and scro
 
 ## Ejecting blocks
 
-As mentioned, blocks combine various components for convenience. Whilst there are many settings, sometimes blocks wont provide the full flexibility you are after. In this case, you can _eject_ the block. 
+As mentioned, blocks combine various components for convenience. Whilst there are many settings, sometimes blocks wont provide the full flexibility you are after. In this case, you can *eject* the block. 
 
 An ejected block will split a single block component into its constituent components. To eject a block, you can press the `Eject block` button in the settings panel, or select the option from the component tree. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4754671-Screenshot_2022-11-11_at_09.14.00.png",
-        null,
-        "Eject block button in the settings panel"
-      ],
-      "caption": "Eject block button in the settings panel"
-    }
-  ]
-}
-[/block]
+<Image alt="Eject block button in the settings panel" src="https://files.readme.io/4754671-Screenshot_2022-11-11_at_09.14.00.png">
+  Eject block button in the settings panel
+</Image>
 
 <br />
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4c7acb0-Screenshot_2022-11-11_at_09.46.01.png",
-        null,
-        "Eject block from component tree"
-      ],
-      "caption": "Eject block from component tree"
-    }
-  ]
-}
-[/block]
+<Image alt="Eject block from component tree" src="https://files.readme.io/4c7acb0-Screenshot_2022-11-11_at_09.46.01.png">
+  Eject block from component tree
+</Image>
 
 <br />
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/22d8c89-Screenshot_2022-11-11_at_09.46.40.png",
-        null,
-        "Ejected content"
-      ],
-      "caption": "Ejected content"
-    }
-  ]
-}
-[/block]
+<Image alt="Ejected content" src="https://files.readme.io/22d8c89-Screenshot_2022-11-11_at_09.46.40.png">
+  Ejected content
+</Image>
