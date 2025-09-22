@@ -1,3 +1,4 @@
 - usercreate
 - userupdate
 - userdestroy
+- usergetbyid
