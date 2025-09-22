@@ -12,85 +12,32 @@ next:
 ---
 As outlined on the [Triggers](doc:trigger) page there are a variety of ways to trigger an automation.
 
-In particular the [App action](doc:app-action) trigger allows an <<glossary:End User>> to directly trigger an automation. It is also possible to call these _app action_ automations from another automation. This is done with the **Trigger an automation** step.
+In particular the [App action](doc:app-action) trigger allows an <Glossary>End User</Glossary> to directly trigger an automation. It is also possible to call these *app action* automations from another automation. This is done with the **Trigger an automation** step.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/cf613d7-Screenshot_2024-02-23_at_14.32.05.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/cf613d7-Screenshot_2024-02-23_at_14.32.05.png" />
 
+Select an *Automation* (only **app action** automations will be available). Next you will see the fields from the target automation that must be filled out. In this case it is just the *employee\_id*.
 
-Select an _Automation_ (only **app action** automations will be available). Next you will see the fields from the target automation that must be filled out. In this case it is just the _employee_id_.
+<Image alt="App action trigger of the target automation" align="center" src="https://files.readme.io/c0fd788-Screenshot_2024-02-23_at_14.35.11.png">
+  App action trigger of the target automation
+</Image>
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c0fd788-Screenshot_2024-02-23_at_14.35.11.png",
-        "",
-        "App action trigger of the target automation"
-      ],
-      "align": "center",
-      "caption": "App action trigger of the target automation"
-    }
-  ]
-}
-[/block]
-
-
-Optionally set the _Timeout (ms)_ if you want to make use of the response.
+Optionally set the *Timeout (ms)* if you want to make use of the response.
 
 #### Using the output
 
 There are a couple of useful [bindings](doc:data-in-automations) that are provided by the trigger an automation action step.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0552f32-Screenshot_2024-02-23_at_15.03.08.png",
-        "",
-        "Selecting the trigger automation outputs"
-      ],
-      "align": "center",
-      "caption": "Selecting the trigger automation outputs"
-    }
-  ]
-}
-[/block]
+<Image alt="Selecting the trigger automation outputs" align="center" src="https://files.readme.io/0552f32-Screenshot_2024-02-23_at_15.03.08.png">
+  Selecting the trigger automation outputs
+</Image>
 
+<Image alt="Available bindings" align="center" src="https://files.readme.io/759e045-Screenshot_2024-02-23_at_15.04.51.png">
+  Available bindings
+</Image>
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/759e045-Screenshot_2024-02-23_at_15.04.51.png",
-        "",
-        "Available bindings"
-      ],
-      "align": "center",
-      "caption": "Available bindings"
-    }
-  ]
-}
-[/block]
-
-
-- **Success** - a _boolean_ field that indicates if the triggered automation passed or errored
-- **Value** - the object representing the output of the target automation
+* **Success** - a *boolean* field that indicates if the triggered automation passed or errored
+* **Value** - the object representing the output of the target automation
 
 <br />
 
@@ -100,57 +47,69 @@ There are a couple of useful [bindings](doc:data-in-automations) that are provid
 
 In this tutorial we will use automations to generate onboarding tasks from a template table whenever a new employee is added.
 
-The app export for the tutorial can be [downloaded here](https://drive.google.com/uc?export=download&id=1MU9s7fjEpMpMGWe5vxdqHFYL740KqKM7). _The download may take a few seconds._
+The app export for the tutorial can be [downloaded here](https://drive.google.com/uc?export=download\&id=1MU9s7fjEpMpMGWe5vxdqHFYL740KqKM7). *The download may take a few seconds.*
 
 ### Data
 
 Create three tables. See [Budibase DB](doc:budibasedb) for more on the available data types.
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Table name",
-    "h-1": "Columns",
-    "0-0": "**Employees**",
-    "0-1": "first_name: `Text`,  \nlast_name: `Text`,  \nhired_date: `Date`",
-    "1-0": "**OnboardingTasks**",
-    "1-1": "date: `Date`",
-    "2-0": "**OnboardingTaskTemplates**",
-    "2-1": "title: `Text`,  \ndescription: `Text`"
-  },
-  "cols": 2,
-  "rows": 3,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Table name
+      </th>
 
+      <th>
+        Columns
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **Employees**
+      </td>
+
+      <td>
+        first\_name: `Text`,\
+        last\_name: `Text`,\
+        hired\_date: `Date`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **OnboardingTasks**
+      </td>
+
+      <td>
+        date: `Date`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **OnboardingTaskTemplates**
+      </td>
+
+      <td>
+        title: `Text`,\
+        description: `Text`
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 With our tables created, we need to create [Relationships](doc:relationships) between them as follows:
 
-- One _Employee_ -> Many _OnboardingTasks_
-- One _OnboardingTaskTemplate_ -> Many _OnboardingTask_
+* One *Employee* -> Many *OnboardingTasks*
+* One *OnboardingTaskTemplate* -> Many *OnboardingTask*
 
-Finally create a _static_ [Formula](doc:formula) column in the **OnboardingTask** table. Set this value to the `Template Relationships` _title_ field:
+Finally create a *static* [Formula](doc:formula) column in the **OnboardingTask** table. Set this value to the `Template Relationships` *title* field:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/97ae0d6-Screenshot_2024-02-23_at_15.25.01.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "sizing": "640px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="640px" src="https://files.readme.io/97ae0d6-Screenshot_2024-02-23_at_15.25.01.png" />
 
 In the **Design** section, create two [autogenerated screens](https://docs.budibase.com/docs/screens#autogenerated-screen) for the **Employees** and **OnboardingTasks** tables.
 
@@ -158,104 +117,37 @@ In the **Design** section, create two [autogenerated screens](https://docs.budib
 
 The automation section is now where we are going to generate onboarding tasks from our templates whenever a new employee is created.
 
-1. First create a new [App action](doc:app-action) automation, and `Add field` _employee_id_. 
+1. First create a new [App action](doc:app-action) automation, and `Add field` *employee\_id*. 
 2. Add a [Query Rows](doc:query-rows) step and select the **OnboardingTaskTemplates** table
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f270043-Screenshot_2024-02-23_at_15.32.52.png",
-        "",
-        "Get all the onboarding task templates"
-      ],
-      "align": "center",
-      "caption": "Get all the onboarding task templates"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Get all the onboarding task templates" align="center" src="https://files.readme.io/f270043-Screenshot_2024-02-23_at_15.32.52.png">
+  Get all the onboarding task templates
+</Image>
 
 3. Add a **Create Row** step for the **OnboardingTasks** table, and [Add Looping](doc:looping).
-   1. The _Input type_ should be `Array`, and the _Value_ should be the output of our templates query: `{{ steps.1.rows }}`
+   1. The *Input type* should be `Array`, and the *Value* should be the output of our templates query: `{{ steps.1.rows }}`
 4. Now fill out the values for the **OnboardingTask** fields:
-   1. _Date_: `return new Date()` _(JavaScript binding)_
-   2. _Template_: `{{ loop.currentItem._id }}`
-   3. _Employee_: `{{ trigger.fields.employee_id }}`
+   1. *Date*: `return new Date()` *(JavaScript binding)*
+   2. *Template*: `{{ loop.currentItem._id }}`
+   3. *Employee*: `{{ trigger.fields.employee_id }}`
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9109b7f-Screenshot_2024-02-23_at_15.40.54.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/9109b7f-Screenshot_2024-02-23_at_15.40.54.png" />
 
-
-We now have an automation that will create onboarding tasks from our templates, but we still need to _trigger_ this automation. We will do this from a second automation:
+We now have an automation that will create onboarding tasks from our templates, but we still need to *trigger* this automation. We will do this from a second automation:
 
 5. Create a new automation with a **Row Created** trigger. Select the **Employees** table
-6. Add a **Trigger an automation** action step. Select the first automation we created earlier, and provide the _employee_id_ <<glossary:Binding>>: `{{ trigger.id }}`
+6. Add a **Trigger an automation** action step. Select the first automation we created earlier, and provide the *employee\_id* <Glossary>Binding</Glossary>: `{{ trigger.id }}`
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/eaf7779-Screenshot_2024-02-23_at_15.44.40.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/eaf7779-Screenshot_2024-02-23_at_15.44.40.png" />
 
 [Publish](https://docs.budibase.com/docs/quickstart#preview-and-publish) your app to test out the workflow!
 
 #### Result
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/29cd041-Screenshot_2024-02-23_at_15.46.26.png",
-        "",
-        "Creating a new employee"
-      ],
-      "align": "center",
-      "border": true,
-      "caption": "Creating a new employee"
-    }
-  ]
-}
-[/block]
+<Image alt="Creating a new employee" align="center" border={true} src="https://files.readme.io/29cd041-Screenshot_2024-02-23_at_15.46.26.png">
+  Creating a new employee
+</Image>
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fa72b69-Screenshot_2024-02-23_at_15.47.09.png",
-        "",
-        "Generated onboarding tasks"
-      ],
-      "align": "center",
-      "caption": "Generated onboarding tasks"
-    }
-  ]
-}
-[/block]
+<Image alt="Generated onboarding tasks" align="center" src="https://files.readme.io/fa72b69-Screenshot_2024-02-23_at_15.47.09.png">
+  Generated onboarding tasks
+</Image>
