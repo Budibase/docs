@@ -18,12 +18,17 @@ next:
 ---
 The Budibase CLI tool can be used to create a new Budibase installation, to manage an existing installation, make backups or update a Budibase installation to a new version. The video below summarises the tool with further instructions below.
 
-[block:html]
-{
-  "html": "<div style=\"padding:65% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/712761948?h=e662bd81f5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"cli-tool.mp4\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>"
-}
-[/block]
-
+<div style={{ padding: "65% 0 0 0", position: "relative" }}>
+  <iframe
+    src="https://player.vimeo.com/video/712761948?h=e662bd81f5&badge=0&autopause=0&player_id=0&app_id=58479"
+    frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen
+    style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }}
+    title="cli-tool.mp4"
+  ></iframe>
+</div>
+<script src="https://player.vimeo.com/api/player.js"></script>
 
 ## Install Budibase CLI
 
@@ -46,6 +51,7 @@ If you already have NodeJS version 20+ on your system you can install the Budiba
 ```Text npm
 npm install -g @budibase/cli
 ```
+
 ```Text yarn
 yarn global add @budibase/cli
 ```
@@ -60,22 +66,7 @@ budi help
 
 You should see output similar to this:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f7e8a5c-image.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
+![Image](https://files.readme.io/f7e8a5c-image.png)
 
 ### Install Budibase using the Budibase CLI
 
@@ -87,36 +78,14 @@ budi hosting --init
 
 The commands below can be viewed in this recipe if desired:
 
-[block:tutorial-tile]
-{
-  "backgroundColor": "#018FF4",
-  "emoji": "🤖",
-  "id": "67c16880add6da0023520696",
-  "link": "https://docs.budibase.com/v1.0.9/recipes/budibase-cli-setup-npm",
-  "slug": "budibase-cli-setup-npm",
-  "title": "Budibase CLI setup [NPM]"
-}
-[/block]
-
+<details>
+  <summary>🤖 Budibase CLI setup [NPM]</summary>
+  <a href="https://docs.budibase.com/v1.0.9/recipes/budibase-cli-setup-npm" style={{ backgroundColor: "#018FF4" }}>Link to Recipe</a>
+</details>
 
 You can view, copy or backup your `.env` file at this point:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/74b2b8f-image.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
+![Image](https://files.readme.io/74b2b8f-image.png)
 
 You can now start the Budibase services with the following command:
 
@@ -131,11 +100,11 @@ docker ps
 docker-compose ps
 ```
 
-And you should be able to access Budibase over HTTP on the port number you chose during initialisation e.g. <http://127.0.0.1:10000>
+And you should be able to access Budibase over HTTP on the port number you chose during initialisation e.g. [http://127.0.0.1:10000](http://127.0.0.1:10000)
 
 ### Update Budibase Version using the Budibase CLI
 
-To update the services with the latest docker images, use the following comman
+To update the services with the latest docker images, use the following command:
 
 ```
 budi hosting --update
@@ -149,4 +118,4 @@ This command can be run from within the same directory as your Budibase `.env` f
 budi backups --export --env .env
 ```
 
-For more see the [Backups](backups)<https://docs.budibase.com/docs/backups> section.
+For more see the [Backups](https://docs.budibase.com/docs/backups) section.
