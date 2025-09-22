@@ -26,8 +26,8 @@ Developers can build, deploy and manage applications. They do not however have a
 
 ## Standard portal
 
-In the standard portal you can only see the list of deployed applications that you have access to.  
-You will not see the user admin options, dev apps or deployment options that are available in dev or admin mode.  
+In the standard portal you can only see the list of deployed applications that you have access to.\
+You will not see the user admin options, dev apps or deployment options that are available in dev or admin mode.\
 The standard portal acts as a landing page for users to use budibase apps created by users with builder permissions.
 
 ![](https://files.readme.io/25e13ef-portal-3.png "portal-3.png")
