@@ -12,28 +12,14 @@ next:
 ---
 The `Usage` tab allows you to see if you are nearing any limits for your current plan. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ea0b2d6ec3b3f0e0bd2debe4ce63d81745afc1a1de5b650ee961a28839a04390-Screenshot_2024-10-23_at_10.29.36.png",
-        null,
-        "Updated usage tab area."
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/ea0b2d6ec3b3f0e0bd2debe4ce63d81745afc1a1de5b650ee961a28839a04390-Screenshot_2024-10-23_at_10.29.36.png" />
 
 <br />
 
 There are two types of quotas:
 
-- **static:** This sets a fixed upper limit for the lifespan of your workspace. For example, on the free plan shown above, there is a total limit of 5 users.
-- **monthly**: These quotas reset each month
+* **static:** This sets a fixed upper limit for the lifespan of your workspace. For example, on the free plan shown above, there is a total limit of 5 users.
+* **monthly**: These quotas reset each month
 
 <br />
 
