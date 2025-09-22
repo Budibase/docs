@@ -15,7 +15,7 @@ The Embed component is used to embed content into your app.  This content is pro
 Another use of the embed component is for [Global Styling](https://docs.budibase.com/docs/custom-css#global-styling).
 
 > 👍 Embedded app
-> 
+>
 > Budibase apps can also be embedded in other webpages. Read more: [Embedded app](doc:embedded-app).
 
 <br />
