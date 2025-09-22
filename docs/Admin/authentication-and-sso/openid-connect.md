@@ -30,27 +30,11 @@ next:
       title: SSO with Keycloak
 ---
 OpenID Connect (OIDC) is a simple identity layer built on top of the OAuth 2.0 protocol, which allows clients to verify the identity of an end-user based on the authentication performed by an authorization server or identity provider (IdP), as well as to obtain basic profile information about the end-user.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/afb9eda-oidc.png",
-        "oidc.png",
-        581,
-        484,
-        "#1a1b1b"
-      ]
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Setup"
-}
-[/block]
+![581](https://files.readme.io/afb9eda-oidc.png "oidc.png")
+
+## Setup
+
 To enable OIDC for your IdP follow the setup steps below.
 
 ### Configure your IdP
@@ -94,11 +78,9 @@ Fill in either of the following:
   * The icon on the login button. Choose from:
     * One of the default icons
     * Upload a custom icon
-[block:api-header]
-{
-  "title": "Important Information"
-}
-[/block]
+
+## Important Information
+
 Some additional details on the OIDC integration are highlighted below.
 
 #### User provisioning
