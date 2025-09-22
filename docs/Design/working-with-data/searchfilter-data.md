@@ -20,40 +20,15 @@ If you have a [Table](doc:table) component connected to a [Data provider](doc:da
 
 ## Static filtering
 
-Once you have linked a <<glossary:Datasource>> to a component, you can access the filter drawer by clicking the button beside the _Filtering_ setting in the <<glossary:Settings Panel>>.
+Once you have linked a <Glossary>Datasource</Glossary> to a component, you can access the filter drawer by clicking the button beside the *Filtering* setting in the <Glossary>Settings Panel</Glossary>.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ac1dd7d-Screenshot_2023-09-07_at_11.40.50.png",
-        "",
-        "Adding filters to a Data provider"
-      ],
-      "align": "center",
-      "caption": "Adding filters to a Data provider"
-    }
-  ]
-}
-[/block]
+<Image alt="Adding filters to a Data provider" align="center" src="https://files.readme.io/ac1dd7d-Screenshot_2023-09-07_at_11.40.50.png">
+  Adding filters to a Data provider
+</Image>
 
 The filter drawer is where you select the columns you want to filter on. For example, you may want to return sales records for the region of Europe, where the unit price is within a range.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8503d6d-Screenshot_2023-09-07_at_11.55.54.png",
-        "filter (1).png",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/8503d6d-Screenshot_2023-09-07_at_11.55.54.png" />
 
 As shown above, you can filter on multiple columns, and even filter on the same column multiple times. 
 
@@ -73,75 +48,35 @@ When filtering, there are a couple of settings that can be tweaked that determin
 
 #### Behaviour
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f7b4759-filter_behaviour.png",
-        "",
-        "Changing the filter behaviour"
-      ],
-      "align": "center",
-      "caption": "Changing the filter behaviour"
-    }
-  ]
-}
-[/block]
+<Image alt="Changing the filter behaviour" align="center" src="https://files.readme.io/f7b4759-filter_behaviour.png">
+  Changing the filter behaviour
+</Image>
 
-- **Match all filters**: the default; all filters must match when returning records
-- **Match any filter**: records are returned when they match on any of the provided filters
+* **Match all filters**: the default; all filters must match when returning records
+* **Match any filter**: records are returned when they match on any of the provided filters
 
 <br />
 
 #### When filter empty
 
-This setting is specific to filters that are using <<glossary:Binding>>s. It determines what data should be returned if the binding values are blank.
+This setting is specific to filters that are using <Glossary>Binding</Glossary>s. It determines what data should be returned if the binding values are blank.
 
-By default, if all of the filter binding values are empty, then all the rows will be returned. If _Return no rows_ is selected and the binding values are empty, then no rows will be returned.
+By default, if all of the filter binding values are empty, then all the rows will be returned. If *Return no rows* is selected and the binding values are empty, then no rows will be returned.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6f5ef01-Screenshot_2023-09-07_at_13.13.00.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/6f5ef01-Screenshot_2023-09-07_at_13.13.00.png" />
 
-As shown above, the filters are bound to two form fields which are currently empty, therefore _all table rows_ are returned.
+As shown above, the filters are bound to two form fields which are currently empty, therefore *all table rows* are returned.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e6b955c-Screenshot_2023-09-07_at_13.16.39.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/e6b955c-Screenshot_2023-09-07_at_13.16.39.png" />
 
-In this screenshot we can see that the _Return no rows_ option is selected, which prevents rows being displayed as the bound form values are empty.
+In this screenshot we can see that the *Return no rows* option is selected, which prevents rows being displayed as the bound form values are empty.
 
 <br />
 
 ## Video tutorial: filter with two option pickers
 
-[block:html]
-{
-  "html": "<div style=\"padding:50% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/742702875?h=69fa04afed&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"filter-with-options-pickers.mov\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>"
-}
-[/block]
+<HTMLBlock>{`
+<div style="padding:50% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/742702875?h=69fa04afed&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="filter-with-options-pickers.mov"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+`}</HTMLBlock>
 
 You can also filter using a [relationship picker](https://docs.budibase.com/docs/filter-by-relationships).
