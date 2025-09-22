@@ -1,2 +1,3 @@
 - post_tables-tableid-rows
 - put_tables-tableid-rows-rowid
+- delete_tables-tableid-rows-rowid
