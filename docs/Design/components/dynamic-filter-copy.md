@@ -28,18 +28,18 @@ In the above image, in order to add a filter all you need to do is click the **A
 
 This area has two different selectable options: **Match all filters** and **Match any filters**
 
-- **Match all filters** will provide results that match all filters listed. If some of the data fails to match one of the filters it won't appear as part of the results
-- **Match any filters** will provide results that match any of the filters. This means that if some data matches one of your filters it will show within the results.
+* **Match all filters** will provide results that match all filters listed. If some of the data fails to match one of the filters it won't appear as part of the results
+* **Match any filters** will provide results that match any of the filters. This means that if some data matches one of your filters it will show within the results.
 
 ### Filters
 
 In the filters area its split into 3 different input fields.
 
-- Column select, here you choose which column within the table you wish to apply the dynamic filter to.  
+* Column select, here you choose which column within the table you wish to apply the dynamic filter to.\
   ![](https://files.readme.io/fb84434-columns_in_dynamic_filter.png)
-- The next selectable is the operator, these are pretty self explanatory. (The name describes their purpose)  
+* The next selectable is the operator, these are pretty self explanatory. (The name describes their purpose)\
   ![](https://files.readme.io/88e83ea-operators_dropdown.png)
-- The last input field is the value you search against. (An example of this in action can be seen in the gif below.)  
+* The last input field is the value you search against. (An example of this in action can be seen in the gif below.)\
   ![Gif showing the dynamic filter in action.](https://files.readme.io/22ef1ac2cabb43b7942c99418516216dafad66f656daacab2c92cc178cbb0bb8-20240912_122724.gif)
 
 ## Design view
@@ -50,21 +50,8 @@ The Dynamic filter can be used with a variety of different components, however f
 
 ### Setup
 
-- For fast setup add the Card block component and then eject
-- Then add the Dynamic Filter as a child of the [ Data Provider's](doc:data-provider) component
-- From here you should be all set to start using the Dynamic filter to start filtering the data on the table
+* For fast setup add the Card block component and then eject
+* Then add the Dynamic Filter as a child of the [ Data Provider's](doc:data-provider) component
+* From here you should be all set to start using the Dynamic filter to start filtering the data on the table
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9b5682f82874dc12e6e53b00f7b654d598992db9faeaf3aa1c0f187f309674cd-20240911_125205.gif",
-        null,
-        "Speed run attempt at adding a dynamc filter"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/9b5682f82874dc12e6e53b00f7b654d598992db9faeaf3aa1c0f187f309674cd-20240911_125205.gif" />
