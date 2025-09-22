@@ -22,13 +22,13 @@ Below is a few examples of actions that exist today however there may be many mo
 1. **Create row** - this will create a new row in a specified table
 2. **Update row** - can be used to update a row that was triggered upon
 3. **Delete row** - delete a specified row from a table, like something that was triggered upon
-4. **Send email **- as it suggests, send an email based on the specified inputs
-5. **Send Discord notification **- send a notification to Discord
+4. **Send email** - as it suggests, send an email based on the specified inputs
+5. **Send Discord notification** - send a notification to Discord
 6. [Slack](doc:slack-notification) - send a notification to Slack
-7. **Connect to Integromat ** - connect to Integromat
-8. **Connect to Zapier ** - connect to Zapier
+7. **Connect to Integromat** - connect to Integromat
+8. **Connect to Zapier** - connect to Zapier
 9. **JS scripting** - add JS scripts to an automation
-10. **Query rows ** - query rows / records
+10. **Query rows** - query rows / records
 
 The real power in actions is the ability to make use of outputs from previous steps; how to do this will be covered in the [Contextual bindings](doc:contextual-bindings) section.
 
@@ -47,45 +47,19 @@ Currently, there are two actions that allow you to add logic to an automation
 
 ## Naming automation steps
 
-When you have many steps in an automation, it can be difficult to keep track of the step numbers, particularly in your <<glossary:Binding>>s.
+When you have many steps in an automation, it can be difficult to keep track of the step numbers, particularly in your <Glossary>Binding</Glossary>s.
 
 To make your automations easier to manage, you can give your steps a name, which will automatically update any bindings as well!
 
 For example, consider this example automation:
 
-- Step 1: Create Row
-- Step 2: Log the response of step 1
+* Step 1: Create Row
+* Step 2: Log the response of step 1
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f9d48f2-create_row.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/f9d48f2-create_row.png" />
 
+The binding `{{ steps.1.response }}` isn't very informative. We can however change the name of *Step 1* to 'Add Employee' which will automatically update the binding to something more useful:
 
-The binding `{{ steps.1.response }}` isn't very informative. We can however change the name of _Step 1_ to 'Add Employee' which will automatically update the binding to something more useful:
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/38aab96-Screenshot_2023-11-21_at_15.23.39.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "caption": "The binding 'steps.1.response' has automatically been updated"
-    }
-  ]
-}
-[/block]
+<Image alt="The binding 'steps.1.response' has automatically been updated" align="center" src="https://files.readme.io/38aab96-Screenshot_2023-11-21_at_15.23.39.png">
+  The binding 'steps.1.response' has automatically been updated
+</Image>
