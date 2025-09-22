@@ -14,9 +14,9 @@ The Accordion component is a collapsible container allowing users to toggle its 
 
 ## Features
 
-- **Collapsible Sections**: Users can expand or collapse content panels to show or hide information.
-- **Customisable Header**: The accordion heading can be customised with a label and styling options.
-- **Dynamic Content**: Supports nested components or any child content within the expandable body.
+* **Collapsible Sections**: Users can expand or collapse content panels to show or hide information.
+* **Customisable Header**: The accordion heading can be customised with a label and styling options.
+* **Dynamic Content**: Supports nested components or any child content within the expandable body.
 
 ## Settings
 
@@ -30,8 +30,8 @@ The Accordion component is a collapsible container allowing users to toggle its 
 
 The Accordion component can render nested components within its body:
 
-- When the accordion is open, all child components are visible.
-- When the accordion is closed, the child content is hidden from view.
+* When the accordion is open, all child components are visible.
+* When the accordion is closed, the child content is hidden from view.
 
 This makes the Accordion ideal for embedding forms, lists, media, or any reusable component inside a collapsible container.
 
@@ -48,35 +48,8 @@ Question,Answer
 
 ### Component tree
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3785361d4a916bfea9e425f27892fa20e9120dc39c34753f35eea99de7de3ba0-Screenshot_2025-06-23_at_09.01.46.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/3785361d4a916bfea9e425f27892fa20e9120dc39c34753f35eea99de7de3ba0-Screenshot_2025-06-23_at_09.01.46.png" />
 
 ### Result
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/549d5de2339e5122383d9cb5d6f8b885af357b51a9e9bca127319d996eb686d0-Screenshot_2025-06-24_at_11.25.19.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/549d5de2339e5122383d9cb5d6f8b885af357b51a9e9bca127319d996eb686d0-Screenshot_2025-06-24_at_11.25.19.png" />
