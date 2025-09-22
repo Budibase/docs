@@ -1,3 +1,4 @@
 - workspacecreate
 - workspaceupdate
 - workspacedestroy
+- workspacegetbyid
