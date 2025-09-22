@@ -12,27 +12,13 @@ next:
 ---
 ## Paragraph
 
-The Paragraph component displays text inside your application. It's the `<p>` equivalent in `html`. But of course it supports [Bindings](doc:bindings) so you can render any text you like from any of the available  <<glossary:Datasource>> or [JavaScript](doc:javascript) functions.
+The Paragraph component displays text inside your application. It's the `<p>` equivalent in `html`. But of course it supports [Bindings](doc:bindings) so you can render any text you like from any of the available  <Glossary>Datasource</Glossary> or [JavaScript](doc:javascript) functions.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8a900bb-Screenshot_2023-01-25_at_14.15.20.png",
-        null,
-        "Adding a Paragraph"
-      ],
-      "align": "center",
-      "caption": "Adding a Paragraph"
-    }
-  ]
-}
-[/block]
+<Image alt="Adding a Paragraph" align="center" src="https://files.readme.io/8a900bb-Screenshot_2023-01-25_at_14.15.20.png">
+  Adding a Paragraph
+</Image>
 
-
-
-Then, you can use [Bindings](doc:bindings) within the _Text_ setting in the <<glossary:Settings Panel>>, or simply enter static text by just typing in the box, or some combination of both.
+Then, you can use [Bindings](doc:bindings) within the *Text* setting in the <Glossary>Settings Panel</Glossary>, or simply enter static text by just typing in the box, or some combination of both.
 
 For example, you may want to display the total number of rows coming back from a [Data provider](doc:data-provider).
 
@@ -40,13 +26,35 @@ For example, you may want to display the total number of rows coming back from a
 
 Paragraphs also support newlines:
 
-| Text binding                                                                        | Design view                                                                         |
-| :---------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- |
-| <img src="https://files.readme.io/b96f842-Screenshot_2023-01-25_at_14.37.47.png" /> | <img src="https://files.readme.io/9b193d2-Screenshot_2023-01-25_at_14.38.12.png" /> |
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Text binding
+      </th>
+
+      <th>
+        Design view
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        <img src="https://files.readme.io/b96f842-Screenshot_2023-01-25_at_14.37.47.png" />
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/9b193d2-Screenshot_2023-01-25_at_14.38.12.png" />
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 ### Customizing text styling
 
-The Paragraph component has several ways of styling the text using the <<glossary:Settings Panel>>.
+The Paragraph component has several ways of styling the text using the <Glossary>Settings Panel</Glossary>.
 
 | Setting               | Description                                                                            |
 | :-------------------- | :------------------------------------------------------------------------------------- |
@@ -59,25 +67,11 @@ The Paragraph component has several ways of styling the text using the <<glossar
 
 The Headline component is identical to the Paragraph component, with the simple caveat that the sizes are three ahead.
 
-For example a _Medium_ Headline is the equivalent of a _2XL_ Paragraph.
+For example a *Medium* Headline is the equivalent of a *2XL* Paragraph.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8a48ae2-Screenshot_2023-01-25_at_14.31.53.png",
-        null,
-        "Adding a Headline"
-      ],
-      "align": "center",
-      "caption": "Adding a Headline"
-    }
-  ]
-}
-[/block]
-
-
+<Image alt="Adding a Headline" align="center" src="https://files.readme.io/8a48ae2-Screenshot_2023-01-25_at_14.31.53.png">
+  Adding a Headline
+</Image>
 
 <br />
 
@@ -87,27 +81,13 @@ The Markdown viewer component is similar to the paragraph element. It can displa
 
 ![](https://files.readme.io/e46adbd-markdown.png "markdown.png")
 
-The _Markdown Viewer_ component has full support of all markdown elements as displayed above, including headers, images and tables. 
+The *Markdown Viewer* component has full support of all markdown elements as displayed above, including headers, images and tables. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4d78dac-Screenshot_2023-01-25_at_14.11.10.png",
-        null,
-        "Adding the Markdown Viewer component"
-      ],
-      "align": "center",
-      "caption": "Adding the Markdown Viewer component"
-    }
-  ]
-}
-[/block]
+<Image alt="Adding the Markdown Viewer component" align="center" src="https://files.readme.io/4d78dac-Screenshot_2023-01-25_at_14.11.10.png">
+  Adding the Markdown Viewer component
+</Image>
 
-
-
-From the <<glossary:Settings Panel>> you can configure the value of the markdown viewer element, where you can also use [Bindings](doc:bindings).
+From the <Glossary>Settings Panel</Glossary> you can configure the value of the markdown viewer element, where you can also use [Bindings](doc:bindings).
 
 <br />
 
@@ -117,10 +97,10 @@ There are a number of other components that can display text, on top of the addi
 
 These include:
 
-- [Button](doc:button)
-- [Card](doc:card)
-- [Embed](doc:embed)
-- [Link](doc:link)
-- [Stat Card](doc:stat-card)
-- [Tag](doc:tag)
-- [Text inputs](doc:text-inputs)
+* [Button](doc:button)
+* [Card](doc:card)
+* [Embed](doc:embed)
+* [Link](doc:link)
+* [Stat Card](doc:stat-card)
+* [Tag](doc:tag)
+* [Text inputs](doc:text-inputs)
