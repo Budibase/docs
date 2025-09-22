@@ -124,7 +124,7 @@ Here's the syntax for using the "getObject" helper:
 {{getObject prop context}}
 ```
 
-The "prop" argument is the property path from which you want to retrieve the object. It can be a dot-delimited string representing nested properties (e.g., "user.name") or an array of property names (e.g., ["user", "name"]).
+The "prop" argument is the property path from which you want to retrieve the object. It can be a dot-delimited string representing nested properties (e.g., "user.name") or an array of property names (e.g., \["user", "name"]).
 
 The "context" argument is the object or context from which the object will be retrieved. It is the starting point for resolving the property path.
 
