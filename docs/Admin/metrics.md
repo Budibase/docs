@@ -30,8 +30,6 @@ curl --request GET \
   --header 'x-budibase-api-key: 123456YourApiKeyHere'
 ```
 
-
-
 ##  Prometheus Scrape Config
 
 The example below provides some guidance for configuring the scraping of Budibase metrics from Prometheus.
@@ -48,8 +46,6 @@ scrape_configs:
       username: "x-budibase-api-key"
       password: "NDIzNjRlN2NkYjU2EXAMPLEZDE3ZjdiZmYK"
 ```
-
-
 
 Your [API key can be obtained](https://docs.budibase.com/docs/public-api) from the Budibase user interface. 
 
