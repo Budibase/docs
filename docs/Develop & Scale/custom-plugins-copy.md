@@ -16,66 +16,88 @@ Developers can write their own plugins for where custom datasources and componen
 
 ## Importing plugins
 
-An admin user can see a list of your plugins under the _Plugins_ section of the Budibase [Portal](https://docs.budibase.com/docs/portal). To get started using custom plugins, click "Add Plugin". Alternatively you can check our curated list of Budibase plugins, including data sources and components, contributed by the community.
+An admin user can see a list of your plugins under the *Plugins* section of the Budibase [Portal](https://docs.budibase.com/docs/portal). To get started using custom plugins, click "Add Plugin". Alternatively you can check our curated list of Budibase plugins, including data sources and components, contributed by the community.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/bc159e1cee248702843f218a487b0d1720e90a6f83693efde29107a89440f109-Screenshot_2024-10-22_at_11.07.05.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/bc159e1cee248702843f218a487b0d1720e90a6f83693efde29107a89440f109-Screenshot_2024-10-22_at_11.07.05.png" />
 
 <br />
 
-You can import a plugin by pressing the `Add plugin` button. This will display a dialog box from which you choose a _Source_.
+You can import a plugin by pressing the `Add plugin` button. This will display a dialog box from which you choose a *Source*.
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Source name",
-    "h-1": "Expected input",
-    "0-0": "URL",
-    "0-1": "A URL path to a tarball, e.g. `.tar.gz` file.  \n  \n_Allows authentication headers to be added if needed._",
-    "1-0": "NPM",
-    "1-1": "The URL of an NPM package of a Budibase plugin",
-    "2-0": "Github",
-    "2-1": "The URL of a Github repository, that has a tarball asset in the latest release.  \n  \n_Allows a Github Token to be added for accessing private repositories._",
-    "3-0": "File Upload",
-    "3-1": "Allows an admin user to directly upload a plugin tarball."
-  },
-  "cols": 2,
-  "rows": 4,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Source name
+      </th>
 
+      <th>
+        Expected input
+      </th>
+    </tr>
+  </thead>
 
-[block:image]{"images":[{"image":["https://files.readme.io/89da718044369908e89362efa4765e39d1b33bbafe8d7a555edeea86669e6c5c-Screenshot_2024-10-22_at_11.12.51.png",null,null],"align":"center"}]}[/block]
+  <tbody>
+    <tr>
+      <td>
+        URL
+      </td>
+
+      <td>
+        A URL path to a tarball, e.g. `.tar.gz` file.  
+
+        *Allows authentication headers to be added if needed.*
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        NPM
+      </td>
+
+      <td>
+        The URL of an NPM package of a Budibase plugin
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Github
+      </td>
+
+      <td>
+        The URL of a Github repository, that has a tarball asset in the latest release.  
+
+        *Allows a Github Token to be added for accessing private repositories.*
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        File Upload
+      </td>
+
+      <td>
+        Allows an admin user to directly upload a plugin tarball.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+<Image align="center" src="https://files.readme.io/89da718044369908e89362efa4765e39d1b33bbafe8d7a555edeea86669e6c5c-Screenshot_2024-10-22_at_11.12.51.png" />
 
 Once your plugin has been imported, you will now be able to make use of it within all of your apps!
 
-In the case of a **custom datasource**, it will appear as a new datasource at the bottom of the _Add datasource_ dialog and can be used just like any other [data source](https://docs.budibase.com/docs/data-sources).
+In the case of a **custom datasource**, it will appear as a new datasource at the bottom of the *Add datasource* dialog and can be used just like any other [data source](https://docs.budibase.com/docs/data-sources).
 
-[block:image]{"images":[{"image":["https://files.readme.io/8d0ca798008906f1833a44f8941be78985fbcd9c3ef249a2ce6d62cc124a7108-CustomDataSource_1.png",null,null],"align":"center"}]}[/block]
+<Image align="center" src="https://files.readme.io/8d0ca798008906f1833a44f8941be78985fbcd9c3ef249a2ce6d62cc124a7108-CustomDataSource_1.png" />
 
-In the case of a **custom component**, it will appear in the builder components list under the _Plugins_ section.
+In the case of a **custom component**, it will appear in the builder components list under the *Plugins* section.
 
-[block:image]{"images":[{"image":["https://files.readme.io/5a44802781096d8786e9ece5566659f3fc0ddc1654821da8038104a53f51e1cd-Screenshot_2024-10-22_at_11.34.06.png",null,null],"align":"center"}]}[/block]
+<Image align="center" src="https://files.readme.io/5a44802781096d8786e9ece5566659f3fc0ddc1654821da8038104a53f51e1cd-Screenshot_2024-10-22_at_11.34.06.png" />
 
 > 🚧 Cloud hosting
-> 
+>
 > While custom components can also be imported in the cloud environment, custom datasources can only be used in a self-hosted environment, for security reasons.
 
 <br />
@@ -115,10 +137,10 @@ services:
 
 Next, update your `.env` file to include the relative plugins directory, e.g. `PLUGINS_DIR=/MyBudibasePlugins`
 
-> 📘 
-> 
-> The `.env` file will be hidden within the same folder as your `docker-compose.yaml`.  
-> Showing hidden files on [Windows](https://support.microsoft.com/en-gb/windows/show-hidden-files-0320fe58-0117-fd59-6851-9b7f9840fdb2).  
+> 📘
+>
+> The `.env` file will be hidden within the same folder as your `docker-compose.yaml`.\
+> Showing hidden files on [Windows](https://support.microsoft.com/en-gb/windows/show-hidden-files-0320fe58-0117-fd59-6851-9b7f9840fdb2).\
 > On macOS, press `Cmd+Shift+.` within the folder.
 
 Finally, run `budi hosting --start` and then do a `yarn watch` within your plugin repo.
@@ -139,9 +161,9 @@ You will also need to make sure you have run `yarn watch` in your plugin repo. S
 
 ### Maximum number of plugins
 
-On the free plan you can add a maximum of 10 plugins. Upgrade to unlock _unlimited_ plugins. 
+On the free plan you can add a maximum of 10 plugins. Upgrade to unlock *unlimited* plugins. 
 
-A full list of pricing plans can be seen here: <https://budibase.com/pricing/>
+A full list of pricing plans can be seen here: [https://budibase.com/pricing/](https://budibase.com/pricing/)
 
 <br />
 
