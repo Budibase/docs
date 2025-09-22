@@ -18,14 +18,14 @@ next:
 ---
 ## Navigate To
 
-Use this action if you want to go to another web page or app screen.  
+Use this action if you want to go to another web page or app screen.\
 For example: [Navigation on row button click](doc:url-parameters)
 
-When the _Destination_ is set to 'URL', you have the option to open the link in a new tab.
+When the *Destination* is set to 'URL', you have the option to open the link in a new tab.
 
 ![](https://files.readme.io/8f018e8-new_tab.png)
 
-Alternatively, if the _Destination_ is set to 'Screen', then you can select a screen to navigate to from the dropdown. The screen can optionally be opened in the current tab, or in a [modal](https://docs.budibase.com/docs/screens#modal-screen).
+Alternatively, if the *Destination* is set to 'Screen', then you can select a screen to navigate to from the dropdown. The screen can optionally be opened in the current tab, or in a [modal](https://docs.budibase.com/docs/screens#modal-screen).
 
 ![](https://files.readme.io/a455654-open_modal.png)
 
