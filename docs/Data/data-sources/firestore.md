@@ -12,18 +12,16 @@ next:
 ---
 Cloud Firestore is a flexible, scalable database for mobile, web, and server development from Firebase and Google Cloud.
 
-Setup
------
+## Setup
 
-To get started, add a project through the Firebase console and create a Firestore database:  
-<https://firebase.google.com/docs/firestore/quickstart>
+To get started, add a project through the Firebase console and create a Firestore database:\
+[https://firebase.google.com/docs/firestore/quickstart](https://firebase.google.com/docs/firestore/quickstart)
 
-Connect
--------
+## Connect
 
 You will need to use a **Service Account** in order to be able to access your Firestore via the Budibase connector.
 
-To get the required credentials, within the Firebase console, click on the cog icon beside _Project Overview_ and then select the _Service accounts_ tab.
+To get the required credentials, within the Firebase console, click on the cog icon beside *Project Overview* and then select the *Service accounts* tab.
 
 ![](https://files.readme.io/b2b801a-Screenshot_2022-06-10_at_15.15.39.png "Screenshot 2022-06-10 at 15.15.39.png")
 
@@ -31,18 +29,17 @@ Next, click **Generate new private key** button. This will download a json file 
 
 In particular:
 
-- client_email
-- private_key
-- project_id
+* client\_email
+* private\_key
+* project\_id
 
-Whenever you add a new Firestore <<glossary:Data Source>> you will be prompted to enter these fields: 
+Whenever you add a new Firestore <Glossary>Data Source</Glossary> you will be prompted to enter these fields: 
 
 ![](https://files.readme.io/e7f5de2-Screenshot_2022-06-10_at_15.29.52.png "Screenshot 2022-06-10 at 15.29.52.png")
 
 With your Firestore config saved, you will now be able to add a query.
 
-Create query
-------------
+## Create query
 
 1. Select the 'Create' function
 2. Enter a collection to save the new document to
@@ -59,10 +56,9 @@ You can also use <a href="https://docs.budibase.com/docs/custom-queries#using-qu
 
 ![](https://files.readme.io/3ef13c8-Screenshot_2022-06-10_at_16.52.48.png "Screenshot 2022-06-10 at 16.52.48.png")
 
-Read query
-----------
+## Read query
 
-For these examples, there is a collection named _test_ with five documents representing various fruit and veg.  
+For these examples, there is a collection named *test* with five documents representing various fruit and veg.\
 Select the 'Read' function.
 
 #### Get all documents from a collection
@@ -94,8 +90,7 @@ You can also use <a href="https://docs.budibase.com/docs/custom-queries#using-qu
 
 ![](https://files.readme.io/9dda221-Screenshot_2022-06-10_at_16.27.03.png "Screenshot 2022-06-10 at 16.27.03.png")
 
-Update query
-------------
+## Update query
 
 Select the 'Update' function.
 
@@ -109,8 +104,7 @@ Select the 'Update' function.
 
 ![](https://files.readme.io/805e8bd-Screenshot_2022-06-10_at_16.59.30.png "Screenshot 2022-06-10 at 16.59.30.png")
 
-Delete query
-------------
+## Delete query
 
 Select the 'Delete' function.
 
@@ -128,10 +122,9 @@ As with other data sources, you can [Transform](doc:transformers) any query resu
 
 For example, you may want to <a href="https://github.com/Budibase/budibase/discussions/6686#discussioncomment-3172147">access the latitude and longitude from a GeoPoint</a>
 
-Sub-collection
---------------
+## Sub-collection
 
-To query a sub-collection simply provide the path within the _Collection_ field
+To query a sub-collection simply provide the path within the *Collection* field
 
 ![](https://files.readme.io/d646220-Screenshot_2022-08-16_at_14.39.43.png)
 
