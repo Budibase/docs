@@ -16,13 +16,9 @@ next:
 
 Contextually, webhooks allow Budibase to listen for an external application event, and trigger an automation. A payload will be included in the trigger that gives Budibase information about the event.
 
-[block:html]
-{
-  "html": "<iframe src=\"https://player.vimeo.com/video/746819163?h=8810e10ddd&title=0&portrait=0&byline=0\" style=\"margin-top:-100px; margin-bottom: -50px;\" width=\"640\" height=\"564\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
-}
-[/block]
-
-
+<HTMLBlock>{`
+<iframe src="https://player.vimeo.com/video/746819163?h=8810e10ddd&title=0&portrait=0&byline=0" style="margin-top:-100px; margin-bottom: -50px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+`}</HTMLBlock>
 
 ## Setup
 
@@ -46,7 +42,7 @@ Next open Postman, or any other REST query tool, and POST the example payload to
 
 ![](https://files.readme.io/2151db6-Screenshot_2022-08-31_at_14.17.38.png)
 
-After you receive the `200 OK` response, you should now see that Budibase has successfully picked up on the schema. Click _Finished_.
+After you receive the `200 OK` response, you should now see that Budibase has successfully picked up on the schema. Click *Finished*.
 
 ![](https://files.readme.io/0ca3d13-Screenshot_2022-08-31_at_14.18.04.png)
 
@@ -54,9 +50,9 @@ Finally click the `Publish` button in the top right of the screen to make the au
 
 ## Link the trigger application
 
-Copy the **Trigger URL** from your Budibase automation and paste it into the _Payload URL_ of your GitHub webhook.  
+Copy the **Trigger URL** from your Budibase automation and paste it into the *Payload URL* of your GitHub webhook.  
 
-Make sure **Content type** is _application/json_
+Make sure **Content type** is *application/json*
 
 ![](https://files.readme.io/33f3c2c-Screenshot_2022-08-31_at_16.55.44.png)
 
@@ -72,23 +68,23 @@ To test, add an new issue in your GitHub repo. Within a minute, you will be able
 
 Now that we know that GitHub events are being picked up by our Budibase application, lets do something with the event data. For example, we may want to create a new row in our own 'Issues' table.
 
-Create a new 'Issues' table with a text _Name_ column, a number _Number_ column, and an options type _Tag_ column.
+Create a new 'Issues' table with a text *Name* column, a number *Number* column, and an options type *Tag* column.
 
 ![](https://files.readme.io/90062d0-Screenshot_2022-08-31_at_14.31.23.png)
 
 ![](https://files.readme.io/0685387-Screenshot_2022-08-31_at_14.31.44.png)
 
-Next within the _Automate_ tab, add an additional [Condition](https://docs.budibase.com/docs/conditions-1) step. This is because we only want to create a row if the GitHub action type is _opened_. 
+Next within the *Automate* tab, add an additional [Condition](https://docs.budibase.com/docs/conditions-1) step. This is because we only want to create a row if the GitHub action type is *opened*. 
 
-Add the `{{ trigger.action }}` binding to the _Reference Value_ field. 
+Add the `{{ trigger.action }}` binding to the *Reference Value* field. 
 
 ![](https://files.readme.io/85f624c-Screenshot_2022-08-31_at_16.58.12.png)
 
-Select condition _Equals_ comparison value 'opened'.
+Select condition *Equals* comparison value 'opened'.
 
 ![](https://files.readme.io/d2ce01f-Screenshot_2022-08-31_at_16.58.31.png)
 
-Add another automation step for **Create Row**. Select _Use bindings_ as well as the 'Issues' table. Fill in the bindings.
+Add another automation step for **Create Row**. Select *Use bindings* as well as the 'Issues' table. Fill in the bindings.
 
 ![](https://files.readme.io/8c0fc8b-Screenshot_2022-08-31_at_14.49.01.png)
 
