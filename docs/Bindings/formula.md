@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-Formula columns allow you to generate values from an expression.  
+Formula columns allow you to generate values from an expression.\
 For example, you may wish to concatenate first and last names.
 
 Just like with the other data types, start by creating a new column. Select Formula and you will be presented with a textbox. Use Handlebars to construct the expression you are interested in and hit the Save Column button.
@@ -21,53 +21,26 @@ If you want some assistance when writing your expression you can click the light
 
 ## Static formulas
 
-The default type of formula is **Dynamic**, which means the formula will be calculated every time data is _read_. 
+The default type of formula is **Dynamic**, which means the formula will be calculated every time data is *read*. 
 
-Static formulas on the other hand are calculated and every time a row is _created_ or _updated_. Additionally, the static formulas values are themselves saved into the <<glossary:Budibase DB>> which allows them to be used for [filtering](doc:searchfilter-data).
+Static formulas on the other hand are calculated and every time a row is *created* or *updated*. Additionally, the static formulas values are themselves saved into the <Glossary>Budibase DB</Glossary> which allows them to be used for [filtering](doc:searchfilter-data).
 
 External databases only support dynamic formulas.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/46205c6-Screenshot_2023-09-05_at_08.50.44.png",
-        "",
-        "Saving a 'Static' formula"
-      ],
-      "align": "center",
-      "caption": "Saving a 'Static' formula"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Saving a 'Static' formula" align="center" src="https://files.readme.io/46205c6-Screenshot_2023-09-05_at_08.50.44.png">
+  Saving a 'Static' formula
+</Image>
 
 ## Fields from relationships
 
-A common use case for formulas is to access fields from a linked table.  
+A common use case for formulas is to access fields from a linked table.\
 For example, you may have one manufacturer for many products, and in your products table you wish to display the manufacturers industry. 
 
 To do this, create a formula column in the products table and then grab the Industry field from the first linked manufacturer:
 
 ![](https://files.readme.io/e56ee86-Screenshot_2022-04-14_at_22.22.32.png "Screenshot 2022-04-14 at 22.22.32.png")
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7b00adeb552b84a28993ff8eb891b02d34730cd11bd52cc4b2b6fa341dd1c6be-Screenshot_2024-09-19_at_13.33.19.png",
-        "Screenshot 2022-04-14 at 22.26.08.png",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/7b00adeb552b84a28993ff8eb891b02d34730cd11bd52cc4b2b6fa341dd1c6be-Screenshot_2024-09-19_at_13.33.19.png" />
 
 <br />
 
@@ -79,17 +52,17 @@ Show the total score of a test by summing each of the question scores.
 
 1. Create a 'Questions' table and a 'Tests' table. 
 2. Establish a One Test -> Many Questions relationship.
-3. Add a _Number_ type column named 'Points' to the 'Questions' table. 
+3. Add a *Number* type column named 'Points' to the 'Questions' table. 
 
-[block:image]{"images":[{"image":["https://files.readme.io/63d7ba7f008a81535c1161dee8a6883343686fff35728789dad0f0c9d9974f0b-Screenshot_2024-09-19_at_15.33.39.png","Screenshot 2022-05-16 at 13.43.03.png",null],"align":"center"}]}[/block]
+<Image align="center" src="https://files.readme.io/63d7ba7f008a81535c1161dee8a6883343686fff35728789dad0f0c9d9974f0b-Screenshot_2024-09-19_at_15.33.39.png" />
 
-4. In the 'Tests' table, create a new _Formula_ column named 'Total'. Enter the binding:
+4. In the 'Tests' table, create a new *Formula* column named 'Total'. Enter the binding:
 
 ```text
 {{ sum (pluck Questions 'Points') }}
 ```
 
-The first handle bar expression to get evaluated is the **pluck** function. This takes the array of related _Questions_ and maps it to an array of their 'Points' values.  
+The first handle bar expression to get evaluated is the **pluck** function. This takes the array of related *Questions* and maps it to an array of their 'Points' values.\
 Then the sum function simply adds up each value from that array of points. 
 
 The equivalent in JavaScript is: 
@@ -98,9 +71,9 @@ The equivalent in JavaScript is:
 return $("Questions").map(q => q.Points).reduce((a, b) => a + b)
 ```
 
-[block:image]{"images":[{"image":["https://files.readme.io/98bdc22a3d3699b93427785437458d0a9d14bf74091a513a9839c6c5a83093ad-Screenshot_2024-09-19_at_15.33.50.png","Screenshot 2022-05-16 at 13.52.26.png",null],"align":"center"}]}[/block]
+<Image align="center" src="https://files.readme.io/98bdc22a3d3699b93427785437458d0a9d14bf74091a513a9839c6c5a83093ad-Screenshot_2024-09-19_at_15.33.50.png" />
 
 > 📘 Number typing
-> 
-> If you want to numerically sort on a formula field or use numeric operators in a filter for a static formula field, then you must use JavaScript bindings.  
+>
+> If you want to numerically sort on a formula field or use numeric operators in a filter for a static formula field, then you must use JavaScript bindings.\
 > Handlebars always return a string type.
