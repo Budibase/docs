@@ -2,3 +2,4 @@
 - put_users-userid
 - delete_users-userid
 - get_users-userid
+- post_users-search
