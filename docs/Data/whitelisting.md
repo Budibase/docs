@@ -12,7 +12,7 @@ next:
 ---
 If you are using remote data sources your database server is likely protected by a firewall. To allow Budibase to connect to your data source you may need to whitelist IP addresses in your firewall.
 
-[block:image]{"images":[{"image":["https://files.readme.io/e02f0100245426a26ec32ebc8d48b1c3000bceb415bb0ee6fe43fa0c8da598db-Untitled_design.png",null,null],"align":"center"}]}[/block]
+<Image align="center" src="https://files.readme.io/e02f0100245426a26ec32ebc8d48b1c3000bceb415bb0ee6fe43fa0c8da598db-Untitled_design.png" />
 
 ## Budibase Cloud
 
@@ -26,7 +26,7 @@ The following IP addresses are used by Budibase Cloud to connect to your data so
 ```
 
 > 📘 Firewall Considerations
-> 
+>
 > Note that the IP addresses above are subject to change. We will notify registered users prior to any change to give advance notice for firewall amendments. If you notice that a previously working connection has stopped working check back here.
 
 ## Dedicated Cloud hosting
