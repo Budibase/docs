@@ -26,15 +26,15 @@ The [Options Picker](doc:option-picker) only allows the user to select a single 
 
 This picker should always be used to handle [Relationship](doc:relationships) fields.
 
-Whilst also a dropdown list, it enforces select one or many options depending on whether the relationship is defined as one or many.  
+Whilst also a dropdown list, it enforces select one or many options depending on whether the relationship is defined as one or many.\
 Furthermore, the options will automatically be populated with the rows of the related table.
 
-The label column will match the [display column](https://docs.budibase.com/docs/budibasedb#selecting-the-display-column) of the related table.  
+The label column will match the [display column](https://docs.budibase.com/docs/budibasedb#selecting-the-display-column) of the related table.\
 The value column will be the **\_id** of the selected relationship row(s).  
 
 > 🚧 Filter by relationships
-> 
-> You cannot filter by relationship when using the Budibase DB.  
+>
+> You cannot filter by relationship when using the Budibase DB.\
 > External SQL data sources, on the other hand, can be filtered by relationship.
 
 ## Date picker
