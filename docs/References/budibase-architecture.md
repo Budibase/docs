@@ -24,8 +24,6 @@ In this section, we will cover the core services that make up the Budibase self-
 
 This architecture will look the same no matter the method of self hosting, all of the above services are required for Budibase to function.
 
-
-
 ## Web app architecture
 
 Lastly the most important component of Budibase, the apps you make! Each Budibase app is made up of a few core libraries:
