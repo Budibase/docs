@@ -20,59 +20,151 @@ To add a line chart, head over to the design section in the Budibase UI. Then, y
 
 ![](https://files.readme.io/c5b76f9-Screenshot_2023-07-04_at_13.41.35.png)
 
-Then, in the <<glossary:Settings Panel>> you will be able to configure your chart to display exactly what you want. First, you want to select the correct [Data Provider](doc:data-provider), if you have more than one as a parent. The second step is to select a `Label column`. The Label Column defines the labels on your X-axis. Lastly, you'll want to select a `Data column`. This column will represent the data drawn in the chart. For this to work the column will of course have to be numeric. 
+Then, in the <Glossary>Settings Panel</Glossary> you will be able to configure your chart to display exactly what you want. First, you want to select the correct [Data Provider](doc:data-provider), if you have more than one as a parent. The second step is to select a `Label column`. The Label Column defines the labels on your X-axis. Lastly, you'll want to select a `Data column`. This column will represent the data drawn in the chart. For this to work the column will of course have to be numeric. 
 
 And that's it, you have your line chart. Want to understand all the possible customization settings? Check the reference below.
 
 > 📘 Numeric data only
-> 
+>
 > Of course, line charts need to have a scale, so for the data column(s), you can only select [Numeric](doc:number) columns (eg; containing values that can be converted to numbers)
-> 
-> 
-> 
-> ![](<>)
+>
+> ![]()
 
 ## Settings panel
 
 The settings panel has quite a few customization options, allowing you to get the most out of your line chart.
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Setting",
-    "h-1": "Description",
-    "0-0": "Provider",
-    "0-1": "The [Data Provider](doc:data-provider) as a parent of your chart",
-    "1-0": "Label Column",
-    "1-1": "The Labels you want to display with your data. These are displayed on the X-axis",
-    "2-0": "Data Column(s)",
-    "2-1": "The data you want to display as lines. This has to be [numeric](doc:number). Can be multiple",
-    "3-0": "Format",
-    "3-1": "Will divide labels by thousand or million on the axis and adds a `K` or `M` to the axis respectively",
-    "4-0": "Y-axis Label  \nX-axis label",
-    "4-1": "The labels you want to display next to the Y and X-axis.",
-    "5-0": "Width  \nHeight",
-    "5-1": "The size you want the chart to be, supports all CSS supported sizes",
-    "6-0": "Colours",
-    "6-1": "Choose from one of the predefined colour-palettes",
-    "7-0": "Curve",
-    "7-1": "The type of line you want to have.  \n**Smooth**: A curved line flowing with the data  \n**Straight**: A line straight from point to point  \n**Stepline**: A line which remains horizontal, and drops down completely for the next data point. See below the reference table for an example of all three.",
-    "8-0": "Data Labels",
-    "8-1": "Will display the value on every point on the graph",
-    "9-0": "Animate",
-    "9-1": "Will animate when the data changes or on startup. Data-change can happen through [Dynamic filter's](doc:dynamic-filter) for example.",
-    "10-0": "Legend",
-    "10-1": "Will display, in the upper-right corner, the label for each of the data columns displayed on the chart"
-  },
-  "cols": 2,
-  "rows": 11,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Setting
+      </th>
 
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Provider
+      </td>
+
+      <td>
+        The [Data Provider](doc:data-provider) as a parent of your chart
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Label Column
+      </td>
+
+      <td>
+        The Labels you want to display with your data. These are displayed on the X-axis
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Data Column(s)
+      </td>
+
+      <td>
+        The data you want to display as lines. This has to be [numeric](doc:number). Can be multiple
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Format
+      </td>
+
+      <td>
+        Will divide labels by thousand or million on the axis and adds a `K` or `M` to the axis respectively
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Y-axis Label\
+        X-axis label
+      </td>
+
+      <td>
+        The labels you want to display next to the Y and X-axis.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Width\
+        Height
+      </td>
+
+      <td>
+        The size you want the chart to be, supports all CSS supported sizes
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Colours
+      </td>
+
+      <td>
+        Choose from one of the predefined colour-palettes
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Curve
+      </td>
+
+      <td>
+        The type of line you want to have.  
+
+        * \*Smooth\*\*: A curved line flowing with the data  
+        * \*Straight\*\*: A line straight from point to point  
+        * \*Stepline\*\*: A line which remains horizontal, and drops down completely for the next data point. See below the reference table for an example of all three.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Data Labels
+      </td>
+
+      <td>
+        Will display the value on every point on the graph
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Animate
+      </td>
+
+      <td>
+        Will animate when the data changes or on startup. Data-change can happen through [Dynamic filter's](doc:dynamic-filter) for example.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Legend
+      </td>
+
+      <td>
+        Will display, in the upper-right corner, the label for each of the data columns displayed on the chart
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 ## Line Chart curve types
 
