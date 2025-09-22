@@ -18,8 +18,6 @@ First, create a REST datasource if you do not have one already. For more details
 
 ***
 
-
-
 ### Name your query
 
 Give your query a recognizable name that will appear in the datasource navigator. For example, a query that retrieves a list of applications could be called applications. 
@@ -27,8 +25,6 @@ Give your query a recognizable name that will appear in the datasource navigator
 ![](https://files.readme.io/79f159c-Screenshot_2022-01-04_at_11.35.09.png "Screenshot 2022-01-04 at 11.35.09.png")
 
 ***
-
-
 
 ### API endpoint URL
 
@@ -38,22 +34,18 @@ Enter the URL of the API endpoint you are using. The URL is the requested resour
 
 ***
 
-
-
 ### Method
 
 Select the HTTP method used by the API endpoint you are using. 
 
-- GET retrieves data from an API.
-- POST sends new data to an API.
-- PATCH and PUT update existing data.
-- DELETE removes existing data.
+* GET retrieves data from an API.
+* POST sends new data to an API.
+* PATCH and PUT update existing data.
+* DELETE removes existing data.
 
 ![](https://files.readme.io/a124afd-Screenshot_2022-01-04_at_11.37.37.png "Screenshot 2022-01-04 at 11.37.37.png")
 
 ***
-
-
 
 ### Access level
 
@@ -63,60 +55,50 @@ Select the access level required by the logged-in end-user. If the user visits a
 
 ***
 
-
-
 ### Params
 
  URL parameters can be configured in the params tab. 
 
-- Parameters are appended to the end of the request URL, following _?_ and listed in key value pairs, separated by _&_ using the following syntax: _?status=all&other=value_
-- Parameters can be hardcoded or they can use bindings or variables. 
+* Parameters are appended to the end of the request URL, following *?* and listed in key value pairs, separated by *&* using the following syntax: *?status=all\&other=value*
+* Parameters can be hardcoded or they can use bindings or variables. 
 
 ![](https://files.readme.io/fc4c06e-Screenshot_2022-01-04_at_13.34.14.png "Screenshot 2022-01-04 at 13.34.14.png")
 
 ***
 
-
-
 ### Bindings
 
-Use bindings to supply additional information to the query at runtime. Using the example from above we can replace the hardcoded value of _all_ with a binding named _status_ that has a default value of _all_. Now we can change the value of _status_ by supplying it from within an application using the query. 
+Use bindings to supply additional information to the query at runtime. Using the example from above we can replace the hardcoded value of *all* with a binding named *status* that has a default value of *all*. Now we can change the value of *status* by supplying it from within an application using the query. 
 
 ![](https://files.readme.io/3600cb6-Screenshot_2022-01-04_at_13.31.34.png "Screenshot 2022-01-04 at 13.31.34.png")
 
 ***
 
-
-
 ### Headers
 
 Use headers to supply key-value pairs accepted by your API. 
 
-- Switch the Active toggle to off to prevent the headers from being sent while keeping it's configuration. 
-- Headers can be hardcoded or they can use [REST Bindings](doc:rest-bindings)  or [REST Variables](doc:rest-variables).
+* Switch the Active toggle to off to prevent the headers from being sent while keeping it's configuration. 
+* Headers can be hardcoded or they can use [REST Bindings](doc:rest-bindings)  or [REST Variables](doc:rest-variables).
 
 ![](https://files.readme.io/0569efd-Screenshot_2022-01-04_at_15.38.48.png "Screenshot 2022-01-04 at 15.38.48.png")
 
 ***
 
-
-
 ### Body
 
 Use a request body to send information to an API endpoint. 
 
-- The Content-Type header will automatically be set when using:
-  - raw(JSON) / application/json
-  - raw(XML) / application/xml
-  - raw(Text) / text/plain
-- If you manually select a Content-Type header, that value will be overridden by the body type
-- The body can be hardcoded or it can use [REST Bindings](doc:rest-bindings) or [REST Variables](doc:rest-variables) .
+* The Content-Type header will automatically be set when using:
+  * raw(JSON) / application/json
+  * raw(XML) / application/xml
+  * raw(Text) / text/plain
+* If you manually select a Content-Type header, that value will be overridden by the body type
+* The body can be hardcoded or it can use [REST Bindings](doc:rest-bindings) or [REST Variables](doc:rest-variables) .
 
 ![](https://files.readme.io/6762fb3-Screenshot_2022-01-04_at_15.44.42.png "Screenshot 2022-01-04 at 15.44.42.png")
 
 ***
-
-
 
 ### Transformer
 
@@ -126,8 +108,6 @@ Use a request body to send information to an API endpoint.
 
 ***
 
-
-
 ### Authentication
 
 Preset authentication strategies configured at the REST data source level can be used to authenticate queries. For more information on using [REST Authentication](doc:rest-authentication).
@@ -135,8 +115,6 @@ Preset authentication strategies configured at the REST data source level can be
 ![](https://files.readme.io/6b960c3-Screenshot_2022-01-04_at_16.11.02.png "Screenshot 2022-01-04 at 16.11.02.png")
 
 ***
-
-
 
 ### Sending the request
 
@@ -152,8 +130,6 @@ This is done in a similar manner as [posting form data to a custom query](https:
 
 ***
 
-
-
 ## Using response data
 
 When your query is crafted you can use the **Send** button to preview the results of your query. When your query has been successfully executed you may save the query using **Save Query**.
@@ -162,20 +138,16 @@ The saved query can then be used as the data source of a [Data Provider](doc:dat
 
 ***
 
-
-
 ### Modifying the schema
 
 The response schema may be updated by:
 
-- Adding or removing fields
-- Changing the data type used when displaying the result in tables
+* Adding or removing fields
+* Changing the data type used when displaying the result in tables
 
 ![](https://files.readme.io/496ce40-Screenshot_2022-01-04_at_16.03.14.png "Screenshot 2022-01-04 at 16.03.14.png")
 
 ***
-
-
 
 ### Creating dynamic variables
 
