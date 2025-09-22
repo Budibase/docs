@@ -1,3 +1,4 @@
 - tablecreate
 - tableupdate
 - tabledestroy
+- tablegetbyid
