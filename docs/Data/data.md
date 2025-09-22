@@ -29,18 +29,15 @@ The data section in the Budibase UI is where you add and manage your data. Budib
 
 Predefining the data structure also greatly helps in building the UI as the UI can be automatically generated based on the data structure, as well as any logic, filtering, and sorting.
 
-Within Budibase we have a single built-in <<glossary:Datasource>> and several external datasources. When using a self-hosted instance of Budibase, an external datasource can still live on the same device, just not within the Budibase container.
+Within Budibase we have a single built-in <Glossary>Datasource</Glossary> and several external datasources. When using a self-hosted instance of Budibase, an external datasource can still live on the same device, just not within the Budibase container.
 
 ## Getting started with data
 
-By default, every Budibase application will start with a <<glossary:Budibase DB>> datasource. This database contains a [Users table](doc:users-table) which is considered a special table that cannot be removed. This table includes all the users who have access to your application, with their respective roles.
+By default, every Budibase application will start with a <Glossary>Budibase DB</Glossary> datasource. This database contains a [Users table](doc:users-table) which is considered a special table that cannot be removed. This table includes all the users who have access to your application, with their respective roles.
 
-[block:html]
-{
-  "html": "<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/719112585?h=4e3d1c370e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"03-relationships-with-head\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>"
-}
-[/block]
-
+<HTMLBlock>{`
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/719112585?h=4e3d1c370e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="03-relationships-with-head"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+`}</HTMLBlock>
 
 ## Adding new datasources
 
@@ -48,41 +45,15 @@ There are a broad set of available external datasources you can connect to right
 
 You can add new data sources by clicking the `+` button on the left-hand panel when you're on the Data tab, as seen in the image below.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1f54f3e-add_ds.png",
-        null,
-        "Adding a datasource"
-      ],
-      "align": "center",
-      "caption": "Adding a datasource"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Adding a datasource" align="center" src="https://files.readme.io/1f54f3e-add_ds.png">
+  Adding a datasource
+</Image>
 
 Once you've clicked the `Add source` button, you'll see a modal presented with the available datasources. Pick your datasource of choice, and you will be presented with a configuration screen to connect to your remote datasource.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8ff4475-new_ds.png",
-        null,
-        "Choose a datasource"
-      ],
-      "align": "center",
-      "caption": "Choose a datasource"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Choose a datasource" align="center" src="https://files.readme.io/8ff4475-new_ds.png">
+  Choose a datasource
+</Image>
 
 You can add as many datasources as you need following the same process.
 
