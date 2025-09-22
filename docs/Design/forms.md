@@ -16,7 +16,7 @@ Forms are the primary building blocks of any data-heavy application. With Budiba
 
 1. **Form component**
 2. **Field group component**
-3. ** Input components**
+3. **Input components**
 
 ## Form component
 
@@ -28,27 +28,25 @@ Forms have a **Schema** setting which is optional. The schema for a form can be 
 
 Choosing a form schema has the following advantages:
 
-- When adding fields, field names can be chosen from a dropdown rather than being typed
-- Field validation is automatically added to match the schema
-- If you want to create rows in a table using your form data, you'll need to choose the correct schema for the table you'll be saving your data to
-- Fields will be able to automatically prevent you entering an illegal field name for a certain data type
-- Form components can be automatically generated to match the schema
+* When adding fields, field names can be chosen from a dropdown rather than being typed
+* Field validation is automatically added to match the schema
+* If you want to create rows in a table using your form data, you'll need to choose the correct schema for the table you'll be saving your data to
+* Fields will be able to automatically prevent you entering an illegal field name for a certain data type
+* Form components can be automatically generated to match the schema
 
 > 🚧 Schema from query
-> 
+>
 > When using a [custom query](https://docs.budibase.com/docs/custom-queries) or [REST query](https://docs.budibase.com/docs/rest-queries) as the schema source, the form fields cannot be linked to the query schema.
 
 ### Form type
 
 A form can be in 'Create' mode or 'Update' mode. 
 
-In _Create_ mode, the form fields will be initially blank, with the exception of those with an assigned <<glossary:Default Value>> 
+In *Create* mode, the form fields will be initially blank, with the exception of those with an assigned <Glossary>Default Value</Glossary> 
 
-In _Update_ mode, the form fields will automatically be populated from the parent [Repeater](doc:repeater) data, assuming the form schema is not set to custom.
+In *Update* mode, the form fields will automatically be populated from the parent [Repeater](doc:repeater) data, assuming the form schema is not set to custom.
 
 ![](https://files.readme.io/48e7ee1-update-create-form-type.gif "update-create-form-type.gif")
-
-
 
 ## Inputs
 
@@ -64,8 +62,6 @@ Whether your form has a schema or not, you can always add custom fields that don
 
 ## Video tutorial
 
-[block:html]
-{
-  "html": "<iframe src=\"https://player.vimeo.com/video/746819373?h=9e45332e9c&title=0&portrait=0&byline=0\" style=\"margin-top: -100px;\" width=\"640\" height=\"564\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
-}
-[/block]
+<HTMLBlock>{`
+<iframe src="https://player.vimeo.com/video/746819373?h=9e45332e9c&title=0&portrait=0&byline=0" style="margin-top: -100px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+`}</HTMLBlock>
