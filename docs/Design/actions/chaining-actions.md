@@ -12,21 +12,7 @@ next:
 ---
 Using Budibase, it's possible to create a sequence of actions. Below is a quick GIF demonstrating how to do this.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6f85dca0c49d4e5b738724849bc9d3fd992873e4611acfbb966d09eff632e47c-Screen_Recording_2024-11-06_at_11.29.02.gif",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/6f85dca0c49d4e5b738724849bc9d3fd992873e4611acfbb966d09eff632e47c-Screen_Recording_2024-11-06_at_11.29.02.gif" />
 
 ## Action referencing
 
@@ -34,35 +20,90 @@ It can be useful to access data from a previous action in a new action.
 
 The following actions expose data after execution:
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Action Name",
-    "h-1": "Data Binding",
-    "h-2": "Returns",
-    "0-0": "Save Row",
-    "0-1": "{{ Action X.Saved Row }}",
-    "0-2": "Field value pairs (including auto-columns)  \n  \n\\_id: Unique row identifier",
-    "1-0": "Duplicate Row",
-    "1-1": "{{ Action X.Duplicated Row }}",
-    "1-2": "Field value pairs (including auto-columns)  \n  \n\\_id: Unique row identifier",
-    "2-0": "Execute Query",
-    "2-1": "{{ Action X.Query Result }}  \n  \n_First row example_  \n{{ Action X.Query Result.data.[0] }}",
-    "2-2": "`{ data: [ <query-schema>_ ] }`  \n  \n\\_ An object as determined by the query schema",
-    "3-0": "Trigger Automation",
-    "3-1": "{{ Action X.Automation Result }}",
-    "3-2": "The response of a [Synchronous automation 🔒](doc:synchronous-automations)"
-  },
-  "cols": 3,
-  "rows": 4,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+<Table align={["left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Action Name
+      </th>
 
+      <th>
+        Data Binding
+      </th>
+
+      <th>
+        Returns
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Save Row
+      </td>
+
+      <td>
+        \{\{ Action X.Saved Row }}
+      </td>
+
+      <td>
+        Field value pairs (including auto-columns)  
+
+        * id: Unique row identifier
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Duplicate Row
+      </td>
+
+      <td>
+        \{\{ Action X.Duplicated Row }}
+      </td>
+
+      <td>
+        Field value pairs (including auto-columns)  
+
+        * id: Unique row identifier
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Execute Query
+      </td>
+
+      <td>
+        \{\{ Action X.Query Result }}  
+
+        *First row example*\
+        \{\{ Action X.Query Result.data.emo }}
+      </td>
+
+      <td>
+        `{ data: [ <query-schema>_ ] }`  
+
+        * An object as determined by the query schema
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Trigger Automation
+      </td>
+
+      <td>
+        \{\{ Action X.Automation Result }}
+      </td>
+
+      <td>
+        The response of a [Synchronous automation 🔒](doc:synchronous-automations)
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 **Note** X is the action number
 
@@ -74,9 +115,9 @@ The following actions expose data after execution:
 
 In addition to the payload data of an execute query action result, you can also access the following additional information:
 
-- Status code - _Number_
-- Response time - _String including the time unit_
-- Payload size - _String including the size unit_
+* Status code - *Number*
+* Response time - *String including the time unit*
+* Payload size - *String including the size unit*
 
 This can be useful in combination with [Conditional UI](doc:conditions) for navigating to different screens upon an error, or to change text color based on the status code.
 
@@ -84,23 +125,9 @@ This can be useful in combination with [Conditional UI](doc:conditions) for navi
 
 1. Save the query result to [App state](doc:app-state). Use the **literal** keyword to ensure an object is saved, and not text.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5ff9cad-Screenshot_2023-11-20_at_12.08.06.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/5ff9cad-Screenshot_2023-11-20_at_12.08.06.png" />
 
-
-2. Reference the metadata properties with the following <<glossary:Binding>>s:
+2. Reference the metadata properties with the following <Glossary>Binding</Glossary>s:
 
 ```handlebars
 ### Status code: {{ State.QueryResult.code }}
@@ -110,22 +137,9 @@ This can be useful in combination with [Conditional UI](doc:conditions) for navi
 ### Payload size: {{ State.QueryResult.size }}
 ```
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f02b99c-Screenshot_2023-11-20_at_12.10.17.png",
-        "",
-        "Response info returned after executing the query"
-      ],
-      "align": "center",
-      "caption": "Response info returned after executing the query"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Response info returned after executing the query" align="center" src="https://files.readme.io/f02b99c-Screenshot_2023-11-20_at_12.10.17.png">
+  Response info returned after executing the query
+</Image>
 
 <br />
 
@@ -135,9 +149,9 @@ This can be useful in combination with [Conditional UI](doc:conditions) for navi
 
 #### Schema
 
-- Bookings
-- Leaders
-- One Booking -> One Leader
+* Bookings
+* Leaders
+* One Booking -> One Leader
 
 ***
 
@@ -149,7 +163,7 @@ This can be useful in combination with [Conditional UI](doc:conditions) for navi
 
 #### Steps
 
-1. In the Data tab, using the internal BudibaseDB, create a new table, "guides", containing the following columns - name (text), phone_number(text), email(text). Populate these with a few rows of dummy-data.
+1. In the Data tab, using the internal BudibaseDB, create a new table, "guides", containing the following columns - name (text), phone\_number(text), email(text). Populate these with a few rows of dummy-data.
 2. Create another table, "tours", containing the following columns - destination(text) date(date, set to "Date only").
 3. In the tours table, add a column called "guide", with a relationship of many rows in tours to one row in guides. Set the column name in the other table to be "tours". 
 
@@ -180,10 +194,10 @@ This can be useful in combination with [Conditional UI](doc:conditions) for navi
     ![](https://files.readme.io/f84ecc7dfc84af1faf4b499ac15cffcaca9125324dd25e017532653a1af72c7e-image.png)
 
     <br />
-11. Add another Save Row action, but this time we will save the Tour Guide's information to the guides table. Look closely at the fourth column - tours - this is saving row_id from the previous action, which is linking the two rows together. This action will save a new tour and a new guide, and show the relationship between them.
+11. Add another Save Row action, but this time we will save the Tour Guide's information to the guides table. Look closely at the fourth column - tours - this is saving row\_id from the previous action, which is linking the two rows together. This action will save a new tour and a new guide, and show the relationship between them.
 
     ![](https://files.readme.io/5ef9677fd1372b8f51cbcb588cd18ecbd49d9352fb075b4d30a4750e5cc873f7-image.png)
-12. (optional) Check the "Do not display default notification" on _one_ of the Save Row actions.
+12. (optional) Check the "Do not display default notification" on *one* of the Save Row actions.
 13. Add a "Clear Form" action to reset the form back to it's default values
 
 You could also use a "Navigate To" action to take the user to a screen showing the information in a table, or back to the homepage.
