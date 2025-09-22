@@ -32,26 +32,12 @@ In the above example, the Tenant ID is:
 birdwatch
 ```
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7f555c92bd6460de4ff6a3373c3b70e9b34c4d6169bb9041531db095d411a09c-Screenshot_2025-07-10_at_13.33.09.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/7f555c92bd6460de4ff6a3373c3b70e9b34c4d6169bb9041531db095d411a09c-Screenshot_2025-07-10_at_13.33.09.png" />
 
 You can also find this by:
 
-- Checking any bookmarks or links you use to access Budibase.
-- Looking at the login or workspace invitation emails you received from Budibase Cloud.
+* Checking any bookmarks or links you use to access Budibase.
+* Looking at the login or workspace invitation emails you received from Budibase Cloud.
 
 ## Self-hosted users
 
@@ -59,10 +45,10 @@ If you created a self-hosted account when signing up for Budibase, your Tenant I
 
 ### How to identify your tenant ID
 
-- Find the email you used during sign-up.
-- Ask a colleague who already has access.
-  - If you're part of an organisation, contact the person who initially set up the Budibase account; they'll know the owner's email (tenant ID).
-- This email address acts as your identifier for licensing and support.
+* Find the email you used during sign-up.
+* Ask a colleague who already has access.
+  * If you're part of an organisation, contact the person who initially set up the Budibase account; they'll know the owner's email (tenant ID).
+* This email address acts as your identifier for licensing and support.
 
 If you're unsure, you can:
 
