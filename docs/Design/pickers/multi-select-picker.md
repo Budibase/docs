@@ -13,7 +13,7 @@ next:
 The `multi-select` option is almost entirely the same as the [Options Picker](doc:option-picker), with the only difference being you can select more than one option in the dropdown.
 
 > 📘 Explore features at Option Picker
-> 
+>
 > To explore most features the multi-option picker offers, head over to the [Option Picker](doc:option-picker) page. This includes sources for the options, autocomplete, and more.
 
 ## Adding multi-select picker
@@ -48,7 +48,7 @@ If you choose checkboxes, you will also have the option to determine if they sho
 
 In this tutorial we will display the sum of selected items from a multi-select picker.
 
-Start by creating your table of items. Give each item a _Text_ name and _Number_ cost.
+Start by creating your table of items. Give each item a *Text* name and *Number* cost.
 
 ![](https://files.readme.io/87a8975-table.png)
 
@@ -60,7 +60,7 @@ Call it 'Label' and use the following binding: `{{ Name }} [ ${{ Cost }} ]`
 
 In the Design section add a [Data Provider](https://docs.budibase.com/docs/data-provider) for the 'Items' table, and nest a [Form](https://docs.budibase.com/docs/forms) with a multi-select picker. 
 
-Give the field a name, and within the settings set the _Options Source_ to point at the data provider. Set the label and value columns to 'Label' and 'Cost' respectively. 
+Give the field a name, and within the settings set the *Options Source* to point at the data provider. Set the label and value columns to 'Label' and 'Cost' respectively. 
 
 ![](https://files.readme.io/a439b64-Screenshot_2022-07-20_at_16.53.31.png)
 
