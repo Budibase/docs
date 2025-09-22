@@ -26,8 +26,8 @@ This function is useful when working with a subset of an array, starting after a
 
 ### Parameters
 
-- array (Array): The array from which you want to extract elements.
-- n (Number): The index after which the function will return the remaining elements of the array. The index is zero-based, meaning an index of 2 would return all elements starting from the third element.
+* array (Array): The array from which you want to extract elements.
+* n (Number): The index after which the function will return the remaining elements of the array. The index is zero-based, meaning an index of 2 would return all elements starting from the third element.
 
 **Example** must have the test data added and a data provider set to employees
 
@@ -139,8 +139,8 @@ This function is commonly used for looping over arrays in templates, making it e
 
 ### Parameters
 
-- array (Array): The array you want to iterate over.
-- options (Block Options): Defines the block of code where each array element is exposed as the current context. 
+* array (Array): The array you want to iterate over.
+* options (Block Options): Defines the block of code where each array element is exposed as the current context. 
 
 **Example**
 
@@ -176,9 +176,9 @@ The inArray function is a block helper that checks whether a given value exists 
 
 ### Parameters
 
-- array (Array): The array in which to check for the value.
-- value (Any): The value to search for within the array.
-- options (Block Options): The content to render if the value exists, with an optional else block if the value does not exist.
+* array (Array): The array in which to check for the value.
+* value (Any): The value to search for within the array.
+* options (Block Options): The content to render if the value exists, with an optional else block if the value does not exist.
 
 **Example**
 
@@ -226,8 +226,8 @@ The itemAt function returns the item located at the specified index (idx) in an 
 
 ### Parameters
 
-- array (Array): The array from which you want to retrieve an element.
-- idx (Number): The zero-based index of the item you want to access.
+* array (Array): The array from which you want to retrieve an element.
+* idx (Number): The zero-based index of the item you want to access.
 
 **Example**
 
@@ -404,7 +404,7 @@ Example:
 {{#some [1, 'b', 3] isString}} string found {{else}} No string found {{/some}} -> string found
 ```
 
-In the above example, the "some" function is used to check if there is any string value in the array [1, 'b', 3]. The "isString" callback function is applied to each element of the array. If the callback function returns true for any string value in the array, the block "string found" is rendered. Otherwise, the "No string found" block is rendered.
+In the above example, the "some" function is used to check if there is any string value in the array \[1, 'b', 3]. The "isString" callback function is applied to each element of the array. If the callback function returns true for any string value in the array, the block "string found" is rendered. Otherwise, the "No string found" block is rendered.
 
 ## Sort
 
@@ -447,9 +447,9 @@ The withAfter function is a block helper that uses the items in an array after t
 
 ### Parameters
 
-- array (Array): The array from which you want to select items.
-- idx (Number): The zero-based index after which the items will be used.
-- options (Block Options): The content to render for the array items that come after the specified index.
+* array (Array): The array from which you want to select items.
+* idx (Number): The zero-based index after which the items will be used.
+* options (Block Options): The content to render for the array items that come after the specified index.
 
 **Example**
 
@@ -527,9 +527,9 @@ The withGroup function is a block helper that groups the elements of an array in
 
 ### Parameters
 
-- array (Array): The array to be divided into groups.
-- size (Number): The number of elements in each group.
-- options (Block Options): The content to render for each group inside the block.
+* array (Array): The array to be divided into groups.
+* size (Number): The number of elements in each group.
+* options (Block Options): The content to render for each group inside the block.
 
 **Example**
 
@@ -542,21 +542,7 @@ The withGroup function is a block helper that groups the elements of an array in
 
 This will output the entire array and separate 2 objects with a space between each. This will look like the below.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/eaa088e13cafb3f928fce7785cc086e6a9ade6d3811ed37002c75003beb522e9-Screenshot_2024-09-20_at_11.25.52.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/eaa088e13cafb3f928fce7785cc086e6a9ade6d3811ed37002c75003beb522e9-Screenshot_2024-09-20_at_11.25.52.png" />
 
 ## withLast
 
@@ -590,9 +576,9 @@ The withSort function is a block helper that sorts a collection and exposes the 
 
 ### Parameters
 
-- array (Array): The collection you want to sort.
-- prop (Optional String): This parameter can be used to specify a property to sort by, particularly useful for arrays of objects.
-- options (Block Options): The content to render using the sorted collection as the context.
+* array (Array): The collection you want to sort.
+* prop (Optional String): This parameter can be used to specify a property to sort by, particularly useful for arrays of objects.
+* options (Block Options): The content to render using the sorted collection as the context.
 
 **Example**
 
