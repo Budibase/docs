@@ -16,10 +16,10 @@ Uploaded files are stored in [MinIO](https://docs.budibase.com/docs/accessing-mi
 
 ![](https://files.readme.io/27adfae-attachment.png "attachment.png")
 
-The `Attachment` component works especially well with <<glossary:Budibase DB>>'s [Attachment](doc:attachments) data type.
+The `Attachment` component works especially well with <Glossary>Budibase DB</Glossary>'s [Attachment](doc:attachments) data type.
 
 > 📘 Filesize
-> 
+>
 > Remember the maximum file size you can store in your database of choice
 
 ## Adding an Attachment component
@@ -32,22 +32,7 @@ To add the Attachment component, click `Form > Attachment`.
 
 After the `Attachment` component is added you can immediately start using it, no further configuration is required.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3b9c6eb-extensions.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "sizing": "2px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="2px" src="https://files.readme.io/3b9c6eb-extensions.png" />
 
 ## Manage access
 
@@ -69,7 +54,7 @@ There a few [Form validation](doc:form-validation) options for the attachment fi
 
 By default any file, with any file extension, will be accepted by the Attachment component for upload. However, in certain scenarios, a particular set of file extensions may preferred. For example, you may only want to accept PDF files. In other situations, you may only want image files.
 
-The _extensions_ property accepts an **array** of file extensions, e.g. `[".webp",".png"]`. When [Using Handlebars](doc:bindings) , make sure to split the comma separated array. If [Using JavaScript](doc:javascript), simply return an array of extensions as shown below.
+The *extensions* property accepts an **array** of file extensions, e.g. `[".webp",".png"]`. When [Using Handlebars](doc:bindings) , make sure to split the comma separated array. If [Using JavaScript](doc:javascript), simply return an array of extensions as shown below.
 
 ```handlebars
 {{ split ".png,.jpg,.jpeg,.svg,.gif,.webp" }}
@@ -80,19 +65,6 @@ return ['.png','.jpg','.jpeg','.svg','.gif','.webp']
 
 This will result in the operating system's native File Open Dialog having a corresponding custom filter:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9883a2e-extensions.png",
-        "",
-        "Customised file extensions filter in the Attachment component"
-      ],
-      "align": "center",
-      "sizing": "400px",
-      "caption": "Customised file extensions filter in the Attachment component"
-    }
-  ]
-}
-[/block]
+<Image alt="Customised file extensions filter in the Attachment component" align="center" width="400px" src="https://files.readme.io/9883a2e-extensions.png">
+  Customised file extensions filter in the Attachment component
+</Image>
