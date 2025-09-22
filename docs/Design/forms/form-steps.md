@@ -12,15 +12,15 @@ next:
 ---
 In Budibase it is straightforward to create navigable multi-step forms.
 
-For example, you may want to create a form where you can enter employee personal details in the first step, and employee address details in a second.  
+For example, you may want to create a form where you can enter employee personal details in the first step, and employee address details in a second.\
 Upon submission of the form, linked entries will be saved into two tables.
 
 ## Data
 
 Create two tables with a many-many relationship:
 
-- Employee
-- Address  
+* Employee
+* Address  
 
 ![](https://files.readme.io/07c6c7f-Screenshot_2022-04-14_at_16.59.45.png "Screenshot 2022-04-14 at 16.59.45.png")
 
@@ -28,12 +28,12 @@ Create two tables with a many-many relationship:
 
 ## Design
 
-Add the default screens for the Employee table, and add a form with two form steps into the `/new/row` screen.  
+Add the default screens for the Employee table, and add a form with two form steps into the `/new/row` screen.\
 The form schema should be set to Employee. 
 
 ![](https://files.readme.io/7d35f6d-Screenshot_2022-07-21_at_13.52.42.png)
 
-Next add fields into Step 1 that match the column names in the Employee table.  
+Next add fields into Step 1 that match the column names in the Employee table.\
 Also add in a Next button which will be used in the form navigation. 
 
 ![](https://files.readme.io/2573ad6-Screenshot_2022-07-21_at_13.49.40.png)
@@ -42,11 +42,11 @@ Also add in a Next button which will be used in the form navigation.
 
 ![](https://files.readme.io/d64e046-Screenshot_2022-04-14_at_17.13.52.png "Screenshot 2022-04-14 at 17.13.52.png")
 
-Now add fields into Step 2. This time the field names should match the columns in the Address table.  
+Now add fields into Step 2. This time the field names should match the columns in the Address table.\
 In addition, there are now two buttons:
 
-- Back, which can be configured as above but should naturally navigate to the 'Previous step'.
-- Save, which will submit our form, saving a new linked entry into both the employee and address tables.
+* Back, which can be configured as above but should naturally navigate to the 'Previous step'.
+* Save, which will submit our form, saving a new linked entry into both the employee and address tables.
 
 ![](https://files.readme.io/819b2e3-Screenshot_2022-07-21_at_13.50.38.png)
 
@@ -64,18 +64,18 @@ For the Save Row action into the Employee table, use [Action referencing](doc:ch
 
 Often in multi-step forms you want to give the user an indication of their progress through the form.
 
-This tutorial will show you how to add a horizontal progress bar, expanding upon the above example. It will assume three steps have been added.  
+This tutorial will show you how to add a horizontal progress bar, expanding upon the above example. It will assume three steps have been added.\
 You can easily change the colours and styles, or even add [Images](doc:image) to get the desired look. 
 
 #### Step 1
 
-Above your _Title Container_ add a [Container](doc:container) with a background and border set as follows:
+Above your *Title Container* add a [Container](doc:container) with a background and border set as follows:
 
 ![](https://files.readme.io/a194063-Screenshot_2022-06-13_at_16.47.06.png "Screenshot 2022-06-13 at 16.47.06.png")
 
 #### Step 2
 
-Add a child container.  
+Add a child container.\
 Set the size and background colour. In this case a custom colour is used:
 
 ![](https://files.readme.io/c89059f-Screenshot_2022-06-13_at_16.49.56.png "Screenshot 2022-06-13 at 16.49.56.png")
@@ -88,8 +88,8 @@ For the child container, select [Configure conditions](doc:conditions) and enter
 
 #### Step 4
 
-Duplicate the child container twice so that there will be a segment for each form step.  
-Then update the comparison number of the conditional expressions for each to be 2 and 3 respectively.  
+Duplicate the child container twice so that there will be a segment for each form step.\
+Then update the comparison number of the conditional expressions for each to be 2 and 3 respectively.\
 This will ensure that as the `Form.Current Step` increases, the progress segments will display incrementally.
 
 ![](https://files.readme.io/a04fc34-progress_containers.png "progress containers.png")
@@ -98,7 +98,7 @@ This will ensure that as the `Form.Current Step` increases, the progress segment
 
 That's now functional, but as rounded corners were used on the parent container, we need to do a little CSS tidy up to prevent clipping by the child containers.
 
-For the first segment, edit the [Custom CSS](doc:custom-css) as follows: `border-radius: 0.5rem 0 0 0.5rem;`  
+For the first segment, edit the [Custom CSS](doc:custom-css) as follows: `border-radius: 0.5rem 0 0 0.5rem;`\
 For the last segment, update to the following: `border-radius: 0 0.5rem 0.5rem 0;`
 
 Also as three segments were used in this example, update one of the segments to have a width of 34%. 
@@ -111,7 +111,7 @@ Also as three segments were used in this example, update one of the segments to 
 
 If you don't need to adhere to a custom theme, you may find that the <a href="https://spectrum.adobe.com/page/meter/">Spectrum Meter</a> is both stylish and more convenient.
 
-Add an [Embed](doc:embed) component to the _Title Container_ with the following content:
+Add an [Embed](doc:embed) component to the *Title Container* with the following content:
 
 ```html
 <div style="margin: 20px 0;">
@@ -124,8 +124,6 @@ Add an [Embed](doc:embed) component to the _Title Container_ with the following 
   </div>
 </div>
 ```
-
-
 
 The current progress is calculated as a percentage for the width of the progress bar.
 
