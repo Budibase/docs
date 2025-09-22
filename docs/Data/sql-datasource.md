@@ -14,62 +14,35 @@ When you already have a database running, you can add external database connecti
 
 Our core SQL datasource connections include:
 
-- [MS SQL Server](doc:ms-sql-server)
-- [MySQL / MariaDB](doc:mysql-mariadb)
-- [Oracle](doc:oracle)
-- [PostgreSQL](doc:postgresql)
+* [MS SQL Server](doc:ms-sql-server)
+* [MySQL / MariaDB](doc:mysql-mariadb)
+* [Oracle](doc:oracle)
+* [PostgreSQL](doc:postgresql)
 
-[block:html]
-{
-  "html": "<iframe src=\"https://player.vimeo.com/video/746819514?h=c95914762f\" style=\"margin-top: -20px;\" width=\"640\" height=\"564\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
-}
-[/block]
+<HTMLBlock>{`
+<iframe src="https://player.vimeo.com/video/746819514?h=c95914762f" style="margin-top: -20px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+`}</HTMLBlock>
 
 ## Adding the remote datasource
 
 To add a new remote datasource choose the **Data** tab in Budibase , then click the `Add source` button.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c1887ca-Screenshot_2022-12-13_at_13.58.00.png",
-        null,
-        "Add datasource"
-      ],
-      "align": "center",
-      "caption": "Add datasource"
-    }
-  ]
-}
-[/block]
+<Image alt="Add datasource" align="center" src="https://files.readme.io/c1887ca-Screenshot_2022-12-13_at_13.58.00.png">
+  Add datasource
+</Image>
 
 You'll be prompted to choose the type of datasource you want. Next you will fill out the settings for your chosen SQL database. See each SQL datasource page for specific settings.
 
 In each case, you will have the option to `Fetch tables`, `Create new table` or select another datasource.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/326605b-Screenshot_2023-07-14_at_10.00.50.png",
-        null,
-        null
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/326605b-Screenshot_2023-07-14_at_10.00.50.png" />
 
 > 📘 Firewall considerations
-> 
+>
 > Your database server will need to be whitelisted in any firewalls protecting your database. If you are using the Budibase Cloud you should [Whitelist](doc:whitelisting) the Budibase IP addresses in your firewall. If you are self-hosting you should whitelist the IP address of your Budibase server on your database server.
 
-> 📘 
-> 
+> 📘
+>
 > If you use Docker to host your own Budibase installation and are connecting to a database on the same machine as your Budibase installation you should set the host to `host.docker.internal`, or `172.17.0.1` (if running on Linux).
 
 <br />
@@ -82,22 +55,7 @@ Fetching tables can also be triggered at any stage after the source has been add
 
 To fetch tables, head over to the added datasource in the sidebar, and find it under the `Tables` tab.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/326605b-Screenshot_2023-07-14_at_10.00.50.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
-
+<Image align="center" src="https://files.readme.io/326605b-Screenshot_2023-07-14_at_10.00.50.png" />
 
 ### Fetching specific tables
 
@@ -105,20 +63,7 @@ It can be useful to fetch only the tables you need. Perhaps the database has a l
 
 To fetch a subset of your database tables, click `Fetch tables` and then toggle the tables you want to fetch.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f299355-Screenshot_2023-07-14_at_10.03.48.png",
-        null,
-        null
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/f299355-Screenshot_2023-07-14_at_10.03.48.png" />
 
 <br />
 
@@ -132,7 +77,7 @@ When you click the `Define relationship` button, you get a form in which you can
 
 ### One-to-one / One-to-many
 
-When you define a one-to-one or one-to-many relationship you'll need to pick the "One" relation type. Then you will have to choose the _from_ table and its primary key column. After that, you need to choose the _to_ table and the foreign key column. For example, if you have a pets table, and an owner table, you first will have to select the owner primary index, and then select the pets "owner" foreign key column. 
+When you define a one-to-one or one-to-many relationship you'll need to pick the "One" relation type. Then you will have to choose the *from* table and its primary key column. After that, you need to choose the *to* table and the foreign key column. For example, if you have a pets table, and an owner table, you first will have to select the owner primary index, and then select the pets "owner" foreign key column. 
 
 ![](https://files.readme.io/9d4fd4b-one-one-relationship.png "one-one-relationship.png")
 
@@ -146,7 +91,7 @@ If you want to change the field being used in the relationship tags, you can do 
 
 ### Many-to-many
 
-With a many-to-many relationship, a joining table will be needed. The steps will be similar to the above, however a "through" table needs to be selected.  
+With a many-to-many relationship, a joining table will be needed. The steps will be similar to the above, however a "through" table needs to be selected.\
 This "through" table will be the joining table.
 
 This can be useful, for example, if you had many students in many classes.
@@ -173,34 +118,22 @@ To edit a relationship, simply click on an entry. You will then be able to chang
 
 ## Add query
 
-As a complement to the Budibase integration of SQL tables into your app tables, you can also add [Custom queries](doc:custom-queries). These allow you to perform complex queries such as multiple _joins_, and _group by_. 
+As a complement to the Budibase integration of SQL tables into your app tables, you can also add [Custom queries](doc:custom-queries). These allow you to perform complex queries such as multiple *joins*, and *group by*. 
 
-To add queries for a given SQL <<glossary:Datasource>> or view existing queries, click on the datasource in the sources panel, and scroll to the bottom of the page.
+To add queries for a given SQL <Glossary>Datasource</Glossary> or view existing queries, click on the datasource in the sources panel, and scroll to the bottom of the page.
 
 ![](https://files.readme.io/4a307ac-Screenshot_2023-02-07_at_11.31.36.png)
 
-Existing queries are also indicated by the _Search_ icon instead of the usual table icon.
+Existing queries are also indicated by the *Search* icon instead of the usual table icon.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6477596-Screenshot_2023-02-07_at_11.33.30.png",
-        null,
-        "A MySQL datasource with two queries"
-      ],
-      "align": "center",
-      "caption": "A MySQL datasource with two queries"
-    }
-  ]
-}
-[/block]
+<Image alt="A MySQL datasource with two queries" align="center" src="https://files.readme.io/6477596-Screenshot_2023-02-07_at_11.33.30.png">
+  A MySQL datasource with two queries
+</Image>
 
 > 🚧 Limitations
-> 
+>
 > Whilst custom queries offer a lot of flexibility in terms of the SQL query itself, you will lose some of the automatic functionality such as pagination and sorting. 
-> 
+>
 > These can however still be added manually through the use of bindings. An example can be found in this [discussions answer](https://github.com/Budibase/budibase/discussions/7313#discussioncomment-3430353).
 
 ## Troubleshooting
