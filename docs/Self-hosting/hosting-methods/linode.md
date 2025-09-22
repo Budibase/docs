@@ -17,185 +17,52 @@ After logging in to your Linode account choose [Marketplace](https://cloud.linod
 
 Select the Budibase app as shown below:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7a6c80d-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/7a6c80d-image.png" />
 
 Scroll down the page to set options for the Budibase app including:
 
-- **Budibase Port**: The default port is 80 but you can choose another port number if you plan to add a load balancer or proxy in front of your installation
-- **Select an Image**: The base operating system you would like Budibase installed on. Choose from Debian 11 or Ubuntu 22.04
-- **Region**: Choose to launch the app in a region close to your intended audience
+* **Budibase Port**: The default port is 80 but you can choose another port number if you plan to add a load balancer or proxy in front of your installation
+* **Select an Image**: The base operating system you would like Budibase installed on. Choose from Debian 11 or Ubuntu 22.04
+* **Region**: Choose to launch the app in a region close to your intended audience
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/311617d-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/311617d-image.png" />
 
 Choose a plan to match your requirements and budget:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a03b0e9-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/a03b0e9-image.png" />
 
 Under **Linode Label** provide a useful reference such as the domain name you will use and enter a **Root Password** that can be used if you need to manage your server instance over SSH
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e1ac115-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/e1ac115-image.png" />
 
 Add your public **SSH Key** that can be used if you need to manage your server instance over SSH. There are many guides and videos online demonstrating how to generate SSH keys for your own desktop operating system.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2913f31-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/2913f31-image.png" />
 
 The remaining choices are optional. You may wish to choose to add **Backups** unless you have an alternative backup strategy. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ca70155-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/ca70155-image.png" />
 
 With all the options set, click the '**Create Linode**' button at the bottom of the page:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fd80b3c-image.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/fd80b3c-image.png" />
 
 You will see a summary of your Linode server instance and a status indicating that it is currently provisioning. Please allow a few minutes for the provisioning of the server to complete.
 
 Note that the summary shows:
 
-- **IP Addresses** of your server ( 139.162.155.223 in the example below ). We will use this IP address in a web browser to display Budibase but if you have already purchased a domain name this would be a good time to use the DNS settings of your domain name provider to add a DNS A record pointing to the IP address you have been provided by Linode.
-- **SSH Access** command that you can use from your computer’s command-line terminal to connect to the server
+* **IP Addresses** of your server ( 139.162.155.223 in the example below ). We will use this IP address in a web browser to display Budibase but if you have already purchased a domain name this would be a good time to use the DNS settings of your domain name provider to add a DNS A record pointing to the IP address you have been provided by Linode.
+* **SSH Access** command that you can use from your computer’s command-line terminal to connect to the server
 
 ![](https://files.readme.io/e0f4a8a-image.png)
 
 When the status appears as **Running** please allow a further few minutes for the Budibase installation to complete.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a58ee1e-image.png",
-        null,
-        null
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+<Image width="500px" src="https://files.readme.io/a58ee1e-image.png" />
 
 When the server status is shown as **Running** you can visit the IP address (or the domain name if you created a DNS entry) in a web browser to create the initial admin user:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/bd06617-image.png",
-        null,
-        ""
-      ],
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="500px" src="https://files.readme.io/bd06617-image.png" />
 
 Next login as the admin user to start creating Budibase applications. There are many templates to help you get started and you can learn more about connecting to existing database and building your own custom apps from the Budibase Docs. 
 
@@ -207,8 +74,8 @@ If you would like to examine the installation you can SSH to the server using th
 
 You may wish to examine the files under  `/opt/budibase` 
 
-- `docker-compose.yml` Use this file for future management/customisation of your budibase install
-- `.env `The .env file contains the passwords used to access various budibase components. 
+* `docker-compose.yml` Use this file for future management/customisation of your budibase install
+* `.env `The .env file contains the passwords used to access various budibase components. 
 
 ### SMTP
 
