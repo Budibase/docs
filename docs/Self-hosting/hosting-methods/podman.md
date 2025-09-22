@@ -40,15 +40,11 @@ apt update
 apt install podman python3-podman-compose podman-netavark 
 ```
 
-
-
 For convenience configure podman to check the docker registry by default. Create the file:
 
 ```
 /etc/containers/registries.conf
 ```
-
-
 
 And add the following:
 
@@ -60,15 +56,11 @@ prefix = "docker.io"
 location = "docker.io"
 ```
 
-
-
 Then create the file:
 
 ```
 /etc/containers/containers.conf
 ```
-
-
 
 Adding the following:
 
@@ -76,8 +68,6 @@ Adding the following:
 [network]  
 network_backend = "netavark"
 ```
-
-
 
 Create the data directory and run the container:
 
