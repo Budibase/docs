@@ -33,8 +33,8 @@ This command will start a Budibase container on your system, which you can then 
 
 There are a few other parts of this command we can change, as well as a range of environment variables that should be set before using this in a production environment.
 
-- The port which Budibase can be accessed on can be changed by altering the `-p 10000:80` component, changing from port 10000 to whatever else is desired.
-- The following environment variables should be set before putting this container into production (using the `-e <variable>` syntax).
+* The port which Budibase can be accessed on can be changed by altering the `-p 10000:80` component, changing from port 10000 to whatever else is desired.
+* The following environment variables should be set before putting this container into production (using the `-e <variable>` syntax).
 
 | Variable name                             | Description                                                                                                                                                                                                                                        |
 | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
