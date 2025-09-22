@@ -19,7 +19,7 @@ A common example is opening a detailed view for a row entry.
 
 ## Navigate To
 
-Some templates such as the _Client Contact List_ app use <a href="https://docs.budibase.com/docs/button#adding-buttons-to-table-rows">row buttons</a> instead of links. Tables also allow you to define actions [on row click](https://docs.budibase.com/docs/table-block#on-row-click).
+Some templates such as the *Client Contact List* app use <a href="https://docs.budibase.com/docs/button#adding-buttons-to-table-rows">row buttons</a> instead of links. Tables also allow you to define actions [on row click](https://docs.budibase.com/docs/table-block#on-row-click).
 
 In these cases, navigation is controlled by the navigation action:
 
@@ -27,10 +27,10 @@ In these cases, navigation is controlled by the navigation action:
 
 Here we are passing the row id of the client into the URL path. 
 
-In the `/clients/:id` details screen we will be able to make use of this row id.  
+In the `/clients/:id` details screen we will be able to make use of this row id.\
 A word prefixed with a colon within a route denotes a path variable. 
 
-The id is accessed using the `{{ URL.id }}` <<glossary:Binding>>
+The id is accessed using the `{{ URL.id }}` <Glossary>Binding</Glossary>
 
 For example, because we only want to show the chosen client, we can add the following <a href="https://docs.budibase.com/docs/searchfilter-data#static-filtering">Filter</a> to the clients' <a href="https://docs.budibase.com/docs/data-provider">Data Provider</a>
 
@@ -48,8 +48,6 @@ A detailed example can be found in this [discussion](https://github.com/Budibase
 
 ## Video tutorial
 
-[block:html]
-{
-  "html": "<iframe src=\"https://player.vimeo.com/video/746819326?h=2aa914721e&title=0&portrait=0&byline=0\" style=\"margin-top: -100px;\" width=\"640\" height=\"564\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
-}
-[/block]
+<HTMLBlock>{`
+<iframe src="https://player.vimeo.com/video/746819326?h=2aa914721e&title=0&portrait=0&byline=0" style="margin-top: -100px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+`}</HTMLBlock>
