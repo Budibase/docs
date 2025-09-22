@@ -37,33 +37,18 @@ Use the button component to encourage users to take action and make choices with
 
 ## Adding buttons to table rows
 
-Simply click on the table and then add the Button component.  
+Simply click on the table and then add the Button component.\
 A similar example can be found [here](https://docs.budibase.com/docs/table#add-components-to-your-table).
 
 > 🚧 Table block
-> 
+>
 > You cannot add buttons to the rows of a <a href="https://docs.budibase.com/docs/blocks#table-block">Table Block</a>, however you can still add row links.
 
 <br />
 
 # Button Group
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7a50473-Screenshot_Form_Improvements.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "sizing": "250px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="250px" src="https://files.readme.io/7a50473-Screenshot_Form_Improvements.png" />
 
 The Button Group component behaves in much the same way as a single Button component, with the added benefit of being able to configure and style multiple buttons at once. Adding a new button here will create a new button in just the same way as a Button component on it's own, but it will be part of this group. We can configure the button's actions and appearance using the cog-icon in the list of buttons. We can also drag-and-drop using the grab-handle (dots) to the left of the cog, to re-order the buttons, which will change the order they appear on the screen, as well as in the list.
 
