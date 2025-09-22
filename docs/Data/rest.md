@@ -34,7 +34,7 @@ The REST data source is a powerful integration in Budibase that allows you to co
 
 To add a new `REST` data source click: 
 
-- Data > Sources > Add > Rest > Continue
+* Data > Sources > Add > Rest > Continue
 
 ![](https://files.readme.io/09366c0-1_rest.png)
 
@@ -52,8 +52,6 @@ A query is an individual request in the rest data source. Either create one from
 
 ## Video guide
 
-[block:html]
-{
-  "html": "<iframe src=\"https://player.vimeo.com/video/746819500?h=29b53dd8a1&title=0&byline=0&portrait=0\" style=\"margin-top: -100px;\" width=\"640\" height=\"564\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
-}
-[/block]
+<HTMLBlock>{`
+<iframe src="https://player.vimeo.com/video/746819500?h=29b53dd8a1&title=0&byline=0&portrait=0" style="margin-top: -100px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+`}</HTMLBlock>
