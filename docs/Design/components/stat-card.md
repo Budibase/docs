@@ -18,13 +18,13 @@ All three label properties (Title, Value, Label) support [Bindings](doc:bindings
 
 ## Adding a Stat Card
 
-The Stat Card is located under `Card > Stat Card` in the Budibase design section. A wrapping [Data Provider](doc:data-provider) is not required as the Stat Card can also display information about the user, or run JavaScript functions. However, if you want to display data from <<glossary:Data Sources>> you'll need to add the Stat Card as a child of a [Data Provider](doc:data-provider) that has the Data Source connected.
+The Stat Card is located under `Card > Stat Card` in the Budibase design section. A wrapping [Data Provider](doc:data-provider) is not required as the Stat Card can also display information about the user, or run JavaScript functions. However, if you want to display data from <Glossary>Data Sources</Glossary> you'll need to add the Stat Card as a child of a [Data Provider](doc:data-provider) that has the Data Source connected.
 
 ![](https://files.readme.io/e3d98be-Screenshot_2023-07-04_at_11.43.54.png)
 
 ## Displaying Data
 
-If you want to display data in a Stat Card, you can use [Bindings](doc:bindings) in the <<glossary:Settings Panel>>. There are three values you can set using Bindings.
+If you want to display data in a Stat Card, you can use [Bindings](doc:bindings) in the <Glossary>Settings Panel</Glossary>. There are three values you can set using Bindings.
 
 | Setting | Description                                                          |
 | :------ | :------------------------------------------------------------------- |
