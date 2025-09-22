@@ -16,7 +16,7 @@ next:
 ---
 ## Usage
 
-[block:image]{"images":[{"image":["https://files.readme.io/d1bc024-image.png",null,null],"align":"center"}]}[/block]
+<Image align="center" src="https://files.readme.io/d1bc024-image.png" />
 
 External Data Connector action steps can be used to run a query from the Data section, either from a [Data Source Custom Query](https://docs.budibase.com/docs/data-sources#custom-queries), or from a [REST query](https://docs.budibase.com/docs/rest-queries).
 
