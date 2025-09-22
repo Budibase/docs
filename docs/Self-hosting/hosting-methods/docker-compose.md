@@ -19,12 +19,9 @@ next:
 ---
 Within this guide, you will learn how to deploy Budibase using Docker and Docker Compose.
 
-[block:html]
-{
-  "html": "<div style=\"padding:65% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/712763653?h=ad88cc98c2&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Budibase Docker Compose Guide\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>"
-}
-[/block]
-
+<HTMLBlock>{`
+<div style="padding:65% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/712763653?h=ad88cc98c2&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Budibase Docker Compose Guide"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+`}</HTMLBlock>
 
 The first step to getting your Budibase platform up and running with [Docker](https://www.docker.com/) is to make sure that you have the following installed:
 
@@ -33,7 +30,7 @@ The first step to getting your Budibase platform up and running with [Docker](ht
 
 The pre-requisites for installing Docker are minimal, in general, the most important factor is that your OS is up to date - on Linux systems you will need a relatively up-to-date kernel. To help with this we have provided some scripts to help with installation and setup on a Linux based system, found below:
 
-- [Scripts for setting up on a Linux based system](https://github.com/Budibase/budibase/tree/master/hosting/scripts/linux)
+* [Scripts for setting up on a Linux based system](https://github.com/Budibase/budibase/tree/master/hosting/scripts/linux)
 
 To run the Budibase platform the minimum requirements are simply those required to install and run Docker, these can be found in the [Docker documentation](https://docs.docker.com/).
 
@@ -47,7 +44,7 @@ Once you have Docker fully installed the rest of the process should be simple! Y
 2. [.env](https://raw.githubusercontent.com/Budibase/budibase/master/hosting/.env) - this contains all the default settings for your Budibase platform.
 
 > 🚧 If running in production, update secrets in `.env`
-> 
+>
 > If you are planning to run the cluster in a production environment, you will want update the values in the secrets section of the `.env` file before moving on, so that only you can access the database, file storage and internal APIs etc. Using a new UUID for each secret is a good approach.
 
 Once you have these files downloaded, running the platform is as simple as:
@@ -67,8 +64,6 @@ You can access your new installation at:
 ```
 
 If you run into any issues the easiest way to resolve them would be to [raise a discussion in our community](https://github.com/Budibase/budibase/discussions).
-
-
 
 ### Updating Docker compose configuration
 
