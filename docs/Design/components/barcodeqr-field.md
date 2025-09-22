@@ -18,7 +18,7 @@ The field can be found under the **Form** section of the components list.
 
 ![](https://files.readme.io/7048cad-component_list.png)
 
-To add the scanner to your app, you to need add it as a child of a [Form](https://docs.budibase.com/docs/forms) component.  
+To add the scanner to your app, you to need add it as a child of a [Form](https://docs.budibase.com/docs/forms) component.\
 The field has its own data type of [Barcode/QR](https://docs.budibase.com/docs/barcodeqr) so be sure to select a valid field from the **Field** setting. 
 
 ## Scanning
@@ -71,4 +71,4 @@ Listed below are configuration options available for the field.
 
 ## Code Scanning Support
 
-The full list of supported barcodes is available here : <https://github.com/mebjas/html5-qrcode#supported-code-formats>
+The full list of supported barcodes is available here : [https://github.com/mebjas/html5-qrcode#supported-code-formats](https://github.com/mebjas/html5-qrcode#supported-code-formats)
