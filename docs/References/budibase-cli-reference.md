@@ -15,7 +15,7 @@ next:
 The budibase CLI is an all in one toolkit for managing your budibase self hosted installation. These API docs detail all of the commands and flags available to you when using the CLI. 
 
 > 🚧 Pre-requisite: CLI installed and ready to use
-> 
+>
 > This guide assumes that you have installed and used the Budibase CLI before, if you have not then you can follow our guide on [installing the Budibase CLI](https://docs.budibase.com/docs/budibase-cli-setup).
 
 ## Budibase CLI Commands
@@ -25,7 +25,7 @@ The budibase CLI is an all in one toolkit for managing your budibase self hosted
 Initialise and manage a self hosted budibase installation. Currently only supports docker compose setups. 
 
 > 📘 You must be in the same directory that you ran --init to use the budibase CLI commands
-> 
+>
 > After running `budi hosting --init`, you must be in the directory where budibase was initialised to use the other `budi hosting` commands.
 
 #### Flags
@@ -56,7 +56,7 @@ budi hosting --stop
 
 `budi plugins` is the CLI command used for creating, developing and managing custom coded components and datasources. You can find tutorials on how to create components and datasources below.
 
-<https://docs.budibase.com/docs/custom-datasource>
+[https://docs.budibase.com/docs/custom-datasource](https://docs.budibase.com/docs/custom-datasource)
 
 #### Flags
 
@@ -86,17 +86,17 @@ budi plugins --watch
 
 `budi backups` is a CLI command that allows you to completely backup and restore your self hosted budibase installation.
 
-- Save backups as `.tar.gz` files that you can store elsewhere
-- Import the `.tar.gz` files to a fresh budibase system to restore to the state of your backup.
+* Save backups as `.tar.gz` files that you can store elsewhere
+* Import the `.tar.gz` files to a fresh budibase system to restore to the state of your backup.
 
 You can find a full end to end tutorial on using the `budi backups` CLI command here:
 
-<https://docs.budibase.com/docs/backups>
+[https://docs.budibase.com/docs/backups](https://docs.budibase.com/docs/backups)
 
 > 📘 You need to provide credentials to the budi backups command
-> 
+>
 > If you do not pass the `--env` fiag to `budi backups` commands, you will have to answer a set of questions in the CLI to pass the credentials required to perform import and export of backups. The required variables are:
-> 
+>
 > | Title              | Description                                                                                                       |
 > | :----------------- | :---------------------------------------------------------------------------------------------------------------- |
 > | `COUCH_DB_URL`     | Full URL for your running CouchDB service. Must include credentials. `http://<username>:<password>@<couchdb-url>` |
