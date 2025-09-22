@@ -11,27 +11,11 @@ next:
   description: ''
 ---
 The Budibase architecture is quite simple, comprising of a few key Budibase services and a collection of open source technologies that Budibase is built on top of. Below you can see a general overview of the services that make Budibase work and how they interact.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/aa08a14-architecture.png",
-        "architecture.png",
-        1200,
-        600,
-        "#fbfbfc"
-      ]
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hosted architecture"
-}
-[/block]
+![1200](https://files.readme.io/aa08a14-architecture.png "architecture.png")
+
+## Hosted architecture
+
 In this section, we will cover the core services that make up the Budibase self-hosted platform and how this architecture fits together.
 
 1. [App service](https://github.com/Budibase/budibase/tree/master/packages/server) - this is the core of the Budibase infrastructure, the apps service hosts your web apps when they have been deployed as well as providing the REST API that your web apps will use to access/store their data.
@@ -41,21 +25,17 @@ In this section, we will cover the core services that make up the Budibase self-
 5. [Proxy (NGINX)](https://nginx.com) - To simplify the deployment and usage of the Budibase platform we route all requests through a proxy engine which sits at the front of the Budibase architecture. No service is communicated with directly, this also allows us to load balance the services as the system grows if necessary.
 
 This architecture will look the same no matter the method of self hosting, all of the above services are required for Budibase to function.
-[block:api-header]
-{
-  "title": "Builder architecture"
-}
-[/block]
+
+## Builder architecture
+
 Another core element of Budibase that hasn't been discussed yet is the builder, in the Budibase architecture the builder, [downloaded here](https://github.com/Budibase/budibase/releases), is where you will make your web apps. This is an [Electron](https://www.electronjs.org) based desktop app that will communicate with the Budibase platform (Cloud or self-hosted) to deploy your app once it is finished. It's comprised of two main components:
 
 1. [Builder svelte app](https://github.com/Budibase/budibase/tree/master/packages/builder) - this is the interface component of the builder, when using the electron app this is the component you are interacting with.
 2. [Apps service](https://github.com/Budibase/budibase/tree/master/packages/server) - we run a version of the apps service in the builder, this is how you are able to preview apps and experience them as if they were deployed. The server also handles storing all of the metadata that will make up your app, we use a local offline database called [PouchDB](https://pouchdb.com) for this.
 3. [Client library](https://github.com/Budibase/budibase/tree/master/packages/client) - at the core of every web app you make is the Budibase client, this is a svelte app that is molded into your app at runtime, using the information you provide in the builder.
-[block:api-header]
-{
-  "title": "Web app architecture"
-}
-[/block]
+
+## Web app architecture
+
 Lastly the most important component of Budibase, the apps you make! Each Budibase app is made up of a few core libraries:
 
 1. [Svelte](https://svelte.dev) - Budibase loves Svelte, and all our web apps at their core are built with Svelte.
