@@ -24,10 +24,10 @@ At its core, our application is based around submission and approval workflows f
 
 This includes:
 
-- Enabling **App Users** to submit new risks, incidents, or improvements. They also can view and cancel their own previous submissions.
-- Routing submissions to **Power Users** for review and approval.
-- Providing records of all ongoing and previous submissions.
-- Notifying stakeholders of changes to the status of submissions or when there are new submissions that need their attention.
+* Enabling **App Users** to submit new risks, incidents, or improvements. They also can view and cancel their own previous submissions.
+* Routing submissions to **Power Users** for review and approval.
+* Providing records of all ongoing and previous submissions.
+* Notifying stakeholders of changes to the status of submissions or when there are new submissions that need their attention.
 
 Our template utilizes simple approval flows for each type of submission, with two distinct user roles in addition to our **App Admin** role.
 
@@ -55,7 +55,7 @@ This works the same way for **Improvements, Risks**, and **Incidents**.
 
 They can also carry out **Update** actions relating to certain fields.
 
-Specifically, they can use **Row Actions** to either **Approve** or **Reject** the row in question, updating its status attribute. At the same time, they can use a form UI to populate the **Feedback** column**.**
+Specifically, they can use **Row Actions** to either **Approve** or **Reject** the row in question, updating its status attribute. At the same time, they can use a form UI to populate the **Feedback** colum&#x6E;**.**
 
 If a submission is **Approved**, it can also be assigned to a specific **Improvement Project** for implementation by populating a relationship column.
 
@@ -99,21 +99,7 @@ Users with the **App User** role can primarily create submissions across our thr
 
 Roles are configured using Budibase’s visual RBAC editor. We can use branch UIs to define how roles relate to one another, including permission inheritance.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/93f8353713f71bb1219d7e170b0182ab41adde6bea9c218dccb730f9c739d6f5-Screenshot_2025-08-13_at_09.41.39.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/93f8353713f71bb1219d7e170b0182ab41adde6bea9c218dccb730f9c739d6f5-Screenshot_2025-08-13_at_09.41.39.png" />
 
 We can use this to define which actions and data each role is permitted to access from within the data section, as we’ll see in the following section.
 
@@ -133,11 +119,11 @@ Let’s break it down.
 
 As we said earlier, our template utilizes five internal tables. These are:
 
-- **Glossary** - Storing definitions of our different kinds of submissions. This is provided as a reference for **App Admins**.
-- **Risks** - For storing submissions relating to potential risks.
-- **Incidents** - Where incidents are recorded and tracked.
-- **Improvements** - Allowing customers to suggest new improvement initiatives.
-- **Improvement Projects** - Which accepted Risks, Incidents, or Improvements can be related to.
+* **Glossary** - Storing definitions of our different kinds of submissions. This is provided as a reference for **App Admins**.
+* **Risks** - For storing submissions relating to potential risks.
+* **Incidents** - Where incidents are recorded and tracked.
+* **Improvements** - Allowing customers to suggest new improvement initiatives.
+* **Improvement Projects** - Which accepted Risks, Incidents, or Improvements can be related to.
 
 Our app also relies on Budibase’s internal **Users** table to enable individual rows across these to be assigned to specific users, as we’ll see in the next section.
 
@@ -147,61 +133,61 @@ Each of our other tables stores data that’s required to record and process sub
 
 **Improvement Projects:**
 
-- **title** - Text,
-- **id** - Number,
-- **created_by** - Single User,
-- **last_updated_by** - Single User,
-- **description** - Long Forn Text,
-- **created_at** - Date,
-- **status** - Single Select,
-- **start_date** - Date,
-- **end_date** - Date,
-- **project_manager** - Single User,
-- **improvement** - Relationship,
-- **risks** - Relationship,
-- **incidents** - Relationship,
-- **updated_at** - Date.
+* **title** - Text,
+* **id** - Number,
+* **created\_by** - Single User,
+* **last\_updated\_by** - Single User,
+* **description** - Long Forn Text,
+* **created\_at** - Date,
+* **status** - Single Select,
+* **start\_date** - Date,
+* **end\_date** - Date,
+* **project\_manager** - Single User,
+* **improvement** - Relationship,
+* **risks** - Relationship,
+* **incidents** - Relationship,
+* **updated\_at** - Date.
 
 **Improvements:**
 
-- **title** - Text,
-- **id** - Number,
-- **start_date** - Date,
-- **end_date** - Date,
-- **created_at** - Date,
-- **updated_at** - Date,
-- **description** - Long Form Text,
-- **created_by** - Single User,
-- **last_updated_by** - Single User,
-- **Improvement Project** - Relationship,
-- **status** - Single Select.
-- **feedback -** Long Form Text.
+* **title** - Text,
+* **id** - Number,
+* **start\_date** - Date,
+* **end\_date** - Date,
+* **created\_at** - Date,
+* **updated\_at** - Date,
+* **description** - Long Form Text,
+* **created\_by** - Single User,
+* **last\_updated\_by** - Single User,
+* **Improvement Project** - Relationship,
+* **status** - Single Select.
+* **feedback -** Long Form Text.
 
 **Risks:**
 
-- **title** - Text,
-- **id** - Number,
-- **created_at** - Date,
-- **updated_at** - Date,
-- **created_by** - Single User,
-- **last_updated_by** - Single User,
-- **description** - Long Forn Text,
-- **improvement_project** - Relationship,
-- **status** - Single Select,
-- **feedback** - Long Form Text.
+* **title** - Text,
+* **id** - Number,
+* **created\_at** - Date,
+* **updated\_at** - Date,
+* **created\_by** - Single User,
+* **last\_updated\_by** - Single User,
+* **description** - Long Forn Text,
+* **improvement\_project** - Relationship,
+* **status** - Single Select,
+* **feedback** - Long Form Text.
 
 **Incidents:**
 
-- **title** - Text,
-- **id** - Number,
-- **reported_by** - Single User,
-- **employee_involved** - Single User,
-- **date_of_incident** - Date,
-- **date_created** - Date,
-- **notes** - Long Form Text,
-- **status** - Single Select,
-- **Improvement Project** - Relationship,
-- **feedback** - Long Form Text.
+* **title** - Text,
+* **id** - Number,
+* **reported\_by** - Single User,
+* **employee\_involved** - Single User,
+* **date\_of\_incident** - Date,
+* **date\_created** - Date,
+* **notes** - Long Form Text,
+* **status** - Single Select,
+* **Improvement Project** - Relationship,
+* **feedback** - Long Form Text.
 
 #### Relationships
 
@@ -211,21 +197,7 @@ Relationships between tables in BudibaseDB are created using a special **Relatio
 
 We’ve used three instances of this to create **Many-To-One** relationships from our **Improvement Projects** table to the **Improvements**, **Risks**, and **Incidents** tables.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d11015ecf951346519a4fb6c9de7a4772213961c94f027b37f3531c06b4af214-Screenshot_2025-08-13_at_09.42.34.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/d11015ecf951346519a4fb6c9de7a4772213961c94f027b37f3531c06b4af214-Screenshot_2025-08-13_at_09.42.34.png" />
 
 <br />
 
@@ -235,21 +207,7 @@ In Budbase, we have two dedicated columns for linking tables to **User** records
 
 Our app utilizes Single User columns across each of our tables to represent various relationships with users. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6b83dfd577cd1288a85702ea1b56b650d21c41ed7298d6fa15515f2b66bcd1a2-Screenshot_2025-08-13_at_09.43.14.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/6b83dfd577cd1288a85702ea1b56b650d21c41ed7298d6fa15515f2b66bcd1a2-Screenshot_2025-08-13_at_09.43.14.png" />
 
 #### Views
 
@@ -259,21 +217,7 @@ In Budibase, these are used to centrally configure what each user role can do wi
 
 Our underlying tables have their **Access** settings to only be readable or writable by **App Admins**. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d6d005c78b1d9c5fcfeca6670c5d7fc0092d0ec058446ff0e48c9bd456063f52-Screenshot_2025-08-13_at_09.43.41.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/d6d005c78b1d9c5fcfeca6670c5d7fc0092d0ec058446ff0e48c9bd456063f52-Screenshot_2025-08-13_at_09.43.41.png" />
 
 Each of our tables has distinct Views for each of our two core user roles. 
 
@@ -293,41 +237,13 @@ For instance, we have a **View** called **My Improvements Count**. Using the **C
 
 This will return each unique status, along with the number of relevant entries in our table.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/76b6089c54f99e0c4500dcec70b5f58ea51cb5d2ca70ddada8bb2c2b83834ca8-Screenshot_2025-08-13_at_09.45.23.png",
-        null,
-        "Calculation View"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/76b6089c54f99e0c4500dcec70b5f58ea51cb5d2ca70ddada8bb2c2b83834ca8-Screenshot_2025-08-13_at_09.45.23.png" />
 
 However, we don’t want to include any submissions that have either been canceled or rejected. We also only want to include the rows that are related to the current user in the front end.
 
 So, we’ve applied three filtering rules. The first includes rows that have been submitted by the current user. The other two exclude rows where the **status** is **Rejected** or **Canceled**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5100ff1a98ce3c9240d8c6241f28c03857d5bb67b37d89aedf4e7b9e86845076-Screenshot_2025-08-13_at_09.45.51.png",
-        null,
-        "Calculation Filters"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/5100ff1a98ce3c9240d8c6241f28c03857d5bb67b37d89aedf4e7b9e86845076-Screenshot_2025-08-13_at_09.45.51.png" />
 
 These are then displayed on the home screen for App Users, as we’ll see in a moment.
 
@@ -341,41 +257,13 @@ The screens available for each user cohort across our three types of submissions
 
 **App Users** can access three kinds of screens. Firstly, there are three data collection forms, where they can create records on our three submission tables. These rely on Budibase’s autogenerated **Form** layout, with minor changes to their design.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d42f429ccd6d658623bee1538e1c6a068e839c4b908de8e617b058af5249f300-Screenshot_2025-08-13_at_09.50.44.png",
-        null,
-        "Form Block"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/d42f429ccd6d658623bee1538e1c6a068e839c4b908de8e617b058af5249f300-Screenshot_2025-08-13_at_09.50.44.png" />
 
 We’ve provided fully custom screens for **App Users** to view, track, or cancel their own submissions. These are made up of a variety of nested components wrapped in **Data Providers** and **Repeaters** to populate display elements with values from the relevant Views.
 
 Take a look at our documentation on [working with data in design](https://docs.budibase.com/docs/working-with-data) to learn more about how this works.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a8cee78705299cdb4ccdd4699aac1fb1752a7ff3e89ac057165414bcc548b64c-Screenshot_2025-08-13_at_09.51.20.png",
-        null,
-        "My Risks"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/a8cee78705299cdb4ccdd4699aac1fb1752a7ff3e89ac057165414bcc548b64c-Screenshot_2025-08-13_at_09.51.20.png" />
 
 We’ve also created a dedicated home screen for **App Users**. This provides links to navigate to the screen for each type of submission. Its design relies on stylized **Container** and **Text** components.
 
@@ -385,21 +273,7 @@ First, we have a **Text** component that displays the total number of each type 
 
 The My Improvements Data Provider has a filtering expression to exclude entries where the **status** is set to **canceled**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f6ea91afe63ce72f7691e140a405cf7f9bf4ffe835040ba31da75b2e87acb285-Screenshot_2025-08-13_at_09.53.28.png",
-        null,
-        "Count of Submissions"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/f6ea91afe63ce72f7691e140a405cf7f9bf4ffe835040ba31da75b2e87acb285-Screenshot_2025-08-13_at_09.53.28.png" />
 
 Beneath this, we have a second **Text** component which is wrapped in a **Data Provider** and **Repeater**. 
 
@@ -409,21 +283,7 @@ These components will connect to a data source and display each of the elements 
 {{ Improvements Counts Repeater.My Improvements Counts.Count id }} {{ Improvements Counts Repeater.My Improvements Counts.status }}
 ```
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/adc38e4f45dae6c612eeaa59c204eb0484006380edd709d0637391b7bf6008e8-Screenshot_2025-08-13_at_09.54.03.png",
-        null,
-        "View Calculation UI"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/adc38e4f45dae6c612eeaa59c204eb0484006380edd709d0637391b7bf6008e8-Screenshot_2025-08-13_at_09.54.03.png" />
 
 **App Users** can also use buttons to navigate to either the submission form or table UI for each respective type of submission.
 
@@ -431,21 +291,7 @@ Our **Power User** screens for reviewing submissions follow the same pattern as 
 
 They can add additional details on a modal form that’s displayed when they hit reject.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e2c15e2fbc44acb4829dd81e0d70dc2b641404bed6c43dfe603f1008cddd79e2-Screenshot_2025-08-13_at_10.07.35.png",
-        null,
-        "Reject Modal"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/e2c15e2fbc44acb4829dd81e0d70dc2b641404bed6c43dfe603f1008cddd79e2-Screenshot_2025-08-13_at_10.07.35.png" />
 
 **Power Users** can also access a similar screen for viewing or editing **Improvement Project** records, including reading all of the details of associated submissions, via the **View** we discussed earlier.
 
@@ -459,61 +305,19 @@ The **App User** view for each of our submission tables features a **Row Action*
 
 Once triggered, this performs two actions. First, it updates the **Status** attribute of the trigger row to **Cancelled**. Then, it sends a template email to the user, confirming that this has been successful.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c127e6421f3f855319c548ee076e10bf7bc1f08a6e8281ad9034db78e689fc89-Screenshot_2025-08-13_at_10.56.12.png",
-        null,
-        "Cancel Automation"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/c127e6421f3f855319c548ee076e10bf7bc1f08a6e8281ad9034db78e689fc89-Screenshot_2025-08-13_at_10.56.12.png" />
 
 **Power Users** have two additional **Row Actions** for each submission table, called **Approve** and **Reject**. These follow the same structure as our **Cancel** action, changing the **Status** to **Approved** and **Rejected**, respectively.
 
 They then send an email template to the original submitter, notifying them of the outcome.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4ddf4deb5f68f23d83a2646809302683b4b9db773e02b015398c1b6218153e78-Screenshot_2025-08-13_at_12.44.59.png",
-        null,
-        "Accept Automation"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/4ddf4deb5f68f23d83a2646809302683b4b9db773e02b015398c1b6218153e78-Screenshot_2025-08-13_at_12.44.59.png" />
 
 Lastly, we’ve built an Automation called **Outstanding Attributes**, using a **Chron Trigger**. This enables us to set rules which are executed at defined intervals. Ours runs every Monday and Thursday morning at 09:30.
 
 We’ve set our Cron Trigger manually, but we also have the option of using AI to generate an expression.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/963f2d75a96d7ef303bfde4a5c6fb3543f4a07e8b156e353640a3dca72d423d2-Screenshot_2025-08-13_at_11.08.14.png",
-        null,
-        "Outstanding Automation"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/963f2d75a96d7ef303bfde4a5c6fb3543f4a07e8b156e353640a3dca72d423d2-Screenshot_2025-08-13_at_11.08.14.png" />
 
 This uses three **Query Rows** steps to return all of the rows from our **Risks**, **Incidents**, and **Improvements** tables with **Status** attributes set to **Pending**.
 
@@ -539,43 +343,15 @@ If we wanted to connect to an external SQL database, for example, we could recre
 
 We can also easily modify the schema of our existing database, including adding, removing, or editing existing tables and columns, using the spreadsheet-like interface in Budibase’s Data section.
 
-For example, say we wanted to add a new Long Form Text column to our **Risks** table, called inspector_notes.
+For example, say we wanted to add a new Long Form Text column to our **Risks** table, called inspector\_notes.
 
 We could do this by hitting the **+** icon at the top of our table.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/68f3aa4d1c32a034786bced0fd8295f03c5e587b4b9128c1806a7fa75472bc06-Screenshot_2025-08-13_at_11.11.47.png",
-        null,
-        "Inspector Notes"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/68f3aa4d1c32a034786bced0fd8295f03c5e587b4b9128c1806a7fa75472bc06-Screenshot_2025-08-13_at_11.11.47.png" />
 
 At the same time, we might update our existing **status** attribute by adding an option called **Inspected**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6327e39bc13fa0414fae9ee4c73abd5923fc9c99081e499b26b5c0f6abfbc6d7-Screenshot_2025-08-13_at_11.12.18.png",
-        null,
-        "Inspected Status"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/6327e39bc13fa0414fae9ee4c73abd5923fc9c99081e499b26b5c0f6abfbc6d7-Screenshot_2025-08-13_at_11.12.18.png" />
 
 ### Adding and altering user roles
 
@@ -585,57 +361,15 @@ We’re going to create a new role called **Inspector** this will inherit permis
 
 This means that **Inspectors** will be able to create any submissions that **App Users** can, as well as whatever additional permissions we grant them. However, this will be unrelated to the existing **Power User** role’s permissions.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/951378e3b8d2655cccc2897e58e4ed0d5a2bc5548be52d011d569137bfefe29b-Screenshot_2025-08-13_at_11.12.54.png",
-        null,
-        "Inspector Role"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/951378e3b8d2655cccc2897e58e4ed0d5a2bc5548be52d011d569137bfefe29b-Screenshot_2025-08-13_at_11.12.54.png" />
 
 To go along with this, we’ll create a new **View** and set its **Access** to the **Inspector** role. We’ll then make all columns except for **Inspector Notes** read-only.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/570aa8f297897ffac3e093a898d9bed0a4eb48f83aeca99dc8932a1eeb9f33b3-Screenshot_2025-08-13_at_11.15.51.png",
-        null,
-        "Permissions"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/570aa8f297897ffac3e093a898d9bed0a4eb48f83aeca99dc8932a1eeb9f33b3-Screenshot_2025-08-13_at_11.15.51.png" />
 
 We’ll also set a filter to only include entries where the **status** is set to **Pending**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fcd7fa67372507ed8a8c99e1ee06fb5f6dd12400665c66ce89e224ed416a1ef3-Screenshot_2025-08-13_at_13.03.28.png",
-        null,
-        "Filter"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/fcd7fa67372507ed8a8c99e1ee06fb5f6dd12400665c66ce89e224ed416a1ef3-Screenshot_2025-08-13_at_13.03.28.png" />
 
 Now, **Inspectors** have permission to view all pending **Risks** entries, and add their notes.
 
@@ -647,39 +381,11 @@ This will be relatively simple, enabling **Inspectors** to read our entries and 
 
 From our new view, we’ll start by autogenerating a **Table** screen with the **Side-Panel Form** option.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b4aa9d9977fdb8a90395ef59eb9945585d6416899cdacf9294029463c8bf3f9d-Screenshot_2025-08-13_at_11.17.27.png",
-        null,
-        "Generate Screens"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/b4aa9d9977fdb8a90395ef59eb9945585d6416899cdacf9294029463c8bf3f9d-Screenshot_2025-08-13_at_11.17.27.png" />
 
 Then, within the Design section, we’ll make a couple of UX tweaks. Specifically, we want to remove the **Create Form**. On our remaining **Edit** form, we’ll remove the **Delete** button and set all fields except for **Inspector Notes** to **Disabled**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c704d4ae7f91d04ca44a774f096bedd69a08cca000455b5262250604d7bdcfb8-Screenshot_2025-08-13_at_13.37.36.png",
-        null,
-        "Form"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/c704d4ae7f91d04ca44a774f096bedd69a08cca000455b5262250604d7bdcfb8-Screenshot_2025-08-13_at_13.37.36.png" />
 
 ### Adding your own business rules
 
@@ -689,57 +395,16 @@ We’ll then email the original submitted, notifying them of this update.
 
 We’ll start by creating a **Row Action** from our new database View. We’ll call this **Inspect**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/96466db8395fa60622edb71c7d55fd4b70722eeedb479b390e7e6e0835ecca72-Screenshot_2025-08-13_at_13.08.58.png",
-        null,
-        "Row ACtion"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/96466db8395fa60622edb71c7d55fd4b70722eeedb479b390e7e6e0835ecca72-Screenshot_2025-08-13_at_13.08.58.png" />
 
 We’ll then mimic the structure of our existing **Row Actions**, first adding an **Update Row** step, followed by an **Email** step.
 
 To update our row, we’ll set the **ID** to our trigger ID and the **status** to **Inspected**. We’ll populate the **Send To, Subject**, and **Body** fields of our **Email** action too.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/30e8f7eae8f7213d78861cb54359b10e1893bc83fc99415e75d15437f759d442-Screenshot_2025-08-13_at_13.12.02.png",
-        null,
-        "Inspect Action Flow"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/30e8f7eae8f7213d78861cb54359b10e1893bc83fc99415e75d15437f759d442-Screenshot_2025-08-13_at_13.12.02.png" />
 
 Next, we need to provide a way to trigger this automation from our app’s UI. Head back to the Design section, and we’ll add a **Button Action** to the form on our **Inspection** screen. 
 
 Here, we’ll add a **Row Action** step. Our **Form Block** has an attribute called **RowID**, which we’ll copy into the corresponding field on our button action.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4281b4087ad2867a579e52d5d6f2aa236c7d35668fe3764f6347a5ef109de392-Screenshot_2025-08-13_at_13.16.07.png",
-        null,
-        "Button Action"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/4281b4087ad2867a579e52d5d6f2aa236c7d35668fe3764f6347a5ef109de392-Screenshot_2025-08-13_at_13.16.07.png" />
