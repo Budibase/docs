@@ -16,10 +16,10 @@ Uploaded files are stored in [MinIO](https://docs.budibase.com/docs/accessing-mi
 
 ![](https://files.readme.io/27adfae-attachment.png "attachment.png")
 
-The `Attachment` component works especially well with <<glossary:Budibase DB>>'s [Attachment](doc:attachments) data type.
+The `Attachment` component works especially well with <Glossary>Budibase DB</Glossary>'s [Attachment](doc:attachments) data type.
 
 > 📘 Filesize
-> 
+>
 > Remember the maximum file size you can store in your database of choice
 
 ## Adding an Attachment component
@@ -36,13 +36,9 @@ After the `Attachment` component is added you can immediately start using it, no
 
 If you want to specify [user roles](https://docs.budibase.com/docs/user-roles#app-specific-roles) such as allowing public file uploads, then you'll need to adjust the [write access levels](https://docs.budibase.com/docs/attachments#manage-access) of your table.
 
-
-
 ## Validation
 
 There a few [Form validation](doc:form-validation) options for the attachment field.
-
-
 
 | Constraint                 | Description                                                                       |
 | :------------------------- | :-------------------------------------------------------------------------------- |
