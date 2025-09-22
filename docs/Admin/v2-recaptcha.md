@@ -13,9 +13,9 @@ next:
 This feature introduces reCAPTCHA v2 (**This only works with v2 of reCAPTCHA**) support at the application level, enhancing security by requiring users to complete a reCAPTCHA challenge before accessing an app. This approach protects access to the entire app, similar to how platforms like Stack Overflow implement global bot protection, rather than protecting individual forms.
 
 > 📘 Licensing🔒
-> 
+>
 > This feature is only available to customers with an **Enterprise** plan.
-> 
+>
 > You can view more details on [our pricing page.](https://budibase.com/pricing/)
 
 ## How It Works
@@ -44,7 +44,7 @@ Before enabling reCAPTCHA in the platform, you need to get a Site key and Secret
 
 ### Budibase global settings
 
-1. In the platform, go to:  
+1. In the platform, go to:\
    Settings → Recaptcha
 2. Paste the Site key and Secret key into the respective fields
 3. Click the save button
@@ -60,33 +60,6 @@ Before enabling reCAPTCHA in the platform, you need to get a Site key and Secret
 
 **reCAPTCHA challenge screen**
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2d4c32c1dd6d9bb279b03e335931920e4f78647f8c232c84a3e4a987bcc03593-Screenshot_2025-08-08_at_09.48.27.png",
-        "",
-        "reCaptcha screen"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/2d4c32c1dd6d9bb279b03e335931920e4f78647f8c232c84a3e4a987bcc03593-Screenshot_2025-08-08_at_09.48.27.png" />
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/98776b5b094d1e8db3d32065d6247726b1fda56f387e3c0783d043aecb11f1b7-Screenshot_2025-08-08_at_09.48.39.png",
-        "",
-        "recaptcha puzzle"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/98776b5b094d1e8db3d32065d6247726b1fda56f387e3c0783d043aecb11f1b7-Screenshot_2025-08-08_at_09.48.39.png" />
