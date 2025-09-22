@@ -24,7 +24,7 @@ To add the `Date Range` component, click `Form > Date Range`
 
 ## Connection to a Data Provider
 
-To initiate the connection to a data provider, choose the parent [Data Provider](doc:data-provider) in the <<glossary:Settings Panel>>, after which you can select the table column/field the filter should be applied to. Note that only date/time data fields function with the `Date Range` component. In this section you also choose the default selected preset.
+To initiate the connection to a data provider, choose the parent [Data Provider](doc:data-provider) in the <Glossary>Settings Panel</Glossary>, after which you can select the table column/field the filter should be applied to. Note that only date/time data fields function with the `Date Range` component. In this section you also choose the default selected preset.
 
 ![](https://files.readme.io/0cb900a-date-range-settings-panel.png "date-range-settings-panel.png")
 
