@@ -18,14 +18,14 @@ next:
 ---
 ## Navigate To
 
-Use this action if you want to go to another web page or app screen.  
+Use this action if you want to go to another web page or app screen.\
 For example: [Navigation on row button click](doc:url-parameters)
 
-When the _Destination_ is set to 'URL', you have the option to open the link in a new tab.
+When the *Destination* is set to 'URL', you have the option to open the link in a new tab.
 
 ![](https://files.readme.io/8f018e8-new_tab.png)
 
-Alternatively, if the _Destination_ is set to 'Screen', then you can select a screen to navigate to from the dropdown. The screen can optionally be opened in the current tab, or in a [modal](https://docs.budibase.com/docs/screens#modal-screen).
+Alternatively, if the *Destination* is set to 'Screen', then you can select a screen to navigate to from the dropdown. The screen can optionally be opened in the current tab, or in a [modal](https://docs.budibase.com/docs/screens#modal-screen).
 
 ![](https://files.readme.io/a455654-open_modal.png)
 
@@ -76,9 +76,9 @@ Choose a [Form](doc:forms) and a form field. The browser will scroll until the s
 This can be useful when navigating between [Form steps](doc:form-steps).
 
 > 👍 Hidden field
-> 
+>
 > If you want to scroll to the top of the screen, you can add a hidden text field using a little bit of [Custom CSS](doc:custom-css):
-> 
+>
 > ```css
 > height: 0px;
 > visibility: hidden;
