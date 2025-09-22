@@ -11,7 +11,7 @@ next:
   description: ''
 ---
 > 📘 OpenID Connect
-> 
+>
 > To become familiar with OpenID Connect in Budibase, see: [OpenID Connect](doc:openid-connect)
 
 ## Configuration
