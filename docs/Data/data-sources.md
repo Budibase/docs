@@ -12,22 +12,9 @@ next:
 ---
 Budibase can store your data inside the [native internal database](doc:budibasedb) (CouchDB). This is the default datasource unless you opt to connect another datasource to Budibase.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ffc5cdd-Screenshot_2024-01-16_at_10.15.05.png",
-        null,
-        "List of app datasources"
-      ],
-      "align": "center",
-      "caption": "List of app datasources"
-    }
-  ]
-}
-[/block]
-
+<Image alt="List of app datasources" align="center" src="https://files.readme.io/ffc5cdd-Screenshot_2024-01-16_at_10.15.05.png">
+  List of app datasources
+</Image>
 
 Budibase supports connection to a range of remote datasources. More information about connecting Budibase to each of these datasources is nested in this section of the documentation.
 
@@ -37,38 +24,11 @@ Furthermore, if a datasource you want to use is missing, it is possible to build
 
 When [Fetching tables](https://docs.budibase.com/docs/sql-datasource#fetching-tables) from external SQL databases, Budibase will attempt to match the external data types to the internal [Budibase DB](https://docs.budibase.com/docs/budibasedb) types. These default types can be changed by clicking the three dots icon beside the table column, and selecting `Edit column`:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1f936db-edit_col.png",
-        null,
-        "Edit column"
-      ],
-      "align": "center",
-      "caption": "Edit column"
-    }
-  ]
-}
-[/block]
+<Image alt="Edit column" align="center" src="https://files.readme.io/1f936db-edit_col.png">
+  Edit column
+</Image>
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b7df37a-Screenshot_2023-08-11_at_09.05.40.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/b7df37a-Screenshot_2023-08-11_at_09.05.40.png" />
 
 For other basic datasources and [Custom queries](https://docs.budibase.com/docs/data-sources#custom-queries), the schema will be determined by selecting types in the query output.
 
@@ -80,41 +40,15 @@ The schema is important, as it will affect how [sorting and filtering](https://d
 
 Budibase provides the option of adding some sample data to allow new users to explore the various [Data types](https://docs.budibase.com/docs/budibasedb#data-types) available, and quickly build an app for learning purposes. While it is an internal Budibase DB source, it will be kept separate to the other internal DB tables that you create. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/059e435-Screenshot_2024-01-16_at_10.29.58.png",
-        "",
-        "Use sample data"
-      ],
-      "align": "center",
-      "caption": "Use sample data"
-    }
-  ]
-}
-[/block]
+<Image alt="Use sample data" align="center" src="https://files.readme.io/059e435-Screenshot_2024-01-16_at_10.29.58.png">
+  Use sample data
+</Image>
 
+If you do not need this data, it can easily be removed in the same way as other additional datasources. Simply click on the ellipsis to the right of the sample data source and click *Delete*.
 
-If you do not need this data, it can easily be removed in the same way as other additional datasources. Simply click on the ellipsis to the right of the sample data source and click _Delete_.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fbec395-Screenshot_2024-01-16_at_10.30.56.png",
-        null,
-        "Sample data"
-      ],
-      "align": "center",
-      "caption": "Deleting sample data"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Sample data" align="center" src="https://files.readme.io/fbec395-Screenshot_2024-01-16_at_10.30.56.png">
+  Deleting sample data
+</Image>
 
 ## Security
 
@@ -130,11 +64,11 @@ When connecting to an external datasource you must allow Budibase access. Normal
 
 Budibase supports the ability to write custom queries. These queries can be really useful if you want to perform advanced joins or server-side filtering.
 
-To write custom queries, head over to your <<glossary:Datasource>>, and scroll down until you find the queries section. Click the `Add Query` button, which will guide you to a form to configure your query. 
+To write custom queries, head over to your <Glossary>Datasource</Glossary>, and scroll down until you find the queries section. Click the `Add Query` button, which will guide you to a form to configure your query. 
 
 > 📘 Budibase DB
-> 
-> The internal Budibase DB is a unique datasource that does not support custom queries.  
+>
+> The internal Budibase DB is a unique datasource that does not support custom queries.\
 > It does however support [Views](https://docs.budibase.com/docs/views)
 
 An example would be to query all pet names from a specific owner. For this demonstration we've used a custom binding to insert the `ownerID` into the query.
@@ -142,9 +76,9 @@ An example would be to query all pet names from a specific owner. For this demon
 ![](https://files.readme.io/3ffa1e1-4a73ef1-query-owners-pets.png "4a73ef1-query-owners-pets.png")
 
 > 📘 Read or Write
-> 
+>
 > If you want to use a custom query with a [Data provider](doc:data-provider), you must select **Read** as the function of your query.
-> 
+>
 > Other query types, such as Create, can be used by the [Execute Query action](https://docs.budibase.com/docs/data-sources#tutorial-posting-form-data-to-a-custom-query).
 
 ## Using query bindings
@@ -175,11 +109,11 @@ To access these options, hover over the query and click the **…**
 
 ![](https://files.readme.io/c3c5a07-Screenshot_2022-11-15_at_11.15.59.png)
 
-2. Add a [Form](doc:forms) with fields for each of the bindings, except for the _id_ which will come from the [URL ID](https://docs.budibase.com/docs/url-parameters) binding.
+2. Add a [Form](doc:forms) with fields for each of the bindings, except for the *id* which will come from the [URL ID](https://docs.budibase.com/docs/url-parameters) binding.
 
 ![](https://files.readme.io/7ebc1ef-Screenshot_2022-11-15_at_12.47.12.png)
 
-3. **Define actions** for the 'Submit' button. Choose the **Execute Query** action and pick _PostgreSQL_ as the datasource. You should now be able to see and select your custom query.
+3. **Define actions** for the 'Submit' button. Choose the **Execute Query** action and pick *PostgreSQL* as the datasource. You should now be able to see and select your custom query.
 
 ![](https://files.readme.io/b2e874e-Screenshot_2022-11-15_at_12.49.34.png)
 
