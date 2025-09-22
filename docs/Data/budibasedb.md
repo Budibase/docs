@@ -10,31 +10,20 @@ metadata:
 next:
   description: ''
 ---
+```mdx
 Budibase DB is our native datasource. Any data you add here is stored directly on your Budibase instance.
 
 ## Creating a table
 
-You can create a table when you are in the Data section of the application builder. 
+You can create a table when you are in the Data section of the application builder.
 
 The recommended flow is to go to your Budibase DB instance from the sidebar, and then click the `Create new table` button.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2cdb03b-create-table.png",
-        "create-table.png",
-        260
-      ],
-      "align": "center",
-      "caption": "Create a new table using this button"
-    }
-  ]
-}
-[/block]
+<Image title="create-table.png" alt={260} align="center" src="https://files.readme.io/2cdb03b-create-table.png">
+  Create a new table using this button
+</Image>
 
-When creating a new Budibase DB table you can choose which built-in (auto types) columns you want to have. Each of these will be automatically maintained, created and updated based on the properties. You can choose to omit as you see fit. These can be added post-creation too through the `Create column` button, by selecting the _Auto Column_ type.
+When creating a new Budibase DB table you can choose which built-in (auto types) columns you want to have. Each of these will be automatically maintained, created and updated based on the properties. You can choose to omit as you see fit. These can be added post-creation too through the `Create column` button, by selecting the *Auto Column* type.
 
 | Name       | Description                            |
 | :--------- | :------------------------------------- |
@@ -44,122 +33,50 @@ When creating a new Budibase DB table you can choose which built-in (auto types)
 | Updated by | The user who updated the row last      |
 | Updated at | The time when the row was updated last |
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2eb2df5-Screenshot_2022-12-12_at_08.51.57.png",
-        null,
-        "All auto columns selected by default"
-      ],
-      "align": "center",
-      "caption": "All auto columns selected by default"
-    }
-  ]
-}
-[/block]
+<Image alt="All auto columns selected by default" align="center" src="https://files.readme.io/2eb2df5-Screenshot_2022-12-12_at_08.51.57.png">
+  All auto columns selected by default
+</Image>
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8bb21d9-Screenshot_2022-12-12_at_10.13.44.png",
-        null,
-        "Adding an auto column at a later point"
-      ],
-      "align": "center",
-      "caption": "Adding an auto column at a later point"
-    }
-  ]
-}
-[/block]
+<Image alt="Adding an auto column at a later point" align="center" src="https://files.readme.io/8bb21d9-Screenshot_2022-12-12_at_10.13.44.png">
+  Adding an auto column at a later point
+</Image>
 
 ### Adding columns
 
 To add new columns to an existing Budibase DB table, navigate to the table you want to edit, then click the `+` button along the top-right of the grid view. This will display a dialog where you can configure the column you want to add.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f4ffcbd-add-new-column.png",
-        "add-new-column.png",
-        "Adding a required text column"
-      ],
-      "align": "center",
-      "caption": "Adding a required text column"
-    }
-  ]
-}
-[/block]
+<Image title="add-new-column.png" alt="Adding a required text column" align="center" src="https://files.readme.io/f4ffcbd-add-new-column.png">
+  Adding a required text column
+</Image>
 
 ### Editing columns
 
 1. Step into the table through the sidebar
 2. Hover over the column name you want to edit
-3. Click the three dots and select _Edit column_
+3. Click the three dots and select *Edit column*
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7db9965-edit_col.png",
-        null,
-        "Click the pencil icon to edit column"
-      ],
-      "align": "center",
-      "caption": "Click the pencil icon to edit column"
-    }
-  ]
-}
-[/block]
+<Image alt="Click the pencil icon to edit column" align="center" src="https://files.readme.io/7db9965-edit_col.png">
+  Click the pencil icon to edit column
+</Image>
 
 ### Selecting the display column
 
 The display column is an important aspect when you're setting up relationships in tables. The column you select as a display column will be the one visually displayed inside a relationship column in another table.
 
-Selecting a column during the table creation is only possible if you import data using a `CSV` file. To select a display column in any other situation, edit the column you want to make the display. This will give you the _Use as table display column_ option as shown below.
+Selecting a column during the table creation is only possible if you import data using a `CSV` file. To select a display column in any other situation, edit the column you want to make the display. This will give you the *Use as table display column* option as shown below.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6a5e268-make-display-column.png",
-        "make-display-column.png",
-        "Selecting the display column"
-      ],
-      "align": "center",
-      "caption": "Selecting the display column"
-    }
-  ]
-}
-[/block]
+<Image title="make-display-column.png" alt="Selecting the display column" align="center" src="https://files.readme.io/6a5e268-make-display-column.png">
+  Selecting the display column
+</Image>
 
-Alternatively you can set the display column from the edit column dropdown. 
+Alternatively you can set the display column from the edit column dropdown.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5dfb8fc-Screenshot_2023-06-28_at_15.13.35.png",
-        null,
-        "Use as display column"
-      ],
-      "align": "center",
-      "caption": "Use as display column"
-    }
-  ]
-}
-[/block]
+<Image alt="Use as display column" align="center" src="https://files.readme.io/5dfb8fc-Screenshot_2023-06-28_at_15.13.35.png">
+  Use as display column
+</Image>
 
 > 👍 Create table from CSV
-> 
+>
 > You can [Import a CSV/JSON](doc:csv-import) file as a new Budibase table.
 
 ***
@@ -223,27 +140,28 @@ The following column constraints are available:
 | Latest          | When set, any date after the specified date is rejected for new rows                 | Date/Time  |
 
 > 📘 External datasource constraints
-> 
-> You can add Budibase constraints to external table columns, however this is entirely for form validation and will not restrict the data that is saved.  
+>
+> You can add Budibase constraints to external table columns, however this is entirely for form validation and will not restrict the data that is saved.
 > Instead, you must add data constraints yourself to any external table schemas.
 
 ***
 
 ## Data sync between environments
 
-When using the <<glossary:Budibase DB>>, there are two environments to consider.
+When using the <Glossary>Budibase DB</Glossary>, there are two environments to consider.
 
-The **Development** environment represents the data that you see and interact with when using the app builder, which includes the _Data_ and _Design_ sections, and the [App preview](https://docs.budibase.com/docs/quickstart#preview-and-publish). 
+The **Development** environment represents the data that you see and interact with when using the app builder, which includes the *Data* and *Design* sections, and the [App preview](https://docs.budibase.com/docs/quickstart#preview-and-publish).
 
 If in doubt, you can see if you are in the dev environment from the URL, which will show `/app/app_dev_abc...` in the path. In production, the URL will appear without the `_dev` part.
 
-**Production** represents your live environment. This is the data that your <<glossary:End User>>s will interact with. When in the app builder, production data will continuously sync and update your development data, although a page refresh may be needed to see the new changes.
+**Production** represents your live environment. This is the data that your <Glossary>End User</Glossary>s will interact with. When in the app builder, production data will continuously sync and update your development data, although a page refresh may be needed to see the new changes.
 
 Whenever you [Publish](https://docs.budibase.com/docs/quickstart#preview-and-publish) your app, any edits, inserts or deletes made in your dev data will be pushed into production, which may overwrite existing data.
 
 > 📘 External datasources
-> 
-> Things are a little different when using an external database such as [SQL](doc:sql-datasource).  
+>
+> Things are a little different when using an external database such as [SQL](doc:sql-datasource).
 > In this case the data in either environment will read and write to the database that you connected to.
-> 
+>
 > You can use [Environment variables 🔒](doc:environment-variables) to make use of development and production databases.
+```
