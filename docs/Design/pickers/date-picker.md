@@ -12,21 +12,9 @@ next:
 ---
 The Date Picker allows you to select a `Date`, `DateTime` or `Time`, depending on your settings.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/86452b5-datepicker-options.jpg",
-        "datepicker-options.jpg",
-        1418
-      ],
-      "align": "center",
-      "caption": "Left: Date/time; Top-right: Date; Bottom-right: Time"
-    }
-  ]
-}
-[/block]
+<Image title="datepicker-options.jpg" alt={1418} align="center" src="https://files.readme.io/86452b5-datepicker-options.jpg">
+  Left: Date/time; Top-right: Date; Bottom-right: Time
+</Image>
 
 As you can see above there's three flavours of the date and/or time pickers.
 
@@ -42,15 +30,15 @@ After the Date Picker is added you can start to configure it.
 
 ## Date, Date/Time or Time?
 
-To choose between the different types of pickers, you can use two checkboxes in the <<glossary:Settings Panel>> to get three different results.
+To choose between the different types of pickers, you can use two checkboxes in the <Glossary>Settings Panel</Glossary> to get three different results.
 
 ![](https://files.readme.io/13f6cc1-date-picker-checkboxes.png "date-picker-checkboxes.png")
 
 To get the results, only check the box which are mentioned below.
 
-- **Date/time**: ☑️ Show Time
-- **Date**: ☑️ Show Time + ☑️ Time Only
-- **Time**: ☑️ Time Only 
+* **Date/time**: ☑️ Show Time
+* **Date**: ☑️ Show Time + ☑️ Time Only
+* **Time**: ☑️ Time Only 
 
 ## Further configuration
 
