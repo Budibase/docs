@@ -29,7 +29,6 @@ If you set up budibase using the [Budibase CLI Install](doc:budibase-cli-setup),
 }
 [/block]
 
-
 ## Standard Docker Upgrade
 
 If you prefer, you can also just use standard docker commands to upgrade your budibase installation. 
@@ -39,8 +38,8 @@ If you prefer, you can also just use standard docker commands to upgrade your bu
 First, stop and remove your container running budibase with:
 
 ```shell
-docker stop <budibase-container-id>
-docker rm <budibase-container-id>
+docker stop `<budibase-container-id>`
+docker rm `<budibase-container-id>`
 ```
 
 Then run the following to get the latest version of the budibase container:
@@ -53,7 +52,7 @@ With the latest version of your container, you can now run the same `docker run`
 
 > 📘 Note
 > 
-> Tools like <https://www.portainer.io/>  and <https://github.com/containrrr/watchtower> can be a powerful way to simplify and automate container management for you. 
+> Tools like [https://www.portainer.io/](https://www.portainer.io/) and [https://github.com/containrrr/watchtower](https://github.com/containrrr/watchtower) can be a powerful way to simplify and automate container management for you. 
 > 
 > Another option is to migrate your single image installation to using docker-compose, as described [here](https://docs.budibase.com/docs/docker#method-2---docker-compose). Which will let you take advantage of the next method below.
 
@@ -71,13 +70,11 @@ docker compose pull
 docker compose up -d
 ```
 
-
-
 ### Downgrading a [Docker Compose](doc:docker-compose) Installation
 
 To downgrade, if you are using a docker compose, you can go to each image line of the docker-compose.yaml file and type down the desired version after a colon. For example:
 
-```yaml docker-compose.yaml
+```yaml
 image: budibase.docker.scarf.sh/budibase/apps:2.17.6
 ```
 
@@ -89,8 +86,6 @@ Once you have updated your docker-compose.yaml file, you will need to bring down
 docker compose down
 docker compose up -d
 ```
-
-
 
 ## Kubernetes
 
