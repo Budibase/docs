@@ -13,9 +13,9 @@ next:
 Airtable can be connected to Budibase through some simple configuration. This allows you to enhance both tools, and let them work together easily.
 
 > 👍 Airtable API page
-> 
+>
 > Most, if not all, IDs, examples and data structures, for connecting to your Airtable Base(s) can be found in the amazing API reference page from Airtable. They offer a complete API overview entirely tailored to your base. To make the integration with Budibase as smooth as possible, keep the tab open.
-> 
+>
 > <a href="https://airtable.com/api" target="_blank">Head over to the Airtable API page</a>
 
 ## Connect Airtable to Budibase
@@ -137,7 +137,7 @@ In this example there are many classes with many students.
 
 ![](https://files.readme.io/7e47bb9-Screenshot_2022-07-15_at_13.52.40.png)
 
-5. In the Design section, add a [Repeater Block](https://docs.budibase.com/docs/blocks#repeater-block) for the Classes query, and a [Table Block](https://docs.budibase.com/docs/blocks#table-block) nested underneath for the Students query.  
+5. In the Design section, add a [Repeater Block](https://docs.budibase.com/docs/blocks#repeater-block) for the Classes query, and a [Table Block](https://docs.budibase.com/docs/blocks#table-block) nested underneath for the Students query.\
    You can add the class title for each of the student tables, and configure the columns to avoid adding the id strings.
 6. Add a filter to the students table block as follows:         
 
