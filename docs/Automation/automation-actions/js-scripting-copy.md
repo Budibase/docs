@@ -12,7 +12,7 @@ next:
 ---
 While [Bindings](doc:data-in-automations) in automations support JavaScript, you can also add a step to execute a JavaScript code block.
 
-Commonly this action is used to compare and aggregate data from multiple <<glossary:Datasource>>s.
+Commonly this action is used to compare and aggregate data from multiple <Glossary>Datasource</Glossary>s.
 
 <br />
 
@@ -25,35 +25,21 @@ Commonly this action is used to compare and aggregate data from multiple <<gloss
 
    ![](https://files.readme.io/0ecb8dc9f8555f2f5c5096c5f46023d02c44f820f892fecca6f5bdc2d4e84ae9-image.png)
 
-> 📘 
-> 
+> 📘
+>
 > Make sure to **return** a value at the end of your script!
 
 3. Available bindings can be seen on the far right of your modal. These can be clicked to references within your JS scripting area.
 
 Be sure to check the debugging tools on offer when building your automations.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c0e1579c83575ba1971719fbf4847016fc7068000042885f15b62b36bd8a62aa-image.png",
-        null,
-        null
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/c0e1579c83575ba1971719fbf4847016fc7068000042885f15b62b36bd8a62aa-image.png" />
 
 <br />
 
 ## Tutorial: Using Cron Triggers and JS Steps
 
-This tutorial assumes that you have a table called People in the internal database, populated with first_name, last_name, date_of_birth. 
+This tutorial assumes that you have a table called People in the internal database, populated with first\_name, last\_name, date\_of\_birth. 
 
 1. Create an automation that uses a Cron Trigger, and set it to run at 8AM each morning
 
