@@ -12,9 +12,9 @@ next:
 ---
 Use bindings to supply additional information to a query at runtime. In this example we have:
 
-- An API endpoint that accepts a status field to filter a list of applications
-- A query named _applications_
-- An application that supplies data to the bindings of the query
+* An API endpoint that accepts a status field to filter a list of applications
+* A query named *applications*
+* An application that supplies data to the bindings of the query
 
 ![](https://files.readme.io/79188f5-Screenshot_2022-01-04_at_15.19.06.png "Screenshot 2022-01-04 at 15.19.06.png")
 
@@ -26,7 +26,7 @@ Use bindings to supply additional information to a query at runtime. In this exa
 
 ## Creating a binding
 
-We can create a binding named _status_ with a default value of _all_. 
+We can create a binding named *status* with a default value of *all*. 
 
 ![](https://files.readme.io/85475c5-Screenshot_2022-01-04_at_13.31.34_1.png "Screenshot 2022-01-04 at 13.31.34 (1).png")
 
@@ -40,11 +40,11 @@ We can create a binding named _status_ with a default value of _all_.
 
 Using handlebars the binding can be referenced throughout the query in the following places:
 
-- URL
-- Params
-- Headers
-- Body
-- Transformer
+* URL
+* Params
+* Headers
+* Body
+* Transformer
 
  
 
@@ -88,11 +88,11 @@ In our application we have the following structure:
 
 The form will hold the value of our selected status. This is the top-level component so that the value can be accessed by components nested underneath. 
 
-- Type: _Create_ 
-  - While this form does not create anything, this option is required to indicate that the input schema (the bindings) should be used rather than the schema returned by the query. 
-  - Update may also be used to the same effect.
-- Schema: _applications_ 
-  - The input schema of our REST query
+* Type: *Create* 
+  * While this form does not create anything, this option is required to indicate that the input schema (the bindings) should be used rather than the schema returned by the query. 
+  * Update may also be used to the same effect.
+* Schema: *applications* 
+  * The input schema of our REST query
 
 ![](https://files.readme.io/f7c6107-Screenshot_2022-01-04_at_14.58.08.png "Screenshot 2022-01-04 at 14.58.08.png")
 
@@ -106,10 +106,10 @@ We use an options picker in the form to provide our possible status values.
 
 ![](https://files.readme.io/ca6d606-Screenshot_2022-01-04_at_15.13.41.png "Screenshot 2022-01-04 at 15.13.41.png")
 
-- Field: status
-- Adds the selection to the form under the name _status_
-- Options source: _Custom_
-  - Custom options are specified using the Define _Options_ drawer
+* Field: status
+* Adds the selection to the form under the name *status*
+* Options source: *Custom*
+  * Custom options are specified using the Define *Options* drawer
 
  
 
@@ -119,8 +119,8 @@ We use a data provider to run the REST query
 
 ![](https://files.readme.io/c9b72b2-Screenshot_2022-01-04_at_15.23.23.png "Screenshot 2022-01-04 at 15.23.23.png")
 
-- Data: _applications_
-  - The REST query
+* Data: *applications*
+  * The REST query
 
 To link the query bindings to the form we use the bindings drawer:
 
@@ -144,30 +144,14 @@ The value of the binding is
 
 We are now able to:
 
-- Specify a binding used in a REST query
-- Specify where the value of that binding will be used using handlebars
-- Create an application that supplies data to the binding and runs the query
+* Specify a binding used in a REST query
+* Specify where the value of that binding will be used using handlebars
+* Create an application that supplies data to the binding and runs the query
 
  
 
 ***
 
-
-
 ## Video tutorial
 
-
-
-
-[block:embed]
-{
-  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2Fuch3bOftxHU%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Duch3bOftxHU&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fuch3bOftxHU%2Fhqdefault.jpg&key=7788cb384c9f4d5dbbdbeffd9fe4b92f&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
-  "url": "https://www.youtube.com/watch?v=uch3bOftxHU",
-  "title": "From REST API to CRUD app in minutes | Budibase | REST API",
-  "favicon": "https://www.google.com/favicon.ico",
-  "image": "https://i.ytimg.com/vi/uch3bOftxHU/hqdefault.jpg",
-  "provider": "https://www.youtube.com/",
-  "href": "https://www.youtube.com/watch?v=uch3bOftxHU",
-  "typeOfEmbed": "youtube"
-}
-[/block]
+<Embed url="https://www.youtube.com/watch?v=uch3bOftxHU" title="From REST API to CRUD app in minutes | Budibase | REST API" favicon="https://www.google.com/favicon.ico" image="https://i.ytimg.com/vi/uch3bOftxHU/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=uch3bOftxHU" typeOfEmbed="youtube" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252Fuch3bOftxHU%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253Duch3bOftxHU%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252Fuch3bOftxHU%252Fhqdefault.jpg%26key%3D7788cb384c9f4d5dbbdbeffd9fe4b92f%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
