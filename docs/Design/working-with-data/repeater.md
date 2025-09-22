@@ -38,28 +38,17 @@ One important role of the Repeater component is to facilitate edit screens. Typi
 
 Let's explore this further.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/04560d0-Screenshot_2022-11-04_at_10.50.44.png",
-        null,
-        "Edit screen component tree"
-      ],
-      "caption": "Edit screen component tree"
-    }
-  ]
-}
-[/block]
+<Image alt="Edit screen component tree" src="https://files.readme.io/04560d0-Screenshot_2022-11-04_at_10.50.44.png">
+  Edit screen component tree
+</Image>
 
-1. The [Data provider](https://docs.budibase.com/docs/data-provider) has a filter that returns all rows that match the URL id.  
+1. The [Data provider](https://docs.budibase.com/docs/data-provider) has a filter that returns all rows that match the URL id.\
    See more on [URL variables](doc:url-parameters)
 
 ![](https://files.readme.io/875aaa9-Screenshot_2022-11-04_at_10.56.13.png)
 
 2. As a data provider will always return an array of results, the Repeater is added to loop over the array - in this case one entry if filtered correctly.
 
-3. Finally the form is configured with the _Update_ [form type](https://docs.budibase.com/docs/forms#form-type) so that the form fields are pre-populated with data from the Repeater.
+3. Finally the form is configured with the *Update* [form type](https://docs.budibase.com/docs/forms#form-type) so that the form fields are pre-populated with data from the Repeater.
 
 ![](https://files.readme.io/209ea9a-Screenshot_2022-11-04_at_11.12.27.png)
