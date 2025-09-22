@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-It is possible to see a list of automation runs for your published apps.  
+It is possible to see a list of automation runs for your published apps.\
 To do so, click 'Manage' beside your app in the app list screen.
 
 <img src="https://files.readme.io/ba94036-Screenshot_2022-07-08_at_17.32.39.png" />
@@ -23,9 +23,9 @@ You can filter and order the logs by automation name, data range, and status.
 
 There are three statuses:
 
-- **Success**: The automation run was successful
-- **Stopped**: The automation run was correctly terminated by a [Condition](doc:conditions-1)
-- **Error**: The automation run failed to complete due to an error 
+* **Success**: The automation run was successful
+* **Stopped**: The automation run was correctly terminated by a [Condition](doc:conditions-1)
+* **Error**: The automation run failed to complete due to an error 
 
 ## Investigating errors
 
@@ -41,8 +41,8 @@ When selecting an error, you will be able to see which automation step failed as
 
 Furthermore, you can click the 'Edit automation' button to be taken to the automation which may need fixed. 
 
-> 📘 
-> 
+> 📘
+>
 > Automation history will only show for published apps, and you must publish your app to apply any changes to your automations.
 
 ## Expiration 🔒
