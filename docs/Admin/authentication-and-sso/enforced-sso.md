@@ -14,46 +14,21 @@ Enforced SSO is a feature that allows login from a configured identity provider 
 
 To access the feature you can navigate to the Settings section of your application, then Auth.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7d50982-Screenshot_2023-03-04_at_00.00.32.png",
-        null,
-        "Enforce SSO in the Auth settings"
-      ],
-      "align": "center",
-      "caption": "Enforce SSO in the Auth settings"
-    }
-  ]
-}
-[/block]
+<Image alt="Enforce SSO in the Auth settings" align="center" src="https://files.readme.io/7d50982-Screenshot_2023-03-04_at_00.00.32.png">
+  Enforce SSO in the Auth settings
+</Image>
 
 ## Unlocking enforced SSO
 
-Contact sales to enquire about upgrading to the enterprise plan <https://budibase.com/contact/>
+Contact sales to enquire about upgrading to the enterprise plan [https://budibase.com/contact/](https://budibase.com/contact/)
 
 ## Usage
 
 Use the provided Single Sign-On URL to access your tenants unique login page. Here you will find your configured identity provider(s).
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4bdf517-Screenshot_2023-03-04_at_00.11.39.png",
-        null,
-        "Login page showing enforced SSO"
-      ],
-      "align": "center",
-      "sizing": "600px",
-      "caption": "Login page showing enforced SSO"
-    }
-  ]
-}
-[/block]
+<Image alt="Login page showing enforced SSO" align="center" width="600px" src="https://files.readme.io/4bdf517-Screenshot_2023-03-04_at_00.11.39.png">
+  Login page showing enforced SSO
+</Image>
 
 ## Troubleshooting
 
