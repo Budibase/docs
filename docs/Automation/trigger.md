@@ -12,7 +12,7 @@ next:
 ---
 Each automation must have a single trigger step, this is essentially a watcher - waiting for a particular condition to be met at which point the process will kick-off. 
 
-[block:image]{"images":[{"image":["https://files.readme.io/80daee5903974c40382047861918daf640e0ba1f83a5a429a3ec1f9127f705d8-Screenshot_2024-10-24_at_09.02.33.png","CleanShot 2022-03-08 at 15.02.02@2x.png",null],"align":"center"}]}[/block]
+<Image align="center" src="https://files.readme.io/80daee5903974c40382047861918daf640e0ba1f83a5a429a3ec1f9127f705d8-Screenshot_2024-10-24_at_09.02.33.png" />
 
 Currently, there are six ways to trigger an automation:
 
@@ -24,7 +24,7 @@ Currently, there are six ways to trigger an automation:
 6. CRON trigger (trigger this automation at a specific time or day)
 
 > 📘 Row creation/update/deletion triggers
-> 
+>
 > When utilising row based triggers, it should be noted this only works for rows created through Budibase. If you are using an external datasource, like say Postgres or MySQL, then rows created externally within the database will not trigger automations.
 
 Triggers are internal to the Budibase system and therefore cannot easily be altered - if you have an idea for a good trigger then [let us know](https://github.com/Budibase/budibase/discussions)! 
