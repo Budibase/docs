@@ -16,8 +16,6 @@ Often you want to run automations or update data when a user presses a button. T
 
 ***
 
-
-
 ## Available actions
 
 The list of available actions are listed below:
@@ -34,14 +32,14 @@ Updating a row can be done in a number of different ways. If you have a structur
 
 ![](https://files.readme.io/af5f1c8-actions.png "actions.png")
 
-If you are not using a repeater, an alternative way to update a row is to add the **\_id** column and provide a value that matches an existing id.  
+If you are not using a repeater, an alternative way to update a row is to add the **\_id** column and provide a value that matches an existing id.\
 For example, you could be passing a task id in the URL:
 
 ![](https://files.readme.io/a76c3a3-Screenshot_2022-05-10_at_16.48.11.png "Screenshot 2022-05-10 at 16.48.11.png")
 
 ### Duplicate Row
 
-Allows you to clone a row into any table with shared column names.  
+Allows you to clone a row into any table with shared column names.\
 If you are performing this action from a <a href="https://docs.budibase.com/docs/button#adding-buttons-to-table-rows">row button</a> click, then no **\_id** needs to be provided. 
 
 Alternatively, your button could be nested within a [Repeater](https://docs.budibase.com/docs/repeater).
@@ -52,16 +50,14 @@ This action is used to delete rows from your data source. It's used much in the 
 
 ### Navigate To
 
-Use this action if you want to go to another web page or app screen.  
+Use this action if you want to go to another web page or app screen.\
 For example: [Navigation on row button click](doc:url-parameters)
 
-When the _Destination_ is set to 'URL', you have the option to open the link in a new tab.
+When the *Destination* is set to 'URL', you have the option to open the link in a new tab.
 
 ![](https://files.readme.io/8f018e8-new_tab.png)
 
-Alternatively, if the _Destination_ is set to 'Screen', then you can select a screen to navigate to from the dropdown. The screen can optionally be opened in the current tab, or in a [modal](https://docs.budibase.com/docs/screens#modal-screen).
-
- 
+Alternatively, if the *Destination* is set to 'Screen', then you can select a screen to navigate to from the dropdown. The screen can optionally be opened in the current tab, or in a [modal](https://docs.budibase.com/docs/screens#modal-screen).
 
 ![](https://files.readme.io/a455654-open_modal.png)
 
@@ -99,9 +95,9 @@ Refetch the latest data from the specified provider.
 
 ### Update Field Value
 
-Will update the value of a form field with a literal value or <<glossary:Binding>>.
+Will update the value of a form field with a literal value or <Glossary>Binding</Glossary>.
 
-The _Reset to default value_ type will change the value of the chosen field to its <<glossary:Default Value>>.
+The *Reset to default value* type will change the value of the chosen field to its <Glossary>Default Value</Glossary>.
 
 ![](https://files.readme.io/759ee62-Screenshot_2022-05-09_at_16.41.45.png "Screenshot 2022-05-09 at 16.41.45.png")
 
@@ -113,12 +109,10 @@ Specifically, [Pickers](doc:pickers) will update on selection, whereas [Text inp
 
 ![](https://files.readme.io/f13e9d1-Screenshot_2022-05-09_at_16.48.42.png "Screenshot 2022-05-09 at 16.48.42.png")
 
-In addition, there is a convenient <<glossary:Binding>> `{{ Field Value }}` which represents the value of the trigger form field.
+In addition, there is a convenient <Glossary>Binding</Glossary> `{{ Field Value }}` which represents the value of the trigger form field.
 
 ## Video tutorial
 
-[block:html]
-{
-  "html": "<iframe src=\"https://player.vimeo.com/video/746819363?h=a950be3e5d&title=0&byline=0&portrait=0\" style=\"margin-top: -100px;\" width=\"640\" height=\"564\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
-}
-[/block]
+<HTMLBlock>{`
+<iframe src="https://player.vimeo.com/video/746819363?h=a950be3e5d&title=0&byline=0&portrait=0" style="margin-top: -100px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+`}</HTMLBlock>
