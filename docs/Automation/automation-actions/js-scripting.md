@@ -12,7 +12,7 @@ next:
 ---
 While [Bindings](doc:data-in-automations) in automations support JavaScript, you can also add a step to execute a JavaScript code block.
 
-Commonly this action is used to compare and aggregate data from multiple <<glossary:Datasource>>s.
+Commonly this action is used to compare and aggregate data from multiple <Glossary>Datasource</Glossary>s.
 
 <br />
 
@@ -24,60 +24,19 @@ Commonly this action is used to compare and aggregate data from multiple <<gloss
 
 2. Click the `Edit Code` button to open the code editor modal.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/aed29130953a88acc142b00a2966c2f54c300bdefdaf445ea983151bd8e86777-Screenshot_2024-11-07_at_10.49.20.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/aed29130953a88acc142b00a2966c2f54c300bdefdaf445ea983151bd8e86777-Screenshot_2024-11-07_at_10.49.20.png" />
 
-
-> 📘 
-> 
+> 📘
+>
 > Make sure to **return** a value at the end of your script!
 
 3. Available bindings can be seen on the far right of your modal. These can be clicked to references within your JS scripting area.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4a4bd351786c1fec588459a4705f37d3c3f206bc00a4900d341a4b13664d63a2-Screenshot_2024-11-07_at_10.49.20.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/4a4bd351786c1fec588459a4705f37d3c3f206bc00a4900d341a4b13664d63a2-Screenshot_2024-11-07_at_10.49.20.png" />
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/80053c4-Screenshot_2023-03-15_at_10.33.25.png",
-        null,
-        "Example output"
-      ],
-      "align": "center",
-      "caption": "Example output"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Example output" align="center" src="https://files.readme.io/80053c4-Screenshot_2023-03-15_at_10.33.25.png">
+  Example output
+</Image>
 
 <br />
 
@@ -89,28 +48,15 @@ In this tutorial we will look at using a JS Scripting block to link people from 
 
 ![](https://files.readme.io/59f5809-Screenshot_2023-03-15_at_11.20.42.png)
 
-2. We will also add a [Budibase DB](doc:budibasedb) table for the members of our mock bird club, which will include some additional information not provided by the API, such as _Twitter Username_.
+2. We will also add a [Budibase DB](doc:budibasedb) table for the members of our mock bird club, which will include some additional information not provided by the API, such as *Twitter Username*.
 
 ![](https://files.readme.io/505aa94-Screenshot_2023-03-15_at_11.23.58.png)
 
 3. In the **Automate** tab, add an automation. This automation will fetch data from both sources and send a summary [Email](doc:email). I will use an [App action](doc:app-action) trigger, but any other trigger could be used.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/929b26e-Screenshot_2023-03-15_at_11.31.35.png",
-        null,
-        "Fetch the Top 100 birders from the API, and then all our club members"
-      ],
-      "align": "center",
-      "caption": "Fetch the Top 100 birders from the API, and then all our club members"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Fetch the Top 100 birders from the API, and then all our club members" align="center" src="https://files.readme.io/929b26e-Screenshot_2023-03-15_at_11.31.35.png">
+  Fetch the Top 100 birders from the API, and then all our club members
+</Image>
 
 4. Add a `JS Scripting` block, and `Edit Code`. Enter the following:
 
@@ -129,23 +75,9 @@ return topClubMembers.map(member => ({
 }));
 ```
 
-5. Finally add the `Send Email` step. Fill in the details and format the _HTML Contents_ as desired.
+5. Finally add the `Send Email` step. Fill in the details and format the *HTML Contents* as desired.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fd1acd17b6a2a6ed542bc402b8293d6cbe4f484bf10b38e5c11d2ce6dec64391-Screenshot_2024-11-07_at_11.18.50.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/fd1acd17b6a2a6ed542bc402b8293d6cbe4f484bf10b38e5c11d2ce6dec64391-Screenshot_2024-11-07_at_11.18.50.png" />
 
 ```javascript HTML Contents
 let listItems = ""
