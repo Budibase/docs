@@ -24,9 +24,9 @@ Firstly, I'll add a `Data Provider`, and nest a `Repeater` component, and then a
 
 <br />
 
-In the Data Provider settings, I'll select the _Employees_ table as the _Data_ source. Now, any components I add inside the `Repeater` will have access to the bindings that reflect the _Employees_ table. 
+In the Data Provider settings, I'll select the *Employees* table as the *Data* source. Now, any components I add inside the `Repeater` will have access to the bindings that reflect the *Employees* table. 
 
-I can set this by going to `Bindings >> New Repeater` and see the column names offered as bindings. I've used a `Headline` component to show _First Name_ and _Last name_, and another `Headline` component to show _Employee Level_. With a little bit of styling we can start to see this screen coming together.
+I can set this by going to `Bindings >> New Repeater` and see the column names offered as bindings. I've used a `Headline` component to show *First Name* and *Last name*, and another `Headline` component to show *Employee Level*. With a little bit of styling we can start to see this screen coming together.
 
 ![](https://files.readme.io/6f1b3c9-image.png)
 
@@ -34,7 +34,7 @@ Next, I'll create a new screen that will become the detailed view of each employ
 
 ![](https://files.readme.io/236ee22-image.png)
 
-On my new screen, I'll add a `Data Provider` to get information from the _Employees_ table, and set a filter for the `_id` from the _Employees_ table to match the binding passed in the URL.
+On my new screen, I'll add a `Data Provider` to get information from the *Employees* table, and set a filter for the `_id` from the *Employees* table to match the binding passed in the URL.
 
 If a user accidentally managed to navigate to the `/staff/:id` screen without a valid `_id` being set, the default setting of "When filter empty: return all rows" would get every row in the table, and display the bindings of the first row it found. It's much better to catch that by returning no rows. I'll also disable pagination on the `Data Provider`.
 
@@ -46,24 +46,11 @@ Now inside my `Data Provider` I can add components that have access to my Data P
 
 <br />
 
-I've applied some details to the page, referencing the individual row, and it's now starting to take shape. The last part of this task is the most important. Head back to the `/staff` screen, and on the `Container` component in the `Repeater component`, add an _On Click_ action. Set a _Navigate To_ action, and open the bindings drawer. In this example the destination will be `/staff/{{ New Repeater.Employees._id }} `, which puts the clicked container's `_id` into the URL, and passes it through to the `/staff/:id` screen.
+I've applied some details to the page, referencing the individual row, and it's now starting to take shape. The last part of this task is the most important. Head back to the `/staff` screen, and on the `Container` component in the `Repeater component`, add an *On Click* action. Set a *Navigate To* action, and open the bindings drawer. In this example the destination will be `/staff/{{ New Repeater.Employees._id }} `, which puts the clicked container's `_id` into the URL, and passes it through to the `/staff/:id` screen.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2d1b5e6-image.png",
-        null,
-        "Click the lightning bolt to open the Bindings Drawer..."
-      ],
-      "align": "center",
-      "caption": "Click the lightning bolt to open the Bindings Drawer..."
-    }
-  ]
-}
-[/block]
-
+<Image alt="Click the lightning bolt to open the Bindings Drawer..." align="center" src="https://files.readme.io/2d1b5e6-image.png">
+  Click the lightning bolt to open the Bindings Drawer...
+</Image>
 
 Now, navigating from `/staff` will actually substitute `:id` for a row id, which the `Data Provider` uses to filter the table and present the information.
 
@@ -87,8 +74,27 @@ When working in the builder on the `/staff/:id` screen, no `_id` will have been 
 
 Try it for yourself, and click below to download the app used to create this guide.
 
-[block:html]
-{
-  "html": "<!-- Add icon library -->\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n\n<!-- Full width -->\n<button class=\"btn\" onclick=\"window.open('https://drive.google.com/file/d/1S-2Bt-SBy1q7sdGMalQVPBJMjZ_H96ms/view?usp=sharing')\" style=\"width:100%\"><i class=\"fa fa-download\"></i> Download</button>\n\n<style>\n  /* Style buttons */\n.btn {\n  background-color: #3571de;\n  border: none;\n  color: white;\n  padding: 12px 30px;\n  cursor: pointer;\n  font-size: 16px;\n}\n\n/* Darker background on mouse-over */\n.btn:hover {\n  background-color: #2e64c9;\n}\n</style>"
+<HTMLBlock>{`
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Full width -->
+<button class="btn" onclick="window.open('https://drive.google.com/file/d/1S-2Bt-SBy1q7sdGMalQVPBJMjZ_H96ms/view?usp=sharing')" style="width:100%"><i class="fa fa-download"></i> Download</button>
+
+<style>
+  /* Style buttons */
+.btn {
+  background-color: #3571de;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 16px;
 }
-[/block]
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: #2e64c9;
+}
+</style>
+`}</HTMLBlock>
