@@ -11,6 +11,7 @@ next:
   description: ''
 ---
 At the moment, we release once per month with new features. To update your Budibase instance, you can follow along with the following recipe:
+
 [block:tutorial-tile]
 {
   "title": "Update Budibase using CLI",
