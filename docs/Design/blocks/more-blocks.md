@@ -12,7 +12,7 @@ next:
 ---
 ## Repeater Block
 
-A repeater block and be used to iterate over rows in a table. Components nested inside a Repeater block will be repeated for as many rows are returned by the table. The bindings drawer will also have access the schema of the data source.  This can be useful for creating project dashboards.
+A repeater block and be used to iterate over rows in a table. Components nested inside a Repeater block will be repeated for as many rows are returned by the table. The bindings drawer will also have access the schema of the data source. This can be useful for creating project dashboards.
 
 ### Repeater Block Example
 
@@ -37,7 +37,6 @@ This will display on the screen as a container-per row, with each container show
 }
 [/block]
 
-
 <br />
 
 ## Cards Block
@@ -52,12 +51,11 @@ This will display on the screen as a container-per row, with each container show
         ""
       ],
       "align": "center",
-      "sizing": "50% "
+      "sizing": "50%"
     }
   ]
 }
 [/block]
-
 
 Cards Blocks are a quick and easy way to display a few attributes, and an image. A great example of this would be a staff roster. By default, Cards Blocks have a Title, Subtitle, and Description, a well as an optional Image URL. This can be useful for "Meet the Team" style pages, or inventory/e-commerce applications. As with the Repeater Block, a Cards block will iterate over the rows of the data source, and bindings will be available in the bindings Drawer based on the schema of the data source.
 
@@ -71,12 +69,11 @@ Cards Blocks are a quick and easy way to display a few attributes, and an image.
         ""
       ],
       "align": "center",
-      "sizing": "50% "
+      "sizing": "50%"
     }
   ]
 }
 [/block]
-
 
 ## Chart Block
 
@@ -100,13 +97,12 @@ Cards Blocks are a quick and easy way to display a few attributes, and an image.
         "An example Pie chart, using the BudibaseDB Sample Data (Label: Customer Name, Data: Quote Price)"
       ],
       "align": "center",
-      "sizing": "50% ",
+      "sizing": "50%",
       "caption": "An example Pie chart, using the BudibaseDB Sample Data (Label: Customer Name, Data: Quote Price)"
     }
   ]
 }
 [/block]
-
 
 [block:image]
 {
@@ -118,13 +114,12 @@ Cards Blocks are a quick and easy way to display a few attributes, and an image.
         "An example Donut chart, using the BudibaseDB Sample Data (Label: Customer Name, Data: Quote Price)"
       ],
       "align": "center",
-      "sizing": "50% ",
+      "sizing": "50%",
       "caption": "An example Donut chart, using the BudibaseDB Sample Data (Label: Customer Name, Data: Quote Price)"
     }
   ]
 }
 [/block]
-
 
 [block:image]
 {
@@ -136,13 +131,12 @@ Cards Blocks are a quick and easy way to display a few attributes, and an image.
         "An example Bar chart, using the Budibase DB Sample Data (Label: Customer Name, Data: Quote Price & Updated Price)"
       ],
       "align": "center",
-      "sizing": "50% ",
+      "sizing": "50%",
       "caption": "An example Bar chart, using the Budibase DB Sample Data (Label: Customer Name, Data: Quote Price & Updated Price)"
     }
   ]
 }
 [/block]
-
 
 [block:image]
 {
@@ -160,7 +154,6 @@ Cards Blocks are a quick and easy way to display a few attributes, and an image.
 }
 [/block]
 
-
 [block:image]
 {
   "images": [
@@ -177,7 +170,6 @@ Cards Blocks are a quick and easy way to display a few attributes, and an image.
 }
 [/block]
 
-
 [block:image]
 {
   "images": [
@@ -188,13 +180,12 @@ Cards Blocks are a quick and easy way to display a few attributes, and an image.
         "An example Histogram chart, using the BudibaseDB sample data (Value: Quote Price, Bucket Count: 6)"
       ],
       "align": "center",
-      "sizing": "50% ",
+      "sizing": "50%",
       "caption": "An example Histogram chart, using the BudibaseDB sample data (Value: Quote Price, Bucket Count: 6)"
     }
   ]
 }
 [/block]
-
 
 [block:image]
 {
@@ -203,15 +194,14 @@ Cards Blocks are a quick and easy way to display a few attributes, and an image.
       "image": [
         "https://files.readme.io/62bea66cbebc2e3a9abbba2c2284fe8c8b0477d3e3443a6628cd6bb243b7858e-Screenshot_2024-08-28_at_15.09.15.png",
         "",
-        "An example candlestick chart, using a REST API query to fetch data from <https://www.alphavantage.co/>"
+        "An example candlestick chart, using a REST API query to fetch data from [https://www.alphavantage.co/](https://www.alphavantage.co/)"
       ],
       "align": "center",
-      "caption": "An example candlestick chart, using a REST API query to fetch data from <https://www.alphavantage.co/>"
+      "caption": "An example candlestick chart, using a REST API query to fetch data from [https://www.alphavantage.co/](https://www.alphavantage.co/)"
     }
   ]
 }
 [/block]
-
 
 <br />
 
