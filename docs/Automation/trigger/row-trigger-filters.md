@@ -41,8 +41,8 @@ By default, the trigger will only fire when a row transitions from not meeting t
 
 Consider a filter: `Status = Approved`
 
-- The trigger will fire when a row's status changes from "Requested" to "Approved".
-- The trigger will not fire if a row's status is already "Approved" and some other field (like "Due Date") changes.
+* The trigger will fire when a row's status changes from "Requested" to "Approved".
+* The trigger will not fire if a row's status is already "Approved" and some other field (like "Due Date") changes.
 
 This behavior ensures that the trigger only fires when the specific condition you're interested in is met, rather than on any update to a row that already meets the condition.
 
