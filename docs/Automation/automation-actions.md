@@ -15,34 +15,20 @@ next:
 ---
 Actions are the core of automations. Actions can carry out updates on a table, call to an external service, send emails, and so on. We have built our action system to be easily extensible so actions can be added to the system at any time! Your automation can have many actions, allowing you to perform many different tasks as part of a single trigger.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a9a27e5383097f88d667c02fa24cc39a19398ceedaaaec66578e8c2808f56b17-Screenshot_2025-04-09_at_11.01.52.png",
-        "CleanShot 2022-03-08 at 15.34.47@2x.png",
-        "Image showing all the different action steps we have within automations."
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/a9a27e5383097f88d667c02fa24cc39a19398ceedaaaec66578e8c2808f56b17-Screenshot_2025-04-09_at_11.01.52.png" />
 
 Below is a few examples of actions that exist today however there may be many more when you look in the builder. To get a full list install the builder and check it out!
 
 1. **Create row** - this will create a new row in a specified table
 2. **Update row** - can be used to update a row that was triggered upon
 3. **Delete row** - delete a specified row from a table, like something that was triggered upon
-4. **Send email **- as it suggests, send an email based on the specified inputs
-5. **Send Discord notification **- send a notification to Discord
+4. **Send email** - as it suggests, send an email based on the specified inputs
+5. **Send Discord notification** - send a notification to Discord
 6. [Slack](doc:slack-notification) - send a notification to Slack
-7. **Connect to Integromat ** - connect to Integromat
-8. **Connect to Zapier ** - connect to Zapier
+7. **Connect to Integromat** - connect to Integromat
+8. **Connect to Zapier** - connect to Zapier
 9. **JS scripting** - add JS scripts to an automation
-10. **Query rows ** - query rows / records
+10. **Query rows** - query rows / records
 
 The real power in actions is the ability to make use of outputs from previous steps; how to do this will be covered in the [Contextual bindings](doc:contextual-bindings) section.
 
@@ -61,45 +47,19 @@ Currently, there are two actions that allow you to add logic to an automation
 
 ## Naming automation steps
 
-When you have many steps in an automation, keeping track of the step numbers can be difficult, particularly in your <<glossary:Binding>>s.
+When you have many steps in an automation, keeping track of the step numbers can be difficult, particularly in your <Glossary>Binding</Glossary>s.
 
 To make your automation easier to manage, you can give your steps a name. This will automatically update any bindings as well!
 
 For example, consider this example automation:
 
-- Step 1: Create Row
-- Step 2: Log the response of step 1
+* Step 1: Create Row
+* Step 2: Log the response of step 1
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ced45df2eeca88d72ce028620774629d263491770bef53123a619bdc834bc970-Screenshot_2025-04-09_at_11.04.43.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/ced45df2eeca88d72ce028620774629d263491770bef53123a619bdc834bc970-Screenshot_2025-04-09_at_11.04.43.png" />
 
+The binding `{{ steps.Create row.response }}` isn't very informative. We can however change the name of *Step 1* to 'Add Expense' which will automatically update the binding to something more useful:
 
-The binding `{{ steps.Create row.response }}` isn't very informative. We can however change the name of _Step 1_ to 'Add Expense' which will automatically update the binding to something more useful:
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/39ac96f22b6bacb469c6e6969c692d40e7be05eab9bc070eb6b76e07e7ca828a-Screenshot_2025-04-09_at_11.04.51.png",
-        "",
-        "The binding 'steps.1.response' has automatically been updated"
-      ],
-      "align": "center",
-      "caption": "The binding 'steps.Create row.response' has automatically been updated"
-    }
-  ]
-}
-[/block]
+<Image alt="The binding 'steps.1.response' has automatically been updated" align="center" src="https://files.readme.io/39ac96f22b6bacb469c6e6969c692d40e7be05eab9bc070eb6b76e07e7ca828a-Screenshot_2025-04-09_at_11.04.51.png">
+  The binding 'steps.Create row\.response' has automatically been updated
+</Image>
