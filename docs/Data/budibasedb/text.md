@@ -21,8 +21,6 @@ The text data type stores a string of UTF-8 characters. A text column is a good 
 
 ***
 
-
-
 ## Creating a text column
 
 The process for creating a text column takes a few seconds.
@@ -34,102 +32,48 @@ The process for creating a text column takes a few seconds.
 
 ***
 
-
-
 ## Using the text data type
 
 In the Design section, will be able to use a variety of components for [Displaying text](doc:displaying-text), as well as a number of form [Text inputs](doc:text-inputs) for accepting user input.
 
 ***
 
-
-
 ## Convertible types
 
 The text data type can be converted into another related type. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6d1161e-Screenshot_2023-02-10_at_13.57.29.png",
-        null,
-        "Changing the Text type"
-      ],
-      "align": "center",
-      "caption": "Changing the Text type"
-    }
-  ]
-}
-[/block]
+<Image alt="Changing the Text type" align="center" src="https://files.readme.io/6d1161e-Screenshot_2023-02-10_at_13.57.29.png">
+  Changing the Text type
+</Image>
 
 The most common reason to change the type of a text column will be to make it compatible with one of the following [Form](doc:forms) components:
 
-- [Options picker](doc:option-picker)
-- [Long Form Field](https://docs.budibase.com/docs/text-inputs#long-form-field)
-- [Barcode/QR Field](doc:barcodeqr-field)
+* [Options picker](doc:option-picker)
+* [Long Form Field](https://docs.budibase.com/docs/text-inputs#long-form-field)
+* [Barcode/QR Field](doc:barcodeqr-field)
 
 <br />
 
 ### Options
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0eabb7e-Screenshot_2023-02-10_at_14.04.49.png",
-        null,
-        null
-      ],
-      "align": "center",
-      "caption": "Options type"
-    }
-  ]
-}
-[/block]
+<Image alt="Options type" align="center" src="https://files.readme.io/0eabb7e-Screenshot_2023-02-10_at_14.04.49.png">
+  Options type
+</Image>
 
 Allows a single value to be chosen from a dropdown of options. 
 
-> 📘 
-> 
-> Any existing text value will be kept, however it will appear as a _null_ in the dropdown.
+> 📘
+>
+> Any existing text value will be kept, however it will appear as a *null* in the dropdown.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/cca9391-Screenshot_2023-02-10_at_14.07.55.png",
-        null,
-        null
-      ],
-      "align": "center",
-      "caption": "Selecting an option"
-    }
-  ]
-}
-[/block]
+<Image alt="Selecting an option" align="center" src="https://files.readme.io/cca9391-Screenshot_2023-02-10_at_14.07.55.png">
+  Selecting an option
+</Image>
 
 <br />
 
 ### Long Form Text
 
-
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e48cadb-Screenshot_2023-02-10_at_15.07.44.png",
-        null,
-        null
-      ],
-      "align": "center",
-      "caption": "Long form text type"
-    }
-  ]
-}
-[/block]
+<Image alt="Long form text type" align="center" src="https://files.readme.io/e48cadb-Screenshot_2023-02-10_at_15.07.44.png">
+  Long form text type
+</Image>
