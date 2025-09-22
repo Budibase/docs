@@ -22,18 +22,18 @@ If you're adding, updating or viewing any row the easiest way is to add a [Form 
 
 ![](https://files.readme.io/fcb7ce5-actionsnewrow_1.png "actionsnewrow (1).png")
 
-Updating a row can be done in a number of different ways. If you have a structure containing a [Data provider](https://docs.budibase.com/docs/data-provider) and a [Repeater](https://docs.budibase.com/docs/repeater), selecting the repeater as your <<glossary:Datasource>> will make it so you can correctly get the values from the specific row. To change a field you then take advantage of the add column button that is at the bottom. Click it, select the field you want to change, and type in the value you want to change it to (or use a binding). A descriptive image of this is shown below:
+Updating a row can be done in a number of different ways. If you have a structure containing a [Data provider](https://docs.budibase.com/docs/data-provider) and a [Repeater](https://docs.budibase.com/docs/repeater), selecting the repeater as your <Glossary>Datasource</Glossary> will make it so you can correctly get the values from the specific row. To change a field you then take advantage of the add column button that is at the bottom. Click it, select the field you want to change, and type in the value you want to change it to (or use a binding). A descriptive image of this is shown below:
 
 ![](https://files.readme.io/af5f1c8-actions.png "actions.png")
 
-If you are not using a repeater, an alternative way to update a row is to add the **\_id** column and provide a value that matches an existing id.  
+If you are not using a repeater, an alternative way to update a row is to add the **\_id** column and provide a value that matches an existing id.\
 For example, you could be passing a task id in the URL:
 
 ![](https://files.readme.io/a76c3a3-Screenshot_2022-05-10_at_16.48.11.png "Screenshot 2022-05-10 at 16.48.11.png")
 
 ## Duplicate Row
 
-This action allows you to clone a row into any table with shared column names.  
+This action allows you to clone a row into any table with shared column names.\
 If you are performing this action from a <a href="https://docs.budibase.com/docs/button#adding-buttons-to-table-rows">row button</a> click, then no **\_id** needs to be provided. 
 
 Alternatively, your button could be nested within a [Repeater](https://docs.budibase.com/docs/repeater). The below example shows how this would be setup with a repeater. 
@@ -42,7 +42,7 @@ Alternatively, your button could be nested within a [Repeater](https://docs.budi
 
 ## Delete Row
 
-This action is used to delete rows from your data source. It's used much in the same way that you would when updating a row. The main difference being you don't have to select a data source. You only have to select the table and pass the correct `Row ID` <<glossary:binding>>. For this example we will pass the `Row ID` via a [URL variable](doc:url-parameters), then the `Row ID` will be passed into the delete on click action used to delete the record from the [Budibase DB](doc:budibasedb). 
+This action is used to delete rows from your data source. It's used much in the same way that you would when updating a row. The main difference being you don't have to select a data source. You only have to select the table and pass the correct `Row ID` <Glossary>binding</Glossary>. For this example we will pass the `Row ID` via a [URL variable](doc:url-parameters), then the `Row ID` will be passed into the delete on click action used to delete the record from the [Budibase DB](doc:budibasedb). 
 
 ![Setup for deleting rows from tables.](https://files.readme.io/06d2677-Screenshot_2023-05-18_at_10.06.54.png)
 
@@ -80,25 +80,11 @@ This is mainly used for [External datasources](doc:data-sources) for example the
 
 ## Update State
 
-Allows you to set a state value, or delete the key entirely. When entering an identifying _Key_ you can select an existing one from the dropdown, or simply manually type into the text box to create a new key.
+Allows you to set a state value, or delete the key entirely. When entering an identifying *Key* you can select an existing one from the dropdown, or simply manually type into the text box to create a new key.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1ddf044-Screenshot_2024-01-11_at_10.57.54.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/1ddf044-Screenshot_2024-01-11_at_10.57.54.png" />
 
-
-Your state variable can then be accessed, anywhere in your app, via the state <<glossary:Binding>>, in this case: `{{ State.employee_id }}`.
+Your state variable can then be accessed, anywhere in your app, via the state <Glossary>Binding</Glossary>, in this case: `{{ State.employee_id }}`.
 
 See [App state](doc:app-state) for further reading and examples.
 
@@ -126,105 +112,34 @@ Once this has been done, it should export the rows selected and output it as the
 
 The default delimiter (separator) for CSV exports is a comma `,` . It is however possible to change this to one of a preset list of options. This feature does not apply to JSON file exports.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d64482d-tab_delimiter.png",
-        "",
-        "Using the tab key delimiter"
-      ],
-      "align": "center",
-      "caption": "Using the tab key delimiter"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Using the tab key delimiter" align="center" src="https://files.readme.io/d64482d-tab_delimiter.png">
+  Using the tab key delimiter
+</Image>
 
 #### Configure export columns
 
-By default _all_ table columns will be included in the export, however you can use a subset and provide custom labels.
+By default *all* table columns will be included in the export, however you can use a subset and provide custom labels.
 
-Click the _Export columns_ button and add the specific columns you want to export. You can also drag-and-drop the columns to rearrange the column order in the export.
+Click the *Export columns* button and add the specific columns you want to export. You can also drag-and-drop the columns to rearrange the column order in the export.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4e7070d-Screenshot_2024-02-27_at_13.07.38.png",
-        "",
-        "Only include these three columns in the data export"
-      ],
-      "align": "center",
-      "caption": "Only include these three columns in the data export"
-    }
-  ]
-}
-[/block]
+<Image alt="Only include these three columns in the data export" align="center" src="https://files.readme.io/4e7070d-Screenshot_2024-02-27_at_13.07.38.png">
+  Only include these three columns in the data export
+</Image>
 
-
-
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/af5c4ac-csv.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "caption": "Exported CSV file"
-    }
-  ]
-}
-[/block]
-
-
-
+<Image alt="Exported CSV file" align="center" src="https://files.readme.io/af5c4ac-csv.png">
+  Exported CSV file
+</Image>
 
 > 🚧 Limitations
-> 
+>
 > **Export Data** does not work with the [REST API](https://github.com/Budibase/budibase/issues/7348) datasource or other [Custom queries](https://docs.budibase.com/docs/data-sources#custom-queries).
 
 ## Clear Row Selection
 
 Deselects any selected rows of the chosen table. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a26a4a3-clear_row_selection.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/a26a4a3-clear_row_selection.png" />
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7dea71c-selected_rows.gif",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/7dea71c-selected_rows.gif" />
 
 Can also be useful in combination with the **Open Side Panel** action.
