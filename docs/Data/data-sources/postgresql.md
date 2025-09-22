@@ -11,41 +11,22 @@ next:
   description: ''
 ---
 > 👍 SQL Databases
-> 
+>
 > Budibase is designed to integrate with any core SQL database. 
-> 
+>
 > Read more about [SQL Datasources](doc:sql-datasource).
-
-
 
 # Video tutorial
 
-
-
-
-[block:embed]
-{
-  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FX6LgF15NqY0%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DX6LgF15NqY0&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FX6LgF15NqY0%2Fhqdefault.jpg&key=7788cb384c9f4d5dbbdbeffd9fe4b92f&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
-  "url": "https://www.youtube.com/watch?v=X6LgF15NqY0",
-  "title": "How to build a simple CRUD app on top of PostgreSQL in just a few minutes | Budibase | PostgreSQL",
-  "favicon": "https://www.google.com/favicon.ico",
-  "image": "https://i.ytimg.com/vi/X6LgF15NqY0/hqdefault.jpg",
-  "provider": "https://www.youtube.com/",
-  "href": "https://www.youtube.com/watch?v=X6LgF15NqY0",
-  "typeOfEmbed": "youtube"
-}
-[/block]
-
+<Embed url="https://www.youtube.com/watch?v=X6LgF15NqY0" title="How to build a simple CRUD app on top of PostgreSQL in just a few minutes | Budibase | PostgreSQL" favicon="https://www.google.com/favicon.ico" image="https://i.ytimg.com/vi/X6LgF15NqY0/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=X6LgF15NqY0" typeOfEmbed="youtube" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FX6LgF15NqY0%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DX6LgF15NqY0%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252FX6LgF15NqY0%252Fhqdefault.jpg%26key%3D7788cb384c9f4d5dbbdbeffd9fe4b92f%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
 
 <br />
 
 ***
 
-
-
 # Tutorial: Inventory management
 
-In this tutorial we will look at using the [DVD Sample Database](https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/) within Budibase. A link to **pgadmin** import instructions are included in that article, but it is worth noting that if you are not on Windows, you will want to extract the zip folder, and restore from _Directory_ instead.
+In this tutorial we will look at using the [DVD Sample Database](https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/) within Budibase. A link to **pgadmin** import instructions are included in that article, but it is worth noting that if you are not on Windows, you will want to extract the zip folder, and restore from *Directory* instead.
 
 ![](https://files.readme.io/0c9bb3a-Screenshot_2023-02-07_at_15.39.23.png)
 
@@ -67,13 +48,13 @@ Click `Add source`, select `PostgreSQL` and press `Continue`.
 
 You will then be presented with a connection configuration modal. Fill in the correct connection details but press **Skip table fetch**. We want to manually fetch tables later so we can choose the tables we want to use in our Budibase app. 
 
-> 📘 
-> 
+> 📘
+>
 > Note that if you are connecting to a database on `localhost`, your host should be set to `host.docker.internal`, or `172.17.0.1` if running on Linux.
 
 ![](https://files.readme.io/3227724-Screenshot_2023-02-07_at_16.09.03.png)
 
-Now we have the Postgres <<glossary:Datasource>> added, and the configuration page should be displayed. 
+Now we have the Postgres <Glossary>Datasource</Glossary> added, and the configuration page should be displayed. 
 
 Under the **Tables** section press `Fetch tables`. Tick `Fetch listed tables only` and provide the following table names:
 
@@ -91,21 +72,9 @@ city
 country
 ```
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8fd4eef-Screenshot_2023-02-07_at_16.16.42.png",
-        null,
-        "Fetch the listed tables"
-      ],
-      "align": "center",
-      "caption": "Fetch the listed tables"
-    }
-  ]
-}
-[/block]
+<Image alt="Fetch the listed tables" align="center" src="https://files.readme.io/8fd4eef-Screenshot_2023-02-07_at_16.16.42.png">
+  Fetch the listed tables
+</Image>
 
 <br />
 
@@ -117,69 +86,33 @@ We will need to setup the relationships as presented in the [DVD Rental ER Model
 
 Click the `Define relationship` button below the **Table** section.
 
-Setup a _Many->Many_ relationship between the **category** and **film** tables. Notice the error received below:
+Setup a *Many->Many* relationship between the **category** and **film** tables. Notice the error received below:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/73692ad-Screenshot_2023-02-07_at_16.30.52.png",
-        null,
-        "film_category is not a valid Budibase join table"
-      ],
-      "align": "center",
-      "caption": "film_category is not a valid Budibase join table"
-    }
-  ]
-}
-[/block]
+<Image alt="film_category is not a valid Budibase join table" align="center" src="https://files.readme.io/73692ad-Screenshot_2023-02-07_at_16.30.52.png">
+  film\_category is not a valid Budibase join table
+</Image>
 
-This error is caused by the _Not NULL_ constraint on the **last_update** column. This is easily resolved by setting this column to _nullable_ in **pgadmin**. 
+This error is caused by the *Not NULL* constraint on the **last\_update** column. This is easily resolved by setting this column to *nullable* in **pgadmin**. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a139ff6-Screenshot_2023-02-07_at_16.34.22.png",
-        null,
-        "Setting last_update to nullable"
-      ],
-      "align": "center",
-      "caption": "Setting last_update to nullable"
-    }
-  ]
-}
-[/block]
+<Image alt="Setting last_update to nullable" align="center" src="https://files.readme.io/a139ff6-Screenshot_2023-02-07_at_16.34.22.png">
+  Setting last\_update to nullable
+</Image>
 
-**Do the same for the _last_update_ column in the _film_actor_ table.**
+**Do the same for the*last\_update* column in the *film\_actor* table.**
 
 In addition, the **inventory** table is a through table that will need adjusted like so:
 
 ![](https://files.readme.io/9d0ebd6-Screenshot_2023-02-08_at_10.25.43.png)
 
-> 📘 
-> 
+> 📘
+>
 > Make sure to re-fetch the tables to pull down the new schema information!
 
-You should now be able to create this _Many->Many_ relationship. 
+You should now be able to create this *Many->Many* relationship. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6718461-Screenshot_2023-02-07_at_16.39.00.png",
-        null,
-        "Many to Many relationship between category and film"
-      ],
-      "align": "center",
-      "caption": "Many to Many relationship between category and film"
-    }
-  ]
-}
-[/block]
+<Image alt="Many to Many relationship between category and film" align="center" src="https://files.readme.io/6718461-Screenshot_2023-02-07_at_16.39.00.png">
+  Many to Many relationship between category and film
+</Image>
 
 When all relationships have been defined, you should see something like so:
 
@@ -189,7 +122,7 @@ When all relationships have been defined, you should see something like so:
 
 ## Stores screen
 
-Add an [autogenerated screen](https://docs.budibase.com/docs/screens#autogenerated-screen) for the **store** table. Change the _Title_ to 'Stores'. 
+Add an [autogenerated screen](https://docs.budibase.com/docs/screens#autogenerated-screen) for the **store** table. Change the *Title* to 'Stores'. 
 
 Next `Configure columns`, click `Add all columns`, and then remove columns with the `x` so that only the address is displayed. 
 
@@ -203,41 +136,17 @@ We will also add a flag image within the table to indicate the country of the st
 
 Select the [Table](doc:table) and click `Add component` to nest a [Repeater block](https://docs.budibase.com/docs/blocks#repeater-block). Select the address relationship as the datasource.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e1dd99e-Screenshot_2023-02-08_at_10.53.17.png",
-        null,
-        "Using the address relationship as a datasource"
-      ],
-      "align": "center",
-      "caption": "Using the address relationship as a datasource"
-    }
-  ]
-}
-[/block]
+<Image alt="Using the address relationship as a datasource" align="center" src="https://files.readme.io/e1dd99e-Screenshot_2023-02-08_at_10.53.17.png">
+  Using the address relationship as a datasource
+</Image>
 
 We then have to nest another repeater block under the first one to hop from the **city** table to the **country** table!
 
 Select the city relationship as the datasource.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ad8eb62-Screenshot_2023-02-08_at_11.29.31.png",
-        null,
-        "City relationship of the address table"
-      ],
-      "align": "center",
-      "caption": "City relationship of the address table"
-    }
-  ]
-}
-[/block]
+<Image alt="City relationship of the address table" align="center" src="https://files.readme.io/ad8eb62-Screenshot_2023-02-08_at_11.29.31.png">
+  City relationship of the address table
+</Image>
 
 Finally we can nest an [Image](doc:image) component within the City repeater block. Provide the following [JavaScript](doc:javascript) binding:
 
@@ -247,7 +156,7 @@ const countryName = $("City Repeater block.city.country")[0].primaryDisplay.toLo
 return `https://images.mapsofworld.com/${countryName}/${countryName}-flag.gif`;
 ```
 
-The _primaryDisplay_ property works here because the country name is the [table display column](https://docs.budibase.com/docs/budibasedb#selecting-the-display-column).
+The *primaryDisplay* property works here because the country name is the [table display column](https://docs.budibase.com/docs/budibasedb#selecting-the-display-column).
 
 ![](https://files.readme.io/23377d6-Screenshot_2023-02-08_at_11.36.21.png)
 
@@ -255,7 +164,7 @@ The _primaryDisplay_ property works here because the country name is the [table 
 
 Adding two nested repeater blocks is not ideal for performance, and is also not very maintainable. Considering that we are looking to get specific data from the relationships, using [custom SQL queries](https://docs.budibase.com/docs/sql-datasource#add-query) is better for this scenario.
 
-In the **Data** section add a query to your PostgreSQL datasource. Give it the name 'Get Country Names', give it a <<glossary:Binding>> or the **address_id** with the query:
+In the **Data** section add a query to your PostgreSQL datasource. Give it the name 'Get Country Names', give it a <Glossary>Binding</Glossary> or the **address\_id** with the query:
 
 ```sql
 SELECT LOWER(country) as country_name FROM address a
@@ -268,23 +177,11 @@ WHERE a.address_id = {{ address_id }}
 
 Make sure to click `Run Query` followed by `Save Query`!
 
-Now back to the **Design** section, the two existing repeater blocks can be replaced with a single new repeater block, using our new query as the datasource. Click the cog icon to open the binding drawer. Assign the **address_id**.
+Now back to the **Design** section, the two existing repeater blocks can be replaced with a single new repeater block, using our new query as the datasource. Click the cog icon to open the binding drawer. Assign the **address\_id**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2d852cc-Screenshot_2023-02-08_at_12.20.15.png",
-        null,
-        "Image repeater block"
-      ],
-      "align": "center",
-      "caption": "Image repeater block"
-    }
-  ]
-}
-[/block]
+<Image alt="Image repeater block" align="center" src="https://files.readme.io/2d852cc-Screenshot_2023-02-08_at_12.20.15.png">
+  Image repeater block
+</Image>
 
 ![](https://files.readme.io/04bb90e-Screenshot_2023-02-08_at_12.24.13.png)
 
@@ -294,21 +191,9 @@ Finally the image URL can be set to the following Handlebars expression:
 https://images.mapsofworld.com/{{ Image Repeater block.Get Country Names.country_name }}/{{ Image Repeater block.Get Country Names.country_name }}-flag.gif
 ```
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c9cebc1-Screenshot_2023-02-08_at_12.26.19.png",
-        null,
-        "Custom query reduces the number of repeater blocks needed"
-      ],
-      "align": "center",
-      "caption": "Custom query reduces the number of repeater blocks needed"
-    }
-  ]
-}
-[/block]
+<Image alt="Custom query reduces the number of repeater blocks needed" align="center" src="https://files.readme.io/c9cebc1-Screenshot_2023-02-08_at_12.26.19.png">
+  Custom query reduces the number of repeater blocks needed
+</Image>
 
 ### Adding a store map location
 
@@ -322,14 +207,27 @@ Select the `GET` method and paste in the URL:
 https://api.opencagedata.com/geocode/v1/json
 ```
 
-Add a binding called 'location' and give it a default value. Next add two params. One for your API **key**, and another for the **q** (query string). Click the lightning bolt icon to select the _location_ binding.
+Add a binding called 'location' and give it a default value. Next add two params. One for your API **key**, and another for the **q** (query string). Click the lightning bolt icon to select the *location* binding.
 
 ![](https://files.readme.io/5eb3911-Screenshot_2023-02-08_at_12.51.51.png)
 
 ![](https://files.readme.io/4acac32-Screenshot_2023-02-08_at_12.53.23.png)
 
-| <img src="https://files.readme.io/5a240d0-Screenshot_2023-02-08_at_12.56.59.png" /> | <img src="https://files.readme.io/4d8783b-Screenshot_2023-02-08_at_12.55.54.png" /> |
-| :---------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- |
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        <img src="https://files.readme.io/5a240d0-Screenshot_2023-02-08_at_12.56.59.png" />
+      </th>
+
+      <th>
+        <img src="https://files.readme.io/4d8783b-Screenshot_2023-02-08_at_12.55.54.png" />
+      </th>
+    </tr>
+  </thead>
+
+  <tbody />
+</Table>
 
 To make sure we're pulling the co-ordinates of the first result, add the following to your [Transformer](doc:transformers):
 
@@ -337,13 +235,13 @@ To make sure we're pulling the co-ordinates of the first result, add the followi
 return data.results[0]?.geometry
 ```
 
-After clicking the `Send` button, your <<glossary:Schema>> should include the latitude and longitude. Make sure to also click the `Save` button!
+After clicking the `Send` button, your <Glossary>Schema</Glossary> should include the latitude and longitude. Make sure to also click the `Save` button!
 
 ![](https://files.readme.io/f049f53-Screenshot_2023-02-08_at_13.24.05.png)
 
-We will need to pull the **city** name and **country** name for a given **address_id** in order to make use of this API. As before, a custom SQL query is the most efficient way to do this. In fact we can update our existing _Get Country Name_ query without breaking the current usage for the flag image.
+We will need to pull the **city** name and **country** name for a given **address\_id** in order to make use of this API. As before, a custom SQL query is the most efficient way to do this. In fact we can update our existing *Get Country Name* query without breaking the current usage for the flag image.
 
-Click on the _Get Country Names_ query under the PostgreSQL datasource. Update the query to pull back the city name as follows:
+Click on the *Get Country Names* query under the PostgreSQL datasource. Update the query to pull back the city name as follows:
 
 ```sql
 SELECT LOWER(country) as country_name, city FROM address a
@@ -356,15 +254,15 @@ The schema should now have two fields: one for the country, and one for the city
 
 ![](https://files.readme.io/7194b73-Screenshot_2023-02-08_at_13.36.17.png)
 
-With the REST query set up, go back to the **Design** section. Within the _Details side panel_, eject the _Details form block_. This will give us access to the **store** entry data. Click on the Repeater and add a repeater block with the name 'Location Repeater Block', which will be nested below. Set the _Get Country Names_ as the datasource, and click the cog icon to pass in the binding `{{ Repeater.store.address_id }}`. Drag the Form into the new _Location Repeater Block_. 
+With the REST query set up, go back to the **Design** section. Within the *Details side panel*, eject the *Details form block*. This will give us access to the **store** entry data. Click on the Repeater and add a repeater block with the name 'Location Repeater Block', which will be nested below. Set the *Get Country Names* as the datasource, and click the cog icon to pass in the binding `{{ Repeater.store.address_id }}`. Drag the Form into the new *Location Repeater Block*. 
 
-Currently the heading is displaying the ID value of the store. This isn't very nice, so let's replace it with the store location. Replace the [Heading](https://docs.budibase.com/docs/displaying-text#headline) _Text_ handlebars with the following: 
+Currently the heading is displaying the ID value of the store. This isn't very nice, so let's replace it with the store location. Replace the [Heading](https://docs.budibase.com/docs/displaying-text#headline) *Text* handlebars with the following: 
 
 ```
 {{ Location Repeater block.Get Country Names.city }}
 ```
 
-You can use the bindings helper on the left hand panel to insert this value. It is also unlikely that you would want _\_id_ fields in the form, so go ahead and delete those.
+You can use the bindings helper on the left hand panel to insert this value. It is also unlikely that you would want *\_id* fields in the form, so go ahead and delete those.
 
 Next nest a [Data provider](doc:data-provider) under the Location repeater block, below the form. Set the datasource to REST query we added earlier, and click the cog icon to pass in the following binding for the query string param:
 
@@ -372,7 +270,7 @@ Next nest a [Data provider](doc:data-provider) under the Location repeater block
 {{ Location Repeater block.Get Country Names.city }}, {{ Location Repeater block.Get Country Names.country_name }}
 ```
 
-Finally nest an [Embedded Map](doc:map) underneath the REST query data provider. Choose it as the _Provider_ and select the _lat_ and _lng_ keys.
+Finally nest an [Embedded Map](doc:map) underneath the REST query data provider. Choose it as the *Provider* and select the *lat* and *lng* keys.
 
 ![](https://files.readme.io/920e662-Screenshot_2023-02-08_at_14.12.18.png)
 
@@ -382,31 +280,19 @@ Finally nest an [Embedded Map](doc:map) underneath the REST query data provider.
 
 Create a new screen with the route: `/film/:storeid`.
 
-Add a [Row Explorer block](https://docs.budibase.com/docs/blocks#row-explorer-block) for the **film** table. Set the _Height_ to `800px` and set the _Search Field_ to `title`. Assign the _Title_, _Subtitle_, and _Description_ to some appropriate bindings, e.g.
+Add a [Row Explorer block](https://docs.budibase.com/docs/blocks#row-explorer-block) for the **film** table. Set the *Height* to `800px` and set the *Search Field* to `title`. Assign the *Title*, *Subtitle*, and *Description* to some appropriate bindings, e.g.
 
-- `{{ Film Explorer Block.film.title }}`
-- `{{ Film Explorer Block.film.release_year }}`
-- `{{ Film Explorer Block.film.description }}`
+* `{{ Film Explorer Block.film.title }}`
+* `{{ Film Explorer Block.film.release_year }}`
+* `{{ Film Explorer Block.film.description }}`
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ab8a72b-Screenshot_2023-02-09_at_13.40.36.png",
-        null,
-        "Selecting the film description from the binding dropdown"
-      ],
-      "align": "center",
-      "caption": "Selecting the film description from the binding dropdown"
-    }
-  ]
-}
-[/block]
+<Image alt="Selecting the film description from the binding dropdown" align="center" src="https://files.readme.io/ab8a72b-Screenshot_2023-02-09_at_13.40.36.png">
+  Selecting the film description from the binding dropdown
+</Image>
 
-As we want to filter the list of films by the _store_id_ that we [pass via the URL](doc:url-parameters) go ahead and eject the Row Explorer block, and `Define filters` for the now exposed Data provider.
+As we want to filter the list of films by the *store\_id* that we [pass via the URL](doc:url-parameters) go ahead and eject the Row Explorer block, and `Define filters` for the now exposed Data provider.
 
-Click `Add filter` to add an additional filter for the _store_id_ column. 
+Click `Add filter` to add an additional filter for the *store\_id* column. 
 
 ![](https://files.readme.io/5c86a2d-Screenshot_2023-02-09_at_13.48.13.png)
 
@@ -420,23 +306,11 @@ At the moment the row explorer presents the film information in a basic form. Th
 
 First remove the **rating** field, and any of the fields that you do not wish to be displayed or edited from the [Form block](doc:form-block). Next eject the form block so that the data provider can be used.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/db4d3f4-Screenshot_2023-02-09_at_14.20.14.png",
-        null,
-        "Selecting the form block fields"
-      ],
-      "align": "center",
-      "caption": "Selecting the form block fields"
-    }
-  ]
-}
-[/block]
+<Image alt="Selecting the form block fields" align="center" src="https://files.readme.io/db4d3f4-Screenshot_2023-02-09_at_14.20.14.png">
+  Selecting the form block fields
+</Image>
 
-Above the recently exposed form, add an image component. Give it the following JavaScript _URL_ binding:
+Above the recently exposed form, add an image component. Give it the following JavaScript *URL* binding:
 
 ```javascript JavaScript
 let baseUrl = "https://www.motionpictures.org/wp-content/uploads/2018/03";
@@ -459,7 +333,7 @@ else if (rating === 'R') {
 return `${baseUrl}/no_17_and_under_badge.svg`
 ```
 
-As these images are white, you'll also want to edit the [Custom CSS](doc:custom-css) and give it a black background: `background-color: black;`. Also set a _width_ and _height_, e.g. 256px \* 96px.
+As these images are white, you'll also want to edit the [Custom CSS](doc:custom-css) and give it a black background: `background-color: black;`. Also set a *width* and *height*, e.g. 256px \* 96px.
 
 ![](https://files.readme.io/6757f5a-Screenshot_2023-02-09_at_14.39.34.png)
 
@@ -485,6 +359,6 @@ Back in the **Design** section, add a new Repeater block above the row explorer 
 
 ![](https://files.readme.io/d0185d5-Screenshot_2023-02-09_at_15.02.53.png)
 
-Nest the Heading component under the Stock Repeater block and give it the binding _Text_ value: `Stock: {{ Stock Repeater block.Get Inventory Count.count }}`.
+Nest the Heading component under the Stock Repeater block and give it the binding *Text* value: `Stock: {{ Stock Repeater block.Get Inventory Count.count }}`.
 
 ![](https://files.readme.io/5aa907d-Screenshot_2023-02-09_at_15.56.40.png)
