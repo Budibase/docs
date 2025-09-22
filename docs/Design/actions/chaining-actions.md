@@ -12,11 +12,9 @@ next:
 ---
 Using Budibase, it's possible to create a sequence of actions. Below is a quick video demonstrating how to do this.
 
-[block:html]
-{
-  "html": "<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/701164534?h=63f720b673&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"New Recording - 20/04/2022, 10:16:28\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>"
-}
-[/block]
+<HTMLBlock>{`
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/701164534?h=63f720b673&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="New Recording - 20/04/2022, 10:16:28"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+`}</HTMLBlock>
 
 ## Action referencing
 
@@ -24,34 +22,90 @@ It can be useful to access data from a previous action in a new action.
 
 The following actions expose data after execution:
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Action Name",
-    "h-1": "Data Binding",
-    "h-2": "Returns",
-    "0-0": "Save Row",
-    "0-1": "{{ Action X.Saved Row }}",
-    "0-2": "Field value pairs (including auto-columns)  \n  \n\\_id: Unique row identifier",
-    "1-0": "Duplicate Row",
-    "1-1": "{{ Action X.Duplicated Row }}",
-    "1-2": "Field value pairs (including auto-columns)  \n  \n\\_id: Unique row identifier",
-    "2-0": "Execute Query",
-    "2-1": "{{ Action X.Query Result }}  \n  \n_First row example_  \n{{ Action X.Query Result.data.0 }}",
-    "2-2": "`{ data: [ <query-schema>_ ] }`  \n  \n\\_ An object as determined by the query schema",
-    "3-0": "Trigger Automation",
-    "3-1": "{{ Action X.Automation Result }}",
-    "3-2": "The response of a [Synchronous automation 🔒](doc:synchronous-automations)"
-  },
-  "cols": 3,
-  "rows": 4,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+<Table align={["left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Action Name
+      </th>
+
+      <th>
+        Data Binding
+      </th>
+
+      <th>
+        Returns
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Save Row
+      </td>
+
+      <td>
+        \{\{ Action X.Saved Row }}
+      </td>
+
+      <td>
+        Field value pairs (including auto-columns)  
+
+        * id: Unique row identifier
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Duplicate Row
+      </td>
+
+      <td>
+        \{\{ Action X.Duplicated Row }}
+      </td>
+
+      <td>
+        Field value pairs (including auto-columns)  
+
+        * id: Unique row identifier
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Execute Query
+      </td>
+
+      <td>
+        \{\{ Action X.Query Result }}  
+
+        *First row example*\
+        \{\{ Action X.Query Result.data.0 }}
+      </td>
+
+      <td>
+        `{ data: [ <query-schema>_ ] }`  
+
+        * An object as determined by the query schema
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Trigger Automation
+      </td>
+
+      <td>
+        \{\{ Action X.Automation Result }}
+      </td>
+
+      <td>
+        The response of a [Synchronous automation 🔒](doc:synchronous-automations)
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 **Note** X is the action number
 
@@ -61,9 +115,9 @@ The following actions expose data after execution:
 
 #### Schema
 
-- Bookings
-- Leaders
-- One Booking -> One Leader
+* Bookings
+* Leaders
+* One Booking -> One Leader
 
 ***
 
@@ -75,17 +129,17 @@ The following actions expose data after execution:
 
 #### Steps
 
-1. In the _/booking/new/row_ screen, delete the drop down for the leader, and replace it with a new text field. Type in the field name: **LeaderName**
+1. In the */booking/new/row* screen, delete the drop down for the leader, and replace it with a new text field. Type in the field name: **LeaderName**
 
 ![Screenshot 2022-03-22 at 12 01 01](https://user-images.githubusercontent.com/101575380/159480786-8c100a27-d798-412d-bbfc-05d00ce718f5.png)
 
-2. Next click on the 'Save' button and 'Define actions'.  
+2. Next click on the 'Save' button and 'Define actions'.\
    Here you will need to add another 'Save Row' action underneath the existing one for the Leader table. This will allow you to create a new row for the leader entered into the in-line **LeaderName** field. 
 
 ![Screenshot 2022-03-22 at 12 17 06](https://user-images.githubusercontent.com/101575380/159481463-854513b8-7fcc-44da-a0ba-d75ffcfa35fe.png)
 
-3. Two columns overrides must be added.  
-   The first **Name** `{{ Form.Fields.LeaderName }}` saves the leader name as the value from our new **LeaderName** form field.  
+3. Two columns overrides must be added.\
+   The first **Name** `{{ Form.Fields.LeaderName }}` saves the leader name as the value from our new **LeaderName** form field.\
    The second **Booking** column (the relationship field) is set to `{{ Action 2.Saved row._id }}`. This represents the relationship id of the booking row that was saved in the previous action.
 
 ## Continue if / Stop if
