@@ -32,8 +32,8 @@ Enter the URL of the API endpoint you are using. The URL is the requested resour
 
 ![](https://files.readme.io/d3b6ce9-Screenshot_2022-01-04_at_13.20.07.png "Screenshot 2022-01-04 at 13.20.07.png")
 
-> 📘 
-> 
+> 📘
+>
 > If you are trying to connect to a service on the same host, please look at this page: [docs.docker.com/desktop/networking](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host)
 
 ***
@@ -42,10 +42,10 @@ Enter the URL of the API endpoint you are using. The URL is the requested resour
 
 Select the HTTP method used by the API endpoint you are using. 
 
-- GET retrieves data from an API.
-- POST sends new data to an API.
-- PATCH and PUT update existing data.
-- DELETE removes existing data.
+* GET retrieves data from an API.
+* POST sends new data to an API.
+* PATCH and PUT update existing data.
+* DELETE removes existing data.
 
 ![](https://files.readme.io/a124afd-Screenshot_2022-01-04_at_11.37.37.png "Screenshot 2022-01-04 at 11.37.37.png")
 
@@ -63,8 +63,8 @@ Select the access level required by the logged-in end-user. If the user visits a
 
  URL parameters can be configured in the params tab. 
 
-- Parameters are appended to the end of the request URL, following _?_ and listed in key value pairs, separated by _&_ using the following syntax: _?status=all&other=value_
-- Parameters can be hardcoded or they can use bindings or variables. 
+* Parameters are appended to the end of the request URL, following *?* and listed in key value pairs, separated by *&* using the following syntax: *?status=all\&other=value*
+* Parameters can be hardcoded or they can use bindings or variables. 
 
 ![](https://files.readme.io/fc4c06e-Screenshot_2022-01-04_at_13.34.14.png "Screenshot 2022-01-04 at 13.34.14.png")
 
@@ -72,7 +72,7 @@ Select the access level required by the logged-in end-user. If the user visits a
 
 ### Bindings
 
-Use bindings to supply additional information to the query at runtime. Using the example from above we can replace the hardcoded value of _all_ with a binding named _status_ that has a default value of _all_. Now we can change the value of _status_ by supplying it from within an application using the query. 
+Use bindings to supply additional information to the query at runtime. Using the example from above we can replace the hardcoded value of *all* with a binding named *status* that has a default value of *all*. Now we can change the value of *status* by supplying it from within an application using the query. 
 
 ![](https://files.readme.io/3600cb6-Screenshot_2022-01-04_at_13.31.34.png "Screenshot 2022-01-04 at 13.31.34.png")
 
@@ -82,8 +82,8 @@ Use bindings to supply additional information to the query at runtime. Using the
 
 Use headers to supply key-value pairs accepted by your API. 
 
-- Switch the Active toggle to off to prevent the headers from being sent while keeping it's configuration. 
-- Headers can be hardcoded or they can use [REST Bindings](doc:rest-bindings)  or [REST Variables](doc:rest-variables).
+* Switch the Active toggle to off to prevent the headers from being sent while keeping it's configuration. 
+* Headers can be hardcoded or they can use [REST Bindings](doc:rest-bindings)  or [REST Variables](doc:rest-variables).
 
 ![](https://files.readme.io/0569efd-Screenshot_2022-01-04_at_15.38.48.png "Screenshot 2022-01-04 at 15.38.48.png")
 
@@ -93,12 +93,12 @@ Use headers to supply key-value pairs accepted by your API.
 
 Use a request body to send information to an API endpoint. 
 
-- The Content-Type header will automatically be set when using:
-  - raw(JSON) / application/json
-  - raw(XML) / application/xml
-  - raw(Text) / text/plain
-- If you manually select a Content-Type header, that value will be overridden by the body type
-- The body can be hardcoded or it can use [REST Bindings](doc:rest-bindings) or [REST Variables](doc:rest-variables) .
+* The Content-Type header will automatically be set when using:
+  * raw(JSON) / application/json
+  * raw(XML) / application/xml
+  * raw(Text) / text/plain
+* If you manually select a Content-Type header, that value will be overridden by the body type
+* The body can be hardcoded or it can use [REST Bindings](doc:rest-bindings) or [REST Variables](doc:rest-variables) .
 
 ![](https://files.readme.io/6762fb3-Screenshot_2022-01-04_at_15.44.42.png "Screenshot 2022-01-04 at 15.44.42.png")
 
@@ -146,8 +146,8 @@ The saved query can then be used as the data source of a [Data Provider](doc:dat
 
 The response schema may be updated by:
 
-- Adding or removing fields
-- Changing the data type used when displaying the result in tables
+* Adding or removing fields
+* Changing the data type used when displaying the result in tables
 
 ![](https://files.readme.io/496ce40-Screenshot_2022-01-04_at_16.03.14.png "Screenshot 2022-01-04 at 16.03.14.png")
 
