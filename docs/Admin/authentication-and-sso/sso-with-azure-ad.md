@@ -11,7 +11,7 @@ next:
   description: ''
 ---
 > 📘 OpenID Connect
-> 
+>
 > To become familiar with OpenID Connect in Budibase, see: [OpenID Connect](doc:openid-connect)
 
 ## Configuration
@@ -38,13 +38,11 @@ Visit 'Overview' > 'Endpoints'.
 
 Use the **OpenID Connect metadata document** field as your Configuration URL in Budibase.
 
-> 📘 
-> 
+> 📘
+>
 > Newer versions of Azure Portal may include a generic OpenID URL like: `https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration`
-> 
+>
 > In that case you will need to manually edit the URL and include the tenant ID: `https://login.microsoftonline.com/[TENANT_ID]/.well-known/openid-configuration`
-
-
 
 ![](https://files.readme.io/7fc1142-azure-configurationurl.png "azure-configurationurl.png")
 
