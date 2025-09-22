@@ -12,32 +12,32 @@ next:
 ---
 Whilst there are a variety of chart types, all charts have some common properties:
 
-- Title
-- Provider
-- Label Column
-- Data Column(s)
-- Width & Height
-- Margin
-- Custom CSS
-- Conditions
+* Title
+* Provider
+* Label Column
+* Data Column(s)
+* Width & Height
+* Margin
+* Custom CSS
+* Conditions
 
 ## Providing data
 
 Charts allow you to visualise data from a [Data Provider](doc:data-provider), which can have datasources such as:
 
-- <<glossary:Budibase DB>> 
-- [REST Queries](doc:rest-queries) 
-- [Custom Queries](doc:custom-queries)
+* <Glossary>Budibase DB</Glossary> 
+* [REST Queries](doc:rest-queries) 
+* [Custom Queries](doc:custom-queries)
 
 ## Displaying data
 
 The data displayed in your chart will be determined by the label and data columns. 
 
-**Label Column** Provides the name of each categorical variable.  
+**Label Column** Provides the name of each categorical variable.\
 **Data Column(s)** Provides the value or range of values for each label.   
 
 > 🚧 Data column type
-> 
+>
 > Data columns must be numeric
 
 ## Generating the chart schema
@@ -46,7 +46,7 @@ For table datasources, the available options for the label and data columns will
 
 Data from REST Queries on the other hand, will likely need to be transformed to be suitable for use in charts.
 
-In particular, your [Transformer](doc:transformers) and <<glossary:Schema>> should align with the following:
+In particular, your [Transformer](doc:transformers) and <Glossary>Schema</Glossary> should align with the following:
 
 ![](https://files.readme.io/673ca59-Screenshot_2022-04-26_at_15.58.08.png "Screenshot 2022-04-26 at 15.58.08.png")
 
