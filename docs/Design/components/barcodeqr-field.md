@@ -18,7 +18,7 @@ The field can be found under the **Form** section of the components list.
 
 ![](https://files.readme.io/7048cad-component_list.png)
 
-To add the scanner to your app, you to need add it as a child of a [Form](https://docs.budibase.com/docs/forms) component.  
+To add the scanner to your app, you to need add it as a child of a [Form](https://docs.budibase.com/docs/forms) component.\
 The field has its own data type of [Barcode/QR](https://docs.budibase.com/docs/barcodeqr) so be sure to select a valid field from the **Field** setting. 
 
 ## Scanning
@@ -38,8 +38,8 @@ On closing the scanning modal, the contents of the QR/Barcode will now be in the
 ![](https://files.readme.io/b813e96-Screenshot_2022-10-25_at_17.04.27.png)
 
 > 👍 Code scanning support
-> 
-> The full list of supported barcodes is available here : <https://github.com/mebjas/html5-qrcode#supported-code-formats>
+>
+> The full list of supported barcodes is available here : [https://github.com/mebjas/html5-qrcode#supported-code-formats](https://github.com/mebjas/html5-qrcode#supported-code-formats)
 
 ## Manual entry
 
@@ -72,7 +72,7 @@ Listed below are configuration options available for the field.
 | Button text        | The text displayed on the Barcode/QR launch button. Defaults to 'Scan code'                                                |
 | Default value      | When a default value is provided, every time the form is opened this will be pre-filled in the field.                      |
 | Disabled           | When checked, disables the field; The user cannot change the value.                                                        |
-| Play sound on scan | Plays a single note on scan. The _Sound pitch_ can also be chosen.                                                         |
+| Play sound on scan | Plays a single note on scan. The *Sound pitch* can also be chosen.                                                         |
 | Preferred camera   | Determines if the front or back camera of the app device will be used for scanning.                                        |
 | Auto confirm       | Upon a successful scan, the scan modal will automatically close.                                                           |
 
@@ -82,36 +82,10 @@ When scanning a barcode, the underlying data type can be a varied, such as text,
 
 For example, if you want to ensure only a web URL can be scanned and saved, you can add a regex rule:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8fe494b-Screenshot_2024-02-01_at_13.33.58.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/8fe494b-Screenshot_2024-02-01_at_13.33.58.png" />
 
+This can also be used safely in conjunction with the *Auto confirm* setting. If the barcode passes the validation on scan, then the modal will close. On the other hand, if the barcode was not a valid URL as expected in this case, then the modal will wait until the user scans an appropriate barcode, or cancels.
 
-This can also be used safely in conjunction with the _Auto confirm_ setting. If the barcode passes the validation on scan, then the modal will close. On the other hand, if the barcode was not a valid URL as expected in this case, then the modal will wait until the user scans an appropriate barcode, or cancels.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2f14821-Screenshot_2024-02-01_at_13.50.14.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "caption": "Red light indicates that the custom validation rule has not passed"
-    }
-  ]
-}
-[/block]
+<Image alt="Red light indicates that the custom validation rule has not passed" align="center" src="https://files.readme.io/2f14821-Screenshot_2024-02-01_at_13.50.14.png">
+  Red light indicates that the custom validation rule has not passed
+</Image>
