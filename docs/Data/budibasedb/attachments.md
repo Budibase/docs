@@ -24,8 +24,8 @@ In Budibase, static files are stored under the **Attachment** field type. Attach
 
 When you create a new [row](ref:post_tables-tableid-rows)  in your table by clicking the "Create New Row" button above the backend data table, you will be presented with a dropzone component for your attachment field that you can use to upload files.
 
-> 📘 
-> 
+> 📘
+>
 > A **Dropzone** component is a commonly used file upload component in web applications. It allows you to drop files from your computer into the dropzone area, or to navigate your file system to find the file that you want.
 
 Once you have selected your files, image files are processed in the background and resized. Other files are just stored as is, without any kind of resizing or transformation applied. These files will remain on your machine until you deploy - at which point they will be uploaded to the Budibase hosting cloud.
@@ -40,10 +40,10 @@ Attachments are stored in [MinIO](https://docs.budibase.com/docs/accessing-minio
 
 In this example, we will be creating a simple web application that will be used to store information about different countries around the world. Some of the information we are going to include in our application:
 
-- Country Name
-- Country Population
-- Country Flag
-- Travel Guide
+* Country Name
+* Country Population
+* Country Flag
+* Travel Guide
 
 ### Creating Countries Table and Columns
 
@@ -51,28 +51,14 @@ Let's begin by creating a table to store data for our countries.
 
 Next, we need to create columns in our `Countries` table. Let's look at the information we need to include about each country and decide which data types are the best to use for our columns.
 
-- **Country Name**: Country names are just letters, so a **Text** type is a good fit here.
-- **Country Population**: We should use a **Number** type for this.
-- **Country Flag**: This will require an image file - here is where **Attachment** types come in.
-- **Travel Guide**: We can store PDF travel guides for each country here. Let's use another **Attachment** type.
+* **Country Name**: Country names are just letters, so a **Text** type is a good fit here.
+* **Country Population**: We should use a **Number** type for this.
+* **Country Flag**: This will require an image file - here is where **Attachment** types come in.
+* **Travel Guide**: We can store PDF travel guides for each country here. Let's use another **Attachment** type.
 
 Watch the video below to find out how to set up your table as detailed above.
 
-
-[block:embed]
-{
-  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2F78qLHu6ShkY%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D78qLHu6ShkY&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2F78qLHu6ShkY%2Fhqdefault.jpg&key=f2aa6fc3595946d0afc3d76cbbd25dc3&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
-  "url": "https://www.youtube.com/watch?v=78qLHu6ShkY&feature=youtu.be",
-  "title": "Budibase - Creating attachment type columns",
-  "favicon": "https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico",
-  "image": "https://i.ytimg.com/vi/78qLHu6ShkY/hqdefault.jpg",
-  "provider": "youtube.com",
-  "href": "https://www.youtube.com/watch?v=78qLHu6ShkY&feature=youtu.be"
-}
-[/block]
-
-
-
+<Embed url="https://www.youtube.com/watch?v=78qLHu6ShkY&feature=youtu.be" title="Budibase - Creating attachment type columns" favicon="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" image="https://i.ytimg.com/vi/78qLHu6ShkY/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=78qLHu6ShkY&feature=youtu.be" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252F78qLHu6ShkY%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253D78qLHu6ShkY%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252F78qLHu6ShkY%252Fhqdefault.jpg%26key%3Df2aa6fc3595946d0afc3d76cbbd25dc3%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
 
 ## Creating Rows and Uploading Data
 
@@ -82,24 +68,10 @@ Let's create a row for Spain. Follow along with the video below to find out how.
 
 Here are the files used in the video below if you don't have your own:
 
-- [Spanish Flag Image](https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/750px-Flag_of_Spain.svg.png)
-- [Spanish Travel Guide](https://www.madeforspainandportugal.com/wp-content/uploads/2016/01/Spain-with-Made-for-Spain.pdf)
+* [Spanish Flag Image](https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/750px-Flag_of_Spain.svg.png)
+* [Spanish Travel Guide](https://www.madeforspainandportugal.com/wp-content/uploads/2016/01/Spain-with-Made-for-Spain.pdf)
 
-
-[block:embed]
-{
-  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FyULNH7MHez8%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DyULNH7MHez8&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FyULNH7MHez8%2Fhqdefault.jpg&key=f2aa6fc3595946d0afc3d76cbbd25dc3&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
-  "url": "https://www.youtube.com/watch?v=yULNH7MHez8&feature=youtu.be",
-  "title": "How to create a row, with an attachment",
-  "favicon": "https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico",
-  "image": "https://i.ytimg.com/vi/yULNH7MHez8/hqdefault.jpg",
-  "provider": "youtube.com",
-  "href": "https://www.youtube.com/watch?v=yULNH7MHez8&feature=youtu.be"
-}
-[/block]
-
-
-
+<Embed url="https://www.youtube.com/watch?v=yULNH7MHez8&feature=youtu.be" title="How to create a row, with an attachment" favicon="https://www.youtube.com/s/desktop/58ec298f/img/favicon.ico" image="https://i.ytimg.com/vi/yULNH7MHez8/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=yULNH7MHez8&feature=youtu.be" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FyULNH7MHez8%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DyULNH7MHez8%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252FyULNH7MHez8%252Fhqdefault.jpg%26key%3Df2aa6fc3595946d0afc3d76cbbd25dc3%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
 
 Muy bien! 🇪🇸
 
@@ -109,46 +81,34 @@ Let's see what's been automatically created for us in the front-end of our app.
 
 Navigate over to the "Frontend" tab in the builder. You will notice that some screens have been created for us when we created our Countries table.
 
-- **Countries - New**: A screen with a form that can be used to create a brand new country.
-- **Countries - List**: A screen with a table containing all the countries in your countries table.
-- **Countries - Detail**: A screen used to represent a single country. When you click the **View** button in the Countries List table, you will be navigated to the detail page for that country.
+* **Countries - New**: A screen with a form that can be used to create a brand new country.
+* **Countries - List**: A screen with a table containing all the countries in your countries table.
+* **Countries - Detail**: A screen used to represent a single country. When you click the **View** button in the Countries List table, you will be navigated to the detail page for that country.
 
 Let's preview our application and interact with our attachments! Click the preview button on the top right of the builder. You will be navigated to your app in your default browser. Log in with the credentials that you set up when you initially created your app and you will see the homepage of your new app. Navigate to the automatically created "Countries" link in your navbar - you should see your countries listed in a table:
 
-
-
 ![](https://files.readme.io/2aeb51f-countries.png "countries.png")
-
-
 
 ## Manage access
 
-By default, the table **write** access will be _Basic_. This means if you have a public form, you may see an error message: `Session not authenticated` when trying to upload files.
+By default, the table **write** access will be *Basic*. This means if you have a public form, you may see an error message: `Session not authenticated` when trying to upload files.
 
 To fix this, click on the `Manage access` button.
 
 ![](https://files.readme.io/520af17-Screenshot_2022-09-23_at_10.36.08.png)
 
-
-
 Set the write access to **public**
 
 ![](https://files.readme.io/2cdaa92-Screenshot_2022-09-23_at_10.36.59.png)
-
-
 
 **Note** this will allow anyone to upload a file to your app instance, so use with caution! 
 
 You must also ensure that the table with your target attachment field is selected as the [form schema](https://docs.budibase.com/docs/forms#form-schema). Budibase needs to know the target field of the attachment upload.
 
-> 👍 
-> 
-> ![](https://files.readme.io/a2430f9-Screenshot_2022-09-23_at_11.10.13.png)
-> 
-> 
-
-> ❗ 
-> 
-> ![](https://files.readme.io/c4b0208-Screenshot_2022-09-23_at_11.10.35.png)
-> 
+> 👍
 >
+> ![](https://files.readme.io/a2430f9-Screenshot_2022-09-23_at_11.10.13.png)
+
+> ❗
+>
+> ![](https://files.readme.io/c4b0208-Screenshot_2022-09-23_at_11.10.35.png)
