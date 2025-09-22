@@ -17,52 +17,26 @@ Furthermore, it allows you to add CRUD (Create, Read, Update and Delete) functio
 Many of the settings will be shared with the [Table](doc:table) component. The block specific settings are described on this page.
 
 > 👍 Table
-> 
+>
 > The new table documentation can be found [here](doc:table).
 
 ## Search fields
 
-Select the fields you want users to be able to search on. For a [Text field](doc:text-field) the search will be a _starts with_. Other fields will search for an exact match. 
+Select the fields you want users to be able to search on. For a [Text field](doc:text-field) the search will be a *starts with*. Other fields will search for an exact match. 
 
 As noted under the setting, a maximum of five search fields can be used at any given time.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ce49740-Screenshot_2022-12-12_at_12.07.43.png",
-        null,
-        "Allow users to search on First Name and Start Date"
-      ],
-      "align": "center",
-      "caption": "Allow users to search on First Name and Start Date"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Allow users to search on First Name and Start Date" align="center" src="https://files.readme.io/ce49740-Screenshot_2022-12-12_at_12.07.43.png">
+  Allow users to search on First Name and Start Date
+</Image>
 
 ![](https://files.readme.io/97a81b3-Screenshot_2022-12-12_at_12.10.29.png)
 
 If you add search fields, upon [Ejecting](https://docs.budibase.com/docs/blocks#ejecting-blocks) a [Form](doc:forms) component will be added like so:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/92a9f03-Screenshot_2022-12-12_at_12.13.11.png",
-        null,
-        "Ejected table block with search fields"
-      ],
-      "align": "center",
-      "caption": "Ejected table block with search fields"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Ejected table block with search fields" align="center" src="https://files.readme.io/92a9f03-Screenshot_2022-12-12_at_12.13.11.png">
+  Ejected table block with search fields
+</Image>
 
 In addition, the added [Data provider](doc:data-provider) will include the necessary filters with the form field bindings.
 
@@ -70,24 +44,11 @@ In addition, the added [Data provider](doc:data-provider) will include the neces
 
 ## On row click
 
-This setting allows you to determine what happens when a table row is clicked. By default **Run actions** will be checked, however with _no actions set_ nothing will happen. 
+This setting allows you to determine what happens when a table row is clicked. By default **Run actions** will be checked, however with *no actions set* nothing will happen. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0676c46-Screenshot_2022-12-12_at_14.09.58.png",
-        null,
-        "Run actions on row click"
-      ],
-      "align": "center",
-      "caption": "Run actions on row click"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Run actions on row click" align="center" src="https://files.readme.io/0676c46-Screenshot_2022-12-12_at_14.09.58.png">
+  Run actions on row click
+</Image>
 
 Click `Define actions` to get access to all of the available [Actions](doc:actions). 
 
@@ -99,60 +60,21 @@ As noted under the option, table block side panels will not work with [REST quer
 
 You can add an action button to the top right of your table. To do so, check `Show button above table`.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/95f8c79-Screenshot_2022-12-12_at_14.12.11.png",
-        null,
-        "The table block will have no action button by default"
-      ],
-      "align": "center",
-      "caption": "The table block will have no action button by default"
-    }
-  ]
-}
-[/block]
+<Image alt="The table block will have no action button by default" align="center" src="https://files.readme.io/95f8c79-Screenshot_2022-12-12_at_14.12.11.png">
+  The table block will have no action button by default
+</Image>
 
+Once checked, you will be able to enter some text for the button, and similar to *on row click*, you can choose between running some actions or opening a side panel. 
 
-Once checked, you will be able to enter some text for the button, and similar to _on row click_, you can choose between running some actions or opening a side panel. 
+In this case however, the side panel will have a nested form block in *Create* mode, i.e. the fields will initially be blank and save a new row on submit, rather than update an existing row. 
 
-In this case however, the side panel will have a nested form block in _Create_ mode, i.e. the fields will initially be blank and save a new row on submit, rather than update an existing row. 
+<Image alt="Action button opens a new row side panel" align="center" src="https://files.readme.io/5feac6a-Screenshot_2022-12-12_at_14.23.03.png">
+  Action button opens a new row side panel
+</Image>
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5feac6a-Screenshot_2022-12-12_at_14.23.03.png",
-        null,
-        "Action button opens a new row side panel"
-      ],
-      "align": "center",
-      "caption": "Action button opens a new row side panel"
-    }
-  ]
-}
-[/block]
-
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f0e2b2b-Screenshot_2022-12-12_at_14.24.57.png",
-        null,
-        "Table block with Create row action button"
-      ],
-      "align": "center",
-      "caption": "Table block with Create row action button"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Table block with Create row action button" align="center" src="https://files.readme.io/f0e2b2b-Screenshot_2022-12-12_at_14.24.57.png">
+  Table block with Create row action button
+</Image>
 
 ## Autogenerated screen
 
