@@ -1,0 +1,113 @@
+---
+title: REST OAuth2
+excerpt: ''
+deprecated: false
+hidden: false
+metadata:
+  title: ''
+  description: ''
+  robots: index
+next:
+  description: ''
+  pages:
+    - type: basic
+      slug: rest
+      title: REST API
+---
+Budibase uses the Client Credentials Grant, which is a grant type in OAuth2 used for machine-to-machine authentication. This is typically is used when an application needs to access resources without user interaction. Unlike other OAuth2 flows, this one does not involve a user login. Instead, it uses a Client ID and Client Secret to obtain an access token directly from the authorisation server. More information on this grant type can be found [here](https://oauth.net/2/grant-types/client-credentials/).
+
+## Setup
+
+### Managing OAuth2 configuration
+
+In Budibase, OAuth2 is managed on a per-app basis. To set your OAuth2 authentication:
+
+1. Go to the Budibase Dashboard.
+2. Select the app you want to configure.
+3. In the app, navigate to the Settings tab using the top navigation bar.
+4. Click on the OAuth2 option in the sub-navigation menu.
+
+   [block:image]{"images":[{"image":["https://files.readme.io/7ca47a2d286326f36ea44e82b1903706fa8af9e6e975fa0b1f650e521290d3d4-Screenshot_2025-03-26_at_10.23.55.png","",""],"align":"center"}]}[/block]
+
+You will now be on the OAuth2 configuration page, where you can add and manage different OAuth2 credentials. On this page, you will be able to view any previous OAuth2 credentials. You can update all the fields or even delete any configurations.
+
+### Creating a new OAuth2 configuration
+
+To create your first OAuth2 configuration:
+
+1. Click the "Add OAuth2" button located above and to the right of the table.
+2. A modal will appear, allowing you to enter the necessary configuration details.
+
+   [block:image]{"images":[{"image":["https://files.readme.io/d9dc3bf39cd3fd460117a98dee29f5ce8ffb1f9d52ab1ccf7f969483a580d0d1-Screenshot_2025-03-26_at_10.25.15.png","",""],"align":"center"}]}[/block]
+
+### Fields Configuration
+
+All fields in this form are required to set up OAuth2 authentication. Here’s what each field does:
+
+- The **Name** field is the unique identifier for the OAuth2 configuration. Use descriptive names (e.g., Spotify Client Auth, Internal API Auth) for easy reference.
+- The **Authentication method** field Specifies how credentials are sent during authentication. The two options are;
+  - **Basic**: Uses the Authorisation: Bearer <token> header for each connection.
+  - **POST**: Includes the credentials in the body of the request under the access_token property.
+- The **Grant type** field defines the OAuth2 authorisation method. (**Currently, Budibase only supports the Client Credentials grant type.**)
+- The **Service URL** field is the URL where the OAuth2 flow sends the credentials. This must be a full URL (including https\://) pointing to the token endpoint.
+- The **Client ID** field is the unique identifier for the service you are connecting to.
+- The **Client Secret** field is used to validate the client’s authenticity.
+
+## Example setup
+
+Let’s walk through an example using Spotify’s OAuth2 Client Credentials flow.
+
+### Create Spotify OAuth2 credentials
+
+1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/).
+2. Log in and create a new app.
+3. Copy the Client ID and Client Secret in the app settings.
+
+### Configure OAuth2 in Budibase
+
+1. Navigate to the OAuth2 configuration page.
+2. Click "Add OAuth2".
+
+   [block:image]{"images":[{"image":["https://files.readme.io/e5a5650e332e5fc0e957d7002225a81b51ada9f776f3f3255d537c553246bd57-Screenshot_2025-03-26_at_10.35.54.png","",""],"align":"center"}]}[/block]
+3. Fill in the fields as follows:
+   1. Name: Spotify Client Auth
+   2. Authentication Method: Basic
+   3. Grant Type: Client Credentials
+   4. Service URL: <https://accounts.spotify.com/api/token>
+   5. Client ID: <your-client-id>
+   6. Client Secret: <your-client-secret>
+4. Click Confirm.
+
+   [block:image]{"images":[{"image":["https://files.readme.io/79bcfe6b6a866882c45b55036ae081baa75609e1b18cf10c5cc6f60840c5af2e-Screenshot_2025-03-26_at_10.29.50.png","",""],"align":"center"}]}[/block]
+
+Now that you have successfully set up your OAuth2 configuration with Spotify. We can start using the Spotify API and our OAuth2 configuration to validate any requests made to it. We can do this using our [REST datasource](doc:rest).
+
+## Testing your OAuth2 configuration
+
+1. On the same app you set your OAuth2 configuration, add a new REST datasource
+
+   [block:image]{"images":[{"image":["https://files.readme.io/a9a66c07b593afd92484885d1ad714f143958052dc50546b3fe9c90668b6ff77-Screenshot_2025-03-26_at_09.47.27.png","",""],"align":"center"}]}[/block]
+2. Add a new query. In our case, we will be using a get-query
+
+   [block:image]{"images":[{"image":["https://files.readme.io/6660692ffc6629358cac568cfdfdbf097a836cd7105965731b0f8faba00c9669-Screenshot_2025-03-26_at_09.59.43.png","",""],"align":"center"}]}[/block]
+3. Add the URL you wish to hit when sending the request to the API (I'm using: <https://api.spotify.com/v1/artists/{{id}}>)
+4. Select your OAuth2 authentication
+
+   [block:image]{"images":[{"image":["https://files.readme.io/286fb14910f4b8f7983a27c2f44661de70d09cbe0bc41eddb5fb92948c7d056b-Screenshot_2025-03-26_at_10.07.00.png","",""],"align":"center"}]}[/block]
+5. Click save
+6. Send your request, and you should be able to see a successful response from the API.
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/87ad5b3dc872704af7a9d2039d2d8648478425616e48bd53159cd3ffc8c3bbd1-Screenshot_2025-03-26_at_10.37.35.png",
+        "",
+        ""
+      ],
+      "align": "center"
+    }
+  ]
+}
+[/block]
