@@ -22,18 +22,18 @@ If you're adding, updating or viewing any row the easiest way is to add a [Form 
 
 ![](https://files.readme.io/fcb7ce5-actionsnewrow_1.png "actionsnewrow (1).png")
 
-Updating a row can be done in a number of different ways. If you have a structure containing a [Data provider](https://docs.budibase.com/docs/data-provider) and a [Repeater](https://docs.budibase.com/docs/repeater), selecting the repeater as your <<glossary:Datasource>> will make it so you can correctly get the values from the specific row. To change a field you then take advantage of the add column button that is at the bottom. Click it, select the field you want to change, and type in the value you want to change it to (or use a binding). A descriptive image of this is shown below:
+Updating a row can be done in a number of different ways. If you have a structure containing a [Data provider](https://docs.budibase.com/docs/data-provider) and a [Repeater](https://docs.budibase.com/docs/repeater), selecting the repeater as your <Glossary>Datasource</Glossary> will make it so you can correctly get the values from the specific row. To change a field you then take advantage of the add column button that is at the bottom. Click it, select the field you want to change, and type in the value you want to change it to (or use a binding). A descriptive image of this is shown below:
 
 ![](https://files.readme.io/af5f1c8-actions.png "actions.png")
 
-If you are not using a repeater, an alternative way to update a row is to add the **\_id** column and provide a value that matches an existing id.  
+If you are not using a repeater, an alternative way to update a row is to add the **\_id** column and provide a value that matches an existing id.\
 For example, you could be passing a task id in the URL:
 
 ![](https://files.readme.io/a76c3a3-Screenshot_2022-05-10_at_16.48.11.png "Screenshot 2022-05-10 at 16.48.11.png")
 
 ## Duplicate Row
 
-This action allows you to clone a row into any table with shared column names.  
+This action allows you to clone a row into any table with shared column names.\
 If you are performing this action from a <a href="https://docs.budibase.com/docs/button#adding-buttons-to-table-rows">row button</a> click, then no **\_id** needs to be provided. 
 
 Alternatively, your button could be nested within a [Repeater](https://docs.budibase.com/docs/repeater). The below example shows how this would be setup with a repeater. 
@@ -42,7 +42,7 @@ Alternatively, your button could be nested within a [Repeater](https://docs.budi
 
 ## Delete Row
 
-This action is used to delete rows from your data source. It's used much in the same way that you would when updating a row. The main difference being you don't have to select a data source. You only have to select the table and pass the correct `Row ID` <<glossary:binding>>. For this example we will pass the `Row ID` via a [URL variable](doc:url-parameters), then the `Row ID` will be passed into the delete on click action used to delete the record from the [Budibase DB](doc:budibasedb). 
+This action is used to delete rows from your data source. It's used much in the same way that you would when updating a row. The main difference being you don't have to select a data source. You only have to select the table and pass the correct `Row ID` <Glossary>binding</Glossary>. For this example we will pass the `Row ID` via a [URL variable](doc:url-parameters), then the `Row ID` will be passed into the delete on click action used to delete the record from the [Budibase DB](doc:budibasedb). 
 
 ![Setup for deleting rows from tables.](https://files.readme.io/06d2677-Screenshot_2023-05-18_at_10.06.54.png)
 
@@ -103,5 +103,5 @@ Once this has been done, it should export the rows selected and output it as the
 ![Downloaded CSV due to the result of the export data action.](https://files.readme.io/bb41e11-Screenshot_2023-05-19_at_07.57.15.png)
 
 > 🚧 Limitations
-> 
+>
 > Export data does not work with the [REST API](https://github.com/Budibase/budibase/issues/7348) datasource or other custom queries.
