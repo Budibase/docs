@@ -16,21 +16,21 @@ While bindings are not necessary to build functional forms for the internal [Bud
 
 Furthermore, you may want to read the value of a form field when handling such cases as:
 
-- [On change event](https://docs.budibase.com/docs/actions#on-change)
-- [Conditional UI](doc:conditions)
-- [Filtering](https://docs.budibase.com/docs/searchfilter-data#filtering-data-from-the-front-end)
+* [On change event](https://docs.budibase.com/docs/actions#on-change)
+* [Conditional UI](doc:conditions)
+* [Filtering](https://docs.budibase.com/docs/searchfilter-data#filtering-data-from-the-front-end)
 
 When using a **custom** [Form schema](https://docs.budibase.com/docs/forms#form-schema) bindings will be required when reading and submitting values. For example, you may want to initially read some default values from a REST GET query and then, upon submit, pass your form details through to another REST POST query.
 
-> 👍 
-> 
+> 👍
+>
 > Form data can be passed through to a REST POST query in a similar way as seen in this tutorial: [Posting form data to a custom query](https://docs.budibase.com/docs/data-sources#tutorial-posting-form-data-to-a-custom-query).
 
 ***
 
 ## Default values
 
-A default value binding will be applied on the initial load of a screen. This is useful when pulling values from a <<glossary:Singleton>> source.  
+A default value binding will be applied on the initial load of a screen. This is useful when pulling values from a <Glossary>Singleton</Glossary> source.  
 
 ### Example
 
@@ -38,63 +38,27 @@ Consider a [REST query](doc:rest-queries) that retrieves an employee record for 
 
 #### Step 1 - Setup the repeater block
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/97b11fa-small-GET_employee_row.png",
-        null,
-        "REST query to GET a single employee from rowId binding"
-      ],
-      "align": "center",
-      "caption": "REST query to GET a single employee from rowId binding"
-    }
-  ]
-}
-[/block]
+<Image alt="REST query to GET a single employee from rowId binding" align="center" src="https://files.readme.io/97b11fa-small-GET_employee_row.png">
+  REST query to GET a single employee from rowId binding
+</Image>
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/da569f0-small-Screenshot_2023-05-10_at_13.56.03.png",
-        null,
-        "Selecting the GET query as the data source"
-      ],
-      "align": "center",
-      "caption": "Selecting the GET query as the data source"
-    }
-  ]
-}
-[/block]
+<Image alt="Selecting the GET query as the data source" align="center" src="https://files.readme.io/da569f0-small-Screenshot_2023-05-10_at_13.56.03.png">
+  Selecting the GET query as the data source
+</Image>
 
 After selecting the GET query as the data source for the repeater block, click on the cog icon and provide a binding value. 
 
 In this example I am using the `{{ URL.id }}` binding which is made available through [URL variables](doc:url-parameters). You can however use any value here, including [App state](https://docs.budibase.com/docs/app-state#app-state-in-blocks).
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c632ad8-small-Screenshot_2023-05-10_at_14.00.36.png",
-        null,
-        "Passing the rowId into the GET query"
-      ],
-      "align": "center",
-      "caption": "Passing the rowId into the GET query"
-    }
-  ]
-}
-[/block]
+<Image alt="Passing the rowId into the GET query" align="center" src="https://files.readme.io/c632ad8-small-Screenshot_2023-05-10_at_14.00.36.png">
+  Passing the rowId into the GET query
+</Image>
 
 #### Step 2 - Configure the form
 
-Add a [Form](doc:forms) component with a **Custom** schema. Add the form fields that you would like to pull data into. Make sure to enter a unique name in the _Field_ setting.
+Add a [Form](doc:forms) component with a **Custom** schema. Add the form fields that you would like to pull data into. Make sure to enter a unique name in the *Field* setting.
 
-For the _Default value_ setting, click on the lightning bolt icon, and add the binding to pull out the specific field, for example _Address_:
+For the *Default value* setting, click on the lightning bolt icon, and add the binding to pull out the specific field, for example *Address*:
 
 ![](https://files.readme.io/d64c9ea-small-Screenshot_2023-05-10_at_14.21.20.png)
 
@@ -112,23 +76,23 @@ Note that you may need to refresh the page - remember that default values only a
 
 ## On Change event
 
-If you want to perform [Actions](doc:actions) when a form field value has changed, you can use the _On Change_ event. 
+If you want to perform [Actions](doc:actions) when a form field value has changed, you can use the *On Change* event. 
 
-Within the <<glossary:Settings Panel>> of each form field you can find the `Define action` button beside the _On change_ label.
+Within the <Glossary>Settings Panel</Glossary> of each form field you can find the `Define action` button beside the *On change* label.
 
 ### Tutorial: Calculate age from DOB field
 
-1. Create a new app with a new internal Budibase DB table called **Patients**. Add a [Text](doc:text) field for the _Name_ of the patient, and another [Date/Time](doc:datetime) field for the _DOB_. Add some rows.
+1. Create a new app with a new internal Budibase DB table called **Patients**. Add a [Text](doc:text) field for the *Name* of the patient, and another [Date/Time](doc:datetime) field for the *DOB*. Add some rows.
 
 ![](https://files.readme.io/0ef4ed4-small-Screenshot_2023-05-10_at_14.49.57.png)
 
-2. Add a **List view** [Autogenerated screen](https://docs.budibase.com/docs/screens#autogenerated-screen) for the **Patients** table and [Eject](https://docs.budibase.com/docs/blocks#ejecting-blocks) the [Table block](doc:table-block) and nested _Details_ [Form block](doc:form-block).
-3. In the [Field group](https://docs.budibase.com/docs/forms#field-groups) within the _Details side panel_ form, add another field, this time a [Number field](https://docs.budibase.com/docs/text-inputs#number-field), and make it _Disabled_. Type 'Age' into the _Field_ name setting.
+2. Add a **List view** [Autogenerated screen](https://docs.budibase.com/docs/screens#autogenerated-screen) for the **Patients** table and [Eject](https://docs.budibase.com/docs/blocks#ejecting-blocks) the [Table block](doc:table-block) and nested *Details* [Form block](doc:form-block).
+3. In the [Field group](https://docs.budibase.com/docs/forms#field-groups) within the *Details side panel* form, add another field, this time a [Number field](https://docs.budibase.com/docs/text-inputs#number-field), and make it *Disabled*. Type 'Age' into the *Field* name setting.
 
 ![](https://files.readme.io/34b7ea7-small-Screenshot_2023-05-10_at_14.59.28.png)
 
-4. Next select the _DOB_ field, and click on `Define actions` under the _On change_ setting. Add an **Update Field Value** action for the _Details Form_, and choose the 'Age' field as the target.  
-   For the value, click on the lightning bolt icon and select the _JavaScript_ tab. Here we will calculate the _Age_ from the _DOB_.
+4. Next select the *DOB* field, and click on `Define actions` under the *On change* setting. Add an **Update Field Value** action for the *Details Form*, and choose the 'Age' field as the target.\
+   For the value, click on the lightning bolt icon and select the *JavaScript* tab. Here we will calculate the *Age* from the *DOB*.
 
 ![](https://files.readme.io/a52f4f6-small-Screenshot_2023-05-10_at_15.04.20.png)
 
@@ -155,11 +119,11 @@ return getAge($("Field Value"));
 Make sure to save! Also note the binding that is being used - we want to use the newly selected date value:
 
 > 👍 `{{ Field Value }}`
-> 
+>
 > Gets the current field value.
 
 > ❗️ `{{ Details Form.Fields.DOB }}`
-> 
+>
 > Will get the previous value; before the on change was triggered.
 
 ***
