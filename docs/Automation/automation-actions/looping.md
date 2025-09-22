@@ -10,20 +10,16 @@ metadata:
 next:
   description: ''
 ---
-[block:html]
-{
-  "html": "<iframe src=\"https://player.vimeo.com/video/746819148?h=80df83e472&title=0&portrait=0&byline=0\" style=\"margin-top: -100px; margin-bottom: -80px;\" width=\"640\" height=\"564\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
-}
-[/block]
-
-
+<HTMLBlock>{`
+<iframe src="https://player.vimeo.com/video/746819148?h=80df83e472&title=0&portrait=0&byline=0" style="margin-top: -100px; margin-bottom: -80px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+`}</HTMLBlock>
 
 > 🚧 Iteration hard limit
-> 
+>
 > Users who self-host can configure this by changing the `AUTOMATION_MAX_ITERATIONS` environment variable. 
-> 
-> - For docker-compose users, update docker-compose.yaml > app-service > environment. 
-> - For Kubernetes users update values.yaml > `automationMaxIterations`
+>
+> * For docker-compose users, update docker-compose.yaml > app-service > environment. 
+> * For Kubernetes users update values.yaml > `automationMaxIterations`
 
 Automation looping allows you to repeat an automation action across multiple records. For example, when an automation is triggered, delete the 10 last updated records in my database. Or, every Monday email my users with a usage update.
 
@@ -39,7 +35,7 @@ As shown in the image above, several different configuration options can be prov
 
 ### Array
 
-Array / String dropdown denotes what type of binding should be provided to the loop, and if a different type is passed, Budibase reports error at runtime stating this:  
+Array / String dropdown denotes what type of binding should be provided to the loop, and if a different type is passed, Budibase reports error at runtime stating this:\
  `{ "items": [ { "success": true }, { "success": true } ], "iterations": 2, "success": false, "status": "INCORRECT_TYPE" }`
 
 ### Binding / Value
@@ -48,12 +44,12 @@ Binding / Value is the actual value that you want to loop over
 
 ### Max loop iterations
 
-Max Iterations is a soft limit that is set by the user that defines how many times that automation will run (this is superseded by a hard limit that we or the self-hosting user sets)  
+Max Iterations is a soft limit that is set by the user that defines how many times that automation will run (this is superseded by a hard limit that we or the self-hosting user sets)\
 ` { "items": [ { "success": true } ], "iterations": 1, "success": false, "status": "MAX_ITERATIONS_REACHED" }`
 
 ### Failure conditions
 
-Failure Condition stops the loop whenever the currentItem equals the value provided in the failure condition, then loop is then broken at that particular point and the results up to then provided  
+Failure Condition stops the loop whenever the currentItem equals the value provided in the failure condition, then loop is then broken at that particular point and the results up to then provided\
 `{ "items": [ { "success": true }, { "success": true } ], "iterations": 2, "success": false, "status": "FAILURE_CONDITION_MET" }`
 
 This leads to how we provide the bindings for each step. A block that is being looped gets provided the following binding (in addition to any previous blocks):
