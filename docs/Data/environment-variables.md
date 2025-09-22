@@ -33,7 +33,7 @@ Once the modal opens you'll be able to set the environment variable name and its
 ![](https://files.readme.io/543d5d3-image.png)
 
 > 🚧 Environment variable naming
-> 
+>
 > It is important to pick recognisable names for your environment variables, as these will be how you pick which variables to use within your apps. Your variables also cannot contain spaces, we recommend the use of underscores instead.
 
 At this point you should have created your required environment variables and they should have appeared within the variable table list. From here you can also edit or delete an environment variable, it is important to note the change will be immediate, if you change a value or remove an environment variable, production apps will be affected.
@@ -42,21 +42,7 @@ At this point you should have created your required environment variables and th
 
 To edit or delete an existing environment variables, click the `Edit` button.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/31a150a-Screenshot_2023-08-29_at_10.04.42.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/31a150a-Screenshot_2023-08-29_at_10.04.42.png" />
 
 ## Using environment variables in datasources
 
