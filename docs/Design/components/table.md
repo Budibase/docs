@@ -22,7 +22,7 @@ To get data into the Table, you need to have the table nested in a [Data Provide
 > 
 > Want to quickly load a table with data, plus add search and filter options? Use the [Table block](doc:table-block) instead.
 
-In the <<glossary:Settings Panel>> you will find a lot of options of customization for the Table component. You can find all the definitions below.
+In the [Settings Panel](glossary:Settings Panel) you will find a lot of options of customization for the Table component. You can find all the definitions below.
 
 ## General
 
@@ -110,8 +110,6 @@ The value field allows you to override the value using [Bindings](doc:bindings).
 $ {{ divide Value 100 }}
 ```
 
-
-
 #### Background and Text colour
 
 Then there are the background and text colour fields. They of course go hand-in-hand. When clicking the circle behind the definition, you can pick from predefined colors, or input your own color
@@ -128,7 +126,7 @@ Adding components, such as buttons and links, to your table rows is simple. Addi
 
 Click `Define actions` to run [Actions](doc:actions) on click of a row.
 
-You will be able to use the `{{ Clicked row }}` <<glossary:Binding>> to access the object data of the clicked row. 
+You will be able to use the `{{ Clicked row }}` [Binding](glossary:Binding) to access the object data of the clicked row. 
 
 ![](https://files.readme.io/d0d0c99-Screenshot_2022-12-14_at_10.35.58.png)
 
@@ -136,6 +134,6 @@ You will be able to use the `{{ Clicked row }}` <<glossary:Binding>> to access t
 
 ## Advanced settings
 
-If you need more out of your table such as footers, resizeable and searchable columns, and  [conditional cell UI](https://github.com/Budibase/budibase/discussions/10204), you can check out the community [Super Table](https://github.com/poirazis/bb-component-SuperTable). 
+If you need more out of your table such as footers, resizeable and searchable columns, and [conditional cell UI](https://github.com/Budibase/budibase/discussions/10204), you can check out the community [Super Table](https://github.com/poirazis/bb-component-SuperTable). 
 
 Read more about [Custom plugins](doc:custom-plugin).
