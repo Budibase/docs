@@ -19,7 +19,7 @@ This in-depth guide will explain the best way to deal with data in automations.
 Let's begin to look at the data coming in through a trigger. We're going to be looking at the `Row Created` action, but this same flow also works for all other actions. 
 
 > 👍 Follow along
-> 
+>
 > To follow along with our example, load the csv-data from the [Quickstart](doc:quickstart) guide.
 
 First, define a `Row Created` Trigger.
@@ -45,7 +45,7 @@ And then of course we're setting our value `2015` and the `greater than` conditi
 ![](https://files.readme.io/f9bb2be-condition-configuration.png "condition-configuration.png")
 
 > 👍 Trigger.row
-> 
+>
 > `Trigger.row` will always contain the row from the trigger, in an object format, when the action is row-related. No matter how many actions you've added in between, the data will be there to be used as an object.
 
 ## Querying data with trigger data as filter
@@ -58,7 +58,7 @@ Click the `Define Filters` button  in the `Query Rows` action to get started
 
 ![](https://files.readme.io/e0ba259-define-filters.png "define-filters.png")
 
-A modal will be presented, in which we're going to add a filter for `Year`. Use the `binding` property, and enter \`{{ trigger.row.Year }}\`\`, or click the lightning bolt to use the [Bindings](doc:bindings) overlay.
+A modal will be presented, in which we're going to add a filter for `Year`. Use the `binding` property, and enter \`\{\{ trigger.row\.Year }}\`\`, or click the lightning bolt to use the [Bindings](doc:bindings) overlay.
 
 ![](https://files.readme.io/17c383c-query-rows-filter-year.png "query-rows-filter-year.png")
 
