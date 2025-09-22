@@ -16,7 +16,7 @@ This quick guide demonstrates how to create a JavaScript snippet that adds the c
 
 1. Create a Budibase internal table this should include numeric data and an option which contains currency types e.g. pounds, dollars and euros etc. 
 
-   [block:image]{"images":[{"image":["https://files.readme.io/32a3521-Screenshot_2024-04-19_at_08.49.12.png","","Image showing the table setup for the demoed snippet"],"align":"center"}]}[/block]
+   <Image align="center" src="https://files.readme.io/32a3521-Screenshot_2024-04-19_at_08.49.12.png" />
 2. Add data to your table
 3. Create a new page
 4. Go to the design screen and add a repeater block
@@ -49,16 +49,4 @@ return function(currenyType, number) {
 
 ## The end result!
 
-[block:embed]
-{
-  "html": false,
-  "url": "https://cprem.budibase.app/embed/guide-snippets#/currency",
-  "title": "iframe",
-  "provider": "cprem.budibase.app",
-  "href": "https://cprem.budibase.app/embed/guide-snippets#/currency",
-  "typeOfEmbed": "iframe",
-  "height": "300px",
-  "width": "100%",
-  "iframe": true
-}
-[/block]
+<Embed url="https://cprem.budibase.app/embed/guide-snippets#/currency" title="iframe" provider="cprem.budibase.app" href="https://cprem.budibase.app/embed/guide-snippets#/currency" typeOfEmbed="iframe" height="300px" width="100%" iframe="true" />
