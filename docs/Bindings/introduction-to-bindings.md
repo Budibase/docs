@@ -14,9 +14,9 @@ Bindings are a core concept in Budibase, and expand the functionality of your ap
 
 You can think of bindings as solving these high level problems:
 
-- passing data from one location to another
-- formatting data for display
-- performing calculations
+* passing data from one location to another
+* formatting data for display
+* performing calculations
 
 ***
 
@@ -28,22 +28,9 @@ In its simplest form, a binding is a reference to a dynamic value, and is expres
 
 Whether within the **Design** or **Automate** sections, look out for the lightning bolt icon next to input fields. This indicates that the field supports binding values.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/55d2d63-Screenshot_2023-06-06_at_14.01.15.png",
-        null,
-        "The 'Text' property of the Heading supports bindings"
-      ],
-      "align": "center",
-      "caption": "The 'Text' property of the Heading supports bindings"
-    }
-  ]
-}
-[/block]
-
+<Image alt="The 'Text' property of the Heading supports bindings" align="center" src="https://files.readme.io/55d2d63-Screenshot_2023-06-06_at_14.01.15.png">
+  The 'Text' property of the Heading supports bindings
+</Image>
 
 You can directly type bindings into the text field using double braces, e.g. `{{ Field Value }}`.
 
@@ -57,15 +44,15 @@ It is worth noting that you can combine static text with binding values, which a
 
 ![](https://files.readme.io/2559d51-binding_drawer.gif)
 
-You may have noticed from the demonstration above that each binding indicates the data type along the right hand side, which will usually be a _String_ (text) value such as the first name of the logged in user. 
+You may have noticed from the demonstration above that each binding indicates the data type along the right hand side, which will usually be a *String* (text) value such as the first name of the logged in user. 
 
-If an arrow is present, this means that the item is a category that must be drilled into. In the case of the binding `{{ Current User.firstName }}` we are accessing the _firstName_ text property from the _Current User_ object. 
+If an arrow is present, this means that the item is a category that must be drilled into. In the case of the binding `{{ Current User.firstName }}` we are accessing the *firstName* text property from the *Current User* object. 
 
 ### Auto completion
 
 While the bindings panel provides an easy way to explore available binding options, there is an even faster way when you get comfortable with using bindings.
 
-Within the text area type `{{`. This will immediately prompt a dialog with a scrollable list of binding options. Start typing to filter this list; you filter by the property name, or by the category name. Next use the arrow keys to navigate the list, and press the _Enter_ key to insert the binding you want.
+Within the text area type `{{`. This will immediately prompt a dialog with a scrollable list of binding options. Start typing to filter this list; you filter by the property name, or by the category name. Next use the arrow keys to navigate the list, and press the *Enter* key to insert the binding you want.
 
 ![](https://files.readme.io/3d4e768-binding_auto.gif)
 
@@ -75,29 +62,16 @@ As you can see from the tabs in the bindings drawer, there is the option to use 
 
  If you have any existing text, clicking the JavaScript tab will provide a warning prompt - click `Yes - discard text` to proceed if you wish, but you can always click the `Cancel` button to revert your changes.  
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/97c5c47-Screenshot_2023-06-06_at_15.39.44.png",
-        null,
-        "Switching to JavaScript will overwrite the existing text value"
-      ],
-      "align": "center",
-      "caption": "Switching to JavaScript will overwrite the existing text value"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Switching to JavaScript will overwrite the existing text value" align="center" src="https://files.readme.io/97c5c47-Screenshot_2023-06-06_at_15.39.44.png">
+  Switching to JavaScript will overwrite the existing text value
+</Image>
 
 Auto-completion works in a similar way for JavaScript, however the difference is the symbol used to denote the binding. Instead of using curly braces, simply type the `$` dollar symbol to access the bindings menu.
 
 ![](https://files.readme.io/4e380ab-binding_auto.gif)
 
 > 📘 Return value
-> 
+>
 > JavaScript bindings are considered to be functions, and thus you must always use the `return` keyword to return a value.
 
 ***
@@ -116,24 +90,11 @@ Whenever you add a query for any [Datasource](doc:data-sources) you have the opt
 
 For example consider this [SQL query](https://docs.budibase.com/docs/sql-datasource#add-query):
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f5d6119-Screenshot_2023-06-06_at_16.35.37.png",
-        null,
-        "Get the row entry for Georgi"
-      ],
-      "align": "center",
-      "caption": "Get the row entry for Georgi"
-    }
-  ]
-}
-[/block]
+<Image alt="Get the row entry for Georgi" align="center" src="https://files.readme.io/f5d6119-Screenshot_2023-06-06_at_16.35.37.png">
+  Get the row entry for Georgi
+</Image>
 
-
-To make this query generically useable for retrieving an entry for any name, click the `Add binding` button. Type in a unique name for the binding, and provide a default value. The default value allows you to test that your query is working correctly, and in the case of a _Read_ query, configure the [Schema](https://docs.budibase.com/docs/data-sources#schema).
+To make this query generically useable for retrieving an entry for any name, click the `Add binding` button. Type in a unique name for the binding, and provide a default value. The default value allows you to test that your query is working correctly, and in the case of a *Read* query, configure the [Schema](https://docs.budibase.com/docs/data-sources#schema).
 
 Next you need to reference this binding within your query. You do this through the curly braces syntax:
 
@@ -143,67 +104,28 @@ Next you need to reference this binding within your query. You do this through t
 
 With the bindings configured in the Data section, we can now pass values from the Design section into our query.
 
-As this is a _Read_ query, we can use it as the source for a [Data provider](doc:data-provider). Click the cog icon to open the bindings drawer.
+As this is a *Read* query, we can use it as the source for a [Data provider](doc:data-provider). Click the cog icon to open the bindings drawer.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4ec7d22-Screenshot_2023-06-06_at_16.59.30.png",
-        null,
-        "Selecting a Read query as a data source"
-      ],
-      "align": "center",
-      "caption": "Selecting a Read query as a data source"
-    }
-  ]
-}
-[/block]
+<Image alt="Selecting a Read query as a data source" align="center" src="https://files.readme.io/4ec7d22-Screenshot_2023-06-06_at_16.59.30.png">
+  Selecting a Read query as a data source
+</Image>
 
+<Image alt="Query bindings drawer" align="center" src="https://files.readme.io/1565bba-Screenshot_2023-06-06_at_17.01.30.png">
+  Query bindings drawer
+</Image>
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1565bba-Screenshot_2023-06-06_at_17.01.30.png",
-        null,
-        "Query bindings drawer"
-      ],
-      "align": "center",
-      "caption": "Query bindings drawer"
-    }
-  ]
-}
-[/block]
+You can now see a preview of our query, and also an input field for the *firstName* binding is available. A common scenario would be to use a form text field binding for implementing searching, which would look similar to:
 
-
-You can now see a preview of our query, and also an input field for the _firstName_ binding is available. A common scenario would be to use a form text field binding for implementing searching, which would look similar to:
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6e18fe6-Screenshot_2023-06-07_at_09.06.55.png",
-        null,
-        "Passing the value from a 'first_name' form field into a SQL query"
-      ],
-      "align": "center",
-      "caption": "Passing the value from a 'first_name' form field into a SQL query"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Passing the value from a 'first_name' form field into a SQL query" align="center" src="https://files.readme.io/6e18fe6-Screenshot_2023-06-07_at_09.06.55.png">
+  Passing the value from a 'first\_name' form field into a SQL query
+</Image>
 
 ### Further reading
 
-- [Bindings in forms](doc:form-bindings)
-- [Using query bindings](https://docs.budibase.com/docs/data-sources#using-query-bindings)
-- [REST bindings (tutorial)](doc:rest-bindings)
-- [URL variables](doc:url-parameters)
+* [Bindings in forms](doc:form-bindings)
+* [Using query bindings](https://docs.budibase.com/docs/data-sources#using-query-bindings)
+* [REST bindings (tutorial)](doc:rest-bindings)
+* [URL variables](doc:url-parameters)
 
 ***
 
@@ -217,56 +139,30 @@ To start, create a new app with the [Sample data](https://docs.budibase.com/docs
 
 In the Design section, add a [Form](doc:forms), nest a [Data provider](doc:data-provider) for the **Inventory** table, and nest a [Container](doc:container).
 
-The idea is to have a dropdown for selecting the inventory items on the left, and a table that shows the details for the selected items on the right. At the bottom of the table there will be a headline that prints the sum total _Purchase Price_ of the selected items.
+The idea is to have a dropdown for selecting the inventory items on the left, and a table that shows the details for the selected items on the right. At the bottom of the table there will be a headline that prints the sum total *Purchase Price* of the selected items.
 
 Add a [Multi-select picker](doc:multi-select-picker) to the container. Type in a unique field name, and in the style tab provide a fixed width of `200px`. 
 
-Under the _Options source_ setting, select _Data provider_ and then select the data provider we had added earlier. Set the _Label column_ to 'Item Name', and the _Value column_ to 'Item ID'. 
+Under the *Options source* setting, select *Data provider* and then select the data provider we had added earlier. Set the *Label column* to 'Item Name', and the *Value column* to 'Item ID'. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8ea6535-Screenshot_2023-06-07_at_11.13.33.png",
-        null,
-        "Component tree so far"
-      ],
-      "align": "center",
-      "caption": "Component tree so far"
-    }
-  ]
-}
-[/block]
+<Image alt="Component tree so far" align="center" src="https://files.readme.io/8ea6535-Screenshot_2023-06-07_at_11.13.33.png">
+  Component tree so far
+</Image>
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9a4dd74-Screenshot_2023-06-07_at_11.19.41.png",
-        null,
-        "Multi-select settings"
-      ],
-      "align": "center",
-      "caption": "Multi-select settings"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Multi-select settings" align="center" src="https://files.readme.io/9a4dd74-Screenshot_2023-06-07_at_11.19.41.png">
+  Multi-select settings
+</Image>
 
 With our multi-select configured, now we want to add a table to show more info for the selected items, and add our sum total of prices.
 
 Add a container below the multi-select, and nest another Data provider, which will also be for the **Inventory** table. 
 
 > 🚧 Duplicate data providers
-> 
+>
 > Ideally you should try to minimise the number of data providers on your screen for performance reasons, particularly for the same datasource query/table.
-> 
+>
 > In this case a duplicate data provider is needed because one will be filtered for the table, whereas we always want all rows to be returned for the picker. 
-> 
+>
 > One performance improvement could be to [use custom options](https://docs.budibase.com/docs/option-picker#using-custom-options) if you know the list of options will be static.
 
 Click `Define filters` and add the following:
@@ -285,7 +181,7 @@ Finally below the table component, add a [Headline](https://docs.budibase.com/do
 Total: £{{ sum (pluck Inventory Dataprovider.Rows 'Purchase Price') }}
 ```
 
-In this binding expression we are using **helpers**, which are built-in handlebar functions for manipulating data. Notice that we are using parenthesis to [chain helpers](https://docs.budibase.com/docs/bindings#chaining-helpers) i.e. _pluck_ the purchase prices from the table rows and then _sum_ those values.
+In this binding expression we are using **helpers**, which are built-in handlebar functions for manipulating data. Notice that we are using parenthesis to [chain helpers](https://docs.budibase.com/docs/bindings#chaining-helpers) i.e. *pluck* the purchase prices from the table rows and then *sum* those values.
 
 To see the full list of available helpers, click on the `Helpers` category within the bindings drawer:
 
