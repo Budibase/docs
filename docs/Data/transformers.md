@@ -13,7 +13,7 @@ next:
 In this section, we will cover how to use Budibase data transformers, which can be used as part of data source queries. It is often a requirement when retrieving data from various sources to transform to fit your app's use case - from simply extracting properties from deeper JSON objects to enriching your data with more information transformers can be used for a wide variety of applications. 
 
 > 📘 This section requires JavaScript knowledge
-> 
+>
 > We recommend the Modern [JavaScript Tutorial ](https://javascript.info/)to pick up the basics, for transformers you will specifically benefit from knowledge around data types, such as [Arrays](https://javascript.info/array), [Array Methods](https://javascript.info/array-methods) and [Objects](https://javascript.info/keys-values-entries).
 
 To create a transformer first you need to create an external data source and a query, steps for this can be found in the [External Data Sources](doc:data-sources) section. 
@@ -32,8 +32,8 @@ When you first create a query you'll see the transformer code editor in its own 
 
 ![](https://files.readme.io/d0712b5-transformers.png "transformers.png")
 
-> 📘 
-> 
+> 📘
+>
 > There are two properties that are accessible by default within the transformer. First, the data which as its name suggests contains the data retrieved by the query. Secondly, params, which contain the query bindings/parameters that were provided when it was called.
 
 This will return the data exactly the way it is retrieved from the data source, it is recommended to get your query up and running correctly first before altering your transformer, this will allow you to look at the initial schema of the data returned. In our example so far we have:
@@ -44,7 +44,7 @@ This will return the data exactly the way it is retrieved from the data source, 
 https://api.openbrewerydb.org
 ```
 
-2. Created a query and set the path to _breweries_
+2. Created a query and set the path to *breweries*
 3. Ran the query to see the schema
 
 The schema for this query appears as below:
@@ -63,7 +63,7 @@ You can see the basic transformer we have written to do this below.
 
 Here we have taken the data, written a for loop that iterates through a fills up an object with counts for each state (using the state's name as the key into the object), and finally, we've mapped these totals to our output structure, an object with a state and count property. You can see from this that we can drastically change the format of the data; using JavaScript you can change the data in a multitude of ways.
 
-For the last part, we want to add data that simply isn't a part of the query, enriching the application logic that we've provided as part of the transformer. We are going to add a URL that points to an image of the states flag for each of the state entries, to do this we will create a URL dynamically to <http://flags.ox3.in/> - a repository of SVG flags. You can see the final function which does this below.
+For the last part, we want to add data that simply isn't a part of the query, enriching the application logic that we've provided as part of the transformer. We are going to add a URL that points to an image of the states flag for each of the state entries, to do this we will create a URL dynamically to [http://flags.ox3.in/](http://flags.ox3.in/) - a repository of SVG flags. You can see the final function which does this below.
 
 ![](https://files.readme.io/79ab930-image_6.png "image (6).png")
 
