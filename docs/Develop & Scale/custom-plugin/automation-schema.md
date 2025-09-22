@@ -11,7 +11,7 @@ next:
   description: ''
 ---
 > 📘 Schema JSON changes in development
-> 
+>
 > Changes saved to the schema.json file are not hot reloaded. The app builder must be refreshed.
 
 The automation schema is one of the critical elements that is required for developing a custom automation action. The first step to creating your plugin is defining everything that your automation action will require/return. Below is an example of a basic automation schema - this is the same schema that is provided if you initialise a new automation plugin from the Budibase CLI.
@@ -58,8 +58,6 @@ The automation schema is one of the critical elements that is required for devel
 }
 
 ```
-
-
 
 ### Properties
 
