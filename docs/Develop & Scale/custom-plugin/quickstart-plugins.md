@@ -39,26 +39,11 @@ Password: admin
 
 Credentials to your dev instance will be printed to the console and you can then access your instance: `localhost:10000` and log in.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8d88eb0fc0b4a037ba6bbf63f07ebcea4f9602176a823de793be595f681ea5b6-Screenshot_2024-10-22_at_16.00.32.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="400px" src="https://files.readme.io/8d88eb0fc0b4a037ba6bbf63f07ebcea4f9602176a823de793be595f681ea5b6-Screenshot_2024-10-22_at_16.00.32.png" />
 
 From here, you will be able to access all of your budibase plugins inside the `budibase-plugins` directory.
 
-[block:image]{"images":[{"image":["https://files.readme.io/cd7daec0a8675566a41e31e08a98f0d7ec89b34fe8c7ed6dde2eb64f8344567b-Screenshot_2024-10-22_at_16.01.59.png",null,null],"align":"center"}]}[/block]
+<Image align="center" src="https://files.readme.io/cd7daec0a8675566a41e31e08a98f0d7ec89b34fe8c7ed6dde2eb64f8344567b-Screenshot_2024-10-22_at_16.01.59.png" />
 
 To get started with creating a plugin or a datasource, follow the specific guides.
 
