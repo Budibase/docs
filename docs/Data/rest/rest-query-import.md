@@ -18,9 +18,9 @@ The REST query import feature allows you to import one or more queries at a time
 
 The supported formats for import are:
 
-- Swagger 2.0 / OpenAPI 2.0 (YAML or JSON)
-- Swagger 3.0 / OpenAPI 3.0 (YAML or JSON)
-- CURL
+* Swagger 2.0 / OpenAPI 2.0 (YAML or JSON)
+* Swagger 3.0 / OpenAPI 3.0 (YAML or JSON)
+* CURL
 
  
 
@@ -74,7 +74,7 @@ When the import completes the new queries will be displayed in the data source
 
 To import queries into a new datasource use
 
-- Data > Sources > Add > Rest > Import
+* Data > Sources > Add > Rest > Import
 
 ![](https://files.readme.io/7211f06-rest-query-import-add-new-datasource.png "rest-query-import-add-new-datasource.png")
 
@@ -88,6 +88,6 @@ To import queries into a new datasource use
 
 To import queries into a new datasource use
 
-- Data > Sources > Select REST source > Queries > Import
+* Data > Sources > Select REST source > Queries > Import
 
 ![](https://files.readme.io/fb13a16-Screenshot_2021-12-21_at_16.25.47.png "Screenshot 2021-12-21 at 16.25.47.png")
