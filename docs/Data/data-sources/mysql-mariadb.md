@@ -11,26 +11,14 @@ next:
   description: ''
 ---
 > 👍 SQL Databases
-> 
+>
 > Budibase is designed to integrate with any core SQL database. 
-> 
+>
 > Read more about [SQL Datasources](doc:sql-datasource).
 
 # Video tutorial
 
-[block:embed]
-{
-  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FIyMmw6jENeo%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DIyMmw6jENeo&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FIyMmw6jENeo%2Fhqdefault.jpg&key=7788cb384c9f4d5dbbdbeffd9fe4b92f&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
-  "url": "https://www.youtube.com/watch?v=IyMmw6jENeo",
-  "title": "Build Your Own MySQL Admin Panel - Here's How!",
-  "favicon": "https://www.google.com/favicon.ico",
-  "image": "https://i.ytimg.com/vi/IyMmw6jENeo/hqdefault.jpg",
-  "provider": "youtube.com",
-  "href": "https://www.youtube.com/watch?v=IyMmw6jENeo",
-  "typeOfEmbed": "youtube"
-}
-[/block]
-
+<Embed url="https://www.youtube.com/watch?v=IyMmw6jENeo" title="Build Your Own MySQL Admin Panel - Here's How!" favicon="https://www.google.com/favicon.ico" image="https://i.ytimg.com/vi/IyMmw6jENeo/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=IyMmw6jENeo" typeOfEmbed="youtube" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FIyMmw6jENeo%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DIyMmw6jENeo%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252FIyMmw6jENeo%252Fhqdefault.jpg%26key%3D7788cb384c9f4d5dbbdbeffd9fe4b92f%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
 
 <br />
 
@@ -40,7 +28,7 @@ next:
 
 In this tutorial we will look at building a Budibase app from scratch using a MySQL employees sample database.
 
-The full dataset and installation instructions can be found on [Github: datacharmer/test_db](https://github.com/datacharmer/test_db).
+The full dataset and installation instructions can be found on [Github: datacharmer/test\_db](https://github.com/datacharmer/test_db).
 
 <br />
 
@@ -64,9 +52,9 @@ Click `Save and fetch tables` to finish.
 
 You have the option to provide an SSL which prompts you with two additional fields `key` and `value`. The ssl `key` in the connection options takes a string. There are a lot of different options that can be used here, the 3 main ones are listed below.
 
-- `ca:` The certificate(s) to trust instead of the ones Node.js is configured to trust. This refers to the value of the certificate(s) and not a filename of the certificate(s).
-- `cert:` The client certificate to use in the SSL handshake.
-- `ciphers:` The ciphers to use to use in the SSL handshake instead of the default ones for Node.js.
+* `ca:` The certificate(s) to trust instead of the ones Node.js is configured to trust. This refers to the value of the certificate(s) and not a filename of the certificate(s).
+* `cert:` The client certificate to use in the SSL handshake.
+* `ciphers:` The ciphers to use to use in the SSL handshake instead of the default ones for Node.js.
 
 Additional information on other keys or more information on the 3 listed above can be found [here](https://github.com/mysqljs/mysql#ssl-options).
 
@@ -76,9 +64,9 @@ The `value` is the actual content of the SSL certificate files, and the paths pr
 
 Now that we have pulled in our tables, we need to inform Budibase how the tables relate to each other.
 
-- One Employee -> Many Titles (Historical)
-- One Employee -> Many Salaries (Historical)
-- Many Departments -> Many Employees / Managers
+* One Employee -> Many Titles (Historical)
+* One Employee -> Many Salaries (Historical)
+* Many Departments -> Many Employees / Managers
 
 To define these relationships, click on the MySQL datasource in the datasource list and scroll down to and click `Define relationship`.
 
@@ -86,61 +74,21 @@ To define these relationships, click on the MySQL datasource in the datasource l
 
 For the one employee to many titles and salaries, define a relationship like so:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c2898d9-Screenshot_2023-01-13_at_11.01.12.png",
-        null,
-        "One employee -> Many titles (matching on emp_no) "
-      ],
-      "align": "center",
-      "caption": "One employee -> Many titles (matching on emp_no) "
-    }
-  ]
-}
-[/block]
+<Image alt="One employee -> Many titles (matching on emp_no) " align="center" src="https://files.readme.io/c2898d9-Screenshot_2023-01-13_at_11.01.12.png">
+  One employee -> Many titles (matching on emp\_no) 
+</Image>
 
+For the relationship between **departments** and **employees**, there are joining tables, e.g. **dept\_emp**. Usually we would setup a [many-to-many relationship](https://docs.budibase.com/docs/sql-datasource#many-to-many) using the joining table as the *Through* table. Unfortunately in this case, the joining tables do not meet the requirements outlined by Budibase:
 
-For the relationship between **departments** and **employees**, there are joining tables, e.g. **dept_emp**. Usually we would setup a [many-to-many relationship](https://docs.budibase.com/docs/sql-datasource#many-to-many) using the joining table as the _Through_ table. Unfortunately in this case, the joining tables do not meet the requirements outlined by Budibase:
+<Image alt="dept_emp is not a suitable Budibase joining table" align="center" src="https://files.readme.io/e7fbe2d-Screenshot_2023-01-24_at_14.32.32.png">
+  dept\_emp is not a suitable Budibase joining table
+</Image>
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e7fbe2d-Screenshot_2023-01-24_at_14.32.32.png",
-        null,
-        "dept_emp is not a suitable Budibase joining table"
-      ],
-      "align": "center",
-      "caption": "dept_emp is not a suitable Budibase joining table"
-    }
-  ]
-}
-[/block]
+<Image alt="from_date and to_date are invalid" align="center" width="360px" src="https://files.readme.io/25b5618-Screenshot_2023-01-24_at_14.33.20.png">
+  from\_date and to\_date are invalid
+</Image>
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/25b5618-Screenshot_2023-01-24_at_14.33.20.png",
-        null,
-        "from_date and to_date are invalid"
-      ],
-      "align": "center",
-      "sizing": "360px",
-      "caption": "from_date and to_date are invalid"
-    }
-  ]
-}
-[/block]
-
-
-Luckily, this is an easy fix. Within MySQL Workbench, or through an alter SQL statement, make the **from_date** and **to_date** fields _nullable_ for both joining tables. 
+Luckily, this is an easy fix. Within MySQL Workbench, or through an alter SQL statement, make the **from\_date** and **to\_date** fields *nullable* for both joining tables. 
 
 ```sql
 ALTER TABLE `employees`.`dept_emp` 
@@ -148,67 +96,27 @@ CHANGE COLUMN `from_date` `from_date` DATE NULL ,
 CHANGE COLUMN `to_date` `to_date` DATE NULL ;
 ```
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3a97ed0-Screenshot_2023-01-24_at_14.34.37.png",
-        null,
-        "dept_emp is now a suitable joining table"
-      ],
-      "align": "center",
-      "sizing": "360px",
-      "caption": "dept_emp is now a suitable joining table"
-    }
-  ]
-}
-[/block]
+<Image alt="dept_emp is now a suitable joining table" align="center" width="360px" src="https://files.readme.io/3a97ed0-Screenshot_2023-01-24_at_14.34.37.png">
+  dept\_emp is now a suitable joining table
+</Image>
 
+Adding the Many -> Many relationships for **dept\_emp** should now work. 
 
-Adding the Many -> Many relationships for **dept_emp** should now work. 
-
-> 📘 
-> 
+> 📘
+>
 > Make sure to re-fetch the tables to pull down the new schema information!
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/dc6c57f-Screenshot_2023-01-24_at_14.36.34.png",
-        null,
-        "Many Departments -> Many Employees"
-      ],
-      "align": "center",
-      "caption": "Many Departments -> Many Employees"
-    }
-  ]
-}
-[/block]
+<Image alt="Many Departments -> Many Employees" align="center" src="https://files.readme.io/dc6c57f-Screenshot_2023-01-24_at_14.36.34.png">
+  Many Departments -> Many Employees
+</Image>
 
+An additional Many -> Many relationship cannot be added for two tables that already have a Many -> Many relationship established, but for this tutorial we do not need the **dept\_manager** table.
 
-An additional Many -> Many relationship cannot be added for two tables that already have a Many -> Many relationship established, but for this tutorial we do not need the **dept_manager** table.
+Because the Many -> Many relationship between **departments** and **employees** will pull down a huge amount of information, we will also create a Custom SQL query called *Get Departments Only* to simply get the departments without any employee data when needed.
 
-Because the Many -> Many relationship between **departments** and **employees** will pull down a huge amount of information, we will also create a Custom SQL query called _Get Departments Only_ to simply get the departments without any employee data when needed.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ef5e5a4-Screenshot_2023-01-24_at_15.19.04.png",
-        null,
-        "Simple select statement with no relationship data"
-      ],
-      "align": "center",
-      "caption": "Simple select statement with no relationship data"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Simple select statement with no relationship data" align="center" src="https://files.readme.io/ef5e5a4-Screenshot_2023-01-24_at_15.19.04.png">
+  Simple select statement with no relationship data
+</Image>
 
 In the end your relationships table should look something like so:
 
@@ -218,28 +126,15 @@ By default the display name for the relationships will be the ID, but this isn't
 
 ![](https://files.readme.io/1dc770b-Screenshot_2023-01-16_at_11.14.36.png)
 
-To improve upon this, we can [select a display column](https://docs.budibase.com/docs/budibasedb#selecting-the-display-column) for each table. This will be the column that appears in the relationship pills. As an example, for the **employees** table, edit the **first_name** column and toggle `Use as table display column` on.
+To improve upon this, we can [select a display column](https://docs.budibase.com/docs/budibasedb#selecting-the-display-column) for each table. This will be the column that appears in the relationship pills. As an example, for the **employees** table, edit the **first\_name** column and toggle `Use as table display column` on.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c961295-Screenshot_2023-01-16_at_09.06.08.png",
-        null,
-        "Setting the first_name to be the display column"
-      ],
-      "align": "center",
-      "caption": "Setting the first_name to be the display column"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Setting the first_name to be the display column" align="center" src="https://files.readme.io/c961295-Screenshot_2023-01-16_at_09.06.08.png">
+  Setting the first\_name to be the display column
+</Image>
 
 The employee relationship in the related tables, such as **titles**, is now more human readable. You can also use [Formula](doc:formula) columns to combine the first and last names of the employee into a single display column.
 
-Create a new formula column in the employees table called 'full_name' with the following binding expression: `{{ first_name }} {{ last_name }}`. Set this column as the table display column.
+Create a new formula column in the employees table called 'full\_name' with the following binding expression: `{{ first_name }} {{ last_name }}`. Set this column as the table display column.
 
 ![](https://files.readme.io/9e0a2e4-Screenshot_2023-01-16_at_11.15.34.png)
 
@@ -251,50 +146,30 @@ Now that we have the data pulled into Budibase, let's create a screen that allow
 
 ### Step 1 - Adding the row explorer
 
-On the home screen, click `Add component` and select the _Row Explorer Block_. For the table select **departments**, and remove the height - we will display all nine departments at once without the need for scroll.
+On the home screen, click `Add component` and select the *Row Explorer Block*. For the table select **departments**, and remove the height - we will display all nine departments at once without the need for scroll.
 
-Next in the _Cards_ section, set the _Title_ to match the **dept_name**, and remove the _Subtitle_ and _Description_.
+Next in the *Cards* section, set the *Title* to match the **dept\_name**, and remove the *Subtitle* and *Description*.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0a23cb5-Screenshot_2023-01-18_at_09.46.13.png",
-        null,
-        "Selecting the department name as the card title"
-      ],
-      "align": "center",
-      "caption": "Selecting the department name as the card title"
-    }
-  ]
-}
-[/block]
+<Image alt="Selecting the department name as the card title" align="center" src="https://files.readme.io/0a23cb5-Screenshot_2023-01-18_at_09.46.13.png">
+  Selecting the department name as the card title
+</Image>
 
+<Image
+  alt="List of clickable department names
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0d521d6-Screenshot_2023-01-18_at_09.54.47.png",
-        null,
-        "List of clickable department names\n\n"
-      ],
-      "align": "center",
-      "caption": "List of clickable department names"
-    }
-  ]
-}
-[/block]
-
+"
+  align="center"
+  src="https://files.readme.io/0d521d6-Screenshot_2023-01-18_at_09.54.47.png"
+>
+  List of clickable department names
+</Image>
 
 #### (Optional) Adding icons for each department
 
-To add a little bit of flavour to the row explorer, we can provide an _Image URL_ for each department. One way to do this would be to host the images in a public repository and name the files to match the department names. Another approach is to create a column in your table to store a URL icon path, which is what we'll do in this example.
+To add a little bit of flavour to the row explorer, we can provide an *Image URL* for each department. One way to do this would be to host the images in a public repository and name the files to match the department names. Another approach is to create a column in your table to store a URL icon path, which is what we'll do in this example.
 
 1. Within Budibase, click on the **departments** table, and click `Create column`.
-2. Add a [Text](doc:text) column called **icon_url**.
+2. Add a [Text](doc:text) column called **icon\_url**.
 3. For each department row, add a URL path to an appropriate icon. I have found [svgrepo.com](https://www.svgrepo.com/) to be a good resource for free SVG icons. For your convenience, I have provided SQL update statements:
 
 ```mysql
@@ -309,24 +184,11 @@ UPDATE departments SET icon_url = 'https://www.svgrepo.com/show/119008/research.
 UPDATE departments SET icon_url = 'https://www.svgrepo.com/show/429955/customer-service-hotel.svg' WHERE dept_no = 'd009';
 ```
 
-4. In the Design section, click on the Row Explorer block and set the Image URL to the **icon_url** field.
+4. In the Design section, click on the Row Explorer block and set the Image URL to the **icon\_url** field.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8704746-Screenshot_2023-01-18_at_13.41.43.png",
-        null,
-        "Selecting an image url"
-      ],
-      "align": "center",
-      "caption": "Selecting an image url"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Selecting an image url" align="center" src="https://files.readme.io/8704746-Screenshot_2023-01-18_at_13.41.43.png">
+  Selecting an image url
+</Image>
 
 5. The image icons are not in the correct aspect ratio or a consistent size, but we can use the following [Global styling](https://docs.budibase.com/docs/custom-css#global-styling) to format the background image as needed:
 
@@ -345,9 +207,9 @@ UPDATE departments SET icon_url = 'https://www.svgrepo.com/show/429955/customer-
 
 ### Step 2 - Adding the manager and employee cards
 
-After ejecting the row explorer block, we need to change the Data provider source to the _Get Departments Only_ as we do not want the relational employee data in this simple list of departments.
+After ejecting the row explorer block, we need to change the Data provider source to the *Get Departments Only* as we do not want the relational employee data in this simple list of departments.
 
-In addition, the auto-generated click action of the `Spectrumcard` will need to be updated. Click `Define actions` and change the state value to the _dept_no_ from the query:
+In addition, the auto-generated click action of the `Spectrumcard` will need to be updated. Click `Define actions` and change the state value to the *dept\_no* from the query:
 
 ![](https://files.readme.io/cb0670d-Screenshot_2023-01-24_at_15.23.23.png)
 
@@ -355,7 +217,7 @@ At the moment upon previewing the app, a basic form is shown on click of each de
 
 First delete the [Form block](doc:form-block) and button components from the container. Next we want to make sure the clicked department name is available in the explorer panel. To do this, we will push the clicked row department name into [App state](doc:app-state). 
 
-Click on the `Spectrumcard` component and within the <<glossary:Settings Panel>>    click `Define actions`. Then click `Add Action` -> `Update State` and set a variable called _DepartmentName_ as follows:
+Click on the `Spectrumcard` component and within the <Glossary>Settings Panel</Glossary>    click `Define actions`. Then click `Add Action` -> `Update State` and set a variable called *DepartmentName* as follows:
 
 ![](https://files.readme.io/f44299b-Screenshot_2023-01-18_at_14.12.22.png)
 
@@ -371,7 +233,7 @@ JOIN titles t on t.emp_no = e.emp_no
 WHERE d.dept_name = {{ dept_name }} AND (e.emp_no, t.from_date) in (select t.emp_no, max(t.from_date) from titles t group by emp_no)
 ```
 
-Also add a binding for the **dept_name**, and give the query the name _Get Managers by Department Name_. Make sure to save!
+Also add a binding for the **dept\_name**, and give the query the name *Get Managers by Department Name*. Make sure to save!
 
 ![](https://files.readme.io/25ac3f3-Screenshot_2023-01-24_at_14.23.08.png)
 
@@ -379,11 +241,11 @@ Back to the Design section, add a [Cards Block](https://docs.budibase.com/docs/b
 
 ![](https://files.readme.io/6bb10dd-Screenshot_2023-01-24_at_14.25.46.png)
 
-Within the _Cards_ section set the _Title_ to `{{ Managers.Get Managers by Department Name.first_name }} {{ Managers.Get Managers by Department Name.last_name }}`. 
+Within the *Cards* section set the *Title* to `{{ Managers.Get Managers by Department Name.first_name }} {{ Managers.Get Managers by Department Name.last_name }}`. 
 
-For the _Description_, we want to display the managers current (most recent) job title: `{{ Managers.Get Managers by Department Name.title }}`
+For the *Description*, we want to display the managers current (most recent) job title: `{{ Managers.Get Managers by Department Name.title }}`
 
-With the card block setup, it is also worth adding a headline component to indicate which department has been selected. Above the cards block, add the headline component with the title `{{ State.DepartmentName }}`. Add some styling such as margin bottom and _Extra Large_ size.
+With the card block setup, it is also worth adding a headline component to indicate which department has been selected. Above the cards block, add the headline component with the title `{{ State.DepartmentName }}`. Add some styling such as margin bottom and *Extra Large* size.
 
 A preview of the app should show the following so far:
 
@@ -397,53 +259,27 @@ As this data set has thousands of employees per department, cards are not an ide
 
 To get started, click `Add screen` and select `Autogenerated screens`. Tick the **employees** table and confirm.
 
-Next we want to be able to pass through the **emp_no** and **dept_name** from the home screen. To support this, configure the screen route as follows:
+Next we want to be able to pass through the **emp\_no** and **dept\_name** from the home screen. To support this, configure the screen route as follows:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a31b79b-Screenshot_2023-01-18_at_17.52.18.png",
-        null,
-        "Employees screen with two variables"
-      ],
-      "align": "center",
-      "caption": "Employees screen with two variables"
-    }
-  ]
-}
-[/block]
+<Image alt="Employees screen with two variables" align="center" src="https://files.readme.io/a31b79b-Screenshot_2023-01-18_at_17.52.18.png">
+  Employees screen with two variables
+</Image>
 
+Use the name URL variable in the *Title* of the table block. 
 
-Use the name URL variable in the _Title_ of the table block. 
+<Image alt="Access the department name from the URL" align="center" src="https://files.readme.io/7ce80ef-Screenshot_2023-01-18_at_17.55.05.png">
+  Access the department name from the URL
+</Image>
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7ce80ef-Screenshot_2023-01-18_at_17.55.05.png",
-        null,
-        "Access the department name from the URL"
-      ],
-      "align": "center",
-      "caption": "Access the department name from the URL"
-    }
-  ]
-}
-[/block]
-
-
-With so many records, search will be very important. Under _Search Fields_ select some searchable fields.
+With so many records, search will be very important. Under *Search Fields* select some searchable fields.
 
 ![](https://files.readme.io/230109c-Screenshot_2023-01-19_at_10.07.57.png)
 
-Now let's make use of the `{{ URL.id }}` binding to filter our employees by department. `Define filters` of the table block. The **dept_no** will be available via the **dept_emp** relationship, and we can match that against the ID in the URL as follows:
+Now let's make use of the `{{ URL.id }}` binding to filter our employees by department. `Define filters` of the table block. The **dept\_no** will be available via the **dept\_emp** relationship, and we can match that against the ID in the URL as follows:
 
 ![](https://files.readme.io/c494ff9-Screenshot_2023-01-24_at_15.16.04.png)
 
-Also set the _Scroll Limit_ of the table block to 50.
+Also set the *Scroll Limit* of the table block to 50.
 
 We will also want to `Configure columns`. Click on `Add all columns` and then press the `x` beside the **departments** column. We don't want to display the relationship because it will be the same for all rows.
 
@@ -451,7 +287,7 @@ We will also want to `Configure columns`. Click on `Add all columns` and then pr
 
 The employee screen is ready to go, but we still need to link it to the home screen. 
 
-Add a [Link](doc:link) component underneath the _Managers_ card block. Add some margin top for some space. Give the URL the following binding: `/employees/{{ State.cAF3fs8fNJ }}/{{ State.DepartmentName }}`. The ID state will be different in your case.
+Add a [Link](doc:link) component underneath the *Managers* card block. Add some margin top for some space. Give the URL the following binding: `/employees/{{ State.cAF3fs8fNJ }}/{{ State.DepartmentName }}`. The ID state will be different in your case.
 
 ![](https://files.readme.io/6e346f7-linking.gif)
 
@@ -461,13 +297,13 @@ Add a [Link](doc:link) component underneath the _Managers_ card block. Add some 
 
 The **salaries** table holds a historic record of each employees salary at a particular time. This time series can be displayed in a chart.
 
-Eject the Table block in the _employees_ screen. 
+Eject the Table block in the *employees* screen. 
 
-Within the newly exposed _Details side panel_, select the _Details form block_ and deselect **departments** and **salaries** from the _Fields_ dropdown. We already know the department from the table heading, and we will be displaying the salaries in a chart instead of the [Multi-select picker](doc:multi-select-picker).
+Within the newly exposed *Details side panel*, select the *Details form block* and deselect **departments** and **salaries** from the *Fields* dropdown. We already know the department from the table heading, and we will be displaying the salaries in a chart instead of the [Multi-select picker](doc:multi-select-picker).
 
 ![](https://files.readme.io/63f7e05-Screenshot_2023-02-07_at_14.07.32.png)
 
-We also want to make sure that we pass the correct ID through to state when clicking on a row. Click on the Table underneath the Data provider, and click `Define actions` under the _On Row Click_ section of the <<glossary:Settings Panel>>.
+We also want to make sure that we pass the correct ID through to state when clicking on a row. Click on the Table underneath the Data provider, and click `Define actions` under the *On Row Click* section of the <Glossary>Settings Panel</Glossary>.
 
 By default you will see the value binding of `{{ Clicked row._id }}` for the **Update State** action. Replace this with `{{ Clicked row.emp_no }}` as we want to use the actual primary key and not the URL-safe encoded link.
 
@@ -475,35 +311,44 @@ By default you will see the value binding of `{{ Clicked row._id }}` for the **U
 
 ### Adding the chart
 
-Under the _Details form block_ add a [Chart block](https://docs.budibase.com/docs/blocks#chart-block). Choose a _Chart Type_ of 'Line' and the **salaries** table as the datasource. Set the title to 'Salary History'. 
+Under the *Details form block* add a [Chart block](https://docs.budibase.com/docs/blocks#chart-block). Choose a *Chart Type* of 'Line' and the **salaries** table as the datasource. Set the title to 'Salary History'. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6cf80fd-Screenshot_2023-02-07_at_14.29.21.png",
-        null,
-        "Salaries Line Chart block"
-      ],
-      "align": "center",
-      "caption": "Salaries Line Chart block"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Salaries Line Chart block" align="center" src="https://files.readme.io/6cf80fd-Screenshot_2023-02-07_at_14.29.21.png">
+  Salaries Line Chart block
+</Image>
 
 Next `Define filters` to add a filter on the employee number as follows:
 
 ![](https://files.readme.io/cd47442-Screenshot_2023-03-14_at_08.36.10.png)
 
-> 📘 
-> 
+> 📘
+>
 > The State ID will only be set when a row is clicked, thus the chart display in the builder may display differently than the previewed/published app.
 
-Finally select the **from_date** column as the _Label Col._ and the **salary** column as the _Data Col._. A _Stepline_ curve is the ideal way to display this data.
+Finally select the **from\_date** column as the *Label Col.* and the **salary** column as the *Data Col.*. A *Stepline* curve is the ideal way to display this data.
 
-| Config                                                                                                       | Result                                                                              |
-| :----------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- |
-| <img src="https://files.readme.io/a40684d-Screenshot_2023-02-07_at_14.42.07.png" width="300" height="480" /> | <img src="https://files.readme.io/1c35f3b-Screenshot_2023-02-07_at_14.46.03.png" /> |
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Config
+      </th>
+
+      <th>
+        Result
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        <img src="https://files.readme.io/a40684d-Screenshot_2023-02-07_at_14.42.07.png" width="300" height="480" />
+      </td>
+
+      <td>
+        <img src="https://files.readme.io/1c35f3b-Screenshot_2023-02-07_at_14.46.03.png" />
+      </td>
+    </tr>
+  </tbody>
+</Table>
