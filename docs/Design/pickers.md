@@ -26,8 +26,6 @@ The [Options Picker](doc:option-picker) only allows the user to select a single 
 
 The [Relationship picker](doc:filter-by-relationships) should always be used to handle [Relationship](doc:relationships) fields.
 
-
-
 ## Date picker
 
 The [Date Picker](doc:date-picker) allows a user to select a [Date/Time](https://docs.budibase.com/docs/datetime) from a pop-up calendar.
