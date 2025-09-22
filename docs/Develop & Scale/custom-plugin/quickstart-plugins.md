@@ -37,26 +37,9 @@ Email: admin@admin.com
 Password: admin
 ```
 
-
-
 Credentials to your dev instance will be printed to the console and you can then access your instance: `localhost:10000` and log in.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/cf9030c-Screenshot_2022-10-01_at_12.19.52.png",
-        null,
-        ""
-      ],
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
-
+<Image width="400px" src="https://files.readme.io/cf9030c-Screenshot_2022-10-01_at_12.19.52.png" />
 
 From here, you will be able to access all of your budibase plugins inside the `budibase-plugins` directory.
 
