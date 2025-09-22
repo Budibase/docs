@@ -29,14 +29,12 @@ docker run -d -t \
   budibase/budibase:latest
 ```
 
-
-
 This command will start a Budibase container on your system, which you can then connect to on [\<\<\<http://localhost:10000>>>](http://localhost:10000). For this to work you will also need to specify an absolute path to mount as a volume for the container, replacing the `/local/path/data` component of the command.
 
 There are a few other parts of this command we can change, as well as a range of environment variables that should be set before using this in a production environment.
 
-- The port which Budibase can be accessed on can be changed by altering the `-p 10000:80` component, changing from port 10000 to whatever else is desired.
-- The following environment variables should be set before putting this container into production (using the `-e <variable>` syntax).
+* The port which Budibase can be accessed on can be changed by altering the `-p 10000:80` component, changing from port 10000 to whatever else is desired.
+* The following environment variables should be set before putting this container into production (using the `-e <variable>` syntax).
 
 | Variable name                             | Description                                                                                                                                                                                                                                        |
 | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -78,8 +76,6 @@ volumes:
     driver: local
 ```
 
-
-
 This makes it easier to manage your Budibase image, including its configuration and volumes - all that is needed to utilise the configuration is replacing the `<secret>` options with secrets you have defined.
 
 <br />
@@ -89,8 +85,6 @@ This makes it easier to manage your Budibase image, including its configuration 
 If you need to use a custom certificate file in your self-hosted Budibase instance, you will need to add an environment variable to both the **server** and **worker** containers.
 
 See this [discussion answer](https://github.com/Budibase/budibase/discussions/3917#discussioncomment-3270109) for more details!
-
-
 
 <br />
 
