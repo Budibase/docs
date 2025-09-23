@@ -19,11 +19,11 @@ next:
 The Budibase CLI tool can be used to create a new Budibase installation, to manage an existing installation, make backups or update a Budibase installation to a new version. The video below summarises the tool with further instructions below.
 
 <div style={{ padding: "65% 0 0 0", position: "relative" }}>
-  <iframe src="https://player.vimeo.com/video/712761948?h=e662bd81f5&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }} title="cli-tool.mp4"></iframe>
+  <iframe src="https://player.vimeo.com/video/712761948?h=e662bd81f5&badge=0&autopause=0&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }} title="cli-tool.mp4"></iframe>
 </div>
 <script src="https://player.vimeo.com/api/player.js"></script>
 
-## Install Budibase CLI
+## Install Budibase CLI\]
 
 ### Prerequisites
 
@@ -70,16 +70,7 @@ budi hosting --init
 
 The commands below can be viewed in this recipe if desired:
 
-[block:tutorial-tile]
-{
-  "backgroundColor": "#018FF4",
-  "emoji": "🤖",
-  "id": "6877536416c408d28fc89e4e",
-  "link": "https://docs.budibase.com/v1.0.9/recipes/budibase-cli-setup-npm",
-  "slug": "budibase-cli-setup-npm",
-  "title": "Budibase CLI setup [NPM]"
-}
-[/block]
+🤖 [Budibase CLI setup [NPM]](https://docs.budibase.com/v1.0.9/recipes/budibase-cli-setup-npm)
 
 You can view, copy or backup your `.env` file at this point:
 
