@@ -24,42 +24,22 @@ To get data into the Table, you need to have the table nested in a [Data Provide
 >
 > Alternatively if your users simply need a data interface without actions, then use the [Grid block](doc:grid-block).
 
-In the <<glossary:Settings Panel>> you will find a lot of options of customization for the Table component. You can find all the definitions below.
+In the **Settings Panel** you will find a lot of options of customization for the Table component. You can find all the definitions below.
 
 ## General
 
 There are several general settings for Table, most of which are shared with other components as well.
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Setting",
-    "h-1": "Description",
-    "0-0": "Name",
-    "0-1": "The name of the table, which is not visible to the users, but visible in the structure sidebar",
-    "1-0": "Data Provider",
-    "1-1": "The provider of data for this table, this most likely is the wrapping component in your structure.",
-    "2-0": "Row Count",
-    "2-1": "The number of rows you want to have visible",
-    "3-0": "Columns",
-    "3-1": "Configure which columns you want to have displayed. See detailed explanation below",
-    "4-0": "Size",
-    "4-1": "Medium or Large font size",
-    "5-0": "Quiet",
-    "5-1": "Removes background-colour",
-    "6-0": "Compact",
-    "6-1": "Makes all the margins and paddings smaller, allowing for more data on screen at once.",
-    "7-0": "Allow row selection",
-    "7-1": "Adds checkboxes in front of rows, allowing your users to select one or more rows.  \n  \nThis will enable the `{ <table-name>.Selected rows }` binding.  \n  \n_Row selection is only compatible with internal or SQL tables_"
-  },
-  "cols": 2,
-  "rows": 8,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Setting | Description |
+|---------|-------------|
+| Name | The name of the table, which is not visible to the users, but visible in the structure sidebar |
+| Data Provider | The provider of data for this table, this most likely is the wrapping component in your structure. |
+| Row Count | The number of rows you want to have visible |
+| Columns | Configure which columns you want to have displayed. See detailed explanation below |
+| Size | Medium or Large font size |
+| Quiet | Removes background-colour |
+| Compact | Makes all the margins and paddings smaller, allowing for more data on screen at once. |
+| Allow row selection | Adds checkboxes in front of rows, allowing your users to select one or more rows.<br/><br/>This will enable the `{{ <table-name>.Selected rows }}` binding.<br/><br/>_Row selection is only compatible with internal or SQL tables_ |
 
 ## Configure columns
 
@@ -128,7 +108,7 @@ Adding components, such as buttons and links, to your table rows is simple. Addi
 
 Click `Define actions` to run [Actions](doc:actions) on click of a row.
 
-You will be able to use the `{ Clicked row }` <<glossary:Binding>> to access the object data of the clicked row.
+You will be able to use the `{{ Clicked row }}` **Binding** to access the object data of the clicked row.
 
 ![](https://files.readme.io/d0d0c99-Screenshot_2022-12-14_at_10.35.58.png)
 
