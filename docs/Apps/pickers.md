@@ -32,22 +32,10 @@ The [Date Picker](doc:date-picker) allows a user to select a [Date/Time](https:/
 
 ## User Field
 
-A special field type that only works with the [User](doc:users-1) data type. If the _Allow multiple users_ is selected, then it will automatically allow multiple selections, otherwise only one user can be chosen.
+A special field type that only works with the [User](doc:users-1) data type. If the *Allow multiple users* is selected, then it will automatically allow multiple selections, otherwise only one user can be chosen.
 
 It can also be optionally searched on the users email address.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8342404-Screenshot_2023-11-03_at_16.45.55.png",
-        "",
-        "Adding a user field"
-      ],
-      "align": "center",
-      "caption": "Adding a user field"
-    }
-  ]
-}
-[/block]
+<Image alt="Adding a user field" align="center" src="https://files.readme.io/8342404-Screenshot_2023-11-03_at_16.45.55.png">
+  Adding a user field
+</Image>
