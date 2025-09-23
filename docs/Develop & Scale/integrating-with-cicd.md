@@ -12,21 +12,7 @@ next:
 ---
 A common need among Budibase users is the ability to deploy two or more segregated Budibase environments and migrate app changes between them.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/66d936f31d37950abeadf9892a79ad6adb49e63790d5cba31446e5493b726188-Mikes_Playground_-_Frame_7_2.jpg",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/66d936f31d37950abeadf9892a79ad6adb49e63790d5cba31446e5493b726188-Mikes_Playground_-_Frame_7_2.jpg" />
 
 You can set up this deployment process using the following steps, using the Budibase API. Note that importing and exporting API endpoints are not available on free or open-source tiers.
 
@@ -48,39 +34,11 @@ The process is as follows:
 
 For example, we can add `pg_host` and `pg_password` variables in both instances.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3b93134b6bf44f6dd20d1b492911792f2604f2ecd059d1950e3a2e816ac68f0e-env_vars.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/3b93134b6bf44f6dd20d1b492911792f2604f2ecd059d1950e3a2e816ac68f0e-env_vars.png" />
 
 Now I can configure my Postgres connection to use these variables.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/81875ffe7808c5362cce45e63012450293e63d6105ecbb5f09da9f4033628bcd-pg_connection.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/81875ffe7808c5362cce45e63012450293e63d6105ecbb5f09da9f4033628bcd-pg_connection.png" />
 
 <br />
 
@@ -92,44 +50,147 @@ The result: my development environment connects to a different database than my 
 
 The bash script below uses the following variables. You'll need to supply these variables from your CI/CD pipeline.
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Variable name",
-    "h-1": "Description",
-    "h-2": "Example",
-    "0-0": "BUDIBASE_SOURCE_TENANT",
-    "0-1": "Required  \n  \nThe root URL of our budibase development instance.",
-    "0-2": "`https://dev_instance.budibase.app`",
-    "1-0": "BUDIBASE_SOURCE_API_KEY",
-    "1-1": "Required  \n  \nAPI Key of your development instance",
-    "1-2": "[How to get your API key](https://docs.budibase.com/docs/public-api#how-to-get-your-api-key)",
-    "2-0": "BUDIBASE_SOURCE_APP_ID",
-    "2-1": "Required  \n  \nThe app ID that you would like to deploy  \n  \nYou should treat this as a secret.",
-    "2-2": "`app_<uuid>` - will deploy the published verison of your app.  \n  \nOr  \n  \n`app_dev_<uuid>` - will deploy the latest, unpublish version of your app.  \n  \nE.g. `app_75907e45dbef4fdcbe6f079b3a5f0b2d`",
-    "3-0": "BUDIBASE_DESTINATION_TENANT",
-    "3-1": "Required  \n  \nThe root URL of our budibase production instance.",
-    "3-2": "`https://prod_instance.budibase.app`",
-    "4-0": "BUDIBASE_DESTINATION_API_KEY",
-    "4-1": "Required  \n  \nAPI Key of your production instance.  \n  \nYou should treat this as a secret.",
-    "4-2": "[How to get your API key](https://docs.budibase.com/docs/public-api#how-to-get-your-api-key) ",
-    "5-0": "BUDIBASE_DESTINATION_APP_ID",
-    "5-1": "Required  \n  \nThe app ID that you would like to deploy",
-    "5-2": "`app_dev_<uuid>`",
-    "6-0": "BUDIBASE_PUBLISH_DESTINATION_APP",
-    "6-1": "Optional  \n  \nWhether you'd like to auto-publish your app in production. Defaults to `false`",
-    "6-2": "`true`or`false`"
-  },
-  "cols": 3,
-  "rows": 7,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+<Table align={["left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Variable name
+      </th>
 
+      <th>
+        Description
+      </th>
+
+      <th>
+        Example
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        BUDIBASE\_SOURCE\_TENANT
+      </td>
+
+      <td>
+        Required  
+
+        The root URL of our budibase development instance.
+      </td>
+
+      <td>
+        `https://dev_instance.budibase.app`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        BUDIBASE\_SOURCE\_API\_KEY
+      </td>
+
+      <td>
+        Required  
+
+        API Key of your development instance
+      </td>
+
+      <td>
+        [How to get your API key](https://docs.budibase.com/docs/public-api#how-to-get-your-api-key)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        BUDIBASE\_SOURCE\_APP\_ID
+      </td>
+
+      <td>
+        Required  
+
+        The app ID that you would like to deploy  
+
+        You should treat this as a secret.
+      </td>
+
+      <td>
+        `app_<uuid>` - will deploy the published verison of your app.  
+
+        Or  
+
+        `app_dev_<uuid>` - will deploy the latest, unpublish version of your app.  
+
+        E.g. `app_75907e45dbef4fdcbe6f079b3a5f0b2d`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        BUDIBASE\_DESTINATION\_TENANT
+      </td>
+
+      <td>
+        Required  
+
+        The root URL of our budibase production instance.
+      </td>
+
+      <td>
+        `https://prod_instance.budibase.app`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        BUDIBASE\_DESTINATION\_API\_KEY
+      </td>
+
+      <td>
+        Required  
+
+        API Key of your production instance.  
+
+        You should treat this as a secret.
+      </td>
+
+      <td>
+        [How to get your API key](https://docs.budibase.com/docs/public-api#how-to-get-your-api-key) 
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        BUDIBASE\_DESTINATION\_APP\_ID
+      </td>
+
+      <td>
+        Required  
+
+        The app ID that you would like to deploy
+      </td>
+
+      <td>
+        `app_dev_<uuid>`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        BUDIBASE\_PUBLISH\_DESTINATION\_APP
+      </td>
+
+      <td>
+        Optional  
+
+        Whether you'd like to auto-publish your app in production. Defaults to `false`
+      </td>
+
+      <td>
+        `true`or`false`
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 <br />
 
