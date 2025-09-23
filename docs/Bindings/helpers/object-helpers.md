@@ -60,7 +60,7 @@ Here's the syntax for using the "forOwn" helper:
 {{/forOwn}}
 ```
 
-The "obj" argument is the object whose own properties you want to iterate over. Inside the block, you can access the current key and value of each property using the {{ @key }} and {{ . }} variables, respectively. These variables are dynamically updated with each iteration.
+The "obj" argument is the object whose own properties you want to iterate over. Inside the block, you can access the current key and value of each property using the \{\{ @key }} and \{\{ . }} variables, respectively. These variables are dynamically updated with each iteration.
 
 Here's an example usage of the "forOwn" helper:
 
@@ -124,7 +124,7 @@ Here's the syntax for using the "getObject" helper:
 {{getObject prop context}}
 ```
 
-The "prop" argument is the property path from which you want to retrieve the object. It can be a dot-delimited string representing nested properties (e.g., "user.name") or an array of property names (e.g., ["user", "name"]).
+The "prop" argument is the property path from which you want to retrieve the object. It can be a dot-delimited string representing nested properties (e.g., "user.name") or an array of property names (e.g., \["user", "name"]).
 
 The "context" argument is the object or context from which the object will be retrieved. It is the starting point for resolving the property path.
 
