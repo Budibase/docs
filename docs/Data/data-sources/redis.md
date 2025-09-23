@@ -27,14 +27,12 @@ You will then be prompted to provide the URL, port, username and password. The d
 ![](https://files.readme.io/346b986-small-Screenshot_2023-05-10_at_09.45.17.png)
 
 > 📘 Connecting to a local docker instance
-> 
+>
 > If you are hosting Redis locally with docker, then use **host.docker.internal**
-
-
 
 ## Redis Command
 
-Select `Redis Command` from the _Function_ dropdown. You will now be able to enter any valid Redis command into the query box below.
+Select `Redis Command` from the *Function* dropdown. You will now be able to enter any valid Redis command into the query box below.
 
 ![](https://files.readme.io/a761999-Screenshot_2022-09-02_at_17.01.49.png)
 
@@ -46,7 +44,7 @@ For more information on the range of Redis data types and commands, click [here]
 
 This is the equivalent of Redis' SET command. Enter a **key / string value** pair. 
 
-**Ttl** stands for _Time-to-live_ and is the number of seconds that the data structure will exist. Leave this blank if you want your key/value to never expire. 
+**Ttl** stands for *Time-to-live* and is the number of seconds that the data structure will exist. Leave this blank if you want your key/value to never expire. 
 
 ![](https://files.readme.io/9cf3e6d-Screenshot_2022-09-02_at_16.02.14.png)
 
