@@ -19,7 +19,7 @@ A common example is opening a detailed view for a row entry.
 
 ## Navigate To
 
-Some templates such as the _Client Contact List_ app use <a href="https://docs.budibase.com/docs/button#adding-buttons-to-table-rows">row buttons</a> instead of links. Tables also allow you to define actions [on row click](https://docs.budibase.com/docs/table-block#on-row-click).
+Some templates such as the *Client Contact List* app use <a href="https://docs.budibase.com/docs/button#adding-buttons-to-table-rows">row buttons</a> instead of links. Tables also allow you to define actions [on row click](https://docs.budibase.com/docs/table-block#on-row-click).
 
 In these cases, navigation is controlled by the navigation action:
 
@@ -27,10 +27,10 @@ In these cases, navigation is controlled by the navigation action:
 
 Here we are passing the row id of the client into the URL path. 
 
-In the `/clients/:id` details screen we will be able to make use of this row id.  
+In the `/clients/:id` details screen we will be able to make use of this row id.\
 A word prefixed with a colon within a route denotes a path variable. 
 
-The id is accessed using the `{{ URL.id }}` <<glossary:Binding>>
+The id is accessed using the `{{ URL.id }}` <Glossary>Binding</Glossary>
 
 For example, because we only want to show the chosen client, we can add the following <a href="https://docs.budibase.com/docs/searchfilter-data#static-filtering">Filter</a> to the clients' <a href="https://docs.budibase.com/docs/data-provider">Data Provider</a>
 
@@ -50,42 +50,14 @@ A detailed example can be found in this [discussion](https://github.com/Budibase
 
 A `Temporary URL variables` input has been added to the Screen Settings area. This feature displays a preview of how a URL will be structured, such as `edit/{variable}`, allowing users to pass variables dynamically while building screens.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ed3caf2ff2e2415fb40cc42cc46fc521a9c85b3dd3494939a2642036ac3005f9-Screenshot_2025-03-07_at_09.09.04.png",
-        "",
-        "An image highlighting the area the URL variables can be set."
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/ed3caf2ff2e2415fb40cc42cc46fc521a9c85b3dd3494939a2642036ac3005f9-Screenshot_2025-03-07_at_09.09.04.png" />
 
 This feature lets you see real-time data population within components without previewing or publishing changes. This helps you quickly understand how different records affect the layout of your screens.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f279acdd0ff3b81b3f1b21431db8b22a4728f9f066109c1231bd3be2a0b9b87b-Screenshot_2025-03-07_at_09.11.06.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/f279acdd0ff3b81b3f1b21431db8b22a4728f9f066109c1231bd3be2a0b9b87b-Screenshot_2025-03-07_at_09.11.06.png" />
 
 ### Benefits:
 
-- Eliminates the need to hit "Preview repeatedly" or "Publish" to test variable driven screens.
-- Speeds up development by reducing context switching.
-- Provides instant feedback on how records populate within components.
+* Eliminates the need to hit "Preview repeatedly" or "Publish" to test variable driven screens.
+* Speeds up development by reducing context switching.
+* Provides instant feedback on how records populate within components.
