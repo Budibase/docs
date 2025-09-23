@@ -1,2 +1,3 @@
 - ansible
 - azure-app-service
+- azure-container-instances
