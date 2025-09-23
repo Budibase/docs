@@ -10,11 +10,16 @@ metadata:
 next:
   description: ''
 ---
-[block:html]
-{
-  "html": "<div style=\"padding:0 0 0 0;position:relative;\"><iframe title=\"vimeo-player\" src=\"https://player.vimeo.com/video/754726312?h=033f1262fa\" width=\"640\" height=\"360\" frameborder=\"0\" allowfullscreen></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>"
-}
-[/block]
+<div style={{padding: '0', position: 'relative'}}>
+  <iframe 
+    title="vimeo-player" 
+    src="https://player.vimeo.com/video/754726312?h=033f1262fa" 
+    width="640" 
+    height="360" 
+    frameBorder="0" 
+    allowFullScreen
+  />
+</div>
 
 
 ## Purpose
@@ -68,20 +73,7 @@ yarn build
 
 Assuming you have [updated the server env variable](https://docs.budibase.com/docs/custom-plugin#hot-reloading-developers-only) you should now be able to see your datasource template in Budibase:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/23a1d4c72cb27cabcba529cd55577ae4d2aff8c66cfd06c3a010efb24f5fb6a8-customdatasource_2.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+![Custom Datasource in Budibase](https://files.readme.io/23a1d4c72cb27cabcba529cd55577ae4d2aff8c66cfd06c3a010efb24f5fb6a8-customdatasource_2.png)
 
 
 <br />
@@ -134,40 +126,12 @@ You can jump to the datasource schema page [here](/docs/custom-datasource-schema
 
 By default your custom datasource will present with the following icon:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b5a4d7b3efee43a1b71ec49a7f53fc1a1b1d10df603dc7e7fafbf9b4edea1d3d-Screenshot_2024-10-23_at_14.08.03.png",
-        null,
-        "Default icon"
-      ],
-      "align": "center",
-      "caption": "Default icon"
-    }
-  ]
-}
-[/block]
+![Default icon](https://files.readme.io/b5a4d7b3efee43a1b71ec49a7f53fc1a1b1d10df603dc7e7fafbf9b4edea1d3d-Screenshot_2024-10-23_at_14.08.03.png)
 
 
 It is nice to add an icon to your custom datasource so that it is distinguishable from other custom datasources. Simply add an **svg** file to the root of your project. It should be called `icon.svg`.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f365c8f06eafdf55fb54080bd4b517afb88ffa9cf5838ff0de85a78a2007e4a5-icons.png",
-        null,
-        "Custom icon examples"
-      ],
-      "align": "center",
-      "caption": "Custom icon examples"
-    }
-  ]
-}
-[/block]
+![Custom icon examples](https://files.readme.io/f365c8f06eafdf55fb54080bd4b517afb88ffa9cf5838ff0de85a78a2007e4a5-icons.png)
 
 
 <br />
@@ -188,20 +152,7 @@ Next make sure the Budibase dev environment is running.
 
 Open the newly created custom datasource directory in your IDE, for example VSCode, and run `yarn watch`. Verify your plugin is available in the plugins list in the Budibase portal. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/07581d15c38d1b3b8cef0387e10dcb2d27ee90b76414f39fd9bd986807567c2b-customdatasource3.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+![Plugin in Budibase Portal](https://files.readme.io/07581d15c38d1b3b8cef0387e10dcb2d27ee90b76414f39fd9bd986807567c2b-customdatasource3.png)
 
 
 <br />
@@ -312,7 +263,7 @@ async activate(query: { id: string, active: string }) {
 
 Depending on the state of the active flag, the `activate` or `deactivate` endpoint is called. An error is thrown if a boolean is not provided.
 
-You can view the finished datasource plugin, and also use the GitHub URL to import the plugin: <https://github.com/melohagan/budibase-datasource-n8n-workflow>
+You can view the finished datasource plugin, and also use the GitHub URL to import the plugin: [https://github.com/melohagan/budibase-datasource-n8n-workflow](https://github.com/melohagan/budibase-datasource-n8n-workflow)
 
 <br />
 
