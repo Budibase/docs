@@ -14,7 +14,7 @@ Elasticsearch is a distributed, RESTful search and analytics engine capable of a
 
 ## Connect
 
-To start, click on the `Add source` button of the **Data** section, select _Elasticsearch_, and click `Continue`.
+To start, click on the `Add source` button of the **Data** section, select *Elasticsearch*, and click `Continue`.
 
 Next enter the connection configuration to your Elasticsearch service. The URL field should include the protocol, address and port as shown below.
 
@@ -22,19 +22,15 @@ Choose `Save and continue to query`.
 
 ![](https://files.readme.io/2d1deb7-image.png)
 
-
-
 ## Adding a query
 
-After configuring the connection to your Elasticsearch <<glossary:Datasource>>, choose the `Add query` button to perform a CRUD operation against your instance.
+After configuring the connection to your Elasticsearch <Glossary>Datasource</Glossary>, choose the `Add query` button to perform a CRUD operation against your instance.
 
 ![](https://files.readme.io/2bf4198-image.png)
 
-
-
 ### Read
 
-This is the default _Function_. Specify an index to read from, and provide a JSON query payload. An example query is shown below but you can use the Inspect function in Kibana to generate more advanced queries.
+This is the default *Function*. Specify an index to read from, and provide a JSON query payload. An example query is shown below but you can use the Inspect function in Kibana to generate more advanced queries.
 
 ![](https://files.readme.io/31db696-read_query.png)
 
@@ -64,29 +60,29 @@ This is the default _Function_. Specify an index to read from, and provide a JSO
 }
 ```
 
-Scroll down and use the _Run Query_ button to preview the results of your query.
+Scroll down and use the *Run Query* button to preview the results of your query.
 
 ![](https://files.readme.io/43dd7cc-image.png)
 
 After successfully returning results use the `Save Query` button to ensure your query can be used by your app in the [Design](doc:working-with-data) section.
 
-You can also add and use a <<glossary:Binding>> within your query as shown below:
+You can also add and use a <Glossary>Binding</Glossary> within your query as shown below:
 
 ![](https://files.readme.io/d0a3d1c-Screenshot_2023-01-31_at_15.43.46.png)
 
-> 📘 
-> 
+> 📘
+>
 > More on using datasource bindings within the Design section can be found in the [Custom queries](doc:custom-queries) page.
 
 ### Create
 
-Select _Create_ from the _Function_ dropdown. Provide the name of the Elasticsearch index you want to use and provide a JSON document payload in the _query_ field.
+Select *Create* from the *Function* dropdown. Provide the name of the Elasticsearch index you want to use and provide a JSON document payload in the *query* field.
 
 ![](https://files.readme.io/bf50785-Screenshot_2023-01-31_at_15.55.19.png)
 
 Unlike the read query, you can immediately `Save Query` without running first, however it may be worth clicking `Run Query` to verify that the query is correct, but be sure to save after.
 
-When running the query, some information will be returned, such as an **\_id**, which can be used when _updating_ and _deleting_.
+When running the query, some information will be returned, such as an **\_id**, which can be used when *updating* and *deleting*.
 
 ```json Create Response
 {
@@ -100,11 +96,9 @@ When running the query, some information will be returned, such as an **\_id**, 
 }
 ```
 
-
-
 ### Update
 
-Updating involves providing an **index** and **\_id**. Select the _Update_ function from the dropdown, and enter the fields.
+Updating involves providing an **index** and **\_id**. Select the *Update* function from the dropdown, and enter the fields.
 
 To update the fields of an existing document, your query may look like:
 
@@ -114,6 +108,6 @@ There are a number of additional update operations you can take, which are docum
 
 ### Delete
 
-Select the _Delete_ function and provide an **index** and document **\_id** to be deleted. No query is required. You may also `Save Query` without running beforehand. 
+Select the *Delete* function and provide an **index** and document **\_id** to be deleted. No query is required. You may also `Save Query` without running beforehand. 
 
 ![](https://files.readme.io/3f6e027-Screenshot_2023-01-31_at_17.23.14.png)
