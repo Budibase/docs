@@ -23,9 +23,7 @@ Running on the latest version of Budibase ensures you have all the latest bug fi
 ### Clear Your Browser Cache and Cookies
 
 Sometimes clearing your browser cookies and cache for your Budibase domain will solve certain issues, especially around authentication or user-based problems. 
-[block:api-header]
-{
-  "title": "Still issues?"
-}
-[/block]
+
+## Still issues?
+
 Head over to our [Contributing to Budibase](doc:contributing-to-budibase) page to see how you can report the issue.
