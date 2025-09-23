@@ -12,7 +12,7 @@ metadata:
 next:
   description: ''
 ---
-<br>
+<br/>
 
 ### Adding an `Options` column
 
@@ -24,7 +24,7 @@ While creating the column, you will be able to add different options the user ca
 
 <Image align="center" width="33%" src="https://files.readme.io/b992f71-image.png" />
 
-<br>
+<br/>
 
 ### Use in Forms
 
@@ -82,4 +82,4 @@ Adding a `Form Block` component to your page, and setting the `Data` to your tab
 
 To Change the order the options display in your form, firstly make sure "Alphabetical" is unchecked. Then, in the Data tab, click edit your column, and drag-and-drop your options. Alphabetical being checked will not change the order the options appear in the data tab, only the order in which they are displayed to the user in the form.
 
-<br>
+<br/>
