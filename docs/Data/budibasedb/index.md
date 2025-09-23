@@ -116,7 +116,7 @@ Common column options:
 | Primary index               | Enabling this allows you to search in this field                                                                          |
 | Secondary index             | When primary index is in use, you can enable a second index for searching                                                 |
 
-<br>
+<br/>
 Data type specific column options:
 
 | Property Name                   | Description                                                                                                                              | Data Types            |
@@ -149,13 +149,13 @@ The following column constraints are available:
 
 ## Data sync between environments
 
-When using the <Glossary>Budibase DB</Glossary>, there are two environments to consider.
+When using the **Budibase DB**, there are two environments to consider.
 
 The **Development** environment represents the data that you see and interact with when using the app builder, which includes the *Data* and *Design* sections, and the [App preview](https://docs.budibase.com/docs/quickstart#preview-and-publish).
 
 If in doubt, you can see if you are in the dev environment from the URL, which will show `/app/app_dev_abc...` in the path. In production, the URL will appear without the `_dev` part.
 
-**Production** represents your live environment. This is the data that your <Glossary>End User</Glossary>s will interact with. When in the app builder, production data will continuously sync and update your development data, although a page refresh may be needed to see the new changes.
+**Production** represents your live environment. This is the data that your **End User**s will interact with. When in the app builder, production data will continuously sync and update your development data, although a page refresh may be needed to see the new changes.
 
 Whenever you [Publish](https://docs.budibase.com/docs/quickstart#preview-and-publish) your app, any edits, inserts or deletes made in your dev data will be pushed into production, which may overwrite existing data.
 
