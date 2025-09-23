@@ -23,7 +23,7 @@ To add a condition, simply click the `Add condition` button. As explained above,
 ![](https://files.readme.io/6cfa595-conditionsexplainer_1.png "conditionsexplainer (1).png")
 
 > 👍 Show/Hide
-> 
+>
 > When using a Show on boolean condition, the Hide occurs automatically for the opposite case, and vice versa.
 
 ## Tutorial
@@ -54,8 +54,6 @@ When building apps, we often want to limit a user's access to specific component
 
 Below is a quick demonstration of how to hide a button if the user's role is BASIC. Please remember, when typing the value of the user role, it must be in capitals: `BASIC`, `POWER`, `ADMIN`.
 
-[block:html]
-{
-  "html": "<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/699368827?h=d2541f59bf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"New Recording - 14/04/2022, 10:44:02\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>"
-}
-[/block]
+<HTMLBlock>{`
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/699368827?h=d2541f59bf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="New Recording - 14/04/2022, 10:44:02"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+`}</HTMLBlock>
