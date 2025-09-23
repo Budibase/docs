@@ -10,11 +10,7 @@ metadata:
 next:
   description: ''
 ---
-[block:html]
-{
-  "html": "<div style=\"padding:0 0 0 0;position:relative;\"><iframe title=\"vimeo-player\" src=\"https://player.vimeo.com/video/754726312?h=033f1262fa\" width=\"640\" height=\"360\" frameborder=\"0\" allowfullscreen></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>"
-}
-[/block]
+**Video Tutorial:** [Watch on Vimeo](https://player.vimeo.com/video/754726312?h=033f1262fa)
 
 
 
@@ -66,7 +62,7 @@ schema.json: The meta data and available builder settings for your datasource.
 
 After you have created your new datasource directory, execute the following:
 
-```shell Shel
+```shell
 cd my-datasource
 yarn build
 ```
@@ -127,39 +123,15 @@ You can jump to the datasource schema page [here](/docs/custom-datasource-schema
 
 By default your custom datasource will present with the following icon:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9d3534d-Screenshot_2022-10-13_at_10.28.10.png",
-        null,
-        "Default icon"
-      ],
-      "align": "center",
-      "caption": "Default icon"
-    }
-  ]
-}
-[/block]
+![Default icon](https://files.readme.io/9d3534d-Screenshot_2022-10-13_at_10.28.10.png)
+
+*Default icon*
 
 It is nice to add an icon to your custom datasource so that it is distinguishable from other custom datasources. Simply add an **svg** file to the root of your project. It should be called `icon.svg`.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1c5c5e9-Screenshot_2022-10-13_at_10.37.57.png",
-        null,
-        "Custom icon examples"
-      ],
-      "align": "center",
-      "caption": "Custom icon examples"
-    }
-  ]
-}
-[/block]
+![Custom icon examples](https://files.readme.io/1c5c5e9-Screenshot_2022-10-13_at_10.37.57.png)
+
+*Custom icon examples*
 
 <br />
 
@@ -293,7 +265,7 @@ async activate(query: { id: string, active: string }) {
 
 Depending on the state of the active flag, the `activate` or `deactivate` endpoint is called. An error is thrown if a boolean is not provided.
 
-You can view the finished datasource plugin, and also use the GitHub URL to import the plugin: <https://github.com/melohagan/budibase-datasource-n8n-workflow>
+You can view the finished datasource plugin, and also use the GitHub URL to import the plugin: [https://github.com/melohagan/budibase-datasource-n8n-workflow](https://github.com/melohagan/budibase-datasource-n8n-workflow)
 
 <br />
 
