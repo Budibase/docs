@@ -16,29 +16,15 @@ The LLM Prompt step sends your custom instructions directly to the Large Languag
 
 ## Example use cases
 
-- Complex multi-step reasoning.
-- Generating text with specific constraints.
-- Running niche or experimental AI tasks.
+* Complex multi-step reasoning.
+* Generating text with specific constraints.
+* Running niche or experimental AI tasks.
 
 ## Inputs
 
-- Prompt (required) - The complete instructions for the AI.
+* Prompt (required) - The complete instructions for the AI.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/15e0677c85a9d8fc02374b48106507f5edcd1a5aff8ecdec77a6df39828307fa-Screenshot_2025-08-14_at_14.15.34.png",
-        "",
-        "LLM automation step input fields"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/15e0677c85a9d8fc02374b48106507f5edcd1a5aff8ecdec77a6df39828307fa-Screenshot_2025-08-14_at_14.15.34.png" />
 
 ## Output
 
