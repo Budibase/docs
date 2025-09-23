@@ -26,7 +26,7 @@ The following IP addresses are used by Budibase Cloud to connect to your data so
 ```
 
 > 📘 Firewall Considerations
-> 
+>
 > Note that the IP addresses above are subject to change. We will notify registered users prior to any change to give advance notice for firewall amendments. If you notice that a previously working connection has stopped working check back here.
 
 ### Budibase Cloud client side
@@ -57,7 +57,7 @@ This section only applies to users self-hosting Budibase.
 
 There are some features that Budibase's self-hosted installation makes network calls back to Budibase Cloud to fulfill, for example AI functionality when using the Budibase AI provider.
 
-For this to work, you will need to allow connections to <https://budibase.app> from your self-host installation.
+For this to work, you will need to allow connections to [https://budibase.app](https://budibase.app) from your self-host installation.
 
 ## Troubleshooting Connection Issues
 
