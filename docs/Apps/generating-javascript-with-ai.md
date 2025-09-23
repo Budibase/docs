@@ -23,11 +23,11 @@ next:
 
 You can use AI-generated JavaScript in any area of Budibase that supports JavaScript, including:
 
-- [Component](doc:components) [bindings](doc:introduction-to-bindings#bindings-drawer)
-- [Validation](doc:form-validation)
-- [Conditional](doc:conditions)
-- [Custom CSS](doc:custom-css)
-- Automation steps
+* [Component](doc:components) [bindings](doc:introduction-to-bindings#bindings-drawer)
+* [Validation](doc:form-validation)
+* [Conditional](doc:conditions)
+* [Custom CSS](doc:custom-css)
+* Automation steps
 
 You’ll see an AI icon with the text "Generate with AI" (usually at the bottom of the code editor, only when on JavaScript). This UI may change depending on whether or not you have activated AI features. 
 
@@ -53,7 +53,7 @@ Type a prompt in the input area and press Enter to generate code.
    ```
 3. Click run button, Budibase AI will provide ready-to-use JavaScript code.
 4. Review and amend if needed, or regenerate with a new prompt.
-5. Click the **Accept** button to insert the code.  
+5. Click the **Accept** button to insert the code.\
    Or click the **Reject** button to rewrite your prompt.
 6. Click the Save button as you normally would.
 
