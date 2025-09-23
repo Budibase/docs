@@ -18,16 +18,7 @@ There are several ways to update your budibase installation, based on your chose
 
 If you set up budibase using the [Budibase CLI Install](doc:budibase-cli-setup), you can update your budibase installation directly by navigating to the directory where you installed budibase (with your `docker-compose.yaml`, `.env` file etc) and run the following CLI commands.
 
-[block:tutorial-tile]
-{
-  "backgroundColor": "#018FF4",
-  "emoji": "🎉",
-  "id": "6728a74f5918b50036c61843",
-  "link": "https://docs.budibase.com/v1.0.9/recipes/update-budibase-using-cli",
-  "slug": "update-budibase-using-cli",
-  "title": "Update Budibase using CLI"
-}
-[/block]
+🎉 **[Update Budibase using CLI](https://docs.budibase.com/v1.0.9/recipes/update-budibase-using-cli)**
 
 ## Standard Docker Upgrade
 
@@ -38,8 +29,8 @@ If you prefer, you can also just use standard docker commands to upgrade your bu
 First, stop and remove your container running budibase with:
 
 ```shell
-docker stop `<budibase-container-id>`
-docker rm `<budibase-container-id>`
+docker stop <budibase-container-id>
+docker rm <budibase-container-id>
 ```
 
 Then run the following to get the latest version of the budibase container:
