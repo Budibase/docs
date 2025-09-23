@@ -30,10 +30,10 @@ The "bytes" function is useful when you need to display the size of a file, stor
 
 Here are some examples of how the "bytes" function formats different values:
 
-- 'foo' => 3 B
-- 13661855 => 13.66 MB
-- 825399 => 825.39 kB
-- 1396 => 1.4 kB
+* 'foo' => 3 B
+* 13661855 => 13.66 MB
+* 825399 => 825.39 kB
+* 1396 => 1.4 kB
 
 ## addCommas
 
