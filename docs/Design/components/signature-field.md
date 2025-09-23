@@ -45,4 +45,4 @@ Once published, clicking the signature field presents a pop-over in which the us
 | On change        | Allows configurable actions to be set. These actions will run when the signature pop-over is closed, and also when an existing signature is removed.           |
 | Validation       | Used to specify when a signature is required, and will show a configurable message under the field (defaults to "Error" if left blank")                        |
 
-<br>
+<br/>
