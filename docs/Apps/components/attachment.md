@@ -16,10 +16,10 @@ Uploaded files are stored in [MinIO](https://docs.budibase.com/docs/accessing-mi
 
 ![](https://files.readme.io/27adfae-attachment.png "attachment.png")
 
-The `Single Attachment` and `Attachment List` components works especially well with Single attachment and Attachment List <<glossary:Budibase DB>>'s [Attachment](doc:attachments) data type.
+The `Single Attachment` and `Attachment List` components works especially well with Single attachment and Attachment List <Glossary>Budibase DB</Glossary>'s [Attachment](doc:attachments) data type.
 
 > 📘 Filesize
-> 
+>
 > Remember the maximum file size you can store in your database of choice
 
 ## Adding an Attachment component
@@ -28,40 +28,11 @@ The `Attachment component` requires a [Form](doc:forms) component as a parent.
 
 To add the Attachment component, click `Form > Single Attachment` or `Form > Attachment List`.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/075b4177cd4f6c75900d8cc377913d0d192be84d8870966a3d202e818051dc31-Screenshot_2025-08-19_at_11.31.51.png",
-        null,
-        null
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/075b4177cd4f6c75900d8cc377913d0d192be84d8870966a3d202e818051dc31-Screenshot_2025-08-19_at_11.31.51.png" />
 
 After the `Single Attachment` or `Attachment List` component is added you can immediately start using it, no further configuration is required.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3b9c6eb-extensions.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "sizing": "2px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="2px" src="https://files.readme.io/3b9c6eb-extensions.png" />
 
 ## Manage access
 
@@ -77,27 +48,13 @@ There are few [Form validation](doc:form-validation) options for the attachment 
 | Max file size (MB)         | No uploaded file can exceed the specified limit in megabytes.                     |
 | Max total upload size (MB) | The total size of all uploaded files cannot exceed the specified megabytes limit. |
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9a774a6a38f3cec6b4289a74b1f8831961260fa5d095fa5cc6af86cbe56d27ca-Screenshot_2025-08-19_at_11.46.54.png",
-        null,
-        null
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/9a774a6a38f3cec6b4289a74b1f8831961260fa5d095fa5cc6af86cbe56d27ca-Screenshot_2025-08-19_at_11.46.54.png" />
 
 ## Specifying acceptable file extensions
 
 By default any file, with any file extension, will be accepted by the Attachment component for upload. However, in certain scenarios, a particular set of file extensions may preferred. For example, you may only want to accept PDF files. In other situations, you may only want image files.
 
-The _extensions_ property accepts an **array** of file extensions, e.g. `[".webp",".png"]`. When [Using Handlebars](doc:bindings) , make sure to split the comma separated array. If [Using JavaScript](doc:javascript), simply return an array of extensions as shown below.
+The *extensions* property accepts an **array** of file extensions, e.g. `[".webp",".png"]`. When [Using Handlebars](doc:bindings) , make sure to split the comma separated array. If [Using JavaScript](doc:javascript), simply return an array of extensions as shown below.
 
 ```handlebars
 {{ split ".png,.jpg,.jpeg,.svg,.gif,.webp" }}
@@ -108,19 +65,6 @@ return ['.png','.jpg','.jpeg','.svg','.gif','.webp']
 
 This will result in the operating system's native File Open Dialog having a corresponding custom filter:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9883a2e-extensions.png",
-        "",
-        "Customised file extensions filter in the Attachment component"
-      ],
-      "align": "center",
-      "sizing": "400px",
-      "caption": "Customised file extensions filter in the Attachment component"
-    }
-  ]
-}
-[/block]
+<Image alt="Customised file extensions filter in the Attachment component" align="center" width="400px" src="https://files.readme.io/9883a2e-extensions.png">
+  Customised file extensions filter in the Attachment component
+</Image>
