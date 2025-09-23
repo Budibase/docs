@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-<br>
+<br/>
 
 The Table block effectively merges both the [Data Provider](doc:data-provider) and the [Table](doc:table) component into one. It also integrates [Searching and filtering data](doc:searchfilter-data). This helps you simplify the logic of the page, and not have to worry about configuring two different components.
 
