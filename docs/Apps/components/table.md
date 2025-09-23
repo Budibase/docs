@@ -16,124 +16,56 @@ It is the quickest, most direct way to provide your users with a CRUD interface.
 
 Add a table in a couple of clicks!
 
-1. In an _App_, within a screen, click `Add component`. 
-2. Under the _Data_ category, click `table`.
+1. In an *App*, within a screen, click `Add component`. 
+2. Under the *Data* category, click `table`.
 
-> 👍 
-> 
+> 👍
+>
 > You can also add a table by searching for "Table" and pressing the Enter key.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/12a185280f8fb0c692fc91ddf59c34d0864c9958aee9124af83796a3ae3d9c20-Screenshot_2025-09-05_at_15.08.06.png",
-        null,
-        "Adding the table"
-      ],
-      "align": "center",
-      "caption": "Adding the table"
-    }
-  ]
-}
-[/block]
+<Image alt="Adding the table" align="center" src="https://files.readme.io/12a185280f8fb0c692fc91ddf59c34d0864c9958aee9124af83796a3ae3d9c20-Screenshot_2025-09-05_at_15.08.06.png">
+  Adding the table
+</Image>
 
+<Image align="center" src="https://files.readme.io/d3d81ce43a5bf9f7561dadbd5e6f01b7ff94631369202575a6d07c9c637aeb7c-Screenshot_2025-09-05_at_15.25.24.png" />
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d3d81ce43a5bf9f7561dadbd5e6f01b7ff94631369202575a6d07c9c637aeb7c-Screenshot_2025-09-05_at_15.25.24.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
-
-With the table added, you will want to select a _Table_ in the <<glossary:Settings Panel>>.
+With the table added, you will want to select a *Table* in the <Glossary>Settings Panel</Glossary>.
 
 ## Configure columns
 
-Table columns can be configured under the _Columns_ section of the settings. Click the cog icon beside a column to change its label.
+Table columns can be configured under the *Columns* section of the settings. Click the cog icon beside a column to change its label.
 
 Click on `Configure columns` to determine which columns should be included in your table view and to change their labels. The underlying database column name will still be shown above the label for reference.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0b04d31f03343c91ac93574bda17d5ed955467a79f1a99fbf2a62b6491c2985d-Screenshot_2025-09-05_at_15.26.09.png",
-        "",
-        "Giving the 'Last Name' column the display label 'Surname'"
-      ],
-      "align": "center",
-      "caption": "Giving the 'Last Name' column the display label 'Surname'"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Giving the 'Last Name' column the display label 'Surname'" align="center" src="https://files.readme.io/0b04d31f03343c91ac93574bda17d5ed955467a79f1a99fbf2a62b6491c2985d-Screenshot_2025-09-05_at_15.26.09.png">
+  Giving the 'Last Name' column the display label 'Surname'
+</Image>
 
 Columns can be shown or hidden with the toggle switches, and the column order can be set by dragging and dropping columns.
 
 > 📘 In-app column width and order
-> 
+>
 > The initial width and order of your columns will match the table in the **Data** section.
-> 
+>
 > Users can use the mouse to drag columns to change their order, or drag edges to resize the width. These changes will only apply to the users' session.
-> 
+>
 > Also note that the [Display column](https://docs.budibase.com/docs/budibasedb#selecting-the-display-column) will always be pinned.
 
 ## On row click
 
 Click `Define actions` to run [Actions](doc:actions) on click of a row.
 
-You will be able to use the `{{ Clicked row }}` <<glossary:Binding>> to access the object data of the clicked row. 
+You will be able to use the `{{ Clicked row }}` <Glossary>Binding</Glossary> to access the object data of the clicked row. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d33ec7bf764ba4f45b9afef92c134f3c83dc2e0318c006d5321b1406ffe97245-Screenshot_2025-09-05_at_15.44.30.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/d33ec7bf764ba4f45b9afef92c134f3c83dc2e0318c006d5321b1406ffe97245-Screenshot_2025-09-05_at_15.44.30.png" />
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1f8751968faece11cf1b05a7bdae5cea7605e964518bece3f16770a80734813a-Screenshot_2025-09-05_at_15.45.16.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/1f8751968faece11cf1b05a7bdae5cea7605e964518bece3f16770a80734813a-Screenshot_2025-09-05_at_15.45.16.png" />
 
 If you wanted to access a property of the clicked row, for example the **\_id**, then you would write your binding like so: `{{ Clicked row._id }}`
 
 ## Sorting
 
-Select a _Sort column_ and _Sort order_ to set the initial default sorting; either ascending or descending. You can also set an initial sort on a column that is not being displayed. 
+Select a *Sort column* and *Sort order* to set the initial default sorting; either ascending or descending. You can also set an initial sort on a column that is not being displayed. 
 
 A user can still override this sort by clicking the three dots beside a column. Text fields can be sorted alphabetically, whereas number fields will be sorted numerically. 
 
@@ -155,7 +87,7 @@ The table offers a few row settings, including a mix of style and function.
 
 <br />
 
-If you want to increase the number of rows displayed on screen, simply increase the height of the table in the _Styles_ tab, or drag the component larger when displayed on a screen or inside a container set to "Grid".
+If you want to increase the number of rows displayed on screen, simply increase the height of the table in the *Styles* tab, or drag the component larger when displayed on a screen or inside a container set to "Grid".
 
 ![](https://files.readme.io/e0c74a427674cf2ec66967d1f421aa1019e8728c65e919c7ca3077f35e6c9a8e-Screen_Recording_2025-09-12_at_15.27.30.gif)
 
@@ -163,88 +95,33 @@ If you want to increase the number of rows displayed on screen, simply increase 
 
 ## Search
 
-Search can be added to a table through the use of <<glossary:Binding>>s and filtering [Using a form and text input](https://docs.budibase.com/docs/adding-a-search-field#2-using-a-form-and-text-input-flexible-way).
+Search can be added to a table through the use of <Glossary>Binding</Glossary>s and filtering [Using a form and text input](https://docs.budibase.com/docs/adding-a-search-field#2-using-a-form-and-text-input-flexible-way).
 
 Some field types also allow searching directly within the table's column. If you hover over a column and see a magnifying glass icon, you can click it to add a search input field in the column header. Typing into this field will perform a basic search on the data in that column.
 
 ## Selected rows binding
 
-If your table has the _Allow row selection_ checkbox ticked, then you will be able to make use of the `Selected Rows` <<glossary:Binding>>. 
+If your table has the *Allow row selection* checkbox ticked, then you will be able to make use of the `Selected Rows` <Glossary>Binding</Glossary>. 
 
 This can be found underneath your table within the bindings drawer:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0bc2c7d-Screenshot_2024-04-10_at_12.08.42.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/0bc2c7d-Screenshot_2024-04-10_at_12.08.42.png" />
 
 When using this binding, an array of the selected row data will be made available:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ce9e495-Screenshot_2024-04-10_at_12.11.10.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
-
+<Image align="center" className="border" border={true} src="https://files.readme.io/ce9e495-Screenshot_2024-04-10_at_12.11.10.png" />
 
 This binding can be used to [Delete the selected rows](https://docs.budibase.com/docs/data-actions#delete-row):
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f04f1fa302d4fe6305a3930b1a97bd5b60141fb98cc89d98486e2fb073d13198-Screenshot_2024-09-11_at_11.51.54.png",
-        "",
-        "Delete selected rows"
-      ],
-      "align": "center",
-      "caption": "Delete selected rows"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Delete selected rows" align="center" src="https://files.readme.io/f04f1fa302d4fe6305a3930b1a97bd5b60141fb98cc89d98486e2fb073d13198-Screenshot_2024-09-11_at_11.51.54.png">
+  Delete selected rows
+</Image>
 
 You could also [pluck](https://docs.budibase.com/docs/array-helpers#pluck) a field from the selected rows, such as an ID, to show which rows have been selected in a readable way: `{{ pluck New Table.Selected rows 'id' }}`
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f7af098-Screenshot_2024-04-10_at_12.15.21.png",
-        "",
-        "Displaying the IDs of the selected rows using the 'pluck' helper"
-      ],
-      "align": "center",
-      "caption": "Displaying the IDs of the selected rows using the 'pluck' helper"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Displaying the IDs of the selected rows using the 'pluck' helper" align="center" src="https://files.readme.io/f7af098-Screenshot_2024-04-10_at_12.15.21.png">
+  Displaying the IDs of the selected rows using the 'pluck' helper
+</Image>
 
 ### Conditional formatting
 
@@ -252,69 +129,28 @@ With conditional formatting, you can now add conditional logic to either a cell 
 
 You can find conditional formatting options under the column settings:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7bfe0c0-Screenshot_2024-08-08_at_10.11.36.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/7bfe0c0-Screenshot_2024-08-08_at_10.11.36.png" />
 
 The above will open a new drawer when clicked, were you can begin adding your conditions in relation to the column you have selected.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/17c5739-Screenshot_2024-08-08_at_10.16.30.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/17c5739-Screenshot_2024-08-08_at_10.16.30.png" />
 
 There are a few settings you need to be aware of.
 
-- Cell ~ This will only apply styling to the specific cell chosen
-- Row ~ This will apply styling to the entire row whenever the condition is met
-- Background colour ~ This allows you to change the background colour of a cell or row
-- Text colour ~ This allows you to change only the text colour of the cell or row
+* Cell \~ This will only apply styling to the specific cell chosen
+* Row \~ This will apply styling to the entire row whenever the condition is met
+* Background colour \~ This allows you to change the background colour of a cell or row
+* Text colour \~ This allows you to change only the text colour of the cell or row
 
 It’s worth noting that the order of your conditions matter, as Budibase processes these conditions from top to bottom. This is more specific to numbers as depending on the situation you may want to apply styling to higher values first and then apply styling to lower values next. Therefore you will need to order the conditions accordingly.
 
 ### Deprecation - Selected row ids
 
-Prior to **v2.19.2**, the selected rows binding provided a list of <<glossary:Row _id>>s only. This binding has been kept for backwards compatibility, however in future it will be removed. This change has been made because the new binding is more useful, allowing you to do the calculations outlined above.
+Prior to **v2.19.2**, the selected rows binding provided a list of <Glossary>Row _id</Glossary>s only. This binding has been kept for backwards compatibility, however in future it will be removed. This change has been made because the new binding is more useful, allowing you to do the calculations outlined above.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3b649c6-Screenshot_2024-02-14_at_12.03.12.png",
-        "",
-        "Please update your selected rows binding to the new one"
-      ],
-      "align": "center",
-      "caption": "Please update your selected rows binding to the new one"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Please update your selected rows binding to the new one" align="center" src="https://files.readme.io/3b649c6-Screenshot_2024-02-14_at_12.03.12.png">
+  Please update your selected rows binding to the new one
+</Image>
 
 ## Advanced settings
 
