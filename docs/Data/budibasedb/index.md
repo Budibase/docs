@@ -107,7 +107,7 @@ Common column options:
 | Primary index               | Enabling this allows you to search in this field                                                                          |
 | Secondary index             | When primary index is in use, you can enable a second index for searching                                                 |
 
-<br>
+<br/>
 Data type specific column options:
 
 | Property Name                   | Description                                                                                                                              | Data Types            |
