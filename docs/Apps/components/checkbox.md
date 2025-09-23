@@ -20,25 +20,11 @@ The `Checkbox` component can be added a [Form](doc:forms) component or can be us
 
 To add a `Checkbox` component to your screen, you need to click `Form > Checkbox`
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ee8a2c6b4101dc1028e97df11dedf2c6ac3262a23d313de7d9672ceb0226e214-Screenshot_2025-08-21_at_11.06.06.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/ee8a2c6b4101dc1028e97df11dedf2c6ac3262a23d313de7d9672ceb0226e214-Screenshot_2025-08-21_at_11.06.06.png" />
 
 ## Customising the Checkbox
 
-To customise the checkbox, there are several settings in the <<glossary:Settings Panel>> that can be used.
+To customise the checkbox, there are several settings in the <Glossary>Settings Panel</Glossary> that can be used.
 
 | Setting              | Description                                                                                 |
 | :------------------- | :------------------------------------------------------------------------------------------ |
@@ -53,9 +39,9 @@ It is worth noting that the checkbox integrates closely with [boolean](doc:boole
 
 The Checkbox component can also be used as a standalone component (not wrapped in a Form) which can be useful for filter/sort functionality on Tables. 
 
-For this example, I'm working with the Budibase Sample Data table "Employees". I've made some changes to the "End Date" of _some_ rows, suggesting that these employees are no longer employed.
+For this example, I'm working with the Budibase Sample Data table "Employees". I've made some changes to the "End Date" of *some* rows, suggesting that these employees are no longer employed.
 
-In a screen, I've then added a Checkbox component, and a table component set to display the employees table. The Checkbox component has a field setting "is_employed" and a label "Current Employees Only".
+In a screen, I've then added a Checkbox component, and a table component set to display the employees table. The Checkbox component has a field setting "is\_employed" and a label "Current Employees Only".
 
 ![](https://files.readme.io/8b7bc5cb14e5a1dcf79f9dab7c5f362ac06ee946a1b8404191aae70fe59c42a8-image.png)
 
@@ -67,17 +53,4 @@ The Condition should read `Update Setting` >> `Filtering` TO `1 filter set` IF `
 
 When setting the Filter you'll want to filter on `End Date is empty` - this assumes that an employee with an end date is no longer employed, thus making the "Current Employees Only" checkbox update the table filters to only show those records of employees still with the company.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/db3dacb28eb20a188add98e0c0bfc9e33a82fde7c0990c12fc67a7431a4e770e-Screen_Recording_2025-08-21_at_11.16.59.gif",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/db3dacb28eb20a188add98e0c0bfc9e33a82fde7c0990c12fc67a7431a4e770e-Screen_Recording_2025-08-21_at_11.16.59.gif" />
