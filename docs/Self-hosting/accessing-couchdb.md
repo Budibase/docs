@@ -14,15 +14,15 @@ next:
       slug: accessing-minio
       title: Accessing MinIO
 ---
-> 📘 
-> 
+> 📘
+>
 > The following content applies to self-hosted deployments only
 
 Budibase uses CouchDB to store:
 
-- Metadata about your apps and deployment
-- Data stored when using Budibase's in-built tables
-- Audit logs
+* Metadata about your apps and deployment
+* Data stored when using Budibase's in-built tables
+* Audit logs
 
 You have full access to CouchDb, via [Fauxton](https://couchdb.apache.org/fauxton-visual-guide/index.html) - the official CouchDB client. You may access Fauxton via the URL: 
 
@@ -30,17 +30,15 @@ You have full access to CouchDb, via [Fauxton](https://couchdb.apache.org/fauxto
 your-budibase-host/db/_utils/#
 ```
 
-
-
 However, you will need a username and password to log in. You may find these in your **.env** file, which lives in the same directory as your **docker-compose.yaml**. 
 
 Also make sure you are port forwarding to 5984.
 
 Use the following values from your .env file: 
 
-- COUCH_DB_USER
-- COUCH_DB_PASSWORD
-- COUCH_DB_PORT
+* COUCH\_DB\_USER
+* COUCH\_DB\_PASSWORD
+* COUCH\_DB\_PORT
 
 ### Example config
 
@@ -54,10 +52,6 @@ couchdb-service:
       
 ```
 
-
-
 ***
-
-
 
 More information can be found in this [discussion answer](https://github.com/Budibase/budibase/discussions/7777#discussioncomment-3732390).
