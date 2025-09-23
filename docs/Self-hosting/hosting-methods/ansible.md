@@ -16,39 +16,23 @@ Budibase is deployed as a container and the container image includes all the com
 
 For this example you will need:
 
-- Ansible installed on your computer
-- A server or virtual machine installed with internet connectivity and a Linux operating system - we are using Debian 11 in this example
-- A valid IP address on the server with a DNS entry for a domain you own pointing to the IP address. In the example below we are using  debian001.domain.com pointing to 111.222.111.222 
-- Password-less SSH and sudo privileges for the server, or willingness to add access details to your ansible-playbook command 
+* Ansible installed on your computer
+* A server or virtual machine installed with internet connectivity and a Linux operating system - we are using Debian 11 in this example
+* A valid IP address on the server with a DNS entry for a domain you own pointing to the IP address. In the example below we are using  debian001.domain.com pointing to 111.222.111.222 
+* Password-less SSH and sudo privileges for the server, or willingness to add access details to your ansible-playbook command 
 
 ###  Folder Structure
 
 In the example we will use the following folder structure on a laptop: 
 
-- group_vars
-- host_vars
-- playbooks
-- plugins
-- roles
-- inventory.yaml
+* group\_vars
+* host\_vars
+* playbooks
+* plugins
+* roles
+* inventory.yaml
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e60ba68-image.png",
-        null,
-        ""
-      ],
-      "sizing": "200px",
-      "border": true
-    }
-  ]
-}
-[/block]
-
-
+<Image className="border" width="200px" border={true} src="https://files.readme.io/e60ba68-image.png" />
 
 ### Install Pre-requisites
 
@@ -58,8 +42,6 @@ The first step might be to ensure that ansible commands work so within the folde
 ansible-galaxy collection install community.general  
 ansible-galaxy install budibase.budibase
 ```
-
-
 
 ### Inventory
 
@@ -74,8 +56,6 @@ all:
             ansible_port: 22  
             host: debian001.domain.com
 ```
-
-
 
 ### Playbook
 
@@ -99,12 +79,10 @@ Then add a playbook in the playbooks folder e.g. `debian001.domain.com.yaml` wit
   - budibase.budibase
 ```
 
-
-
 Note:
 
-- If you set the environment variable `budibase_custom_domain` this will be used to request an SSL certificate from Let’s Encrypt for your domain name. So you must have DNS resolving for this to work.
-- In each of the environment variables replace `yourownrandomstring` with your own passwords to secure your installation. You may also wish to encrypt these variables using Ansible Vault.
+* If you set the environment variable `budibase_custom_domain` this will be used to request an SSL certificate from Let’s Encrypt for your domain name. So you must have DNS resolving for this to work.
+* In each of the environment variables replace `yourownrandomstring` with your own passwords to secure your installation. You may also wish to encrypt these variables using Ansible Vault.
 
 ### Run the Playbook
 
@@ -114,13 +92,11 @@ When you have your roles configured you can run your Ansible playbook:
 ansible-playbook -i inventory.yaml ./playbooks/debian001.domain.com.yaml
 ```
 
-
-
 ### Backups
 
 In the examples above we used the directory /data directory to persist data if containers restart. You should ensure you have a strategy to take backups of that directory for disaster recovery and upgrades.
 
 ### Links
 
-- [Budibase on Ansible Galaxy](https://galaxy.ansible.com/budibase/budibase)
-- [Github Repo](https://github.com/Budibase/ansible-role-budibase)
+* [Budibase on Ansible Galaxy](https://galaxy.ansible.com/budibase/budibase)
+* [Github Repo](https://github.com/Budibase/ansible-role-budibase)
