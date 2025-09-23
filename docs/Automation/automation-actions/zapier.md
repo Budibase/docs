@@ -14,7 +14,7 @@ next:
 
 To begin, create a Zap and select `Webhooks by Zapier` as your first step, and click `Continue`.
 
-Click `Copy` to copy the <<glossary:Webhook>> URL to the clipboard. 
+Click `Copy` to copy the <Glossary>Webhook</Glossary> URL to the clipboard. 
 
 Send a JSON payload to the webhook URL to setup the request body. This should match the JSON that you will be sending from Budibase. 
 
@@ -22,39 +22,13 @@ With the request body defined, you can use those values in your subsequent steps
 
 For example:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/df56509-small-Screenshot_2023-05-11_at_17.37.01.png",
-        null,
-        "Selecting the 'Raw Body' binding"
-      ],
-      "align": "center",
-      "caption": "Selecting the 'Raw Body' binding"
-    }
-  ]
-}
-[/block]
+<Image alt="Selecting the 'Raw Body' binding" align="center" src="https://files.readme.io/df56509-small-Screenshot_2023-05-11_at_17.37.01.png">
+  Selecting the 'Raw Body' binding
+</Image>
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0a972e7-small-Screenshot_2023-05-11_at_17.37.45.png",
-        null,
-        "Typing out the desired body property, i.e. 'value5'"
-      ],
-      "align": "center",
-      "caption": "Typing out the desired body property, i.e. 'value5'"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Typing out the desired body property, i.e. 'value5'" align="center" src="https://files.readme.io/0a972e7-small-Screenshot_2023-05-11_at_17.37.45.png">
+  Typing out the desired body property, i.e. 'value5'
+</Image>
 
 ***
 
@@ -66,7 +40,7 @@ With your Zap configured, you can now interact with it from Budibase.
 2. Click the `+` icon, and select the `Zapier` app action.
 3. Paste in the webhook URL and fill in the JSON payload as previously defined in Zapier.
 
-   [block:image]{"images":[{"image":["https://files.readme.io/ffc56344d68c7d4eb3ac8d69b29a61141a7fd09e8ba25803074aeb54c2babb5c-Screenshot_2025-04-29_at_11.16.49.png","",""],"align":"center"}]}[/block]
+   <Image align="center" src="https://files.readme.io/ffc56344d68c7d4eb3ac8d69b29a61141a7fd09e8ba25803074aeb54c2babb5c-Screenshot_2025-04-29_at_11.16.49.png" />
 
 ## Using bindings
 
@@ -76,25 +50,12 @@ You can do this through [Bindings](doc:data-in-automations).
 
 If you are using an [App action](doc:app-action) trigger, then the fields can be accessed like so:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f727cea889249ad370e540b5f7d02bafb798c010d383b2b343bbad29a60ce6ff-Screenshot_2025-04-29_at_11.19.12.png",
-        null,
-        "App action fields binding"
-      ],
-      "align": "center",
-      "caption": "App action fields binding"
-    }
-  ]
-}
-[/block]
+<Image alt="App action fields binding" align="center" src="https://files.readme.io/f727cea889249ad370e540b5f7d02bafb798c010d383b2b343bbad29a60ce6ff-Screenshot_2025-04-29_at_11.19.12.png">
+  App action fields binding
+</Image>
 
-
-> 📘 
-> 
-> **Note** the binding expression in this case is surrounded in double quotes because _appValue_ is of type **Text**.
-> 
+> 📘
+>
+> **Note** the binding expression in this case is surrounded in double quotes because *appValue* is of type **Text**.
+>
 > For type **Number**, the quotes should not be included: `{{ trigger.fields.appValue }}`
