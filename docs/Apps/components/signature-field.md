@@ -14,7 +14,7 @@ next:
 ---
 ### About
 
-`Signature` components can be used inside `Form` blocks in order to capture a signature from the user. 
+`Signature` components can be used inside `Form` blocks in order to capture a signature from the user.
 
 [block:image]
 {
@@ -26,18 +26,17 @@ next:
         ""
       ],
       "align": "center",
-      "sizing": "50% "
+      "sizing": "50%"
     }
   ]
 }
 [/block]
 
-
-A `Signature` component will automatically populate when a `Form` block is used with a data source that includes a signature field. The Signature type can be added to columns in tables. 
+A `Signature` component will automatically populate when a `Form` block is used with a data source that includes a signature field. The Signature type can be added to columns in tables.
 
 ### Manually Building Forms
 
-When building forms manually, start by adding the `Form` component and selecting the schema of the table you wish to save a signature to, then add a `Signature` component. Your `Signature` component will display only once you have chosen an option from the dropdown list or manually assigned a value for `Field` by typing in the input field. Items in the dropdown list will populate from your schema (if you have selected one) if they are signature columns in the table. 
+When building forms manually, start by adding the `Form` component and selecting the schema of the table you wish to save a signature to, then add a `Signature` component. Your `Signature` component will display only once you have chosen an option from the dropdown list or manually assigned a value for `Field` by typing in the input field. Items in the dropdown list will populate from your schema (if you have selected one) if they are signature columns in the table.
 
 [block:image]
 {
@@ -53,7 +52,6 @@ When building forms manually, start by adding the `Form` component and selecting
   ]
 }
 [/block]
-
 
 [block:image]
 {
@@ -71,9 +69,6 @@ When building forms manually, start by adding the `Form` component and selecting
 }
 [/block]
 
-
-### 
-
 Once published, clicking the signature field presents a pop-over in which the user can use their mouse to click-and-drag to create a signature. Clicking confirm closes the pop-over and displays the user's signature as part of the form. Signatures can also be added in the `Data` tab.
 
 [block:image]
@@ -86,12 +81,11 @@ Once published, clicking the signature field presents a pop-over in which the us
         ""
       ],
       "align": "center",
-      "sizing": "50% "
+      "sizing": "50%"
     }
   ]
 }
 [/block]
-
 
 ### General Settings
 
