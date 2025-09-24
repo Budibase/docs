@@ -2,7 +2,7 @@
 title: Google Cloud Run
 excerpt: Installing Budibase on Google Cloud Run
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
