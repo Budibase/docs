@@ -13,7 +13,7 @@ next:
 ## Try it out!
 
 <HTMLBlock>{`
-<iframe width="800" height="600" frameborder="0" allow="clipboard-write;camera;geolocation;fullscreen" src="https://cprem.budibase.app/app/guides-table-row-status"></iframe>
+<iframe width="800" height="600" frameborder="0" allow="clipboard-write;camera;geolocation;fullscreen" src="https://cprem.budibase.app/embed/guides-table-row-status"></iframe>
 `}</HTMLBlock>
 
 ## Scenario
