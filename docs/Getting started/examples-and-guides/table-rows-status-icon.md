@@ -13,14 +13,14 @@ next:
 ## Try it out!
 
 <HTMLBlock>{`
-<iframe width="800" height="600" frameborder="0" allow="clipboard-write;camera;geolocation;fullscreen" src="https://cprem.budibase.app/app/docs-table-row-status"></iframe>
+<iframe width="800" height="600" frameborder="0" allow="clipboard-write;camera;geolocation;fullscreen" src="https://cprem.budibase.app/app/guides-table-row-status"></iframe>
 `}</HTMLBlock>
 
 ## Scenario
 
-In this example we have a table of sales records and we want to display an icon to show if the sale was made *Online* or *Offline*. 
+In this example we have a table of sales records and we want to display an icon to show if the sale was made _Online_ or _Offline_.
 
-The same approach could be applied for status based workflows, e.g. *Approved*, *In Progress*, *Complete*, etc.
+The same approach could be applied for status based workflows, e.g. _Approved_, _In Progress_, _Complete_, etc.
 
 <HTMLBlock>{`
 <u><b style="font-size: 14px;">Challenge: </b></u><br />
@@ -34,16 +34,16 @@ The same approach could be applied for status based workflows, e.g. *Approved*, 
 1. Add a table to your screen, and point it to the Sales table (available in the download link at the bottom of the page)
 2. In the Table settings, disable "Add rows", "Edit rows", "Delete Rows"
 3. In the Table settings, under columns, click the cog/sprocket icon for the Sales Channel
-4. Add a condition by clicking "No conditions set"  
+4. Add a condition by clicking "No conditions set"
 
-   <Image align="center" src="https://files.readme.io/3a918e69b821f54890acf1e9796cddd18e9760b8be1c9d5c1e9826bf35f96a3f-Screenshot_2025-08-18_at_09.17.25.png" />
-5. Add the condition "Update `Cell` `Background color` to \[red] if value `Equals` `Value` Offline"
+   <Image align="center" border={false} src="https://files.readme.io/3a918e69b821f54890acf1e9796cddd18e9760b8be1c9d5c1e9826bf35f96a3f-Screenshot_2025-08-18_at_09.17.25.png" />
+5. Add the condition "Update `Cell` `Background color` to [red] if value `Equals` `Value` Offline"
 
-   <Image align="center" src="https://files.readme.io/d579e8fb99547ec8d5dca564d37ff379f053245b557510999c3bbc5d31eff63d-Screenshot_2025-08-18_at_09.21.38.png" />
+   <Image align="center" border={false} src="https://files.readme.io/d579e8fb99547ec8d5dca564d37ff379f053245b557510999c3bbc5d31eff63d-Screenshot_2025-08-18_at_09.21.38.png" />
 6. Duplicate the condition, and adjust it to show green for "Online"
 7. Save
 
-![](https://files.readme.io/a5b3a3f942d7f408d67288d7c26e9f79f3c44d306ddd44920d204e60a96d128e-image.png)
+<Image border={false} src="https://files.readme.io/a5b3a3f942d7f408d67288d7c26e9f79f3c44d306ddd44920d204e60a96d128e-image.png" />
 
 <br />
 
@@ -53,7 +53,7 @@ The same approach could be applied for status based workflows, e.g. *Approved*, 
 
 ## App export
 
-*Downloads may take a few seconds.*
+_Downloads may take a few seconds._
 
 <HTMLBlock>{`
 <!-- Add icon library -->
