@@ -20,17 +20,17 @@ next:
 
 Create the budibase application in your Applications list.
 
-![](https://files.readme.io/c2c0abb-auth0-create-application.png "auth0-create-application.png")
+<Image border={false} src="https://files.readme.io/c2c0abb-auth0-create-application.png" title="auth0-create-application.png" />
 
 Select the 'web' tab, then click create.
 
-<Image align="center" src="https://files.readme.io/f99b2ea-Screenshot_2024-04-03_at_08.35.49.png" />
+<Image align="center" border={false} src="https://files.readme.io/f99b2ea-Screenshot_2024-04-03_at_08.35.49.png" />
 
 ### Find your configuration details
 
 Visit the 'Settings' tab in your application.
 
-![](https://files.readme.io/6f28742-auth0-copy-details.png "auth0-copy-details.png")
+<Image border={false} src="https://files.readme.io/6f28742-auth0-copy-details.png" title="auth0-copy-details.png" />
 
 **Configuration URL**
 
@@ -48,7 +48,7 @@ Use the **Client Secret** field as your Client Secret in Budibase.
 
 Navigate to Settings -> Auth within Budibase. Scroll down to where it says "OpenID Connect" and find the field labeled `Callback URL`.
 
-<Image align="center" src="https://files.readme.io/5bb0daa-Screenshot_2024-02-23_at_11.52.38.png" />
+<Image align="center" border={false} src="https://files.readme.io/418893922acfe4ef1d45c69efc0fd3f1a4a964e174d8b421fe851d514b1d5458-Screenshot_2025-09-25_at_09.18.29.png" />
 
 If you are using our cloud service, the URL contained within is exactly what you need.
 
@@ -58,4 +58,4 @@ For self-hosted users, it will likely display `http://localhost:10000/api/global
 
 Scroll down to the 'Application URIs' section and enter your callback URL
 
-<Image align="center" src="https://files.readme.io/0a31fcd-34b880b-auth0-callback.png" />
+<Image align="center" border={false} src="https://files.readme.io/0a31fcd-34b880b-auth0-callback.png" />
