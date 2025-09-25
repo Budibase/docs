@@ -10,10 +10,6 @@ metadata:
 next:
   description: ''
 ---
-<HTMLBlock>{`
-<iframe src="https://player.vimeo.com/video/746819086?h=c5ab385933&title=0&portrait=0&byline=0" style="margin-top: -80px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-`}</HTMLBlock>
-
 ## Getting started with SSO
 
 * [OpenID Connect (OIDC)](doc:openid-connect)
