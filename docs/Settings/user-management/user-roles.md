@@ -42,7 +42,7 @@ Click on the user you want to change, and then set the _Role_.
 
 You can close the screen once you're happy with the change in your access. The permissions save automatically.
 
-## App specific roles
+## Workspace specific roles
 
 All users in your app without `Workspace Admin` permission will only see applications you give them access to. But not only can you configure which applications each user can see, you can also configure their role in each application.
 
@@ -62,15 +62,15 @@ Higher-tier roles will be able to see everything lower tiers can see, plus their
 
 ### Adding custom roles
 
-The core app roles cannot be deleted, however you can add and remove any number of custom roles if you need more granular access control.
+The core workspaces roles cannot be deleted, however you can add and remove any number of custom roles if you need more granular access control.
 
-Within your app, navigate to the [Users table](https://docs.budibase.com/docs/users-table) and click on _Edit roles_.
+Within your workspace, navigate to the data area. Then click `Manage roles`
 
-<Image border={false} src="https://files.readme.io/5591bd9-Screenshot_2022-10-13_at_08.43.00.png" />
+<Image align="center" border={false} src="https://files.readme.io/57d5c0630d73cb7da3ead0c744e1b4f0b92ef14ab1692fd5d155a3c35db99786-Screenshot_2025-09-29_at_14.05.00.png" />
 
-A modal will pop up to enter data into. Select _Create new role_.
+A page on the right will appear with a button to create a new role
 
-<Image border={false} src="https://files.readme.io/034350a-Screenshot_2022-10-13_at_11.22.30.png" />
+<Image align="center" border={false} src="https://files.readme.io/5a3616edd107c47cbc8302306e6de85005df45e2fe5155066f6c12d49a4bb7e3-Screenshot_2025-09-29_at_14.05.30.png" />
 
 **Inherits Role** determines the rank of your new role. In this case, a _Super_ user will be able to access all screens of access level Super, Power, Basic and Public, but will not be able to access Admin app screens.
 
