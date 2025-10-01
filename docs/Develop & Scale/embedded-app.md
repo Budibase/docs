@@ -42,7 +42,7 @@ You can publish your app by clicking the drop-down in the top-right corner of th
 
 Once you app is published, you will see a new button appear: `</> Embed`. Clicking this button will take you to the Embed settings section.
 
-<Image align="center" alt="Click the 'Copy code' to quick copy the iframe contents" border={false} caption="Click the 'Copy code' button to quick copy the iframe contents" src="https://files.readme.io/0edd65769ac076e9d789b550fa9c8c6025a4cf59556758de853bfd7d35fc6e76-Screenshot_2025-10-01_at_15.06.30.png" />
+<Image align="center" alt="Click the 'Copy code' to quick copy the iframe contents" border={false} caption="Highlight the iframe, right click and copy the code" src="https://files.readme.io/0edd65769ac076e9d789b550fa9c8c6025a4cf59556758de853bfd7d35fc6e76-Screenshot_2025-10-01_at_15.06.30.png" />
 
 <br />
 
