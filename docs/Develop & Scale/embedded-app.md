@@ -26,9 +26,9 @@ In Budibase you can embed an entire published application within your webpages.
 
 ## Getting the iframe snippet
 
-To get the embed code snippet, click on the `Settings` tab within your app, and then click `App`.
+To obtain the embed code snippet, click the `Settings` tab within your workspace and then select `Apps`.
 
-Here you will be presented with a few different tabs. Select `Embed`
+Here, you will be presented with several different tabs. Select `Embed`
 
 <Image align="center" border={false} src="https://files.readme.io/dc125e295c4fda098787de840fdbb51a4e789bb58a56274c8480ca2961d92eea-Screenshot_2025-10-01_at_15.06.30.png" />
 
