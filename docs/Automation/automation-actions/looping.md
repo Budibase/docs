@@ -1,6 +1,8 @@
 ---
-title: Looping
-excerpt: ''
+title: Loop
+excerpt: >-
+  Looping is useful when you want to process multiple items or perform an action
+  repeatedly, such as sending a message to every contact in your database.
 deprecated: false
 hidden: false
 metadata:
@@ -10,33 +12,16 @@ metadata:
 next:
   description: ''
 ---
-<HTMLBlock>{`
-<iframe src="https://player.vimeo.com/video/746819148?h=80df83e472&title=0&portrait=0&byline=0" style="" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-`}</HTMLBlock>
-
 > 🚧 Iteration hard limit
 >
-> Users who self-host can configure this by changing the `AUTOMATION_MAX_ITERATIONS` environment variable.
+> Users who self-host can configure this by changing the `AUTOMATION_MAX_ITERATIONS`environment variable.
 >
 > * For docker-compose users, update docker-compose.yaml > app-service > environment.
 > * For Kubernetes users update values.yaml > `automationMaxIterations`
 
-Automation looping allows you to repeat an automation action across multiple records. For example, when an automation is triggered, delete the 10 last updated records in my database. Or, every Monday email my users with a usage update.
+The Loop step allows you to repeat a series of automation actions across multiple records. For example, when an automation is triggered, send an email to my top 10 contacts, and then update their status field. 
 
-You can loop actions by clicking the 'Add looping' button.
-
-<Image align="center" border={false} src="https://files.readme.io/66e13d3f002f6740b5942ed12ce0c5bcafbf405c4b7b16aebf6a1f2449bb56ed-Screenshot_2024-11-07_at_11.26.59.png" />
-
-By clicking the Add looping button, Budibase will add a special loop block to the automation, which is stored as a separate block but linked to the selected block using an ID.
-
-<Image align="center" border={false} src="https://files.readme.io/0e2d6f3f4257e5b6cc01c7b54e841e041f1aaa515190b09684c9002ce6404f52-Screenshot_2025-04-09_at_13.57.13.png" />
-
-As shown in the image above, several different configuration options can be provided.  Bindings are also available.
-
-### Array
-
-Array / String dropdown denotes what type of binding should be provided to the loop, and if a different type is passed, Budibase reports error at runtime stating this:
-`{ "items": [ { "success": true }, { "success": true } ], "iterations": 2, "success": false, "status": "INCORRECT_TYPE" }`
+## Settings
 
 ### Binding / Value
 
