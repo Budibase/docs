@@ -19,7 +19,7 @@ next:
 > * For docker-compose users, update docker-compose.yaml > app-service > environment.
 > * For Kubernetes users update values.yaml > `automationMaxIterations`
 
-The Loop step allows you to repeat a series of automation actions across multiple records. For example, when an automation is triggered, send an email to my top 10 contacts, and then update their status field. 
+The Loop step allows you to **repeat a single or series of automation actions across multiple records**. For example, when an automation is triggered, send an email to my top 10 contacts, and then update their status field. 
 
 ## Settings
 
