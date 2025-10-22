@@ -144,6 +144,8 @@ Prior to **v2.19.2**, the selected rows binding provided a list of <Glossary>Row
 
 ## Advanced settings
 
-If you need more out of your table such as footers, resizeable and searchable columns, and  [conditional cell UI](🔗), you can check out the community [Super Table](https://github.com/poirazis/bb-component-SuperTable).
+If you need more out of your table such as footers, resizeable and a more customisable search experience, you can check out the community [Super Table](https://github.com/poirazis/bb-component-SuperTable).
 
 Read more about [Custom plugins](https://github.com/Budibase/plugins🔗).
+
+<br />
