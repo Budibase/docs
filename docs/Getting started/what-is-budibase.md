@@ -1,5 +1,5 @@
 ---
-title: Budibase Documentation
+title: Budibase documentation
 excerpt: Helping you transform workflows.
 deprecated: false
 hidden: false
