@@ -143,7 +143,7 @@ Existing queries are also indicated by the _Search_ icon instead of the usual ta
 
 <br />
 
-## Fetching Views
+## Fetching views
 
 Budibase allows you to import database views as custom queries directly from your SQL datasource.
 To fetch views, open the Queries tab for your datasource and click **Fetch views**. This will display a list of available database views that can be selected and imported into your application
@@ -160,7 +160,7 @@ Once imported, views appear in the Queries list and can be edited, executed, and
 
 <br />
 
-> 📘 Supported Datasources
+> 📘 Supported datasources
 >
 > Currently, this feature is supported for **PostgreSQL** and **MySQL** datasources
 
