@@ -1,6 +1,6 @@
 ---
 title: Whitelisting
-excerpt: Firewall Requirements for external data sources
+excerpt: Firewall Configuration for External Data Sources
 deprecated: false
 hidden: false
 metadata:
