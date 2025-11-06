@@ -29,7 +29,7 @@ This guide provides an overview of where whitelisting is required, along with li
 
 If you are using Budibase Cloud, the Budibase servers will connect to your external data sources (e.g., PostgreSQL, MySQL, Microsoft SQL Server, REST APIs). To allow these connections, **you’ll need to permit inbound traffic from the Budibase Cloud IP addresses on your database firewall**.
 
-:arrow_right: Read more: [Connecting Budibase to External Data Sources]()
+:arrow_right: Read more: [Connecting Budibase to External Data Sources](https://docs.budibase.com/docs/external-data-sources#/)
 
 ### Self-hosted Deployments
 
@@ -39,14 +39,16 @@ When you host Budibase on your own infrastructure—either on-premises or via a 
 
 License activation and account validation **require outbound HTTPS access to the Budibase Account Portal**. Without it, license synchronization and updates will fail.
 
-:arrow_right: Read more: [Self-hosted Licensing and Account Portal Whitelisting]()
+:arrow_right: Read more: [Self-hosted Licensing and Account Portal Whitelisting](https://docs.budibase.com/docs/self-hosted-licensing#/)
 
 #### AI Features
 
 Budibase AI capabilities (e.g., intelligent chat, smart automations) also depend on outbound connections to Budibase Cloud. If your network blocks these endpoints, **AI functionality will be unavailable**.
 
-:arrow_right: Read more: [Self-hosted AI Features Whitelisting]()
+:arrow_right: Read more: [Self-hosted AI Features Whitelisting](https://docs.budibase.com/docs/self-hosted-ai-features#/)
 
 ### Keeping Up-To-Date
 
 Budibase IP addresses and domains may change periodically as our infrastructure evolves. Registered users will receive advance notice of any changes. However, we recommend reviewing these pages periodically to confirm that your firewall rules are current.
+
+<br />
