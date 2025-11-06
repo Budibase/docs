@@ -50,5 +50,3 @@ Budibase AI capabilities (e.g., intelligent chat, smart automations) also depend
 ### Keeping Up-To-Date
 
 Budibase IP addresses and domains may change periodically as our infrastructure evolves. Registered users will receive advance notice of any changes. However, we recommend reviewing these pages periodically to confirm that your firewall rules are current.
-
-<br />
