@@ -4,6 +4,14 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+next:
+  pages:
+    - slug: self-hosted-licensing
+      title: Self-hosted licensing
+      type: basic
+    - slug: self-hosted-ai-features
+      title: Self-hosted AI features
+      type: basic
 ---
 If you're using Budibase and attempting to connect to your own data sources, you may encounter issues if a firewall is blocking traffic. You will need to allow inbound connections from Budibase to your database server.
 
