@@ -1,6 +1,8 @@
 ---
 title: Whitelisting
-excerpt: Firewall Configuration for External Data Sources
+excerpt: >-
+  Ensuring that your self-hosted installation or Budibase Cloud usage is not
+  disrupted by network conditions.
 deprecated: false
 hidden: false
 metadata:
@@ -8,99 +10,43 @@ metadata:
   description: ''
   robots: index
 next:
-  description: ''
+  pages:
+    - slug: external-data-sources
+      title: External data sources
+      type: basic
+    - slug: self-hosted-licensing
+      title: Self-hosted licensing
+      type: basic
+    - slug: self-hosted-ai-features
+      title: Self-hosted AI features
+      type: basic
 ---
-## Inbound connections
+Budibase communicates with your databases, services, and Budibase Cloud infrastructure through a small number of well-defined network endpoints. If your environment uses a firewall, proxy, or private network, you may need to whitelist specific IP addresses or domains to ensure Budibase operates correctly.
 
-If you're using Budibase and attempting to connect to your own datasources, you may have difficulty if you're running a firewall. You will need to allow connections from Budibase to your database.
+This guide provides an overview of where whitelisting is required, along with links to more detailed pages tailored to your specific deployment type.
 
 ### Budibase Cloud
 
-The following IP addresses are used by Budibase Cloud to connect to your data source. You should whitelist these IP addresses on your firewall to allow Budibase Cloud to access your Database Server. Your organisation Database Administrator should be able to help with this.
+If you are using Budibase Cloud, the Budibase servers will connect to your external data sources (e.g., PostgreSQL, MySQL, Microsoft SQL Server, REST APIs). To allow these connections, **you’ll need to permit inbound traffic from the Budibase Cloud IP addresses on your database firewall**.
 
-```
-34.246.43.190
-34.255.55.113
-3.248.69.251
-18.203.209.221
-```
+:arrow_right: Read more: [Connecting Budibase to External Data Sources]()
 
-> 📘 Firewall Considerations
->
-> Note that the IP addresses above are subject to change. We will notify registered users prior to any change to give advance notice for firewall amendments. If you notice that a previously working connection has stopped working check back here.
+### Self-hosted Deployments
 
-### Budibase Cloud client side
+When you host Budibase on your own infrastructure—either on-premises or via a third-party provider—additional network rules may apply. **Self-hosted installations make outbound connections to Budibase Cloud** for specific services, including licensing, authentication, and AI features.
 
-While using Budibase Cloud in your browser, requests are made to our CDN which is behind AWS CloudFront. The CloudFront address is:
+#### Licensing and Account Portal
 
-```text
-https://d2l5prqdbvm3op.cloudfront.net
-```
+License activation and account validation **require outbound HTTPS access to the Budibase Account Portal**. Without it, license synchronization and updates will fail.
 
-We may also connect to this CloudFront distribution through an alternate domain:
+:arrow_right: Read more: [Self-hosted Licensing and Account Portal Whitelisting]()
 
-```text
-https://cdn.budicloud.prod.budibase.net
-```
+#### AI Features
 
-Both will need to be allowed in your browser for all Budibase functionality to work.
+Budibase AI capabilities (e.g., intelligent chat, smart automations) also depend on outbound connections to Budibase Cloud. If your network blocks these endpoints, **AI functionality will be unavailable**.
 
-## Self-hosted
+:arrow_right: Read more: [Self-hosted AI Features Whitelisting]()
 
-If you are self-hosting Budibase on your own hardware or using a third-party provider you will need to ensure that the IP address used by your Budibase installation is whitelisted on any firewalls between Budibase and the data source.
+### Keeping Up-To-Date
 
-## Outbound connections
-
-This section only applies to users self-hosting Budibase.
-
-## Self-hosted
-
-There are some features that Budibase's self-hosted installation makes network calls back to Budibase Cloud to fulfill, for example AI functionality when using the Budibase AI provider.
-
-For this to work, you will need to allow connections to [https://budibase.app](https://budibase.app) from your self-host installation.
-
-### Account Portal Whitelisting
-
-Self-hosted deployments of the platform require communication with the Account Portal for license activation, validation.
-
-If your environment restricts outbound internet access, you must allow outgoing connections to the following IP addresses:
-
-```
-54.154.107.87
-54.194.185.139
-34.253.253.72
-```
-
-#### Requirements
-
-* Allow outbound HTTPS (TCP port 443) to the IPs listed above.
-* These endpoints are used exclusively for licensing and account-related services.
-* If outbound access is completely blocked, licensing and account synchronisation will not function correctly.
-* IPs may change in the future; check this documentation periodically for updates.
-
-## Troubleshooting Connection Issues
-
-If you have set up the connection to your data source within a self-hosted Budibase installation and you are experiencing difficulties connecting and you have terminal access to your Budibase instance you could try:
-
-**Can you make contact from the Budibase container or host using telnet?**
-
-```
-apt install telnet
-telnet 111.222.111.222 3306
-```
-
-Attempting a telnet connection to the IP address of your datasource and the port used by the data source (e.g. 3306 for MySQL, 5432 for Postgres, 1431 for MSSQL). If a connection is not made you should check if there is a firewall protecting your data source.
-
-**Is your database server listening for remote connections?**
-
-For security reasons many database servers will listen only for local connections by default. To allow connections from external servers your database server may need to be configured to listen for remote connections. As an example MySQL would need a configuration parameter as shown below:
-
-```
-bind-address           = 0.0.0.0
-```
-
-You can also check your database server is listening for remote connections by analysing the output from the `netstat` or `ss` commands.
-
-**Does your data source force particular security settings?**
-
-Some data sources will only allow encrypted connections. Some may require valid certificates for connecting. If you are having difficulties should should check with your Database Administrator for the correct settings to use.
+Budibase IP addresses and domains may change periodically as our infrastructure evolves. Registered users will receive advance notice of any changes. However, we recommend reviewing these pages periodically to confirm that your firewall rules are current.
