@@ -9,9 +9,6 @@ next:
     - slug: self-hosted-ai-features
       title: Self-hosted AI features
       type: basic
-    - slug: external-data-sources
-      title: External data sources
-      type: basic
 ---
 Self-hosted deployments of Budibase require communication with the Budibase Account Portal for license activation and validation.
 
