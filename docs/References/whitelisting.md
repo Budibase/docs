@@ -16,7 +16,7 @@ If you're using Budibase and attempting to connect to your own datasources, you 
 
 ### Budibase Cloud
 
-The following IP addresses are used by Budibase Cloud to connect to your data source. You should whitelist these IP addresses on your firewall to allow Budibase Cloud to access your Database Server. Your organisation Database Administrator should be able to help with this. 
+The following IP addresses are used by Budibase Cloud to connect to your data source. You should whitelist these IP addresses on your firewall to allow Budibase Cloud to access your Database Server. Your organisation Database Administrator should be able to help with this.
 
 ```
 34.246.43.190
@@ -47,7 +47,7 @@ Both will need to be allowed in your browser for all Budibase functionality to w
 
 ## Self-hosted
 
-If you are self-hosting Budibase on your own hardware or using a third-party provider you will need to ensure that the IP address used by your Budibase installation is whitelisted on any firewalls between Budibase and the data source. 
+If you are self-hosting Budibase on your own hardware or using a third-party provider you will need to ensure that the IP address used by your Budibase installation is whitelisted on any firewalls between Budibase and the data source.
 
 ## Outbound connections
 
@@ -58,6 +58,25 @@ This section only applies to users self-hosting Budibase.
 There are some features that Budibase's self-hosted installation makes network calls back to Budibase Cloud to fulfill, for example AI functionality when using the Budibase AI provider.
 
 For this to work, you will need to allow connections to [https://budibase.app](https://budibase.app) from your self-host installation.
+
+### Account Portal Whitelisting
+
+Self-hosted deployments of the platform require communication with the Account Portal for license activation, validation.
+
+If your environment restricts outbound internet access, you must allow outgoing connections to the following IP addresses:
+
+```
+54.154.107.87
+54.194.185.139
+34.253.253.72
+```
+
+#### Requirements
+
+* Allow outbound HTTPS (TCP port 443) to the IPs listed above.
+* These endpoints are used exclusively for licensing and account-related services.
+* If outbound access is completely blocked, licensing and account synchronisation will not function correctly.
+* IPs may change in the future; check this documentation periodically for updates.
 
 ## Troubleshooting Connection Issues
 
