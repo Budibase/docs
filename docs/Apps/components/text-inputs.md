@@ -79,9 +79,9 @@ When using the field value as a <Glossary>Binding</Glossary>, make sure to use t
 
 ### Run on input
 
-Triggers the same Actions on native input events (_typing, paste, barcode scans_) as the value changes, rather than waiting for the change event. Available for *Text, Number, BigInt, Password*, and *Image* fields where an input event is emitted.
+Triggers the same Actions on native input events (_typing, paste, barcode scans_) as the value changes, rather than waiting for the change event. Available for Text, Number, BigInt, Password, and Image fields where an input event is emitted.
 
-<Image border={false} src="https://files.readme.io/a1b77838121d02534c39d05bebc428dc0541838f1f298b081caf8b6a019370cc-image.png" />
+<Image align="center" border={false} src="https://files.readme.io/a1b77838121d02534c39d05bebc428dc0541838f1f298b081caf8b6a019370cc-image.png" />
 
 <br />
 
