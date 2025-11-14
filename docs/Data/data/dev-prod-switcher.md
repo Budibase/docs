@@ -44,8 +44,6 @@ The Prod environment contains live data. Any changes you make here will be immed
 
 Switching between Dev and Prod is simple. Look for the dev/prod switcher within the action bar. Select the environment you want to switch to. That's it!
 
-<Image align="center" src="https://files.readme.io/8afcf4d5d5dd00a250710c95efb94e8ff3328f853d8c59d6163cd9302cc5ee69-CleanShot_2025-08-13_at_11.10.542x.png" />
+<Image align="center" border={false} src="https://files.readme.io/8afcf4d5d5dd00a250710c95efb94e8ff3328f853d8c59d6163cd9302cc5ee69-CleanShot_2025-08-13_at_11.10.542x.png" />
 
-## Syncing data from Dev to Prod
-
-Sometimes you may want to use your Dev data in Prod. To do this, you need to use the "Sync Dev to Prod" button. You can access this
+<br />
