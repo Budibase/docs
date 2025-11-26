@@ -31,7 +31,7 @@ Caddy is an open-source web server with automatic HTTPS written in Go. If you wa
 
 ### Install Caddy
 
-Follow the [Caddy installation instructions](https://caddyserver.com/docs/install).\
+Follow the [Caddy installation instructions](https://caddyserver.com/docs/install).  
 Once you have done this, you should be able to check that you have Caddy available on your machine, using the following command.
 
 ```
@@ -59,7 +59,7 @@ That's it! Full HTTPS and reverse proxy setup with Caddy and Budibase. Visit you
 
 ## NGINX
 
-Please note, this section assumes some knowledge of NGINX installation, setup, and configuration. Information about NGINX can be found here: 
+Please note, this section assumes some knowledge of NGINX installation, setup, and configuration. Information about NGINX can be found here:
 
 * [installation](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/)
 * [setup](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/)
@@ -93,7 +93,7 @@ In this configuration, all that needs to be updated for this to work is where th
 
 There are a few ways this can be extended/altered:
 
-1. This is just a basic version which will proxy on any requests to your domain/sub-domain to the Budibase platform, you can change the **server\_name** to suit your needs.
+1. This is just a basic version which will proxy on any requests to your domain/sub-domain to the Budibase platform, you can change the **server_name** to suit your needs.
 2. Where **location /** has been set you can change the slash to a pathname if you desire to have your Budibase app server running on a specific path rather than the whole domain or a sub-domain.
 3. Lastly if you want to make use of HTTPS/TLS you can either configure this basic configuration to re-direct traffic to HTTPS and then add your certificate, or you can use [certbot-auto](https://certbot.eff.org/) to automatically generate and look after the certificates for your domain!
 
@@ -111,3 +111,35 @@ server {
  # rest of nginx config #
 }
 ```
+
+<br />
+
+## Strict Referrer Policy and other security settings
+
+There are a few caveats with reverse proxies that operators need to pay close attention to—especially when running Budibase behind Nginx, Traefik, Caddy, or any proxy layer that modifies or strips HTTP headers. Some security-focused defaults can unintentionally break core platform functionality.
+
+### Referrer Policy and Workspace App Matching
+
+Budibase’s server **relies on the Referer header** in a specific part of the request lifecycle. The platform extracts the URL path from the incoming request’s Referer header. If a reverse proxy strips the Referer, changes it, or prevents it from flowing through, Budibase may fail to match the correct workspace app and respond with:
+
+```
+“No matching workspace app found for URL path…”
+```
+
+To preserve Budibase functionality while keeping sane security defaults, adjust your policy for the Budibase domain:
+
+```
+server {
+    add_header Referrer-Policy same-origin;
+
+    location / {
+        proxy_set_header Referer $http_referer;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Host $host;
+        proxy_pass http://your-budibase-upstream;
+    }
+}
+```
+
+<br />
