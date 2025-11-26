@@ -112,8 +112,6 @@ server {
 }
 ```
 
-<br />
-
 ## Strict Referrer Policy and other security settings
 
 There are a few caveats with reverse proxies that operators need to pay close attention to—especially when running Budibase behind Nginx, Traefik, Caddy, or any proxy layer that modifies or strips HTTP headers. Some security-focused defaults can unintentionally break core platform functionality.
