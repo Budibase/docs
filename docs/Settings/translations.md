@@ -4,7 +4,7 @@ excerpt: >-
   Customise or translate Budibase’s default system text for your entire
   workspace
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
