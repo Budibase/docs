@@ -1,5 +1,5 @@
 ---
-title: Translations
+title: Translations 🔒
 excerpt: >-
   Customise or translate Budibase’s default system text for your entire
   workspace
@@ -8,8 +8,6 @@ hidden: true
 metadata:
   robots: index
 ---
-<br />
-
 > 📘 Enterprise Feature
 >
 > This feature is currently available to Enterprise users only
@@ -18,14 +16,15 @@ This feature enables users to change hard-coded values that appear throughout th
 
 * My Profile
 * Update Password
-* Go to portal
+* Go to the portal
 * Log out
+* And more...
 
 <Image border={false} src="https://files.readme.io/591841fe08a6188719a009c002d1be475d7048a3713960c29c76d81e2aff6e4a-image.png" />
 
 ## How to access translations
 
-In settings, navigate to Apps > Translations, here you can change the hard-coded values for multiple user facing elements such as the profile modal, password modal and much more.
+In settings, navigate to Apps > Translations. Here, you can modify the hard-coded values for multiple user-facing elements, including the profile modal, password modal, and more.
 
 For example, currently the user menu profile label is blank, so it will default to "My Profile", however we can change this value as seen below
 
