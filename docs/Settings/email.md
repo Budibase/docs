@@ -10,9 +10,9 @@ metadata:
 next:
   description: ''
 ---
-For Budibase to send emails, you must add your SMTP settings. After you have set this up, you can [invite users](doc:user-management) and send emails using the email [Action](doc:automation-actions).
+For Budibase to send emails, you must configure an SMTP Mail Server, such as Gmail SMTP or SendGrid . After you have set this up, you can [invite users](doc:user-management) and send emails using the email [Action](doc:automation-actions).
 
-![](https://files.readme.io/b283bce-CleanShot_2022-04-12_at_14.18.152x.png "CleanShot 2022-04-12 at 14.18.15@2x.png")
+<Image border={false} src="https://files.readme.io/b283bce-CleanShot_2022-04-12_at_14.18.152x.png" title="CleanShot 2022-04-12 at 14.18.15@2x.png" />
 
 ### Email setup
 
@@ -72,9 +72,9 @@ For Budibase to send emails, you must add your SMTP settings. After you have set
       </td>
 
       <td>
-        An “SMTP port” refers to the specific part of the Internet address that’s used to transfer email.  
+        An “SMTP port” refers to the specific part of the Internet address that’s used to transfer email.
 
-        If you run your own SMTP server you can find the configured SMTP port number and address from the SMTP server configuration.  
+        If you run your own SMTP server you can find the configured SMTP port number and address from the SMTP server configuration.
 
         Ports 25, 465, 587, or 2525 for SMTP have all been considered standard SMTP ports at some point, but only 587 or 2525  really should be considered for modern use.
       </td>
@@ -142,7 +142,7 @@ For Budibase to send emails, you must add your SMTP settings. After you have set
   </tbody>
 </Table>
 
-  
+ 
 
 ## Templates
 
@@ -150,11 +150,11 @@ Budibase comes with three different email templates: Password Recovery, Invitati
 
 To edit a template, simply select it in the table. To insert dynamic content you can use the Bindings on the right side of the page. This makes it easier to include things such as the user's email, your organization's logo, or the name of your organization. When you're done hit the preview button to make sure it looks OK. Then hit save.
 
-![](https://files.readme.io/11c9942-templates.png "templates.png")
+<Image border={false} src="https://files.readme.io/11c9942-templates.png" title="templates.png" />
 
 The email templates work on all devices, email platforms, and themes (light and dark modes). Below is an image of the invitation email template.
 
-![](https://files.readme.io/824b249-CleanShot_2022-04-12_at_15.22.54.png "CleanShot 2022-04-12 at 15.22.54.png")
+<Image border={false} src="https://files.readme.io/824b249-CleanShot_2022-04-12_at_15.22.54.png" title="CleanShot 2022-04-12 at 15.22.54.png" />
 
 ## Video tutorial
 
