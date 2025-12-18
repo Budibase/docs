@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-For Budibase to send emails, you must configure an SMTP Mail Server, such as Gmail SMTP or SendGrid . After you have set this up, you can [invite users](doc:user-management) and send emails using the email [Action](doc:automation-actions).
+For Budibase to send emails, you must configure an SMTP Mail Server, such as Gmail SMTP or SendGrid. After you have set this up, you can [invite users](doc:user-management) and send emails using the email [Action](doc:automation-actions).
 
 <Image border={false} src="https://files.readme.io/b283bce-CleanShot_2022-04-12_at_14.18.152x.png" title="CleanShot 2022-04-12 at 14.18.15@2x.png" />
 
