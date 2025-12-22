@@ -1,3 +1,4 @@
+- rest-templates
 - rest-queries
 - rest-bindings
 - rest-query-import
@@ -5,4 +6,3 @@
 - rest-variables
 - rest-pagination
 - rest-oauth2
-- rest-templates
