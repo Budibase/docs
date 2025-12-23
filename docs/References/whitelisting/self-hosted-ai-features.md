@@ -12,7 +12,7 @@ next:
 ---
 <br />
 
-When using** the Budibase AI provider** in a self-hosted installation, Budibase makes outbound connections to Budibase Cloud to fulfill AI-powered functionality.
+When using **the Budibase AI provider** in a self-hosted installation, Budibase makes outbound connections to Budibase Cloud to fulfill AI-powered functionality.
 
 If **your environment restricts outbound internet access**, you must whitelist the IP addresses used by the Budibase AI service.
 
@@ -31,7 +31,7 @@ If **your environment restricts outbound internet access**, you must whitelist t
 
 ### Related domains
 
-* https://budibase.app -- used to authenticate and resolve AI-related API requests.
+* [https://budibase.app](https://budibase.app) -- used to authenticate and resolve AI-related API requests.
 
 ### Notes
 
