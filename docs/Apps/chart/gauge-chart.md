@@ -1,7 +1,7 @@
 ---
 title: Gauge Chart
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
