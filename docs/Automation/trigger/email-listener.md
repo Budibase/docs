@@ -30,6 +30,6 @@ When an email is received, it will trigger the _create row_ action which we have
 
 <Image align="center" border={false} width="60% " src="https://files.readme.io/1e8fa39359c5a35de6d2c5b4e3b613d4c592ae62acd9873d06ca7029786bcc99-Screenshot_2026-01-27_at_14.10.30.png" />
 
-Now, each time an email is received, Budibase runs the automation and creates a new row in 'Emailz' with the sender’s email address in _from_  and the message content in _body_. There may not always be a subject, but if there is it will be in _subject_
+Now, each time an email is received, Budibase runs the automation and creates a new row in 'Emailz' with the sender’s email address in _from_  and the message content in _body_. There may not always be a subject, but if there is, it will be in _subject_
 
 <Image border={false} src="https://files.readme.io/101b8dc64d446242cae1f9dfb9e0482d7324ec4924e7dc116e91fe61678575f6-image.png" />
