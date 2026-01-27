@@ -18,15 +18,15 @@ To configure the trigger, create a new **Email received** type automation. Click
 
 <Image align="center" alt="Showing the various configuration settings to get the email listener setup" border={false} src="https://files.readme.io/8f5e7feffd3881546c8290388dd7ac1133b57ec4c9d711b4c531e16158e6ec23-Screenshot_2026-01-27_at_14.02.44.png" />
 
-The Email (IMAP) trigger listens to the mailbox you set up within the initial step of the automation. When a new email arrives, Budibase detects it, converts the message into a payload (subject, from/to, date, body text/HTML, attachments), and starts your automation. You can then map those fields in downstream steps (e.g., create a record with From/To/Body). Budibase tracks each email’s UID, so the same message won’t trigger twice.
+The Email received trigger listens to the mailbox you set up within the initial step of the automation. When a new email arrives, Budibase detects it, converts the message into a payload (subject, from/to, date, body text/HTML), and starts your automation. You can then map those fields in downstream steps (e.g., create a record with From/To/Body). Budibase tracks each email’s UID, so the same message won’t trigger twice.
 
 ## Example
 
-This is an example of how you can use Budibase's email automation trigger to populate a table with the contents of an email, this is useful when testing this feature as you can see what is being output from the automation
+This is an example of how you can use Budibase's email automation trigger to populate a table with the contents of an email. This is useful when testing this feature, as you can see what is being output from the automation
 
 <Image border={false} src="https://files.readme.io/5e9c0fe8be6549944b38484b16222b8dafd36825bbfedc66728b15a92eab6dfb-image.png" />
 
-When an email is received, it will trigger the _create row_ action which we have set up to populate our table 'emailz' based on three fields, _body_, _from_ and _subject_. These have been selected from the Email's trigger outputs
+When an email is received, it triggers the _create row_ action, which we have set up to populate our 'emailz' table based on three fields: _body_, _from_, and _subject_. These have been selected from the Email's trigger outputs
 
 <Image align="center" border={false} width="60% " src="https://files.readme.io/1e8fa39359c5a35de6d2c5b4e3b613d4c592ae62acd9873d06ca7029786bcc99-Screenshot_2026-01-27_at_14.10.30.png" />
 
