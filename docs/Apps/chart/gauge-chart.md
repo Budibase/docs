@@ -7,19 +7,21 @@ metadata:
 ---
 A gauge chart displays progress or performance for multiple items simultaneously using coloured circular arcs. Each ring represents a separate entity (e.g., a user, task, or metric), and the length of the coloured arc shows how much of the target has been achieved
 
-<Image align="center" border={false} width="90% " src="https://files.readme.io/19754450039f3a53ffdf48caf472ef04eb45f533f22b86c3ccb5dee6721dae06-image.png" />
+<Image border={false} src="https://files.readme.io/049b50945060a39147e6202bf8e75123f98755e79c75eb7cb4fe5496e1696a11-image.png" />
+
+<Image border={false} src="https://files.readme.io/60e771e1ec718b7a009567d28f366a2b711c6184295e38d4e1e61ee2c9fa1e81-image.png" />
 
 <br />
 
 ## Tutorial
 
-For this example, the gauge chart will be used to calculate the usage of each user's annual leave (e.g 0% = no annual leave taken, 100% = all annual leave taken) 
+For this example, the gauge chart will be used to calculate the usage of each user's annual leave (e.g 0% = no annual leave taken, 100% = all annual leave taken)
 
-First we need create a data table, below I have created a table consisting of users, days taken, days allowed, and days remaining 
+First we need create a data table, below I have created a table consisting of users, days taken, days allowed, and days remaining
 
 <Image border={false} src="https://files.readme.io/d52055b62ad2446e703fec5dc28a8792790134839d9f80132479367676bd4795-image.png" />
 
-Then create a new app, and add a data provider, followed by the gauge chart component. For the data provider, set the data source to be our table 'days off', then in the nested gauge chart, set the following settings: 
+Then create a new app, and add a data provider, followed by the gauge chart component. For the data provider, set the data source to be our table 'days off', then in the nested gauge chart, set the following settings:
 
 <Image border={false} src="https://files.readme.io/b2f812868e99512aa93084288e5bde9ecec9f5266c32f0896a3eae0059809450-image.png" />
 
