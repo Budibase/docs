@@ -28,9 +28,7 @@ This is an example of how you can use Budibase's email automation trigger to pop
 
 When an email is received, it will trigger the _create row_ action which we have set up to populate our table 'emailz' based on three fields, _body_, _from_ and _subject_. These have been selected from the Email's trigger outputs
 
-<Image align="center" border={false} width="60% " src="https://files.readme.io/15ee4a16d209fa889ba94c376248308ecbc27cbd5aba8401b955da5d30fe6b83-image.png" />
-
-<br />
+<Image align="center" border={false} width="60% " src="https://files.readme.io/1e8fa39359c5a35de6d2c5b4e3b613d4c592ae62acd9873d06ca7029786bcc99-Screenshot_2026-01-27_at_14.10.30.png" />
 
 Now, each time an email is received, Budibase runs the automation and creates a new row in 'Emailz' with the sender’s email address in _from_  and the message content in _body_. There may not always be a subject, but if there is it will be in _subject_
 
