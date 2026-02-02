@@ -1,5 +1,5 @@
 ---
-title: In-app user management
+title: Workspace user management
 excerpt: ''
 deprecated: false
 hidden: false
