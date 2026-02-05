@@ -32,9 +32,26 @@ Different views can be selected, depending on your needs.
 
 <Image align="center" border={false} caption="Agenda - an ordered list of the events of the week" src="https://files.readme.io/497c3b38b53a80286bc20153c7c814938835f43eca725729cc4d77c3e167e6c7-image.png" />
 
-<br />
+## Options
+
+Creators can optionally show or hide the date or date-range being shown in the view. using the "Show title" setting, which can be configured for DD-MM-YYYY or MM-DD-YYYY formats.
+
+<Image border={false} src="https://files.readme.io/41431c48cc93883c660381bafc9d521bec0b5b1e0e188645a842825cbdddd41a-image.png" />
+
+Creators can also allow their users to move around to different dates or views using the "Show Controls" option. By default, the calendar component will open on the current day, but using the "Open on date" setting, and providing a date in YYYY-MM-DD format, the calendar will open on this date (or date range). This could be useful to show specific plans.
+
+<Image border={false} src="https://files.readme.io/0dea57200fff66272a7f838c8014141762a6fe340f2dae60fe689d40e5cfeb5c-image.png" />
+
+## On click events
+
+On-click events can be established to surface the values for an event's `row_id`, event start, event end, and event title. These could be used in conjunction with another data provider to 
 
 <br />
+
+| Setting | Expected Value | Use |
+| :------ | :------------- | :-- |
+|         |                |     |
+|         |                |     |
 
 <br />
 
