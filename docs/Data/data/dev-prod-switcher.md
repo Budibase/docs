@@ -33,7 +33,7 @@ This is your data sandbox. The Dev environment is where you can freely build, ed
 
 > 📘 Access Prod environment
 >
-> To access the Prod environment, your table must be published. It it is not published, the Publish switch will be disabled. To publish your table, you must publish your workspace by clicking the Publish button.
+> To access the Prod environment, your table must be published. If it is not published, when switching to the Prod environment you will be prompted to either Publish (without copying any data), or _Seed & Publish_, which will copy over the rows from your Development Environment. Seeding to production can only be done when the production table is empty.
 
 The Prod environment contains live data. Any changes you make here will be immediately live.
 
