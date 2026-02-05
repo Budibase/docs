@@ -12,7 +12,7 @@ next:
 ---
 # Understanding Dev and Prod Environments
 
-In Budibase, you can switch between two different data environments: Dev (development) and Prod (production). This is a core experience that allows you to safely build and test data changes.
+In Budibase, you can switch between two different data environments: Dev (development) and Prod (production). This is a core experience that allows you to safely build and test data changes. The Budibase database has these established by default, though external datasources can be configured to use the Dev/Prod Switcher using Environment Variables.
 
 ## What's the Difference?
 
@@ -46,4 +46,8 @@ Switching between Dev and Prod is simple. Look for the dev/prod switcher within 
 
 <Image align="center" border={false} src="https://files.readme.io/8afcf4d5d5dd00a250710c95efb94e8ff3328f853d8c59d6163cd9302cc5ee69-CleanShot_2025-08-13_at_11.10.542x.png" />
 
-<br />
+## Configuring External Databases with the Dev/Prod Switcher 
+
+Using <Anchor label="Environment Variables" target="_blank" href="https://docs.budibase.com/docs/environment-variables">Environment Variables</Anchor> it is possible to set different values for Production and Development environments. Knowing this, when connecting to your external datasource, instead of providing a plain text string -  `database_name` - you should select (or create) an environment variable which returns the  values for `production_database_name` and `development_database_name ` - these values can be configured for all variables in the connection, for example if your two environments are hosted on different servers with different passwords.
+
+In instances such as this, it is essential that the Production schema matches the Development schema. Columns found in Development but absent from Production will cause errors. Columns found in Production but absent from Development will not be shown.
