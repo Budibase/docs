@@ -44,19 +44,241 @@ Creators can also allow their users to move around to different dates or views u
 
 ## On click events
 
-On-click events can be established to surface the values for an event's `row_id`, event start, event end, and event title. These could be used in conjunction with a Single Row provider in a modal or side panel,
+On-click events can be established to surface the values for an event's `row_id`, event start, event end, and event title. These could be used in conjunction with a Single Row provider in a modal or side panel, or even as part of [Navigate To](https://docs.budibase.com/docs/application-actions#navigate-to) action using [URL Parameters](https://docs.budibase.com/docs/passing-bindings-in-url-parameters)
 
-<Image border={false} src="https://files.readme.io/372784231207746be59393bf104ae529f98f0175b989b0b777c465f484d4c623-image.png" />
-
-<br />
+<Image align="center" border={false} src="https://files.readme.io/cd661b892326c717e22c65612da40817c853331f333e6db6a91360849517f414-Screen_Recording_2026-02-03_at_17.38.40.gif" />
 
 <br />
 
-| Setting | Expected Value | Use |
-| :------ | :------------- | :-- |
-|         |                |     |
-|         |                |     |
+<Table align={["left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Setting
+      </th>
 
-<br />
+      <th>
+        Expected Value
+      </th>
+
+      <th>
+        Use
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Data Provider
+      </td>
+
+      <td>
+        Data Provider
+      </td>
+
+      <td>
+        Should fetch a datasource that contains the required columns (detailed below)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Event Start
+      </td>
+
+      <td>
+        DateTime column
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Event End
+      </td>
+
+      <td>
+        DateTime column
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Event Title
+      </td>
+
+      <td>
+        Text column
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Type
+      </td>
+
+      <td>
+        Month/Week/Day/Agenda
+      </td>
+
+      <td>
+        Sets which view is shown by default
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        On click event
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+        Read more about [Actions](https://docs.budibase.com/docs/actions)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Show title date
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        Show or hide the date-range as a title
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Title date format
+      </td>
+
+      <td>
+        DD MM YYYY or   
+        MM DD YYYY
+      </td>
+
+      <td>
+        Only visible when "Show title date" is checked. 
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Empty Agenda text
+      </td>
+
+      <td>
+        Text
+      </td>
+
+      <td>
+        Used when the calendar is showing Agenda, with no events to show.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Show Controls
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        Allow or prevent the user from navigating to different views or dates
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Open on date
+      </td>
+
+      <td>
+        Text, expects YYYY-MM-DD format
+      </td>
+
+      <td>
+        Calendar will open on current date by default. Set this to open on a specific date.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Month button Text
+      </td>
+
+      <td>
+        Text
+      </td>
+
+      <td>
+        Allows customisation for non-english-speaking users
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Week button Text
+      </td>
+
+      <td>
+        Text
+      </td>
+
+      <td>
+        Allows customisation for non-english-speaking users
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Day button text
+      </td>
+
+      <td>
+        Text
+      </td>
+
+      <td>
+        Allows customisation for non-english-speaking users
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Today button text
+      </td>
+
+      <td>
+        Text
+      </td>
+
+      <td>
+        Allows customisation for non-english-speaking users
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 <br />
