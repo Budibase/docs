@@ -44,7 +44,11 @@ Creators can also allow their users to move around to different dates or views u
 
 ## On click events
 
-On-click events can be established to surface the values for an event's `row_id`, event start, event end, and event title. These could be used in conjunction with another data provider to 
+On-click events can be established to surface the values for an event's `row_id`, event start, event end, and event title. These could be used in conjunction with a Single Row provider in a modal or side panel,
+
+<Image border={false} src="https://files.readme.io/372784231207746be59393bf104ae529f98f0175b989b0b777c465f484d4c623-image.png" />
+
+<br />
 
 <br />
 
