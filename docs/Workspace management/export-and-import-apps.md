@@ -29,15 +29,15 @@ The exported file will include all [Budibase DB](doc:budibasedb) data, data conn
 
 <Image align="center" border={false} src="https://files.readme.io/116718b0d553d1dd4ca450c6b68d4536478185b9782e26ee72fd4c8c7d2735e2-Screenshot_2026-02-09_at_14.48.50.png" />
 
-2. Next click on **Settings** at the bottom left of your screen.  
+2. Next click on **Settings** at the bottom left of your screen.
 
-   <Image border={false} />
-3. Click on **General**  
+   <Image align="center" border={false} src="https://files.readme.io/4d60219260719c3c3d6386277bbf937be94126a086210ce47c0da73025e554a0-Screenshot_2026-02-09_at_14.50.01.png" />
+3. Click on **General**
 
    <Image align="center" border={false} src="https://files.readme.io/f91294f6b6c7ec7f481cdffc7e2f89744e044688ca172453e6e83b15471edb67-Screenshot_2026-02-09_at_14.51.08.png" />
-4. Scroll down to where it says **Export** section  
+4. Scroll down to where it says **Export** section
 
-   <Image border={false} />
+   <Image align="center" border={false} src="https://files.readme.io/505e744e2a12ce0f07ae64fa0d468393e2a57e20f05cd02f5b7136d4a279e89a-Screenshot_2026-02-09_at_14.53.23.png" />
 
 This will bring up a few options to choose from:
 
@@ -54,12 +54,6 @@ In addition to that, you'll be presented with the option _Encrypt my export_ whi
 
 <Image align="center" border={false} width="450px" src="https://files.readme.io/371a3b3db5041098d5de42776c27c8934462e404598d136d85b4d1013bdbe006-Screenshot_2025-08-20_at_12.48.46.png" />
 
-Alternatively, you can click on the app you'd like to export, navigate to the **Settings** section, select General, and scroll down to export, and you should be able to export your workspace form here as well, whilst inside it.
-
-<Image align="center" border={false} src="https://files.readme.io/5049aa8202f5e43cb7dbf58558991437593ee43d39e34eaad046c40f45fccbc5-Screenshot_2025-08-20_at_12.49.06.png" />
-
-<br />
-
 > 👍 Environment variables
 >
 > By using [Environment variables 🔒](doc:environment-variables), you can exclude secrets and datasource credentials from your workspace exports.
@@ -68,13 +62,13 @@ Alternatively, you can click on the app you'd like to export, navigate to the **
 
 You can create a workspace by importing a workspace export file.
 
-Within the _Apps_ screen, click the **Create new workspace** button. From here, click on the **Import workspace** button:
+Within the workspace picker, click the dropdown, and you should see a + symbol to the right. Click this, and it will prompt you to either Import or create a new workspace.
 
-<Image align="center" border={false} src="https://files.readme.io/ad90712a293df0311aefa38dac2cb94d9fd3cc63bbceaa85fe1a9a518308be26-Screenshot_2025-08-20_at_12.51.35.png" />
+<Image align="center" border={false} src="https://files.readme.io/34a34246b85b92ba496e9629004c9c845740b5e0673a64ff1de3f92d0e20a724-Screenshot_2026-02-09_at_14.56.49.png" />
 
-This will present a modal window into which you can drag the app export file and click **Import workspace** to finish.
+If you click the import Button the UI will change slightly. This will present a modal window into which you can drag the workspace export file and click **Import workspace** to finish.
 
-<Image align="center" border={false} src="https://files.readme.io/b9e039f3d04cdd4ec6452c43bde964b1144b0570e70ae17636dbd1075aa02654-Screenshot_2025-08-20_at_12.51.58.png" />
+<Image align="center" border={false} src="https://files.readme.io/ad13bae143414ba60aecaa5a04d19732cd68848aa7ea18283c94331eee0f7c0b-Screenshot_2026-02-09_at_14.58.27.png" />
 
 > 👍 Backups
 >
