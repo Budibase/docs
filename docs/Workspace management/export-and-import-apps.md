@@ -62,11 +62,11 @@ In addition to that, you'll be presented with the option _Encrypt my export_ whi
 
 You can create a workspace by importing a workspace export file.
 
-Within the workspace picker, click the dropdown, and you should see a + symbol to the right. Click this, and it will prompt you to either Import or create a new workspace.
+Within the workspace picker, you should see a + symbol to the right. Click this, and it will prompt you to either Import or create a new workspace.
 
 <Image align="center" border={false} src="https://files.readme.io/34a34246b85b92ba496e9629004c9c845740b5e0673a64ff1de3f92d0e20a724-Screenshot_2026-02-09_at_14.56.49.png" />
 
-If you click the import Button the UI will change slightly. This will present a modal window into which you can drag the workspace export file and click **Import workspace** to finish.
+If you click the import button, the UI will change slightly. This will change the modal window so you can drag the workspace export file and click **Create workspace** to finish.
 
 <Image align="center" border={false} src="https://files.readme.io/ad13bae143414ba60aecaa5a04d19732cd68848aa7ea18283c94331eee0f7c0b-Screenshot_2026-02-09_at_14.58.27.png" />
 
