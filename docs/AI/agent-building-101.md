@@ -61,6 +61,6 @@ This contains the following columns:
 * Created By - single user
 * Category - single select
 
-The Status, Time Created, and Created By columns are automatically populated using default values. The Category column uses the Categorise Text AI operation to classify incoming tickets.
+The `Status`, `Time Created`, and `Created By` columns are automatically populated using default values. The Category column uses the Categorise Text AI operation to classify incoming tickets.
 
 <br />
