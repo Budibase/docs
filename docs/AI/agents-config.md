@@ -19,4 +19,10 @@ Model Providers:
 | OpenRouter  | Connect to 100s of text, image, embedding models |
 | Groq        | Connect to 100s of text, image, embedding models |
 
-Alternatively, you can connect to a Custom Provider using the "Connect to a custom provider" button. You may also need specific values from your chosen provider.
+Alternatively, you can connect to a Custom Provider using the "Connect to a custom provider" button. You may also need specific values from your chosen provider, such as API Base, or Access Key & Secret Key pairings.
+
+Once connected, your AI Provider will be visible to select when creating an Agent. Invalid setups will likely throw an error when creating; you should check the values provided in this case to verify their validity.
+
+<br />
+
+<br />
