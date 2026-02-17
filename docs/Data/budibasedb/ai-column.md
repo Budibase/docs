@@ -2,7 +2,7 @@
 title: AI Column🔒
 excerpt: >-
   Simply select the AI column, add a prompt, and let AI do the work for you -
-  from analyzing customer feedback to triaging support tickets, drafting
+  from analysing customer feedback to triaging support tickets, drafting
   responses, or writing inventory descriptions.
 deprecated: false
 hidden: false
