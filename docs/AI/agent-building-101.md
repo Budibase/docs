@@ -37,6 +37,5 @@ Let’s jump in.
   * Read data
   * Write data
   * Trigger automations
-  * Respond conversationally
 
 <br />
