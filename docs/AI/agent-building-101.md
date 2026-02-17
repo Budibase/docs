@@ -31,7 +31,7 @@ Let’s jump in.
 * An LLM configured with:
   * Instructions
   * Tools
-  * Memory (optional)
+  * Memory
   * Structured outputs
 * That can:
   * Read data
