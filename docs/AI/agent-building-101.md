@@ -38,4 +38,6 @@ Let’s jump in.
   * Write data
   * Trigger automations
 
+### Setting Up Our Data Layer
+
 <br />
