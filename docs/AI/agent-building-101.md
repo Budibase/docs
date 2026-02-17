@@ -1,5 +1,5 @@
 ---
-title: Agent Building 101
+title: Agent building 101
 deprecated: false
 hidden: true
 metadata:
