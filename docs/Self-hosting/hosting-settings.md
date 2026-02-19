@@ -321,6 +321,16 @@ The full set of variables can be found in our repo, in the file [.env](https://r
         The default email address that appears in the "From" field of emails sent by the application. This environment variable is used to specify the sender's identity in outbound emails.
       </td>
     </tr>
+
+    <tr>
+      <td>
+        AUTOMATION_MAX_ITERATIONS
+      </td>
+
+      <td>
+        Allows you to override the default 200 iteration limit. 
+      </td>
+    </tr>
   </tbody>
 </Table>
 
