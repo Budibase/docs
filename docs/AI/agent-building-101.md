@@ -64,3 +64,13 @@ This contains the following columns:
 | Category         | Single select  |
 
 ### Creating our agent
+
+<br />
+
+### Configuring Instructions
+
+### Adding Tools
+
+### Testing the Agent
+
+### Triggering the Agent Automatically
