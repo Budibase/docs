@@ -63,6 +63,4 @@ This contains the following columns:
 | Created By       | Single user    |
 | Category         | Single select  |
 
-<br />
-
-<br />
+### Creating our agent
