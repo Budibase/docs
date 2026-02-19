@@ -52,13 +52,17 @@ For this guide, we’ll use a Budibase DB table called Tickets.
 
 This contains the following columns:
 
-* Title - text
-* Description - long-form text
-* Status - single select
-* Priority - single select
-* Time Created - date
-* Resolution Notes - long-form text
-* Created By - single user
-* Category - single select
+| Name             | Field Type     |
+| :--------------- | :------------- |
+| Title            | Text           |
+| Description      | Long form text |
+| Status           | Single select  |
+| Priority         | Single select  |
+| Time Created     | Date           |
+| Resolution Notes | Long form text |
+| Created By       | Single user    |
+| Category         | Single select  |
+
+<br />
 
 <br />
