@@ -175,8 +175,6 @@ When categorising or prioritising, return structured JSON:
 - Use British English.
 ```
 
-<br />
-
 ### Testing the Agent
 
 ### Triggering the Agent Automatically
