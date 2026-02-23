@@ -74,9 +74,7 @@ Onto creating our first agent. Make sure you have done the initial setup of sele
 
 ### Configuring Instructions
 
-The Instructions field defines how your Agent thinks, behaves, and decides when to use tools. 
-
-Before configuring instructions, ensure your Agent is connected to an LLM. If you haven’t done this yet, click Connect AI Model at the top of the screen. More information on connecting an LLM can be found[here](docs:agents-config).
+Before configuring instructions, ensure your Agent is connected to an LLM. If you haven’t done this yet, click Connect AI Model at the top of the screen. Alternatively if you have alreayd set this up, select the LLM you are using. More information on connecting an LLM can be found[here](docs:agents-config).
 
 By default, Budibase provides a structured instruction template to help you define your Agent clearly. More information on this can be found [here](docs:agents-config#).
 
