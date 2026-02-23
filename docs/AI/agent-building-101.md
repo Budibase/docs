@@ -120,9 +120,9 @@ When you connect data sources to an Agent, Budibase automatically makes relevant
 
 For this example, we’ll give our Agent access to three tools from the Tickets table:
 
-* Budibase: Ticket.List Rows Retrieve multiple tickets
-* Budibase: Ticket.Get Row Retrieve a specific ticket
-* Budibase: Ticket.Update Row Update fields on an existing ticket
+* **Budibase: Ticket.List Rows** Retrieve multiple tickets
+* **Budibase: Ticket.Get Row** Retrieve a specific ticket
+* **Budibase: Ticket.Update Row** Update fields on an existing ticket
 
 ### Testing the Agent
 
