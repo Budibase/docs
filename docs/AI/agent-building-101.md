@@ -78,36 +78,7 @@ The Instructions field defines how your Agent thinks, behaves, and decides when 
 
 Before configuring instructions, ensure your Agent is connected to an LLM. If you haven’t done this yet, click Connect AI Model at the top of the screen. More information on connecting an LLM can be found[here](docs:agents-config).
 
-By default, Budibase provides a structured instruction template to help you define your Agent clearly.
-
-These instructions are the foundation of your Agent. They:
-
-* Define its responsibilities
-* Specify what inputs it receives
-* Determine when it should use tools
-* Control the structure of its outputs
-* Enforce operational rules
-
-You can use the following structure as a starting point
-
-```markdown Instructions
-**Agent role**
-What is this agent responsible for?
-
-**Inputs**
-What information does the agent receive?
-
-**Actions**
-- What should the agent do?
-- When should it use tools or APIs?
-
-**Output**
-- What should the response look like?
-- Include any structure, formatting, or fields required.
-
-**Rules**
-Any constraints the agent must follow.
-```
+By default, Budibase provides a structured instruction template to help you define your Agent clearly. More information on this can be found here.
 
 For our agent we will use the below:
 
