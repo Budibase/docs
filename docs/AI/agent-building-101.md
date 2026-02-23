@@ -177,6 +177,8 @@ When categorising or prioritising, return structured JSON:
 
 ### Testing the Agent
 
+<br />
+
 ### Triggering the Agent Automatically
 
 <br />
