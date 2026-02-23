@@ -114,6 +114,18 @@ After configuring and adding the above instructions, run a test and see everythi
 
 ### Adding Tools
 
+Tools allow an Agent to retrieve and modify real data inside your Workspace.
+
+When you connect data sources to an Agent, Budibase automatically makes relevant operations available as tools. As your workspace grows, your Agent can be granted access to more tools, but it’s important to only enable what’s necessary for the task.
+
+For this example, we’ll give our Agent access to three tools from the Tickets table:
+
+* Budibase: Ticket.List Rows Retrieve multiple tickets
+* Budibase: Ticket.Get Row Retrieve a specific ticket
+* Budibase: Ticket.Update Row Update fields on an existing ticket
+
 ### Testing the Agent
 
 ### Triggering the Agent Automatically
+
+<br />
