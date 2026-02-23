@@ -80,9 +80,9 @@ Before configuring instructions, ensure your Agent is connected to an LLM. If yo
 
 By default, Budibase provides a structured instruction template to help you define your Agent clearly. More information on this can be found [here](docs:agents-config#).
 
-For our agent we will use the below:
+For now we will use the below instructions:
 
-```markdown Service
+```markdown Instructions
 **Agent role**
 You are a Service Desk AI Agent responsible for managing support tickets.
 
@@ -112,7 +112,7 @@ When categorising or prioritising, return structured JSON:
 - Use British English where possible.
 ```
 
-<br />
+After configuring and adding the above instructions, run a test and see everything is working.
 
 ### Adding Tools
 
