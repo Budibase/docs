@@ -124,6 +124,59 @@ For this example, we’ll give our Agent access to three tools from the Tickets 
 * **Budibase: Ticket.Get Row** Retrieve a specific ticket
 * **Budibase: Ticket.Update Row** Update fields on an existing ticket
 
+Together, these allow the Agent to:
+
+* Look up tickets when answering questions
+* Retrieve specific ticket details
+* Update ticket status, priority, or resolution notes when required
+
+> As a best practice, only enable the minimum set of tools required. Limiting tool access helps ensure predictable and safe behaviour.
+
+#### Updating Our Instructions
+
+Once these tools are enabled, Budibase injects them into the Agent’s execution context. We now need to guide the Agent on when to use them.
+
+Here is our updated instruction prompt:
+
+```markdown Instructions
+**Agent role**
+You are a Service Desk AI Agent responsible for managing support tickets.
+
+**Inputs**
+You receive ticket data, including Title, Description, Status, and Priority.
+
+**Available tools**
+{{ budibase.Tickets.list_rows }}
+{{ budibase.Tickets.get_row }}
+{{ budibase.Tickets.update_row }}
+
+**Actions**
+- Categorise new tickets.
+- Suggest a priority level (Low, Medium, High).
+- Escalate tickets marked as urgent.
+- Answer questions about ticket status.
+- Use the appropriate tool when retrieving or updating ticket data.
+
+**Output**
+Respond clearly and concisely.
+When categorising or prioritising, return structured JSON:
+{
+  "category": "string",
+  "priority": "Low | Medium | High",
+  "requiresEscalation": "boolean"
+}
+
+**Rules**
+- Always use the provided tools when accessing ticket data.
+- Do not fabricate ticket information.
+- Do not modify tickets unless explicitly instructed.
+- Only escalate tickets with High priority.
+- Be concise and professional.
+- Use British English.
+```
+
+<br />
+
 ### Testing the Agent
 
 ### Triggering the Agent Automatically
