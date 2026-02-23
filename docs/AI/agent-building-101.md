@@ -78,7 +78,7 @@ The Instructions field defines how your Agent thinks, behaves, and decides when 
 
 Before configuring instructions, ensure your Agent is connected to an LLM. If you haven’t done this yet, click Connect AI Model at the top of the screen. More information on connecting an LLM can be found[here](docs:agents-config).
 
-By default, Budibase provides a structured instruction template to help you define your Agent clearly. More information on this can be found here.
+By default, Budibase provides a structured instruction template to help you define your Agent clearly. More information on this can be found [here](docs:agents-config#).
 
 For our agent we will use the below:
 
