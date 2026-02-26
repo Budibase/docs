@@ -38,13 +38,13 @@ Creators can optionally show or hide the date or date-range being shown in the v
 
 ![](https://files.readme.io/41431c48cc93883c660381bafc9d521bec0b5b1e0e188645a842825cbdddd41a-image.png)
 
-Creators also have options to adjust the way the title is displayed, for example in the Title section of the settings, Year title format set to `4-digit`, and `Month title format` set to "Long" will show the title on the Month view as February 2026.
+Creators also have options to adjust the way the title is displayed, for example in the Title section of the settings, Year title format set to `4-digit`, and `Month title format` set to "Long" will show the title on the Month view as February 2026. Please note that not all settings will apply to all views.
 
 ![](https://files.readme.io/849729fea76dcebfa368437ab7e53d65ca9c106337d80f4c40120e8ed56ab919-image.png)
 
 <br />
 
-Creators can also allow their users to move around to different dates or views using the "Show Controls" option. By default, the calendar component will open on the current day, but using the "Open on date" setting, and providing a date in YYYY-MM-DD format, the calendar will open on this date (or date range). This could be useful to show specific plans.
+Creators can also allow their users to move around to different dates or views using the "Show Controls" option. By default, the calendar component will open on the current day, but using the "Open on date" setting, and providing a date in YYYY-MM-DD format, the calendar will open on this date (or date range). This could be useful to show specific plans. 
 
 ![](https://files.readme.io/0dea57200fff66272a7f838c8014141762a6fe340f2dae60fe689d40e5cfeb5c-image.png)
 
@@ -174,7 +174,7 @@ On-click events can be established to surface the values for an event's `row_id`
 
     <tr>
       <td>
-        Title date format
+        Title locale
       </td>
 
       <td>
@@ -184,6 +184,62 @@ On-click events can be established to surface the values for an event's `row_id`
 
       <td>
         Only visible when "Show title date" is checked.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Year title format
+      </td>
+
+      <td>
+        Hidden or 4-digit or 2-digit
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Month title format
+      </td>
+
+      <td>
+        Hidden or Numeric or 2-digit or Short or Long
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Day title format
+      </td>
+
+      <td>
+        Hidden or Numeric or 2-digit
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Weekday title format
+      </td>
+
+      <td>
+        Hidden or Short or Long or Narrow
+      </td>
+
+      <td>
+
       </td>
     </tr>
 
