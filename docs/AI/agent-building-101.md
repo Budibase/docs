@@ -175,7 +175,7 @@ When categorising or prioritising, return structured JSON:
 - Use British English.
 ```
 
-Optionally, test again and with some data and see how it handles the process.
+Optionally, test again and with some data and see how it handles the process
 
 ### Testing the Agent
 
