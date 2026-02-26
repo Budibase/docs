@@ -273,6 +273,20 @@ On-click events can be established to surface the values for an event's `row_id`
 
     <tr>
       <td>
+        Button Type
+      </td>
+
+      <td>
+        Action (Default) or Primary
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
         Open on date
       </td>
 
