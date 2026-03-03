@@ -77,7 +77,7 @@ Onto creating our first Agent. Make sure you have done the initial setup of sele
 
 1. Click on the **Agents** link on the left side of the screen
 2. Click the **+ New Agent** button at the top right of your screen
-3. Provide a name, I'm going with **Service Desk Agent**
+3. Provide a name. We're going with **Service Desk Agent**
 4. This will redirect you to a new screen specifically for your Agent
 
 ### Configuring instructions
@@ -118,7 +118,7 @@ When categorising or prioritising, return structured JSON:
 - Use British English where possible
 ```
 
-After configuring and adding the above instructions, run a test and see everything is working.
+After configuring and adding the above instructions, run a test and confirm that everything is working.
 
 ### Adding tools
 
@@ -128,9 +128,9 @@ When you connect data sources to an Agent, Budibase automatically makes relevant
 
 For this example, we’ll give our Agent access to three tools from the Tickets table:
 
-* **Budibase: Tickets.List Rows** Retrieve multiple tickets
-* **Budibase: Tickets.Get Row** Retrieve a specific ticket
-* **Budibase: Tickets.Update Row** Update fields on an existing ticket
+* **Budibase: Tickets.List Rows** - Retrieves multiple tickets
+* **Budibase: Tickets.Get Row** - Retrieves a specific ticket
+* **Budibase: Tickets.Update Row** - Updates fields on an existing ticket
 
 Together, these allow the Agent to:
 
