@@ -65,7 +65,7 @@ Keep field names stable. Changing response shape can break automations and scrip
 
 ## Instruction quality checklist
 
-Before publishing:
+Before publishing, ensure that:
 
 * Scope is explicit and narrow
 * Tool usage expectations are explicit
