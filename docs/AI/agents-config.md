@@ -32,15 +32,15 @@ Once enabled, the provider and model become available when creating or editing a
 
 Budibase supports multiple model providers:
 
-| Provider    | Summary                                             |
-| :---------- | :-------------------------------------------------- |
-| Budibase AI | Budibase-managed provider                           |
-| Anthropic   | Connect directly to Claude models                   |
-| Google      | Connect directly to Gemini models                   |
-| Mistral     | Connect directly to Mistral models                  |
-| OpenAI      | Connect directly to OpenAI models                   |
-| OpenRouter  | Connect to a broad catalog of hosted model APIs     |
-| Groq        | Connect to high-speed hosted model APIs             |
+| Provider    | Summary                                         |
+| :---------- | :---------------------------------------------- |
+| Budibase AI | Budibase-managed provider                       |
+| Anthropic   | Connect directly to Claude models               |
+| Google      | Connect directly to Gemini models               |
+| Mistral     | Connect directly to Mistral models              |
+| OpenAI      | Connect directly to OpenAI models               |
+| OpenRouter  | Connect to a broad catalog of hosted model APIs |
+| Groq        | Connect to high-speed hosted model APIs         |
 
 ## Custom provider setup
 
@@ -72,7 +72,6 @@ After configuring AI Config:
 2. Create a new Agent or open an existing one
 3. Click **Connect AI Model**
 4. Select the configured provider and model
-5. Save, then run a test prompt
 
 For a full Agent walkthrough, see [Agent building 101](docs:agent-building-101).
 
