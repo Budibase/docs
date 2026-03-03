@@ -239,5 +239,5 @@ Once this foundation is working, use these guides to improve quality and safety:
 
 * [Agent instructions guide](docs:agent-instructions-guide)
 * [Agent tools and permissions](docs:agent-tools-and-permissions)
-* [Agent testing and evaluations](docs:agent-testing-and-evals)
+* [Agent testing guide](docs:agent-testing-guide)
 * [Agent troubleshooting](docs:agent-troubleshooting)

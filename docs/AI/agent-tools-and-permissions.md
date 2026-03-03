@@ -68,5 +68,5 @@ Ambiguous names increase wrong-tool calls and prompt complexity.
 ## Related guides
 
 * [Agent instructions guide](docs:agent-instructions-guide)
-* [Agent testing and evaluations](docs:agent-testing-and-evals)
+* [Agent testing guide](docs:agent-testing-guide)
 * [Agent troubleshooting](docs:agent-troubleshooting)

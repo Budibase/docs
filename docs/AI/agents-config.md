@@ -91,5 +91,5 @@ If you are self-hosting and using Budibase AI, ensure your network allows the re
 
 * [Agent building 101](docs:agent-building-101)
 * [Agent instructions guide](docs:agent-instructions-guide)
-* [Agent testing and evaluations](docs:agent-testing-and-evals)
+* [Agent testing guide](docs:agent-testing-guide)
 * [Agent troubleshooting](docs:agent-troubleshooting)

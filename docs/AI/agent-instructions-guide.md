@@ -84,4 +84,4 @@ Before publishing:
 
 * [Agent building 101](docs:agent-building-101)
 * [Agent tools and permissions](docs:agent-tools-and-permissions)
-* [Agent testing and evaluations](docs:agent-testing-and-evals)
+* [Agent testing guide](docs:agent-testing-guide)
