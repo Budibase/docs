@@ -31,9 +31,13 @@ Use this section to go from initial setup to production-ready Agent workflows.
    Write clear, safe, and deterministic instruction prompts.
 4. [Agent tools and permissions](docs:agent-tools-and-permissions)  
    Apply least-privilege tool access and safe write guardrails.
-5. [Agent testing guide](docs:agent-testing-guide)  
+5. [Agent embedding models](docs:agent-embedding-models)  
+   Configure embeddings for Agent knowledge retrieval.
+6. [Agent vector databases](docs:agent-vector-databases)  
+   Connect and assign vector storage for semantic retrieval.
+7. [Agent testing guide](docs:agent-testing-guide)  
    Run repeatable tests and regression checks before production rollout.
-6. [Agent troubleshooting](docs:agent-troubleshooting)  
+8. [Agent troubleshooting](docs:agent-troubleshooting)  
    Diagnose model, tool, and output issues quickly.
 
 ## What this section covers
@@ -41,6 +45,7 @@ Use this section to go from initial setup to production-ready Agent workflows.
 * Agent setup and model configuration
 * Prompt and output design patterns
 * Tool access and safety controls
+* Embeddings and vector database setup
 * Testing strategy and release readiness
 * Troubleshooting and operational support
 

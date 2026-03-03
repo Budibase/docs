@@ -239,5 +239,7 @@ Once this foundation is working, use these guides to improve quality and safety:
 
 * [Agent instructions guide](docs:agent-instructions-guide)
 * [Agent tools and permissions](docs:agent-tools-and-permissions)
+* [Agent embedding models](docs:agent-embedding-models)
+* [Agent vector databases](docs:agent-vector-databases)
 * [Agent testing guide](docs:agent-testing-guide)
 * [Agent troubleshooting](docs:agent-troubleshooting)
