@@ -24,9 +24,17 @@ Along the way, we’ll learn how to:
 
 Let’s jump in.
 
-### What is an Agent?
+## Before you start
 
-#### An Agent is:
+Make sure you have:
+
+* A model provider configured in [Agents Config](docs:agents-config)
+* A `Tickets` table in your Workspace
+* Permission to create Agents and Automations
+
+### What is an agent?
+
+#### An agent is:
 
 * An LLM configured with:
   * Instructions
@@ -38,7 +46,7 @@ Let’s jump in.
   * Write data
   * Trigger automations
 
-### Setting Up Our Data Layer
+### Setting up our data layer
 
 In Budibase, Agents can interact with any tables, API calls, or automations within your Workspace, as long as they’re explicitly given access.
 
@@ -46,7 +54,7 @@ Before creating an Agent, it’s important to understand the data it will work w
 
 Take a look at our [Introduction to Data ](https://docs.budibase.com/docs/data) documentation to learn more about how data works in Budibase.
 
-#### Our Tickets Table
+#### Our tickets table
 
 For this guide, we’ll use a Budibase DB table called Tickets.
 
@@ -65,22 +73,22 @@ This contains the following columns:
 
 ### Creating our agent
 
-Onto creating our first agent. Make sure you have done the initial setup of selecting a provider and configuring a model before doing this. You can find out how to do this [here](docs:agents-config).
+Onto creating our first Agent. Make sure you have done the initial setup of selecting a provider and configuring a model before doing this. You can find out how to do this [here](docs:agents-config).
 
 1. Click on the **Agents** link on the left side of the screen
 2. Click the **+ New Agent** button at the top right of your screen
 3. Provide a name, I'm going with **Service Desk Agent**
-4. This will redirect you to a new screen specifically for your agent
+4. This will redirect you to a new screen specifically for your Agent
 
-### Configuring Instructions
+### Configuring instructions
 
-Before configuring instructions, ensure your Agent is connected to an LLM. If you haven’t done this yet, click Connect AI Model at the top of the screen. Alternatively if you have alreayd set this up, select the LLM you are using. More information on connecting an LLM can be found[here](docs:agents-config).
+Before configuring instructions, ensure your Agent is connected to an LLM. If you haven’t done this yet, click Connect AI Model at the top of the screen. Alternatively, if you have already set this up, select the LLM you are using. More information on connecting an LLM can be found [here](docs:agents-config).
 
-By default, Budibase provides a structured instruction template to help you define your Agent clearly. More information on this can be found [here](docs:agents-config#).
+By default, Budibase provides a structured instruction template to help you define your Agent clearly. More information on this can be found [here](docs:agent-instructions-guide#recommended-template).
 
 For now we will use the below instructions:
 
-```markdown Instructions
+```markdown instructions
 **Agent role**
 You are a Service Desk AI Agent responsible for managing support tickets.
 
@@ -89,10 +97,10 @@ You receive ticket data, including Title, Description, Status, and Priority.
 
 **Actions**
 - Categorise new tickets.
-- Suggest a priority level (Low, Medium, High).
-- Escalate tickets marked as urgent.
-- Answer questions about ticket status.
-- Use available tools when reading or updating tickets.
+- Suggest a priority level (Low, Medium, High)
+- Escalate tickets marked as urgent
+- Answer questions about ticket status
+- Use available tools when reading or updating tickets
 
 **Output**
 Respond clearly and concisely.
@@ -104,25 +112,25 @@ When categorising or prioritising, return structured JSON:
 }
 
 **Rules**
-- Do not modify tickets unless explicitly instructed.
-- Only escalate tickets with High priority.
-- Be concise and professional.
-- Use British English where possible.
+- Do not modify tickets unless explicitly instructed
+- Only escalate tickets with High priority
+- Be concise and professional
+- Use British English where possible
 ```
 
 After configuring and adding the above instructions, run a test and see everything is working.
 
-### Adding Tools
+### Adding tools
 
 Tools allow an Agent to retrieve and modify real data inside your Workspace.
 
-When you connect data sources to an Agent, Budibase automatically makes relevant operations available as tools. As your workspace grows, your Agent can be granted access to more tools, but it’s important to only enable what’s necessary for the task.
+When you connect data sources to an Agent, Budibase automatically makes relevant operations available as tools. As your Workspace grows, your Agent can be granted access to more tools, but it’s important to only enable what’s necessary for the task.
 
 For this example, we’ll give our Agent access to three tools from the Tickets table:
 
-* **Budibase: Ticket.List Rows** Retrieve multiple tickets
-* **Budibase: Ticket.Get Row** Retrieve a specific ticket
-* **Budibase: Ticket.Update Row** Update fields on an existing ticket
+* **Budibase: Tickets.List Rows** Retrieve multiple tickets
+* **Budibase: Tickets.Get Row** Retrieve a specific ticket
+* **Budibase: Tickets.Update Row** Update fields on an existing ticket
 
 Together, these allow the Agent to:
 
@@ -132,13 +140,13 @@ Together, these allow the Agent to:
 
 > As a best practice, only enable the minimum set of tools required. Limiting tool access helps ensure predictable and safe behaviour.
 
-#### Updating Our Instructions
+#### Updating our instructions
 
 Once these tools are enabled, Budibase injects them into the Agent’s execution context. We now need to guide the Agent on when to use them.
 
 Here is our updated instruction prompt:
 
-```markdown Instructions
+```markdown instructions
 **Agent role**
 You are a Service Desk AI Agent responsible for managing support tickets.
 
@@ -151,11 +159,11 @@ You receive ticket data, including Title, Description, Status, and Priority.
 {{ budibase.Tickets.update_row }}
 
 **Actions**
-- Categorise new tickets.
-- Suggest a priority level (Low, Medium, High).
-- Escalate tickets marked as urgent.
-- Answer questions about ticket status.
-- Use the appropriate tool when retrieving or updating ticket data.
+- Categorise new tickets
+- Suggest a priority level (Low, Medium, High)
+- Escalate tickets marked as urgent
+- Answer questions about ticket status
+- Use the appropriate tool when retrieving or updating ticket data
 
 **Output**
 Respond clearly and concisely.
@@ -167,20 +175,69 @@ When categorising or prioritising, return structured JSON:
 }
 
 **Rules**
-- Always use the provided tools when accessing ticket data.
-- Do not fabricate ticket information.
-- Do not modify tickets unless explicitly instructed.
-- Only escalate tickets with High priority.
-- Be concise and professional.
-- Use British English.
+- Always use the provided tools when accessing ticket data
+- Do not fabricate ticket information
+- Do not modify tickets unless explicitly instructed
+- Only escalate tickets with High priority
+- Be concise and professional
+- Use British English
 ```
 
-Optionally, test again and with some data and see how it handles the process
+Optionally, test again with some data and see how it handles the process.
 
-### Testing the Agent
+### Testing the agent
 
-<br />
+Now that our Agent has instructions and tools, we can test whether it behaves safely and predictably.
 
-### Triggering the Agent Automatically
+Start with a few representative prompts:
 
-<br />
+* `What tickets are currently open and high priority?`
+* `Summarise ticket "Printer access broken for Finance" and suggest category + priority.`
+* `Update ticket "VPN issue for remote user" to In Progress and add a short resolution note.`
+
+For each test, check:
+
+* **Tool usage**: The Agent should use list/get tools to retrieve live data, and only use update when explicitly asked.
+* **Output format**: Classification responses should follow the JSON schema we defined.
+* **Data accuracy**: Values returned should match the row data in your `Tickets` table.
+* **Safety rules**: The Agent should refuse to update or escalate unless your prompt asks it to.
+
+If behaviour is inconsistent, tighten your instructions. For example:
+
+* Clarify when updates are allowed.
+* Add examples of valid and invalid requests.
+* Add stricter wording around escalation rules.
+
+Small prompt edits and frequent tests are the quickest path to reliable behaviour.
+
+### Triggering the agent automatically
+
+Once manual testing looks good, you can run this workflow automatically when new tickets are created.
+
+In this example, we’ll use an Automation to classify and prioritise tickets as they arrive:
+
+1. Create an Automation with a **Row Created** trigger on the `Tickets` table.
+2. Add an **LLM Prompt** action to process `Title` and `Description` and return:
+   * `category`
+   * `priority`
+   * `requiresEscalation`
+3. Add an **Update Row** action to write the generated `Category` and `Priority` back to the created ticket.
+4. Add a **Condition** step:
+   * If `requiresEscalation` is `true`, trigger your escalation path (for example, set `Status` to `Escalated` and send an external notification).
+5. Test with multiple sample tickets to confirm the full flow.
+
+This gives you a practical split of responsibilities:
+
+* **Agent chat** handles interactive support tasks, Q&A, and guided updates
+* **Automations** handle repeatable, event-driven triage in the background
+
+Together, these provide a reliable service desk workflow with both human-in-the-loop and fully automatic paths.
+
+## Next steps
+
+Once this foundation is working, use these guides to improve quality and safety:
+
+* [Agent instructions guide](docs:agent-instructions-guide)
+* [Agent tools and permissions](docs:agent-tools-and-permissions)
+* [Agent testing and evaluations](docs:agent-testing-and-evals)
+* [Agent troubleshooting](docs:agent-troubleshooting)
