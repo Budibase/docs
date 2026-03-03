@@ -5,24 +5,91 @@ hidden: true
 metadata:
   robots: index
 ---
-Budibase supports a range of models, which can be found in Settings under AI Config. These configurations will allow Budibase to connect via API to an existing AI provider.
+This page explains how to configure AI providers for Budibase Agents.
 
-Model Providers:
+Before building an Agent, you need at least one AI provider enabled in your Workspace settings.
 
-|             |                                                  |
-| :---------- | :----------------------------------------------- |
-| Budibase AI | Budibase Managed                                 |
-| Anthropic   | Connect to Claude models directly from Anthropic |
-| Google      | Connect to Gemini models directly from Google    |
-| Mistral     | Connect to Mistral models directly from Mistral  |
-| OpenAI      | Connect to ChatGPT models directly from OpenAI   |
-| OpenRouter  | Connect to 100s of text, image, embedding models |
-| Groq        | Connect to 100s of text, image, embedding models |
+For a broader AI setup walkthrough, see [Quickstart: Budibase AI](docs:quickstart-budibase-ai).
 
-Alternatively, you can connect to a Custom Provider using the "Connect to a custom provider" button. You may also need specific values from your chosen provider, such as API Base, or Access Key & Secret Key pairings.
+## Before you start
 
-Once connected, your AI Provider will be visible to select when creating an Agent. Invalid setups will likely throw an error when creating; you should check the values provided in this case to verify their validity.
+Make sure you have:
 
-<br />
+* Access to Workspace **Settings**
+* Credentials for your chosen model provider
+* A default model selected for testing
 
-<br />
+## Configure an AI provider
+
+1. Open your Workspace **Settings**
+2. Go to the **AI Config** section
+3. Choose a provider and complete its setup form
+4. Save and enable the configuration
+
+Once enabled, the provider and model become available when creating or editing an Agent.
+
+## Supported providers
+
+Budibase supports multiple model providers:
+
+| Provider    | Summary                                             |
+| :---------- | :-------------------------------------------------- |
+| Budibase AI | Budibase-managed provider                           |
+| Anthropic   | Connect directly to Claude models                   |
+| Google      | Connect directly to Gemini models                   |
+| Mistral     | Connect directly to Mistral models                  |
+| OpenAI      | Connect directly to OpenAI models                   |
+| OpenRouter  | Connect to a broad catalog of hosted model APIs     |
+| Groq        | Connect to high-speed hosted model APIs             |
+
+## Custom provider setup
+
+If your provider is not listed, use **Connect to a custom provider**.
+
+Depending on the provider, you may need values such as:
+
+* API base URL
+* API key
+* Access key and secret key
+* Default model name
+
+Use the exact values expected by your provider. Incorrect values can allow setup to save but still fail during runtime.
+
+## Validate your provider setup
+
+Before attaching a model to an Agent:
+
+1. Confirm the provider shows as enabled in AI Config
+2. Confirm your target model name is available and correctly spelled
+3. Run a simple test from an Agent with a short prompt
+4. Save the successful configuration as your default team setup
+
+## Selecting models in Agents
+
+After configuring AI Config:
+
+1. Open **Agents**
+2. Create a new Agent or open an existing one
+3. Click **Connect AI Model**
+4. Select the configured provider and model
+5. Save, then run a test prompt
+
+For a full Agent walkthrough, see [Agent building 101](docs:agent-building-101).
+
+## Troubleshooting
+
+If model connection or Agent tests fail:
+
+* Re-check API credentials and model ID
+* Verify any provider-specific base URL value
+* Confirm outbound internet access is allowed from your environment
+* Re-run a simple prompt test after saving changes
+
+If you are self-hosting and using Budibase AI, ensure your network allows the required outbound traffic. See [Self-hosted AI features](docs:self-hosted-ai-features).
+
+## Related guides
+
+* [Agent building 101](docs:agent-building-101)
+* [Agent instructions guide](docs:agent-instructions-guide)
+* [Agent testing guide](docs:agent-testing-guide)
+* [Agent troubleshooting](docs:agent-troubleshooting)
