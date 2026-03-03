@@ -5,9 +5,9 @@ hidden: true
 metadata:
   robots: index
 ---
-Tools determine what your Agent can read, change, and trigger.
+Tools determine what data your Agent can read or change, and which actions it can trigger.
 
-Good tool design is the main way to keep Agent behaviour safe and predictable.
+Effective tool design is the main way to keep Agent behaviour safe and predictable.
 
 ## Principle: least privilege
 
@@ -45,7 +45,7 @@ Start with `read-only`, then add writes only when validated by tests.
 
 ## Guardrails for write actions
 
-When enabling update tools, include rules like:
+When enabling `update` tools, include rules like:
 
 * Only update allowed fields.
 * Never overwrite non-empty critical fields unless asked.
