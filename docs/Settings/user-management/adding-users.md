@@ -10,33 +10,39 @@ metadata:
 next:
   description: ''
 ---
-To invite new users into your Budibase installation, you need to have the [Administration permission](doc:user-roles).
+To invite new users into Budibase, you need an admin-level role. See [User roles](doc:user-roles) for role requirements.
 
-Navigate to the Budibase [Portal](doc:portal), and then along the top navbar, you'll find a `Settings` section. Scroll down and you'll see `people` as an option within the modal click this.
+## Where to invite users
 
-<Image align="center" border={false} width="450px" src="https://files.readme.io/5e087e46d9a05abf468261130671aa1579d4b3c9966bc3c82440dcae7e204445-Screenshot_2025-09-29_at_13.39.43.png" />
+User invites are managed from a workspace.
 
-Click the `Add users` button on the top-left, and you'll be presented with a modal to add new users.
+1. Open the workspace in the Builder.
+2. Click **Invite user** in the left sidebar.
+3. Enter one or more email addresses.
+4. Select a tenant-level role.
+5. Choose an onboarding method.
+6. Click **Invite users**.
 
-<Image align="center" border={false} width="450px" src="https://files.readme.io/7f5f570-image.png" />
+For full workspace access behavior, see [Workspace access](doc:workspace-access).
 
-Enter the user email addresses, and choose the [User Roles](doc:user-roles) applicable for the user from the dropdown.
+## Choosing roles when inviting
 
-Upon confirmation you will be prompted to select the onboarding type.
+During invite, you can assign one of these roles:
 
-<Image align="center" alt="Choose your onboarding" border={false} caption="Choose your onboarding" src="https://files.readme.io/5d7bc4e-Screenshot_2022-11-25_at_15.32.56.png" />
+* **Organisation admin**: Full admin access across workspaces and settings.
+* **Creator**: Builder access for assigned workspaces.
+* **End user**: No builder access. Can use published apps only.
 
-## Email vs basic onboarding
+If you select **End user**, you can also choose the default app role for that user in the target workspace, such as **Basic user**, **Admin user**, or a custom app role.
 
-You can choose to have email onboarding or basic onboarding.
+## Onboarding options
 
-Email onboarding will send the users you're adding an email that they're invited to join your organisation. This allows them to configure a password for themselves.
+You can choose one of two onboarding methods:
 
-Basic onboarding will not send anything to your new user but present you, as the user creator, with a randomly generated password. You can give the passwords to the new users who **should** change their password once they're logged in with their new credentials. The passwords can be individually copied to the clipboard, or a CSV of all new user credentials can be downloaded.
+* **Send email invites**: Sends an invite email so users can set their own password.
+* **Generate passwords for each user**: Creates temporary credentials for you to share manually.
 
-<Image align="center" alt="Example of basic onboarding." border={false} caption="Example of basic onboarding." src="https://files.readme.io/2b49067-Screenshot_2022-11-25_at_15.34.16.png" />
-
-It's up to you which onboarding flow you prefer, but we always recommend the `Email onboarding` flow.
+If SMTP is configured, email onboarding is recommended. If SMTP is unavailable, use generated passwords.
 
 > 🚧 Configure SMTP
 >
@@ -44,11 +50,13 @@ It's up to you which onboarding flow you prefer, but we always recommend the `Em
 
 ## Import users
 
-If you have many users that need to be added into Budibase, then you can bulk import them through a CSV file.
+If you need to add many users, you can bulk import by CSV.
 
-To do that, on the _Users_ page, click on `Import users`
-
-Here you will be prompted to upload a CSV and choose the role that each user should receive. Similar to the basic onboarding, a dialog will appear from which you can download the new users credentials.
+1. Open **Portal** > **Settings** > **People** > **Organisation**.
+2. Click **Import users**.
+3. Upload a CSV containing one email per line.
+4. Select the role to apply to imported users.
+5. Complete import and securely share any generated temporary credentials.
 
 > 📘 User emails CSV format
 >
@@ -60,5 +68,3 @@ Here you will be prompted to upload a CSV and choose the role that each user sho
 > joe@example.com
 > mel@example.com
 > ```
-
-<Image align="center" border={false} width="450px" src="https://files.readme.io/af6aa11-image.png" />

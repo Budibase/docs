@@ -10,45 +10,39 @@ metadata:
 next:
   description: ''
 ---
-At a high level, a user can have access to the [Portal](doc:portal) as an **Admin**, or simply be a **Member**, i.e. an <Glossary>End User</Glossary> of authorised apps.
+At a high level, a user can have tenant-level access in the [Portal](doc:portal), and they can also have workspace-level app access.
 
-Additional fine-tuning of permissions can be achieved through the [Creator role](https://docs.budibase.com/docs/application-access#creators-) which allows a user to be a <Glossary>Builder</Glossary> of some apps, and be restricted to an <Glossary>End User</Glossary> for others.
+Additional fine-tuning is available through the Creator role and workspace app roles, allowing one user to build in some workspaces while being an <Glossary>End User</Glossary> in others.
 
 ## Access permission
 
-There are three levels of user role permissions within Budibase:
+There are three core tenant roles in Budibase:
 
-* Workspace Admin - Has full access to all apps and settings in your account
-* Creator - Can create and edit apps they have access to
-* App User - Can only use published apps they have access to
-
-<Image align="center" alt="Admin users can add new users" border={false} caption="Admin users can add new users" src="https://files.readme.io/0968500e50db2283bc22f147001a330966a3b8de2edefe3664b112cfdc181a59-Screenshot_2025-04-17_at_10.44.09_AM.png" />
+* Organisation admin: Full access to settings and all workspaces.
+* Creator: Builder access for assigned workspaces.
+* End user: No builder access; published-app usage only.
 
 > 📘 Publish your application to give users access.
 >
-> App Users are only be able to view published applications.
+> End users are only able to view published applications.
 >
-> The Workspace Admin role allows the user to manage users and global settings.
+> Organisation admins can manage users and global settings.
 
 ## Changing permissions
 
-A **Workspace Admin** user can edit user permissions within the [Portal](doc:portal), by clicking on the `Settings` tab. Then within the modal click `people`.
+An Organisation admin can edit tenant user roles from **Portal** > **Settings** > **People**.
 
-<Image align="center" border={false} src="https://files.readme.io/e2c62acc8a54de7337726926be139585b9824049286d317db146ae396725c959-Screenshot_2025-09-29_at_13.39.43.png" />
-
-Click on the user you want to change, and then set the _Role_.
-
-<Image align="center" border={false} src="https://files.readme.io/2a2f7ad9eef37639472c1f05932ee9191726814cce58ffcbb7e755c6b1aaede6-Screenshot_2025-09-29_at_13.42.03.png" />
-
-You can close the screen once you're happy with the change in your access. The permissions save automatically.
+1. Open the user record.
+2. Change the tenant role.
+3. Save if prompted (or close if auto-save is enabled in your environment).
 
 ## Workspace specific roles
 
-All users in your app without `Workspace Admin` permission will only see applications you give them access to. But not only can you configure which applications each user can see, you can also configure their role in each application.
+Users without Organisation admin permissions only see workspaces they are granted access to. Within each workspace, you can set app-level roles that control what data and screens they can access.
 
-There are several roles to choose from, which impact what the user can do and see in your application based on the roles you've defined for each section inside your application.\ <a href="https://docs.budibase.com/docs/screens#access-level">Access levels</a> can be set for your each of your screens.
+These app roles work with [screen access levels](https://docs.budibase.com/docs/screens#access-level) and determine what a user can do inside published apps.
 
-Higher-tier roles will be able to see everything lower tiers can see, plus their own role-specific elements. This means an `Admin` role can see all the pages built for Power, Basic, and Public roles.
+Higher-tier roles inherit lower-tier visibility. For example, an `Admin` app role can see content available to `Basic` and `Public`.
 
 | Order | Role     | Description                                         |
 | :---- | :------- | :-------------------------------------------------- |
@@ -64,13 +58,12 @@ Higher-tier roles will be able to see everything lower tiers can see, plus their
 
 The core workspaces roles cannot be deleted, however you can add and remove any number of custom roles if you need more granular access control.
 
-Within your workspace, navigate to the data area. Then click `Manage roles`
+Within your workspace:
 
-<Image align="center" border={false} src="https://files.readme.io/57d5c0630d73cb7da3ead0c744e1b4f0b92ef14ab1692fd5d155a3c35db99786-Screenshot_2025-09-29_at_14.05.00.png" />
-
-A page on the right will appear with a button to create a new role
-
-<Image align="center" border={false} src="https://files.readme.io/5a3616edd107c47cbc8302306e6de85005df45e2fe5155066f6c12d49a4bb7e3-Screenshot_2025-09-29_at_14.05.30.png" />
+1. Open the Data section.
+2. Click **Manage roles**.
+3. Create a new custom role.
+4. Set its inherited role and base permissions.
 
 **Inherits Role** determines the rank of your new role. In this case, a _Super_ user will be able to access all screens of access level Super, Power, Basic and Public, but will not be able to access Admin app screens.
 

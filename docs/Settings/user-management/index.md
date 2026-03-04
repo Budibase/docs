@@ -21,28 +21,18 @@ next:
 ---
 In Budibase, users are shared across your whole Budibase installation. Users can sign into any app that they have access to. To give users access to specific apps, check the [User Roles](doc:user-roles) page.
 
-<Image align="center" border={false} src="https://files.readme.io/4df5f4ceb27a4a1be921522864d3898a32bc9b4a2addb7f4ebe0887874d4b3b1-Screenshot_2025-09-29_at_13.39.43.png" />
-
 > 📘 Adding new users
 >
-> You can add new users by either email invites or basic invites. Read more about that in the [Adding Users](doc:adding-users) guide.
+> Invite users from the workspace **Invite user** flow. Read more in [Adding Users](doc:adding-users).
 
 ## Resetting passwords
 
 If you need to reset a users' password, you need to click the ellipsis (...) next to their email, and `Force password reset` button on the users` detail page. You get displayed a new password for the user with which they can only log in once. Once logged in they will be prompted to change their password before continuing on.
 
-<Image align="center" border={false} src="https://files.readme.io/e78e8e1ffcd7543c5c095f1c9fd151d8be9879460aeb39e331ad7c02450fd9bc-Screenshot_2024-08-29_at_09.23.02.png" />
-
 ## Configure user roles
 
-Users can have roles for both the Budibase installation and app-specific, read more about that in [User Roles](doc:user-roles).
+Users can have roles for both the Budibase installation and workspaces, read more about that in [User Roles](doc:user-roles).
 
 ## Deleting a user
 
 In the ellipsis menu next to the user's email address, you can find a Delete user option. Click the `delete user` button and confirm in the dialogue. Keep in mind deleting users _cannot_ be undone.
-
-## Video tutorial
-
-<HTMLBlock>{`
-<iframe src="https://player.vimeo.com/video/746819125?h=49c4ba3fa4&title=0&portrait=0&byline=0" style="margin-top: -100px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-`}</HTMLBlock>
