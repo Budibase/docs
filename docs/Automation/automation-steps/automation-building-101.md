@@ -92,9 +92,9 @@ When we run a test, we can see that our API request returns an array of objects 
 
 Now that we have our raw data, we’re going to use an LLM prompt to extract and format key details, ready to include in an email automation.
 
-We’re going to use Budibase AI to power this, although we could also connect to our own OpenAI or Azure AI model.
+We’re going to use Budibase AI to power this, although we could also connect another provider through AI Configs.
 
-Learn more about [Budibase AI](https://docs.budibase.com/docs/quickstart-budibase-ai). 
+Learn more about [Budibase AI](docs:quickstart-budibase-ai). 
 
 We’ll start by adding an `LLM Prompt` automation step.
 

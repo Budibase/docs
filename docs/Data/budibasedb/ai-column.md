@@ -15,15 +15,13 @@ next:
 ---
 ## Setup
 
-This feature is only available if you have BudibaseAI activated or successfully connected an AI config. The new AI column is only available when using Budibase DB, but we do plan to add support for external databases such as Postgres and MySQL. 
+This feature is only available when you have at least one AI configuration enabled in your Workspace. AI Columns are currently available for Budibase DB tables.
 
-AI Settings can be found in the Account Portal, under the Settings tab. BudibaseAI is the default, using an OpenAI connection. However, for Enterprise customers, custom configurations can be added, such as Anthropic, TogetherAI, and AzureOpenAI, as well as more customizable options for OpenAI or an entirely custom option.
+To configure AI, open **Workspace Settings > AI Configs** and enable a provider. Budibase AI is available as a managed option, and you can also connect supported external providers.
 
 ## Operations
 
 The AI column can perform 7 specific operations on your data. In some cases, these are based on a single column in your table, like "Translate," and in other cases, it is possible to select multiple columns, like "Summarise Text." In all cases, the value returned will be a string.
-
-/
 
 ### Summarise Text
 
@@ -97,8 +95,8 @@ Takes multiple columns and returns AI search results. Not compatible with OpenAI
 
 ## Credits
 
-By default, the AI column uses the built-in Budibase AI connection, though this can be reconfigured for Enterprise customers.
+By default, the AI column uses the configured Budibase AI connection, but you can switch to another enabled provider configuration.
 
-When using the Budibase AI connection, each query will consume credits at a rate of one credit per AI token. You can read more about what an AI token is on the [OpenAI website](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them). Your current allowance can be found in the Usage tab of the Account Portal.
+When using the Budibase AI connection, pricing information can all be found [here](https://budibase.com/pricing/).
 
-Enterprise customers can connect their own AI configuration by going to the Settings tab in the Account Portal. Any cost incurred by using a custom AI configuration will be the responsibility of the account holder and bill payer. Budibase AI Credits will not be consumed when using a custom AI configuration.
+If you connect your own provider in **AI Configs**, usage costs are billed by that provider, and Budibase AI credits are not consumed.
