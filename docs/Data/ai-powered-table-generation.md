@@ -19,7 +19,7 @@ next:
 ---
 Budibase makes it easy to start with our internal database by allowing you to generate table structures using Budibase AI. This feature is only available with the Budibase DB (our built-in non-relational database) and is designed to help you scaffold your data quickly.
 
-> 🚧 Make sure you have enabled Budibase AI, we have a Quickstart guide [here](https://docs.budibase.com/docs/quickstart-budibase-ai)
+> 🚧 Make sure you have enabled Budibase AI. Follow the [Quickstart: Budibase AI](docs:quickstart-budibase-ai) guide.
 
 ## What does it do?
 
@@ -33,22 +33,33 @@ Using a simple prompt, Budibase AI can:
 
 ## How to use it
 
-* Go to the Data area
-* Click on the + to the right of Sources
+1. Open the workspace where you want to create tables.
+2. In the left panel, go to **Data table**.
+3. In the **Sources** section, click the **+** button.
+4. Find the input labeled **Generate data using AI...**.
+5. Enter a prompt that clearly describes:
+   1. The table names you need
+   2. The important fields for each table
+   3. Any relationships between tables
+6. Click the **Run** button (play icon) beside the prompt input.
+7. Wait for generation to complete. Budibase will create:
+   1. One or more Budibase DB tables
+   2. Fields and field types for each table
+   3. Sample rows
+8. Open each generated table and review the schema before using it in production.
 
-  <Image align="center" src="https://files.readme.io/4f1e0ae310e6c9506dd57962552809b62f6b670d5818fabff621999836e57c7a-Screenshot_2025-05-01_at_08.12.42.png" />
-* In the input labeled "Generate data using AI...", you can:
-  * Type a custom prompt, e.g.,\
-    "Build a table for managing customer feedback."\
-    "Create two tables: users and tasks, with related fields."
-  * Or click one of the suggested prompts to get started instantly.
-* Click the ▶️ (Run) button to submit your prompt.
+### Example prompt
 
-  <Image align="center" src="https://files.readme.io/028fca2b06c0d811409b1a6221dfa5f91a3f0befc2c6aa8e4088284699ccf8c3-Screenshot_2025-05-01_at_08.13.22.png" />
-* Budibase AI will generate:
-  * One or more tables
-  * Field names and types
-  * Sample records to help you get started
+Create two tables: Customers and Orders.
+Customers fields: Name, Email, Company, Segment.
+Orders fields: OrderNumber, OrderDate, Status, Total.
+Relationship: one customer can have many orders.
+
+### Verify before using
+
+* Confirm field types are correct (for example, dates as Date and totals as Number).
+* Confirm relationships were created as expected.
+* Remove or replace sample data if you are working with real records.
 
 ## Tips for better results
 

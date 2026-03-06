@@ -22,7 +22,7 @@ The Summarise step takes a longer text and condenses it into a short, medium, or
 
 ## Inputs
 
-* Text (required) -The text to summarise.
+* Text (required) - The text to summarise.
 * Summary Length (required) - Short, Medium, Long.
 
 ### Example
