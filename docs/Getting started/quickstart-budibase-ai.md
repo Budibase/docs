@@ -22,53 +22,17 @@ next:
 ---
 ## Enabling Budibase AI
 
-To start using Budibase AI, you'll need to enable it from the AI Settings. Follow the steps based on your hosting setup:
+To start using Budibase AI, configure an AI provider in your Workspace.
 
-### Budibase Cloud
+1. Open your Workspace **Settings**.
+2. Go to **AI Configs**.
+3. Choose a provider (for example Budibase AI, OpenAI, Anthropic, Google, Mistral, OpenRouter, or Groq).
+4. Enter the required credentials and model details.
+5. Save and enable the configuration.
 
-1. Go to your **Settings** area and click the AI tab.
+AI features are workspace specific, so you will need to connect to these again in other workspaces if you wish to enable AI functionality.
 
-   <Image align="center" src="https://files.readme.io/e7235f4578fbbaca09f344ab69d0de1b1e8e04b336a95a2da93b9f7b14c893cc-Screenshot_2025-08-15_at_13.43.02.png" />
-2. Enable Budibase AI.
-3. That’s it! AI features should now be available throughout your apps.
-
-### Self-hosted Budibase
-
-1. Go to your **Settings** area and click the AI tab.
-
-   <Image align="center" src="https://files.readme.io/3424edac526e8047970c65e7022a29c635c3ac7c9fdd0d942c72c22159b2b380-Screenshot_2025-08-15_at_13.44.14.png" />
-2. Activate your license key. Follow this [guide](https://docs.budibase.com/docs/workspace-management#self-hosted-workspaces) for help.
-   1. Note: Only account owners can access Workspaces. If you don’t have access, create a new account or ask the account owner to create a new Workspace for your self-hosted instance.
-3. Choose which AI provider you wish to use.
-
-   1. Budibase AI
-
-      1. No configuration needed, you simply need to activate your license key
-      2. if you haven't activated your license key whenever you try to enable you will be prompted with a modal saying you must add a license key.
-
-         <Image align="center" src="https://files.readme.io/192a0e79d0db94d8391012877901c83ea911268d696bcfcc36727a8cac26305e-Screenshot_2025-08-15_at_13.44.37.png" />
-   2. OpenAI
-
-      1. Click the setup button
-      2. This opens a modal where you’ll need to fill in the required fields
-
-         <Image align="center" src="https://files.readme.io/0a76fb8007e2d32114981928b4c1c8e9b5aa69d30ce73d587c01afd1d733b666-Screenshot_2025-08-15_at_13.45.10.png" />
-
-         1. API Key
-         2. Default Model
-      3. After filling in the details click the Enable button
-   3. Azure OpenAI
-
-      1. Click the setup button
-      2. This opens a modal where you’ll need to fill in the required fields
-
-         <Image align="center" src="https://files.readme.io/2e3b76f508c755532f740ffedbf5af6d49c500a1b15e232c5981b55b24c5aca8-Screenshot_2025-08-15_at_13.45.43.png" />
-
-         1. API Key
-         2. Base URL
-         3. Default Model
-      3. After filling in the details click the Enable button
-4. Once configured and enabled, AI features will be available in your Budibase apps.
+> 📘 If you are self-hosting and want to use Budibase AI, you need to make sure you are on an Enterprise plan and have a active license key in your Workspace. See the [Workspace management guide](https://docs.budibase.com/docs/workspace-management#self-hosted-workspaces).
 
 ## Where You Can Use AI
 
