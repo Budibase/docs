@@ -28,3 +28,7 @@ The Translate step takes an input string and outputs it in a target language.
 ### Example
 
 <Image align="center" src="https://files.readme.io/d318b2e8238b3a2070601c6d5139298b62146435c2797cd90a93dc73d872543e-Screenshot_2025-08-14_at_12.29.50.png" />
+
+## Output
+
+Translated text in the selected target language.
