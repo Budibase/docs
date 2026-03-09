@@ -3,3 +3,5 @@
 - ai-automation-step-summarise
 - ai-automation-step-generate-text
 - ai-automation-step-llm-prompt
+- ai-automation-step-agent
+- ai-automation-step-extract-document-data
