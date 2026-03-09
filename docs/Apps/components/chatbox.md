@@ -24,7 +24,7 @@ Make sure you have:
 
 ## Add the Chatbox component
 
-1. Open your app in **Design**
+1. Open your app under **Apps**
 2. Click **Add component**
 3. Open the **AI** category
 4. Select **Chatbox**
@@ -33,11 +33,11 @@ You can then resize and position the component like other screen components.
 
 ## Chatbox settings
 
-| Setting | Description |
-| :--- | :--- |
-| Intro text | Short text shown above the conversation area. |
-| Input placeholder | Placeholder text in the chat input box. |
-| Send button label | Label shown on the send action button. |
+| Setting           | Description                                   |
+| :---------------- | :-------------------------------------------- |
+| Intro text        | Short text shown above the conversation area. |
+| Input placeholder | Placeholder text in the chat input box.       |
+| Send button label | Label shown on the send action button.        |
 
 ## Styling
 
