@@ -12,7 +12,10 @@ next:
   pages:
     - type: basic
       slug: agents-config
-      title: Agents Config
+      title: Agents config
+    - type: basic
+      slug: agent-chat
+      title: Agent chat
     - type: basic
       slug: agent-building-101
       title: Agent building 101
@@ -23,21 +26,23 @@ Use this section to go from initial setup to production-ready Agent workflows.
 
 ## Recommended path
 
-1. [Agents Config](docs:agents-config)  
-   Connect and validate your model provider and default model.
-2. [Agent building 101](docs:agent-building-101)  
+1. [Agents config](docs:agents-config)  
+   Connect and validate your provider and default model, then attach a model to your agent.
+2. [Agent chat](docs:agent-chat)  
+   Configure chat deployment, agent availability, access role, and conversation starters.
+3. [Agent building 101](docs:agent-building-101)  
    Build a complete service desk Agent with tools and automation handoff.
-3. [Agent instructions guide](docs:agent-instructions-guide)  
+4. [Agent instructions guide](docs:agent-instructions-guide)  
    Write clear, safe, and deterministic instruction prompts.
-4. [Agent tools and permissions](docs:agent-tools-and-permissions)  
+5. [Agent tools and permissions](docs:agent-tools-and-permissions)  
    Apply least-privilege tool access and safe write guardrails.
-5. [Agent embedding models](docs:agent-embedding-models)  
+6. [Agent embedding models](docs:agent-embedding-models)  
    Configure embeddings for Agent knowledge retrieval.
-6. [Agent vector databases](docs:agent-vector-databases)  
+7. [Agent vector databases](docs:agent-vector-databases)  
    Connect and assign vector storage for semantic retrieval.
-7. [Agent testing guide](docs:agent-testing-guide)  
+8. [Agent testing guide](docs:agent-testing-guide)  
    Run repeatable tests and regression checks before production rollout.
-8. [Agent troubleshooting](docs:agent-troubleshooting)  
+9. [Agent troubleshooting](docs:agent-troubleshooting)  
    Diagnose model, tool, and output issues quickly.
 
 ## What this section covers
