@@ -21,3 +21,5 @@ For a quick introduction to setting up AI in your workflows, see the [Quickstart
 * Summarise – Creates a short, medium, or long summary of your text.
 * Generate Text – Generates new text in a specified style or format.
 * LLM Prompt – Sends a custom prompt directly to the Large Language Model for flexible outputs.
+* Agent – Runs a pre-configured AI Agent that can use tools and optional structured output.
+* Extract Document Data – Extracts structured fields from PDF or image files using a schema.
