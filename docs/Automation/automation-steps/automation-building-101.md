@@ -94,7 +94,7 @@ Now that we have our raw data, we’re going to use an LLM prompt to extract and
 
 We’re going to use Budibase AI to power this, although we could also connect another provider through AI Configs.
 
-Learn more about [Budibase AI](docs:quickstart-budibase-ai). 
+Learn more about [Budibase AI](doc:quickstart-budibase-ai). 
 
 We’ll start by adding an `LLM Prompt` automation step.
 

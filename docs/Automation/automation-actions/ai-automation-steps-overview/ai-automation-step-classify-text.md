@@ -12,7 +12,7 @@ next:
 ---
 The Classify Text step takes an input string and assigns it to one of several categories you define. It is useful for routing, tagging, or filtering content.
 
-> 📘 You need to [enable AI](docs:quickstart-budibase-ai) to use this feature.
+> 📘 You need to [enable AI](doc:quickstart-budibase-ai) to use this feature.
 
 ## Example use cases
 

@@ -12,14 +12,14 @@ next:
 ---
 The Chatbox component lets you place the Budibase chat experience directly inside your app.
 
-It uses the same chat setup from [Agent chat](docs:agent-chat), including agent availability, access roles, defaults, and conversation starters.
+It uses the same chat setup from [Agent chat](doc:agent-chat), including agent availability, access roles, defaults, and conversation starters.
 
 ## Before you start
 
 Make sure you have:
 
-* Completed [Agents config](docs:agents-config)
-* Enabled at least one live agent in [Agent chat](docs:agent-chat)
+* Completed [Agents config](doc:agents-config)
+* Enabled at least one live agent in [Agent chat](doc:agent-chat)
 * Set your chat app to live in the Builder Chat page
 
 ## Add the Chatbox component
@@ -69,7 +69,7 @@ Agent availability in Chatbox depends on Agent Chat configuration:
 * User must meet the configured access role
 * Chat app must be live (not paused)
 
-Update these from [Agent chat](docs:agent-chat) if a component appears but users cannot start conversations.
+Update these from [Agent chat](doc:agent-chat) if a component appears but users cannot start conversations.
 
 ## Troubleshooting
 
@@ -82,6 +82,6 @@ If Chatbox is visible but not usable:
 
 ## Related guides
 
-* [Agent chat](docs:agent-chat)
-* [Agents config](docs:agents-config)
-* [Agent building 101](docs:agent-building-101)
+* [Agent chat](doc:agent-chat)
+* [Agents config](doc:agents-config)
+* [Agent building 101](doc:agent-building-101)

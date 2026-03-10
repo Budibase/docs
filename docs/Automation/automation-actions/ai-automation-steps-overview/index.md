@@ -12,7 +12,7 @@ next:
 ---
 This section covers the available AI Automation steps you can add to your workflows. Each step uses an AI model to process text or images according to your needs.
 
-For a quick introduction to setting up AI in your workflows, see the [Quickstart AI Guide](docs:quickstart-budibase-ai).
+For a quick introduction to setting up AI in your workflows, see the [Quickstart AI Guide](doc:quickstart-budibase-ai).
 
 ## Available steps:
 

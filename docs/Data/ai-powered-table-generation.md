@@ -19,7 +19,7 @@ next:
 ---
 Budibase makes it easy to start with our internal database by allowing you to generate table structures using Budibase AI. This feature is only available with the Budibase DB (our built-in non-relational database) and is designed to help you scaffold your data quickly.
 
-> 🚧 Make sure you have enabled Budibase AI. Follow the [Quickstart: Budibase AI](docs:quickstart-budibase-ai) guide.
+> 🚧 Make sure you have enabled Budibase AI. Follow the [Quickstart: Budibase AI](doc:quickstart-budibase-ai) guide.
 
 ## What does it do?
 

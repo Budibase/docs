@@ -82,6 +82,6 @@ Before publishing, ensure that:
 
 ## Related guides
 
-* [Agent building 101](docs:agent-building-101)
-* [Agent tools and permissions](docs:agent-tools-and-permissions)
-* [Agent testing guide](docs:agent-testing-guide)
+* [Agent building 101](doc:agent-building-101)
+* [Agent tools and permissions](doc:agent-tools-and-permissions)
+* [Agent testing guide](doc:agent-testing-guide)

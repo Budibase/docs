@@ -58,6 +58,6 @@ Track failures by category (format, tool use, policy, correctness) so you can im
 
 ## Related guides
 
-* [Agent building 101](docs:agent-building-101)
-* [Agent instructions guide](docs:agent-instructions-guide)
-* [Agent troubleshooting](docs:agent-troubleshooting)
+* [Agent building 101](doc:agent-building-101)
+* [Agent instructions guide](doc:agent-instructions-guide)
+* [Agent troubleshooting](doc:agent-troubleshooting)

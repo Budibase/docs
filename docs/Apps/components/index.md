@@ -55,7 +55,7 @@ Parent components include those related to a <Glossary>Datasource</Glossary> or 
 * [Sections](doc:using-sections)
 * [Side Panel](doc:side-panel)
 * Modal
-* [Field Group](docs:field-groups)
+* [Field Group](doc:field-groups)
 
 Components can be re-arranged within the component tree with drag-and-drop.\
 To assist with rearrangement, a green line will highlight the destination whilst a green box indicates that a component will be dropped inside that component. 

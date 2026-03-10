@@ -39,6 +39,6 @@ When both embedding model and vector database are configured, additional retriev
 
 ## Related guides
 
-* [Agent vector databases](docs:agent-vector-databases)
-* [Agent testing guide](docs:agent-testing-guide)
-* [Agent troubleshooting](docs:agent-troubleshooting)
+* [Agent vector databases](doc:agent-vector-databases)
+* [Agent testing guide](doc:agent-testing-guide)
+* [Agent troubleshooting](doc:agent-troubleshooting)

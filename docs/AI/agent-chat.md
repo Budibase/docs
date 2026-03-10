@@ -5,9 +5,9 @@ hidden: true
 metadata:
   robots: index
 ---
-Agent chat is a built-in chat app for running your live agents with controlled access.
+Agent chat is a built-in, user-facing chat app for running your live agents with controlled access.
 
-Use this page after completing [Agents config](docs:agents-config).
+Use this page after completing [Agents config](doc:agents-config).
 
 ## Before you start
 
@@ -26,7 +26,7 @@ Make sure you have:
 
 When enabled, Budibase creates or updates the chat app configuration for that workspace and agent.
 
-## Configure per-agent chat settings
+## Configure settings for one agent
 
 From **Agent Chat** click **Manage** to open agent settings.
 
@@ -37,9 +37,11 @@ You can configure:
 
 If the agent is live, saving these settings will require a workspace publish to apply the changes.
 
-## Manage Agent Chat at workspace level
+## Manage the chat app for the workspace
 
-Open the app **Chat** page in Builder to manage all chat-enabled agents.
+After enabling Agent Chat for at least one agent, open the **Agent Chat** found in the top right corner of your home page in the builder.
+
+This is a dedicated **Agent Chat** page, not another screen inside the **Agents** area.
 
 ### Add and enable agents
 
@@ -48,6 +50,8 @@ Open the app **Chat** page in Builder to manage all chat-enabled agents.
 * Disabled agents remain configured but are not available to users
 
 ### Set default agent
+
+Open an agent's settings from the **Agent Chat** page to choose the default agent.
 
 * The default agent is used when users click **New chat**
 * Only enabled agents can be default
@@ -66,20 +70,20 @@ Open the app **Chat** page in Builder to manage all chat-enabled agents.
 
 ## Set chat live or pause chat
 
-On the Builder **chat** page:
+On the builder agent **configuration** section:
 
 * Click **Set your chat live** to make chat available to users
 * Click **Pause chat** to disable access
 
-These changes publish the app so users see the latest chat availability.
+These changes publish the workspace so users see the latest chat availability.
 
-## Open Agent Chat URL
+## Open agent chat
 
-From an agent deployment row, click **Open chat** to launch the chat experience for that agent.
+From an agents -> selected agent -> deployment, click **Open chat** to launch the actual user-facing chat app for that agent.
 
 ## Embed chat in app screens
 
-To embed chat inside an app screen, use the [Chatbox component](docs:chatbox) from **Design > Add component > AI**.
+To embed chat inside an app screen, use the [Chatbox component](doc:chatbox) under **Apps**.
 
 ## Runtime states users can see
 
@@ -96,16 +100,16 @@ When these states appear, verify chat live status and agent enablement in Builde
 
 If Agent Chat does not work as expected:
 
-* Confirm [Agents Config](docs:agents-config) is valid and the agent has a connected model
+* Confirm [Agents config](doc:agents-config) is valid and the agent has a connected model
 * Confirm the agent is **Live**
 * Confirm the agent is enabled in Chat settings
-* Confirm chat is set to **Live** on the Builder Chat page
+* Confirm chat is set to **Live** on the Builder **Agent Chat** page
 * Re-open the chat app after publish to pick up latest settings
 
 ## Related guides
 
-* [Agents Config](docs:agents-config)
-* [Chatbox component](docs:chatbox)
-* [Agent building 101](docs:agent-building-101)
-* [Agent testing guide](docs:agent-testing-guide)
-* [Agent troubleshooting](docs:agent-troubleshooting)
+* [Agents config](doc:agents-config)
+* [Chatbox component](doc:chatbox)
+* [Agent building 101](doc:agent-building-101)
+* [Agent testing guide](doc:agent-testing-guide)
+* [Agent troubleshooting](doc:agent-troubleshooting)

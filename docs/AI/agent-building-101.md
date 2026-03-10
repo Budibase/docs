@@ -28,7 +28,7 @@ Let’s jump in.
 
 Make sure you have:
 
-* A model provider configured in [Agents Config](docs:agents-config)
+* A model provider configured in [Agents config](doc:agents-config)
 * A `Tickets` table in your Workspace
 * Permission to create Agents and Automations
 
@@ -73,7 +73,7 @@ This contains the following columns:
 
 ### Creating our agent
 
-Onto creating our first Agent. Make sure you have done the initial setup of selecting a provider and configuring a model before doing this. You can find out how to do this [here](docs:agents-config).
+Onto creating our first Agent. Make sure you have done the initial setup of selecting a provider and configuring a model before doing this. You can find out how to do this [here](doc:agents-config).
 
 1. Click on the **Agents** link on the left side of the screen
 2. Click the **+ New Agent** button at the top right of your screen
@@ -82,9 +82,9 @@ Onto creating our first Agent. Make sure you have done the initial setup of sele
 
 ### Configuring instructions
 
-Before configuring instructions, ensure your Agent is connected to an LLM. If you haven’t done this yet, click Connect AI Model at the top of the screen. Alternatively, if you have already set this up, select the LLM you are using. More information on connecting an LLM can be found [here](docs:agents-config).
+Before configuring instructions, ensure your Agent is connected to an LLM. If you haven’t done this yet, click Connect AI Model at the top of the screen. Alternatively, if you have already set this up, select the LLM you are using. More information on connecting an LLM can be found [here](doc:agents-config).
 
-By default, Budibase provides a structured instruction template to help you define your Agent clearly. More information on this can be found [here](docs:agent-instructions-guide#recommended-template).
+By default, Budibase provides a structured instruction template to help you define your Agent clearly. More information on this can be found [here](doc:agent-instructions-guide#recommended-template).
 
 For now we will use the below instructions:
 
@@ -237,9 +237,9 @@ Together, these provide a reliable service desk workflow with both human-in-the-
 
 Once this foundation is working, use these guides to improve quality and safety:
 
-* [Agent instructions guide](docs:agent-instructions-guide)
-* [Agent tools and permissions](docs:agent-tools-and-permissions)
-* [Agent embedding models](docs:agent-embedding-models)
-* [Agent vector databases](docs:agent-vector-databases)
-* [Agent testing guide](docs:agent-testing-guide)
-* [Agent troubleshooting](docs:agent-troubleshooting)
+* [Agent instructions guide](doc:agent-instructions-guide)
+* [Agent tools and permissions](doc:agent-tools-and-permissions)
+* [Agent embedding models](doc:agent-embedding-models)
+* [Agent vector databases](doc:agent-vector-databases)
+* [Agent testing guide](doc:agent-testing-guide)
+* [Agent troubleshooting](doc:agent-troubleshooting)

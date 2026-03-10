@@ -12,7 +12,7 @@ next:
 ---
 The Summarise step takes a longer text and condenses it into a short, medium, or long summary.
 
-> 📘 You need to [enable AI](docs:quickstart-budibase-ai) to use this feature.
+> 📘 You need to [enable AI](doc:quickstart-budibase-ai) to use this feature.
 
 ## Example use cases
 

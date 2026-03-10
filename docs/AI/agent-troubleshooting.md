@@ -9,7 +9,7 @@ Use this guide to diagnose and fix common Agent issues.
 
 ## Quick triage
 
-1. Confirm the model provider is enabled in [Agents Config](docs:agents-config)
+1. Confirm the model provider is enabled in [Agents Config](doc:agents-config)
 2. Confirm the Agent is connected to a valid model
 3. Confirm required tools are enabled
 4. Run a simple known-good test prompt
@@ -22,7 +22,7 @@ Use this guide to diagnose and fix common Agent issues.
 | Agent fabricates values | Missing tool-use rule or no read tool enabled | Add strict tool rules and enable required read tools |
 | Agent updates data unexpectedly | Write rules are too vague | Add explicit write constraints and refusal rules |
 | Automation parsing fails | Output format changes between responses | Enforce a stable JSON schema in instructions |
-| Self-hosted AI requests fail | Network egress restrictions | Follow [Self-hosted AI features](docs:self-hosted-ai-features) requirements |
+| Self-hosted AI requests fail | Network egress restrictions | Follow [Self-hosted AI features](doc:self-hosted-ai-features) requirements |
 
 ## Debugging checklist
 
@@ -47,5 +47,5 @@ Change tools when:
 
 ## Related guides
 
-* [Agent tools and permissions](docs:agent-tools-and-permissions)
-* [Agent testing guide](docs:agent-testing-guide)
+* [Agent tools and permissions](doc:agent-tools-and-permissions)
+* [Agent testing guide](doc:agent-testing-guide)
