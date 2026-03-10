@@ -1,7 +1,7 @@
 ---
 title: Agent building 101
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---

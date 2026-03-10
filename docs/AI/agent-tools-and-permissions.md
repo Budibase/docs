@@ -1,7 +1,7 @@
 ---
 title: Agent tools and permissions
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---

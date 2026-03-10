@@ -2,7 +2,7 @@
 title: Chatbox
 excerpt: Embed your agent chat experience inside an app screen.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
@@ -12,14 +12,14 @@ next:
 ---
 The Chatbox component lets you place the Budibase chat experience directly inside your app.
 
-It uses the same chat setup from [Agent chat](docs:agent-chat), including agent availability, access roles, defaults, and conversation starters.
+It uses the same chat setup from [Agent chat](doc:agent-chat), including agent availability, access roles, defaults, and conversation starters.
 
 ## Before you start
 
 Make sure you have:
 
-* Completed [Agents config](docs:agents-config)
-* Enabled at least one live agent in [Agent chat](docs:agent-chat)
+* Completed [Agents config](doc:agents-config)
+* Enabled at least one live agent in [Agent chat](doc:agent-chat)
 * Set your chat app to live in the Builder Chat page
 
 ## Add the Chatbox component
