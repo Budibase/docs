@@ -9,7 +9,7 @@ This page covers the required setup before using Budibase Agents and Agent Chat.
 
 Before building an Agent or enabling Agent Chat, you need at least one configured model in Workspace AI config.
 
-For a broader AI setup walkthrough, see [Quickstart: Budibase AI](docs:quickstart-budibase-ai).
+For a broader AI setup walkthrough, see [Quickstart: Budibase AI](doc:quickstart-budibase-ai).
 
 ## Before you start
 
@@ -83,7 +83,7 @@ Before enabling Agent Chat, confirm:
 * The selected model can run chat/completion prompts
 * The agent is saved and can answer a simple test prompt
 
-Next, configure chat deployment in [Agent chat](docs:agent-chat).
+Next, configure chat deployment in [Agent chat](doc:agent-chat).
 
 ## Troubleshooting
 
@@ -94,12 +94,12 @@ If model connection or Agent tests fail:
 * Confirm outbound internet access is allowed from your environment
 * Re-run a simple prompt test after saving changes
 
-If you are self-hosting and using Budibase AI, ensure your network allows the required outbound traffic. See [Self-hosted AI features](docs:self-hosted-ai-features).
+If you are self-hosting and using Budibase AI, ensure your network allows the required outbound traffic. See [Self-hosted AI features](doc:self-hosted-ai-features).
 
 ## Related guides
 
-* [Agent chat](docs:agent-chat)
-* [Agent building 101](docs:agent-building-101)
-* [Agent instructions guide](docs:agent-instructions-guide)
-* [Agent testing guide](docs:agent-testing-guide)
-* [Agent troubleshooting](docs:agent-troubleshooting)
+* [Agent chat](doc:agent-chat)
+* [Agent building 101](doc:agent-building-101)
+* [Agent instructions guide](doc:agent-instructions-guide)
+* [Agent testing guide](doc:agent-testing-guide)
+* [Agent troubleshooting](doc:agent-troubleshooting)

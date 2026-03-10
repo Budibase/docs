@@ -12,7 +12,7 @@ next:
 ---
 The Translate step takes an input string and outputs it in a target language.
 
-> 📘 You need to [enable AI](docs:quickstart-budibase-ai) to use this feature.
+> 📘 You need to [enable AI](doc:quickstart-budibase-ai) to use this feature.
 
 ## Example use cases
 

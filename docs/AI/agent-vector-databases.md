@@ -46,6 +46,6 @@ You can then add files/knowledge content in the same area to support retrieval.
 
 ## Related guides
 
-* [Agent embedding models](docs:agent-embedding-models)
-* [Agent tools and permissions](docs:agent-tools-and-permissions)
-* [Agent troubleshooting](docs:agent-troubleshooting)
+* [Agent embedding models](doc:agent-embedding-models)
+* [Agent tools and permissions](doc:agent-tools-and-permissions)
+* [Agent troubleshooting](doc:agent-troubleshooting)

@@ -12,7 +12,7 @@ next:
 ---
 The LLM Prompt step sends your custom instructions directly to the Large Language Model. It replaces the older "OpenAI" step for greater flexibility.
 
-> 📘 You need to [enable AI](docs:quickstart-budibase-ai) to use this feature.
+> 📘 You need to [enable AI](doc:quickstart-budibase-ai) to use this feature.
 
 ## Example use cases
 

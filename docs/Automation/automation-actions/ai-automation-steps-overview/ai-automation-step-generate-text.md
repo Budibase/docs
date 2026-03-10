@@ -12,7 +12,7 @@ next:
 ---
 The Generate Text step produces new text in a specified style or category, based on an input prompt.
 
-> 📘 You need to [enable AI](docs:quickstart-budibase-ai) to use this feature.
+> 📘 You need to [enable AI](doc:quickstart-budibase-ai) to use this feature.
 
 ## Example use cases
 

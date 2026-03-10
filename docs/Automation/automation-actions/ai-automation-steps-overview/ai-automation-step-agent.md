@@ -12,14 +12,14 @@ next:
 ---
 The Agent step runs a pre-configured AI Agent from your workspace inside an automation flow. Unlike single-prompt steps, it can use configured tools to complete multi-step tasks.
 
-> 📘 You need to [enable AI](docs:quickstart-budibase-ai) to use this feature.
+> 📘 You need to [enable AI](doc:quickstart-budibase-ai) to use this feature.
 
 ## Before you start
 
 Create and test an Agent first, then reference it in your automation:
 
-* [Agent building 101](docs:agent-building-101)
-* [Agents Config](docs:agents-config)
+* [Agent building 101](doc:agent-building-101)
+* [Agents Config](doc:agents-config)
 
 ## Example use cases
 
