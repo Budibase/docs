@@ -14,7 +14,7 @@ The Extract Document Data step uses AI to pull structured fields from a PDF or i
 
 This is useful when you need to turn unstructured files, such as invoices, forms, or receipts, into machine-readable data.
 
-> 📘 You need to [enable AI](docs:quickstart-budibase-ai) to use this feature.
+> 📘 You need to [enable AI](doc:quickstart-budibase-ai) to use this feature.
 
 ## What this step does
 
@@ -122,6 +122,6 @@ If extraction fails, check the following:
 
 ## Related guides
 
-* [AI automation steps overview](docs:ai-automation-steps-overview)
-* [LLM prompt](docs:ai-automation-step-llm-prompt)
-* [Agent](docs:ai-automation-step-agent)
+* [AI automation steps overview](doc:ai-automation-steps-overview)
+* [LLM prompt](doc:ai-automation-step-llm-prompt)
+* [Agent](doc:ai-automation-step-agent)
