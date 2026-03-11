@@ -20,7 +20,7 @@ Make sure you have:
 
 * Completed [Agents config](doc:agents-config)
 * Enabled at least one live agent in [Agent chat](doc:agent-chat)
-* Set your chat app to live in the Builder Chat page
+* Verified chat access from **Agents** -> **Deployment** -> **Open chat**
 
 ## Add the Chatbox component
 
@@ -67,7 +67,7 @@ Agent availability in Chatbox depends on Agent Chat configuration:
 * Agent must be enabled in chat settings
 * Agent should be live
 * User must meet the configured access role
-* Chat app must be live (not paused)
+* Chat route must be available in the App Portal
 
 Update these from [Agent chat](doc:agent-chat) if a component appears but users cannot start conversations.
 
@@ -75,7 +75,7 @@ Update these from [Agent chat](doc:agent-chat) if a component appears but users 
 
 If Chatbox is visible but not usable:
 
-* Confirm chat is live in the Builder Chat page
+* Confirm chat opens from **Agents** -> **Deployment** -> **Open chat**
 * Confirm at least one live agent is enabled in Agent Chat
 * Confirm your user role has access to the selected agent
 * Re-open the app after publish to load the latest chat settings

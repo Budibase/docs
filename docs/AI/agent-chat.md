@@ -24,7 +24,7 @@ Make sure you have:
 3. Find **Agent Chat**
 4. Use the toggle to enable the channel
 
-When enabled, Budibase creates or updates the chat app configuration for that workspace and agent.
+When enabled, Budibase updates chat configuration for that agent.
 
 ## Configure settings for one agent
 
@@ -37,25 +37,18 @@ You can configure:
 
 If the agent is live, saving these settings will require a workspace publish to apply the changes.
 
-## Manage the chat app for the workspace
+## Access agent chat
 
-After enabling Agent Chat for at least one agent, open the **Agent Chat** found in the top right corner of your home page in the builder.
+Agent chat is accessed from the **App Portal**.
 
-This is a dedicated **Agent Chat** page, not another screen inside the **Agents** area.
+To open the chat app for an agent:
 
-### Add and enable agents
+1. Open **Agents**
+2. Select an agent
+3. Open the **Deployment** tab
+4. Click **Open chat**
 
-* Use **Add agent** to include live agents in chat
-* Toggle agent availability on or off per agent
-* Disabled agents remain configured but are not available to users
-
-### Set default agent
-
-Open an agent's settings from the **Agent Chat** page to choose the default agent.
-
-* The default agent is used when users click **New chat**
-* Only enabled agents can be default
-* If no explicit default is set, the first enabled agent becomes the effective default
+This takes you directly to the chat screen in the App Portal.
 
 ### Access role behavior
 
@@ -68,18 +61,6 @@ Open an agent's settings from the **Agent Chat** page to choose the default agen
 * Empty values are ignored
 * Only the first 3 non-empty starters are kept
 
-## Set chat live or pause chat
-
-On the builder agent **configuration** section:
-
-* Click **Set your chat live** to make chat available to users
-* Click **Pause chat** to disable access
-
-These changes publish the workspace so users see the latest chat availability.
-
-## Open agent chat
-
-From an agents -> selected agent -> deployment, click **Open chat** to launch the actual user-facing chat app for that agent.
 
 ## Embed chat in app screens
 
@@ -92,9 +73,9 @@ Depending on configuration, users may see:
 * No agents configured for chat
 * Agents configured but none enabled
 * Selected agent unavailable for chat
-* Chat paused by administrators
+* No live/deployed chat access for the current setup
 
-When these states appear, verify chat live status and agent enablement in Builder.
+When these states appear, verify deployment status and agent chat enablement.
 
 ## Troubleshooting
 
@@ -103,7 +84,7 @@ If Agent Chat does not work as expected:
 * Confirm [Agents config](doc:agents-config) is valid and the agent has a connected model
 * Confirm the agent is **Live**
 * Confirm the agent is enabled in Chat settings
-* Confirm chat is set to **Live** on the Builder **Agent Chat** page
+* Open chat from **Agents** -> **Deployment** -> **Open chat** to verify the App Portal route
 * Re-open the chat app after publish to pick up latest settings
 
 ## Related guides
