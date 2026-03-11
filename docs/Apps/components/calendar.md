@@ -2,7 +2,7 @@
 title: Calendar
 excerpt: A configurable calendar component to show events.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
