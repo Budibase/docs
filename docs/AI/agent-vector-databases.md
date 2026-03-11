@@ -1,7 +1,7 @@
 ---
 title: Agent vector databases
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---

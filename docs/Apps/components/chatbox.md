@@ -2,7 +2,7 @@
 title: Chatbox
 excerpt: Embed your agent chat experience inside an app screen.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
