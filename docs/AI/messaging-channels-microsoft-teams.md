@@ -1,0 +1,59 @@
+---
+title: Microsoft Teams messaging channel
+deprecated: false
+hidden: false
+metadata:
+  robots: index
+---
+Use this guide to deploy an agent to Microsoft Teams after validating [Agent chat](doc:agent-chat).
+
+## Before you start
+
+Make sure you have:
+
+* A Microsoft 365 tenant with Teams access
+* An Azure app registration for your bot
+* A live agent with an AI model connected
+* Access to **Agents** -> your agent -> **Deployment**
+
+## Configure Microsoft Teams in Budibase
+
+1. Open your agent in **Agents**
+2. Go to **Deployment**
+3. In **Messaging channels**, click **Manage** for **Microsoft Teams**
+4. Enter:
+   * **App ID (client ID)**
+   * **Client secret (value)**
+   * **Directory (tenant) ID (Azure AD tenant ID)**
+   * **Idle timeout (minutes)** (optional)
+5. Click **Save channel**
+6. Copy the generated **Messaging endpoint URL**
+
+## Configure your Teams bot endpoint
+
+In your Azure bot configuration, set the bot messaging endpoint to the Budibase **Messaging endpoint URL**.
+
+Use a single-tenant setup that matches your tenant ID.
+
+## Enable and verify
+
+1. In Budibase **Deployment**, toggle Microsoft Teams to **Enabled**
+2. Open Teams and message the bot
+3. Test commands:
+   * `ask <message>` to continue the current conversation
+   * `new <message>` to start a new conversation
+
+Plain text messages are treated as `ask`.
+
+## Troubleshooting
+
+* `Not configured` in Budibase: confirm **App ID**, **Client secret**, and **Tenant ID** are saved.
+* Teams cannot deliver messages: verify the bot messaging endpoint matches the Budibase URL exactly.
+* Authentication failures from Teams: check bot credentials and tenant alignment.
+* Webhook route errors: use the exact Budibase-generated endpoint URL from **Deployment**.
+
+## Related guides
+
+* [Messaging channels](doc:messaging-channels)
+* [Slack messaging channel](doc:messaging-channels-slack)
+* [Discord messaging channel](doc:messaging-channels-discord)

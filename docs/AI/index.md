@@ -17,6 +17,9 @@ next:
       slug: agent-chat
       title: Agent chat
     - type: basic
+      slug: messaging-channels
+      title: Messaging channels
+    - type: basic
       slug: agent-building-101
       title: Agent building 101
 ---
@@ -30,19 +33,21 @@ Use this section to go from initial setup to production-ready Agent workflows.
    Connect and validate your provider and default model, then attach a model to your agent.
 2. [Agent chat](doc:agent-chat)  
    Configure chat deployment, agent availability, access role, and conversation starters.
-3. [Agent building 101](doc:agent-building-101)  
+3. [Messaging channels](doc:messaging-channels)  
+   Deploy the same live agent to Slack, Microsoft Teams, or Discord after Agent Chat is validated.
+4. [Agent building 101](doc:agent-building-101)  
    Build a complete service desk Agent with tools and automation handoff.
-4. [Agent instructions guide](doc:agent-instructions-guide)  
+5. [Agent instructions guide](doc:agent-instructions-guide)  
    Write clear, safe, and deterministic instruction prompts.
-5. [Agent tools and permissions](doc:agent-tools-and-permissions)  
+6. [Agent tools and permissions](doc:agent-tools-and-permissions)  
    Apply least-privilege tool access and safe write guardrails.
-6. [Agent embedding models](doc:agent-embedding-models)  
+7. [Agent embedding models](doc:agent-embedding-models)  
    Configure embeddings for Agent knowledge retrieval.
-7. [Agent vector databases](doc:agent-vector-databases)  
+8. [Agent vector databases](doc:agent-vector-databases)  
    Connect and assign vector storage for semantic retrieval.
-8. [Agent testing guide](doc:agent-testing-guide)  
+9. [Agent testing guide](doc:agent-testing-guide)  
    Run repeatable tests and regression checks before production rollout.
-9. [Agent troubleshooting](doc:agent-troubleshooting)  
+10. [Agent troubleshooting](doc:agent-troubleshooting)  
    Diagnose model, tool, and output issues quickly.
 
 ## What this section covers

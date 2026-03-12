@@ -90,6 +90,7 @@ If Agent Chat does not work as expected:
 ## Related guides
 
 * [Agents config](doc:agents-config)
+* [Messaging channels](doc:messaging-channels)
 * [Chatbox component](doc:chatbox)
 * [Agent building 101](doc:agent-building-101)
 * [Agent testing guide](doc:agent-testing-guide)

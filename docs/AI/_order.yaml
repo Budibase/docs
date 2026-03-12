@@ -1,6 +1,10 @@
 - index
 - agents-config
 - agent-chat
+- messaging-channels
+- messaging-channels-slack
+- messaging-channels-microsoft-teams
+- messaging-channels-discord
 - agent-building-101
 - agent-instructions-guide
 - agent-tools-and-permissions
