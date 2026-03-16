@@ -13,7 +13,7 @@ Use this page after completing [Agents config](doc:agents-config).
 
 Make sure you have:
 
-* A working AI config and default model in Workspace Settings
+* A configured model in **Workspace Settings > Connections > AI models**
 * A saved agent with an AI model connected
 * An agent set to **Live**
 

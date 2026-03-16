@@ -7,15 +7,15 @@ metadata:
 ---
 Embedding models convert text into vectors so your Agent can retrieve relevant knowledge chunks during responses.
 
-In Budibase, embedding model configuration is part of the AI Configs area and is used with Agent Knowledge settings.
+In Budibase, embedding model configuration is part of the Connections area and is used with Agent Knowledge settings.
 
 ## Configure an embedding model
 
 1. Open Workspace **Settings**
-2. Go to **AI Configs**
-3. Click **Embeddings** section
+2. Go to **Connections**
+3. Click **Knowledge bases** section
 4. Scroll to **Embeddings model**
-5. Click **Add configuration**
+5. Click **+ Embeddings model**
 6. Provide the required provider credentials and model details
 7. Save and verify the configuration appears in the list
 

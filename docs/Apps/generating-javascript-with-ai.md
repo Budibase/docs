@@ -33,7 +33,7 @@ You’ll see an AI icon with the text "Generate with AI" (usually at the bottom 
 
 ### If AI is not activated
 
-The AI button will appear grayed out and labeled "Switch on AI." Click it to open setup, then configure a provider in **Settings > AI Configs**. You can follow [Quickstart: Budibase AI](doc:quickstart-budibase-ai) for the full setup flow.
+The AI button will appear grayed out and labeled "Switch on AI." Click it to open setup, then configure a provider in **Settings > Connections > AI models**. You can follow [Quickstart: Budibase AI](doc:quickstart-budibase-ai) for the full setup flow.
 
 ### If AI is activated
 
