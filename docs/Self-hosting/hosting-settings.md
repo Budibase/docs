@@ -328,7 +328,17 @@ The full set of variables can be found in our repo, in the file [.env](https://r
       </td>
 
       <td>
-        Allows you to override the default 200 iteration limit. 
+        Allows you to override the default 200 iteration limit.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        BLACKLIST_IPS
+      </td>
+
+      <td>
+        Controls which IP addresses/hostnames/CIDR subnets Budibase's outbound REST query integration is prevented from connecting to. This is an **SSRF (Server-Side Request Forgery) protection** mechanism. 
       </td>
     </tr>
   </tbody>
