@@ -7,7 +7,7 @@ metadata:
 ---
 This page covers the required setup before using Budibase Agents and Agent Chat.
 
-Before building an Agent or enabling Agent Chat, you need at least one configured model in Workspace AI config.
+Before building an Agent or enabling Agent Chat, you need at least one configured model in **Workspace Settings > Connections > AI models**.
 
 For a broader AI setup walkthrough, see [Quickstart: Budibase AI](doc:quickstart-budibase-ai).
 
@@ -19,10 +19,10 @@ Make sure you have:
 * Credentials for your chosen model provider
 * At least one model you can run chat/agents with
 
-## Configure your first model in AI config
+## Configure your first model in AI models
 
 1. Open your Workspace **Settings**
-2. Go to the **AI Config** section
+2. Go to **Connections > AI models**
 3. Click **Connect**
 4. Choose a provider and fill out the required credentials
 5. Select or type a model
@@ -61,14 +61,14 @@ Use the exact values expected by your provider. Incorrect values can allow setup
 
 Before attaching a model to an Agent:
 
-1. Confirm the provider shows as enabled in AI Config
+1. Confirm the provider shows as enabled in **Connections > AI models**
 2. Confirm your target model name is available and correctly spelled
 3. Run a simple test from an Agent with a short prompt
 4. Save the successful configuration as your default team setup
 
 ## Selecting models in agents
 
-After configuring AI Config, attach a model to each agent:
+After configuring a model in **AI models**, attach it to each agent:
 
 1. Open **Agents**
 2. Create a new Agent or open an existing one

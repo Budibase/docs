@@ -25,12 +25,14 @@ next:
 To start using Budibase AI, configure an AI provider in your Workspace.
 
 1. Open your Workspace **Settings**.
-2. Go to **AI**.
+2. Go to **Connections > AI models**.
 3. Choose a provider (for example Budibase AI, OpenAI, Anthropic, Google, Mistral, OpenRouter, or Groq).
 4. Enter the required credentials and model details.
 5. Save and enable the configuration.
 
 AI features are workspace specific, so you will need to connect to these again in other workspaces if you wish to enable AI functionality.
+
+For a full breakdown of the new setup area, see [Connections](doc:connections).
 
 > 📘 If you are self-hosting and want to use Budibase AI, you need to make sure you are on an Enterprise plan and have a active license key in your Workspace. See the [Workspace management guide](https://docs.budibase.com/docs/workspace-management#self-hosted-workspaces).
 

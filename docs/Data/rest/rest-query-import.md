@@ -10,64 +10,54 @@ metadata:
 next:
   description: ''
 ---
-The REST query import feature allows you to import one or more queries at a time.
+Import lets you create multiple REST queries at once from API definitions.
 
-The **supported formats** for import are:
+## Supported formats
 
-* Swagger 2.0 / OpenAPI 2.0 (YAML or JSON)
-* Swagger 3.0 / OpenAPI 3.0 (YAML or JSON)
-* CURL
+* OpenAPI 2.0 / Swagger 2.0 (JSON or YAML)
+* OpenAPI 3.0 / Swagger 3.0 (JSON or YAML)
+* cURL
 
- 
+## Import flow (file or raw text)
 
-***
+1. Open **Settings > Connections > APIs**
+2. Open the target connection
+3. Click **Open in API Editor**
+4. Click **Import**
+5. Choose input source:
+   * **File**: upload spec file
+   * **Raw text**: paste spec text
+6. Click **Import**
+7. Review imported queries
+8. Open key queries and click **Send**
+9. Save any adjusted queries
 
- 
+## Post-import hardening checklist
 
-## Import collection
+1. Rename generic query names
+2. Confirm auth config per query
+3. Confirm base URL/path compatibility with your environment
+4. Add or correct bindings for runtime values
+5. Confirm request body formats
+6. Validate schema output after first successful run
 
-### File
+## Importing from Postman
 
-Upload a file containing your API documentation.
+Postman collections should be converted to OpenAPI first.
 
-<Image align="center" border={false} src="https://files.readme.io/6a2a11c-file.png" />
+1. Export collection JSON from Postman
+2. Convert using `postman2openapi`
+3. Import converted output into API Editor
+4. Validate each imported write endpoint carefully
 
- 
+## Common import issues
 
-### Text
+* Unknown/unsupported fields in spec: simplify or clean OpenAPI before import
+* Imported query fails auth: map to correct connection auth config
+* Paths duplicate base URL: correct path/full URL handling
 
-Enter the documentation string directly.
+## Related guides
 
-<Image align="center" border={false} src="https://files.readme.io/f40c6c1-raw.png" />
-
-   
-
-***
-
- 
-
-## Converting and importing a Postman collection
-
-As Postman does not natively use OpenAPI, you will need to generate an OpenAPI definition before importing it into Budibase.
-
-Find the collection in Postman that you want to export. Click the `...` and select `Export`.
-
-<Image align="center" alt="Exporting an API collection in Postman" border={false} caption="Exporting an API collection in Postman" src="https://files.readme.io/eacbb98-export_collection.png" />
-
-This will download a JSON file with the API configuration.
-
-We now need to convert this collection to an OpenAPI definition. We can do that with the handy [postman2openapi](https://github.com/kevinswiber/postman2openapi) tool.
-
-<Image align="center" border={false} src="https://files.readme.io/1b157c6-openapi.png" />
-
-In Budibase, add a new REST API, or select an existing one. Under _Queries_ tab, click `Import`.
-
-<Image align="center" border={false} src="https://files.readme.io/4eecea3ed0d0bc6ba2787c65e58a8fe6071f67fecec7ced402f24ffc0e10d8e7-Screenshot_2025-11-19_at_01.31.07.png" />
-
-Click on the _Raw Text_ tab and paste in the newly generated OpenAPI definition. Click `Import`.
-
-<Image align="center" border={false} src="https://files.readme.io/7691a92-raw_text.png" />
-
-You will now see the imported requests listed:
-
-<Image align="center" alt="Imported API collection" border={false} caption="Imported API collection" src="https://files.readme.io/2592a69-Screenshot_2023-11-23_at_09.57.51.png" />
+* [REST queries](doc:rest-queries)
+* [REST authentication](doc:rest-authentication)
+* [REST variables](doc:rest-variables)

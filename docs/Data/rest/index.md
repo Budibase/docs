@@ -26,38 +26,60 @@ next:
       slug: rest-variables
       title: REST Variables
 ---
-The REST data source is a powerful integration in Budibase that allows you to connect to data over HTTP.
+Budibase REST integrations are configured from **Workspace Settings > Connections > APIs**.
 
-## Add a new REST datasource
+A REST integration has two layers:
 
-To add a new `REST` data source click:
+* **Connection-level config** in Settings (auth, base URL, shared headers/variables)
+* **Query-level config** in API Editor (method, path, body, bindings, pagination, transformer)
 
-* > API's > Add new API > Custom REST API 
+## Create a REST connection
 
-<Image align="center" border={false} width="40% " src="https://files.readme.io/c46ce811c0f4f3df2df78edaff895df9e966fa33696ea655c07359cd6a7ee91c-Screenshot_2025-11-19_at_01.05.48.png" />
+1. Open your workspace
+2. Go to **Settings > Connections > APIs**
+3. Click **Add connection**
+4. Choose either:
+   * **Create custom** for direct/manual setup
+   * A **template** for a pre-seeded setup
+5. Enter a **Display name**
+6. Open **Credentials** and set **Base URL**
+7. Add any required shared headers/URL params/static variables
+8. Click **Save**
 
-<br />
+## Connection tabs reference
 
-<Image align="center" border={false} width="80% " src="https://files.readme.io/6a5e595b7b7e919d3bee6194e0d74fb846aee47dc5529adad799997749f76dea-Screenshot_2025-11-19_at_01.08.06.png" />
+| Tab | Purpose | Typical fields |
+| :-- | :-- | :-- |
+| Authentication | Reusable auth definitions for queries | Basic, Bearer, OAuth2 |
+| Credentials | Shared request defaults | Base URL, URL parameters, headers, static variables |
+| Advanced | Transport behavior | Reject unauthorized, Download images |
 
-## Configuration
+## Open the API Editor and create your first query
 
-Add additional configuration to your data source in the form of queries, default headers, authentication and variables
+1. Open the saved connection
+2. Click **Open in API Editor**
+3. Click **Create new query**
+4. Set method and endpoint path
+5. Add required params/headers/body
+6. Pick auth config if needed
+7. Click **Send**
+8. Review response and schema
+9. Click **Save Query**
 
-<Image align="center" border={false} width="70% " src="https://files.readme.io/9764f80b23e9c06bbc3abf78b62fd2b4b70a848c5a832ca53840fdf3941220c1-image.png" />
+## Common migration notes (old to new UI)
 
-<br />
+* Older docs and workflows may reference **APIs** or **datasources** from legacy menus
+* Current workflow for REST setup starts in **Settings > Connections > APIs**
+* Query authoring still happens in the API Editor via **Open in API Editor**
 
-### Name
+## Recommended reading order
 
-By default the REST data source will have a name like REST or REST-1, you can change this to something recognisable if desired.
-
-### Queries
-
-A query is an individual request in the rest data source. Either create one from scratch or import an existing. For more details see: [Rest Bindings](doc:rest-bindings)
-
-## Video guide
-
-<HTMLBlock>{`
-<iframe src="https://player.vimeo.com/video/746819500?h=29b53dd8a1&title=0&byline=0&portrait=0" style="margin-top: -100px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-`}</HTMLBlock>
+1. [REST Templates](doc:rest-templates)
+2. [REST queries](doc:rest-queries)
+3. [REST authentication](doc:rest-authentication)
+4. [REST bindings (tutorial)](doc:rest-bindings)
+5. [REST variables](doc:rest-variables)
+6. [REST query import](doc:rest-query-import)
+7. [REST pagination](doc:rest-pagination)
+8. [REST OAuth2](doc:rest-oauth2)
+9. [REST example](doc:rest-example)

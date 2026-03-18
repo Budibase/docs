@@ -15,9 +15,9 @@ next:
 ---
 ## Setup
 
-This feature is only available when you have at least one AI configuration enabled in your Workspace. AI Columns are currently available for Budibase DB tables.
+This feature is only available when you have at least one AI model provider configured in your Workspace. AI Columns are currently available for Budibase DB tables.
 
-To configure AI, open **Workspace Settings > AI Configs** and enable a provider. Budibase AI is available as a managed option, and you can also connect supported external providers.
+To configure AI, open **Workspace Settings > Connections > AI models** and configure a provider. Budibase AI is available as a managed option, and you can also connect supported external providers.
 
 ## Operations
 
@@ -91,12 +91,12 @@ Select a single column to analyse. Useful for understanding and categorizing cus
 
 ### Search Web
 
-Takes multiple columns and returns AI search results. Not compatible with OpenAI configurations.
+Takes multiple columns and returns AI search results. Not compatible with OpenAI provider configurations.
 
 ## Credits
 
-By default, the AI column uses the configured Budibase AI connection, but you can switch to another enabled provider configuration.
+By default, the AI column uses the configured Budibase AI provider, but you can switch to another enabled provider configuration.
 
-When using the Budibase AI connection, pricing information can all be found [here](https://budibase.com/pricing/).
+When using the Budibase AI provider, pricing information can all be found [here](https://budibase.com/pricing/).
 
-If you connect your own provider in **AI Configs**, usage costs are billed by that provider, and Budibase AI credits are not consumed.
+If you connect your own provider in **Connections > AI models**, usage costs are billed by that provider, and Budibase AI credits are not consumed.
