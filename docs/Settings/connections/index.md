@@ -15,9 +15,9 @@ The **Connections** area in Workspace Settings is where you configure external a
 
 ## Tabs in Connections
 
-* **APIs**: Create and manage reusable API connections for REST integrations.
-* **AI models**: Connect model providers and configure models used by AI features.
-* **Knowledge bases**: Configure retrieval infrastructure for Agents.
+* **APIs**: Create and manage reusable API connections for REST integrations
+* **AI models**: Connect model providers and configure models used by AI features
+* **Knowledge bases**: Configure retrieval infrastructure for Agents
 
 ## Migration notes
 
@@ -25,8 +25,8 @@ If you previously used AI setup pages labeled **AI config** or **AI Configs**, t
 
 ## Which page should you use?
 
-* To set up API auth/base URLs/templates, use [Connections: APIs](doc:apis).
-* To configure AI providers and models, use [Agents config](doc:agents-config).
+* To set up API auth/base URLs/templates, use [Connections: APIs](doc:apis)
+* To configure AI providers and models, use [Agents config](doc:agents-config)
 * For Agent retrieval setup (embedding models, vector databases, knowledge bases), use:
   * [Agent embedding models](doc:agent-embedding-models)
   * [Agent vector databases](doc:agent-vector-databases)
