@@ -10,55 +10,65 @@ metadata:
 next:
   description: ''
 ---
-Authentication configs are specified at the datasource level and can be selected from queries within the datasource. Adding authentication to a datasource allows queries to run well-known authentication strategies and can reduce the amount of configuration needed when multiple queries share the same authentication. 
+REST authentication is configured at the **connection** level and selected at the **query** level.
 
- 
+## Supported auth types in Connections
 
-***
+* **Basic**: username/password
+* **Bearer**: token-based header
+* **OAuth2 (Client Credentials)**: machine-to-machine token flow
 
-  
+## Configure authentication on a connection
 
-## Datasource Configuration
+1. Open **Settings > Connections > APIs**
+2. Open your connection
+3. Go to **Authentication**
+4. Click **Add authentication**
+5. Select auth type
+6. Fill required fields
+7. Click **Save**
 
-A REST datasource can contain multiple authentication configs of well known types. 
+You can store multiple auth configs on one connection.
 
-* Multiple configs of the same type can exist
-* Configs must have a unique name
+## Select auth in a query
 
-<Image align="center" src="https://files.readme.io/1784303b1a751f1aa8dd3ed2e48419c75403426873728370325479633116ebe4-Screenshot_2024-12-12_at_12.24.32.png" />
+1. Open connection in **API Editor**
+2. Open/create a query
+3. Select auth config for the query
+4. Click **Send**
+5. Save query
 
-<Image align="center" src="https://files.readme.io/ba8b74cfd487dafb9bb492c86c1d5472ee1ced945704caf52126c231c2d03b72-Screenshot_2024-12-12_at_12.25.12.png" />
+## Auth configuration guidance
 
-The appropriate information is added to the request when authentication is selected. 
+* Create separate auth entries per environment when needed.
+* Use clear names (`Prod Bearer`, `Staging OAuth2`).
+* Re-test all affected queries after editing a shared auth config.
 
-* **Basic Auth** - Adds the Base64 encoded username and password to the Authorization header
-* **Bearer Token**  - Adds the token to the Authorization header as Bearer token
+## Using SSO token bindings
 
- 
+If SSO is configured, you can bind the current user token in request fields.
 
-***
+```handlebars
+{{ Current User.OAuthToken }}
+```
 
-  
+Common usage:
 
-## Query Configuration
+* Authorization header values
+* Request body fields for delegated APIs
+* Request params in legacy endpoints
 
-From within a query use the Auth dropdown to select the desired authentication config to be added to the query.
+## Troubleshooting matrix
 
-![](https://files.readme.io/ec515cb-Screenshot_2022-01-04_at_16.31.34.png "Screenshot 2022-01-04 at 16.31.34.png")
+| Symptom | Likely cause | Fix |
+| :-- | :-- | :-- |
+| `401 Unauthorized` | Missing/wrong credentials | Verify auth values and query auth selection |
+| `403 Forbidden` | Valid auth, insufficient scope/role | Check provider scopes/permissions |
+| Works in one query but not another | Query using different auth config | Compare auth selection per query |
+| Token expires quickly | Provider token policy | Use OAuth2 flow and retest token lifecycle |
 
-## Using SSO Tokens in REST Requests
+## Related guides
 
-> 📘 If you have not configured SSO, you can follow the guide here: [https://docs.budibase.com/docs/openid-connect](https://docs.budibase.com/docs/openid-connect)
-
-If you have configured your budibase tenant to use SSO, you can use the SSO token as a binding in your REST API requests. The `{{ Currentuser.OAuthToken }}` binding is available anywhere you can use bindings in the REST connector, such as:
-
-* Request Body
-* Request Headers
-* Request Parameters
-* Request Bindings
-
-![](https://user-images.githubusercontent.com/5913006/177118536-1b072da3-4b77-49d5-afa0-c7de678ba247.png)
-
-> 📘 SSO Tokens Automatically Refresh!
->
-> Budibase will handle the refreshing of SSO tokens for you directly from your provider - you don't need to do it yourself.
+* [REST OAuth2](doc:rest-oauth2)
+* [REST queries](doc:rest-queries)
+* [OpenID Connect](doc:openid-connect)

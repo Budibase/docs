@@ -10,102 +10,88 @@ metadata:
 next:
   description: ''
 ---
-Variables are a useful way to reuse data across REST queries. Variables come in two forms; static and dynamic.
+REST variables let you reuse values across multiple queries in the same connection.
 
-<Image align="center" src="https://files.readme.io/cfb278ef3f86fc153ca9ee33306bfa8917012cc101a39b6e7e74218244bbe307-Screenshot_2024-12-12_at_12.26.07.png" />
+## Variable types
 
- 
+* **Static variables**: manually defined constant values
+* **Dynamic variables**: values extracted from response headers/body
 
-***
+## Static variables
 
-  
+Use static variables for shared constants:
 
-## Static Variables
+* API version
+* Host/tenant identifiers
+* Shared language/region codes
+* Reused query fragments
 
-Static variables store data that does not change. These can range from constants used in the metadata of the request to information about the request itself that can be used in the URL such as API version or hostname. 
+### Create static variables
 
-Variables nested inside other variables will not be evaluated. 
+1. Open **Settings > Connections > APIs**
+2. Open your connection
+3. Go to **Credentials**
+4. Add entries under **Static Variables**
+5. Click **Save**
 
-![](https://files.readme.io/6334065-Screenshot_2022-01-04_at_17.10.35.png "Screenshot 2022-01-04 at 17.10.35.png")
+## Dynamic variables
 
- 
+Use dynamic variables to chain queries.
 
-***
+Common patterns:
 
-  
+* Auth query returns token used by later queries
+* Lookup query returns ID used by update/delete query
+* Cursor response field reused for pagination calls
 
-## Dynamic Variables
+### Create dynamic variables
 
-Dynamic variables provide a way to chain data between queries. 
+1. Open connection in API Editor
+2. Run a source query
+3. Create dynamic variable from response header or schema field.
+4. Name the variable clearly.
+5. Save query changes.
 
-* Response data from one query can be used to create a dynamic variable
-  * Header
-  * Body field
-* The result of the variable will be cached for a short period of time
-* A variable will be re-evaluated if a query using it fails, in which case the query will retry once
-* A query will fail if a variable cannot be evaluated
+### Edit dynamic variables
 
-  
+1. Open connection in **Settings > Connections > APIs**.
+2. Go to **Credentials**.
+3. Open **Dynamic Variables**.
+4. Update expression/path.
+5. Save and retest downstream queries.
 
-### Header Variables
+## Expression examples
 
-Use the **...** menu alongside response headers to select **Create dynamic variable** 
+Header-derived value:
 
-![](https://files.readme.io/eaeaecd-Screenshot_2022-01-04_at_17.27.24.png "Screenshot 2022-01-04 at 17.27.24.png")
-
-Give the variable a name. 
-
-* The name must be unique
-* The name will be used to bind this variable in your query. e.g *cookie* can be used as *\{\{cookie}}*
-
-![](https://files.readme.io/3051a94-Screenshot_2022-01-04_at_17.28.22.png "Screenshot 2022-01-04 at 17.28.22.png")
-
-The variable will appear in the **Dynamic Variables** tab 
-
-![](https://files.readme.io/301bb4f-Screenshot_2022-01-04_at_17.32.24.png "Screenshot 2022-01-04 at 17.32.24.png")
-
-  
-
-### Body Variables
-
-Use the ... menu alongside schema items to select **Create dynamic variable** 
-
-![](https://files.readme.io/21d418f-Screenshot_2022-01-04_at_17.33.45.png "Screenshot 2022-01-04 at 17.33.45.png")
-
-Give the variable a name as above
-
-![](https://files.readme.io/cbec0f3-Screenshot_2022-01-04_at_17.34.50.png "Screenshot 2022-01-04 at 17.34.50.png")
-
-The variable will appear in the **Dynamic Variables** tab 
-
-![](https://files.readme.io/b53eeae-Screenshot_2022-01-04_at_17.35.29.png "Screenshot 2022-01-04 at 17.35.29.png")
-
-  
-
-### Editing Dynamic Variables
-
-In the above example we can see the *user\_id* variable is bound to *\{\{ data.0.\[user] }}* which is an object. To access nested data in the response body we can update the variable expression to reference the nested fields using dot notation e.g. *\{\{ data.0.\[user.\_id] }}* .\
-Alternatively, a query transformer can be used to update the schema so that the desired field is exposed in the schema directly. 
-
-Dynamic variables can also be created manually using the Add variable button. 
-
-* Access header data using 
-
-```
-{{ info.headers.[header-name] }}
+```handlebars
+{{ info.headers.[set-cookie] }}
 ```
 
-* Access body data using 
+Body-derived value:
 
+```handlebars
+{{ data.0.[id] }}
 ```
-{{ data.0.[body-field] }}
+
+Nested body path example:
+
+```handlebars
+{{ data.0.[user._id] }}
 ```
 
-![](https://files.readme.io/a946bc3-Screenshot_2022-01-04_at_17.40.52.png "Screenshot 2022-01-04 at 17.40.52.png")
+## Variables vs bindings
 
- 
+Use **variables** when values should be shared across queries.
+Use **bindings** when values are supplied per execution.
 
-Once a variable has been defined it can be used in the exact same way as a binding. 
+## Common issues
 
-* For example, a variable named **my-id** can be referenced in the headers, params, or body of a query using *\{\{my-id}}*
-* For more details see [REST Bindings](doc:rest-bindings)
+* Variable resolves empty: source query response shape changed.
+* Variable points to object instead of scalar: expression path too broad.
+* Query retries/fails with variable errors: source variable query not returning expected value.
+
+## Related guides
+
+* [REST bindings (tutorial)](doc:rest-bindings)
+* [REST queries](doc:rest-queries)

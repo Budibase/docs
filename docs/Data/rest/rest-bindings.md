@@ -10,76 +10,71 @@ metadata:
 next:
   description: ''
 ---
-Use bindings to supply additional information to a query at runtime. In this example we have:
+Bindings pass runtime values into REST queries.
 
-* An API endpoint that accepts a status field to filter a list of applications
-* A query named *applications*
-* An application that supplies data to the bindings of the query
+Use bindings for values that vary by user, row, form input, URL parameter, or action context.
 
-<Image align="center" src="https://files.readme.io/eb77b4bc42b2eb78fa6739e3fd477ed0986596caeef009b44c08ee75a11629f1-Screenshot_2024-12-12_at_12.22.21.png" />
+## Binding syntax
 
- 
+Use handlebars syntax:
 
-***
+```handlebars
+{{ bindingName }}
+```
 
-  
+## Create a binding in a query
 
-## Creating and using bindings
+1. Open a query in API Editor
+2. Add a value in URL/Params/Headers/Body using binding syntax
+3. Define binding name and default value
+4. Click **Send** to test defaults
+5. Save query
 
-We can create a binding named *status* with a default value of *all*. 
+## Where bindings can be used
 
-![](https://files.readme.io/85475c5-Screenshot_2022-01-04_at_13.31.34_1.png "Screenshot 2022-01-04 at 13.31.34 (1).png")
-
- 
-
-Using handlebars the binding can be referenced throughout the query in the following places:
-
-* URL
-* Params
+* URL/path segments
+* Query params
 * Headers
-* Body
-* Transformer
+* Request body
+* Transformer scripts
 
- 
+## Example: filtered list query
 
-### Params example
+Query goal: return records by status.
 
-The binding can be used as the value of a param of the same name. While the name can be shared it is not required.
+1. Create a `GET` query for the list endpoint
+2. Add query param `status`
+3. Set value to `{{ status }}`
+4. Set default binding value to `all`
+5. Send query and confirm response
+6. Save query
+7. In an app action, execute query and pass `status` dynamically
 
-![](https://files.readme.io/df1c2e0-Screenshot_2022-01-04_at_13.44.11.png "Screenshot 2022-01-04 at 13.44.11.png")
+## Passing bindings from forms
 
- 
+Typical flow:
 
-### Headers example
+1. Add form fields
+2. Configure button action **Execute query**
+3. Map form values to query bindings
+4. Run action
+5. Confirm API receives mapped values
 
-The binding can be used as the value of a header of the same name. As above the binding and header name may or may not be shared. 
+## Binding design guidelines
 
-![](https://files.readme.io/faddba2-Screenshot_2022-01-04_at_14.52.40.png "Screenshot 2022-01-04 at 14.52.40.png")
+* Use descriptive names (`userId`, `status`, `startDate`).
+* Set safe defaults for optional values.
+* Avoid reusing one binding name for different concepts.
+* Validate string/number/date formatting expected by API.
 
- 
+## Troubleshooting
 
-### Body example
+* Binding appears literal in request: syntax not parsed correctly
+* Value missing at runtime: no input mapped in action
+* Wrong filter result: default value taking precedence unexpectedly
 
-The binding can be used in any part of the request body. e.g. as the value of a JSON field. 
+## Related guides
 
-![](https://files.readme.io/2ee1845-Screenshot_2022-01-04_at_15.43.15.png "Screenshot 2022-01-04 at 15.43.15.png")
-
- 
-
-***
-
-  
-
-## Using REST queries in forms
-
-You may wish to populate <Glossary>Default Value</Glossary>s with the properties of your GET query, or allow users to submit form data via a POST query.
-
-Learn more about [Bindings in forms](doc:form-bindings).
-
- 
-
-***
-
-## Video tutorial
-
-<Embed url="https://www.youtube.com/watch?v=uch3bOftxHU" title="From REST API to CRUD app in minutes | Budibase | REST API" favicon="https://www.google.com/favicon.ico" image="https://i.ytimg.com/vi/uch3bOftxHU/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=uch3bOftxHU" typeOfEmbed="youtube" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252Fuch3bOftxHU%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253Duch3bOftxHU%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252Fuch3bOftxHU%252Fhqdefault.jpg%26key%3D7788cb384c9f4d5dbbdbeffd9fe4b92f%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
+* [REST queries](doc:rest-queries)
+* [REST variables](doc:rest-variables)
+* [Bindings in forms](doc:form-bindings)
