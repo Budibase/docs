@@ -1,9 +1,5 @@
 ---
-title: Connections: APIs
-deprecated: false
-hidden: false
-metadata:
-  robots: index
+title: APIs
 ---
 Use **Connections > APIs** to create reusable API connection definitions for REST-based integrations.
 
