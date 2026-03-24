@@ -39,17 +39,20 @@ Use a single-tenant setup that matches your tenant ID.
 
 1. In Budibase **Deployment**, toggle Microsoft Teams to **Enabled**
 2. Open Teams and message the bot
-3. Test commands:
+3. Run `link` or `/link`, then complete the Budibase account linking flow
+4. Test commands:
    * `ask <message>` to continue the current conversation
    * `new <message>` to start a new conversation
 
 Plain text messages are treated as `ask`.
+If you send a normal message before linking, Budibase sends a private link prompt.
 
 ## Troubleshooting
 
 * `Not configured` in Budibase: confirm **App ID**, **Client secret**, and **Tenant ID** are saved.
 * Teams cannot deliver messages: verify the bot messaging endpoint matches the Budibase URL exactly.
 * Authentication failures from Teams: check bot credentials and tenant alignment.
+* Teams prompts to link before answering: run `link` or `/link` and complete the account link handoff.
 * Webhook route errors: use the exact Budibase-generated endpoint URL from **Deployment**.
 
 ## Related guides

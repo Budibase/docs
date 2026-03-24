@@ -38,21 +38,25 @@ Make sure you have:
 2. In the Discord Developer Portal, set the interactions endpoint to the Budibase **Webhook URL**
 3. Save the interactions endpoint configuration
 
-When channel enable runs successfully, Budibase syncs `/ask` and `/new` commands.
+When channel enable runs successfully, Budibase syncs `/ask`, `/new`, and `/link` commands.
 
 ## Enable and verify
 
 1. In Budibase **Deployment**, confirm Discord is **Enabled**
 2. In Discord, run:
+   * `/link` and complete the Budibase account linking flow
    * `/ask` with a message
    * `/new` to start a new conversation
 3. Confirm responses appear in Discord
+
+If you try `/ask` before linking, Budibase prompts you to link your account first.
 
 ## Troubleshooting
 
 * `Not connected` in Budibase: confirm all four required values are saved.
 * Command sync fails: re-check **Application ID**, **Bot token**, and **Guild ID**.
 * Interactions fail: verify the Discord interactions endpoint exactly matches the Budibase **Webhook URL**.
+* Discord prompts to link before answering: run `/link` and complete the account link handoff.
 * Signature validation errors: confirm **Public key** matches the key in your Discord application.
 * Webhook route errors: use the exact Budibase-generated endpoint URL from **Deployment**.
 

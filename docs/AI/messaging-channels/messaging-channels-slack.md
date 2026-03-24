@@ -71,15 +71,19 @@ Invite the bot to channels you want it to serve, for example:
 
 1. In Budibase **Deployment**, toggle Slack to **Enabled**
 2. In Slack, mention the bot in a channel or send a DM
-3. Confirm the agent responds
+3. Run `/link` and complete the Budibase account linking flow
+4. Send a message and confirm the agent responds
 
 Slack threads are used as conversation boundaries automatically.
+
+If you send a message before linking, Budibase prompts you privately to complete account linking first.
 
 ## Troubleshooting
 
 * `Not configured` in Budibase: confirm both **Bot token** and **Signing secret** are saved.
 * Slack events not reaching Budibase: re-check **Request URL** and reinstall the app after scope/event changes.
 * Bot does not respond in channels: confirm the bot was invited to that channel.
+* Bot prompts to link before answering: run `/link` in Slack and complete the link handoff.
 * Webhook route errors: use the exact Budibase-generated endpoint URL from **Deployment**.
 
 ## Related guides
