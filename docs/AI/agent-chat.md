@@ -15,7 +15,7 @@ Make sure you have:
 
 * A configured model in **Workspace Settings > Connections > AI models**
 * A saved agent with an AI model connected
-* An agent set to **Live**
+* An agent set live (status **Live**)
 
 ## Enable agent chat for an agent
 
@@ -35,7 +35,7 @@ You can configure:
 * **Access role**: Minimum app role required to use that agent in chat
 * **Conversation starters**: Up to 3 starter prompts shown in chat
 
-If the agent is live, saving these settings will require a workspace publish to apply the changes.
+If the agent status is **Live**, saving these settings will require a workspace publish to apply the changes.
 
 ## Access agent chat
 
@@ -82,7 +82,7 @@ When these states appear, verify deployment status and agent chat enablement.
 If Agent Chat does not work as expected:
 
 * Confirm [Agents config](doc:agents-config) is valid and the agent has a connected model
-* Confirm the agent is **Live**
+* Confirm the agent status is **Live**
 * Confirm the agent is enabled in Chat settings
 * Open chat from **Agents** -> **Deployment** -> **Open chat** to verify the App Portal route
 * Re-open the chat app after publish to pick up latest settings

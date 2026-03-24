@@ -33,4 +33,4 @@ Automations are unique to each Workspace you have, but can be triggered by any a
 
 <Image align="center" src="https://files.readme.io/d9efb0c6514432afe570423d82c76e307cfc579e687fba52f77b380ffda83fd6-Screenshot_2025-08-14_at_14.41.12.png" />
 
-Automations can be toggled Off/Live from the automation dashboard. Turning an automation off will impact every implementation of that automation, in every app that it is used.
+Automations can be set live or stopped from the automation dashboard. Stopping an automation will impact every implementation of that automation, in every app that it is used. Automation statuses are shown as `Live`, `Stopped`, or `Not Deployed`.

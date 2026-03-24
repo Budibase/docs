@@ -152,7 +152,7 @@ To view the app with a different permission level, change the `View as` option.
 
 <Image align="center" src="https://files.readme.io/4464ded894a11263b2e758f4d6bee433c9f67e3c59180bdc1f8712cac4b9dd56-Quickstart_15.png" />
 
-When you are happy with your app, you can enable the `Live` setting to push your app live into production. 
+When you are happy with your app, use `Set live` to deploy your app into production.
 
 <Image align="center" src="https://files.readme.io/d1edfb2f191063b8130c35b7dfae6da48ea6d70765558fb2e2302370bb011e15-Quickstart_16.png" />
 

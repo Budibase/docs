@@ -24,7 +24,7 @@ To add a new App to our Workspace, we can hit `New App`, before selecting a `Nam
 
 This then takes us to the App Builder, where we can start designing screens.Take a look at our [App Building 101](https://docs.budibase.com/v3.3.0/docs/app-building-101) guide to learn more.
 
-By default, new Apps are switched off. We’ll see how to push our Apps live below, under Pushing Apps live.
+By default, new Apps are not deployed live. We’ll see how to set Apps live below, under Setting Apps live.
 
 <Image align="center" src="https://files.readme.io/dfcb420803fdfd2ac1a8e55a0136784ea60cd851b9a76923cf7be6f5b36af5d4-Screenshot_2025-08-14_at_15.45.49.png" />
 
@@ -34,24 +34,24 @@ To edit an existing app, we can either click on its row or hit `Edit` within its
 
 <Image align="center" src="https://files.readme.io/709d214e9d7f4e3a105211b61059f7b8d38e4ccac5747b95af56324161aaf33b-Introduction_to_Apps_5.png" />
 
-## Pushing Apps live
+## Setting Apps live
 
-In order for end-users to access our Apps, they must be pushed `Live` within a published Workspace.
+In order for end-users to access our Apps, they must be set `Live` within a published Workspace.
 
 We can publish a Workspace under its `General Settings` menu.
 
 <Image align="center" src="https://files.readme.io/d49621c5348633b4b9a0288bea2a2b57b0efb6342f431d4bc2103fd9c7e7c80d-Introduction_to_Apps_6.png" />
 
-Individual Apps can be pushed live or switched off using the slider in the Budibase Builder.
+Individual Apps can be set live or stopped using the deployment control in the Budibase Builder.
 
 <Image align="center" src="https://files.readme.io/f5e57827ad39244e77ee6bdb84ad84990aa4bbc20f230d621cd66b971eca213d-Screenshot_2025-08-14_at_15.52.05.png" />
 
-We can also do this from the Apps screen, using the `Switch On/Off` option for each App.
+We can also do this from the Apps screen, using the `Set live` / `Stop` option for each App.
 
 <Image align="center" src="https://files.readme.io/51ca96c5369d847332ddafcefb8964cc63efa0b7032ffd3dc65f601196b2fb34-Introduction_to_Apps_8.png" />
 
 ## Filtering Workspace Apps
 
-By default, the Apps screen displays all Apps within our Workspace. However, we can use the filtering tabs at the top left of our Apps list to only display apps with a `Live` or `Off` status.
+By default, the Apps screen displays all Apps within our Workspace. However, we can use the filtering tabs at the top left of our Apps list to only display apps with a `Live`, `Stopped`, or `Not Deployed` status.
 
 <Image align="center" src="https://files.readme.io/1079c04277bfa69abc48c77d0ae7b0364c1eed7f9a3b3f2555c503318d482a8e-Screenshot_2025-08-14_at_15.46.50.png" />
