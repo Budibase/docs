@@ -18,6 +18,14 @@ Make sure you have:
 * An agent set to **Live**
 * `Agent chat` already validated in App Portal
 
+## Link requirement for external channels
+
+Before a user can chat with an agent in Slack, Microsoft Teams, or Discord, they must link their messaging identity to a Budibase account.
+
+Use `/link` (Teams also accepts `link`) in the channel conversation to start linking.
+
+If a user sends a normal message before linking, Budibase sends a private link prompt and guides them through account linking.
+
 ## Recommended rollout order
 
 1. Enable and test [Agent chat](doc:agent-chat)
