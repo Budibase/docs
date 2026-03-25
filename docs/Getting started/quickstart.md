@@ -16,105 +16,85 @@ We will use the [Sample data](https://docs.budibase.com/v3.3.0/docs/data-sources
 
 ## **Getting started**
 
-1. Create a new account at [https://account.budibase.app/register](https://account.budibase.app/register) (onboarding takes a few seconds). 
-2. Once registered, you will be able to log in. 
-3. Step through the first Workspace wizard, selecting the *Budibase Sample data*.
+1. Create a new account at [https://account.budibase.app/register](https://account.budibase.app/register) (onboarding takes a few seconds).
+2. Once registered, log in.
+3. Step through the first Workspace wizard, selecting *Budibase Sample data*.
 
-<HTMLBlock>{`
-<iframe src="https://player.vimeo.com/video/1110250791?title=0&amp;byline=0&amp;portrait=0&amp;speed=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Quickstart"></iframe>
-`}</HTMLBlock>
+Expected result:
 
-<br />
+| Step | What to confirm |
+| :--- | :-------------- |
+| Account creation | You can access your new workspace |
+| Data tables | Sample data is available in the Data section |
+
+## **Agents**
+
+If agents are your main use case, configure them early in the same workspace.
+
+| Step | What to do |
+| :--- | :--------- |
+| Configure models | Add an AI provider under **Settings > Connections > AI models** |
+| Create an agent | Open **AI > Agents**, create an agent, and connect a model |
+| Test and deploy | Validate behavior, then use `Set live` to deploy |
+| Add user access | Enable Agent Chat or embed chat with the Chatbox component |
+
+Useful guides:
+
+* [Agents config](https://docs.budibase.com/docs/agents-config)
+* [Agent chat](https://docs.budibase.com/docs/agent-chat)
+* [Agent building 101](https://docs.budibase.com/docs/agent-building-101)
 
 ## **Data**
 
-Most of the columns in our sample data, for exampl,e *First Name*, *Last Name* and *Email*, are [Text](https://docs.budibase.com/v3.3.0/docs/text) data types, which is the most common.
+Most of the columns in our sample data, for example *First Name*, *Last Name* and *Email*, are [Text](https://docs.budibase.com/v3.3.0/docs/text) data types, which is the most common.
 
-Other types include [Number](https://docs.budibase.com/v3.3.0/docs/number), [Date/Time](https://docs.budibase.com/v3.3.0/docs/datetime), and more!
+Other types include [Number](https://docs.budibase.com/v3.3.0/docs/number), [Date/Time](https://docs.budibase.com/v3.3.0/docs/datetime), and more.
 
-The values of some fields are highlighted in a coloured pill. This indicates the value to be either a [Multi-select](https://docs.budibase.com/v3.3.0/docs/multi-select) value such as the *Employee Level* in the **Employees** table, or a [Relationships](https://docs.budibase.com/v3.3.0/docs/relationships) link such as *Assigned* in the **Jobs** table.
-
-<Image alt="img" align="center" src="https://files.readme.io/573cb952a36fe0034b6fff246acde632aea9fe71b1ed119208c235e69e42169a-Quickstart_1.png">
-  Data section with sample data
-</Image>
-
-<br />
+The values of some fields are highlighted in a coloured pill. This indicates the value to be either a [Multi-select](https://docs.budibase.com/v3.3.0/docs/multi-select) value such as *Employee Level* in the **Employees** table, or a [Relationships](https://docs.budibase.com/v3.3.0/docs/relationships) link such as *Assigned* in the **Jobs** table.
 
 In Budibase, data sources are shared across their Workspace. This means that we can utilize them within any App or Automation in the same Workspace.
 
 ## **External datasource**
 
-If you want to connect to external datasources, have a look at our [Datasources](https://docs.budibase.com/v3.3.0/docs/data-sources) section for a list of available connectors.\
+If you want to connect to external datasources, have a look at our [Datasources](https://docs.budibase.com/v3.3.0/docs/data-sources) section for a list of available connectors.  
 Further information can be found in the [Introduction to Data](https://docs.budibase.com/v3.3.0/docs/data) page.
 
 ***
 
 ## **Apps**
 
-As we have some data, we can now start building out end-user apps. This is done in the Apps section, which can be navigated to via the tab on the left-hand side of the page. 
-
-<Image align="center" src="https://files.readme.io/349e0f84ae3c1fdb9a0c74773a9545655fb86642fb032ec8278eb91c325369ab-Quickstart_2.png" />
+As we have some data, we can now start building out end-user apps. This is done in the Apps section, which can be navigated to via the tab on the left-hand side of the page.
 
 Here, we’re prompted to create our first app.
-
-<Image align="center" src="https://files.readme.io/a4fcf201f9ede336fed51a4e1e1a7c320b5fee2f8cea9ec28d8931b12cfce6f6-Quickstart_3.png" />
 
 Within the app builder, the left-hand panel includes two core areas for building out your apps:
 
 1. [Screens](https://docs.budibase.com/v3.3.0/docs/screens)
 2. [Components](https://docs.budibase.com/v3.3.0/docs/components)
 
-When building apps, you will mostly be focused on the *Screen* and *Component* views. 
-
-<Image align="center" src="https://files.readme.io/9a112dc9ffeb0a1464480b8da9e5257de2a2ead1003f504dd37700e92de19bad-Quickstart_4.png" />
+When building apps, you will mostly be focused on the *Screen* and *Component* views.
 
 When the *Screen* is selected in the component tree, basic settings are available in the right-hand side panel.
 
-<Image align="center" src="https://files.readme.io/c76a462b130dd6765979cfae3c87573ec011b63ac141bae0bab575191f4666cd-Quickstart_5.png" />
-
-We can access navigation settings under `Navigation`.
-
-<Image align="center" src="https://files.readme.io/f2a271a40675c4de25d8eeaadbad92c41898b7c6b79fdd4b12d2f4fb809e96ca-Quickstart_6.png" />
+You can access navigation settings under `Navigation`.
 
 ### **Autogenerated screens**
 
-To get started quickly, click on Add screen. Next, select Table to create new CRUD (Create, Read, Update, Delete) screens for each of your tables.
+To get started quickly, click `Add screen`. Next, select `Table` to create new CRUD (Create, Read, Update, Delete) screens for each of your tables.
 
-These autogenerated CRUD screens will make use of the [Table](https://docs.budibase.com/v3.3.0/docs/table) and [Side panels](https://docs.budibase.com/v3.3.0/docs/side-panel) for fast, all-in-one data interaction. 
+These autogenerated CRUD screens make use of the [Table](https://docs.budibase.com/v3.3.0/docs/table) and [Side panels](https://docs.budibase.com/v3.3.0/docs/side-panel) for fast, all-in-one data interaction.
 
-<Image alt="img" align="center" src="https://files.readme.io/e40876fb326f0023159f5bbc325401ecbb0a496a1a5947037f3d2b939dcf9f1c-Quickstart_7.png">
-  Adding autogenerated screens
-</Image>
-
-<br />
-
-*![](https://files.readme.io/282c74ac3c6710fecfc3a48be755df3a933f6b640978c0b1b15766eff433dc93-Quickstart_8.png)*
-
-<br />
-
-When auto-generating, they’ll automatically inherit the access level from the underlying data source. 
+When auto-generating, screens inherit the access level from the underlying data source.
 
 You can read more about [screen access levels](https://docs.budibase.com/v3.3.0/docs/screens#access-level), but in this tutorial, we will stick to the defaults.
 
-Upon clicking Done, a new screen will be generated for each table selected.
-
-<Image alt="img" align="center" src="https://files.readme.io/a0f7b88107aa7fbcda9835ba63463f84a9e5956a7b1ec38fb489624005dfec88-Quickstart_9.png">
-  Autogenerated Screens
-</Image>
-
-<br />
+Upon clicking `Done`, a new screen is generated for each table selected.
 
 ### **Components**
 
-With the screens created, we can view and edit the components for each.
+With the screens created, you can view and edit the components for each.
 
-<Image alt="img" align="center" src="https://files.readme.io/575dea70af744970f27036740b80c97ec6b7e0a4f05bf69f76ccd9f945db4987-Screenshot_2025-08-15_at_14.32.30.png">
-  Table screen component tree
-</Image>
-
-With the Table component selected, you will be able to edit its settings via the Settings Panel. Here you can change the *Data Source*, *Filters*, *Column*, and more! These settings are explained on the [Table](https://docs.budibase.com/v3.3.0/docs/table) page.
-
-<Image align="center" src="https://files.readme.io/5b9f206ba679d0dde34b8dec3e6d949265251d29242d2d4716fbaaae5bff066f-Screenshot_2025-08-15_at_14.32.38.png" />
+With the Table component selected, you can edit its settings via the Settings Panel. Here you can change the *Data Source*, *Filters*, *Column*, and more. These settings are explained on the [Table](https://docs.budibase.com/v3.3.0/docs/table) page.
 
 You can also click the `+` icon in the bottom right to add another component to your screen. You can view a list of available core [Components](https://docs.budibase.com/v3.3.0/docs/components) and learn more about [Data in design](https://docs.budibase.com/v3.3.0/docs/working-with-data).
 
@@ -122,41 +102,29 @@ You can also click the `+` icon in the bottom right to add another component to 
 
 In Budibase, there is a category of components known as [Blocks](https://docs.budibase.com/v3.3.0/docs/blocks), which are collections of pre-built components designed to make building your apps easier and faster.
 
-A list of them can be found in the *Blocks* section of the components view. 
+A list of them can be found in the *Blocks* section of the components view.
 
-<Image align="center" src="https://files.readme.io/840ea82887dcb496a2eea6ecd1dae607d4ce1096bd776d330b419dc4858362d3-Quickstart_11.png" />
+Sometimes you will find yourself needing to make a fine-grain tweak that cannot be done through the settings panel alone.
 
-<br />
-
-Sometimes you will find yourself needing to make a fine-grain tweak that cannot be done through the settings panel alone. 
-
-If you want to edit the form fields in the side panel of a Form Block, for example, you will need to click the [Eject](https://docs.budibase.com/v3.3.0/docs/blocks#ejecting-blocks) button to pop open the block, exposing its constituent componets.
-
-<Image align="center" src="https://files.readme.io/7ae33cf9f43c5c9cad4774bc2b313dd4f9c380c9ef1bf8e0e31dbc92ab0c81f8-Quickstart_12.png" />
-
-<br />
+If you want to edit the form fields in the side panel of a Form Block, for example, click the [Eject](https://docs.budibase.com/v3.3.0/docs/blocks#ejecting-blocks) button to pop open the block, exposing its constituent components.
 
 ***
 
 ## **Preview and Publish**
 
-During development you may wish to test out your app so far. Click the Preview button in the top-right to open the app in a modal. The app preview will always open the screen selected within the builder.
+During development you may wish to test out your app so far. Click `Preview` in the top-right to open the app in a modal. The app preview always opens the screen selected within the builder.
 
-<Image align="center" src="https://files.readme.io/e18af5a076c8bf2df6dd69b0df95a7c0553b1cbb0c54723c515b9cc4ea685a6b-Quickstart_13.png" />
+You will also notice that navigation links are automatically added to the nav bar when autogenerated screens are created.
 
-![](https://files.readme.io/1558748efe5d78e609ce4fca8b0b7bf91e909f10a7a4a5a970f76ba4cc4374d9-Quickstart_14.png)
-
-You will also notice that navigation links were automatically added to the nav bar when we created the autogenerated screens.
-
-To view the app with a different permission level, change the `View as` option. 
-
-<Image align="center" src="https://files.readme.io/4464ded894a11263b2e758f4d6bee433c9f67e3c59180bdc1f8712cac4b9dd56-Quickstart_15.png" />
+To view the app with a different permission level, change the `View as` option.
 
 When you are happy with your app, use `Set live` to deploy your app into production.
 
-<Image align="center" src="https://files.readme.io/d1edfb2f191063b8130c35b7dfae6da48ea6d70765558fb2e2302370bb011e15-Quickstart_16.png" />
-
-<br />
+| Control | Where | Outcome |
+| :------ | :---- | :------ |
+| `Preview` | Builder top-right | Opens current screen as a runtime preview |
+| `View as` | Preview/runtime controls | Tests app behavior by role |
+| `Set live` | Deployment controls | Deploys the app for end users |
 
 ***
 
@@ -180,12 +148,6 @@ The settings tab includes a variety of options for your workspace. These include
 * [Export/Import](https://docs.budibase.com/v3.3.0/docs/export-and-import-apps)
 * [Name and URL](https://docs.budibase.com/v2.22.0/docs/name-and-url)
 * [Version](https://docs.budibase.com/v3.3.0/docs/update-app-version)
-
-<Image alt="img" align="center" src="https://files.readme.io/9e09c4106f701e967a44b6d6a43a35886d43566632397c1a84f91dad758e5eec-Quickstart_17.png">
-  Settings tab
-</Image>
-
-<br />
 
 ## **Further exploration**
 
