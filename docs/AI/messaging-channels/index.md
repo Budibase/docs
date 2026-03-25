@@ -15,7 +15,7 @@ Make sure you have:
 
 * A working [Agents config](doc:agents-config)
 * A saved agent with a connected AI model
-* An agent set to **Live**
+* An agent set live (status **Live**)
 * `Agent chat` already validated in App Portal
 
 ## Link requirement for external channels
