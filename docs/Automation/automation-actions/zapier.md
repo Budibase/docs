@@ -48,7 +48,7 @@ Most likely you will want to send dynamic values, such as those from your automa
 
 You can do this through [Bindings](doc:data-in-automations).
 
-If you are using an [App action](doc:app-action) trigger, then the fields can be accessed like so:
+If you are using an [On demand](doc:app-action) trigger, then the fields can be accessed like so:
 
 <Image alt="App action fields binding" align="center" src="https://files.readme.io/f727cea889249ad370e540b5f7d02bafb798c010d383b2b343bbad29a60ce6ff-Screenshot_2025-04-29_at_11.19.12.png">
   App action fields binding

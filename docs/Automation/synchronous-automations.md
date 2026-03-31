@@ -36,7 +36,7 @@ You can make an automation synchronous by adding a **Collect Data** step.
 
 A **Collect** step will simply return whatever binding or value is passed to it. 
 
-Once this step has been added, you can access the result of your automation as a Budibase user, or external user depending on whether your automation trigger is an [App action](doc:app-action) or [Webhook](doc:webhook). 
+Once this step has been added, you can access the result of your automation as a Budibase user, or external user depending on whether your automation trigger is [On demand](doc:app-action) or [Webhook](doc:webhook). 
 
 > 📘 Last step
 >
@@ -78,9 +78,9 @@ And now the result:
 
 <br />
 
-## App action
+## On demand
 
-For users to access the result of your automations in a published Budibase app, you will need to configure an [App action](doc:app-action) trigger within the *Design* section. Let's start off by creating a very simple automation that will get a specific row based on the \_id we are passing to it.
+For users to access the result of your automations in a published Budibase app, you will need to configure an [On demand](doc:app-action) trigger within the *Design* section. Let's start off by creating a very simple automation that will get a specific row based on the \_id we are passing to it.
 
 ![](https://files.readme.io/210e91308bf6e0799e5f5c7b1d8a67f84ada077a4b5182e095777b26c8b44bba-image.png)
 
@@ -88,7 +88,7 @@ For users to access the result of your automations in a published Budibase app, 
   Filter attached to the query rows step
 </Image>
 
-With this done we can start setting up our screen. Create a new screen and add a button component. Select the component. The button's settings side panel should show up on the right of your screen. Then click on the button beside the label `On click` called `No actions set`. This will open the actions drawer. Add a new trigger automation  action and select our newly created app action automation.
+With this done we can start setting up our screen. Create a new screen and add a button component. Select the component. The button's settings side panel should show up on the right of your screen. Then click on the button beside the label `On click` called `No actions set`. This will open the actions drawer. Add a new trigger automation action and select our newly created On demand automation.
 
 ![](https://files.readme.io/6c4d0b235c13af62487b3dd037b6c19dd8c11ff2bc6a2fd86a4cb793eaa94d20-image.png)
 

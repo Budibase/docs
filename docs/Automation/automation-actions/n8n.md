@@ -40,7 +40,7 @@ Read more on installation: [Install community nodes in the n8n app](https://docs
 
 ## Triggering an n8n workflow from Budibase
 
-First, we will create our automation in Budibase. For this example, we will use [app action](doc:app-action) automation.
+First, we will create our automation in Budibase. For this example, we will use an [On demand](doc:app-action) automation.
 
 With the webhook setup in **n8n**, and the URL copied, you can now add the `n8n` automation action step in your automation.
 
