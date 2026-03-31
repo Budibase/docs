@@ -1,5 +1,5 @@
 ---
-title: User action
+title: On demand
 excerpt: >-
   Trigger your Budibase automation when an action takes place in your Budibase
   app.
@@ -12,7 +12,7 @@ metadata:
 next:
   description: ''
 ---
-The User Action trigger is intended to be called from the UI of your Budibase application. 
+The On demand trigger runs when invoked from the UI of your Budibase application, or by an agent workflow.
 
 > 📘 Fire and forget
 >
@@ -22,11 +22,11 @@ The User Action trigger is intended to be called from the UI of your Budibase ap
 
 ## Creating the Automation
 
-To use the User Action trigger, you will need to create an automation with it defined as the trigger. Head over to the Automation section, create a new automation, and select `User Action` as the trigger you want to start your automation with.
+To use the On demand trigger, you will need to create an automation with it defined as the trigger. Head over to the Automation section, create a new automation, and select `On demand` as the trigger you want to start your automation with.
 
 <Image align="center" width="600px" src="https://files.readme.io/8b4017b916087019d82ab5c92af232a789e5cabf3bfbbcb1091e144e5e5dc859-Screenshot_2025-07-16_at_14.50.23.png" />
 
-Once you've entered the name and picked `User Action,` you can click `Save,` and your automation will be created.
+Once you've entered the name and picked `On demand,` you can click `Save,` and your automation will be created.
 
 ## Defining Fields
 
@@ -48,13 +48,13 @@ First, add a button to your application in the Design Section of Budibase. Then,
 
 A modal will open where you can define [Actions](doc:actions). Create a new action by choosing `Trigger Automation` from the options and clicking the `Add Action` button.
 
-Then select your app action type automation from the dropdown list. Only app action automations will appear in this list.
+Then select your On demand automation from the dropdown list. Only On demand automations will appear in this list.
 
 <Image align="center" src="https://files.readme.io/b1375bdc5478a65628ff35dce509ba82df84ed058f13c84eedb939b692a6e2f9-Screenshot_2025-07-16_at_15.06.52.png" />
 
 <br />
 
-After selecting your app action and any fields you created, they will be pulled through below the select automation. You can freely type the values you wish to pass. Or you can use any available bindings and pass those to the automation instead.
+After selecting your On demand automation and any fields you created, they will be pulled through below the select automation. You can freely type the values you wish to pass. Or you can use any available bindings and pass those to the automation instead.
 
 After selecting the field you want to populate, you can enter the value. This can be static text, or through [Bindings](doc:bindings). You could even use [JavaScript Bindings](doc:javascript) for it.
 
@@ -64,7 +64,7 @@ Whatever you choose for bindings, you will receive the result back in your autom
 
 This subject touches upon [working with data in automations](doc:data-in-automations), but I wanted to highlight the specific data that comes in with this trigger.
 
-One popular thing to do with a `User Action trigger` is creating one or multiple database rows. You could use this action to populate various tables, or even <Glossary>Data Sources</Glossary> at once.
+One popular thing to do with an `On demand` trigger is creating one or multiple database rows. You could use this action to populate various tables, or even <Glossary>Data Sources</Glossary> at once.
 
 Let's take a look at the `Create Row` action. Click the Create Row step to open its settings. Select the table you want to create a row in, and then use [Bindings](doc:bindings) to use the `trigger.fields.` object to populate the data you want.
 

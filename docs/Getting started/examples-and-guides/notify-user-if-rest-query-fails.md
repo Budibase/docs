@@ -60,7 +60,7 @@ For demonstration purposes, this guide will use a dummy query that will either r
 9. In the <Glossary>Settings Panel</Glossary>, click the button beside *On click* to open the actions drawer.
 10. `Add Action`: **Trigger Automation**
     1. Select the *Automation* you created. You should see an info note: *This automation will run synchronously* 
-    2. Pass in any [App action](doc:app-action) fields
+    2. Pass in any [On demand](doc:app-action) fields
 
 <Image align="center" src="https://files.readme.io/e785885-steps8_to_10.png" />
 

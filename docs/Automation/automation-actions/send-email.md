@@ -123,7 +123,7 @@ In the **Data** section, add a new *User* column to the *Inventory* table called
 
 <Image align="center" src="https://files.readme.io/09b104b757d54d7c1141b55619fe1ce7715f4dc4f81ac9b95781f4940f10f934-Screenshot_2025-04-15_at_08.52.11.png" />
 
-Next navigate to the **Automation** section. Click `Add automation`, enter the *Name* 'Confirmation email' and select [App action](doc:app-action) as the trigger.
+Next navigate to the **Automation** section. Click `Add automation`, enter the *Name* 'Confirmation email' and select [On demand](doc:app-action) as the trigger.
 
 Use the `Add field` button to add the following fields:
 
