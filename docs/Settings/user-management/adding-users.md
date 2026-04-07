@@ -35,6 +35,16 @@ During invite, you can assign one of these roles:
 
 If you select **End user**, you can also choose the default app role for that user in the target workspace, such as **Basic user**, **Admin user**, or a custom app role.
 
+## Group assignment during invite and create
+
+When inviting or creating users, group assignment follows this order:
+
+1. If you explicitly select one or more groups, those groups are assigned.
+2. If no groups are selected, Budibase assigns the tenant's default group (if one is configured).
+3. If no default group exists, no group is automatically assigned.
+
+For configuring a default group, see [User groups](doc:user-groups).
+
 ## Onboarding options
 
 You can choose one of two onboarding methods:

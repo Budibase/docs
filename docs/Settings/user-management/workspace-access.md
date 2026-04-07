@@ -60,6 +60,8 @@ Any user groups with access to your application will be listed along with their 
 
 Users indirectly granted access to a workspace via a **User group** will appear muted in the **Users** list.
 
+If a user gets workspace access through group membership (including through a default user group), the access is shown as group-managed in the workspace panel rather than forcing a direct **Basic** assignment on the user record.
+
 Even though their group has granted the above user **App user** access to the application, you can apply an override that will apply only to that app user:
 
 As you can see above, the user `test+1@test.com` was initially only granted **App user** access to the application as a member of the **Developer Team**. They can also be upgraded to an **Admin** user.
