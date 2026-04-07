@@ -34,6 +34,8 @@ To add a user group, click on `Add group`.
 
 This will pop-up a modal from which you can enter a team name, as well as select an icon and colour.
 
+You can also mark the group as **Default**. When a default group is configured, new users are automatically assigned to it if no group is selected during invite or creation.
+
 <Image align="center" border={false} src="https://files.readme.io/4b32798623711bcca22687b4a5a1ea4d87636152bbbffe171b6bb3bd94f921f5-Screenshot_2024-09-09_at_11.17.51.png" />
 
 Next you will be brought to screen where you can [Add user](https://docs.budibase.com/docs/user-groups#adding-a-user-to-a-group) and [Add app](https://docs.budibase.com/docs/user-groups#adding-apps-to-a-user-group) for your new group. When finished, the back button will take you back to the table of user groups.
@@ -41,6 +43,24 @@ Next you will be brought to screen where you can [Add user](https://docs.budibas
 <Image align="center" border={false} src="https://files.readme.io/4eeeb37f8b4335a4d56059acfc4a4e9dc62c12cd6672c43ea2d3da61dd0b59a9-Screenshot_2024-09-09_at_12.13.42.png" />
 
 If you want to change the team name, icon or colour, this can be done through the context menu in the top right corner. The user group can also be deleted if you decide you no longer need it.
+
+## Default group behavior
+
+Budibase supports a single default user group per tenant.
+
+You can set or remove a group's default status from:
+
+1. The create group modal.
+2. The edit group modal.
+3. The group details page.
+
+If you set a new default group, Budibase automatically removes the default flag from the previous default group.
+
+If you delete the current default group, new users will no longer be auto-assigned to a group until another default group is configured.
+
+> 📘
+>
+> If one or more groups are explicitly selected during invite or create, those selected groups are used and the default-group fallback is not applied.
 
 <Image align="center" border={false} src="https://files.readme.io/d23e0b58e2bd0b28e680b2f5e180f83e57f4b99ddccc02e6e5265148c968e66f-Screenshot_2024-09-09_at_12.14.47.png" />
 

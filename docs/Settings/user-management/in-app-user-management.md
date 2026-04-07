@@ -27,3 +27,5 @@ In the side panel, you can invite new users by clicking 'Invite User,' or you ca
 Clicking either of the highlighted options will open the user invitation panel, where you can pre-set the user's role at the app level.
 
 <Image align="center" border={false} src="https://files.readme.io/919cb1d-Screenshot_2023-11-07_at_12.00.08.png" />
+
+If user groups are enabled, invited users can also inherit workspace access from their group memberships, including via a configured default group when no groups are explicitly selected.

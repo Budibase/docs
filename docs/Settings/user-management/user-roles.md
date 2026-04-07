@@ -42,6 +42,8 @@ Users without Organisation admin permissions only see workspaces they are grante
 
 These app roles work with [screen access levels](https://docs.budibase.com/docs/screens#access-level) and determine what a user can do inside published apps.
 
+Users can receive workspace access directly or through user groups. If access is inherited from a group, Budibase treats that as group-managed access in workspace membership views.
+
 Higher-tier roles inherit lower-tier visibility. For example, an `Admin` app role can see content available to `Basic` and `Public`.
 
 | Order | Role     | Description                                         |
