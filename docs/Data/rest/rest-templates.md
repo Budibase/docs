@@ -17,6 +17,7 @@ Templates can provide:
 * Suggested endpoint actions
 * Required static variables (for example owner/repo, project identifiers)
 * Suggested auth pattern
+* Template collections with child APIs for the same provider
 
 Template content can still be edited after creation.
 
@@ -27,13 +28,21 @@ Template content can still be edited after creation.
 3. Select a template
 4. Open the generated connection draft
 5. Set a clear **Display name**
-6. In **Credentials**, verify:
+6. If prompted, select the specific API in the template collection
+7. In **Credentials**, verify:
    * Base URL
    * URL parameters
    * Headers
    * Static variables
-7. In **Authentication**, add required auth config
-8. Click **Save**
+8. In **Authentication**, add required auth config
+9. Click **Save**
+
+## Shared vs independent template collections
+
+Some template collections include child APIs and use one of two connection modes:
+
+* **Shared**: child APIs share connection settings (for example base URL and auth). You choose the child API when creating or editing queries.
+* **Independent**: each child API is treated as its own connection choice. You select the child API when creating the connection.
 
 ## Validate the template connection
 
@@ -50,6 +59,7 @@ Template content can still be edited after creation.
 * `404` on template query: base URL/path mismatch for your target service
 * Empty response: required bindings not set or wrong defaults
 * Template variable locked/required: ensure value exists in **Credentials > Static Variables**
+* Missing endpoint list for a child API: confirm the correct child API is selected for the connection or query
 
 ## When to use Create custom instead
 
