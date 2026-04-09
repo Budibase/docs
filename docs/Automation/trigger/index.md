@@ -22,6 +22,7 @@ Currently, there are six ways to trigger an automation:
 4. An external trigger in the form of a JSON Webhook
 5. When a certain action happens in an app
 6. CRON trigger (trigger this automation at a specific time or day)
+7. Email received in a specific inbox
 
 > 📘 Row creation/update/deletion triggers
 >
