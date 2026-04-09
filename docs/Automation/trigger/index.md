@@ -12,7 +12,7 @@ next:
 ---
 Each automation must have a single trigger step, which is essentially a watcher - waiting for a particular condition to be met, at which point the process will kick off.
 
-<Image align="center" src="https://files.readme.io/702f457d4e0ed07ec040b08f5df8703f93e861a926090a71c6e2851c4978fa13-Screenshot_2025-07-16_at_11.56.26.png" />
+<Image align="center" src="https://files.readme.io/0d92924c457e2eecb9d55f10cbd41fb5c28d97a6bf206c60dca88b64d1b3a806-Screenshot_2026-04-09_at_11.16.38.png" />
 
 Currently, there are six ways to trigger an automation:
 
@@ -27,6 +27,6 @@ Currently, there are six ways to trigger an automation:
 >
 > When utilising row-based triggers, it should be noted that this only works for rows created through Budibase. If you are using an external data source, like say Postgres or MySQL, then rows created externally within the database will not trigger automations.
 
-Triggers are internal to the Budibase system and therefore cannot easily be altered - if you have an idea for a good trigger, then [let us know](https://github.com/Budibase/budibase/discussions)! 
+Triggers are internal to the Budibase system and therefore cannot easily be altered - if you have an idea for a good trigger, then [let us know](https://github.com/Budibase/budibase/discussions)!
 
 It is also possible to create custom triggers using the external Webhook - create an external application that will trigger on your required conditions, and target your Budibase Webhook!
