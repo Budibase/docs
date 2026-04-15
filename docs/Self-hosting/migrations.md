@@ -54,9 +54,8 @@ You will need to make sure you are using the latest version of the Budibase Helm
 
 If you followed the steps in [Kubernetes](doc:kubernetes-k8s), you'll need to run the following commands to update your Helm chart.
 
-```
-helm repo update budibase
-helm upgrade -n budibase budibase budibase/budibase
+```shell
+helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase
 ```
 
 ***

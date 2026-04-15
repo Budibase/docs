@@ -64,12 +64,16 @@ If you want to make use of `HorizontalPodAutoscaler` resources you will also nee
 
 ## Install Budibase Helm Chart
 
-Now that you have your Kubernetes cluster up and running, you can install the Budibase Helm chart which will provision all of the relevant services for running Budibase in a Kubernetes environment. Run the commands below to download the Helm chart from our repository, and install it.
+> ⚠️ Helm repository migration
+>
+> Budibase Helm charts are now published to an OCI registry. If you previously used `https://budibase.github.io/budibase/`, you must update your commands to use `oci://ghcr.io/budibase/charts/budibase`.
+>
+> The old `helm repo add` and `helm repo update` steps no longer apply for chart installs and upgrades.
+
+Now that you have your Kubernetes cluster up and running, you can install the Budibase Helm chart which will provision all of the relevant services for running Budibase in a Kubernetes environment. Run the command below to install the chart from our OCI registry.
 
 ```shell
-helm repo add budibase https://budibase.github.io/budibase/
-helm repo update
-helm install --create-namespace --namespace budibase budibase budibase/budibase
+helm install --create-namespace --namespace budibase budibase oci://ghcr.io/budibase/charts/budibase
 ```
 
 Wait a few moments as Budibase creates all the containers and resources. You can then run:
@@ -99,7 +103,7 @@ To use your new installation, you'll need to configure an Ingress resource. One 
 If you're running on AWS EKS, we ship an ALB-ready Ingress resource as part of the chart. You'll need to disable the deafult Ingress and enable the ALB one:
 
 ```shell
-helm upgrade -n budibase budibase budibase/budibase --set ingress.enabled=false --set awsAlbIngress.enabled=true
+helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase --set ingress.enabled=false --set awsAlbIngress.enabled=true
 ```
 
 After a few minutes your new Ingress resource should be provisioned and you should be able to get the address for it like so:
@@ -119,7 +123,7 @@ Visit the Ingress address in your browser and you will see that your Budibase in
 If you'd like to set up HTTPS, you can also create a certificate using [AWS ACM](https://aws.amazon.com/certificate-manager/) and specify the certificate ARN on your Ingress resource:
 
 ```shell
-helm upgrade -n budibase budibase budibase/budibase --set ingress.enabled=false --set awsAlbIngress.enabled=true --set awsAlbIngress.certificateArn=...
+helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase --set ingress.enabled=false --set awsAlbIngress.enabled=true --set awsAlbIngress.certificateArn=...
 ```
 
 From here, if you'd like to use a custom domain name make sure it's a CNAME that points to Ingress address and that your certificate includes the custom domain name.
@@ -147,7 +151,7 @@ ingress:
 Save this as a file called `values.yaml` and then upgrade your Helm release:
 
 ```shell
-helm upgrade -n budibase budibase budibase/budibase -f values.yaml
+helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase -f values.yaml
 ```
 
 Now find the external address if your `ingress-nginx` installation by running:
@@ -183,7 +187,7 @@ services:
 And then update your Budibase installation:
 
 ```
-helm upgrade -n budibase budibase budibase/budibase -f values.yaml
+helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase -f values.yaml
 ```
 
 ### GCP GKE
@@ -206,7 +210,7 @@ services:
 And then update your Budibase installation:
 
 ```
-helm upgrade -n budibase budibase budibase/budibase -f values.yaml
+helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase -f values.yaml
 ```
 
 ## Upgrading your Budibase version
@@ -214,8 +218,7 @@ helm upgrade -n budibase budibase budibase/budibase -f values.yaml
 To upgrade to the latest version of Budibase via Helm, you can run the following command:
 
 ```shell
-helm repo update
-helm upgrade -n budibase budibase budibase/budibase --reuse-values
+helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase --reuse-values
 ```
 
 ***
