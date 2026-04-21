@@ -56,9 +56,11 @@ A REST integration has two layers:
 
 ## Open the API Editor and create your first query
 
-1. Open the saved connection
-2. Click **Open in API Editor**
-3. Click **Create new query**
+You can start query creation from either path below:
+
+1. In the API builder sidebar, click **New API** to start a draft query
+2. In Settings, open a saved connection and click **Open in API Editor**
+3. Select or create the connection for your draft query
 4. Set method and endpoint path
 5. Add required params/headers/body
 6. Pick auth config if needed

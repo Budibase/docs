@@ -14,18 +14,19 @@ REST queries are configured in API Editor for a saved REST connection.
 
 ## Create a query
 
-1. Open **Workspace Settings > Connections > APIs**
-2. Select your connection
-3. Click **Open in API Editor**
-4. Click **Create new query**
-5. Enter a clear query name
-6. Set HTTP method
-7. Enter endpoint path or full URL
-8. Configure Params, Headers, Body, and Bindings
-9. Select an auth config (if required)
-10. Click **Send**
-11. Validate response and schema
-12. Click **Save Query**
+1. Open the API builder
+2. Click **New API** in the sidebar to create a draft query
+3. Select the API connection to use
+4. Enter a clear query name
+5. Set HTTP method
+6. Enter endpoint path or full URL
+7. Configure Params, Headers, Body, and Bindings
+8. Select an auth config (if required)
+9. Click **Send**
+10. Validate response and schema
+11. Click **Save Query**
+
+You can also start from **Workspace Settings > Connections > APIs** and click **Open in API Editor** on an existing connection.
 
 ## Query fields reference
 
