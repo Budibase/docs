@@ -22,19 +22,13 @@ The On demand trigger runs when invoked from the UI of your Budibase application
 
 ## Creating the Automation
 
-To use the On demand trigger, you will need to create an automation with it defined as the trigger. Head over to the Automation section, create a new automation, and select `On demand` as the trigger you want to start your automation with.
-
-<Image align="center" width="600px" src="https://files.readme.io/8b4017b916087019d82ab5c92af232a789e5cabf3bfbbcb1091e144e5e5dc859-Screenshot_2025-07-16_at_14.50.23.png" />
-
-Once you've entered the name and picked `On demand,` you can click `Save,` and your automation will be created.
+Create a new automation in the Automation section, choose `On demand` as the trigger, enter a name, and click `Save`.
 
 ## Defining Fields
 
-You can now define fields by clicking on the automation step. This should open a side panel on the right of your screen. These fields will be the ones you want to have applied to the automation. This will enter data into your automation, which you can use in future steps. 
+Click the trigger step to open the right-hand panel and define your fields. These fields are the input data passed into your automation for use in later steps.
 
-Right now, 5 different types of fields are supported: Text, Number, DateTime, Boolean, and Array. Add as many as you wish to have inside your automation.
-
-<Image align="center" src="https://files.readme.io/bb70f46a99104ff20c059ad2a871f1ed0d21d63535612bdc57dc9d7649c18ca2-Screenshot_2025-07-16_at_15.10.19.png" />
+Supported field types are `Text`, `Number`, `DateTime`, `Boolean`, and `Array`.
 
 You can use these fields in the next steps, check the [Working with data in automations guide](doc:data-in-automations) to learn how.
 
@@ -42,17 +36,11 @@ You can use these fields in the next steps, check the [Working with data in auto
 
 Now that you have defined fields to be used in your automation, you can call this automation from the UI and populate the fields you just selected.
 
-First, add a button to your application in the Design Section of Budibase. Then, head over to the `No actions set` setting of the button in the <Glossary>Settings Panel</Glossary>.
-
-<Image align="center" src="https://files.readme.io/b1a5ffd8870a96de512a6236ed767c35b23570b55db6e345cd44a38533241cfe-Screenshot_2024-10-24_at_10.23.39.png" />
+Add a button in the Design section, then open its `No actions set` option in the <Glossary>Settings Panel</Glossary>.
 
 A modal will open where you can define [Actions](doc:actions). Create a new action by choosing `Trigger Automation` from the options and clicking the `Add Action` button.
 
 Then select your On demand automation from the dropdown list. Only On demand automations will appear in this list.
-
-<Image align="center" src="https://files.readme.io/b1375bdc5478a65628ff35dce509ba82df84ed058f13c84eedb939b692a6e2f9-Screenshot_2025-07-16_at_15.06.52.png" />
-
-<br />
 
 After selecting your On demand automation and any fields you created, they will be pulled through below the select automation. You can freely type the values you wish to pass. Or you can use any available bindings and pass those to the automation instead.
 
@@ -66,11 +54,7 @@ This subject touches upon [working with data in automations](doc:data-in-automat
 
 One popular thing to do with an `On demand` trigger is creating one or multiple database rows. You could use this action to populate various tables, or even <Glossary>Data Sources</Glossary> at once.
 
-Let's take a look at the `Create Row` action. Click the Create Row step to open its settings. Select the table you want to create a row in, and then use [Bindings](doc:bindings) to use the `trigger.fields.` object to populate the data you want.
-
-<Image align="center" width="600px" src="https://files.readme.io/7640712b23d37f2a3c89c2c859b0797132df066af1ca73bdbf7a53f47ce3afa3-Screenshot_2025-07-16_at_15.26.22.png" />
-
-<br />
+Let's take a look at the `Create Row` action. Click the step to open its settings, select your table, and use [Bindings](doc:bindings) with `trigger.fields` to map incoming values.
 
 As you can see, we're using the same names for the fields we defined in the first step.
 
