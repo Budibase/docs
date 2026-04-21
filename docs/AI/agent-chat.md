@@ -1,95 +1,42 @@
 ---
 title: Agent chat
-deprecated: false
+deprecated: true
 hidden: false
 metadata:
   robots: index
 ---
-Agent chat is a built-in, user-facing chat app for running your live agents with controlled access.
+Agent chat is deprecated.
 
-Use this page after completing [Agents config](doc:agents-config).
+Budibase is moving to channel-first agent access in tools where users already work day-to-day:
 
-## Before you start
+* [Slack](doc:messaging-channels-slack)
+* [Microsoft Teams](doc:messaging-channels-microsoft-teams)
+* [Discord](doc:messaging-channels-discord)
 
-Make sure you have:
+Use [Messaging channels](doc:messaging-channels) as the primary deployment path.
 
-* A configured model in **Workspace Settings > Connections > AI models**
-* A saved agent with an AI model connected
-* An agent set live (status **Live**)
+## What this means
 
-## Enable agent chat for an agent
+If you are currently using Agent Chat:
 
-1. Open your agent in **Agents**
-2. Go to the **Deployment** tab
-3. Find **Agent Chat**
-4. Use the toggle to enable the channel
+* [Agents config](doc:agents-config)
+* [Messaging channels](doc:messaging-channels)
+* [Slack messaging channel](doc:messaging-channels-slack)
+* [Microsoft Teams messaging channel](doc:messaging-channels-microsoft-teams)
+* [Discord messaging channel](doc:messaging-channels-discord)
 
-When enabled, Budibase updates chat configuration for that agent.
+## Migration checklist
 
-## Configure settings for one agent
-
-From **Agent Chat** click **Manage** to open agent settings.
-
-You can configure:
-
-* **Access role**: Minimum app role required to use that agent in chat
-* **Conversation starters**: Up to 3 starter prompts shown in chat
-
-If the agent status is **Live**, saving these settings will require a workspace publish to apply the changes.
-
-## Access agent chat
-
-Agent chat is accessed from the **App Portal**.
-
-To open the chat app for an agent:
-
-1. Open **Agents**
-2. Select an agent
-3. Open the **Deployment** tab
-4. Click **Open chat**
-
-This takes you directly to the chat screen in the App Portal.
-
-### Access role behavior
-
-* New chat-enabled agents default to `BASIC` access role unless changed
-* Access role can be updated per agent from settings
-
-### Conversation starter behavior
-
-* Starters are stored per agent
-* Empty values are ignored
-* Only the first 3 non-empty starters are kept
-
-
-## Embed chat in app screens
-
-To embed chat inside an app screen, use the [Chatbox component](doc:chatbox) under **Apps**.
-
-## Runtime states users can see
-
-Depending on configuration, users may see:
-
-* No agents configured for chat
-* Agents configured but none enabled
-* Selected agent unavailable for chat
-* No live/deployed chat access for the current setup
-
-When these states appear, verify deployment status and agent chat enablement.
-
-## Troubleshooting
-
-If Agent Chat does not work as expected:
-
-* Confirm [Agents config](doc:agents-config) is valid and the agent has a connected model
-* Confirm the agent status is **Live**
-* Confirm the agent is enabled in Chat settings
-* Open chat from **Agents** -> **Deployment** -> **Open chat** to verify the App Portal route
-* Re-open the chat app after publish to pick up latest settings
+1. Confirm your agent has a connected AI model in [Agents config](doc:agents-config).
+2. Ensure the agent is set to **Live**.
+3. Pick one primary channel (Slack, Teams, or Discord).
+4. Configure the channel in **Agents -> Deployment -> Messaging channels**.
+5. Validate account linking (`/link`, or `link` in Teams).
+6. Run end-to-end tests for conversation continuity and tool actions.
+7. Add additional channels only after the first channel is stable.
 
 ## Related guides
 
-* [Agents config](doc:agents-config)
 * [Messaging channels](doc:messaging-channels)
 * [Chatbox component](doc:chatbox)
 * [Agent building 101](doc:agent-building-101)

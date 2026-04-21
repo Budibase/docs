@@ -5,9 +5,9 @@ hidden: false
 metadata:
   robots: index
 ---
-This page covers the required setup before using Budibase Agents and Agent Chat.
+This page covers the required setup before using Budibase Agents in messaging channels.
 
-Before building an Agent or enabling Agent Chat, you need at least one configured model in **Workspace Settings > Connections > AI models**.
+Before building an Agent or deploying to channels, you need at least one configured model in **Workspace Settings > Connections > AI models**.
 
 For a broader AI setup walkthrough, see [Quickstart: Budibase AI](doc:quickstart-budibase-ai).
 
@@ -75,15 +75,15 @@ After configuring a model in **AI models**, attach it to each agent:
 3. Click **Connect AI Model**
 4. Select the configured provider and model
 
-## Ready for agent chat checklist
+## Ready for channel deployment checklist
 
-Before enabling Agent Chat, confirm:
+Before enabling a channel, confirm:
 
 * Your agent has a connected AI model
 * The selected model can run chat/completion prompts
 * The agent is saved and can answer a simple test prompt
 
-Next, configure chat deployment in [Agent chat](doc:agent-chat).
+Next, configure deployment in [Messaging channels](doc:messaging-channels).
 
 ## Troubleshooting
 
@@ -98,7 +98,7 @@ If you are self-hosting and using Budibase AI, ensure your network allows the re
 
 ## Related guides
 
-* [Agent chat](doc:agent-chat)
+* [Messaging channels](doc:messaging-channels)
 * [Agent building 101](doc:agent-building-101)
 * [Agent instructions guide](doc:agent-instructions-guide)
 * [Agent testing guide](doc:agent-testing-guide)

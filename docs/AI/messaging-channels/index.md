@@ -5,9 +5,9 @@ hidden: false
 metadata:
   robots: index
 ---
-Use this page to deploy an agent to external messaging channels after [Agent chat](doc:agent-chat) is working.
+Use this page to deploy an agent to external messaging channels where your users already work.
 
-Agent chat is the recommended first deployment path. Slack, Microsoft Teams, and Discord are optional channels for users who need agent access in existing chat tools.
+Slack, Microsoft Teams, and Discord are the primary deployment paths for live agent conversations.
 
 ## Before you start
 
@@ -16,7 +16,6 @@ Make sure you have:
 * A working [Agents config](doc:agents-config)
 * A saved agent with a connected AI model
 * An agent set live (status **Live**)
-* `Agent chat` already validated in App Portal
 
 ## Link requirement for external channels
 
@@ -28,10 +27,10 @@ If a user sends a normal message before linking, Budibase sends a private link p
 
 ## Recommended rollout order
 
-1. Enable and test [Agent chat](doc:agent-chat)
-2. Configure one external channel
-3. Run end-to-end tests in that channel
-4. Add additional channels only after the first is stable
+1. Configure one channel first
+2. Run end-to-end tests in that channel
+3. Add additional channels only after the first is stable
+4. Standardize account linking and support runbooks for each channel
 
 ## Available channel guides
 
@@ -45,6 +44,6 @@ Budibase channel webhooks are validated against the production workspace route. 
 
 ## Related guides
 
-* [Agent chat](doc:agent-chat)
+* [Agent chat (deprecated)](doc:agent-chat)
 * [Agent building 101](doc:agent-building-101)
 * [Agent testing guide](doc:agent-testing-guide)

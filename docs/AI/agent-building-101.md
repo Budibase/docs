@@ -228,7 +228,7 @@ In this example, we’ll use an Automation to classify and prioritise tickets as
 
 This gives you a practical split of responsibilities:
 
-* **Agent chat** handles interactive support tasks, Q&A, and guided updates
+* **Messaging channels** handle interactive support tasks, Q&A, and guided updates
 * **Automations** handle repeatable, event-driven triage in the background
 
 Together, these provide a reliable service desk workflow with both human-in-the-loop and fully automatic paths.
