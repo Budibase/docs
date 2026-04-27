@@ -47,7 +47,7 @@ You can self-host Budibase in under 5 minutes. We understand a lot of users need
 >
 > When diving into the world of self-hosting, be sure to know what you're doing. Self-hosting means you have to understand how servers work, implement security, maintain the servers, and figure out what's wrong when something goes wrong. If you do not understand this or don't have the time to dive into understanding all of this, we highly recommend the <a href="https://account.budibase.app/register" target="_blank">cloud-hosted solution</a>.
 
-To read more about self-hosting, check the [Docker](doc:docker-compose), [Kubernetes](doc:kubernetes-k8s) and [DigitalOcean](doc:digitalocean) pages.
+To read more about self-hosting, check the [Docker](doc:docker-compose), [Windows Server](doc:windows-server), [Kubernetes](doc:kubernetes-k8s) and [DigitalOcean](doc:digitalocean) pages.
 
 ## Unsupported Install Methods
 
