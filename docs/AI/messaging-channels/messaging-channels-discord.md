@@ -5,7 +5,7 @@ hidden: false
 metadata:
   robots: index
 ---
-Use this guide to deploy an agent to Discord after validating [Agent chat](doc:agent-chat).
+Use this guide to deploy an agent to Discord.
 
 ## Before you start
 

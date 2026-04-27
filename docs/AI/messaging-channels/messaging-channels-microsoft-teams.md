@@ -5,7 +5,7 @@ hidden: false
 metadata:
   robots: index
 ---
-Use this guide to deploy an agent to Microsoft Teams after validating [Agent chat](doc:agent-chat).
+Use this guide to deploy an agent to Microsoft Teams.
 
 ## Before you start
 

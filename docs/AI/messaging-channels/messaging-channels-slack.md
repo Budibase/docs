@@ -5,7 +5,7 @@ hidden: false
 metadata:
   robots: index
 ---
-Use this guide to deploy an agent to Slack after confirming [Agent chat](doc:agent-chat).
+Use this guide to deploy an agent to Slack.
 
 ## Before you start
 
