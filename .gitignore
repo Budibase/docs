@@ -20,3 +20,4 @@ Thumbs.db
 *.mobi
 
 .env
+node_modules
