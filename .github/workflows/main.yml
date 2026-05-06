@@ -1,0 +1,21 @@
+name: Sync docs to Front Knowledge Base
+
+on: 
+  push: 
+    branches: [main]
+
+jobs: 
+  sync-front-knowledge-base:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npn ci
+
+      - name: Sync docs to Front Knowledge Base
+        run: node scripts/sync-front-knowledge-base.js
