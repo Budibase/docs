@@ -18,3 +18,5 @@ Thumbs.db
 *.pdf
 *.epub
 *.mobi
+
+.env
