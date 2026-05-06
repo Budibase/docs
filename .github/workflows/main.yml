@@ -3,6 +3,7 @@ name: Sync docs to Front Knowledge Base
 on: 
   push: 
     branches: [main]
+  workflow_dispatch: 
 
 jobs: 
   sync-front-knowledge-base:
