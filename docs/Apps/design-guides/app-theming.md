@@ -11,14 +11,34 @@ next:
   description: ''
 ---
 To streamline the design process, a <Glossary>Builder</Glossary> can update app-level theme settings. Updating these settings will update the style of all the screens within your app. Builder users can quickly update the theme of your app by selecting the screen in the component tree, and selecting the Theme tab in the settings panel.
+Theme settings are saved per app. If your workspace has multiple apps, each app can use its own theme and font settings.
 
-<Image align="center" src="https://files.readme.io/828e46206e9cdc3894ff2c7fa82c52567079a554e2c3fa3ace723d71bfa56b59-Screen_Recording_2025-08-18_at_14.46.15.gif" />
+## Update theme settings
+
+1. Open your app in the builder.
+2. In the component tree, select any screen.
+3. Click the **Theme** icon in the top toolbar (to the left of the **Preview** button).
+4. Update the theme options you want to apply. Changes apply to all screens in the current app.
 
 ## Theme
 
 Changing the theme will change the color palette your app uses. This is a great feature and allows you to update the core look of your app with just one click.
 
-The default theme is *Light*, however there are another themes of varying brightness to choose from, including *Nord* and *Midnight*. 
+The default theme is *Light*, however there are other themes of varying brightness to choose from, including *Nord* and *Midnight*.
+
+## Font
+
+You can choose the app font in Theme settings.
+
+Available options:
+
+* Inter
+* Source Sans
+
+Default behavior:
+
+* Newly created apps default to **Inter**.
+* Existing apps without an explicitly saved font use **Source Sans**.
 
 ## Button shape
 
@@ -35,5 +55,3 @@ The accent hover color is the color of the element after a user has hovered thei
 ## Navigation background and text color
 
 The navigation colors are set in the [Navigation](doc:navigation) panel.
-
-<Image align="center" src="https://files.readme.io/370bb3c10eadbd95b1baa6d0776933222797e79b1d2eb3e258383d137780b69f-Screenshot_2025-08-18_at_14.50.20.png" />
