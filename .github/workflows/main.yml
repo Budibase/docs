@@ -19,6 +19,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -27,5 +29,16 @@ jobs:
 
       - run: npm ci
 
+      - name: Get changed files
+        id: changed-files
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | jq -R -s -c 'split("\n")[:-1]')
+          else
+            files=$(git ls-files | jq -R -s -c 'split("\n")[:-1]')
+          fi
+
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+
       - name: Sync docs to Front Knowledge Base
-        run: npm run sync-front-knowledge-base
+        run: npm run sync-front-knowledge-base -- '${{ steps.changed-files.outputs.files }}'
