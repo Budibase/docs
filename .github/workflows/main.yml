@@ -42,4 +42,4 @@ jobs:
           echo "files=$files" >> "$GITHUB_OUTPUT"
 
       - name: Sync docs to Front Knowledge Base
-        run: npm run sync-front-knowledge-base -- '${{ steps.changed-files.outputs.files }}'
+        run: node scripts/sync-front-knowledge-base.js -- '${{ steps.changed-files.outputs.files }}'
