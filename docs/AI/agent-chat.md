@@ -5,7 +5,7 @@ hidden: false
 metadata:
   robots: index
 ---
-Agent chat is deprecated.
+Agent chat is deprecated...
 
 Budibase is moving to channel-first agent access in tools where users already work day-to-day:
 
