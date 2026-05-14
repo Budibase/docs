@@ -4,7 +4,7 @@ import path from "node:path"
 
 console.log("Begin syncing documentation to Front Knowledge Base")
 
-const changedFiles = JSON.parse(process.argv[2] || []);
+const changedFiles = JSON.parse(process.argv[3] || []);
 
 console.log(changedFiles);
 
