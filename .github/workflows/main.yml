@@ -42,4 +42,8 @@ jobs:
           echo "files=$files" >> "$GITHUB_OUTPUT"
 
       - name: Sync docs to Front Knowledge Base
+        env: 
+          FRONT_API_TOKEN: ${{ secrets.FRONT_API_TOKEN }}
+          FRONT_KNOWLEDGE_BASE_ID: ${{ secrets.FRONT_KNOWLEDGE_BASE_ID }}
+          FRONT_AUTHOR_ID: ${{ secrets.FRONT_AUTHOR_ID }}
         run: node scripts/sync-front-knowledge-base.js -- '${{ steps.changed-files.outputs.files }}'
