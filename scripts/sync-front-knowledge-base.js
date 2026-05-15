@@ -2,32 +2,46 @@ import "dotenv/config"
 import fs from "node:fs"
 import path from "node:path"
 
-console.log("Begin syncing documentation to Front Knowledge Base")
-
-const changedFiles = JSON.parse(process.argv[2] || []);
-
-console.log(changedFiles);
-
-for (const filepath of changedFiles) {
-    console.log(filepath);
-}
-
-const FRONT_API = "https://api2.frontapp.com"
-
 const {
     FRONT_API_TOKEN,
     FRONT_KNOWLEDGE_BASE_ID,
-    FRONT_AUTHOR_ID
+    FRONT_AUTHOR_ID,
 } = process.env
+
+const FRONT_API = "https://api2.frontapp.com"
+// const changedFiles = JSON.parse(process.argv[3] || [])
+const changedFiles = ["docs/AI/agent-building-101.md", "docs/AI/agent-building-102.md", "docs/AI/_order.yaml" ]
+// Filter out files that aren't docs
+const filteredChangedFiles = changedFiles.filter((file) => file.substring(file.length-3) === ".md")
 
 // Check for reequired environment variables
 console.log("Checking for env vars")
-if (!FRONT_API_TOKEN || !FRONT_KNOWLEDGE_BASE_ID || !FRONT_AUTHOR_ID) { // Possibly only the API_TOKEN needed
-  throw new Error("Missing required env vars")
+if (!FRONT_API_TOKEN) {
+  throw new Error("Missing FRONT_API_TOKEN")
 } else {
-    console.log("env vars found")
+    console.log("FRONT_API_TOKEN found")
 }
 
+if (!FRONT_KNOWLEDGE_BASE_ID) {
+  throw new Error("Missing FRONT_KNOWLEDGE_BASE_ID")
+} else {
+    console.log("FRONT_KNOWLEDGE_BASE_ID found")
+}
+
+if (!FRONT_AUTHOR_ID) {
+  throw new Error("Missing FRONT_AUTHOR_ID")
+} else {
+    console.log("FRONT_AUTHOR_ID found")
+}
+// Proceed
+console.log("Begin syncing documentation to Front Knowledge Base")
+
+console.log(`Files to sync: ${filteredChangedFiles.length}`)
+for (const filepath of filteredChangedFiles) {
+    console.log(filepath);
+}
+
+// File Paths of all files that need to be synced to Front
 // If more sections of the documentation get added, include them here
 const allFilePaths = [
   ...getFiles("./docs"),
@@ -35,15 +49,12 @@ const allFilePaths = [
   ...getFiles("./reference"),
 ]
 
-// Get filepath to all pages in documenation
+// Get filepath to all pages in specified directory
 function getFiles(dir) {
   let results = []
-
   const entries = fs.readdirSync(dir, { withFileTypes: true })
-
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name)
-
     if (entry.isDirectory()) {
       results = results.concat(getFiles(fullPath))
     } else {
@@ -51,23 +62,24 @@ function getFiles(dir) {
         if (fullPath.substring(fullPath.length-11) !== "_order.yaml") {
             results.push(fullPath)
         }
-      
     }
   }
-
   return results
 }
 
 // Get contents of every file in documentation
-const allFiles = allFilePaths.map((filePath) => {
+const allFiles = []
+
+allFilePaths.forEach((filePath) => {
     if (filePath.substring(filePath.length -5) === ".yaml") {
         return
     }
-     return {
+    allFiles.push({
         documentTitle: filePath,
         documentContent: fs.readFileSync(filePath, "utf-8")
-    }
+    })
 })
+console.log(`Got ${allFiles.length} files in Docs Repo`)
 
 
 // Get all article IDs in Knowledge Base (Max 100/page)
@@ -83,100 +95,153 @@ function getAllArticlesInKB(knowledgeBaseId) {
     }
 
     const allArticleIds = []
+    const allArticles = []
 
-    function fetchArticlesPage(url = `https://api2.frontapp.com/knowledge_bases/${knowledgeBaseId}/articles?limit=100`) {
+    function fetchArticlesPage(url = `${FRONT_API}/knowledge_bases/${knowledgeBaseId}/articles?limit=100`) {
         fetch(url, options)
             .then(res => res.json())
             .then((res) => {
                 allArticleIds.push(...res._results.map(article => article.id))
+                console.log("Number of KBAs",allArticleIds.length)
 
                 // Keep fetching until there are no more pages
                 if (res._pagination && res._pagination.next) {
                     setTimeout(() => {
                         fetchArticlesPage(res._pagination.next)
-                    }, 3000)
+                    }, 2000)
                     return
                 }
 
                 // Only runs once, after all article IDs have been fetched
+                // Get the article itself, for every ID, add it to the array
                 allArticleIds.forEach((id, index) => {
                     setTimeout(() => {
-                        fetch(`https://api2.frontapp.com/knowledge_base_articles/${id}/content`, options)
+                        console.log(`${index + 1} Getting ${id}`) 
+                        fetch(`${FRONT_API}/knowledge_base_articles/${id}/content`, options)
                             .then(res => res.json())
                             .then(res => {
-                                const frontKbaTitle = res.name
-                                const frontKbaContent = res.content
-                                const localFile = allFiles.find((file) => {
-                                    return file.documentTitle === frontKbaTitle
-                                })
-
-                                if (localFile.documentContent === frontKbaContent) {
-
-                                    console.log("Files are the same, no updates neeeded") 
-                                } else {
-                                    console.log("Files are different, writing changes to Front KBA")
+                                const article = {
+                                    documentTitle: res.name,
+                                    documentContent: res.content,
+                                    documentId: res.id
                                 }
-                                
+                                allArticles.push(article)
                             })
                             .catch(err => console.error(err))
-                    }, index * 3000)
+                    }, index * 2000)
                 })
             })
             .catch(err => console.error(err))
     }
 
     fetchArticlesPage()
+    console.log(`${allArticles.length} articles mapped to allArticles array`)
+    return allArticles
 }
 
-// const articles = await getAllArticlesInKB(FRONT_KNOWLEDGE_BASE_ID)
+const allFrontKBAs = await getAllArticlesInKB(FRONT_KNOWLEDGE_BASE_ID)
 
-// articles.forEach((article) => {
-//   console.log(article.name)
-// })
+// All file paths locally
+// All KBAs
+// Changed files
+
+// IN LIST OF CHANGED FILES:
+// if file exists locally and NOT in KBA, write file
+// if file exists locall AND IS IN KBA, update file using KBA-ID
 
 // Write files to Front KB
-function writeFilesToFrontKB(files){
-    files.forEach((file, index) => {
+function writeFilesToFrontKB(filePaths){ // Invoke with list of changed files ["/path/to/file1", "/path/to/file2", ...]
+    console.log("writeFilestoFrontKB")
+    const stats = {
+        updated: 0,
+        created: 0,
+        errors: []
+    }
+    filePaths.forEach((filepath, index) => {
+        console.log(`Writing file ${filepath}`)
         setTimeout(() => {
+        // If there isn't a KBA with the name(which is a filepath) that matches that of this file, existingKBA will be false
+        const existingKBA = allFrontKBAs.find((element) => {
+            console.log({element})
+            return element.documentTitle === filepath
+        })
+        const thisFile = allFiles.find((file) => {
+            return file.documentTitle === filepath
+        })
+        if (!thisFile) {
+            console.warn(`Skipping ${filepath}: file not found in local docs set`)
+            stats.errors.push(new Error(`Missing local file: ${filepath}`))
+            return
+        }
+        if (!existingKBA) {
+            // Write a new article
+            console.log("KBA did not exist, writing new KBA")
             const options = {
-            method: 'POST',
-            headers: {
-                accept: 'application/json',
-                'content-type': 'application/json',
-                authorization: `Bearer ${FRONT_API_TOKEN}`,
-            },
-            body: JSON.stringify({
-                status: 'published',
-                content: file.documentContent,
-                subject: file.documentTitle,
-                author_id: FRONT_AUTHOR_ID,
-            }),
-            }
+                method: 'POST',
+                headers: {
+                    accept: 'application/json',
+                    'content-type': 'application/json',
+                    authorization: `Bearer ${FRONT_API_TOKEN}`
+                },
+                body: JSON.stringify({
+                    status: 'published',
+                    author_id: FRONT_AUTHOR_ID,
+                    subject: thisFile.documentTitle,
+                    content: thisFile.documentContent
+                })
+                };
 
-            fetch(
-            `https://api2.frontapp.com/knowledge_bases/${FRONT_KNOWLEDGE_BASE_ID}/locales/en/articles`,
-            options
-            )
-            .then((res) => res.json())
-            .then((res) => console.log(res))
-            .catch((err) => console.error(err))
-        }, index * 60_000) // 1 minute between each request
+            fetch(`${FRONT_API}/knowledge_bases/${FRONT_KNOWLEDGE_BASE_ID}/articles`, options)
+                .then(res => res.json())
+                .then((res) => {
+                    console.log(res)
+                    stats.created ++
+                })
+                .catch((err) => {
+                    console.error(err)
+                    stats.errors.push(err)
+                });
+        } else {
+            // Update Existing Article
+            console.log("KBA Exists, updating existing KBA with new info")
+            const options = {
+                method: 'PATCH',
+                headers: {
+                    accept: 'application/json',
+                    'content-type': 'application/json',
+                    authorization: `Bearer ${FRONT_API_TOKEN}`
+                },
+                body: JSON.stringify({
+                    status: 'published',
+                    author_id: FRONT_AUTHOR_ID,
+                    content: thisFile.documentContent
+                })
+            };
+
+            fetch(`${FRONT_API}/knowledge_base_articles/${thisFile.documentId}/content`, options)
+                .then(res => res.json())
+                .then((res) => {
+                    console.log(res)
+                    stats.updated ++
+                })
+                .catch((err) => {
+                    console.error(err)
+                    stats.errors.push(err)
+                });
+        }
+        }, index * 2_000)  
     })
+    console.log(`${stats.created} Knowledge Base Articles created`)
+    console.log(`${stats.updated} Knowledge Base Articles Updated`)
+    console.log(`${stats.errors.length} errors`)
+    if (stats.errors.length > 0) {
+        stats.errors.forEach((error) => {
+            console.log(error)
+        })
+    }
 }
 
-// writeAllFilesToFrontKB(allFiles)
-getAllArticlesInKB(FRONT_KNOWLEDGE_BASE_ID)
-
-
-
-
-// Match up Docs pages to Knowledge Base Articles
-// console.log({frontArticles})
-
-
-
-// Check if existing KBA matches docs page
-// If not, update
+writeFilesToFrontKB(filteredChangedFiles)
 
 
 
