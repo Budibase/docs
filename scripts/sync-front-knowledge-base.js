@@ -9,8 +9,8 @@ const {
 } = process.env
 
 const FRONT_API = "https://api2.frontapp.com"
-// const changedFiles = JSON.parse(process.argv[3] || [])
-const changedFiles = ["docs/AI/agent-building-101.md", "docs/AI/agent-building-102.md", "docs/AI/_order.yaml" ]
+const changedFiles = JSON.parse(process.argv[3] || [])
+
 // Filter out files that aren't docs
 const filteredChangedFiles = changedFiles.filter((file) => file.substring(file.length-3) === ".md")
 
@@ -82,8 +82,12 @@ allFilePaths.forEach((filePath) => {
 console.log(`Got ${allFiles.length} files in Docs Repo`)
 
 
+function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
 // Get all article IDs in Knowledge Base (Max 100/page)
-function getAllArticlesInKB(knowledgeBaseId) {
+async function getAllArticlesInKB(knowledgeBaseId) {
     console.log("Getting all articles in Knowledge Base")
 
     const options = {
@@ -97,44 +101,37 @@ function getAllArticlesInKB(knowledgeBaseId) {
     const allArticleIds = []
     const allArticles = []
 
-    function fetchArticlesPage(url = `${FRONT_API}/knowledge_bases/${knowledgeBaseId}/articles?limit=100`) {
-        fetch(url, options)
-            .then(res => res.json())
-            .then((res) => {
-                allArticleIds.push(...res._results.map(article => article.id))
-                console.log("Number of KBAs",allArticleIds.length)
+    let url = `${FRONT_API}/knowledge_bases/${knowledgeBaseId}/articles?limit=100`
 
-                // Keep fetching until there are no more pages
-                if (res._pagination && res._pagination.next) {
-                    setTimeout(() => {
-                        fetchArticlesPage(res._pagination.next)
-                    }, 2000)
-                    return
-                }
+    while (url) {
+        const res = await fetch(url, options)
+        const data = await res.json()
 
-                // Only runs once, after all article IDs have been fetched
-                // Get the article itself, for every ID, add it to the array
-                allArticleIds.forEach((id, index) => {
-                    setTimeout(() => {
-                        console.log(`${index + 1} Getting ${id}`) 
-                        fetch(`${FRONT_API}/knowledge_base_articles/${id}/content`, options)
-                            .then(res => res.json())
-                            .then(res => {
-                                const article = {
-                                    documentTitle: res.name,
-                                    documentContent: res.content,
-                                    documentId: res.id
-                                }
-                                allArticles.push(article)
-                            })
-                            .catch(err => console.error(err))
-                    }, index * 2000)
-                })
-            })
-            .catch(err => console.error(err))
+        allArticleIds.push(...data._results.map(article => article.id))
+        console.log("Number of KBAs", allArticleIds.length)
+
+        url = data._pagination?.next || null
+
+        if (url) {
+            await sleep(2000)
+        }
     }
 
-    fetchArticlesPage()
+    for (const [index, id] of allArticleIds.entries()) {
+        console.log(`${index + 1} Getting ${id}`)
+
+        const res = await fetch(`${FRONT_API}/knowledge_base_articles/${id}/content`, options)
+        const data = await res.json()
+
+        allArticles.push({
+            documentTitle: data.name,
+            documentContent: data.content,
+            documentId: data.id
+        })
+
+        await sleep(2000)
+    }
+
     console.log(`${allArticles.length} articles mapped to allArticles array`)
     return allArticles
 }
@@ -242,7 +239,6 @@ function writeFilesToFrontKB(filePaths){ // Invoke with list of changed files ["
 }
 
 writeFilesToFrontKB(filteredChangedFiles)
-
 
 
 
