@@ -45,5 +45,5 @@ In this tutorial, we will create an app with the [sample data](https://docs.budi
 
 ### Result
 
-Using a container to hold the Icon, and a Text component to accompany it, we can then show the item tags and an accompanying icon. 
+Using a container to hold the Icon, and a Text component to accompany it, we can then show the item tags and an accompanying icon.
 

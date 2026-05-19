@@ -29,7 +29,7 @@ You can choose to open any side panel that is anywhere in the screen component t
 
 ### Closing a side panel
 
-By default, a side panel can be closed by a user simply clicking an area outside of the panel, or by clicking the close arrow. Clicking outside of the side panel to close it will be ignored if "Ignore clicks outside to close" is checked.
+By default, a side panel can be closed by a user simply clicking an area outside of the panel, or by clicking the close arrow. Clicking outside of the side panel to close it will be ignored if `Ignore clicks outside` is checked.
 
 
 Alternatively, the **Close Side Panel** action can be used.
@@ -70,4 +70,3 @@ Start building out your side panel area to include additional content you wish t
 
 
 In order to make designing your side-panel easier, you can manually set a value in State within the builder. Under normal operation, this value would be set when the user clicks on a row, but because that doesn't happen in the builder, no row will be shown. To tackle this, head to the Data section and view the table you're using to provide this information. Right click on a row and click `copy row _id` . You can then paste this into the "State" panel.
-

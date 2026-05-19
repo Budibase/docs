@@ -147,6 +147,13 @@ There are several general settings for the container component, most of which ar
   </tbody>
 </Table>
 
+Example setup:
+- `Direction`: `row`
+- `Horiz. align`: `center`
+- `Vert. align`: `top`
+
+This places child components in a horizontal line, centered across the container, aligned to the top edge.
+
 ### Container background colour
 
 You can also splash some color into your apps with containers!

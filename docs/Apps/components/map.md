@@ -59,6 +59,11 @@ Once the marker appears, two buttons will appear below the map, allowing the use
 
 This Create Marker button, by default, does nothing. But you can configure the actions done after clicking through the `Define actions` button displayed below the `Enable creating marker` setting in the <Glossary>Settings Panel</Glossary>. This will open up the [Actions](doc:actions) panel where you'll have access to 2 bindings; both latitude and longitude.
 
+Quick create-marker flow:
+1. Enable marker creation in settings (`Enable adding`).
+2. Add actions under `On create marker`.
+3. Use the `latitude` and `longitude` bindings from the marker click to create or update records.
+
 ## Changing the map tileset
 
 

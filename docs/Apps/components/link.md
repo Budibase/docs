@@ -19,6 +19,11 @@ To add the `link` element, click `Basic > Link`.
 
 After adding the link there's two settings in the <Glossary>Settings Panel</Glossary> you will want to change. The `URL`, or the location to which you want to link, and if the link should open in a new tab or not with the `New Tab` checkbox.
 
+Additional settings allow you to style the link text without custom CSS, including:
+- `Size`
+- `Color`
+- `Bold`, `Italic`, and `Underline`
+- `Alignment`
+
 
 The Link component can be useful for making a footer for the bottom of your screens.
-

@@ -21,8 +21,8 @@ To customise the tag, you have several settings in the <Glossary>Settings Panel<
 | :------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Size                 | The size of text, choose between small, medium or large.                                                                                                                          |
 | Color                | Choose the color of the button, the text color will change accordingly.                                                                                                           |
-| Show Delete Icon     | Will add a `X` to the tag which is clickable                                                                                                                                      |
-| On click delete icon | This setting will appear when the `Show Delete Icon` setting is checked. This will allow you to configure what happens when the user clicks the `X` using [Actions](doc:actions). |
+| Allow delete         | Adds an `X` delete control to the tag.                                                                                                                                            |
+| On click delete      | This setting appears when `Allow delete` is checked. Use it to configure what happens when the user clicks the `X`, using [Actions](doc:actions).                              |
 
 <br />
 
@@ -37,7 +37,7 @@ To get started, add an internal [Budibase DB](doc:budibasedb) table called *Movi
 
 Next go to the *Design* section, and add a [Cards block](https://docs.budibase.com/docs/blocks#cards-block). Select the *Movies* table as the <Glossary>Datasource</Glossary>, and bind the *Title*, *Subtitle* and *Image URL* values to the table columns. For example, the *Subtitle*: `{{ New Cards block.Movies.Year }}` 
 
-Your screen should look roughly like so:
+Your screen should now show cards populated from your `Movies` data.
 
 
 ### Adding the tags
@@ -73,10 +73,15 @@ To see how tags can be used in a SQL database, have a look at this [MS SQL Serve
 
 ### Removing tags
 
-You may optionally also want the ability to remove tags. To do so, first check the `Show delete icon` setting. This will allow you to specify some actions.
+You may optionally also want the ability to remove tags. To do so, first check the `Allow delete` setting. This will allow you to specify some actions.
+
+Quick flow:
+1. Enable `Allow delete` on the Tag component.
+2. Configure an action under `On click delete`.
+3. When users click the `X`, your configured action runs and the tag is removed according to that logic.
 
 
-Add a **Save Row**  action with the *Movies* Repeater as the datasource, (not the tags repeater block), and select the *Movies* table as the save destination.
+Add a **Save Row** action for the `On click delete` setting with the *Movies* Repeater as the datasource (not the tags repeater block), and select the *Movies* table as the save destination.
 
 Check *Do not display default notification* so that a toast is not displayed. Also `Add column` for the *Tags* relationship and give it the following [JavaScript](doc:javascript) binding:
 
@@ -147,7 +152,3 @@ return $("State.RemovedTags")?.[$("Tags Repeater block.Tags._id")+$("Repeater.Mo
 ```
 
 Equals Boolean True.
-
-
-#### Faster result
-

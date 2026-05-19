@@ -47,5 +47,5 @@ Primary color allows you to select using the Color Picker or specify a hex value
 
 ## Usage
 
-A Barcode/QR Generator can be used to display just about any text-string that is passed to it - this includes the value returned by the Barcode/QR Scanner. 
+A Barcode/QR Generator can be used to display just about any text-string that is passed to it - this includes the value returned by the Barcode/QR Scanner.
 

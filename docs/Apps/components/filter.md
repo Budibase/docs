@@ -43,6 +43,8 @@ With this established, your users will now be able to filter the chart based on 
 | Setting          |                                                                                               |
 | :--------------- | :-------------------------------------------------------------------------------------------- |
 | Target Component | Select any Table or Data provider on the screen to apply filters to.                          |
+| Default filter type | Sets the initial filter condition type when users add a new filter.                           |
 | Persist Filters  | Similar to App State - applied filters will remain when the user leaves the page and returns. |
-| Clear Filters    | Displays a "Clear Filters" button when a filter is applied.                                   |
+| Clear Filters    | Displays a "Clear Filters" button so users can quickly reset all active filters.              |
+| Size             | Controls the visual size of the filter input/button UI.                                       |
 | :gear:  >> Label | Text input to rename filter (defaults to column).                                             |

@@ -52,6 +52,12 @@ When horizontal mode is enabled, the image moves to the left of the text content
 
 As you can see, the image has shifted to the left of the text elements, where the text elements themselves have not changed.
 
+Quick settings checklist:
+- `Horizontal`: toggles image-above-text (off) vs image-left-of-text (on).
+- `Image URL`: controls the image displayed in the card.
+- `Show button`: toggles the optional button in each card.
+- `Click action`: defines the card click behavior.
+
 ## Card Elements
 
 The card consists of several default elements, which are bindable through Handlebars or JavaScript functions. Read more about binding in our [Bindings](doc:bindings) documentation. All elements can be configured in the settings panel.
@@ -86,5 +92,5 @@ This tutorial is primarily going to focus on the card component itself as the `C
 3. Add the card component nested inside the new repeater which you created.\
 4. Bind up all relevant information you wish to display within the card. From the title to the link, or even add a button with relevant actions you want to perform when clicked. For this example I was just show some basic information contained within the employee's table.\
 
-At this point, you should have a data-driven card layout with the desired fields and actions. 
+At this point, you should have a data-driven card layout with the desired fields and actions.
 

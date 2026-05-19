@@ -78,3 +78,9 @@ For example, if you want to ensure only a web URL can be scanned and saved, you 
 
 This can also be used safely in conjunction with the *Auto confirm* setting. If the barcode passes the validation on scan, then the modal will close. On the other hand, if the barcode was not a valid URL as expected in this case, then the modal will wait until the user scans an appropriate barcode, or cancels.
 
+Tuning tips:
+- `Auto confirm` closes the scanner modal immediately after a successful, valid scan.
+- `Manual entry` provides a fallback text input when scanning is not possible.
+- `Play sound on scan`, `Sound pitch`, and `Sound frequency (Hz)` can provide audible scan feedback.
+- Validation is applied before confirm/close behavior, so invalid scans remain in the modal until corrected or cancelled.
+

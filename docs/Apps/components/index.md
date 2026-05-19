@@ -84,6 +84,8 @@ To rename a component, first select it. Then, locate the component's settings at
 
 When you have added a component you will be able to see the options that you can tweak on the right side under the Settings bar. Some components also have a toolbar that will appear above it in the preview window.
 
+To find and rename a component quickly: select it in the canvas or component tree, then use the right-hand Settings panel where the component name appears at the top.
+
 
 ## Video tutorial
 

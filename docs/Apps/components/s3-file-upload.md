@@ -24,6 +24,13 @@ An [S3 datasource](doc:s3) must also have been added to the **Data** section in 
 
 You will also need to provide a custom field name.
 
+Required settings checklist:
+- `S3 datasource`: the connected S3 data source to upload through.
+- `Bucket`: the destination bucket name.
+- `File name`: the output file name/path.
+
+If any of these values are missing or invalid, the upload action will not complete successfully.
+
 
 ## Upload File to S3 action
 

@@ -65,13 +65,15 @@ A user can still override this sort by clicking the three dots beside a column. 
 
 ## Row settings
 
-The table offers a few row settings, including a mix of style and function.
+The table offers row-level settings, including a mix of style and behavior controls.
 
-| Setting              | Description                                                                       |
-| :------------------- | :-------------------------------------------------------------------------------- |
-| Row height           | Set the height of the table rows (Small, Medium and Large). The default is small. |
-| High contrast        | If checked, the table rows will be striped.                                       |
-| Add/Edit/Delete rows | Uncheck to prevent users from adding/editing/deleting rows.                       |
+| Setting                    | Description                                                                                          |
+| :------------------------- | :--------------------------------------------------------------------------------------------------- |
+| Row height                 | Set the height of the table rows (Small, Medium, or Large).                                         |
+| Add rows / Edit rows / Delete rows | Control whether users can add, edit, or delete records directly from the table UI.                  |
+| Row selection              | Enables selecting rows in the table. This setting is only shown when `Delete rows` is disabled.     |
+| Striped rows               | Adds alternating row striping for readability.                                                       |
+| Quiet                      | Uses the quiet table style variant.                                                                  |
 
 
 <br />
@@ -89,7 +91,14 @@ Some field types also allow searching directly within the table's column. If you
 
 ## Selected rows binding
 
-If your table has the _Allow row selection_ checkbox ticked, then you will be able to make use of the `Selected Rows` <Glossary>Binding</Glossary>.
+If your table has the _Row selection_ setting enabled, then you will be able to make use of the `Selected Rows` <Glossary>Binding</Glossary>.
+
+If _Delete rows_ is enabled, the _Row selection_ setting is hidden. If _Row selection_ is disabled, row selection controls are completely hidden in the table UI.
+
+Selection behavior matrix:
+- `Delete rows = Enabled` -> `Row selection` setting is hidden.
+- `Delete rows = Disabled` and `Row selection = Enabled` -> selection controls are visible and `Selected Rows` is available.
+- `Delete rows = Disabled` and `Row selection = Disabled` -> selection controls are hidden.
 
 Current behavior: in **v2.19.2+**, `Selected Rows` returns an array of full row objects (not just row IDs).
 

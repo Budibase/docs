@@ -27,6 +27,11 @@ Current behavior: filters are applied at the **view** level, not directly on the
 
 To add a filter, click the "Filter" button and Add Filter button. This will open a context menu, allowing you to customise your filters to display your data. 
 
+The Dynamic Filter settings panel includes:
+- `Provider` to choose the data source.
+- `Allowed filter columns` to restrict which fields users can filter on.
+- `Button size` to control the filter trigger button UI size.
+
 
 You can then add a filter-group. In many cases, a single group is all that is required, but multiple filter groups can be added as needed. Inside a filter group, specific filters can be added
 
