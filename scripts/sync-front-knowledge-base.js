@@ -214,7 +214,7 @@ function writeFilesToFrontKB(filePaths){ // Invoke with list of changed files ["
                 })
             };
 
-            fetch(`${FRONT_API}/knowledge_base_articles/${thisFile.documentId}/content`, options)
+            fetch(`${FRONT_API}/knowledge_base_articles/${existingKBA.documentId}/content`, options)
                 .then(res => res.json())
                 .then((res) => {
                     stats.updated ++
