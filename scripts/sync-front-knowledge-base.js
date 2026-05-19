@@ -9,7 +9,7 @@ const {
 } = process.env
 
 const FRONT_API = "https://api2.frontapp.com"
-const changedFiles = JSON.parse(process.argv[3] || [])
+const changedFiles = JSON.parse(process.argv[3] || "[]")
 
 // Filter out files that aren't docs
 const filteredChangedFiles = changedFiles.filter((file) => file.substring(file.length-3) === ".md")
@@ -191,7 +191,6 @@ function writeFilesToFrontKB(filePaths){ // Invoke with list of changed files ["
             fetch(`${FRONT_API}/knowledge_bases/${FRONT_KNOWLEDGE_BASE_ID}/articles`, options)
                 .then(res => res.json())
                 .then((res) => {
-                    console.log(res)
                     stats.created ++
                 })
                 .catch((err) => {
@@ -218,7 +217,6 @@ function writeFilesToFrontKB(filePaths){ // Invoke with list of changed files ["
             fetch(`${FRONT_API}/knowledge_base_articles/${thisFile.documentId}/content`, options)
                 .then(res => res.json())
                 .then((res) => {
-                    console.log(res)
                     stats.updated ++
                 })
                 .catch((err) => {
