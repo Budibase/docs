@@ -20,11 +20,7 @@ There are a few different ways to add a component. If you have no components add
 
 Clicking any of the above options will present a searchable and grouped list of components in the right-hand panel.
 
-  Component list
-</Image>
 
-  Searching for a component
-</Image>
 
 When you search for a component, if it is highlighted in blue, add it immediately by pressing the *Enter* key.
 
@@ -65,7 +61,7 @@ Within the component tree you can also delete, copy and move components by click
 
 ## Keyboard shortcuts
 
-In the above screenshot, you can see a range of keyboard shortcuts related to components. The above shows the following. You can replace the `⌘` (command) button on Mac with `CTRL` on Windows if you wish to use the shortcuts on Windows.
+The following keyboard shortcuts are available for components. You can replace the `⌘` (command) button on Mac with `CTRL` on Windows if you wish to use the shortcuts on Windows.
 
 * **Delete** - Backspace `←` - Allows quicker deletion of a selected component
 * **Move up** - `⌘`+ `↑`- Allows the user to move a component up in the component tree
@@ -81,7 +77,7 @@ There are a range of other ways to speed up navigate or perform additional actio
 
 Sometimes, it's helpful to organise your component tree in a way that clearly reflects the purpose of each component. For instance, you might want to differentiate between various forms on a screen, such as the `Create Users form` or the `Edit Users` form. Similarly, labeling buttons can clarify their action, whether they're for endorsing, deactivating, etc.
 
-To rename a component, first select it. Then, locate the component's settings at the top in the side panel. Click the current name, delete it, and enter your desired name. The gif below should help guide you through this process.
+To rename a component, first select it. Then, locate the component's settings at the top in the side panel. Click the current name, delete it, and enter your desired name. Use these steps to rename components consistently across your app.
 
 
 ## Using components

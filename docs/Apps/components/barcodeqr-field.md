@@ -78,5 +78,3 @@ For example, if you want to ensure only a web URL can be scanned and saved, you 
 
 This can also be used safely in conjunction with the *Auto confirm* setting. If the barcode passes the validation on scan, then the modal will close. On the other hand, if the barcode was not a valid URL as expected in this case, then the modal will wait until the user scans an appropriate barcode, or cancels.
 
-  Red light indicates that the custom validation rule has not passed
-</Image>

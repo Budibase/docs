@@ -91,6 +91,8 @@ Some field types also allow searching directly within the table's column. If you
 
 If your table has the _Allow row selection_ checkbox ticked, then you will be able to make use of the `Selected Rows` <Glossary>Binding</Glossary>.
 
+Current behavior: in **v2.19.2+**, `Selected Rows` returns an array of full row objects (not just row IDs).
+
 This can be found underneath your table within the bindings drawer:
 
 

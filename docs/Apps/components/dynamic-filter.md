@@ -20,6 +20,8 @@ The Dynamic Filter component is a powerful tool that allows you to filter data f
 
 You can no longer apply filters to the base table. Instead, you must create a view to apply filters to. To help you quickly locate specific data, the Data View in your Budibase app includes a Filter button at the top right of each view. Clicking this button opens the Dynamic Filter, allowing you to apply advanced filtering criteria to data within your views for faster, more targeted access.
 
+Current behavior: filters are applied at the **view** level, not directly on the base table.
+
 
 ## Adding and Configuring Filters
 
@@ -52,4 +54,3 @@ The Dynamic Filter component functions the same way in Design View as in Data Vi
 * Users can then configure the filters accordingly and pull out relevant information they require
 
 This dynamic approach makes it easy to customise data display based on complex filtering conditions, whether working in Data View or Design View.
-

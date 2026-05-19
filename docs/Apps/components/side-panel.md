@@ -18,11 +18,7 @@ A side panel is a special container that slides in from the right-hand side when
 
 You have a wide variety of different components that can be added to the side panel. There are a few that aren't allowed to be nested inside. Another side panel, modal and a section.
 
-  Side panel with nested form block
-</Image>
 
-  App preview of a side panel
-</Image>
 
 ### Opening a side panel
 
@@ -35,8 +31,6 @@ You can choose to open any side panel that is anywhere in the screen component t
 
 By default, a side panel can be closed by a user simply clicking an area outside of the panel, or by clicking the close arrow. Clicking outside of the side panel to close it will be ignored if "Ignore clicks outside to close" is checked.
 
-  Close side panel
-</Image>
 
 Alternatively, the **Close Side Panel** action can be used.
 

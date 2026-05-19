@@ -15,8 +15,6 @@ Icons are scalable vector graphics, which means that they look great on high-res
 
 To add an Icon component, click `Add component` and search for "Icon", or locate it under the *Basic* section.
 
-  Adding an icon component
-</Image>
 
 Within the <Glossary>Settings Panel</Glossary> under the *Icon* setting, a button will show the currently selected icon, or `Pick icon` if no icon has been selected. Click the button to change the icon.
 
@@ -29,8 +27,6 @@ This will allow you to filter the Font Awesome library alphabetically or search 
 
 Icons support the **On Click** event. You can define all of the [Actions](doc:actions) that a button can.
 
-  Define click actions in the settings panel
-</Image>
 
 ## Tutorial: Displaying options as icons
 

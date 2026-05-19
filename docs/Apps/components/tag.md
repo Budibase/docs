@@ -44,30 +44,22 @@ Your screen should look roughly like so:
 
 Go back to the *Data* section, and add another table called *Tags*. Give it a text column called 'Name' and a Many->Many [Relationship](doc:relationships) column linking to *Movies*.
 
-  Many Tags to Many Movies
-</Image>
 
 Add some tag rows, linking them to some movies.
 
 
 Head back over to the *Design* section. To be able to add our tags, we must [Eject](https://docs.budibase.com/docs/blocks#ejecting-blocks) the cards block. 
 
-  Component tree after ejecting the cards block
-</Image>
 
 Next add a [Container](doc:container) nested under the *Repeater*. Set the *Gap* to 'None'. Drag the *Spectrumcard* into the new container.
 
 Below the *Spectrumcard* insert a [Repeater block](https://docs.budibase.com/docs/blocks#repeater-block). Give it the name 'Tags Repeater Block', and select the *Tags* table from the relationship.
 
-  Selecting the tags from relationship
-</Image>
 
 Finally add the Tag component underneath the *Tags Repeater Block*. Click *Align right* on the repeaters block to align the tags to the right-hand side of the card, and choose *Row layout*. 
 
 Give the tag the text binding: `{{ Tags Repeater block.Tags.Name }}`. This can be selected from the bindings dropdown.
 
-  Aligning the tags
-</Image>
 
 As a finishing touch, it would be nice to give the different tags a color. To do so, we will use [Conditional UI](doc:conditions). Click on `Configure conditions`: Update Setting 'Color' TO ... IF `{{ Tags Repeater block.Tags.Name }}` Equals ...
 
@@ -83,8 +75,6 @@ To see how tags can be used in a SQL database, have a look at this [MS SQL Serve
 
 You may optionally also want the ability to remove tags. To do so, first check the `Show delete icon` setting. This will allow you to specify some actions.
 
-  Add some delete actions
-</Image>
 
 Add a **Save Row**  action with the *Movies* Repeater as the datasource, (not the tags repeater block), and select the *Movies* table as the save destination.
 
@@ -101,8 +91,6 @@ The JavaScript binding may appear a little daunting to some, but to explain in p
 
 After removing all tags, you will see a *No rows found* message, which isn't what we'd like in this case.
 
-  No rows found - Tags repeater block
-</Image>
 
 Ideally this should just be blank. Click on the *Tags Repeater block* and `Configure conditions`: Hide component IF `{{ Repeater.Movies.Tags }}` Is empty.
 
@@ -142,8 +130,6 @@ After saving those actions, navigate to the *Automate* section and select the **
 
 Make sure *tags* is set to type **Array**.
 
-  Set tags to type Array
-</Image>
 
 Next add an **Update Row** step for the *Movies* table as follows, making sure the `Use bindings` options is selected!
 

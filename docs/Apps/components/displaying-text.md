@@ -26,8 +26,6 @@ The Markdown viewer component is similar to the paragraph element. It can displa
 
 The *Markdown Viewer* component has full support of all markdown elements as displayed above, including headers, images and tables. 
 
-  Adding the Markdown Viewer component
-</Image>
 
 From the <Glossary>Settings Panel</Glossary> you can configure the value of the markdown viewer element, where you can also use [Bindings](doc:bindings).
 
@@ -40,8 +38,6 @@ The Markdown viewer component is similar to the paragraph element. It can displa
 
 The *Markdown Viewer* component has full support of all markdown elements as displayed above, including headers, images and tables. 
 
-  Adding the Markdown Viewer component
-</Image>
 
 From the <Glossary>Settings Panel</Glossary> you can configure the value of the markdown viewer element, where you can also use [Bindings](doc:bindings).
 
@@ -51,8 +47,6 @@ From the <Glossary>Settings Panel</Glossary> you can configure the value of the 
 
 The Paragraph component displays text inside your application. It's the `<p>` equivalent in `html`. But of course it supports [Bindings](doc:bindings) so you can render any text you like from any of the available  <Glossary>Datasource</Glossary> or [JavaScript](doc:javascript) functions.
 
-  Adding a Paragraph
-</Image>
 
 Then, you can use [Bindings](doc:bindings) within the *Text* setting in the <Glossary>Settings Panel</Glossary>, or simply enter static text by just typing in the box, or some combination of both.
 
@@ -102,8 +96,6 @@ The Headline component is identical to the Paragraph component, with the simple 
 
 For example a *Medium* Headline is the equivalent of a *2XL* Paragraph.
 
-  Adding a Headline
-</Image>
 
 <br />
 

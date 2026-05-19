@@ -31,12 +31,10 @@ Cards are highly flexible and have a lot of configuration options. We'll dive in
 
 The card component has two different layout modes. Vertical and Horizontal. The vertical mode has every component aligned vertically, whereas the horizontal mode has the image left of the text elements.
 
-For example purposes, I've loaded a list of countries into the database, with flags as images connected to it. In vertical mode, this looks like the following screenshot
+For example purposes, I've loaded a list of countries into the database, with flags as images connected to it. In vertical mode, cards render with the image above the text content
 
 ### Vertical Mode
 
-  Vertical Cards Mode
-</Image>
 
 As you can see, there's 3 items per row. However, this is purely dependent on the screen size. When you change the width of your browser window this can easily change to 1 (narrow or mobile), or 4 (or more) when you make your window wider.
 
@@ -49,10 +47,8 @@ The order of elements visible in a card is from top to bottom, Image, Title, Sub
 To enable horizontal mode, you need to check `Horizontal` in the <Glossary>Settings Panel</Glossary>.
 
 
-Immediately, the design will change into horizontal mode, which looks like the following screenshot
+When horizontal mode is enabled, the image moves to the left of the text content
 
-  Horizontal Cards Mode
-</Image>
 
 As you can see, the image has shifted to the left of the text elements, where the text elements themselves have not changed.
 
@@ -90,5 +86,5 @@ This tutorial is primarily going to focus on the card component itself as the `C
 3. Add the card component nested inside the new repeater which you created.\
 4. Bind up all relevant information you wish to display within the card. From the title to the link, or even add a button with relevant actions you want to perform when clicked. For this example I was just show some basic information contained within the employee's table.\
 
-At the end you should have a screen similar to the image below. 
+At this point, you should have a data-driven card layout with the desired fields and actions. 
 

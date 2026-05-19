@@ -61,5 +61,3 @@ return ['.png','.jpg','.jpeg','.svg','.gif','.webp']
 
 This will result in the operating system's native File Open Dialog having a corresponding custom filter:
 
-  Customised file extensions filter in the Attachment component
-</Image>
