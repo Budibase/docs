@@ -22,7 +22,6 @@ Use the Card component to display lists of data to your users. Cards can contain
 
 Cards are highly flexible and have a lot of configuration options. We'll dive into those below
 
-![](https://files.readme.io/0b85713-design-like-a-pro.gif "design-like-a-pro.gif")
 
 > 📘 Cards Block
 >
@@ -36,7 +35,6 @@ For example purposes, I've loaded a list of countries into the database, with fl
 
 ### Vertical Mode
 
-<Image title="cards-vertical.png" alt={2126} align="center" src="https://files.readme.io/acd2e6c-cards-vertical.png">
   Vertical Cards Mode
 </Image>
 
@@ -50,11 +48,9 @@ The order of elements visible in a card is from top to bottom, Image, Title, Sub
 
 To enable horizontal mode, you need to check `Horizontal` in the <Glossary>Settings Panel</Glossary>.
 
-![](https://files.readme.io/8158dd0-horizontal-mode.png "horizontal-mode.png")
 
 Immediately, the design will change into horizontal mode, which looks like the following screenshot
 
-<Image title="cards-horizontal.png" alt={2116} align="center" src="https://files.readme.io/69d8f87-cards-horizontal.png">
   Horizontal Cards Mode
 </Image>
 
@@ -75,11 +71,9 @@ The card consists of several default elements, which are bindable through Handle
 
 Next to the default elements, there's an optional button element. You can enable the button by checking the `Button` in the settings panel
 
-<Image align="center" src="https://files.readme.io/021dab44593f1f6f7bb046091983697396bfd34f06c997d42aa73f503260dab4-Screenshot_2025-08-20_at_09.22.01.png" />
 
 The button text can be configured through [Bindings](doc:bindings), or simply text as demonstrated above. The button will then be added to the card as displayed below
 
-![](https://files.readme.io/beda3aa-cards-with-button.png "cards-with-button.png")
 
 Right now the button doesn't do anything yet, when you click it, but that can be configured through the `Define Actions` button in the settings panel. 
 
@@ -93,12 +87,8 @@ This tutorial is primarily going to focus on the card component itself as the `C
 
 1. Add a data provider component (In this case I'm going to use the Employees table).
 2. Add a repeater component nested inside the data provider.\
-   ![](https://files.readme.io/c44ba1445e88811823f22eb954971e98ba16c73205bbb5b74056855ff6aad8e4-Screenshot_2025-08-19_at_15.20.03.png)
 3. Add the card component nested inside the new repeater which you created.\
-   ![](https://files.readme.io/c05e8ccdcb8b43c04f2c5aa6dbc620f4c76253dc93d56b34cd3fa752712ddde4-Screenshot_2025-08-20_at_09.25.18.png)
 4. Bind up all relevant information you wish to display within the card. From the title to the link, or even add a button with relevant actions you want to perform when clicked. For this example I was just show some basic information contained within the employee's table.\
-   ![](https://files.readme.io/b7682968d46a4b3eb86674626dd0f9a27a609c43f57a91caa4d0626bc3e5c795-Screenshot_2025-08-20_at_09.29.55.png)
 
 At the end you should have a screen similar to the image below. 
 
-<Image align="center" src="https://files.readme.io/bb6588dbda0961797e1ab1ed481b020a7115a7e8b1b817b85889c533fc79d8d3-Screenshot_2025-08-20_at_09.30.45.png" />

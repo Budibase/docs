@@ -48,8 +48,6 @@ Question,Answer
 
 ### Component tree
 
-<Image align="center" src="https://files.readme.io/ae1da882ff652b768540368497fcfb4912a100aefd96fa467e381ef8a2bfa87e-Screenshot_2025-08-19_at_11.15.50.png" />
 
 ### Result
 
-<Image align="center" src="https://files.readme.io/549d5de2339e5122383d9cb5d6f8b885af357b51a9e9bca127319d996eb686d0-Screenshot_2025-06-24_at_11.25.19.png" />

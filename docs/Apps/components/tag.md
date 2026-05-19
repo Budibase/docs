@@ -12,7 +12,6 @@ next:
 ---
 The `Tag` component can quickly display tags on, for example, a detail page. An optional delete button can be added, which can be configured using [Actions](doc:actions).
 
-![](https://files.readme.io/a18bea4-tags.png "tags.png")
 
 ## Customising the tag
 
@@ -35,29 +34,24 @@ In this tutorial we will look at how you can use the tag component to display mo
 
 To get started, add an internal [Budibase DB](doc:budibasedb) table called *Movies*, with 'Title', 'Year', and 'Image Url' columns. Add some rows.
 
-<Image align="center" src="https://files.readme.io/6bab97ff8578be267cd2d669673ef4b236530403a46134c3770f721bc1109cce-Screenshot_2024-09-30_at_12.52.20.png" />
 
 Next go to the *Design* section, and add a [Cards block](https://docs.budibase.com/docs/blocks#cards-block). Select the *Movies* table as the <Glossary>Datasource</Glossary>, and bind the *Title*, *Subtitle* and *Image URL* values to the table columns. For example, the *Subtitle*: `{{ New Cards block.Movies.Year }}` 
 
 Your screen should look roughly like so:
 
-<Image align="center" src="https://files.readme.io/75582fc5575ede8ca0b40580139ff9577e6f717de05d31edc7ad683f097fef41-Screenshot_2024-09-30_at_13.00.01.png" />
 
 ### Adding the tags
 
 Go back to the *Data* section, and add another table called *Tags*. Give it a text column called 'Name' and a Many->Many [Relationship](doc:relationships) column linking to *Movies*.
 
-<Image alt="Many Tags to Many Movies" align="center" src="https://files.readme.io/b6650f8-Screenshot_2023-01-27_at_14.03.53.png">
   Many Tags to Many Movies
 </Image>
 
 Add some tag rows, linking them to some movies.
 
-<Image align="center" src="https://files.readme.io/b77297e4a7d709e9acd23a5ce0698a666e29d2c3e8781cefec22911e3ad11e5f-Screenshot_2024-09-30_at_12.52.13.png" />
 
 Head back over to the *Design* section. To be able to add our tags, we must [Eject](https://docs.budibase.com/docs/blocks#ejecting-blocks) the cards block. 
 
-<Image alt="Component tree after ejecting the cards block" align="center" src="https://files.readme.io/2f663af-Screenshot_2023-01-27_at_14.58.13.png">
   Component tree after ejecting the cards block
 </Image>
 
@@ -65,7 +59,6 @@ Next add a [Container](doc:container) nested under the *Repeater*. Set the *Gap*
 
 Below the *Spectrumcard* insert a [Repeater block](https://docs.budibase.com/docs/blocks#repeater-block). Give it the name 'Tags Repeater Block', and select the *Tags* table from the relationship.
 
-<Image alt="Selecting the tags from relationship" align="center" src="https://files.readme.io/9591886-Screenshot_2023-01-27_at_15.11.45.png">
   Selecting the tags from relationship
 </Image>
 
@@ -73,7 +66,6 @@ Finally add the Tag component underneath the *Tags Repeater Block*. Click *Align
 
 Give the tag the text binding: `{{ Tags Repeater block.Tags.Name }}`. This can be selected from the bindings dropdown.
 
-<Image alt="Aligning the tags" align="center" src="https://files.readme.io/437c4fb-Screenshot_2023-01-27_at_15.14.29.png">
   Aligning the tags
 </Image>
 
@@ -81,11 +73,9 @@ As a finishing touch, it would be nice to give the different tags a color. To do
 
 The duplicate condition button will be very useful in this case!
 
-<Image align="center" src="https://files.readme.io/1a8431b0ef35f27c45a6bd467dba9cbe5e08218a620930c83c256528bdad3f12-Screenshot_2024-09-30_at_13.06.18.png" />
 
 #### Result
 
-<Image align="center" src="https://files.readme.io/29cfa94673e1a43e953990df192770ddd9d6c71069b74d5c82b022206d03465d-Screenshot_2024-09-30_at_13.06.45.png" />
 
 To see how tags can be used in a SQL database, have a look at this [MS SQL Server tutorial](https://docs.budibase.com/docs/ms-sql-server).
 
@@ -93,7 +83,6 @@ To see how tags can be used in a SQL database, have a look at this [MS SQL Serve
 
 You may optionally also want the ability to remove tags. To do so, first check the `Show delete icon` setting. This will allow you to specify some actions.
 
-<Image alt="Add some delete actions" align="center" src="https://files.readme.io/95391e40fb89f8b8c7efb7d83561e7e041ab3dd2b9086197a2b58b1894894f02-Screenshot_2024-09-30_at_13.07.17.png">
   Add some delete actions
 </Image>
 
@@ -105,7 +94,6 @@ Check *Do not display default notification* so that a toast is not displayed. Al
 return $("Repeater.Movies.Tags")?.filter(tag => tag._id !== $("Tags Repeater block.Tags._id"));
 ```
 
-![](https://files.readme.io/cba9ab6-Screenshot_2023-01-27_at_15.55.15.png)
 
 The JavaScript binding may appear a little daunting to some, but to explain in pseudo-code:
 
@@ -113,7 +101,6 @@ The JavaScript binding may appear a little daunting to some, but to explain in p
 
 After removing all tags, you will see a *No rows found* message, which isn't what we'd like in this case.
 
-<Image alt="No rows found - Tags repeater block" align="center" src="https://files.readme.io/5e55f11-Screenshot_2023-02-01_at_09.24.42.png">
   No rows found - Tags repeater block
 </Image>
 
@@ -123,13 +110,11 @@ As a finishing touch, it would be nice to add some margin when there are no tags
 
 #### Naive result
 
-<Image align="center" src="https://files.readme.io/c4aab030b7a379ec65fc3cc34a803490e6d6f89102a30f9caba3487c8b171aec-20240930_131332.gif" />
 
 As you probably noticed, there is substantial delay between clicking the 'x' and the tag being removed. Ideally in this scenario we don't want to await for a database response. We can use [App state](doc:app-state) to cache the tags and improve the tag deletion UX.
 
 Add a second action for updating app state:
 
-![](https://files.readme.io/9582cd7-Screenshot_2023-01-27_at_16.21.03.png)
 
 ```javascript
 return {
@@ -142,7 +127,6 @@ Next we want to replace the **Save Row** action with a **Trigger Automation** ac
 
 `Add Field` for the *tags*, and *movie\_id*.
 
-![](https://files.readme.io/8e7b53b-Screenshot_2023-01-27_at_16.58.10.png)
 
 The JavaScript binding for the *tags* field looks as follows:
 
@@ -158,7 +142,6 @@ After saving those actions, navigate to the *Automate* section and select the **
 
 Make sure *tags* is set to type **Array**.
 
-<Image alt="Set tags to type Array" align="center" src="https://files.readme.io/770eb71-Screenshot_2023-01-27_at_17.00.05.png">
   Set tags to type Array
 </Image>
 
@@ -166,7 +149,6 @@ Next add an **Update Row** step for the *Movies* table as follows, making sure t
 
 In addition, check the `Clear relationships if empty?` flag to ensure that all tags can be removed.
 
-![](https://files.readme.io/1b46ad8-Screenshot_2023-02-01_at_10.15.08.png)
 
 > 👍
 >
@@ -180,8 +162,6 @@ return $("State.RemovedTags")?.[$("Tags Repeater block.Tags._id")+$("Repeater.Mo
 
 Equals Boolean True.
 
-![](https://files.readme.io/f7e415e-Screenshot_2023-01-27_at_16.35.28.png)
 
 #### Faster result
 
-![](https://files.readme.io/f4741db-fast_close.gif)
