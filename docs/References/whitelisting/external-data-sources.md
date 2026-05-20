@@ -1,5 +1,5 @@
 ---
-title: External data sources
+title: Cloud data source access
 deprecated: false
 hidden: false
 metadata:
@@ -7,10 +7,10 @@ metadata:
 next:
   pages:
     - slug: self-hosted-licensing
-      title: Self-hosted licensing
+      title: Self-hosted license connectivity
       type: basic
     - slug: self-hosted-ai-features
-      title: Self-hosted AI features
+      title: Self-hosted AI connectivity
       type: basic
 ---
 If you're using Budibase and attempting to connect to your own data sources, you may encounter issues if a firewall is blocking traffic. You will need to allow inbound connections from Budibase to your database server.
