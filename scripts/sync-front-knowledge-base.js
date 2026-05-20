@@ -136,7 +136,10 @@ async function getAllArticlesInKB(knowledgeBaseId) {
     return allArticles
 }
 
-const allFrontKBAs = await getAllArticlesInKB(FRONT_KNOWLEDGE_BASE_ID)
+const allFrontKBAs = []
+if (filteredChangedFiles.length) {
+    allFrontKBAs = await getAllArticlesInKB(FRONT_KNOWLEDGE_BASE_ID)
+}
 
 // All file paths locally
 // All KBAs
@@ -147,16 +150,24 @@ const allFrontKBAs = await getAllArticlesInKB(FRONT_KNOWLEDGE_BASE_ID)
 // if file exists locall AND IS IN KBA, update file using KBA-ID
 
 // Write files to Front KB
-function writeFilesToFrontKB(filePaths){ // Invoke with list of changed files ["/path/to/file1", "/path/to/file2", ...]
+async function writeFilesToFrontKB(filePaths){ // Invoke with list of changed files ["/path/to/file1", "/path/to/file2", ...]
+    if (!allFrontKBAs) {
+        return
+    }
     console.log("writeFilestoFrontKB")
     const stats = {
         updated: 0,
         created: 0,
         errors: []
     }
-    filePaths.forEach((filepath, index) => {
+
+    for (const [index, filepath] of filePaths.entries()) {
         console.log(`Writing file ${filepath}`)
-        setTimeout(() => {
+
+        if (index > 0) {
+            await sleep(2000)
+        }
+
         // If there isn't a KBA with the name(which is a filepath) that matches that of this file, existingKBA will be false
         const existingKBA = allFrontKBAs.find((element) => {
             console.log({element})
@@ -188,15 +199,14 @@ function writeFilesToFrontKB(filePaths){ // Invoke with list of changed files ["
                 })
                 };
 
-            fetch(`${FRONT_API}/knowledge_bases/${FRONT_KNOWLEDGE_BASE_ID}/articles`, options)
-                .then(res => res.json())
-                .then((res) => {
-                    stats.created ++
-                })
-                .catch((err) => {
-                    console.error(err)
-                    stats.errors.push(err)
-                });
+            try {
+                const res = await fetch(`${FRONT_API}/knowledge_bases/${FRONT_KNOWLEDGE_BASE_ID}/articles`, options)
+                await res.json()
+                stats.created ++
+            } catch (err) {
+                console.error(err)
+                stats.errors.push(err)
+            }
         } else {
             // Update Existing Article
             console.log("KBA Exists, updating existing KBA with new info")
@@ -214,18 +224,17 @@ function writeFilesToFrontKB(filePaths){ // Invoke with list of changed files ["
                 })
             };
 
-            fetch(`${FRONT_API}/knowledge_base_articles/${existingKBA.documentId}/content`, options)
-                .then(res => res.json())
-                .then((res) => {
-                    stats.updated ++
-                })
-                .catch((err) => {
-                    console.error(err)
-                    stats.errors.push(err)
-                });
+            try {
+                const res = await fetch(`${FRONT_API}/knowledge_base_articles/${existingKBA.documentId}/content`, options)
+                await res.json()
+                stats.updated ++
+            } catch (err) {
+                console.error(err)
+                stats.errors.push(err)
+            }
         }
-        }, index * 2_000)  
-    })
+    }
+
     console.log(`${stats.created} Knowledge Base Articles created`)
     console.log(`${stats.updated} Knowledge Base Articles Updated`)
     console.log(`${stats.errors.length} errors`)
@@ -236,7 +245,6 @@ function writeFilesToFrontKB(filePaths){ // Invoke with list of changed files ["
     }
 }
 
-writeFilesToFrontKB(filteredChangedFiles)
-
+await writeFilesToFrontKB(filteredChangedFiles)
 
 
