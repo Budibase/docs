@@ -1,5 +1,5 @@
 ---
-title: Self-hosted licensing
+title: Self-hosted license connectivity
 deprecated: false
 hidden: false
 metadata:
@@ -7,7 +7,7 @@ metadata:
 next:
   pages:
     - slug: self-hosted-ai-features
-      title: Self-hosted AI features
+      title: Self-hosted AI connectivity
       type: basic
 ---
 Self-hosted deployments of Budibase require communication with the Budibase Account Portal for license activation and validation.
