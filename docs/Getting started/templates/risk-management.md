@@ -29,7 +29,7 @@ This includes:
 * Providing records of all ongoing and previous submissions.
 * Notifying stakeholders of changes to the status of submissions or when there are new submissions that need their attention.
 
-Our template utilizes simple approval flows for each type of submission, with two distinct user roles in addition to our **App Admin** role.
+Our template utilizes simple approval workflows for each type of submission, with two distinct user roles in addition to our **App Admin** role.
 
 It’s built on top of five tables within Budibase’s internal database. We’ll examine what each of these is and what it stores a little later.
 
@@ -49,7 +49,7 @@ However, they have limited permissions to **Read** or **Update** entries across 
 
 This works the same way for **Improvements, Risks**, and **Incidents**.
 
-### Approval flows
+### Approval workflows
 
 **Power Users** inherit all permissions from our **App Users**. On top of this, they can view all incoming submissions across our three tables.
 
@@ -73,7 +73,7 @@ Meanwhile, **Power Users** are able to edit submissions, regardless of the user 
 
 ### Automated emails
 
-Lastly, our application utilizes Budibase’s built-in email automation actions to send notifications to stakeholders based on defined events in our approval flows.
+Lastly, our application utilizes Budibase’s built-in email automation actions to send notifications to stakeholders based on defined events in our approval workflows.
 
 Specifically, the original creator of a submission across any of our three tables is notified when it has a response.
 
@@ -299,7 +299,7 @@ They can add additional details on a modal form that’s displayed when they hit
 
 In Budibase, the Automation section is used to create workflow logic within our applications, including enabling users to take specific actions. Take a look at our [automation docs](https://docs.budibase.com/docs/automation-steps) to learn more.
 
-Our template makes extensive use of **Row Actions**. These are user-triggerable automation flows that run on a specific row within a database table. These can be created from the Data section, under the **Row Actions** tab within a database table or view.
+Our template makes extensive use of **Row Actions**. These are user-triggerable automation workflows that run on a specific row within a database table. These can be created from the Data section, under the **Row Actions** tab within a database table or view.
 
 The **App User** view for each of our submission tables features a **Row Action** called **Cancel**.
 
