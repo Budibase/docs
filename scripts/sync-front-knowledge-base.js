@@ -113,7 +113,7 @@ async function getAllArticlesInKB(knowledgeBaseId) {
         url = data._pagination?.next || null
 
         if (url) {
-            await sleep(2000)
+            await sleep(1300)
         }
     }
 
@@ -129,7 +129,7 @@ async function getAllArticlesInKB(knowledgeBaseId) {
             documentId: data.id
         })
 
-        await sleep(2000)
+        await sleep(1300)
     }
 
     console.log(`${allArticles.length} articles mapped to allArticles array`)
@@ -165,7 +165,7 @@ async function writeFilesToFrontKB(filePaths){ // Invoke with list of changed fi
         console.log(`Writing file ${filepath}`)
 
         if (index > 0) {
-            await sleep(2000)
+            await sleep(1300)
         }
 
         // If there isn't a KBA with the name(which is a filepath) that matches that of this file, existingKBA will be false
