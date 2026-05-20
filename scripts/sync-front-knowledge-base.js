@@ -136,7 +136,7 @@ async function getAllArticlesInKB(knowledgeBaseId) {
     return allArticles
 }
 
-const allFrontKBAs = []
+let allFrontKBAs = []
 if (filteredChangedFiles.length) {
     allFrontKBAs = await getAllArticlesInKB(FRONT_KNOWLEDGE_BASE_ID)
 }
