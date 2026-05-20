@@ -41,18 +41,23 @@ If you want to act on clicks on the markers, you can define [Actions](doc:action
 
 One of the [Bindings](doc:bindings) available to you is the `Clicked marker` object, which contains the data of the row of the table you've selected in the [Data Provider](doc:data-provider).
 
-A quick way to go from the map to a modal with a detail screen would be something like below.
+A quick way to go from the map to a detail view is to configure a `Navigate To` action in the actions drawer:
 
+1. Open `On click marker` and choose `Add Action`
+2. Select action type `Navigate To`
+3. Set `Destination` to `Screen`
+4. Use a dynamic route such as `/station/{{ Clicked marker._id }}`
+5. Optionally enable `Open screen in modal`
+6. Click `Save`
 
 ## Enable creating markers
 
 If you want your users to be able to create new markers directly on the map, you can enable the `Enable creating markers` setting in the <Glossary>Settings Panel</Glossary>.
 
 
-By default all this does, is enable the option to click on the map where there isn't a marker currently, and a new marker will be added on click, and show the `New Marker` popover, like below.
+By default all this does, is enable the option to click on the map where there isn't a marker currently, and a new marker will be added on click, and show the `New Marker` popover.
 
-
-Once the marker appears, two buttons will appear below the map, allowing the user to click the `Create Marker` button. See the quick video below. 
+Once the marker appears, two buttons will appear below the map, allowing the user to click the `Create Marker` button.
 
 **Please be aware that the Create Marker buttons will only appear when you click the map.** 
 

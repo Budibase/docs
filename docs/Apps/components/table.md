@@ -102,14 +102,11 @@ Selection behavior matrix:
 
 Current behavior: in **v2.19.2+**, `Selected Rows` returns an array of full row objects (not just row IDs).
 
-This can be found underneath your table within the bindings drawer:
+This can be found underneath your table within the bindings drawer.
 
+When using this binding, an array of the selected row data will be made available.
 
-When using this binding, an array of the selected row data will be made available:
-
-
-This binding can be used to [Delete the selected rows](https://docs.budibase.com/docs/data-actions#delete-row):
-
+This binding can be used to [Delete the selected rows](https://docs.budibase.com/docs/data-actions#delete-row).
 
 You could also [pluck](https://docs.budibase.com/docs/array-helpers#pluck) a field from the selected rows, such as an ID, to show which rows have been selected in a readable way: `{{ pluck New Table.Selected rows 'id' }}`
 
@@ -118,11 +115,13 @@ You could also [pluck](https://docs.budibase.com/docs/array-helpers#pluck) a fie
 
 With conditional formatting, you can now add conditional logic to either a cell or rows within your table. To make your formatting dynamic, you can set rules that change the format of cells based on their value. This can be done on a range of fields types, options, formulas, strings, numbers etc.
 
-You can find conditional formatting options under the column settings:
+You can find conditional formatting in the `Columns` section of the table settings. Select a column (for example `Last Name`), then open `Conditions`.
 
-
-The above will open a new drawer when clicked, were you can begin adding your conditions in relation to the column you have selected.
-
+This opens a conditions drawer for that specific column (for example `Last Name conditions`), where you can add rules such as:
+- `Update` -> choose whether to style `Cell` or `Row`
+- choose a style target such as `Background colour` or `Text colour`
+- `if value` -> choose an operator such as `Equals`
+- enter the comparison value, then `Save`
 
 There are a few settings you need to be aware of.
 

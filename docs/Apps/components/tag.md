@@ -68,6 +68,15 @@ The duplicate condition button will be very useful in this case!
 
 #### Result
 
+At this stage, each movie card should display its related tags directly beneath the movie details.
+
+For example:
+- **The Shawshank Redemption (1994)** with tags like `Drama`, `Crime`
+- **Pulp Fiction (1994)** with tags like `Action`
+- **The Godfather (1972)** with tags like `Crime`, `Action`
+- **Inception (2010)** with tags like `Sci-Fi`, `Drama`
+
+This confirms the relationship binding is working and that tags are being rendered per movie row in the repeater.
 
 To see how tags can be used in a SQL database, have a look at this [MS SQL Server tutorial](https://docs.budibase.com/docs/ms-sql-server).
 
@@ -80,7 +89,6 @@ Quick flow:
 2. Configure an action under `On click delete`.
 3. When users click the `X`, your configured action runs and the tag is removed according to that logic.
 
-
 Add a **Save Row** action for the `On click delete` setting with the *Movies* Repeater as the datasource (not the tags repeater block), and select the *Movies* table as the save destination.
 
 Check *Do not display default notification* so that a toast is not displayed. Also `Add column` for the *Tags* relationship and give it the following [JavaScript](doc:javascript) binding:
@@ -88,7 +96,6 @@ Check *Do not display default notification* so that a toast is not displayed. Al
 ```javascript
 return $("Repeater.Movies.Tags")?.filter(tag => tag._id !== $("Tags Repeater block.Tags._id"));
 ```
-
 
 The JavaScript binding may appear a little daunting to some, but to explain in pseudo-code:
 
@@ -108,6 +115,15 @@ As you probably noticed, there is substantial delay between clicking the 'x' and
 
 Add a second action for updating app state:
 
+In the Actions drawer:
+1. Click `Add Action`.
+2. Choose `Update State`.
+3. Set `Type` to `Set value`.
+4. Set `Key` to `RemovedTags`.
+5. Set `Value` to a JavaScript function (shown below).
+6. Leave `Persist this value` unchecked unless you explicitly want removed-tag state to survive page reloads/browser restarts.
+7. Click `Save`.
+
 
 ```javascript
 return {
@@ -116,10 +132,26 @@ return {
 }
 ```
 
-Next we want to replace the **Save Row** action with a **Trigger Automation** action instead. Check *Create a new automation*, enter a name and check *Do not display default notification*. 
+Next we want to replace the **Save Row** action with a **Trigger Automation** action instead. Follow the below steps to do this.
+
+Create the automation
+1. Switch to the automation section
+2. Create a new on demand automation
+3. Add the relevant fields
+    - tags
+    - movie_id
+
+In the Actions drawer:
+1. Keep your first action as `Update State`
+2. Add a second action: `Trigger Automation`
+3. Under `Automation`, choose previously created on demand trigger automation, and keep `Do not display default notification` checked
+4. Leave `Require confirmation` unchecked unless you want a user confirmation prompt
+5. Add fields:
+   - `tags` -> `Value`: JavaScript function (shown below)
+   - `movie_id` -> `Value`: `{{ Repeater.Movies._id }}`
+6. Click `Save`
 
 `Add Field` for the *tags*, and *movie\_id*.
-
 
 The JavaScript binding for the *tags* field looks as follows:
 

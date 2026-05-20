@@ -38,12 +38,12 @@ Use the button component to encourage users to take action and make choices with
 
 Click on the table component in your component tree and scroll to the bottom of the settings side panel on the right of your screen. You should see an Add button button. Click this to add your first button. This will then work similarly to the Button group component discussed below.
 
-
 # Button Group
-
 
 The Button Group component behaves in much the same way as a single Button component, with the added benefit of being able to configure and style multiple buttons at once. Adding a new button here will create a new button in just the same way as a Button component on it's own, but it will be part of this group. We can configure the button's actions and appearance using the cog-icon in the list of buttons. We can also drag-and-drop using the grab-handle (dots) to the left of the cog, to re-order the buttons, which will change the order they appear on the screen, as well as in the list.
 
+In the button settings drawer, each button exposes controls such as `Text`, `Variant`, `Size`, `Quiet`, `Disabled`, `Icon`, `Gap`, and `On click`. For example, a `Submit Form` button might use `Variant: Action`, `Size: Medium`, with related actions for submitting the form.
+
+At the group level, the Button Group settings panel lists all buttons in order (for example `Save Progress`, `Submit Form`, `Clear Form`) and includes an `Add button` control to create new buttons in the same group.
 
 You could use Button Groups in Form components, offering a variety of options for the user, which are managed and styled from one place.
-

@@ -17,9 +17,6 @@ Visually the `S3 File Upload` component looks the same as the [Attachment](doc:a
 
 ## Adding the S3 File Upload
 
-The `S3 File Upload` component requires a [Form](doc:forms) element to be a parent.
-
-
 An [S3 datasource](doc:s3) must also have been added to the **Data** section in Budibase. After the S3 connection is established, you can select the <Glossary>Datasource</Glossary>, and enter a bucket and file name in the <Glossary>Settings Panel</Glossary>.
 
 You will also need to provide a custom field name.

@@ -24,27 +24,32 @@ You should first use a <Anchor label="Data Provider" target="_blank" href="https
 
 Different views can be selected, depending on your needs.
 
+### Month view
 
+Month view shows a full month grid with weekday headers (`Sun` to `Sat`) and day cells containing event summaries.  
+Each event entry typically includes a start time (for example `10:45`, `13:00`, `15:00`) and a title (for example `Marketing Call`, `Roadmap Planning`, `Product Sync`).
 
+If multiple events occur on the same day, they are listed together in that day’s cell. This makes recurring events and busy dates easy to scan at a glance.
 
+### Week, Day, and Agenda views
+
+- `Week` view focuses on one week and gives more horizontal space per day.
+- `Day` view focuses on a single day timeline for detailed scheduling.
+- `Agenda` view shows events as a chronological list and uses `Empty Agenda text` when no events are available.
 
 ## Options
 
 Creators can optionally show or hide the date or date-range being shown in the view. using the "Show title" setting, which can be configured for DD-MM-YYYY or MM-DD-YYYY formats.
 
-
 Creators also have options to adjust the way the title is displayed, for example in the Title section of the settings, Year title format set to `4-digit`, and `Month title format` set to "Long" will show the title on the Month view as February 2026. Please note that not all settings will apply to all views.
-
 
 <br />
 
 Creators can also allow their users to move around to different dates or views using the "Show Controls" option. By default, the calendar component will open on the current day, but using the "Open on date" setting, and providing a date in YYYY-MM-DD format, the calendar will open on this date (or date range). This could be useful to show specific plans. 
 
-
 ## On click events
 
 On-click events can be established to surface the values for an event's `row_id`, event start, event end, and event title. These could be used in conjunction with a Single Row provider in a modal or side panel, or even as part of [Navigate To](https://docs.budibase.com/docs/application-actions#navigate-to) action using [URL Parameters](https://docs.budibase.com/docs/passing-bindings-in-url-parameters)
-
 
 <br />
 

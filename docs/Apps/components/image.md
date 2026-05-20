@@ -66,11 +66,9 @@ You may wish to store your image files in an external S3 bucket instead of the b
 
 #### Data
 
-Upload your images to your S3 bucket. You will need to allow public access to the images in AWS:
-
+Upload your images to your S3 bucket. You will need to allow public access to the images in AWS.
 
 Next add your S3 <Glossary>Datasource</Glossary> with a simple **Read** query to list all of the files in the bucket.
-
 
 #### Design
 
