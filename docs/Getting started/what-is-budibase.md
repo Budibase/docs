@@ -29,4 +29,4 @@ With Budibase, you can:
 * Handle internal requests with forms, approvals, and task routing
 * Build internal tools quickly with reusable components and logic
 * [Connect your data and systems](doc:data) across databases, APIs, and business tools
-* [Self-host securely](doc:getting-started) to keep control of your environment and operations
+* [Self-host securely](doc:hosting-methods) to keep control of your environment and operations
