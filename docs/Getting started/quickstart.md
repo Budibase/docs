@@ -161,8 +161,6 @@ There is, however, much more to explore, and a broad range of possibilities. If 
 * [Conditions](https://docs.budibase.com/v3.3.0/docs/conditions)
 * [Custom plugins](https://docs.budibase.com/v3.3.0/docs/custom-plugin)
 
-## **👍**
-
 ## **The Budibase community**
 
 If you have any questions or want to browse what other people have been building, please reach out to us on [GitHub Discussions](https://github.com/Budibase/budibase/discussions) or join our [Discord server](https://discord.com/invite/ZepTmGbtfF).
