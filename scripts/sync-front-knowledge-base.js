@@ -36,6 +36,7 @@ if (!FRONT_AUTHOR_ID) {
 // Proceed
 console.log("Begin syncing documentation to Front Knowledge Base")
 
+console.log(`Files invoked with: ${changedFiles}`)
 console.log(`Files to sync: ${filteredChangedFiles.length}`)
 for (const filepath of filteredChangedFiles) {
     console.log(filepath);
