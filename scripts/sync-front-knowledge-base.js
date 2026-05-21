@@ -6,6 +6,7 @@ const {
     FRONT_API_TOKEN,
     FRONT_KNOWLEDGE_BASE_ID,
     FRONT_AUTHOR_ID,
+    README_API_TOKEN
 } = process.env
 
 const FRONT_API = "https://api2.frontapp.com"
@@ -32,6 +33,12 @@ if (!FRONT_AUTHOR_ID) {
   throw new Error("Missing FRONT_AUTHOR_ID")
 } else {
     console.log("FRONT_AUTHOR_ID found")
+}
+
+if (!README_API_TOKEN) {
+    throw new Error("Missing README_API_TOKEN")
+} else {
+    console.log("README_API_TOKEN found")
 }
 // Proceed
 console.log("Begin syncing documentation to Front Knowledge Base")
@@ -203,6 +210,9 @@ async function writeFilesToFrontKB(filePaths){ // Invoke with list of changed fi
                 const res = await fetch(`${FRONT_API}/knowledge_bases/${FRONT_KNOWLEDGE_BASE_ID}/articles`, options)
                 await res.json()
                 stats.created ++
+                // USE RESPONSE TO UPDATE README METADATA WITH kba_id
+
+
             } catch (err) {
                 console.error(err)
                 stats.errors.push(err)
@@ -228,6 +238,9 @@ async function writeFilesToFrontKB(filePaths){ // Invoke with list of changed fi
                 const res = await fetch(`${FRONT_API}/knowledge_base_articles/${existingKBA.documentId}/content`, options)
                 await res.json()
                 stats.updated ++
+                // USE RESPONSE TO UPDATE README METADATA WITH kba_id
+
+                
             } catch (err) {
                 console.error(err)
                 stats.errors.push(err)
