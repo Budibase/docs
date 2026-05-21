@@ -41,7 +41,7 @@ Our app UI is made up of a range of task-specific forms and tables. For example,
 
 ![Change Request Management Template](https://files.readme.io/955ba8599cd68c6c05e8aa23ee5b9ccf196ad2b1fb4dc701c85e2557b7b4059b-Change_Request_Form_Gif_1.gif)
 
-### Approval flows
+### Approval workflows
 
 When a request is submitted, its **status** attribute is automatically set to **Submitted** using Budibase’s **default values**. At this point, a **Row Action** automation is triggered, notifying a **Manager** that a new request needs their attention.
 
@@ -231,7 +231,7 @@ This utilizes a series of **Markdown Viewer** components and **Containers** to d
 
 In Budibase, Automations are used to define sequences of steps that can be triggered by user actions, database events, cron expressions, or other triggers. Take a look at our [automation docs](https://docs.budibase.com/docs/automation-steps) to learn more.
 
-We’ve used several Automation flows across our template to handle key interactions with our data, as well as notifying users of how their submissions are progressing.
+We’ve used several automation workflows across our template to handle key interactions with our data, as well as notifying users of how their submissions are progressing.
 
 Many of these rely on Budibase’s **Row Actions** functionality. A Row Action is a user-triggered automation rule that relates to a particular entry in a database or view. Others are triggered when a database entry is created or updated.
 

@@ -6,7 +6,7 @@ hidden: false
 metadata:
   robots: index
 ---
-This tutorial builds a simple users app backed by a REST API with read/create/update flows.
+This tutorial builds a simple users app backed by a REST API with read/create/update workflows.
 
 ## Target architecture
 

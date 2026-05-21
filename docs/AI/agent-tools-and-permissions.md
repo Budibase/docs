@@ -40,7 +40,7 @@ Use one of these patterns:
 1. Read-only Agent
    1. The agent can retrieve and analyse data, but cannot modify anything. This is a default starting point. It’s the safest option and ideal for validation, reporting, auditing, and insight generation.
 2. Read + controlled updates
-   1. The agent can read data and perform limited, explicitly scoped write operations. Writes should be constrained (e.g., specific fields, specific objects, or behind approval flows) and validated through tests before being enabled in production.
+   1. The agent can read data and perform limited, explicitly scoped write operations. Writes should be constrained (e.g., specific fields, specific objects, or behind approval workflows) and validated through tests before being enabled in production.
 3. Read + updates + automation triggers
    1. The agent can read data, make approved updates, and trigger downstream workflows or automations. This pattern is suitable for more mature, production-grade use cases where the agent is trusted to take actions that may have cascading effects.
 

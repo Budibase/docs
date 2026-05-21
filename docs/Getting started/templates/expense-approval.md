@@ -61,7 +61,7 @@ Our submission form features a **File Upload** component, which users can use to
 
 This is stored in an **Attachment** column alongside each individual expense item.
 
-### Approval flows
+### Approval workflows
 
 Our template is based around a simple, single-step approval workflow, with one class of users responsible for authorizing all expenses. This works by updating the **Status** attribute of the original claim to either **Approved** or **Rejected**.
 
