@@ -7,7 +7,7 @@ excerpt: >-
 deprecated: false
 hidden: false
 metadata:
-  title: ''
+  title: 'banana'
   description: ''
   robots: index
 next:

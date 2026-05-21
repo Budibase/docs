@@ -12,7 +12,7 @@ next:
 ---
 ### Usage
 
-Within a [Workspace](doc:workspace-management) the `Usage` tab allows you to see if you are nearing any limits for the current plan.
+Within a [Workspace](doc:introduction-to-workspaces) the `Usage` tab allows you to see if you are nearing any limits for the current plan.
 
 Each workspace will keep track of usage independently. For example, if you reach the maximum number of [Creators](https://docs.budibase.com/docs/application-access#creators-) in one workspace, you won't be prevented from adding creators in another workspace.
 
@@ -27,7 +27,7 @@ There are two types of quotas:
 
 <br />
 
-To increase your quotas,  [upgrade your workspace](https://docs.budibase.com/docs/workspace-management). The available plans can be viewed on our [pricing](https://budibase.com/pricing/)  page.
+To increase your quotas,  [upgrade your workspace](doc:tenant-management). The available plans can be viewed on our [pricing](https://budibase.com/pricing/)  page.
 
 ### Billing
 
