@@ -171,7 +171,6 @@ async function writeFilesToFrontKB(filePaths){ // Invoke with list of changed fi
 
         // If there isn't a KBA with the name(which is a filepath) that matches that of this file, existingKBA will be false
         const existingKBA = allFrontKBAs.find((element) => {
-            console.log({element})
             return element.documentTitle === filepath
         })
         const thisFile = allFiles.find((file) => {
