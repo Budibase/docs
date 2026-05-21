@@ -148,8 +148,6 @@ Budibase comes with three different email templates: Password Recovery, Invitati
 
 To edit a template, simply select it in the table. To insert dynamic content you can use the Bindings on the right side of the page. This makes it easier to include things such as the user's email, your organization's logo, or the name of your organization. When you're done hit the preview button to make sure it looks OK. Then hit save.
 
-<Image border={false} src="https://files.readme.io/11c9942-templates.png" title="templates.png" />
-
 The email templates work on all devices, email platforms, and themes (light and dark modes). Below is an image of the invitation email template.
 
 <Image border={false} src="https://files.readme.io/824b249-CleanShot_2022-04-12_at_15.22.54.png" title="CleanShot 2022-04-12 at 15.22.54.png" />
