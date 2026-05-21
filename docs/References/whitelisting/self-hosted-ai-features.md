@@ -1,5 +1,5 @@
 ---
-title: Self-hosted AI features
+title: Self-hosted AI connectivity
 deprecated: false
 hidden: false
 metadata:
@@ -7,7 +7,7 @@ metadata:
 next:
   pages:
     - slug: self-hosted-licensing
-      title: Self-hosted licensing
+      title: Self-hosted license connectivity
       type: basic
 ---
 <br />

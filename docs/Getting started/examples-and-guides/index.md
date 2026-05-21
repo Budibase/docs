@@ -14,7 +14,7 @@ To help you adopt Budibase quicker and uncover what's possible, we've dedicated 
 
 ## Guides
 
-Within this section you will find a list of step-by-step tutorials for building common flows within Budibase. 
+Within this section you will find a list of step-by-step tutorials for building common workflows within Budibase. 
 
 Each follows a common consistent layout as follows:
 

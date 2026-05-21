@@ -1,8 +1,7 @@
 ---
-title: Whitelisting
+title: Network access
 excerpt: >-
-  Ensuring that your self-hosted installation or Budibase Cloud usage is not
-  disrupted by network conditions.
+  Network access requirements for Budibase Cloud and self-hosted deployments.
 deprecated: false
 hidden: false
 metadata:
@@ -12,13 +11,13 @@ metadata:
 next:
   pages:
     - slug: external-data-sources
-      title: External data sources
+      title: Cloud data source access
       type: basic
     - slug: self-hosted-licensing
-      title: Self-hosted licensing
+      title: Self-hosted license connectivity
       type: basic
     - slug: self-hosted-ai-features
-      title: Self-hosted AI features
+      title: Self-hosted AI connectivity
       type: basic
 ---
 Budibase communicates with your databases, services, and Budibase Cloud infrastructure through a small number of well-defined network endpoints. If your environment uses a firewall, proxy, or private network, you may need to whitelist specific IP addresses or domains to ensure Budibase operates correctly.
