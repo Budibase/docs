@@ -3,7 +3,7 @@ title: Slack messaging channel
 deprecated: false
 hidden: false
 metadata:
-  description: kba_5h7uq
+  description: kba_5h742
   robots: index
 ---
 Use this guide to deploy an agent to Slack.
