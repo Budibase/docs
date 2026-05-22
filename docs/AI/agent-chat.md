@@ -3,6 +3,7 @@ title: Agent chat
 deprecated: true
 hidden: false
 metadata:
+  description: kba_5h79e
   robots: index
 ---
 Agent chat is deprecated.
