@@ -11,8 +11,7 @@ const {
 } = process.env
 
 const FRONT_API = "https://api2.frontapp.com"
-// const changedFiles = JSON.parse(process.argv[3] || "[]")
-const changedFiles = JSON.parse(process.env.TEST_ARRAY)
+const changedFiles = JSON.parse(process.argv[3] || "[]")
 
 // Filter out files that aren't docs
 const filteredChangedFiles = changedFiles.filter((file) => file.substring(file.length-3) === ".md")
