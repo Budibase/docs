@@ -4,6 +4,7 @@ excerpt: 'Trigger budibase automations when an email hits your folder/inbox '
 deprecated: false
 hidden: false
 metadata:
+  description: kba_5hdtu
   robots: index
 ---
 The Email Received automation triggers whenever a new email arrives in a mailbox that you've connected to. It connects to your IMAP server (Gmail, Outlook, or any IMAP-compatible provider), checks for new messages on a short polling interval, and fires when an email matches your conditions. When it runs, the trigger exposes the message’s subject, sender, recipients, date, plain-text, and HTML body so you can use them in later steps.
