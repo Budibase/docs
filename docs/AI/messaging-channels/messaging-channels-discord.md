@@ -3,6 +3,7 @@ title: Discord messaging channel
 deprecated: false
 hidden: false
 metadata:
+  description: kba_5h6yq
   robots: index
 ---
 Use this guide to deploy an agent to Discord.
