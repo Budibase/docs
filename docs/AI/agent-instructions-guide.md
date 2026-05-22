@@ -3,6 +3,7 @@ title: Agent instructions guide
 deprecated: false
 hidden: false
 metadata:
+  description: kba_5h7cy
   robots: index
 ---
 Instructions are the most important control for Agent behaviour.
