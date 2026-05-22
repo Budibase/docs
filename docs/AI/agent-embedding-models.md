@@ -3,6 +3,7 @@ title: Agent embedding models
 deprecated: false
 hidden: false
 metadata:
+  description: kba_5h7b6
   robots: index
 ---
 Embedding models convert text into vectors so your Agent can retrieve relevant knowledge chunks during responses.
