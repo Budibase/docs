@@ -6,11 +6,13 @@ const {
     FRONT_API_TOKEN,
     FRONT_KNOWLEDGE_BASE_ID,
     FRONT_AUTHOR_ID,
-    README_API_TOKEN
+    README_API_TOKEN,
+    README_VERSION
 } = process.env
 
 const FRONT_API = "https://api2.frontapp.com"
-const changedFiles = JSON.parse(process.argv[3] || "[]")
+// const changedFiles = JSON.parse(process.argv[3] || "[]")
+const changedFiles = JSON.parse(process.env.TEST_ARRAY)
 
 // Filter out files that aren't docs
 const filteredChangedFiles = changedFiles.filter((file) => file.substring(file.length-3) === ".md")
@@ -39,6 +41,12 @@ if (!README_API_TOKEN) {
     throw new Error("Missing README_API_TOKEN")
 } else {
     console.log("README_API_TOKEN found")
+}
+
+if (!README_VERSION){
+    throw new Error("Missing README_VERSION")
+} else {
+    console.log("README_VERSION found")
 }
 // Proceed
 console.log("Begin syncing documentation to Front Knowledge Base")
@@ -149,6 +157,31 @@ if (filteredChangedFiles.length) {
     allFrontKBAs = await getAllArticlesInKB(FRONT_KNOWLEDGE_BASE_ID)
 }
 
+function updateReadMeMetaData(filepath, knowledgebase_article_id){
+    console.log({filepath, knowledgebase_article_id})
+    // get slug from filepath
+    const fileNameArray = filepath.split("/")
+    const fileName = fileNameArray[fileNameArray.length-1]
+    const slug = fileName.substring(0, fileName.length-3)
+
+    console.log({slug})
+
+    const options = {
+    method: 'PATCH',
+    headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+        authorization: `Bearer ${README_API_TOKEN}`
+    },
+    body: JSON.stringify({metadata: {description: knowledgebase_article_id || ""}})
+    };
+
+    fetch(`https://api.readme.com/v2/branches/${README_VERSION}/guides/${slug}`, options)
+    .then(res => res.json())
+    .then(res => console.log(res))
+    .catch(err => console.error(err));
+}
+
 // All file paths locally
 // All KBAs
 // Changed files
@@ -209,8 +242,11 @@ async function writeFilesToFrontKB(filePaths){ // Invoke with list of changed fi
             try {
                 const res = await fetch(`${FRONT_API}/knowledge_bases/${FRONT_KNOWLEDGE_BASE_ID}/articles`, options)
                 await res.json()
+                .then(res => updateReadMeMetaData(res.name, res.id))
                 stats.created ++
-                // USE RESPONSE TO UPDATE README METADATA WITH kba_id
+
+                
+                
 
 
             } catch (err) {
@@ -237,6 +273,11 @@ async function writeFilesToFrontKB(filePaths){ // Invoke with list of changed fi
             try {
                 const res = await fetch(`${FRONT_API}/knowledge_base_articles/${existingKBA.documentId}/content`, options)
                 await res.json()
+                .then((res) => {
+                    console.log("Updating ReadMeMetaData")
+                    console.log(res.name, res.id)
+                    updateReadMeMetaData(res.name, res.id)
+                })
                 stats.updated ++
                 // USE RESPONSE TO UPDATE README METADATA WITH kba_id
 
