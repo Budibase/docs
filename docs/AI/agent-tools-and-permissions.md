@@ -3,7 +3,7 @@ title: Agent tools and permissions
 deprecated: false
 hidden: false
 metadata:
-  description: kba_5h7gi
+  description: kba_5v2gy
   robots: index
 ---
 Tools determine what data your Agent can read or change, and which actions it can trigger.
