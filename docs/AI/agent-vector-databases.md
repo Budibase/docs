@@ -3,6 +3,7 @@ title: Agent vector databases
 deprecated: false
 hidden: false
 metadata:
+  description: kba_5h75u
   robots: index
 ---
 Vector databases store embeddings and enable semantic retrieval for Agent knowledge.
