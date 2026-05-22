@@ -3,6 +3,7 @@ title: Agents config
 deprecated: false
 hidden: false
 metadata:
+  description: kba_5h7lu
   robots: index
 ---
 This page covers the required setup before using Budibase Agents in messaging channels.
