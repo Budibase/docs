@@ -4,6 +4,7 @@ excerpt: How to enable flagged features on your tenant
 deprecated: false
 hidden: false
 metadata:
+  description: kba_5hjpe
   robots: index
 ---
 We release features behind feature flags, before they are generally available.
