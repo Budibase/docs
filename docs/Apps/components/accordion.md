@@ -5,7 +5,7 @@ deprecated: false
 hidden: false
 metadata:
   title: ''
-  description: kba_here
+  description: kba_here_hello_world
   robots: index
 next:
   description: ''
