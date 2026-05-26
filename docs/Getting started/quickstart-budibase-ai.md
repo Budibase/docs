@@ -34,7 +34,7 @@ AI features are workspace specific, so you will need to connect to these again i
 
 For a full breakdown of the new setup area, see [Connections](doc:connections).
 
-> 📘 If you are self-hosting and want to use Budibase AI, you need to make sure you are on an Enterprise plan and have a active license key in your Workspace. See the [Workspace management guide](https://docs.budibase.com/docs/workspace-management#self-hosted-workspaces).
+> 📘 If you are self-hosting and want to use Budibase AI, you need to make sure you are on an Enterprise plan and have a active license key in your Workspace. See the [Tenant management guide](doc:tenant-management).
 
 ## Where You Can Use AI
 

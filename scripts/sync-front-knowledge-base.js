@@ -6,10 +6,12 @@ const {
     FRONT_API_TOKEN,
     FRONT_KNOWLEDGE_BASE_ID,
     FRONT_AUTHOR_ID,
+    README_API_TOKEN,
+    README_VERSION
 } = process.env
 
 const FRONT_API = "https://api2.frontapp.com"
-const changedFiles = JSON.parse(process.argv[3] || [])
+const changedFiles = JSON.parse(process.argv[3] || "[]")
 
 // Filter out files that aren't docs
 const filteredChangedFiles = changedFiles.filter((file) => file.substring(file.length-3) === ".md")
@@ -33,9 +35,22 @@ if (!FRONT_AUTHOR_ID) {
 } else {
     console.log("FRONT_AUTHOR_ID found")
 }
+
+if (!README_API_TOKEN) {
+    throw new Error("Missing README_API_TOKEN")
+} else {
+    console.log("README_API_TOKEN found")
+}
+
+if (!README_VERSION){
+    throw new Error("Missing README_VERSION")
+} else {
+    console.log("README_VERSION found")
+}
 // Proceed
 console.log("Begin syncing documentation to Front Knowledge Base")
 
+console.log(`Files invoked with: ${changedFiles}`)
 console.log(`Files to sync: ${filteredChangedFiles.length}`)
 for (const filepath of filteredChangedFiles) {
     console.log(filepath);
@@ -113,7 +128,7 @@ async function getAllArticlesInKB(knowledgeBaseId) {
         url = data._pagination?.next || null
 
         if (url) {
-            await sleep(2000)
+            await sleep(1300)
         }
     }
 
@@ -129,14 +144,42 @@ async function getAllArticlesInKB(knowledgeBaseId) {
             documentId: data.id
         })
 
-        await sleep(2000)
+        await sleep(1300)
     }
 
     console.log(`${allArticles.length} articles mapped to allArticles array`)
     return allArticles
 }
 
-const allFrontKBAs = await getAllArticlesInKB(FRONT_KNOWLEDGE_BASE_ID)
+let allFrontKBAs = []
+if (filteredChangedFiles.length) {
+    allFrontKBAs = await getAllArticlesInKB(FRONT_KNOWLEDGE_BASE_ID)
+}
+
+function updateReadMeMetaData(filepath, knowledgebase_article_id){
+    console.log({filepath, knowledgebase_article_id})
+    // get slug from filepath
+    const fileNameArray = filepath.split("/")
+    const fileName = fileNameArray[fileNameArray.length-1]
+    const slug = fileName.substring(0, fileName.length-3)
+
+    console.log({slug})
+
+    const options = {
+    method: 'PATCH',
+    headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+        authorization: `Bearer ${README_API_TOKEN}`
+    },
+    body: JSON.stringify({metadata: {description: knowledgebase_article_id || ""}})
+    };
+
+    fetch(`https://api.readme.com/v2/branches/${README_VERSION}/guides/${slug}`, options)
+    .then(res => res.json())
+    .then(res => console.log(res))
+    .catch(err => console.error(err));
+}
 
 // All file paths locally
 // All KBAs
@@ -147,19 +190,26 @@ const allFrontKBAs = await getAllArticlesInKB(FRONT_KNOWLEDGE_BASE_ID)
 // if file exists locall AND IS IN KBA, update file using KBA-ID
 
 // Write files to Front KB
-function writeFilesToFrontKB(filePaths){ // Invoke with list of changed files ["/path/to/file1", "/path/to/file2", ...]
+async function writeFilesToFrontKB(filePaths){ // Invoke with list of changed files ["/path/to/file1", "/path/to/file2", ...]
+    if (!allFrontKBAs) {
+        return
+    }
     console.log("writeFilestoFrontKB")
     const stats = {
         updated: 0,
         created: 0,
         errors: []
     }
-    filePaths.forEach((filepath, index) => {
+
+    for (const [index, filepath] of filePaths.entries()) {
         console.log(`Writing file ${filepath}`)
-        setTimeout(() => {
+
+        if (index > 0) {
+            await sleep(1300)
+        }
+
         // If there isn't a KBA with the name(which is a filepath) that matches that of this file, existingKBA will be false
         const existingKBA = allFrontKBAs.find((element) => {
-            console.log({element})
             return element.documentTitle === filepath
         })
         const thisFile = allFiles.find((file) => {
@@ -188,16 +238,20 @@ function writeFilesToFrontKB(filePaths){ // Invoke with list of changed files ["
                 })
                 };
 
-            fetch(`${FRONT_API}/knowledge_bases/${FRONT_KNOWLEDGE_BASE_ID}/articles`, options)
-                .then(res => res.json())
-                .then((res) => {
-                    console.log(res)
-                    stats.created ++
-                })
-                .catch((err) => {
-                    console.error(err)
-                    stats.errors.push(err)
-                });
+            try {
+                const res = await fetch(`${FRONT_API}/knowledge_bases/${FRONT_KNOWLEDGE_BASE_ID}/articles`, options)
+                await res.json()
+                .then(res => updateReadMeMetaData(res.name, res.id))
+                stats.created ++
+
+                
+                
+
+
+            } catch (err) {
+                console.error(err)
+                stats.errors.push(err)
+            }
         } else {
             // Update Existing Article
             console.log("KBA Exists, updating existing KBA with new info")
@@ -215,19 +269,25 @@ function writeFilesToFrontKB(filePaths){ // Invoke with list of changed files ["
                 })
             };
 
-            fetch(`${FRONT_API}/knowledge_base_articles/${thisFile.documentId}/content`, options)
-                .then(res => res.json())
+            try {
+                const res = await fetch(`${FRONT_API}/knowledge_base_articles/${existingKBA.documentId}/content`, options)
+                await res.json()
                 .then((res) => {
-                    console.log(res)
-                    stats.updated ++
+                    console.log("Updating ReadMeMetaData")
+                    console.log(res.name, res.id)
+                    updateReadMeMetaData(res.name, res.id)
                 })
-                .catch((err) => {
-                    console.error(err)
-                    stats.errors.push(err)
-                });
+                stats.updated ++
+                // USE RESPONSE TO UPDATE README METADATA WITH kba_id
+
+                
+            } catch (err) {
+                console.error(err)
+                stats.errors.push(err)
+            }
         }
-        }, index * 2_000)  
-    })
+    }
+
     console.log(`${stats.created} Knowledge Base Articles created`)
     console.log(`${stats.updated} Knowledge Base Articles Updated`)
     console.log(`${stats.errors.length} errors`)
@@ -238,7 +298,6 @@ function writeFilesToFrontKB(filePaths){ // Invoke with list of changed files ["
     }
 }
 
-writeFilesToFrontKB(filteredChangedFiles)
-
+await writeFilesToFrontKB(filteredChangedFiles)
 
 

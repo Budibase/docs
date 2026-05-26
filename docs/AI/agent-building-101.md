@@ -3,6 +3,7 @@ title: Agent building 101
 deprecated: false
 hidden: false
 metadata:
+  description: kba_5v2bm
   robots: index
 ---
 In Budibase, Agents enable AI to interact with the data, tools, and automations in your Workspace.

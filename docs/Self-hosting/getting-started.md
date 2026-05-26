@@ -8,7 +8,7 @@ link:
   url: https://vimeo.com/showcase/budibase-get-started
 metadata:
   title: ''
-  description: ''
+  description: kba_5hpqa
   robots: index
 next:
   description: ''

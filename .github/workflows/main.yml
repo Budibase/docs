@@ -3,7 +3,7 @@ name: Sync docs to Front Knowledge Base
 on:
   push:
     branches: 
-      - master
+      - v4.0.0
   workflow_dispatch:
 
 jobs:
@@ -12,11 +12,9 @@ jobs:
     env:
       FRONT_API_TOKEN: ${{ secrets.FRONT_API_TOKEN }}
       FRONT_KNOWLEDGE_BASE_ID: ${{ secrets.FRONT_KNOWLEDGE_BASE_ID }}
-      FRONT_KNOWLEDGE_BASE_NAME: ${{ secrets.FRONT_KNOWLEDGE_BASE_NAME }}
-      FRONT_KNOWLEDGE_BASE_TYPE: external
       FRONT_AUTHOR_ID: ${{ secrets.FRONT_AUTHOR_ID }}
-      FRONT_KNOWLEDGE_BASE_CATEGORY_ID: ${{ secrets.FRONT_KNOWLEDGE_BASE_CATEGORY_ID }}
-      FRONT_ARTICLE_STATUS: published
+      README_API_TOKEN: ${{ secrets.README_API_TOKEN }}
+      README_VERSION: ${{ secrets.README_VERSION }}
 
     steps:
       - uses: actions/checkout@v4

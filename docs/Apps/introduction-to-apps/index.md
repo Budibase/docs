@@ -18,7 +18,7 @@ These are managed within the Apps page of each individual Workspace.
 
 To add a new App to our Workspace, we can hit `New App`, before selecting a `Name` and `URL` extension.
 
-This then takes us to the App Builder, where we can start designing screens. Take a look at our [App Building 101](https://docs.budibase.com/v3.3.0/docs/app-building-101) guide to learn more.
+This then takes us to the App Builder, where we can start designing screens. Take a look at our [App Building 101](doc:app-building-101) guide to learn more.
 
 By default, new Apps are not deployed live. We’ll see how to set Apps live below, under Setting Apps live.
 
