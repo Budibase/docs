@@ -95,7 +95,7 @@ budi plugins --watch
 
 You can find a full end to end tutorial on using the `budi backups` CLI command here:
 
-[https://docs.budibase.com/docs/backups](https://docs.budibase.com/docs/backups)
+[https://docs.budibase.com/docs/backups](https://docs.budibase.com/docs/backups-1)
 
 > 📘 You need to provide credentials to the budi backups command
 >
