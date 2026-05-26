@@ -6,6 +6,7 @@ excerpt: >-
 deprecated: false
 hidden: false
 metadata:
+  description: kba_5hc76
   robots: index
 ---
 Using a Single Row Provider, it is possible to fetch all data from a single row in the specified table, when supplied with an `_id`. This can be useful to supplement the on-click actions of a [Table](https://docs.budibase.com/docs/table), or [Chart ](https://docs.budibase.com/docs/chart), for example.

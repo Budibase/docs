@@ -3,6 +3,7 @@ title: Gauge Chart
 deprecated: false
 hidden: true
 metadata:
+  description: kba_5h8oy
   robots: index
 ---
 A gauge chart displays progress or performance for multiple items simultaneously using coloured circular arcs. Each ring represents a separate entity (e.g., a user, task, or metric), and the length of the coloured arc shows how much of the target has been achieved

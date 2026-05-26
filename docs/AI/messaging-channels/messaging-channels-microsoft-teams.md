@@ -3,6 +3,7 @@ title: Microsoft Teams messaging channel
 deprecated: false
 hidden: false
 metadata:
+  description: kba_5v2ki
   robots: index
 ---
 Use this guide to deploy an agent to Microsoft Teams.

@@ -5,7 +5,7 @@ deprecated: false
 hidden: false
 metadata:
   title: ''
-  description: ''
+  description: kba_5hdoi
   robots: index
 next:
   description: ''
