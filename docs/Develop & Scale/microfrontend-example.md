@@ -1,5 +1,5 @@
 ---
-title: Microfrontend Example
+title: Microfrontend Example🔒
 deprecated: false
 hidden: false
 metadata:
