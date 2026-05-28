@@ -16,9 +16,7 @@ Developers can write their own plugins for where custom datasources and componen
 
 ## Importing plugins
 
-An admin user can see a list of your plugins under the *Plugins* section of the Budibase [Portal](https://docs.budibase.com/docs/portal). To get started using custom plugins, click "Add Plugin". Alternatively you can check our curated list of Budibase plugins, including data sources and components, contributed by the community.
-
-<Image align="center" src="https://files.readme.io/bc159e1cee248702843f218a487b0d1720e90a6f83693efde29107a89440f109-Screenshot_2024-10-22_at_11.07.05.png" />
+An admin user can see a list of your plugins under the *Plugins* section of the Settings Modal. To get started using custom plugins, click "Add Plugin". Alternatively you can check our curated list of Budibase plugins, including data sources and components, contributed by the community.
 
 <br />
 
@@ -84,17 +82,12 @@ You can import a plugin by pressing the `Add plugin` button. This will display a
   </tbody>
 </Table>
 
-<Image align="center" src="https://files.readme.io/89da718044369908e89362efa4765e39d1b33bbafe8d7a555edeea86669e6c5c-Screenshot_2024-10-22_at_11.12.51.png" />
-
 Once your plugin has been imported, you will now be able to make use of it within all of your apps!
 
 In the case of a **custom datasource**, it will appear as a new datasource at the bottom of the *Add datasource* dialog and can be used just like any other [data source](https://docs.budibase.com/docs/data-sources).
 
-<Image align="center" src="https://files.readme.io/8d0ca798008906f1833a44f8941be78985fbcd9c3ef249a2ce6d62cc124a7108-CustomDataSource_1.png" />
 
 In the case of a **custom component**, it will appear in the builder components list under the *Plugins* section.
-
-<Image align="center" src="https://files.readme.io/5a44802781096d8786e9ece5566659f3fc0ddc1654821da8038104a53f51e1cd-Screenshot_2024-10-22_at_11.34.06.png" />
 
 > 🚧 Cloud hosting
 >
@@ -179,6 +172,5 @@ Currently, the versioning must be handled manually, where you can have multiple 
 
 Click on one of the plugins from the plugins list. This will pop up a dialog from which you can press `Delete`
 
-![](https://files.readme.io/8e68de2-Screenshot_2022-09-15_at_13.49.07.png)\
 What’s Next\
 Tell your users what they should do after they've finished this page
