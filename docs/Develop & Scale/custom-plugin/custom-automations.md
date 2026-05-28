@@ -66,9 +66,7 @@ cd budibase-automation
 yarn build
 ```
 
-Assuming you have [updated the server env variable](https://docs.budibase.com/docs/custom-plugin#hot-reloading-developers-only) you should now be able to see your automation plugin in Budibase:
-
-<Image align="center" src="https://files.readme.io/acf90168bb4cfe65b9677f90fb43a5420307404cbd1763165df16a10198c895a-untitled_5.png" />
+Assuming you have [updated the server env variable](https://docs.budibase.com/docs/custom-plugin#hot-reloading-developers-only) you should now be able to see your automation plugin in Budibase, as a selectable automation step.
 
 ### Automation.ts
 
@@ -103,8 +101,6 @@ You can jump to the automation schema page [here](https://docs.budibase.com/docs
 
 ### Adding an icon
 
-Adding an icon to your automation action is quite simple, first pick the icon you would like to use on the [Spectrum Icon](https://spectrum.adobe.com/page/icons/) site. For example if we you want to use the "Ad Display" icon shown below:
+Adding an icon to your automation action is quite simple, first pick the icon you would like to use on the [Phosphor Icon](https://phosphoricons.com/) site. For example if we you want to use the "list-magnifying-glass" icon shown [here](https://phosphoricons.com/?q=list+magnifying+glass).
 
-![](https://files.readme.io/78c1d43-image.png)
-
-Then all you need to do is update your `schema.json` - find the top level `icon` field and set it to `AdDisplay` - this is case sensitive and should not contain spaces.
+Then all you need to do is update your `schema.json` - find the top level `icon` field and set it to `list-magnifying-glass` - this is case sensitive and should not contain spaces.
