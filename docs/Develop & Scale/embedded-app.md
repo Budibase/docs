@@ -46,6 +46,39 @@ Once you app is published, you will see a new button appear: `</> Embed`. Clicki
 
 <br />
 
+## Embed security settings
+
+The Embed settings page now includes two controls that affect how your app is embedded:
+
+* `Allowed domains` restricts which parent sites can place the app in an iframe.
+* `Authenticate embedded users` lets the host site pass a signed token on the embed URL and map the token's email to an existing Budibase user.
+
+### Allowed domains
+
+Add one or more domains to the `Allowed domains` field to narrow the `frame-ancestors` CSP directive for embedded apps.
+
+If the list is empty, Budibase keeps the previous behaviour and allows embedding from any origin.
+
+Valid examples include:
+
+* `https://example.com`
+* `https://*.example.com`
+
+### Authenticating embedded users
+
+When `Authenticate embedded users` is enabled, the host site can append a signed token as the `jwt` query parameter on the embed URL.
+
+Budibase verifies the token, reads the configured email claim, and looks up an existing Budibase user with that email address. If a match is found, Budibase creates a session for that user before serving the embedded app.
+
+The verification settings support:
+
+* `ES256` and `RS256` for public-key verification
+* `HS256` for shared-secret verification
+* an optional issuer check
+* a configurable email claim path, such as `userdata.email`
+
+<br />
+
 ## Settings
 
 The iframe has a number of attributes that can be changed. We recommend that you only change the _width_, _height_ and _frameborder_ properties as changing the allow permissions could affect the working of your app.
