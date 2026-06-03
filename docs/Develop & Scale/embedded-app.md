@@ -30,19 +30,11 @@ To obtain the embed code snippet, click the `Settings` tab within your workspace
 
 Here, you will be presented with several different tabs. Select `Embed`
 
-<Image align="center" border={false} src="https://files.readme.io/dc125e295c4fda098787de840fdbb51a4e789bb58a56274c8480ca2961d92eea-Screenshot_2025-10-01_at_15.06.30.png" />
-
-You can use the select input field in the above image to select which app you'd like to copy the iframe code of. This will change the displayed iframe in the textarea below.
+You can use the app selector to choose which app's iframe code you want to copy.
 
 #### Publishing your app
 
 You can publish your app by clicking the drop-down in the top-right corner of the screen, and clicking `Publish`.
-
-<Image align="center" alt="Published apps support embedding" border={false} caption="Published apps support embedding" src="https://files.readme.io/164138c-publish.png" />
-
-Once you app is published, you will see a new button appear: `</> Embed`. Clicking this button will take you to the Embed settings section.
-
-<Image align="center" alt="Click the 'Copy code' to quick copy the iframe contents" border={false} caption="Highlight the iframe, right click and copy the code" src="https://files.readme.io/0edd65769ac076e9d789b550fa9c8c6025a4cf59556758de853bfd7d35fc6e76-Screenshot_2025-10-01_at_15.06.30.png" />
 
 <br />
 
@@ -98,10 +90,6 @@ In this case you will want to hide the navigation links, as well as the app titl
 
 To do this, click on your app screen and in the <Glossary>Settings Panel</Glossary> toggle off `Show nav`. Remember that the access level of the screen should also be public! Publish your app for changes to take effect.
 
-<Image align="center" alt="Turning app navigation off" border={false} caption="Turning app navigation off" src="https://files.readme.io/5aa6655-Screenshot_2023-06-28_at_11.12.55.png" />
-
-<Image align="center" alt="The 'Clients' table view can now be embedded as an inline widget" border={false} caption="The 'Clients' table view can now be embedded as an inline widget" src="https://files.readme.io/36ccbd9-Screenshot_2023-06-28_at_11.17.55.png" />
-
 ***
 
 <br />
@@ -111,7 +99,3 @@ To do this, click on your app screen and in the <Glossary>Settings Panel</Glossa
 The feature of embedding a Budibase app as an iframe should not be confused with the Embed [Component](doc:components) within the **Design** section.
 
 A common use-case for the embed component is to add [Global styling](https://docs.budibase.com/docs/custom-css#global-styling) to your app screens. You could however also use it to embed iframes, including another Budibase app!
-
-<Image align="center" alt="Adding an Embed component" border={false} caption="Adding an Embed component" src="https://files.readme.io/bc1eada-adding_embed.png" />
-
-<Image align="center" alt="Adding an iframe to the Embed component - in this case another Budibase app!" border={false} caption="Adding an iframe to the Embed component - in this case another Budibase app!" src="https://files.readme.io/0f307d9-Screenshot_2023-06-28_at_11.25.51.png" />
