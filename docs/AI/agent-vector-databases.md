@@ -8,7 +8,7 @@ metadata:
 ---
 Vector databases store embeddings and enable semantic retrieval for Agent knowledge.
 
-In Budibase, vector databases are configured in **Workspace Settings > Connections > Knowledge bases** and then assigned to each Agent in the Knowledge tab.
+In Budibase, vector databases are configured in **Workspace Settings > Connections > Knowledge bases** and then assigned from an Agent's **Operations** panel.
 
 ## Supported provider
 
@@ -32,8 +32,8 @@ Currently we only support pgvector as a provider.
 ## Attach a vector database to an Agent
 
 1. Open your Agent
-2. Go to the **Knowledge** tab
-3. Select a **Vector database**
+2. Open the **Operations** panel and select the operation you want to configure
+3. In the **Knowledge** area, select a **Vector database**
 4. Select an **Embedding model**
 5. Save
 
