@@ -2,7 +2,8 @@
 title: Getting started
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
+deprecated: true
 link:
   new_tab: true
   url: https://vimeo.com/showcase/budibase-get-started

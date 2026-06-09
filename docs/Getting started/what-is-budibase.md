@@ -1,6 +1,6 @@
 ---
 title: Budibase documentation
-excerpt: Helping you transform workflows.
+excerpt: Build internal tools and automate workflows with your data, LLMs, and APIs.
 deprecated: false
 hidden: false
 metadata:
@@ -17,13 +17,16 @@ next:
       title: Budibase Templates
       url: https://budibase.com/templates/
 ---
-Welcome engineers. Our docs cover guides, examples, references, and more to help you transform workflows.
+Welcome to Budibase docs. Find guides, examples, and references for building internal tools and automating business workflows.
 
 ## About Budibase
 
-We like to describe Budibase as the open-source toolkit for transforming workflows. Over 200,000 teams use it. With tools such as an AI automation platform, app builder, built-in database, data GUIs, REST API connector, and more, you can:
+Budibase is an open-source platform for internal tools and workflow automation. Over 200,000 teams use it to automate workflows, handle requests, build internal tools, and connect business systems using their own data, LLMs, and APIs.
 
-* Automations: Transform workflows with AI.
-* App building: Build beautiful forms and applications people enjoy using.
-* [Data management](doc:data): Connect to multiple data sources and build your own action tables to manage workflows.
-* [Self-hosting](doc:getting-started): Provide a secure environment for controlling internal operations.
+With Budibase, you can:
+
+* Automate repetitive work with AI-powered workflows
+* Handle internal requests with forms, approvals, and task routing
+* Build internal tools quickly with reusable components and logic
+* [Connect your data and systems](doc:data) across databases, APIs, and business tools
+* [Self-host securely](doc:hosting-methods) to keep control of your environment and operations

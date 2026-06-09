@@ -114,4 +114,4 @@ This command can be run from within the same directory as your Budibase `.env` f
 budi backups --export --env .env
 ```
 
-For more see the [Backups](https://docs.budibase.com/docs/backups) section.
+For more see the [Backups](https://docs.budibase.com/docs/backups-1) section.
