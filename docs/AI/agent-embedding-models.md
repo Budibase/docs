@@ -8,7 +8,7 @@ metadata:
 ---
 Embedding models convert text into vectors so your Agent can retrieve relevant knowledge chunks during responses.
 
-In Budibase, embedding model configuration is managed in **Workspace Settings > Connections > Knowledge bases** and used with Agent Knowledge settings.
+In Budibase, embedding model configuration is managed in **Workspace Settings > Connections > Knowledge bases** and used from an Agent's **Operations** panel.
 
 ## Configure an embedding model
 
@@ -22,8 +22,8 @@ In Budibase, embedding model configuration is managed in **Workspace Settings > 
 ## Attach an embedding model to an Agent
 
 1. Open your Agent
-2. Go to the **Knowledge** tab
-3. Select an **Embedding model**
+2. Open the **Operations** panel and select the operation you want to configure
+3. In the **Knowledge** area, select an **Embedding model**
 4. Save the Agent
 
 When both embedding model and vector database are configured, additional retrieval settings are available:
