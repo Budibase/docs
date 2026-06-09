@@ -90,4 +90,4 @@ See this [discussion answer](https://github.com/Budibase/budibase/discussions/39
 
 ## Recommended resources
 
-The number of processing cores and amount of RAM required by Budibase docker containers will depend greatly on expected usage, however for most use cases **2 core and 4.5GB of RAM** should be enough. (Raspberry Pi 5 is capable of running Budibase)
+The number of processing cores and amount of RAM required by Budibase docker containers will depend greatly on expected usage, however for most use cases **2 core and 6GB of RAM** should be enough. 
