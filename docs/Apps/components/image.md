@@ -12,7 +12,6 @@ next:
 ---
 The image component is used to display images. To add an image, link to an image using the URL setting. For example, add `https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Photographer_Photographing_Nevada_Mountains.jpg/1920px-Photographer_Photographing_Nevada_Mountains.jpg` to the URL setting, and an image from wikipedia of a photographer photographing mounts will be added to your app.
 
-<Image align="center" alt={2559} border={false} caption="By Noah Wulf - Own work, CC BY-SA 4.0, [https://commons.wikimedia.org/w/index.php?curid=97062864](https://commons.wikimedia.org/w/index.php?curid=97062864)" title="CleanShot 2022-03-09 at 17.30.22.png" src="https://files.readme.io/96cbfc6c15555f9ec7460000e009bb8ec3aa1e586457ba4cd2517eb341dc594a-Screenshot_2025-08-21_at_13.50.04.png" width="100%" />
 
 ## Displaying images from an attachment
 
@@ -28,7 +27,6 @@ This would be the same as setting the src attribute in an HTML img element
 
 <br />
 
-<Image border={false} src="https://files.readme.io/81a146e90f7130456122685c17ccd5a3d19d4c629c1656f397f6d49c71e00838-image.png" />
 
 <br />
 
@@ -36,7 +34,6 @@ This would be the same as setting the src attribute in an HTML img element
 
 Create a table called _Landscapes_ with a category name and an attachment column for the images. Upload your images.
 
-<Image align="center" border={false} src="https://files.readme.io/6c51d2f723f94ef27b30a4a31e8a469e1535dce0c36095f1ccb65d0bc62a376c-Screenshot_2025-08-21_at_13.58.48.png" />
 
 #### Design
 
@@ -50,14 +47,12 @@ Create a table called _Landscapes_ with a category name and an attachment column
 4. Underneath the Text, add a data provider for the "Images". Attachments List column types which we created are saved in <a href="https://docs.budibase.com/docs/json#arrays">JSON Arrays</a>.
 5. Change the source of the data provider to JSON / CSV
 
-   <Image align="center" border={false} src="https://files.readme.io/fce32d01078b7a12838280c046fba5c5d9c3da6c734af9ffcbff24d1e0d686eb-Screenshot_2025-08-21_at_14.10.42.png" />
 6. Click the settings cog beside JSON / CSV and paste this binding inside it `{{ [New Repeater].Landscapes.images }}`
 7. Add a repeater so that each attachment image can be displayed.
 8. Finally, add an Image component within the repeater. Paste the below binding inside the URL setting of the image component. Using JavaScript `return $("[New Data Provider 2].Rows")[$("[New Repeater 2].[Row index]")].url` - This sets the image URL using the second Data Provider and the repeater's row-index.
 
 #### Result
 
-<Image align="center" border={false} src="https://files.readme.io/70536ef404a7420bc668b1657af8ba1f682da099429f42cfa6a132d8aa2a0838-Screenshot_2025-08-21_at_15.00.33.png" />
 
 #### Single or fixed number of image attachments
 
@@ -71,19 +66,14 @@ You may wish to store your image files in an external S3 bucket instead of the b
 
 #### Data
 
-Upload your images to your S3 bucket. You will need to allow public access to the images in AWS:
-
-<Image border={false} src="https://files.readme.io/9bdcee7-Screenshot_2022-11-21_at_17.08.00.png" />
+Upload your images to your S3 bucket. You will need to allow public access to the images in AWS.
 
 Next add your S3 <Glossary>Datasource</Glossary> with a simple **Read** query to list all of the files in the bucket.
-
-<Image align="center" border={false} src="https://files.readme.io/c7a5675f66c86c3fc085d673e704a8e55918a67c8fad560219d0afd7a996d076-Screenshot_2025-09-02_at_11.58.53.png" />
 
 #### Design
 
 Add a [Repeater Block](https://docs.budibase.com/docs/blocks#repeater-block) with the _Read_ query as its datasource. Nest your image components, using the following URL binding: `https://<bucket-name>.s3.us-west-1.amazonaws.com/{{ New Repeater block.Read.Key }}`
 
-<Image align="center" border={false} src="https://files.readme.io/ee3bb39cdc25a5c7fcf259a5f7d0e027429f0312b84eac34ff0bec2bfdfb5ff4-Screenshot_2025-09-02_at_12.02.18.png" />
 
 ## Image carousel
 
@@ -93,8 +83,6 @@ There is no built-in slideshow component, however there is a tutorial <a href="h
 
 Add the background image component. This component can take children, which will appear in front of the background.
 
-<Image align="center" alt="Adding the background image component" border={false} caption="Adding the background image component" src="https://files.readme.io/d0673713f5107a85e12e777fc976b124511296c5b6aa9db7e51ddc2cebc78a89-Screenshot_2025-09-02_at_11.57.35.png" />
 
 Provide a valid URL as the image source. The _Position_ property can also be edited to offset the background image.
 
-<Image align="center" border={false} src="https://files.readme.io/4b7b09149846d4976213d4ed4f79f74defcc65a87ac9bd6ed811224c095a5e34-Screenshot_2025-09-02_at_11.57.05.png" />

@@ -30,15 +30,11 @@ Next click on the form component that was just added, then click add component a
 
 When looking for a key-press input, a handy tip is to search for the word 'field'.
 
-<Image align="center" alt="Search for and select a field to add" border={false} caption="Search for and select a field to add" src="https://files.readme.io/1e2467000960cda49c1c5e181ab7c1c293b3b0f01738527d1c41307d7d57a3a7-Screenshot_2024-10-01_at_08.31.40.png" />
 
-<Image align="center" alt="Example form component tree" border={false} caption="Example form component tree" src="https://files.readme.io/14471d3c29673cc558f2c3ba4966bd80958ab20ea02ce2c6ff0895a0212fd9d1-Screenshot_2024-10-01_at_08.36.26.png" />
 
 Finally, for an input to be useable, it must be given a field name. If the form has been given a [schema](https://docs.budibase.com/docs/forms#form-schema), you will be able to select from a list of type-matched fields. Alternatively, you can manually enter a field name.
 
-<Image align="center" alt="Selecting a field from the form schema" border={false} caption="Selecting a field from the form schema" src="https://files.readme.io/e73b41badc69f18554df08f495dc2e28af1e01d8a2edc6e69386108d0ffbe551-Screenshot_2024-10-01_at_08.41.05.png" />
 
-<Image align="center" alt="Fields are now visible" border={false} caption="Fields are now visible" src="https://files.readme.io/16da35a22935dc342ff58607a60ec1b2e14f172905f53020b09f9ba30b2b60a6-Screenshot_2024-10-01_at_08.34.19.png" />
 
 ## Using form blocks
 
@@ -64,9 +60,7 @@ Allows you to specify [Actions](doc:actions) to be triggered when the input fiel
 
 When using the field value as a <Glossary>Binding</Glossary>, make sure to use the current field value. For example, you may want to use the first name value in an on change action:
 
-<Image align="center" alt="Select the field that triggered the on change" border={false} caption="Select the field that triggered the on change" src="https://files.readme.io/15a969f-Screenshot_2022-12-13_at_11.37.18.png" />
 
-<Image align="center" alt="Select Field Value; i.e. the on change value" border={false} caption="Select Field Value; i.e. the on change value" src="https://files.readme.io/c72ca4d-Screenshot_2022-12-13_at_11.37.28.png" />
 
 > 👍 `{{ Field Value }}`
 >
@@ -82,7 +76,6 @@ When using the field value as a <Glossary>Binding</Glossary>, make sure to use t
 
 Triggers the same Actions on input events (_typing, paste, barcode scans_) as the value changes, rather than waiting for the change event. Available for Text, Number, BigInt, Password, and Image fields where an input event is emitted.
 
-<Image align="center" border={false} src="https://files.readme.io/a1b77838121d02534c39d05bebc428dc0541838f1f298b081caf8b6a019370cc-image.png" />
 
 <br />
 
@@ -113,7 +106,6 @@ Allows users to enter whole or decimal numbers.
 
 It is compatible with the [Number](doc:number) data type.
 
-<Image border={false} src="https://files.readme.io/8fb7f67-number-field.png" title="number-field.png" />
 
 ## Password field
 
@@ -121,31 +113,25 @@ Same as the text field, however it hides the text being entered.
 
 Any binding of the field value will be in plain text, and Budibase does not perform any hashing by default on password fields when saving rows.
 
-<Image border={false} src="https://files.readme.io/6e13376-password-field.png" title="password-field.png" />
 
 ## Long form field
 
 The long form field is a text field that allows for longer and multiline input.
 
-<Image border={false} src="https://files.readme.io/65fabc6-long-form-field.png" title="long-form-field.png" />
 
 You can also enable rich-text editing with markdown support by selecting `Rich text` in the formatting setting.
 
-<Image align="center" alt="Selecting rich text formatting" border={false} caption="Selecting rich text formatting" src="https://files.readme.io/a678858-Screenshot_2022-12-13_at_12.51.32.png" />
 
-<Image border={false} src="https://files.readme.io/f3b6ce5-long-form-markdown.png" title="long-form-markdown.png" />
 
 Usually when [importing a table from CSV](https://docs.budibase.com/docs/budibasedb#csv-upload) or [fetching SQL tables](https://docs.budibase.com/docs/sql-datasource#fetching-tables) string data types will automatically be assigned as a Text type.
 
 If you want to support the long form field, then you will need to [edit column](https://docs.budibase.com/docs/budibasedb#editing-columns) and change the type.
 
-<Image align="center" alt="Allowing the address to be multi-line" border={false} caption="Allowing the address to be multi-line" src="https://files.readme.io/6274658-Screenshot_2022-12-13_at_13.00.42.png" />
 
 ## JSON field
 
 The JSON field allows you to enter [JSON](doc:json) into resizable box with formatting enabled.
 
-<Image border={false} src="https://files.readme.io/8fec4ee-json-box_Medium.jpeg" title="json-box Medium.jpeg" />
 
 ## BigInt field
 

@@ -48,8 +48,32 @@ Question,Answer
 
 ### Component tree
 
-<Image align="center" src="https://files.readme.io/ae1da882ff652b768540368497fcfb4912a100aefd96fa467e381ef8a2bfa87e-Screenshot_2025-08-19_at_11.15.50.png" />
+In the component tree, the Accordion acts as a parent container for any content you want to show or hide.
+
+Typical structure:
+
+1. Add `Accordion` to your screen
+2. Nest content components inside the Accordion body (for example `Text`, `Form`, `Repeater`, or `Container`)
+3. Optionally nest additional components inside those children for more complex layouts
+
+Example tree:
+
+- `Screen`
+- `Accordion (FAQ: Shipping)`
+- `Text` (question/intro)
+- `Container`
+- `Text` (answer)
+
+All nested child components remain in the tree at all times, but their visibility in the app is controlled by whether the Accordion is expanded or collapsed.
+
 
 ### Result
 
-<Image align="center" src="https://files.readme.io/549d5de2339e5122383d9cb5d6f8b885af357b51a9e9bca127319d996eb686d0-Screenshot_2025-06-24_at_11.25.19.png" />
+<HTMLBlock>{`
+<iframe
+  src="https://cprem.budibase.app/app/docs-components-accordion#/faq"
+  style="width: 100%; height: 700px; border: 1px solid #e5e7eb; border-radius: 8px;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+`}</HTMLBlock>

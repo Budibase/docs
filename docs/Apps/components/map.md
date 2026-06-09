@@ -12,7 +12,6 @@ next:
 ---
 With the Map component, you are able to display an interactive map in any of your screens. It allows you to quickly embed a map, *and* gives you the ability to quickly display hundreds of markers on the map straight from any <Glossary>Data Sources</Glossary> you have access to.
 
-![](https://files.readme.io/19b09e3-map.jpg "map.jpg")
 
 The map component supports creating markers with latitude/longitude bindings through a [Data Provider](doc:data-provider). 
 
@@ -24,7 +23,6 @@ To add a map to your UI, you need to:
 * Add your Map component to this by clicking `Component > Elements > Embedded Map`\
   The new map will immediately display a map of London.
 
-![](https://files.readme.io/cdf037d-new-map.png "new-map.png")
 
 From now, you can start to configure your map to your liking.
 
@@ -34,7 +32,6 @@ To display markers on the map, all you need to do is link up the parent [Data Pr
 
 Once you've selected all three of those settings, you should see the map rerender with the markers in view, and the markers should be rendered directly.
 
-<Image align="center" src="https://files.readme.io/3b471e09a09c61f53304e6099309c07a9ca5282fbd5c2a74751d9a68356bd0d6-Screenshot_2025-09-04_at_10.52.46.png" />
 
 To also add a title to every marker, you can select the `Title key` setting in the <Glossary>Settings Panel</Glossary>. This title will appear when you click a marker.
 
@@ -44,31 +41,36 @@ If you want to act on clicks on the markers, you can define [Actions](doc:action
 
 One of the [Bindings](doc:bindings) available to you is the `Clicked marker` object, which contains the data of the row of the table you've selected in the [Data Provider](doc:data-provider).
 
-A quick way to go from the map to a modal with a detail screen would be something like below.
+A quick way to go from the map to a detail view is to configure a `Navigate To` action in the actions drawer:
 
-<Image align="center" src="https://files.readme.io/a89182b9de844665fc85f89f450f2771443da1a26f5ba5567b38ee6e43183f6f-Screenshot_2025-09-04_at_11.04.30.png" />
+1. Open `On click marker` and choose `Add Action`
+2. Select action type `Navigate To`
+3. Set `Destination` to `Screen`
+4. Use a dynamic route such as `/station/{{ Clicked marker._id }}`
+5. Optionally enable `Open screen in modal`
+6. Click `Save`
 
 ## Enable creating markers
 
 If you want your users to be able to create new markers directly on the map, you can enable the `Enable creating markers` setting in the <Glossary>Settings Panel</Glossary>.
 
-<Image align="center" src="https://files.readme.io/90ec77fc15968a1e839ec18eb68bc0a4a5c45b704a71711c1586fe2939bb7ca4-Screenshot_2025-09-04_at_10.54.25.png" />
 
-By default all this does, is enable the option to click on the map where there isn't a marker currently, and a new marker will be added on click, and show the `New Marker` popover, like below.
+By default all this does, is enable the option to click on the map where there isn't a marker currently, and a new marker will be added on click, and show the `New Marker` popover.
 
-![](https://files.readme.io/882886f-new-marker-on-map.png "new-marker-on-map.png")
-
-Once the marker appears, two buttons will appear below the map, allowing the user to click the `Create Marker` button. See the quick video below. 
+Once the marker appears, two buttons will appear below the map, allowing the user to click the `Create Marker` button.
 
 **Please be aware that the Create Marker buttons will only appear when you click the map.** 
 
-<Image align="center" src="https://files.readme.io/0a8aa3384cf4bd434807fb59147574f165a8ccba307373a416594ba0c20b9772-Screen_Recording_2025-09-04_at_11.09.38.gif" />
 
 This Create Marker button, by default, does nothing. But you can configure the actions done after clicking through the `Define actions` button displayed below the `Enable creating marker` setting in the <Glossary>Settings Panel</Glossary>. This will open up the [Actions](doc:actions) panel where you'll have access to 2 bindings; both latitude and longitude.
 
+Quick create-marker flow:
+1. Enable marker creation in settings (`Enable adding`).
+2. Add actions under `On create marker`.
+3. Use the `latitude` and `longitude` bindings from the marker click to create or update records.
+
 ## Changing the map tileset
 
-![](https://files.readme.io/802ee54-map-tilesets.jpg "map-tilesets.jpg")
 
 The rendering of the map is using `LeafletJS` under the hood. Therefore, you can look towards `LeafletJS` for documentation on other tilesets.  [https://leafletjs.com/reference.html#tilelayer](https://leafletjs.com/reference.html#tilelayer) 
 

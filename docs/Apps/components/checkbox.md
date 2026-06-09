@@ -12,7 +12,6 @@ next:
 ---
 The `checkbox` component allows you to let the user check a box, or not. 
 
-![](https://files.readme.io/a61ec50-checkbox.png "checkbox.png")
 
 ## Adding a checkbox
 
@@ -20,7 +19,6 @@ The `Checkbox` component can be added a [Form](doc:forms) component or can be us
 
 To add a `Checkbox` component to your screen, you need to click `Form > Checkbox`
 
-<Image align="center" src="https://files.readme.io/ee8a2c6b4101dc1028e97df11dedf2c6ac3262a23d313de7d9672ceb0226e214-Screenshot_2025-08-21_at_11.06.06.png" />
 
 ## Customising the Checkbox
 
@@ -43,14 +41,11 @@ For this example, I'm working with the Budibase Sample Data table "Employees". I
 
 In a screen, I've then added a Checkbox component, and a table component set to display the employees table. The Checkbox component has a field setting "is\_employed" and a label "Current Employees Only".
 
-![](https://files.readme.io/8b7bc5cb14e5a1dcf79f9dab7c5f362ac06ee946a1b8404191aae70fe59c42a8-image.png)
 
 In the Table component's Conditions, add a new condition 
 
-![](https://files.readme.io/8dd955fce4aa1cd1a5d25fcdb8b31d734fa264367c955207b7b9430b15c78931-image.png)
 
 The Condition should read `Update Setting` >> `Filtering` TO `1 filter set` IF `{{ [New Checkbox].Value }}` `Equals` `Boolean` `True`
 
 When setting the Filter you'll want to filter on `End Date is empty` - this assumes that an employee with an end date is no longer employed, thus making the "Current Employees Only" checkbox update the table filters to only show those records of employees still with the company.
 
-<Image align="center" src="https://files.readme.io/db3dacb28eb20a188add98e0c0bfc9e33a82fde7c0990c12fc67a7431a4e770e-Screen_Recording_2025-08-21_at_11.16.59.gif" />

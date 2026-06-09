@@ -16,7 +16,6 @@ Add a Barcode/QR field to allow users to scan codes directly into their forms!
 
 The field can be found under the **Form** section of the components list.
 
-<Image align="center" src="https://files.readme.io/0715c372aee3f60f31c4126e725aab6b4a56c853b1d34bbf7b88741c6a311210-Screenshot_2025-08-19_at_11.55.26.png" />
 
 <br />
 
@@ -24,17 +23,14 @@ The field can be found under the **Form** section of the components list.
 
 With your form open and the Barcode/QR component in place, simply click the **Scan code** button to launch the camera modal.
 
-![](https://files.readme.io/d880845-Screenshot_2022-10-25_at_17.10.45.png)
 
 The modal will indicate that the camera is **Searching for code...**.
 
 Position a valid QR/Barcode in front of the camera and when scanned successfully, the green indicator and the code content will be displayed on screen.
 
-![](https://files.readme.io/70746a0-qr_scan.png)
 
 On closing the scanning modal, the contents of the QR/Barcode will now be in the field!
 
-![](https://files.readme.io/b813e96-Screenshot_2022-10-25_at_17.04.27.png)
 
 > 👍 Code scanning support
 >
@@ -44,7 +40,6 @@ On closing the scanning modal, the contents of the QR/Barcode will now be in the
 
 The user can also click **Enter manually** if, for example, the code type is not supported or it cannot be scanned. Once clicked, the camera modal will close and a text input will display, allowing manual entry of the code.
 
-![](https://files.readme.io/c9c6553-manual_entry.png)
 
 To enable manual entry, ensure the **Allow manual entry** option has been enabled in the Barcode/QR component settings
 
@@ -56,7 +51,6 @@ You may be prompted to grant camera access to Budibase or you may have to enable
 
 In the event that the camera is unavailable, the following message will be displayed.
 
-![](https://files.readme.io/ef6844a-qr_scan.png)
 
 ## Settings panel
 
@@ -81,10 +75,20 @@ When scanning a barcode, the underlying data type can be a varied, such as text,
 
 For example, if you want to ensure only a web URL can be scanned and saved, you can add a regex rule:
 
-<Image align="center" src="https://files.readme.io/8fe494b-Screenshot_2024-02-01_at_13.33.58.png" />
+Validation Rules  
+Configure validation rules for this field.
+
+- Schema validation rules: There are no built-in validation rules from the schema
+- Custom validation rules:
+  - Must match regex
+  - Binding: `https://.+`
+  - Error message: `Must be a secure URL.`
+
 
 This can also be used safely in conjunction with the *Auto confirm* setting. If the barcode passes the validation on scan, then the modal will close. On the other hand, if the barcode was not a valid URL as expected in this case, then the modal will wait until the user scans an appropriate barcode, or cancels.
 
-<Image alt="Red light indicates that the custom validation rule has not passed" align="center" src="https://files.readme.io/2f14821-Screenshot_2024-02-01_at_13.50.14.png">
-  Red light indicates that the custom validation rule has not passed
-</Image>
+Tuning tips:
+- `Auto confirm` closes the scanner modal immediately after a successful, valid scan.
+- `Manual entry` provides a fallback text input when scanning is not possible.
+- `Play sound on scan`, `Sound pitch`, and `Sound frequency (Hz)` can provide audible scan feedback.
+- Validation is applied before confirm/close behavior, so invalid scans remain in the modal until corrected or cancelled.

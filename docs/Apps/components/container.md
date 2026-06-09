@@ -12,7 +12,6 @@ next:
 ---
 The container now has two different layouts. You can toggle between these two modes by switching between the icons of the layout setting. By default, the grid-based layout is selected. If you wish to use the old layout, you must click the first displayed icon.
 
-<Image align="center" src="https://files.readme.io/5ba8f036594f72b3efc52e3927395031f7080b238d1ad4f7ce71d022b6cffe54-Screenshot_2024-09-10_at_12.20.36.png" />
 
 ## Grid-based
 
@@ -24,7 +23,6 @@ To drag, hover over the component and click on its label. This will allow you to
 
 A Container is a `div` with pre-defined styles. They are the building blocks of your application and critical for responsive design. Containers are used to structure your application and layout other components/elements in a structured way. You can use [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) to layout the items within your container.
 
-![](https://files.readme.io/fe98df8-CleanShot_2022-03-23_at_13.31.27.png "CleanShot 2022-03-23 at 13.31.27.png")
 
 > 📘 Learn Flexbox
 >
@@ -36,7 +34,6 @@ A Container is a `div` with pre-defined styles. They are the building blocks of 
 
 There are several general settings for the container component, most of which are shared with other components as well.
 
-<Image align="center" src="https://files.readme.io/1588d53762edc3de0efa54001d8f6223c51d20760bee64def91dc810a438729f-Screenshot_2024-09-10_at_12.21.10.png" />
 
 <Table align={["left","left"]}>
   <thead>
@@ -150,11 +147,17 @@ There are several general settings for the container component, most of which ar
   </tbody>
 </Table>
 
+Example setup:
+- `Direction`: `row`
+- `Horiz. align`: `center`
+- `Vert. align`: `top`
+
+This places child components in a horizontal line, centered across the container, aligned to the top edge.
+
 ### Container background colour
 
 You can also splash some color into your apps with containers!
 
-![](https://files.readme.io/5190f3e-Screenshot_2022-04-28_at_09.38.24.png "Screenshot 2022-04-28 at 09.38.24.png")
 
 To clear the selected color, click on the `X` in the bottom right of the panel. 
 
@@ -344,19 +347,10 @@ You can also add background colors to your [Screens](doc:screens)
 
 When using containers to layout your components, the most important setting is *Direction* as this will determine the flow of components.
 
-<Image alt="Screen column layout" align="center" src="https://files.readme.io/6a3ed4ea25275ae9c048553ce2b154f6adbf1bf467d933f9c00acd8195aafa83-Screenshot_2024-09-12_at_12.35.34.png">
-  Container column layout
-</Image>
 
-<Image alt="Screen row layout" align="center" src="https://files.readme.io/32ffd44b23c9d4964031606dfd4818f3871922b3a9a77b45f54672fc9e759336-Screenshot_2024-09-12_at_12.35.50.png">
-  Container row layout
-</Image>
 
 If you need additional layout you can add additional containers. For example what if we wanted to group 'THREE' and 'FOUR' in column direction, but have an overall row layout for the screen. In this case we need to add a container and nest P3 and P4 like so:
 
-<Image alt="Combining row and column directions" align="center" src="https://files.readme.io/a1c8a0e071fab3bf20021674399edfaae2a66b11f27c2201783ac11f2508ac7d-Screenshot_2024-09-12_at_12.38.14.png">
-  Multi-container row column directions
-</Image>
 
 Containers are a really flexible way to arrange your components in the **Design** section. You can nest any number of containers with different styles and layout options.
 

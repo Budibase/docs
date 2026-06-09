@@ -24,35 +24,32 @@ You should first use a <Anchor label="Data Provider" target="_blank" href="https
 
 Different views can be selected, depending on your needs.
 
-<Image align="center" caption="Month View - An overview of the whole month, including events that fall outside of that month, but inside of this view  ." src="https://files.readme.io/a27df6d7bc0e093eff053a626e1d3acd6cbbf6e6a28845bebcbfb7ae5b1ba19c-image.png" />
+### Month view
 
-<Image align="center" caption="Week View - A snapshot of the week" src="https://files.readme.io/ca6a46cb8dc71fdf12b62c9611f0491d344ee24265cb6fa6b313e65133153c9d-image.png" />
+Month view shows a full month grid with weekday headers (`Sun` to `Sat`) and day cells containing event summaries.  
+Each event entry typically includes a start time (for example `10:45`, `13:00`, `15:00`) and a title (for example `Marketing Call`, `Roadmap Planning`, `Product Sync`).
 
-<Image align="center" caption="Day View - a simple timeline of the day" src="https://files.readme.io/5c403029abe83a907ed458940d3e004042ac5d3b739d02a1aa4528e25b79b3f2-image.png" />
+If multiple events occur on the same day, they are listed together in that day’s cell. This makes recurring events and busy dates easy to scan at a glance.
 
-<Image align="center" caption="Agenda - an ordered list of the events of the week" src="https://files.readme.io/497c3b38b53a80286bc20153c7c814938835f43eca725729cc4d77c3e167e6c7-image.png" />
+### Week, Day, and Agenda views
+
+- `Week` view focuses on one week and gives more horizontal space per day.
+- `Day` view focuses on a single day timeline for detailed scheduling.
+- `Agenda` view shows events as a chronological list and uses `Empty Agenda text` when no events are available.
 
 ## Options
 
 Creators can optionally show or hide the date or date-range being shown in the view. using the "Show title" setting, which can be configured for DD-MM-YYYY or MM-DD-YYYY formats.
 
-![](https://files.readme.io/41431c48cc93883c660381bafc9d521bec0b5b1e0e188645a842825cbdddd41a-image.png)
-
 Creators also have options to adjust the way the title is displayed, for example in the Title section of the settings, Year title format set to `4-digit`, and `Month title format` set to "Long" will show the title on the Month view as February 2026. Please note that not all settings will apply to all views.
-
-![](https://files.readme.io/849729fea76dcebfa368437ab7e53d65ca9c106337d80f4c40120e8ed56ab919-image.png)
 
 <br />
 
 Creators can also allow their users to move around to different dates or views using the "Show Controls" option. By default, the calendar component will open on the current day, but using the "Open on date" setting, and providing a date in YYYY-MM-DD format, the calendar will open on this date (or date range). This could be useful to show specific plans. 
 
-![](https://files.readme.io/0dea57200fff66272a7f838c8014141762a6fe340f2dae60fe689d40e5cfeb5c-image.png)
-
 ## On click events
 
 On-click events can be established to surface the values for an event's `row_id`, event start, event end, and event title. These could be used in conjunction with a Single Row provider in a modal or side panel, or even as part of [Navigate To](https://docs.budibase.com/docs/application-actions#navigate-to) action using [URL Parameters](https://docs.budibase.com/docs/passing-bindings-in-url-parameters)
-
-<Image align="center" src="https://files.readme.io/cd661b892326c717e22c65612da40817c853331f333e6db6a91360849517f414-Screen_Recording_2026-02-03_at_17.38.40.gif" />
 
 <br />
 

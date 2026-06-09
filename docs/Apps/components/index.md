@@ -20,13 +20,7 @@ There are a few different ways to add a component. If you have no components add
 
 Clicking any of the above options will present a searchable and grouped list of components in the right-hand panel.
 
-<Image alt="Component list" align="center" src="https://files.readme.io/2da20eb3e64a4a5fb60501047a49aa5782446224610340b1b910502f75143355-Screenshot_2025-08-19_at_09.52.15.png">
-  Component list
-</Image>
 
-<Image alt="Searching for a component" align="center" src="https://files.readme.io/cf5abe91e371269fa01ab249fa4c243867ef6bcb2190aff0193721666b25faeb-Screenshot_2025-08-19_at_09.52.39.png">
-  Searching for a component
-</Image>
 
 When you search for a component, if it is highlighted in blue, add it immediately by pressing the *Enter* key.
 
@@ -37,7 +31,6 @@ You will be prompted to confirm the deletion.
 
 Alternatively, you can click on the three dots `...` and then click the delete action inside the opened context menu.
 
-![](https://files.readme.io/0db87a3cd096cff7cbff948425f691b06db7bf299f96bbf01a21770a72b30803-image.png)
 
 <br />
 
@@ -60,17 +53,15 @@ Parent components include those related to a <Glossary>Datasource</Glossary> or 
 Components can be re-arranged within the component tree with drag-and-drop.\
 To assist with rearrangement, a green line will highlight the destination whilst a green box indicates that a component will be dropped inside that component. 
 
-<Image align="center" src="https://files.readme.io/2ace3aadcb39aa4447be9bc289a205e1077237ea1b1a9b54c76f40deb1cb72df-Screen_Recording_2025-08-19_at_10.05.35.gif" />
 
 #### Editing
 
 Within the component tree you can also delete, copy and move components by clicking on the `...` beside the component name.
 
-<Image align="center" src="https://files.readme.io/daf20fe2e0780ca99b09cac9aa985a343f6724394c1bebc181b7762a92f620a4-Screenshot_2025-08-19_at_10.08.30.png" />
 
 ## Keyboard shortcuts
 
-In the above screenshot, you can see a range of keyboard shortcuts related to components. The above shows the following. You can replace the `⌘` (command) button on Mac with `CTRL` on Windows if you wish to use the shortcuts on Windows.
+The following keyboard shortcuts are available for components. You can replace the `⌘` (command) button on Mac with `CTRL` on Windows if you wish to use the shortcuts on Windows.
 
 * **Delete** - Backspace `←` - Allows quicker deletion of a selected component
 * **Move up** - `⌘`+ `↑`- Allows the user to move a component up in the component tree
@@ -86,15 +77,15 @@ There are a range of other ways to speed up navigate or perform additional actio
 
 Sometimes, it's helpful to organise your component tree in a way that clearly reflects the purpose of each component. For instance, you might want to differentiate between various forms on a screen, such as the `Create Users form` or the `Edit Users` form. Similarly, labeling buttons can clarify their action, whether they're for endorsing, deactivating, etc.
 
-To rename a component, first select it. Then, locate the component's settings at the top in the side panel. Click the current name, delete it, and enter your desired name. The gif below should help guide you through this process.
+To rename a component, first select it. Then, locate the component's settings at the top in the side panel. Click the current name, delete it, and enter your desired name. Use these steps to rename components consistently across your app.
 
-<Image align="center" src="https://files.readme.io/2dcc1fbb4a0a97970a5f16207453dbffa19d561b478985d62976035606429e3b-Screen_Recording_2025-08-19_at_10.38.30.gif" />
 
 ## Using components
 
 When you have added a component you will be able to see the options that you can tweak on the right side under the Settings bar. Some components also have a toolbar that will appear above it in the preview window.
 
-<Image align="center" src="https://files.readme.io/2b3a5770c96f3b03fb968b16abb9c8a263a99befd92871d73ad767ea0bff9867-Screenshot_2025-08-19_at_11.04.51.png" />
+To find and rename a component quickly: select it in the canvas or component tree, then use the right-hand Settings panel where the component name appears at the top.
+
 
 ## Video tutorial
 

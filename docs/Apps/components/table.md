@@ -23,9 +23,7 @@ Add a table in a couple of clicks!
   You can also add a table by searching for "Table" and pressing the Enter key.
 </Callout>
 
-<Image align="center" alt="Adding the table" border={false} caption="Adding the table" src="https://files.readme.io/12a185280f8fb0c692fc91ddf59c34d0864c9958aee9124af83796a3ae3d9c20-Screenshot_2025-09-05_at_15.08.06.png" />
 
-<Image align="center" border={false} src="https://files.readme.io/d3d81ce43a5bf9f7561dadbd5e6f01b7ff94631369202575a6d07c9c637aeb7c-Screenshot_2025-09-05_at_15.25.24.png" />
 
 With the table added, you will want to select a _Table_ in the <Glossary>Settings Panel</Glossary>.
 
@@ -35,7 +33,6 @@ Table columns can be configured under the _Columns_ section of the settings. Cli
 
 Click on `Configure columns` to determine which columns should be included in your table view and to change their labels. The underlying database column name will still be shown above the label for reference.
 
-<Image align="center" alt="Giving the 'Last Name' column the display label 'Surname'" border={false} caption="Giving the 'Last Name' column the display label 'Surname'" src="https://files.readme.io/0b04d31f03343c91ac93574bda17d5ed955467a79f1a99fbf2a62b6491c2985d-Screenshot_2025-09-05_at_15.26.09.png" />
 
 Columns can be shown or hidden with the toggle switches, and the column order can be set by dragging and dropping columns.
 
@@ -53,9 +50,7 @@ Click `Define actions` to run [Actions](doc:actions) on click of a row.
 
 You will be able to use the `{{ Clicked row }}` <Glossary>Binding</Glossary> to access the object data of the clicked row.
 
-<Image align="center" border={false} src="https://files.readme.io/d33ec7bf764ba4f45b9afef92c134f3c83dc2e0318c006d5321b1406ffe97245-Screenshot_2025-09-05_at_15.44.30.png" />
 
-<Image align="center" border={false} src="https://files.readme.io/1f8751968faece11cf1b05a7bdae5cea7605e964518bece3f16770a80734813a-Screenshot_2025-09-05_at_15.45.16.png" />
 
 If you wanted to access a property of the clicked row, for example the **_id**, then you would write your binding like so: `{{ Clicked row._id }}`
 
@@ -65,27 +60,26 @@ Select a _Sort column_ and _Sort order_ to set the initial default sorting; eith
 
 A user can still override this sort by clicking the three dots beside a column. Text fields can be sorted alphabetically, whereas number fields will be sorted numerically.
 
-<Image border={false} src="https://files.readme.io/34b3ab773c4665fa97bd26215417742c7757e930e2b7a46f8b5309ff8c0a95f9-Screen_Recording_2025-09-12_at_14.52.46.gif" />
 
 <br />
 
 ## Row settings
 
-The table offers a few row settings, including a mix of style and function.
+The table offers row-level settings, including a mix of style and behavior controls.
 
-| Setting              | Description                                                                       |
-| :------------------- | :-------------------------------------------------------------------------------- |
-| Row height           | Set the height of the table rows (Small, Medium and Large). The default is small. |
-| High contrast        | If checked, the table rows will be striped.                                       |
-| Add/Edit/Delete rows | Uncheck to prevent users from adding/editing/deleting rows.                       |
+| Setting                    | Description                                                                                          |
+| :------------------------- | :--------------------------------------------------------------------------------------------------- |
+| Row height                 | Set the height of the table rows (Small, Medium, or Large).                                         |
+| Add rows / Edit rows / Delete rows | Control whether users can add, edit, or delete records directly from the table UI.                  |
+| Row selection              | Enables selecting rows in the table. This setting is only shown when `Delete rows` is disabled.     |
+| Striped rows               | Adds alternating row striping for readability.                                                       |
+| Quiet                      | Uses the quiet table style variant.                                                                  |
 
-<Image border={false} src="https://files.readme.io/405d1dd88b4936b7c9c8fce6b7ae433ec8e22111d37edc6a4aabc0bf7a5d732f-Screen_Recording_2025-09-12_at_15.07.22.gif" />
 
 <br />
 
 If you want to increase the number of rows displayed on screen, simply increase the height of the table in the _Styles_ tab, or drag the component larger when displayed on a screen or inside a container set to "Grid".
 
-<Image border={false} src="https://files.readme.io/e0c74a427674cf2ec66967d1f421aa1019e8728c65e919c7ca3077f35e6c9a8e-Screen_Recording_2025-09-12_at_15.27.30.gif" />
 
 <br />
 
@@ -97,35 +91,37 @@ Some field types also allow searching directly within the table's column. If you
 
 ## Selected rows binding
 
-If your table has the _Allow row selection_ checkbox ticked, then you will be able to make use of the `Selected Rows` <Glossary>Binding</Glossary>.
+If your table has the _Row selection_ setting enabled, then you will be able to make use of the `Selected Rows` <Glossary>Binding</Glossary>.
 
-This can be found underneath your table within the bindings drawer:
+If _Delete rows_ is enabled, the _Row selection_ setting is hidden. If _Row selection_ is disabled, row selection controls are completely hidden in the table UI.
 
-<Image align="center" border={false} src="https://files.readme.io/0bc2c7d-Screenshot_2024-04-10_at_12.08.42.png" />
+Selection behavior matrix:
+- `Delete rows = Enabled` -> `Row selection` setting is hidden.
+- `Delete rows = Disabled` and `Row selection = Enabled` -> selection controls are visible and `Selected Rows` is available.
+- `Delete rows = Disabled` and `Row selection = Disabled` -> selection controls are hidden.
 
-When using this binding, an array of the selected row data will be made available:
+Current behavior: in **v2.19.2+**, `Selected Rows` returns an array of full row objects (not just row IDs).
 
-<Image align="center" border={true} src="https://files.readme.io/ce9e495-Screenshot_2024-04-10_at_12.11.10.png" className="border" />
+This can be found underneath your table within the bindings drawer.
 
-This binding can be used to [Delete the selected rows](https://docs.budibase.com/docs/data-actions#delete-row):
+When using this binding, an array of the selected row data will be made available.
 
-<Image align="center" alt="Delete selected rows" border={false} caption="Delete selected rows" src="https://files.readme.io/f04f1fa302d4fe6305a3930b1a97bd5b60141fb98cc89d98486e2fb073d13198-Screenshot_2024-09-11_at_11.51.54.png" />
+This binding can be used to [Delete the selected rows](https://docs.budibase.com/docs/data-actions#delete-row).
 
 You could also [pluck](https://docs.budibase.com/docs/array-helpers#pluck) a field from the selected rows, such as an ID, to show which rows have been selected in a readable way: `{{ pluck New Table.Selected rows 'id' }}`
 
-<Image align="center" alt="Displaying the IDs of the selected rows using the 'pluck' helper" border={false} caption="Displaying the IDs of the selected rows using the 'pluck' helper" src="https://files.readme.io/f7af098-Screenshot_2024-04-10_at_12.15.21.png" />
 
 ### Conditional formatting
 
 With conditional formatting, you can now add conditional logic to either a cell or rows within your table. To make your formatting dynamic, you can set rules that change the format of cells based on their value. This can be done on a range of fields types, options, formulas, strings, numbers etc.
 
-You can find conditional formatting options under the column settings:
+You can find conditional formatting in the `Columns` section of the table settings. Select a column (for example `Last Name`), then open `Conditions`.
 
-<Image align="center" border={false} src="https://files.readme.io/7bfe0c0-Screenshot_2024-08-08_at_10.11.36.png" />
-
-The above will open a new drawer when clicked, were you can begin adding your conditions in relation to the column you have selected.
-
-<Image align="center" border={false} src="https://files.readme.io/17c5739-Screenshot_2024-08-08_at_10.16.30.png" />
+This opens a conditions drawer for that specific column (for example `Last Name conditions`), where you can add rules such as:
+- `Update` -> choose whether to style `Cell` or `Row`
+- choose a style target such as `Background colour` or `Text colour`
+- `if value` -> choose an operator such as `Equals`
+- enter the comparison value, then `Save`
 
 There are a few settings you need to be aware of.
 
@@ -140,7 +136,6 @@ It’s worth noting that the order of your conditions matter, as Budibase proces
 
 Prior to **v2.19.2**, the selected rows binding provided a list of <Glossary>Row _id</Glossary>s only. This binding has been kept for backwards compatibility, however in future it will be removed. This change has been made because the new binding is more useful, allowing you to do the calculations outlined above.
 
-<Image align="center" alt="Please update your selected rows binding to the new one" border={false} caption="Please update your selected rows binding to the new one" src="https://files.readme.io/3b649c6-Screenshot_2024-02-14_at_12.03.12.png" />
 
 ## Advanced settings
 
