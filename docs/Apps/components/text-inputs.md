@@ -14,6 +14,7 @@ In Budibase several fields require user key-press input. They are:
 
 * JSON field
 * Long form field
+* URL field
 * Number field
 * Password field
 * Text field
@@ -43,7 +44,7 @@ Finally, for an input to be useable, it must be given a field name. If the form 
 
 When using a [Form block](doc:form-block) the field components are not directly accessible. If you want to edit the field components, then you will need to [Eject](https://docs.budibase.com/docs/blocks#ejecting-blocks) the form block.
 
-Otherwise, Budibase will match the [Data type](https://docs.budibase.com/docs/budibasedb#data-types) of the field to a corresponding field component. Most commonly this will be the **Text field** and **Number field**, however it could also be the **JSON field** for the [JSON](doc:json) data type, among others.
+Otherwise, Budibase will match the [Data type](https://docs.budibase.com/docs/budibasedb#data-types) of the field to a corresponding field component. Most commonly this will be the **Text field** and **Number field**, however it could also be the **JSON field** for the [JSON](doc:json) data type, among others. The **URL field** is a specialised text input for website addresses and is especially useful when you want built-in URL autocomplete and validation.
 
 ## Common settings
 
@@ -95,6 +96,14 @@ See more about [Form validation](doc:form-validation).
 The text field allows users to enter inline text. This is the most common text input.
 
 It is compatible with the [Text](doc:text) data type.
+
+## URL field
+
+The URL field allows users to enter website URLs.
+
+It is compatible with the [Text](doc:text) data type, and is useful when you want browser URL autocomplete plus validation for web addresses.
+
+By default, Budibase validates `http` and `https` URLs in this field. You can broaden the validation rule to allow other protocols if required.
 
 <Image align="center" border={false} width="smart" src="https://files.readme.io/1b3802d-textfield.png" />
 
