@@ -56,7 +56,11 @@ Valid examples include:
 * `https://example.com`
 * `https://*.example.com`
 
-### Authenticating embedded users
+### 🔒 Authenticating embedded users
+
+> 🔒 Enterprise tier
+>
+> Authenticating embedded iframes is an Enterprise-tier feature. The `Authenticate embedded users` setting is only available on Enterprise plans.
 
 When `Authenticate embedded users` is enabled, the host site can append a signed token as the `jwt` query parameter on the embed URL.
 
