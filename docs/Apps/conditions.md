@@ -16,6 +16,15 @@ Adding a condition is simple. Once you click the settings button a drawer will p
 
 ![](https://files.readme.io/38f0f21-conditions.png "conditions.png")
 
+### Enabling and disabling conditions
+
+You can temporarily disable a condition without deleting it by using the toggle switch located next to each condition in the drawer. This is useful for testing different UI states or temporarily pausing logic during development. Disabled conditions are ignored when evaluating component settings or visibility in both the builder preview and the published app.
+
+When conditions are configured, the **Conditions** tab in the component settings panel displays a status indicator dot:
+* **Green**: All conditions are enabled.
+* **Orange**: Some conditions are disabled.
+* **Red**: All conditions are disabled.
+
 ## Adding a condition
 
 To add a condition, simply click the `Add condition` button. As explained above, you can choose whether to `Show`, `Hide` or `Update setting`. Depending on what you choose you will be presented with different options. They will all contain settings for comparing some value against another.
@@ -38,7 +47,7 @@ As we can see, there are four fields, Company, Due Data, Value, and Paid. In the
 
 It would be great if the `Pay Invoice` button was in a disabled state if the invoice has been paid. So let's go ahead and add a condition to do just that!
 
-Select the button component in the tree view on the left. Open the conditions drawer and select \``Update setting` and then pick the Disabled setting in the dropdown. Make sure the checkbox is checked. We then need to figure out which field we want to check. In our case, it's found under `{{ Repeater.Invoices.Paid }}`. This will of course differ depending on the structure of your application. If you click the little lightning bolt icon you will be able to see which fields are available for use.  Now we just make sure that it equals TRUE. Hit save, and that's it!
+Select the button component in the tree view on the left. Open the conditions drawer and select ``Update setting`` and then pick the Disabled setting in the dropdown. Make sure the checkbox is checked. We then need to figure out which field we want to check. In our case, it's found under `{{ Repeater.Invoices.Paid }}`. This will of course differ depending on the structure of your application. If you click the little lightning bolt icon you will be able to see which fields are available for use.  Now we just make sure that it equals TRUE. Hit save, and that's it!
 
 ![](https://files.readme.io/31b6181-conditiondisablebutton.png "conditiondisablebutton.png")
 
@@ -46,7 +55,7 @@ Now that we have this condition set up we might also want to change the text of 
 
 And here's the end result.
 
-![](https://files.readme.io/f65410b-conditionresultend.png "conditionresultend.png")
+![](https://files.readme.io/f65410b-conditionsresultend.png "conditionsresultend.png")
 
 ## Showing and hiding a component based on the user's role
 
