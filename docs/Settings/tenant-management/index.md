@@ -40,11 +40,23 @@ You can only have one _Free tier_ workspace. If you have an existing free-tier w
 
 To delete the workspace, click the bin icon in the top right of the tile, and confirm.
 
-> 🚧 Deleting a cloud workspace is not reversible
+> ⚠️ Deleting a cloud workspace is not reversible
 >
 > Once you delete a cloud workspace, you will lose any apps and users associated with it.
 >
 > A cloud workspace that has an active subscription cannot be deleted.
+
+#### De-activated workspaces
+
+If your workspace is de-activated (for example, due to a trial ending, an expired subscription, or the deprecation of a legacy plan), it will be locked, and you will see a notice when attempting to access it. 
+
+While a workspace is de-activated, you can still perform the following actions:
+
+*   **Upgrade plan**: Reactivate your workspace by upgrading to a supported paid plan.
+*   **Export workspace**: Download your workspace data. This allows you to keep a backup or migrate your apps to another instance.
+*   **Self-host Budibase**: You can move your exported workspaces to a self-hosted instance of Budibase to continue building without cloud limitations.
+
+If your workspace is scheduled for removal, the lock screen will display a notice with the scheduled removal date and a countdown of the days remaining. Ensure you export your data or upgrade your plan before this date to avoid permanent data loss.
 
 <br />
 
@@ -63,7 +75,7 @@ In order to unlock the full set of features and remove limits, you must link you
 4. Click `I have installed budibase` when your installation is ready to be linked
 5. You will then be presented with your license key - copy it.
 
-<Image align="center" alt="This modal will wait for you to paste the license key into your installation" border={false} caption="This modal will wait for you to paste the license key into your installation" src="https://files.readme.io/d3e87e45397be0da63baf4e941e6a7d0e5f28168d7d314bf51c93e2333b402dc-link_license.png" />
+<Image align="center" alt="This modal will wait for you to paste the license key into your installation" border={false} caption="This modal will wait for you to paste the license key into your installation" src="https://files.readme.io/d3e87e45397be0da73baf4e941e6a7d0e5f28168d7d314bf51c93e2333b402dc-link_license.png" />
 
 6. Visit your installation, and navigate to the `Upgrade plan` inside the settings area. Paste in your key and click `Activate`
 
@@ -87,7 +99,7 @@ Now you can upgrade your workspace. A green light beside the _Subscription_ when
 
 To get the features and quotas to update in your _installation_, navigate to the `Upgrade` tab of the `Account` section. Under **Plan**, click the `Refresh` button, and you should see the plan type update.
 
-<Image align="center" alt="Installation will show the old plan until your 'Refresh'" border={false} caption="Installation will show the old plan until you 'Refresh'" src="https://files.readme.io/e8262e5a922e4ed466bbccb3589223ec75634a015684d25bac6955f60567505a-free_plan.png" />
+<Image align="center" alt="Installation will show the old plan until your 'Refresh'" border={false} caption="Installation will show the old plan until your 'Refresh'" src="https://files.readme.io/e8262e5a922e4ed466bbccb3589223ec75634a015684d25bac6955f60567505a-free_plan.png" />
 
 After refreshing your upgraded plan will be applied to the installation:
 
