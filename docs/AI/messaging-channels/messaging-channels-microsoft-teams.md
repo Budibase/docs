@@ -48,6 +48,22 @@ Use a single-tenant setup that matches your tenant ID.
 Plain text messages are treated as `ask`.
 If you send a normal message before linking, Budibase sends a private link prompt.
 
+## Working with documents (RAG)
+
+When your agent uses documents to answer questions (Retrieval-Augmented Generation), Budibase can provide direct download links to those sources within Teams.
+
+### Source citations
+In **personal conversations**, your agent will automatically append a list of the specific document sources it used to generate its reply. Each source includes a direct, authenticated link to download the file.
+
+To ensure privacy and security, source download links are **not** provided when the agent is chatting in a **channel or group conversation**.
+
+### Disabling source downloads
+You can control whether users are allowed to download knowledge sources through the agent's operation settings:
+1. Open your agent in **Agents**
+2. Select the **Operations** tab
+3. Locate your live operation and click the settings icon
+4. Toggle **Allow knowledge source download** off if you want to prevent download links from being generated in personal chats.
+
 ## Troubleshooting
 
 * `Not configured` in Budibase: confirm **App ID**, **Client secret**, and **Tenant ID** are saved.
