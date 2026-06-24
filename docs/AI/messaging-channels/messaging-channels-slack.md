@@ -79,6 +79,15 @@ Slack threads are used as conversation boundaries automatically.
 
 If you send a message before linking, Budibase prompts you privately to complete account linking first.
 
+## Working with documents (RAG)
+
+When your agent uses documents to answer questions (Retrieval-Augmented Generation), Budibase can provide direct download links to those sources within Slack.
+
+### Source citations
+In **personal conversations (DMs)**, your agent will automatically append a list of the specific document sources it used to generate its reply. Each source includes a direct, authenticated link to download the file.
+
+To ensure privacy and security, source download links are **not** provided when the agent is chatting in a **channel or group conversation**.
+
 ## Troubleshooting
 
 * `Not configured` in Budibase: confirm both **Bot token** and **Signing secret** are saved.
