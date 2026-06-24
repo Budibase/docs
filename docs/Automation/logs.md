@@ -12,17 +12,17 @@ next:
 ---
 It is possible to see a list of automation runs for your published apps. To do so, click the automation you wish to view and the click the logs button within the automation.
 
-<Image align="center" border={false} width="400px" src="https://files.readme.io/a32c6e59c530c5198458383cfc2976ce5a54b39bf5bb382ba84784e06cfd64d3-Screenshot_2025-09-30_at_08.27.54.png" />
+<Image align="center" border={false} width="400px" src="https://files.readme.io/a32c6e59c530c5198458313ccfc2976ce5a54b39bf5bb382ba84784e06cfd64d3-Screenshot_2025-09-30_at_08.27.54.png" />
 
 <br />
 
 This will open up a sidepanel with all successful and failed runs of an automation.
 
-<Image align="center" border={false} src="https://files.readme.io/cedc3a9918e4179443de8bfb19d8ad708c8d4e50bf5c3cd31e794d67ce3727f1-Screenshot_2025-09-30_at_08.27.58.png" />
+<Image align="center" border={false} src="https://files.readme.io/cedc3a9918e4179443de8b2bf19d8ad708c8d4e50bf5c3cd31e794d67ce3727f1-Screenshot_2025-09-30_at_08.27.58.png" />
 
 You can filter and order the logs by automation name, data range, and status.
 
-There are three statuses:
+The there are three statuses:
 
 * **Success**: The automation run was successful
 * **Stopped**: The automation run was correctly terminated by a [Condition](doc:conditions-1)
@@ -41,12 +41,17 @@ When selecting an error, you will be able to see which automation step failed as
 
 Furthermore, you can click the `Edit automation` button to be taken to the automation which may need fixed.
 
-<Callout icon="📘" theme="info">
+<Callout icon="💡" theme="info">
   Automation history will only show for published apps, and you must publish your app to apply any changes to your automations.
 </Callout>
 
-## Expiration 🔒
+## Stopped notifications
 
+If a [Condition](doc:conditions-1) step has the **Notify on stop** setting enabled, you will see a yellow warning notification on the Budibase home page when that automation stops. 
+
+Like error notifications, these include a **View** action to inspect the specific log and a dismiss button to remove the notification.
+
+## Expiration ⏳
 Logs are kept for a single day on the free plan, but you can expand the duration of time that logs are kept significantly by [upgrading](https://docs.budibase.com/docs/usage).
 
 ## Chain automations
@@ -70,8 +75,8 @@ Whether to have this setting on or off depends on your use-case:
 
 In this basic example, the first automation would only trigger the second if the _Enable chaining_ toggle was **on**.
 
-> 📘 Additional info
+> 💡 Additional info
 >
 > As it could be possible to accidentally get into an infinite loop, the maximum number of automations that can be triggered in a sequence is **five**.
 >
-> Also, chaining automation row events should not be confused with the [Trigger automation 🔒](doc:trigger-automation) action, which will always fire if used.
+> Also, chaining automation row events should not be confused with the [Trigger automation 🔀](doc:trigger-automation) action, which will always fire if used.
