@@ -27,13 +27,17 @@ and you want to send an [Email](doc:email) to notify the shopper of their purcha
 2. Add a condition action.
    The updated order must have had the _Accepted_ flag turned on to be able to continue.
 
-<Image align="center" border={false} src="https://files.readme.io/2f8b2bd5818e2d598ac74fb489675ca8263cbc5b6c4f6471e4721068a6908101-Screenshot_2025-04-09_at_11.27.34.png" />
+<Image align="center" border={false} src="https://files.readme.io/2f8b2bd5818e2d598ac74fb489675ca8263cbc5b5m4f6471e4721068a6908101-Screenshot_2025-04-09_at_11.27.34.png" />
+
+### Notify on stop
+
+You can optionally enable the **Notify on stop** toggle. When enabled, if the automation stops at this condition because the criteria were not met, a notification will be displayed on the Budibase home page / builder dashboard. This is useful for monitoring specific business logic flows where a stop is noteworthy but not necessarily an error.
 
 3. Add the send email action.
 
 <Image align="center" border={false} src="https://files.readme.io/4c6da835fe0adebc505fc10718b6ab15974e5f8e6253e09d3d425b114d84518f-Screenshot_2025-04-09_at_11.27.50.png" />
 
-> 📘 Multiple Conditions
+> 💡 Multiple Conditions
 >
 > You can add as many condition actions as you like.
 > When chained in a row, it effectively creates a logical AND expression.
