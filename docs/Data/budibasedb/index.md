@@ -56,25 +56,21 @@ Selecting a column during the table creation is only possible if you import data
 
 ### Auto-columns
 
-After creating a new Budibase DB table you can add any number of built-in (auto types) columns you want to have. Each of these will be automatically updated whenever rows are added or updated in your table. 
+Budibase DB supports system-managed auto columns that populate themselves when rows are created or updated.
 
-When adding a column, select *Auto Column*, and then the specific sub-type.
+When adding a column, select *Auto column*, then choose the subtype offered in the picker.
 
 <Image alt="Selecting the 'Auto Column' data type" align="center" src="https://files.readme.io/f94690a-auto_column.png">
   Selecting the 'Auto Column' data type
 </Image>
 
-<Image alt="Selecting the 'Created By' auto column sub-type" align="center" src="https://files.readme.io/c636bfe-Screenshot_2023-08-11_at_08.53.51.png">
-  Selecting the 'Created By' auto column sub-type
-</Image>
+The current builder exposes `Auto ID`, `Updated By`, and `Updated At` in the add-column picker. `Created By` and `Created At` are still supported by the data model and may appear in existing tables or generated schemas, but they are not currently shown as add-column options in the UI.
 
-| Name       | Description                            |
-| :--------- | :------------------------------------- |
-| Auto ID    | An automatically generated ID          |
-| Created by | The user who created the row           |
-| Created at | When this row was created              |
-| Updated by | The user who updated the row last      |
-| Updated at | The time when the row was updated last |
+| Name        | Description                                              | UI availability                              |
+| :---------- | :------------------------------------------------------- | :------------------------------------------- |
+| Auto ID     | An automatically generated numeric ID                    | Available in the picker                      |
+| Updated By  | The user who updated the row last                        | Available in the picker                      |
+| Updated At  | The time when the row was updated last                   | Available in the picker                      |
 
 > 👍 Create table from CSV
 >
@@ -100,7 +96,7 @@ Within Budibase DB there are several data types to choose.
 | [Formula](doc:formula)                        | Allows you to set a formulated column, which will be calculated based on what you define. You can use handlebars or JavaScript |
 | [JSON](doc:json)                              | Allows you to store JSON within a row, with the option to define a schema                                                      |
 | [Barcode/QR](doc:barcodeqr)                   | A text representation of a barcode or QR code                                                                                  |
-| Auto Column                                   | Auto columns can be added post-creation of the database by selecting data type.                                                |
+| Auto Column                                   | Auto columns are system-managed columns. Add them after table creation by selecting `Auto column`.                              |
 
 If using an external [SQL Datasource](doc:sql-datasource), the native SQL data types will be mapped to one of these Budibase types for use in your workspace. For more detail, look [here](https://github.com/Budibase/budibase/blob/178fd100af09ac1bc8b8395db52c629c572dc4bb/packages/server/src/integrations/utils.ts) for how the mappings are handled.
 
