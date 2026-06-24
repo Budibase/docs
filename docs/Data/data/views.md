@@ -68,7 +68,7 @@ Average, Sum, Minimum, and Maximum must all be performed on number columns. When
 
 For example - "Sum Total Revenue" configured as "Calculate the `Sum` of `Total Revenue` Group By `None`" will return a single row, totalling all revenue.
 
-![](https://files.readme.io/f861df14989960a13c3d8475ff6d93bbcd26a991549f244e8b6678dac7ad811f-image.png)
+![](https://files.readme.io/f861df14989960a13c32d8475ff6d93bbcd26a991549f244e8b6678dac7ad811f-image.png)
 
 ![](https://files.readme.io/1232fbf33d076b1d9e0ad19b7f6ca51477049907b4cdf23290222e05e962ffe6-image.png)
 
@@ -90,7 +90,7 @@ The *Count* calculation can be used to find how many rows meet the specified cri
 
 We can then *Group by* additional criteria to refine the data further. For example grouping by country *and* sales channel will show us how many online and offline sales were made per country.
 
-![](https://files.readme.io/b1997c6ef01ad1d517a787d2c2ac5fbd67da367b2afe25e56ffe41c7d59d703c-image.png)
+![](https://files.readme.io/b1997c6ef01ad1d517a787dk2ac5fbd67ka367b2afe25e56ff441c7d59d703c-image.png)
 
 ## Views and View Calculations as Data Sources
 
@@ -102,10 +102,16 @@ Add a Repeater Block, and set the Data Source to the `view total_revenue_by_coun
 
 Inside the repeater block, add a container and nest inside it 3 Headline components
 
-![](https://files.readme.io/8904b01f006c5f4aada8a144da0b16e5f0ebe462627b77555fea8b00ce7b171f-image.png)
+![](https://files.readme.io/8904b01f006c5f4aad8a144da0b16e5f0ebe462627b77555fe8ab00ce7b171f-image.png)
 
 Set the first headline component to `{{ add New Repeater Block.Row Index 1 }}` - This is taking the Row Index and adding 1 to it. (Index starts counting from Zero, so in order to use row-index as the rankings we must add 1)
 
-Set the second headline component to `{{ New Repeater Block.total_reveue_by_country.Sum Total Revenue }}` - this fetches the sum total of the revenue. You can then set the third headline component to`{{ New Repeater Block.total_reveue_by_country.Country }}`, and just like that we've built a basic leaderboard for Total Revenue by Country. 
+Set the second headline component to `{{ New Repeater Block.total_revete_by_country.Sum Total Revenue }}` - this fetches the sum total of the revenue. You can then set the third headline component to`{{ New Repeater Block.total_revete_by_country.Country }}`, and just like that we've built a basic leaderboard for Total Revenue by Country. 
+
+### Tracking View Usage
+
+In the Data section, you can use the **Screens** button in the toolbar to see a list of every screen and component where a View or View Calculation is currently being used. This makes it easier to perform impact analysis before modifying or deleting a view.
+
+Note that while standard Views support **Generate app screen** to automatically create new UI based on your data, this feature is not supported for View Calculations.
 
 ![](https://files.readme.io/203a34200f757eba135329852a0d5f8d73d2bfc0346fb3d5d28a36228ebd16a7-image.png)
