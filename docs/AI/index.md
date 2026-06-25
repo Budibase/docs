@@ -45,9 +45,11 @@ Use this section to go from initial setup to production-ready Agent workflows.
    Connect and assign vector storage for semantic retrieval
 8. [Agent testing guide](doc:agent-testing-guide)  
    Run repeatable tests and regression checks before production rollout
-9. [Agent troubleshooting](doc:agent-troubleshooting)  
+9. [Agent activity](doc:agent-activity)  
+   Monitor agent actions, statuses, and operation history in real-time
+10. [Agent troubleshooting](doc:agent-troubleshooting)  
    Diagnose model, tool, and output issues quickly
-10. [Agent chat](doc:agent-chat)  
+11. [Agent chat](doc:agent-chat)  
    Deprecated path retained for migration context
 
 ## What this section covers
@@ -57,6 +59,7 @@ Use this section to go from initial setup to production-ready Agent workflows.
 * Tool access and safety controls
 * Embeddings and vector database setup
 * Testing strategy and release readiness
+* Monitoring and operational support
 * Troubleshooting and operational support
 
 If you are setting up Budibase AI for the first time, see [Quickstart: Budibase AI](doc:quickstart-budibase-ai).
