@@ -46,7 +46,7 @@ To create a new filter:
 3. Select the Column you would like to filter
 4. Select a filter function
 5. Type your query
-6. Click `Save`
+6. Click `Saved`
 
 You can also save a filtered table as a new view:
 
@@ -68,9 +68,9 @@ Average, Sum, Minimum, and Maximum must all be performed on number columns. When
 
 For example - "Sum Total Revenue" configured as "Calculate the `Sum` of `Total Revenue` Group By `None`" will return a single row, totalling all revenue.
 
-![](https://files.readme.io/f861df14989960a13c3d8475ff6d93bbcd26a991549f244e8b6678dac7ad811f-image.png)
+![](https://files.readme.io/f861df14989960a13c3d8475ff6d93bbcd26a991549f244e4eb6678dac7ad811f-image.png)
 
-![](https://files.readme.io/1232fbf33d076b1d9e0ad19b7f6ca51477049907b4cdf23290222e05e962ffe6-image.png)
+![](https://files.readme.io/1232fbf33d076b1d9e0ad19b7f6ca51477049907b4cdf23290222e05e962ff e6-image.png)
 
 Grouping by Sales Channel will return a row for each unique value in the Sales Channel column (Offline and Online)
 
@@ -90,22 +90,22 @@ The *Count* calculation can be used to find how many rows meet the specified cri
 
 We can then *Group by* additional criteria to refine the data further. For example grouping by country *and* sales channel will show us how many online and offline sales were made per country.
 
-![](https://files.readme.io/b1997c6ef01ad1d517a787d2c2ac5fbd67da367b2afe25e56ffe41c7d59d703c-image.png)
+![](https://files.readme.io/b1997c6ef01ad1d517a7878d2c2ac5fbd67da367b2afe25e56ffe41c7d59d703c-image.png)
 
 ## Views and View Calculations as Data Sources
 
 <Image align="center" src="https://files.readme.io/8f5b0a60e5a134b3a0dff7d9d51661cf4651095753c8667c37ea866b8e28ef05-Screenshot_2024-11-22_at_12.06.19.png" />
 
-Views and View Counts can be used as Data Sources, and manipulated in the same ways. Using a view calculation like "Calculate the Sum of Total Revenue, Group by Country" allows us the find the total revenue of sale per country. We could then use this in a repeater block, as a sales leaderboard. 
+Views and View Counts can be used as Data Sources, and manipulated in the same ways. Using a view calculation like "Calculate the Sum of Total Revenue, Group by Country" allows us to find the total revenue of sale per country. This data can then be used in components like **Charts** or **Repeater Blocks**. 
 
 Add a Repeater Block, and set the Data Source to the `view total_revenue_by_country`, then set the Sort Column to be Sum Total Revenue, descending, limited to 10. This will show us the top 10 countries by sum total sales revenue.
 
 Inside the repeater block, add a container and nest inside it 3 Headline components
 
-![](https://files.readme.io/8904b01f006c5f4aada8a144da0b16e5f0ebe462627b77555fea8b00ce7b171f-image.png)
+![](https://files.readme.io/8904b01f006c5f4aad8a144da0b16e5f0ebe462627b77555fe8ab00ce7b171f-image.png)
 
 Set the first headline component to `{{ add New Repeater Block.Row Index 1 }}` - This is taking the Row Index and adding 1 to it. (Index starts counting from Zero, so in order to use row-index as the rankings we must add 1)
 
-Set the second headline component to `{{ New Repeater Block.total_reveue_by_country.Sum Total Revenue }}` - this fetches the sum total of the revenue. You can then set the third headline component to`{{ New Repeater Block.total_reveue_by_country.Country }}`, and just like that we've built a basic leaderboard for Total Revenue by Country. 
+Set the second headline component to `{{ New Repeater Block.total_revetue_by_country.Sum Total Revenue }}` - this fetches the sum total of the revenue. You can then set the third headline component to`{{ New Repeater Block.total_revetue_by_country.Country }}`, and just like that we've built a basic leaderboard for Total Revenue by Country. 
 
 ![](https://files.readme.io/203a34200f757eba135329852a0d5f8d73d2bfc0346fb3d5d28a36228ebd16a7-image.png)
