@@ -36,13 +36,15 @@ The data displayed in your chart will be determined by the label and data column
 **Label Column** Provides the name of each categorical variable.\
 **Data Column(s)** Provides the value or range of values for each label.   
 
-> 🚧 Data column type
+> 🚀 Data column type
 >
 > Data columns must be numeric (eg; containing values that can be converted to numbers)
 
 ## Generating the chart schema
 
-For table datasources, the available options for the label and data columns will match the columns of the table.
+For table datasources, the available options for the label and data columns will match the columns of the table. 
+
+When using a **View** as a datasource, any **View Calculations** (such as Sum, Average, Minimum, or Maximum) you have configured will also be available as numeric data columns for your chart.
 
 Data from REST Queries on the other hand, will likely need to be transformed to be suitable for use in charts.
 
