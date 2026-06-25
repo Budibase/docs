@@ -29,9 +29,35 @@ Required settings checklist:
 If any of these values are missing or invalid, the upload action will not complete successfully.
 
 
+## Dropzone settings
+
+The `S3 File Upload` component can be customized through the **Dropzone settings** section in the settings panel.
+
+* **Extensions**: Restrict the types of files that can be uploaded (see below).
+* **Compact**: When enabled, the uploader displays a smaller, one-line interface.
+* **Title Text**: The main heading displayed in the dropzone (available when not in compact mode).
+* **Upload text**: The text for the upload link/button.
+* **Sub text**: The secondary description text (available when not in compact mode).
+
+### Specifying acceptable file extensions
+
+By default any file, with any file extension, will be accepted. To restrict this, provide an **array** of file extensions, e.g. `[".webp",".png"]`.
+
+When [Using Handlebars](doc:bindings), use the `split` helper:
+
+handlebars
+{{ split ".png,.jpg,.jpeg,.svg,.gif,.webp" "," }}
+
+
+When [Using JavaScript](doc:javascript), return an array of strings:
+
+javascript
+return ['.png','.jpg','.jpeg','.svg','.gif','.webp']
+
+
+
 ## Upload File to S3 action
 
 Whilst the upload component has been added, you still need to use an upload [Action](doc:actions) so that the user can submit their selected files to the S3 bucket.
 
 The easiest way to do this is to add a [Button](doc:button). Click `Define actions`, add the **Upload File to S3** action, and select your `S3 File Upload` component from the dropdown. Be sure to click `Save`.
-
