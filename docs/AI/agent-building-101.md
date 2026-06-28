@@ -89,7 +89,7 @@ By default, Budibase provides a structured instruction template to help you defi
 
 For now we will use the below instructions:
 
-```markdown instructions
+markdown instructions
 **Agent role**
 You are a Service Desk AI Agent responsible for managing support tickets.
 
@@ -117,7 +117,7 @@ When categorising or prioritising, return structured JSON:
 - Only escalate tickets with High priority
 - Be concise and professional
 - Use British English where possible
-```
+
 
 After configuring and adding the above instructions, run a test and confirm that everything is working.
 
@@ -147,7 +147,7 @@ Once these tools are enabled, Budibase injects them into the Agent’s execution
 
 Here is our updated instruction prompt:
 
-```markdown instructions
+markdown instructions
 **Agent role**
 You are a Service Desk AI Agent responsible for managing support tickets.
 
@@ -182,9 +182,20 @@ When categorising or prioritising, return structured JSON:
 - Only escalate tickets with High priority
 - Be concise and professional
 - Use British English
-```
+
 
 Optionally, test again with some data and see how it handles the process.
+
+### Managing multiple operations
+
+As your agent grows more complex, you can define multiple **Operations**, each with its own niche instructions and set of tools. 
+
+When an agent has multiple live operations, Budibase uses an internal router to detect the intent of the user's request. It will:
+- **Select a specific operation** if the request clearly matches one operation's focus.
+- **Summarize capabilities** if the user asks broad questions like "What can you help me with?" or requests an overview of the agent's tasks.
+- **Proceed without an operation** if the request is unrelated to any defined capability.
+
+You do not need to manually configure this routing; it is handled automatically based on the names and instructions you provide for each operation.
 
 ### Testing the agent
 
