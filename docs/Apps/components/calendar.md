@@ -236,7 +236,21 @@ On-click events can be established to surface the values for an event's `row_id`
       </td>
 
       <td>
+        Controls formatting of the weekday in the title area.
+      </td>
+    </tr>
 
+    <tr>
+      <td>
+        Weekday header format
+      </td>
+
+      <td>
+        Narrow or Short or Long
+      </td>
+
+      <td>
+        Controls formatting of the weekday labels in the table headers.
       </td>
     </tr>
 
@@ -295,63 +309,11 @@ On-click events can be established to surface the values for an event's `row_id`
         Calendar will open on current date by default. Set this to open on a specific date.
       </td>
     </tr>
-
-    <tr>
-      <td>
-        Month button Text
-      </td>
-
-      <td>
-        Text
-      </td>
-
-      <td>
-        Allows customisation for non-english-speaking users
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Week button Text
-      </td>
-
-      <td>
-        Text
-      </td>
-
-      <td>
-        Allows customisation for non-english-speaking users
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Day button text
-      </td>
-
-      <td>
-        Text
-      </td>
-
-      <td>
-        Allows customisation for non-english-speaking users
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Today button text
-      </td>
-
-      <td>
-        Text
-      </td>
-
-      <td>
-        Allows customisation for non-english-speaking users
-      </td>
-    </tr>
   </tbody>
 </Table>
 
 <br />
+
+## Translations
+
+Calendar labels including weekday and month names, as well as button text (e.g. "Today", "Month", "Agenda"), are managed globally. You can customize these in [Workspace Translations](doc:translations) under the **Calendar** category.
