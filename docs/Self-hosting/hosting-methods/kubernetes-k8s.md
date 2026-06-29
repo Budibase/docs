@@ -76,17 +76,15 @@ Now that you have your Kubernetes cluster up and running, you can install the Bu
 helm install --create-namespace --namespace budibase budibase oci://ghcr.io/budibase/charts/budibase
 ```
 
-
 Wait a few moments as Budibase creates all the containers and resources. You can then run:
 
 ```shell
 kubectl get pods -n budibase
 ```
 
-
 You should now be able to see your new Budibase installation up and running in your Kubernetes cluster.
 
-
+```
 NAME                                READY   STATUS             RESTARTS         AGE
 app-service-69b7888b7-h25cp       1/1     Running            0                90m
 budibase-couchdb-0                1/1     Running            0                90m
@@ -94,7 +92,7 @@ minio-service-59c757bb5-q6xt2     1/1     Running            0                90
 proxy-service-6449dd9fdf-v5r6z    1/1     Running            0                90m
 redis-service-c6f59dcf5-lh7v5     1/1     Running            0                90m
 worker-service-55b49f4cdc-qr5b7   1/1     Running            0                90m
-
+```
 
 ## Configuring your Ingress resource
 
@@ -108,13 +106,11 @@ If you're running on AWS EKS, we ship an ALB-ready Ingress resource as part of t
 helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase --set ingress.enabled=false --set awsAlbIngress.enabled=true
 ```
 
-
 If you want to enable ALB access logging to S3, you can set the following values during install or upgrade:
 
 ```shell
 --set awsAlbIngress.accessLogs.enabled=true --set awsAlbIngress.accessLogs.bucket=my-access-logs-bucket --set awsAlbIngress.accessLogs.prefix=budibase
 ```
-
 
 *Note: The S3 bucket must already exist in the same region as the ALB and have a bucket policy allowing the regional ELB log-delivery principal to write to it.*
 
@@ -125,7 +121,6 @@ $ kubectl --context qa -n budibase get ingress
 NAME               CLASS    HOSTS   ADDRESS                                                                 PORTS   AGE
 ingress-budibase   <none>   *       4372843243278.eu-west-1.elb.amazonaws.com   80      9m5s
 ```
-
 
 Visit the Ingress address in your browser and you will see that your Budibase installation is up and running.
 
@@ -138,7 +133,6 @@ If you'd like to set up HTTPS, you can also create a certificate using [AWS ACM]
 ```shell
 helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase --set ingress.enabled=false --set awsAlbIngress.enabled=true --set awsAlbIngress.certificateArn=...
 ```
-
 
 From here, if you'd like to use a custom domain name make sure it's a CNAME that points to Ingress address and that your certificate includes the custom domain name.
 
@@ -162,13 +156,11 @@ ingress:
                 number: 10000
 ```
 
-
 Save this as a file called `values.yaml` and then upgrade your Helm release:
 
 ```shell
 helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase -f values.yaml
 ```
-
 
 Now find the external address if your `ingress-nginx` installation by running:
 
@@ -176,7 +168,6 @@ Now find the external address if your `ingress-nginx` installation by running:
 ➜ kubectl -n ingress-nginx get services | grep LoadBalancer
 ingress-nginx-controller                   LoadBalancer   10.99.103.243    192.168.0.90   80:32221/TCP,443:32172/TCP   2y20d
 ```
-
 
 If you're running a homelab with, for example, [metallb](https://metallb.org/), your `ingress-nginx` `LoadBalancer` will be exposed on an IP address in your local network as above (`192.168.0.90`). If you're running `ingress-nginx` in EKS, you'll see an AWS load balancer domain name in this column instead.
 
@@ -206,7 +197,6 @@ And then update your Budibase installation:
 helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase -f values.yaml
 ```
 
-
 ### GCP GKE
 
 Follow the [guide to enable Compute Engine persistent disk](https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/gce-pd-csi-driver) in your GKE cluster. When you've done that, add the following to your `values.yaml` to enable persistent storage for all of the Budibase services that need it:
@@ -229,7 +219,6 @@ And then update your Budibase installation:
 helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase -f values.yaml
 ```
 
-
 ## Upgrading your Budibase version
 
 To upgrade to the latest version of Budibase via Helm, you can run the following command:
@@ -237,7 +226,6 @@ To upgrade to the latest version of Budibase via Helm, you can run the following
 ```shell
 helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase --reuse-values
 ```
-
 
 ***
 
@@ -256,7 +244,6 @@ services:
   worker:
     replicaCount: 2
 ```
-
 
 ### Secrets Management
 
@@ -282,7 +269,6 @@ kubectl get secret budibase-budibase -o go-template='{{ .data.objectStoreAccess 
 kubectl get secret budibase-budibase -o go-template='{{ .data.objectStoreSecret }}' -n budibase | base64 --decode
 ```
 
-
 ### Redis
 
 The Budibase Helm chart ships with a [Redis](https://redis.io/) server that will be included by default. If you want to use your own external Redis cluster, you can configure the `values.yaml` file in the helm chart to switch off the Budibase one by turning enabled off. Here's what your configuration may look like if you wanted to disable the default bundled Redis and use an external Redis cluster hosted on `myrediscluster.io`.
@@ -295,7 +281,6 @@ The Budibase Helm chart ships with a [Redis](https://redis.io/) server that will
       url: "myrediscluster.io"
       password: "your-redis-password"
 ```
-
 
 ### CouchDB
 
@@ -310,7 +295,6 @@ The Budibase Helm chart will automatically bring up a one-node CouchDB cluster w
       password: "couchpassword"
 ```
 
-
 ### MinIO/Amazon S3
 
 Budibase ships with a MinIO server included for object storage. Since MinIO is Amazon S3 compliant, you can switch out the bundled MinIO for an S3 bucket in your AWS account. Here's how your **values.yaml** should look if you want to use S3 instead of MinIO.
@@ -322,7 +306,6 @@ services:
     accessKey: "your-access-key" # AWS_ACCESS_KEY
     secretKey: "your-secret-key" # AWS_SECRET_ACCESS_KEY
 ```
-
 
 ### Reference
 
