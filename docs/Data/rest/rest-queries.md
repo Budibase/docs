@@ -19,7 +19,7 @@ REST queries are configured in API Editor for a saved REST connection.
 3. Select the API connection to use
 4. Enter a clear query name
 5. Set HTTP method
-6. Enter endpoint path or full URL
+6. Enter endpoint path or full URL. Note that full URLs must include the protocol (e.g., `https://example.com`).
 7. Configure Params, Headers, Body, and Bindings
 8. Select an auth config (if required)
 9. Click **Send**
@@ -33,7 +33,7 @@ You can also start from **Workspace Settings > Connections > APIs** and click **
 | Area | What to configure | Notes |
 | :-- | :-- | :-- |
 | Method | `GET`, `POST`, `PUT`, `PATCH`, `DELETE` | Must match endpoint contract |
-| URL/Path | Endpoint path or full URL | Usually path + connection base URL |
+| URL/Path | Endpoint path or full URL | Usually path + connection base URL. Full URLs require a protocol prefix. |
 | Params | Query-string key/value pairs | Supports bindings |
 | Headers | Request headers | Supports bindings and shared defaults |
 | Body | Payload for write/query APIs | Use valid JSON/XML/Text as required |
@@ -76,6 +76,7 @@ After applying a transformer:
 
 ## Common issues
 
+* **Missing protocol**: Full URLs must include `http://` or `https://` to be valid. The **Send** button will be disabled and a warning displayed if the protocol is missing.
 * `401/403`: wrong or missing auth config.
 * `404`: wrong path or base URL.
 * `400/422`: request payload does not match API contract.
