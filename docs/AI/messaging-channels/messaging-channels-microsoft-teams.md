@@ -53,7 +53,7 @@ If you send a normal message before linking, Budibase sends a private link promp
 When your agent uses documents to answer questions (Retrieval-Augmented Generation), Budibase can provide direct download links to those sources within Teams.
 
 ### Source citations
-In **personal conversations**, your agent will automatically append a list of the specific document sources it used to generate its reply. Each source includes a direct, authenticated link to download the file.
+In **personal conversations**, your agent will automatically provide the specific document sources it used to generate its reply as a set of interactive buttons below the message. Each button includes a direct, authenticated link to download the file.
 
 To ensure privacy and security, source download links are **not** provided when the agent is chatting in a **channel or group conversation**.
 
