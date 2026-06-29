@@ -10,15 +10,15 @@ metadata:
 next:
   description: ''
 ---
-It is possible to see a list of automation runs for your published apps. To do so, click the automation you wish to view and the click the logs button within the automation.
+It is possible to see a list of automation runs for your published apps. To do so, click the automation you wish to view and then click the logs button within the automation.
 
-<Image align="center" border={false} width="400px" src="https://files.readme.io/a32c6e59c530c5198458313ccfc2976ce5a54b39bf5bb382ba84784e06cfd64d3-Screenshot_2025-09-30_at_08.27.54.png" />
+In the automation details view, the **Logs** button gives you access to the run history.
 
 <br />
 
-This will open up a sidepanel with all successful and failed runs of an automation.
+This will open up a side panel with all successful and failed runs of an automation.
 
-<Image align="center" border={false} src="https://files.readme.io/cedc3a9918e4179443de8b2bf19d8ad708c8d4e50bf5c3cd31e794d67ce3727f1-Screenshot_2025-09-30_at_08.27.58.png" />
+The side panel lists the recent successful and failed runs for that automation.
 
 You can filter and order the logs by automation name, data range, and status.
 
@@ -33,7 +33,7 @@ The there are three statuses:
 
 Whenever an automation run errors, you will see a red banner at the top of your app list with the automation name and the number of times it failed in parentheses.
 
-<Image align="center" border={false} src="https://files.readme.io/f4e695e52cc6bf07fa86eded1909ef992aa661d23b61f314ff8da82ea21826e6-Screenshot_2025-03-12_at_13.36.19.png" />
+This appears as a red banner at the top of your app list, showing the automation name and the number of failures in parentheses.
 
 There is a convenient 'View error' link which will take you to the automation history, or you can click the 'X' to dismiss the notification.
 
@@ -69,9 +69,9 @@ Whether to have this setting on or off depends on your use-case:
 
 #### Example
 
-<Image align="center" alt="The first automation creates a new row in the Employees table" border={false} caption="The first automation creates a new row in the Employees table" src="https://files.readme.io/770ac3c2e49656c8d002c5237db3bbda9750ddadc38e7f6f70443abfb0fbc0ec-image.png" />
+The first automation creates a new row in the Employees table.
 
-<Image align="center" alt="The second automation triggers when a new row is added to the Employees table" border={false} caption="The second automation triggers when a new row is added to the Employees table" src="https://files.readme.io/3f7bad603e007815edac0f9e9db1a4b5a9ddf9057efde2825d5923664f8d16bd-image.png" />
+The second automation triggers when a new row is added to the Employees table.
 
 In this basic example, the first automation would only trigger the second if the _Enable chaining_ toggle was **on**.
 

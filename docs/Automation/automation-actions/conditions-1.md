@@ -12,22 +12,18 @@ next:
 ---
 It is possible to perform an automation action only if certain trigger criteria are met.
 
-For example, you may have a table of Orders as follows
-
-<Image align="center" border={false} src="https://files.readme.io/1618162d1a89aa128e5d43b814919371be405dcbc4296831b3b5c28214f12ae9-Screenshot_2024-11-07_at_09.07.33.png" />
-
-and you want to send an [Email](doc:email) to notify the shopper of their purchase, but _only_ if the order is accepted.
+For example, you may have a table of Orders with an `Accepted` flag, and you want to send an [Email](doc:email) to notify the shopper of their purchase, but _only_ if the order is accepted.
 
 ## Steps
 
 1. Create an automation using the **Row Updated** trigger.
 
-<Image align="center" border={false} src="https://files.readme.io/b0a416825c60bc684664cf346de642349461fba5a5be896ed2c0b0f413b9fef9-Screenshot_2025-04-09_at_11.27.24.png" />
+The automation builder should now show a **Row Updated** trigger configured for the Orders table.
 
 2. Add a condition action.
    The updated order must have had the _Accepted_ flag turned on to be able to continue.
 
-<Image align="center" border={false} src="https://files.readme.io/2f8b2bd5818e2d598ac74fb489675ca8263cbc5b5m4f6471e4721068a6908101-Screenshot_2025-04-09_at_11.27.34.png" />
+The condition step checks whether the `Accepted` flag is enabled before the automation continues.
 
 ### Notify on stop
 
@@ -35,7 +31,7 @@ You can optionally enable the **Notify on stop** toggle. When enabled, if the au
 
 3. Add the send email action.
 
-<Image align="center" border={false} src="https://files.readme.io/4c6da835fe0adebc505fc10718b6ab15974e5f8e6253e09d3d425b114d84518f-Screenshot_2025-04-09_at_11.27.50.png" />
+The final action sends the purchase notification after the condition passes.
 
 > 💡 Multiple Conditions
 >
