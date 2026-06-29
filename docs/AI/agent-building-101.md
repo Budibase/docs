@@ -186,6 +186,17 @@ When categorising or prioritising, return structured JSON:
 
 Optionally, test again with some data and see how it handles the process.
 
+### Managing multiple operations
+
+As your agent grows more complex, you can define multiple **Operations**, each with its own niche instructions and set of tools. 
+
+When an agent has multiple live operations, Budibase uses an internal router to detect the intent of the user's request. It will:
+- **Select a specific operation** if the request clearly matches one operation's focus.
+- **Summarize capabilities** if the user asks broad questions like "What can you help me with?" or requests an overview of the agent's tasks.
+- **Proceed without an operation** if the request is unrelated to any defined capability.
+
+You do not need to manually configure this routing; it is handled automatically based on the names and instructions you provide for each operation.
+
 ### Testing the agent
 
 Now that our Agent has instructions and tools, we can test whether it behaves safely and predictably.
