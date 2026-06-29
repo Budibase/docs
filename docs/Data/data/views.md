@@ -46,7 +46,7 @@ To create a new filter:
 3. Select the Column you would like to filter
 4. Select a filter function
 5. Type your query
-6. Click `Save`
+6. Click `Saved`
 
 You can also save a filtered table directly as a new view.
 
@@ -92,7 +92,7 @@ Adding sales channel to the grouping breaks the counts down by both country and 
 
 The Screens button in the Data toolbar shows where a view or view calculation is currently being used.
 
-Views and View Counts can be used as Data Sources, and manipulated in the same ways. Using a view calculation like "Calculate the Sum of Total Revenue, Group by Country" allows us the find the total revenue of sale per country. We could then use this in a repeater block, as a sales leaderboard. 
+Views and View Counts can be used as Data Sources, and manipulated in the same ways. Using a view calculation like "Calculate the Sum of Total Revenue, Group by Country" allows us to find the total revenue of sale per country. This data can then be used in components like **Charts** or **Repeater Blocks**. 
 
 Add a Repeater Block, and set the Data Source to the `view total_revenue_by_country`, then set the Sort Column to be Sum Total Revenue, descending, limited to 10. This will show us the top 10 countries by sum total sales revenue.
 
