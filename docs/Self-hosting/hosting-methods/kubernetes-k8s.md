@@ -85,7 +85,7 @@ kubectl get pods -n budibase
 You should now be able to see your new Budibase installation up and running in your Kubernetes cluster.
 
 ```
-NAME                              READY   STATUS             RESTARTS         AGE
+NAME                                READY   STATUS             RESTARTS         AGE
 app-service-69b7888b7-h25cp       1/1     Running            0                90m
 budibase-couchdb-0                1/1     Running            0                90m
 minio-service-59c757bb5-q6xt2     1/1     Running            0                90m
@@ -100,11 +100,19 @@ To use your new installation, you'll need to configure an Ingress resource. One 
 
 ### AWS EKS
 
-If you're running on AWS EKS, we ship an ALB-ready Ingress resource as part of the chart. You'll need to disable the deafult Ingress and enable the ALB one:
+If you're running on AWS EKS, we ship an ALB-ready Ingress resource as part of the chart. You'll need to disable the default Ingress and enable the ALB one:
 
 ```shell
 helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase --set ingress.enabled=false --set awsAlbIngress.enabled=true
 ```
+
+If you want to enable ALB access logging to S3, you can set the following values during install or upgrade:
+
+```shell
+--set awsAlbIngress.accessLogs.enabled=true --set awsAlbIngress.accessLogs.bucket=my-access-logs-bucket --set awsAlbIngress.accessLogs.prefix=budibase
+```
+
+*Note: The S3 bucket must already exist in the same region as the ALB and have a bucket policy allowing the regional ELB log-delivery principal to write to it.*
 
 After a few minutes your new Ingress resource should be provisioned and you should be able to get the address for it like so:
 
@@ -157,7 +165,7 @@ helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase -f valu
 Now find the external address if your `ingress-nginx` installation by running:
 
 ```shell
-❯ kubectl -n ingress-nginx get services | grep LoadBalancer
+➜ kubectl -n ingress-nginx get services | grep LoadBalancer
 ingress-nginx-controller                   LoadBalancer   10.99.103.243    192.168.0.90   80:32221/TCP,443:32172/TCP   2y20d
 ```
 
@@ -183,18 +191,16 @@ services:
   redis:
     storageClass: "gp3"
 ```
-
 And then update your Budibase installation:
 
-```
+```shell
 helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase -f values.yaml
 ```
 
 ### GCP GKE
 
 Follow the [guide to enable Compute Engine persistent disk](https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/gce-pd-csi-driver) in your GKE cluster. When you've done that, add the following to your `values.yaml` to enable persistent storage for all of the Budibase services that need it:
-
-```
+```yaml
 couchdb:
   persistentVolume:
     enabled: true
@@ -209,7 +215,7 @@ services:
 
 And then update your Budibase installation:
 
-```
+```shell
 helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase -f values.yaml
 ```
 
@@ -267,7 +273,7 @@ kubectl get secret budibase-budibase -o go-template='{{ .data.objectStoreSecret 
 
 The Budibase Helm chart ships with a [Redis](https://redis.io/) server that will be included by default. If you want to use your own external Redis cluster, you can configure the `values.yaml` file in the helm chart to switch off the Budibase one by turning enabled off. Here's what your configuration may look like if you wanted to disable the default bundled Redis and use an external Redis cluster hosted on `myrediscluster.io`.
 
-```yaml yaml
+```yaml
   services:
     redis:
       enabled: false

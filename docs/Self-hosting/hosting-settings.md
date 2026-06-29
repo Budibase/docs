@@ -274,6 +274,16 @@ The full set of variables can be found in our repo, in the file [.env](https://r
 
     <tr>
       <td>
+        RESOLVER
+      </td>
+
+      <td>
+        The DNS resolver the internal nginx proxy uses to resolve upstreams. This MUST be an IP address. If left empty in the Helm chart, Budibase will attempt to auto-detect the kube-dns ClusterIP.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
         SMTP_USER
       </td>
 
