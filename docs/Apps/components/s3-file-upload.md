@@ -45,16 +45,15 @@ By default any file, with any file extension, will be accepted. To restrict this
 
 When [Using Handlebars](doc:bindings), use the `split` helper:
 
-handlebars
+```handlebars
 {{ split ".png,.jpg,.jpeg,.svg,.gif,.webp" "," }}
-
+```
 
 When [Using JavaScript](doc:javascript), return an array of strings:
 
-javascript
+```javascript
 return ['.png','.jpg','.jpeg','.svg','.gif','.webp']
-
-
+```
 
 ## Upload File to S3 action
 
