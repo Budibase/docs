@@ -12,15 +12,15 @@ next:
 ---
 Once you've created an account with Budibase, you will be able to create and manage multiple workspaces between Budibase cloud and [self-hosted](https://docs.budibase.com/docs/hosting-methods).
 
-A workspace is a collections of apps, users, settings and roles that are tied to an environment.
+A workspace is a collection of apps, users, settings, and roles that are tied to an environment.
 
-When you login to your account, you will see a list of your workspaces under the _Workspaces_ tab.
+When you log in to your account as the owner, you will see a list of your workspaces under the _Workspaces_ tab.
 
 <br />
 
 ### Cloud hosted workspaces
 
-<Image align="center" alt="A cloud hosted workspace" border={false} caption="A cloud hosted workspace" src="https://files.readme.io/fc4077b097c7407a355f95330ef2c3fe1d41d1fe5467b569512f36515bfbe08b-cloud_workspace.png" />
+Each cloud workspace appears as a tile in the account portal. The tile shows the workspace URL, the current subscription status, and actions such as `Go to workspace`, `Upgrade subscription`, and delete.
 
 <br />
 
@@ -30,9 +30,9 @@ You can also see the _Subscription_, which will always initially be _Free tier_.
 
 Once the workspace subscription has been activated, the green light will appear. It may take a minute for the subscription to activate.
 
-<Image align="center" alt="Cloud workspace on the Premium plan" border={false} caption="Cloud workspace on the Premium plan" src="https://files.readme.io/10eba5b71bd0a4113e7d933dcbf31bbe9c32ec639ff0ff14a6df240f7c9d7054-premium_cloud_workspace.png" />
+When the subscription is active, the tile updates to show the upgraded plan and a green status indicator next to _Subscription_.
 
-Each workspace has it's own subscription. Whenever you buy a subscription, it will unlock the features and increase quotas on a per workspace basis.
+Each workspace has its own subscription. Whenever you buy a subscription, it will unlock features and increase quotas on a per-workspace basis.
 
 To add a cloud workspace, click the `Add workspace` at the top of the page, and select `Budibase cloud`. You will then be prompted to enter a unique URL.
 
@@ -70,26 +70,20 @@ In order to unlock the full set of features and remove limits, you must link you
 2. Select `Self host`
 3. Enter a name to help you remember which installation this workspace will be linked to
 
-<Image align="center" alt="Give your self-host workspace a memorable name" border={false} caption="Give your self-host workspace a memorable name" src="https://files.readme.io/3dd261d942ab23df2ceef024057a6a75173619f5616964b2bfaacbc92ca33e87-selfhost_workspace_name.png" />
+The workspace name is only for identification in the account portal, so choose something descriptive for the installation it will be linked to.
 
-4. Click `I have installed budibase` when your installation is ready to be linked
+4. Click `I have installed Budibase` when your installation is ready to be linked
 5. You will then be presented with your license key - copy it.
 
-<Image align="center" alt="This modal will wait for you to paste the license key into your installation" border={false} caption="This modal will wait for you to paste the license key into your installation" src="https://files.readme.io/d3e87e45397be0da73baf4e941e6a7d0e5f28168d7d314bf51c93e2333b402dc-link_license.png" />
+The linking dialog shows your license key and waits for you to paste it into the `Upgrade plan` screen in your self-hosted installation.
 
-6. Visit your installation, and navigate to the `Upgrade plan` inside the settings area. Paste in your key and click `Activate`
+6. Visit your installation, and navigate to the `Upgrade plan` section in the settings area. Paste in your key and click `Activate`
 
-<Image align="center" border={false} src="https://files.readme.io/a3e615f1065c7fb9ec5e22b0bc7d13679ade1cf0c887f40f4fe86615a5e47b26-Screenshot_2025-09-29_at_13.36.56.png" />
+After activation, the installation should confirm that the license has been linked successfully.
 
-7. Now back in your account workspace page, you should see the message _License successfully linked_. Click `Done` to finish. Your workspace is now ready to be upgraded!
+7. Now back in your account workspace page, you should see the message _License successfully linked_. Click `Done` to finish. Your workspace is now ready to be upgraded.
 
-<Image align="center" border={false} src="https://files.readme.io/81aaabbc5b218bda86ffdeb50003964e07a28790cad7e611cbb03d95080dc94f-success.png" />
-
-<Image align="center" alt="License linked" border={false} caption="License linked" src="https://files.readme.io/10fd71870159e267cc318174f86edfa8ac64154f3e3bced59128bec9cc4e943a-linked.png" />
-
-Now you can upgrade your workspace. A green light beside the _Subscription_ when the subscription is active.
-
-<Image align="center" alt="Premium subscription" border={false} caption="Premium subscription" src="https://files.readme.io/7c4ef01029988ebdf0cb66d2ea66c6ea78c75b9abe72cec9c8e250f392d10d74-upgraded.png" />
+Once upgraded, the subscription tile shows the paid plan and a green status indicator beside _Subscription_.
 
 <br />
 
@@ -99,8 +93,6 @@ Now you can upgrade your workspace. A green light beside the _Subscription_ when
 
 To get the features and quotas to update in your _installation_, navigate to the `Upgrade` tab of the `Account` section. Under **Plan**, click the `Refresh` button, and you should see the plan type update.
 
-<Image align="center" alt="Installation will show the old plan until your 'Refresh'" border={false} caption="Installation will show the old plan until your 'Refresh'" src="https://files.readme.io/e8262e5a922e4ed466bbccb3589223ec75634a015684d25bac6955f60567505a-free_plan.png" />
+Before you refresh, the installation may still show the previous plan.
 
-After refreshing your upgraded plan will be applied to the installation:
-
-<Image align="center" border={false} src="https://files.readme.io/3469f25c8c7d8ab8260d1af0de5d681f2673eb23ce454f36380cae805fbe5841-refresh.png" />
+After refreshing, the installation updates to the new plan and the revised quotas become available.
