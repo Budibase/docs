@@ -88,9 +88,9 @@ When running a test you can see the API call and the transformer worked as expec
 
 For reference, we've transformed the result from the public <a href="https://docs.github.com/en/rest/search#search-repositories" target="_blank">Github Search API</a> like this:
 
-javascript
+```javascript
 return data.items[0].stargazers_count
-
+```
 
 ## Using the data
 
@@ -102,9 +102,9 @@ First, we're retrieving a DIscord Webhook URL, setting the botname, optionally a
 
 As you can see, we formulated a nice message, and used the `value` from the API call from `step 1`. Our binding ends up to look like this:
 
-handlebars
+```handlebars
 You now have {{ steps.External Data Connector.response }} stargazers
-
+```
 
 And this works, because our Discord bot just sent this message
 
