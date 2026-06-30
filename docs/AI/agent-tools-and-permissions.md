@@ -34,6 +34,15 @@ Write tools:
 * Require explicit user intent
 * Should include additional rules and testing
 
+## Human-in-the-loop (Escalation)
+
+For high-stakes write operations, you can use the built-in **Escalation** system. This allows an agent to pause and request human sign-off before executing a tool.
+
+When you configure [Escalations](doc:agent-human-in-the-loop) for an operation, the agent gain access to the `escalate` tool. Use this when:
+* Actions exceed a certain value (e.g., refunds > $500).
+* Confidence in the mapping or logic is low.
+* Explicit legal or policy sign-off is required.
+
 ## Permission patterns
 
 Use one of these patterns:
@@ -71,6 +80,7 @@ Ambiguous names increase wrong-tool calls and prompt complexity.
 
 ## Related guides
 
+* [Agent human-in-the-loop](doc:agent-human-in-the-loop)
 * [Agent instructions guide](doc:agent-instructions-guide)
 * [Agent testing guide](doc:agent-testing-guide)
 * [Agent troubleshooting](doc:agent-troubleshooting)
