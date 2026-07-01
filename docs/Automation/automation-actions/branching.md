@@ -23,7 +23,7 @@ With this new feature, you can create branches by clicking the Branching Icon to
 
 1. **Create Multiple Conditional Paths**: You can split your automation into two or more paths based on specified conditions. This mimics the behavior of conditional statements, providing flexibility to route different inputs or events down other paths.
 2. **Add Additional Branches**: Beyond just two initial paths, you can continue adding branches by clicking the Add Additional Branch button, allowing you to handle complex workflows with multiple potential outcomes.
-3. **Configurable Conditions**: Each branch has its own set of conditions configured by clicking the Add Condition button. This opens a modal with a [dynamic filtering](doc:dynamic-filter) form, where you can compare values (e.g., if a value is equal to or not equal to a specified parameter) to determine the path that should be followed.
+3. **Configurable Conditions**: Each branch has its own set of conditions configured by clicking the Add Condition button. This opens a modal with a [dynamic filtering](doc:dynamic-filter) form, where you can compare values (e.g., if a value is equal to or not equal to a specified parameter) to determine the path that should be followed. Conditions are optional; if no conditions are defined for a branch, it will always evaluate as true and execute its steps if evaluation reaches that branch.
 4. **Order of Execution**: Arrows within the branching step allow you to change the order of conditions being evaluated. This ensures that you have control over which branch is checked first, giving you priority management for condition evaluation.
 5. **Deletion and Tooltip**: Branches can be deleted when no longer needed, and a helpful tooltip explains that "Only the first branch which matches its condition will run." This ensures users understand that the evaluation stops once a condition is met, preventing unnecessary steps.
 
@@ -58,7 +58,7 @@ In this tutorial, we will create a customer support ticketing system. The aim he
       3. High
    5. Notes - Long form text field
 
-      <Image align="center" src="https://files.readme.io/1b5ec26ac16697234f8d70f820f3740a3544a1e31561f0b25f9e290fd7f62aff-Screenshot_2024-10-23_at_10.47.19.png" />
+     <Image align="center" src="https://files.readme.io/1b5ec26ac16697234f8d70f820f3740a3544a1e31561f0b25f9e290fd7f62aff-Screenshot_2024-10-23_at_10.47.19.png" />
 3. Click the **Automations** button shown in the above image
 4. Click **Generate automation**
 
@@ -73,12 +73,12 @@ In this tutorial, we will create a customer support ticketing system. The aim he
    2. Add an extra branch (By default you start with 2)
    3. Click the Add condition button to add conditions
 
-      1. The first will cover bugs that are medium or high were the customer level is high
+     1. The first will cover bugs that are medium or high were the customer level is high
 
          <Image align="center" src="https://files.readme.io/afa714c610b9ccf6e6140c027c844f6f688a6c8e6165ee95bfb440c0f50e9cdc-Screenshot_2024-10-23_at_12.43.17.png" />
       2. The second will be were any other bugs go through that don't match the above criteria
 
-         <Image align="center" src="https://files.readme.io/dd22831771ffca78429030bbf478953d399823bcddf7d9648895a4a3b7025b74-Screenshot_2024-11-06_at_13.20.38.png" />
+         <Image align="center" src="https://files.readme.io/dd22831771ffca78429030bf478953d399823bddf7d9648895a4a3b7025b74-Screenshot_2024-11-06_at_13.20.38.png" />
       3. The last will handle any non bug related ticket submissions
 
          <Image align="center" src="https://files.readme.io/90f9b8b85096dd4c827376363c47b383b906a0e02594cfcad680648d802640fa-Screenshot_2024-11-06_at_13.21.14.png" />
