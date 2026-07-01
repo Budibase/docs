@@ -20,6 +20,8 @@ next:
 
 External Data Connector action steps can be used to run a query from the Data section, either from a [Data Source Custom Query](https://docs.budibase.com/docs/data-sources#custom-queries), or from a [REST query](https://docs.budibase.com/docs/rest-queries).
 
+When using a connector template that does not yet have an active connection, the setup panel will display a **Connect to [Connector Name]** button. Clicking this button will automatically open the API explorer and guide you through setting up a new connection for that template, streamlining the integration process.
+
 If the query to your External Data Connector takes parameters, they can be set as part of the flow by using the bindings drawer or simply manually-typed.
 
 <Image align="center" src="https://files.readme.io/f65d9028b99f29cfd6d8e34ae06b152d27d8c7fa8f78144e48fe75772d40e2e6-Screenshot_2025-04-09_at_13.48.17.png" />
