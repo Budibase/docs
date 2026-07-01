@@ -58,7 +58,7 @@ This structure can be flattened as needed, and then queried using the `:` notati
 
 <Image border={false} src="https://files.readme.io/d15f8a5-Screenshot_2022-07-04_at_14.28.41.png" title="Screenshot 2022-07-04 at 14.28.41.png" />
 
-You can also see how [Bindings](doc:bindings) can be used, in this case as a filter.
+You can also see how [Bindings](doc:bindings) can be used, in this case as a filter. When using custom queries, these bindings are forwarded as native Snowflake query parameters, providing protection against SQL injection and improved performance.
 
 It would be possible to [Transform](doc:transformers) the data rather than do the mapping as part of the query, however this is not advisable as the performance will be much better on the cloud servers.
 
@@ -66,7 +66,7 @@ It would be possible to [Transform](doc:transformers) the data rather than do th
 
 <Image border={false} src="https://files.readme.io/21489f6-Screenshot_2022-07-04_at_14.32.49.png" title="Screenshot 2022-07-04 at 14.32.49.png" />
 
-> 🚧 Limit
+> 🐧 Limit
 >
 > A data warehouse query could potentially return huge amounts of data that could strain the UI.  
 > For this reason, if you're not targeting specific data with a filter, use a limit in your queries, e.g. SELECT * FROM MyTable LIMIT 1000;
