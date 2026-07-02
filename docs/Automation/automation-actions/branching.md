@@ -17,8 +17,6 @@ The automation branching feature introduces a powerful new way to control the fl
 
 With this new feature, you can create branches by clicking the Branching Icon to the left of the "+" symbol on an existing step. This creates two branching paths that originate from the selected step. Additionally, an Add Additional Branch button allows you to add more branching conditions to the right of the existing branches. Each branch operates independently, with its own set of conditions that can be configured to control the automation flow.
 
-<Image align="center" src="https://files.readme.io/1cb8113602b3f880f6e03e50ac92b350265b5642f1139bfa2325f6bc85832260-Screenshot_2025-04-04_at_14.50.21.png" />
-
 ## Key features
 
 1. **Create Multiple Conditional Paths**: You can split your automation into two or more paths based on specified conditions. This mimics the behavior of conditional statements, providing flexibility to route different inputs or events down other paths.
@@ -58,14 +56,12 @@ In this tutorial, we will create a customer support ticketing system. The aim he
       3. High
    5. Notes - Long form text field
 
-     <Image align="center" src="https://files.readme.io/1b5ec26ac16697234f8d70f820f3740a3544a1e31561f0b25f9e290fd7f62aff-Screenshot_2024-10-23_at_10.47.19.png" />
-3. Click the **Automations** button shown in the above image
+     The table setup screen should show the five fields listed above.
+3. Click the **Automations** button shown in the table setup screen
 4. Click **Generate automation**
-
-   <Image align="center" src="https://files.readme.io/42fa35b1f3da3386c17e4825bc7f125bb502a15ed47a7a95292f888f95aab59d-Screenshot_2024-10-23_at_10.57.01.png" />
+   The automation picker should open next.
 5. Click **Row is created**
-
-   <Image align="center" src="https://files.readme.io/91c08dd556ded6bfe243c88df55518c6c68fa118df12daebb27624ec32a2f7e3-Screenshot_2024-10-23_at_10.57.10.png" />
+   Select the row-created trigger for the table.
 6. You should now be redirected to the automations area with the correct automation type.
 7. Now lets start setting up our conditional branches
 
@@ -73,35 +69,27 @@ In this tutorial, we will create a customer support ticketing system. The aim he
    2. Add an extra branch (By default you start with 2)
    3. Click the Add condition button to add conditions
 
-     1. The first will cover bugs that are medium or high were the customer level is high
-
-         <Image align="center" src="https://files.readme.io/afa714c610b9ccf6e6140c027c844f6f688a6c8e6165ee95bfb440c0f50e9cdc-Screenshot_2024-10-23_at_12.43.17.png" />
-      2. The second will be were any other bugs go through that don't match the above criteria
-
-         <Image align="center" src="https://files.readme.io/dd22831771ffca78429030bf478953d399823bddf7d9648895a4a3b7025b74-Screenshot_2024-11-06_at_13.20.38.png" />
+     1. The first will cover bugs that are medium or high where the customer level is high
+         Use conditions for bug tickets where urgency is medium or high and customer priority is high.
+      2. The second will be where any other bugs go through that don't match the above criteria
+         Use a fallback branch for other bug tickets that do not match the first condition.
       3. The last will handle any non bug related ticket submissions
-
-         <Image align="center" src="https://files.readme.io/90f9b8b85096dd4c827376363c47b383b906a0e02594cfcad680648d802640fa-Screenshot_2024-11-06_at_13.21.14.png" />
+         Use a final branch for all non-bug tickets.
    4. Provide a descriptive name to each of the branches so you know what they do
 8. For this tutorial I will just output a different backend log for each branch. You can add any step or run any process here e.g. email, updating a row or even triggering a different automation to handle a specific flow.
    1. Add different text to each backend log
 9. Head back to your data area and click screens in your table
 10. Click **Generate app screen**
-
-    <Image align="center" src="https://files.readme.io/4df3396071cedc1e26d693fa15e3bf5051efd06e9f6a441ac64a21237817f644-Screenshot_2024-10-23_at_13.04.45.png" />
-11. Click table
-
-    <Image align="center" src="https://files.readme.io/3521d43eecd5d2275cc951d55aa8a90db70876e85e7ed4e7168fc2c883aebec6-Screenshot_2024-10-23_at_13.04.55.png" />
+11. Click Generate on your selected table
 12. Click side panel and then click done
-
-    <Image align="center" src="https://files.readme.io/ef453791a4581ceb125894f44678482b5ad3934929d3892320d57972b389be7c-Screenshot_2024-10-23_at_13.05.01.png" />
-13. This will bring you to an app screen were it has auto generated a screen.
+    Select the side panel layout, then confirm.
+13. This will bring you to an app screen where it has auto generated a screen.
 14. Click publish at the top right of your screen and then click the button publish inside
 15. Navigate to your published app and create 3 different records
-    1. The first a bug that is High and is for a high customer. This should go output the first branches backend log
-    2. Create a bug thats high but for a medium customer. This should go output the second branches backend log
-    3. Create a support\_type of anything other than a bug. This should go output the last branches backend log
+    1. The first is a high-priority bug for a high-priority customer. This should output the first branch's backend log.
+    2. Create a bug that is high but for a medium-priority customer. This should output the second branch's backend log.
+    3. Create a `support_type` value that is anything other than a bug. This should output the last branch's backend log.
 
 ### End result
 
-<Image align="center" src="https://files.readme.io/35deef984ec89d7e03f2dca0602d6b48de80919a23dd598417958687edf57846-20241106_130833.gif" />
+The finished automation should route each ticket type to the correct branch and log a different backend message for each path.
