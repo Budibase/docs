@@ -173,7 +173,7 @@ The full set of variables can be found in our repo, in the file [.env](https://r
 
       <td>
         If you have lost access to your self host installation, or wish to bring a new install online with a default administration account you can use this environment variable to configure their username.  
-        _**We do not recommend leaving this set indefinitely, once the user has been created this should be removed.**_
+        _**We recommend not leaving this set indefinitely, once the user has been created this should be removed.**_
       </td>
     </tr>
 
@@ -184,7 +184,7 @@ The full set of variables can be found in our repo, in the file [.env](https://r
 
       <td>
         The password for the default administration account, used in conjunction with the `BB_ADMIN_USER_EMAIL` environment variable.  
-        _**We do not recommend leaving this set indefinitely, once the user has been created this should be removed.**_
+        _**We recommend not leaving this set indefinitely, once the user has been created this should be removed.**_
       </td>
     </tr>
 
@@ -348,7 +348,17 @@ The full set of variables can be found in our repo, in the file [.env](https://r
       </td>
 
       <td>
-        Controls which IP addresses/hostnames/CIDR subnets Budibase's outbound REST query integration is prevented from connecting to. This is an **SSRF (Server-Side Request Forgery) protection** mechanism. 
+        Controls which IP addresses/hostnames/CIDR subnets Budibase's outbound REST query integration is prevented from connecting to. This is an **SSRF (Server-Side Request Forgery) protection** mechanism.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        BBAI_LITELLM_KEY
+      </td>
+
+      <td>
+        The virtual key used for Budibase AI services. This key is required for self-hosted agents to function correctly, particularly when executed within automations. Ensure this key is available to both the app service and the automation worker.
       </td>
     </tr>
   </tbody>
