@@ -31,6 +31,6 @@ For example, currently the user menu profile label is blank, so it will default 
 
 This will then appear across all apps within this workspace
 
-<Image align="center" border={false} src="https://files.readme.io/c8a7b170a2bceecf53269bece5338a3d0dce96e7719db7e59a9d935892069b8-image.png" />
+<Image align="center" border={false} src="https://files.readme.io/c8a7b170a2bceecf53269bece5338a3d0dce96e77719db7e59a9d935892069b8-image.png" />
 
 <br />
