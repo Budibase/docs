@@ -59,9 +59,9 @@ While you can manually enter an array of hard-coded row identifiers, typically y
 4. Make sure the relationship picker is nested under the data provider
 5. Click the lightning bolt icon beside the *Default value* field of the relationship picker, and add the following JavaScript code:
 
-javascript
+```javascript
 return $("City Data Provider.Rows")?.map(row => row._id);
-
+```
 
 6. Refresh the page to see the default values load in
 
@@ -92,7 +92,7 @@ For example, only show related cities of the selected country:
 You may want to perform an action when changing the relationship picker value. If you want to do something with the underlying related row data, then you will need to use the **Fetch Row** action.
 
 1. Click the button beside *On change* in the <Glossary>Settings Panel</Glossary>
-2. `Add actiona: **Fetch Row** and select the table that matches the relationship table
+2. `Add action`: **Fetch Row** and select the table that matches the relationship table
 3. Set the *Row ID* to `{{ Field Value }}`
 
 <Image alt="Fetching the selected row data" align="center" src="https://files.readme.io/77a8708-Screenshot_2023-08-14_at_13.32.59.png">
