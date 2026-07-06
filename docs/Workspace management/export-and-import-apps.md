@@ -31,10 +31,10 @@ The exported file will include all [Budibase DB](doc:budibasedb) data, data conn
 
 2. Next click on **Settings** at the bottom left of your screen.
 
-   <Image align="center" border={false} src="https://files.readme.io/4d60219260719c3c3d6386277bf937be94126a086210ce47c0da73025e554a0-Screenshot_2026-02-09_at_14.50.01.png" />
+   <Image align="center" border={false} src="https://files.readme.io/4d60219260719c3c3d6386277bbf937be94126a086210ce47c0da73025e554a0-Screenshot_2026-02-09_at_14.50.01.png" />
 3. Click on **General**
 
-   <Image align="center" border={false} src="https://files.readme.io/f91294f6b67ec7f481cdffc7e2f89744e044688ca172453e6e83b15471edb67-Screenshot_2026-02-09_at_14.51.08.png" />
+   <Image align="center" border={false} src="https://files.readme.io/f91294f6b6c7ec7f481cdffc7e2f89744e044688ca172453e6e83b15471edb67-Screenshot_2026-02-09_at_14.51.08.png" />
 4. Scroll down to where it says **Export** section
 
    <Image align="center" border={false} src="https://files.readme.io/505e744e2a12ce0f07ae64fa0d468393e2a57e20f05cd02f5b7136d4a279e89a-Screenshot_2026-02-09_at_14.53.23.png" />
