@@ -21,7 +21,7 @@ The value column (the option value that will be saved) will be the **\_id** of t
 
 The **\_id** field represents a unique row identifier, which will exist on all data tables, including the internal DB and SQL tables within Budibase. It is a URL-safe encoded string.
 
-For testing purposes, you can copy the row **\_id** by right-clicking on a row in the **Data** section, and clicking `Copy row _id`. In the vast majority of cases you will not need to manually access the **\_id** field. 
+For testing purposes, you can copy the row **\_id** by right-clicking on a row in the **Data** section, and clicking `Copy row _id`. When setting up filters, the **\_id** field is explicitly available for selection within the field list for relationship fields (e.g., `Relationship._id`).
 
 <Image alt="Copy row \_id" align="center" src="https://files.readme.io/31a42fd-Screenshot_2023-08-11_at_09.40.03.png">
   Copy row \_id
@@ -75,7 +75,7 @@ return $("City Data Provider.Rows")?.map(row => row._id);
 
 By default, the relationship picker options will be populated by all rows in the related table. This may be appropriate for small numbers of relationships, but for larger lists you will want to filter this down. Furthermore, there is a **hard limit of 100 options**, so if you have more than this you will need to apply a filter.
 
-You can add filters in the <Glossary>Settings Panel</Glossary> by clicking on the *Filtering* button.
+You can add filters in the <Glossary>Settings Panel</Glossary> by clicking on the *Filtering* button. When a filter is applied to a relationship picker, the current selection will automatically be cleared if the filter configuration or criteria change. This ensures that the selected values always remain valid based on the active filtering rules (e.g. in cascading dropdown scenarios).
 
 For example, only show related cities of the selected country:
 
