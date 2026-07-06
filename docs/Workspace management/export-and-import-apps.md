@@ -56,7 +56,7 @@ In addition to that, you'll be presented with the option _Encrypt my export_ whi
 
 > 💡 Environment variables
 >
-> By using [Environment variables 🔗](doc:environment-variables), you can exclude secrets and datasource credentials from your workspace exports.
+> By using [Environment variables 🔒](doc:environment-variables), you can exclude secrets and datasource credentials from your workspace exports.
 
 ## Import a workspace
 
@@ -72,7 +72,7 @@ If you click the import button, the UI will change slightly. This will change th
 
 > 💡 Backups
 >
-> [Workspace backups 🔗](doc:backups-1) can be imported like you would import a manual export.
+> [Workspace backups 🔒](doc:backups-1) can be imported like you would import a manual export.
 >
 > The benefit of using backups is that they will automatically be created when publishing your app.
 
