@@ -124,7 +124,7 @@ For this tutorial we will use PostgreSQL, and assume there are three tables with
 * One Owner -> Many Pets
 * One Pet -> Many Appointments
 
-For a given owner, we we want to display a list of appointments based on the chosen pet. 
+For a given owner, we want to display a list of appointments based on the chosen pet. 
 
 Follow this [guide](https://docs.budibase.com/docs/postgresql-1) to see how to connect to your Postgres database, fetch the tables and define the relationships.
 
