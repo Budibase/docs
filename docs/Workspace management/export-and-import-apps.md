@@ -16,7 +16,7 @@ You can use the methods below to move a Budibase workspace from one Budibase ins
 
 The exported file will include all [Budibase DB](doc:budibasedb) data, data connector configurations, query configs, and builder data for all your screens.
 
-> 🚧 Security
+> ⚠️ Security
 >
 > When exporting a production workspace, be vigilant about whom you share the workspace export files with.  
 > Are you confident you won't leak database credentials, user identity information, authentication keys, or other sensitive information?
@@ -31,10 +31,10 @@ The exported file will include all [Budibase DB](doc:budibasedb) data, data conn
 
 2. Next click on **Settings** at the bottom left of your screen.
 
-   <Image align="center" border={false} src="https://files.readme.io/4d60219260719c3c3d6386277bbf937be94126a086210ce47c0da73025e554a0-Screenshot_2026-02-09_at_14.50.01.png" />
+   <Image align="center" border={false} src="https://files.readme.io/4d60219260719c3c3d6386277bf937be94126a086210ce47c0da73025e554a0-Screenshot_2026-02-09_at_14.50.01.png" />
 3. Click on **General**
 
-   <Image align="center" border={false} src="https://files.readme.io/f91294f6b6c7ec7f481cdffc7e2f89744e044688ca172453e6e83b15471edb67-Screenshot_2026-02-09_at_14.51.08.png" />
+   <Image align="center" border={false} src="https://files.readme.io/f91294f6b67ec7f481cdffc7e2f89744e044688ca172453e6e83b15471edb67-Screenshot_2026-02-09_at_14.51.08.png" />
 4. Scroll down to where it says **Export** section
 
    <Image align="center" border={false} src="https://files.readme.io/505e744e2a12ce0f07ae64fa0d468393e2a57e20f05cd02f5b7136d4a279e89a-Screenshot_2026-02-09_at_14.53.23.png" />
@@ -54,9 +54,9 @@ In addition to that, you'll be presented with the option _Encrypt my export_ whi
 
 <Image align="center" border={false} width="450px" src="https://files.readme.io/371a3b3db5041098d5de42776c27c8934462e404598d136d85b4d1013bdbe006-Screenshot_2025-08-20_at_12.48.46.png" />
 
-> 👍 Environment variables
+> 💡 Environment variables
 >
-> By using [Environment variables 🔒](doc:environment-variables), you can exclude secrets and datasource credentials from your workspace exports.
+> By using [Environment variables 🔗](doc:environment-variables), you can exclude secrets and datasource credentials from your workspace exports.
 
 ## Import a workspace
 
@@ -70,14 +70,19 @@ If you click the import button, the UI will change slightly. This will change th
 
 <Image align="center" border={false} src="https://files.readme.io/ad13bae143414ba60aecaa5a04d19732cd68848aa7ea18283c94331eee0f7c0b-Screenshot_2026-02-09_at_14.58.27.png" />
 
-> 👍 Backups
+> 💡 Backups
 >
-> [Workspace backups 🔒](doc:backups-1) can be imported like you would import a manual export.
+> [Workspace backups 🔗](doc:backups-1) can be imported like you would import a manual export.
 >
 > The benefit of using backups is that they will automatically be created when publishing your app.
 
-## Import a workspace and retain your users table
+## Import into an existing workspace
 
-If you need to retain your users and data tables, but override your screens and automations, you can import your screens and datasources within your workspace settings.
+You can import a workspace export into an existing workspace by going to **Settings > General > Import**. This is useful if you want to update the design of an existing app or add new functionality without affecting your existing data.
 
 <Image align="center" border={false} src="https://files.readme.io/ef9690b32c948fc45a022bd3ab6342f65eaa66f85e71c2bb23bb0711d06b50ad-Screenshot_2025-08-20_at_12.52.50.png" />
+
+When importing into an existing workspace:
+* **Existing data is preserved**: Tables and rows that already exist in your workspace will not be overwritten or deleted.
+* **New tables and rows are added**: Any new tables included in the export will be created, and their associated row data will be imported.
+* **Users and roles are protected**: The internal Users table and existing roles are preserved to ensure your user management remains intact.
