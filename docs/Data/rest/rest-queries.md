@@ -37,6 +37,7 @@ You can also start from **Workspace Settings > Connections > APIs** and click **
 | Params | Query-string key/value pairs | Supports bindings |
 | Headers | Request headers | Supports bindings and shared defaults |
 | Body | Payload for write/query APIs | Use valid JSON/XML/Text as required |
+| Projects | Assign query to one or more projects | Used for organizing workspace resources |
 | Auth selection | Connection auth config to apply | Choose per-query |
 | Transformer | JavaScript response shaping | Re-test schema after changes |
 
