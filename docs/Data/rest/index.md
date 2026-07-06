@@ -31,16 +31,16 @@ Budibase REST integrations are configured from **Workspace Settings > Connection
 A REST integration has two layers:
 
 * **Connection-level config** in Settings (auth, base URL, shared headers/variables)
-* **Query-level config** in API Editor (method, path, body, bindings, pagination, transformer)
+* **Query-level config** in API Editor (method, path, body, bindings, pagination, transformer, projects)
 
 ## Create a REST connection
 
 1. Open your workspace
-2. Go to **Settings > Connections > APIs**
+2. Go to **Workspace Settings > Connections > APIs**
 3. Click **Add connection**
 4. Choose either:
-   * **Create custom** for direct/manual setup
-   * A **template** for a pre-seeded setup
+    * **Create custom** for direct/manual setup
+    * A **template** for a pre-seeded setup
 5. Enter a **Display name**
 6. Open **Credentials** and set **Base URL**
 7. Add any required shared headers/URL params/static variables

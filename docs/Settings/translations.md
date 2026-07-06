@@ -16,6 +16,7 @@ This feature enables users to change hard-coded values that appear throughout yo
 * Update Password
 * Go to the portal
 * Log out
+* Calendar (days, months, and component buttons)
 * And more...
 
 <Image border={false} src="https://files.readme.io/591841fe08a6188719a009c002d1be475d7048a3713960c29c76d81e2aff6e4a-image.png" />
