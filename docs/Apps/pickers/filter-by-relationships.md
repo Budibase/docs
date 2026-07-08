@@ -126,7 +126,7 @@ For this tutorial we will use PostgreSQL, and assume there are three tables with
 
 For a given owner, we want to display a list of appointments based on the chosen pet. 
 
-Follow this [guide](https://docs.budibase.com/docs/postgresql-1) to see how to connect to your Postgres database, fetch the tables and define the relationships.
+Follow [Working with SQL datasources](doc:sql-workflow) to connect to your Postgres database, fetch tables, and define relationships.
 
 ![](https://files.readme.io/d4ca78e-Screenshot_2022-08-17_at_14.24.20.png)
 

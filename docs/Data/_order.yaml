@@ -4,6 +4,7 @@
 - datasources-copy
 - rest
 - sql-datasource
+- sql-workflow
 - transformers
 - environment-variables
 - pdf-exporting
