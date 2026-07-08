@@ -36,9 +36,16 @@ To choose between the different types of pickers, you can use two checkboxes in 
 
 To get the results, only check the box which are mentioned below.
 
-* **Date/time**: ☑️ Show Time
-* **Date**: ☑️ Show Time + ☑️ Time Only
-* **Time**: ☑️ Time Only 
+* **Date/time**: ☑ Show Time
+* **Date**: ☐ Show Time + ☐ Time Only
+* **Time**: ☑ Time Only 
+
+## Using the calendar
+
+In addition to clicking the navigation arrows, users can use gestures to move between months:
+
+* **Scroll**: On desktop, use a mouse wheel or trackpad to scroll over the calendar body to change months.
+* **Swipe**: On touch devices, swipe horizontally across the calendar body to move to the next or previous month.
 
 ## Further configuration
 

@@ -29,19 +29,19 @@ Make sure you have:
 5. Select or type a model
 6. Add a display name and save
 
-Once saved, the model becomes available in Agent model selection.
+once saved, the model becomes available in Agent model selection.
 
 ## Supported providers
 
 Budibase supports multiple model providers:
 
-| Provider    | Summary                                         |
-| :---------- | :---------------------------------------------- |
-| Budibase AI | Budibase-managed provider                       |
-| Anthropic   | Connect directly to Claude models               |
-| Google      | Connect directly to Gemini models               |
-| Mistral     | Connect directly to Mistral models              |
-| OpenAI      | Connect directly to OpenAI models               |
+| Provider    | Summary                                       |
+| :---------- | :-------------------------------------------- |
+| Budibase AI | Budibase-managed provider                     |
+| Anthropic   | Connect directly to Claude models              |
+| Google      | Connect directly to Gemini models              |
+| Mistral     | Connect directly to Mistral models             |
+| OpenAI      | Connect directly to OpenAI models              |
 | OpenRouter  | Connect to a broad catalog of hosted model APIs |
 | Groq        | Connect to high-speed hosted model APIs         |
 
@@ -95,7 +95,7 @@ If model connection or Agent tests fail:
 * Confirm outbound internet access is allowed from your environment
 * Re-run a simple prompt test after saving changes
 
-If you are self-hosting and using Budibase AI, ensure your network allows the required outbound traffic. See [Self-hosted AI features](doc:self-hosted-ai-features).
+If you are self-hosting and using Budibase AI, ensure the `BBAI_LITELLM_KEY` environment variable is correctly configured and available to every service that runs agents, including the automation worker. For more details on network requirements, see [Self-hosted AI features](doc:self-hosted-ai-features).
 
 ## Related guides
 
