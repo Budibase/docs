@@ -10,9 +10,9 @@ metadata:
 next:
   description: ''
 ---
-A lot of the time you want to change the state of some component when certain conditions are true or false. This might be changing color from red to green, showing or hiding a component. You will find the condition settings at the very bottom of the settings panel of your components. 
+A lot of the time you want to change the state of a component when certain conditions are true or false. For example, you might change color, show a component, or hide it. You will find the condition settings at the bottom of the settings panel.
 
-Adding a condition is simple. Once you click the settings button a drawer will pop up and you will be able to add, edit or remove your conditions. It will look something like this
+Adding a condition is simple. Once you click the settings button, a drawer opens where you can add, edit, or remove conditions.
 
 ![](https://files.readme.io/38f0f21-conditions.png "conditions.png")
 
@@ -59,10 +59,4 @@ And here's the end result.
 
 ## Showing and hiding a component based on the user's role
 
-When building apps, we often want to limit a user's access to specific components. For example, we may not want a user to see certain data or access a particular action.
-
-Below is a quick demonstration of how to hide a button if the user's role is BASIC. Please remember, when typing the value of the user role, it must be in capitals: `BASIC`, `POWER`, `ADMIN`.
-
-<HTMLBlock>{`
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/699368827?h=d2541f59bf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="New Recording - 14/04/2022, 10:44:02"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-`}</HTMLBlock>
+When building apps, you can also use conditions to limit a user's access to specific components. For example, you may want to hide a button when the user's role is `BASIC`. Role values must be uppercase: `BASIC`, `POWER`, `ADMIN`.
