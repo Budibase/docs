@@ -31,27 +31,9 @@ The Slack action uses two fields:
 
 You can include bindings in the message to insert values from the trigger row or previous steps.
 
-## Configure the Slack app
+## Use bindings
 
-1. Create a Slack app.
-2. Enable incoming webhooks.
-3. Add a webhook to the workspace.
-4. Copy the generated webhook URL.
-5. Paste it into the Budibase Slack action.
-
-## Build the automation
-
-The common pattern is:
-
-1. Add a trigger, such as `Row Created`.
-2. Add the Slack action.
-3. Map the values you want to send into the message.
-4. Test the automation.
-5. Publish it when the message looks correct.
-
-## Use trigger data
-
-Use trigger bindings to include row values in the Slack message.
+Use bindings to include row values in the Slack message.
 
 Example:
 
@@ -62,17 +44,13 @@ Check out the sale using the link below:
 https://joe.budibase.app/app/tutorials#/sales/{{ trigger.id }}
 ```
 
-## Test and publish
+## Set up Slack
 
-Test the automation with a sample row first.
+Create a Slack app with incoming webhooks enabled, then paste the generated webhook URL into Budibase.
 
-Then confirm:
+## Test
 
-* The webhook posts to the correct channel
-* The message includes the expected bindings
-* The automation runs when the trigger fires
-
-Once the test passes, publish the app.
+Test the automation with a sample row first. Confirm the message posts to the correct channel and the bindings resolve as expected.
 
 ## Related guides
 
