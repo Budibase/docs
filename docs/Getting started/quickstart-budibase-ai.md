@@ -20,37 +20,51 @@ next:
       slug: generating-javascript-with-ai
       title: Generating JavaScript with AI
 ---
-## Enabling Budibase AI
+Use Budibase AI after you connect a model provider in your workspace settings.
 
-To start using Budibase AI, configure an AI provider in your Workspace.
+## Enable AI
 
-1. Open your Workspace **Settings**.
-2. Go to **Connections > AI models**.
-3. Choose a provider (for example Budibase AI, OpenAI, Anthropic, Google, Mistral, OpenRouter, or Groq).
+1. Open your workspace settings.
+2. Go to `Connections > AI models`.
+3. Choose a provider.
 4. Enter the required credentials and model details.
-5. Save and enable the configuration.
+5. Save the configuration.
 
-AI features are workspace specific, so you will need to connect to these again in other workspaces if you wish to enable AI functionality.
+AI features are workspace specific. Repeat the setup in each workspace where you want AI enabled.
 
-For a full breakdown of the new setup area, see [Connections](doc:connections).
+If you are self-hosting, make sure your plan and license support Budibase AI.
 
-> 📘 If you are self-hosting and want to use Budibase AI, you need to make sure you are on an Enterprise plan and have a active license key in your Workspace. See the [Tenant management guide](doc:tenant-management).
+## Where you can use AI
 
-## Where You Can Use AI
+Budibase AI is available in several parts of the product:
 
-Once enabled, Budibase AI can assist in various areas of Budibase:
+* AI Columns for generating or transforming data
+* Binding fields for generating JavaScript
+* Cron job expressions
+* Agents for building AI assistants that can read data, use tools, and trigger automations
+* AI automation actions
+* Budibase DB table generation
 
-* [AI Columns](doc:ai-column)  
-  Automatically generate values for columns using AI, perfect for transforming, summarizing, or cleaning data.
-* [Generate JavaScript with AI](doc:generating-javascript-with-ai)  
-  You'll now see an AI icon in any field that supports bindings (e.g., visibility rules, dynamic values). Click it to open a prompt where you can describe what you need. Budibase AI will return usable JavaScript tailored to your input.
-* [Cron Job Expression Generation](doc:cronjob#configuring-the-cron-expression)  
-  In the settings area for the cron job, you'll see a field called "Generate Cron Expression with AI", simply type in your prompt and this will provide you with an expression that suits your needs.
-* [AI Automation Actions](doc:ai-automation-steps-overview)  
-  Triggerable automation actions that leverage AI, including classifying, generating, and categorising text, extracting document data, or executing custom prompts within automation rules.
-* [Generate Tables in Budibase DB](doc:ai-powered-table-generation)  
-  Leveraging Budibase AI to generate schemas for Budibase DB tables, which can be leveraged across your Workspace.
+## Practical guidance
 
-<Image align="center" alt="AI Automation Actions in Budibase" caption="AI Automation Actions in Budibase" src="https://files.readme.io/af9f3e6ec2575c28bc6b5a7c98e34e2eda35026396dea6a2e586ba8e41a8be69-Screenshot_2025-08-15_at_13.55.52.png" />
+Use AI where it saves repetitive work.
 
-<Image align="center" alt="Generate table schemas for your Workspace with Budibase AI" caption="Generate table schemas for your Workspace with Budibase AI" src="https://files.readme.io/e4e8cb20a610aeee264cd951c47bddf4bb75db4d28924bb1bfc26280cbebb40b-Screenshot_2025-08-15_at_13.50.36.png" />
+Good fits include:
+
+* Schema generation
+* Cleanup or summarisation tasks
+* JavaScript drafts
+* Automation prompts
+
+Review generated output before using it in production.
+
+## Related guides
+
+* [Agents](doc:agent-building-101)
+* [Agent instructions guide](doc:agent-instructions-guide)
+* [Agent tools and permissions](doc:agent-tools-and-permissions)
+* [Agent testing guide](doc:agent-testing-guide)
+* [AI Column](doc:ai-column)
+* [AI automation actions](doc:ai-automation-steps-overview)
+* [Generating JavaScript with AI](doc:generating-javascript-with-ai)
+* [Connections](doc:connections)

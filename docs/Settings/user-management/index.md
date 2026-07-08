@@ -19,20 +19,39 @@ next:
       slug: user-roles
       title: User Roles
 ---
-In Budibase, users are shared across your whole Budibase installation. Users can sign into any app that they have access to. To give users access to specific apps, check the [User Roles](doc:user-roles) page.
+Use user management to control who can sign in, what roles they have, and whether they need a password reset.
 
-> 📘 Adding new users
->
-> Invite users from the workspace **Invite user** flow. Read more in [Adding Users](doc:adding-users).
+Users are shared across the whole Budibase installation.
 
-## Resetting passwords
+## Invite users
 
-If you need to reset a users' password, you need to click the ellipsis (...) next to their email, and `Force password reset` button on the users` detail page. You get displayed a new password for the user with which they can only log in once. Once logged in they will be prompted to change their password before continuing on.
+Invite users from the workspace invite flow.
 
-## Configure user roles
+Use the `Adding Users` guide when you need the full invite process.
 
-Users can have roles for both the Budibase installation and workspaces, read more about that in [User Roles](doc:user-roles).
+## Reset passwords
 
-## Deleting a user
+If a user needs a password reset:
 
-In the ellipsis menu next to the user's email address, you can find a Delete user option. Click the `delete user` button and confirm in the dialogue. Keep in mind deleting users _cannot_ be undone.
+1. Open the user list.
+2. Open the user menu next to the email address.
+3. Select `Force password reset`.
+
+Budibase generates a temporary password and prompts the user to change it after sign-in.
+
+## Roles
+
+Users can have both installation-level and workspace-level roles.
+
+Use `User Roles` to configure access to specific apps and workspaces.
+
+## Delete users
+
+Delete users from the user menu when they no longer need access.
+
+Treat deletion as permanent. If you need the user again later, invite them again instead.
+
+## Related guides
+
+* [Adding Users](doc:adding-users)
+* [User Roles](doc:user-roles)

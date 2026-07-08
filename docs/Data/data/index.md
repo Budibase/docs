@@ -25,38 +25,53 @@ next:
       slug: rest
       title: REST API
 ---
-The data section in the Budibase UI is where you add and manage your data. Budibase workspaces rely on data and it is strongly advised to create your data structure before designing your web application or automation. Your data structure will involve tables, columns, rows, and views - these are the building blocks that hold and present your data in a structured manner.
+Use the Data section to add and manage the tables, views, and datasources that power your workspace.
 
-Predefining the data structure also greatly helps in building the UI as the UI can be automatically generated based on the data structure, as well as any logic, filtering, and sorting.
+Your data model should usually come first. It shapes the screens, automations, filters, and permissions you build later.
 
-Within Budibase we have a single built-in <Glossary>Datasource</Glossary> and several external datasources. When using a self-hosted instance of Budibase, an external datasource can still live on the same device, just not within the Budibase container.
+## What data is for
 
-Any datasources you create will be available to use within all apps and automations in your workspace.
+Use data to:
 
-## Getting started with data
+* Store rows and fields in a structured way
+* Define relationships between records
+* Control what users can read or write
+* Generate screens and automation inputs
 
-By default, every Budibase workspace will start with a <Glossary>Budibase DB</Glossary> datasource. This database contains a [Users table](doc:users-table) which is considered a special table that cannot be removed. This table includes all the users who have access to your application, with their respective roles.
+## Budibase DB
 
-<HTMLBlock>{`
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/719112585?h=4e3d1c370e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="03-relationships-with-head"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-`}</HTMLBlock>
+Every workspace starts with a Budibase DB datasource.
 
-## Adding new datasources
+The built-in `Users` table lives there as well and cannot be removed.
 
-There are a broad set of available external datasources you can connect to right from the Budibase UI.
+Use Budibase DB when you want the simplest path to app data or when you are prototyping a new workflow.
 
-You can add new data sources by clicking the `+` button on the left-hand panel when you're on the Data tab, as seen in the image below.
+## Add datasources
 
-<Image alt="Adding a datasource" align="center" src="https://files.readme.io/f2eedb7295e0fa524b2838ef46c51d2f0d1d8ba26588ac724161fa72eb1c9f55-SCR-20250813-iqqf.png">
-  Adding a datasource
-</Image>
+Add datasources from the Data tab.
 
-Once you've clicked the `Add source` button, you'll see a modal presented with the available datasources. Pick your datasource of choice, and you will be presented with a configuration screen to connect to your remote datasource. You can also [use AI to generate](/docs/ai-powered-table-generation) a new Budibase DB table for you.
+Common source types include:
 
-<Image alt="Choose a datasource" align="center" src="https://files.readme.io/1f0a67e19897bda7aed2639e293a51c649e6e722a000fa0ac4abe9df096376b8-SCR-20250813-irgq.png">
-  Choose a datasource
-</Image>
+* External SQL databases
+* REST APIs
+* Document databases
+* Budibase DB tables
 
-You can add as many datasources as you need following the same process.
+After you add a datasource, you can create tables, configure views, and reuse that data across apps and automations in the same workspace.
 
-To know more about a particular datasource, look at the relevant documentation page in the menu.
+## Data workflow
+
+A typical workflow looks like this:
+
+1. Define the data model.
+2. Add the datasource.
+3. Configure tables and columns.
+4. Add views and permissions.
+5. Build screens and automations on top of that data.
+
+## Related guides
+
+* [BudibaseDB](doc:budibasedb)
+* [PostgreSQL + MySQL](doc:postgresql)
+* [MongoDB](doc:mongodb)
+* [REST API](doc:rest)
