@@ -66,14 +66,3 @@ Example tree:
 
 All nested child components remain in the tree at all times, but their visibility in the app is controlled by whether the Accordion is expanded or collapsed.
 
-
-### Result
-
-<HTMLBlock>{`
-<iframe
-  src="https://cprem.budibase.app/app/docs-components-accordion#/faq"
-  style="width: 100%; height: 700px; border: 1px solid #e5e7eb; border-radius: 8px;"
-  loading="lazy"
-  allowfullscreen
-></iframe>
-`}</HTMLBlock>
