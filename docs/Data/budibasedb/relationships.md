@@ -14,7 +14,7 @@ next:
       slug: custom-datasource
       title: Datasource
 ---
-This section covers one of the more complex topics of your Budibase web app, the ability to create relationships between different rows. The relationship is bi-directional, in that when it is created, each row will have a relation to the other one. A row is also allowed to relate to many rows, meaning that many to many relationships can be created in your web app.
+This section covers relationships between rows. Relationships are bi-directional, so when one is created, each row can reference the other. A row can also relate to many rows, which lets you create many-to-many relationships.
 
 ## Creating a relationship column
 
@@ -32,46 +32,33 @@ This section covers one of the more complex topics of your Budibase web app, the
 
 ## Example
 
-In this example, we will be creating a web app for tracking students, teachers, parking spots for teachers and classes in a school - specifically how they relate to each other.
+In this example, you will build a school app that tracks students, teachers, parking spots, and classes, and how they relate to each other.
 
-Specifically, we are going to break these down into the three relationship types that can be modelled with Budibase. Below we will map out the relationships that we are going to create, first describing them then walking through how to build them.
+The example covers the three relationship types you can model with Budibase.
 
 ### One-to-many
 
 ![](https://files.readme.io/28d7cbb-one-to-many.png "one-to-many.png")
 
-The second relationship we can model in Budibase is one of the most common, linking a single row to many other rows. Here we can see that a class can only be taught by a single teacher however a teacher is capable of teaching many different classes.
+The second relationship type is one-to-many. Here, a class can only be taught by a single teacher, but a teacher can teach many classes.
 
 ### Many-to-many
 
 ![](https://files.readme.io/57e6b3d-many-to-many.png "many-to-many.png")
 
-The last relationship we can model is arguably one of the most complexes but again very common in real-life systems. Here we can see that students are able to take many classes and each class can have many different students in it.
+The last relationship type is many-to-many. Here, students can take many classes and each class can have many students.
 
 ### Building it in Budibase
 
-To create this in Budibase all we need to do is:
+To create this in Budibase:
 
 1. Create the four tables, students, classes, teachers, and parking spots. In each of these, we will initially create a display text column and mark these as the *Display column -* for example, N*ame* or *Subject*.
 2. First, we will create the teacher to parking spot relationship, starting in the teacher table we create a relationship type column, call it `ParkingSpot` and set the table to parking spots - then name the column in the other table `Teacher`.
 3. Second, we create the teacher to classes relationship, hopefully, at this point, it should be clear how this is done. Simply create a relationship from the teacher table to the class table, name the column `Classes` and in the other table call the column `Teacher`.
 4. Lastly, we create the students to classes relationship, the same as before but set the relationship table to classes, call the column in the students table `Classes` and call the column in the other table `Students`.
 
-As you can see by creating three relationship columns we were able to make a fairly complex web of relationships, which can now be easily managed when creating/updating rows in any of the tables.
-
-### Video Demonstration
-
-Based on the example above here is a video showing how easy it is to create in the Budibase Builder!
-
-<HTMLBlock>{`
-<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/728550684?h=c5c48cb7aa&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="relationships.mov"></iframe></div>
-`}</HTMLBlock>
+By creating three relationship columns, you can model a fairly complex set of relationships that is easy to manage when creating or updating rows.
 
 ## Considerations
 
-The Budibase DB in a NoSQL database. As such, there are implicit limitations when it comes to handling relational data for larger more complex applications.\
-Watch the video below for more information on deciding which database type is best to use.
-
-<HTMLBlock>{`
-<iframe src="https://player.vimeo.com/video/719112585?h=4e3d1c370e" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-`}</HTMLBlock>
+Budibase DB is a NoSQL database, so it has limits for larger, more complex relational models. It is better suited to simpler relationship structures.

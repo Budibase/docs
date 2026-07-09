@@ -12,47 +12,45 @@ next:
 ---
 Almost every web application needs to manage static files in some way.
 
-These could be images, text files, audio files and more. With budibase, you can upload your static files to your budibase applications with ease. We are going to cover how to upload and display your files both inside the budibase builder and in your web applications themselves.
+These can include images, text files, audio files, and more. With Budibase, you can upload static files to your apps and display them in the builder or in your published app.
 
 ### New Field Types for Attachments
 
-We've recently introduced new field types for attachments, replacing the previous unified attachment field. Now, attachments are categorised into two distinct types: **Attachment** and **Attachment List**. Let's explore the differences:
+Budibase now uses two attachment field types: **Attachment** and **Attachment List**.
 
 ## Field Types
 
-In Budibase, static files are managed through the Attachment field type. Both attachment and attachment list fields support various static file formats, including images, CSV files, and more.
+Both field types support common static file formats, including images, PDFs, CSV files, and more.
 
 ### Attachment
 
-This field type allows the upload of a single attachment at a time. You cannot add additional attachments to this field.  When looking more into the JSON data related to this field you will see that this is stored as an object were previously it was an array.
+This field type allows a single attachment at a time. The stored value is an object.
 
 ### Attachment List
 
-Here, you can include multiple attachments of different types, such as CSV files, images, Word documents, and more. 
+This field type allows multiple attachments of different types, such as CSV files, images, and Word documents.
 
-To create an attachment or attachment list field type, simply add a new column to a new or existing table and select either the Attachment, or Attachment list type. While an attachment field can accommodate as many attachments as needed, please note that the maximum file upload size per file is 20MB.
+To create an attachment field type, add a new column and select either `Attachment` or `Attachment List`. The maximum file upload size per file is 20 MB.
 
 ## Uploading attachments
 
-When you create a new row in your table you will be presented with a [Dropzone component](https://docs.budibase.com/docs/attachment) for your attachment field that you can use to upload files.
+When you create a new row in your table, Budibase shows a [Dropzone component](doc:attachment) for the attachment field.
 
 > 📘
 >
-> A **Dropzone** component is a commonly used file upload component in web applications. It allows you to drop files from your computer into the dropzone area, or to navigate your file system to find the file that you want.
+> A **Dropzone** component lets users drop files into the upload area or browse for them on disk.
 
-Your attachments will be displayed like any regular field - inside grids and tables, forms and more Budibase components.
+Attachments display like other fields inside grids, tables, forms, and other components.
 
-To see attachments in action, take a look at the following example section. We will build a small app for storing country data using Budibase attachments.
-
-Attachments are stored in [MinIO](https://docs.budibase.com/docs/accessing-minio).
+Attachments are stored in [MinIO](doc:accessing-minio).
 
 ## Example
 
-In this example, we will be creating a simple web application that will be used to store information about different countries around the world. 
+In this example, you will build a small app for storing country data.
 
 ### Creating the Countries table and columns
 
-Let's begin by creating a table to store data for our countries.
+Start by creating a table for the country data.
 
 Next, we need to create columns in our `Countries` table. Let's look at the information we need to include about each country and decide which data types are the best to use for our columns.
 
@@ -61,59 +59,39 @@ Next, we need to create columns in our `Countries` table. Let's look at the info
 * **Country Flag**: This will require an image file - here is where **Attachment** types come in.
 * **Travel Guide**: We can store PDF travel guides for each country here. Let's use another **Attachment** type.
 
-Watch the video below to find out how to set up your table as detailed above.
-
-<HTMLBlock>{`
-<iframe src="https://player.vimeo.com/video/840763332?title=0&amp;byline=0&amp;portrait=0&amp;speed=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" width="636px" height="600px" allowfullscreen title="Budibase - Creating attachment type columns"></iframe>
-`}</HTMLBlock>
+Set up the table with the attachment columns before you start adding rows.
 
 ## Creating rows and uploading data
 
 Now that we have set up our columns, we can start to add some rows to our `Countries` table. You will now notice that on row creation, you will be presented with dropzone components inside the row creation popover for both of our attachment types - `Flag` and `Travel Guides`.
 
-Let's create a row for Spain. Follow along with the video below to find out how.
+Create a row for Spain.
 
-Here are the files used in the video below if you don't have your own:
+Here are the files used in the example if you don't have your own:
 
 * [Spanish Flag Image](https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/750px-Flag_of_Spain.svg.png)
 * [Spanish Travel Guide](https://www.madeforspainandportugal.com/wp-content/uploads/2016/01/Spain-with-Made-for-Spain.pdf)
-
-<HTMLBlock>{`
-<iframe src="https://player.vimeo.com/video/840767494?title=0&amp;byline=0&amp;portrait=0&amp;speed=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="634" height="390" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Budibase - How to create a row with attachment"></iframe>
-`}</HTMLBlock>
 
 Muy bien! 🇪🇸
 
 ### Front-end
 
-Navigate over to the *Design* tab in the builder. Add a screen and select `List view`. This will create an [Autogenerated screen](https://docs.budibase.com/docs/table-block#autogenerated-screen). Now we can preview our application and interact with our attachments! 
+Navigate to the *Design* tab and add a screen with `List view`. This creates an [Autogenerated screen](doc:screens#autogenerated-screen).
 
-Click the preview button on the top right of the builder. You will be navigated to your app in your default browser. Log in with the credentials that you set up when you initially created your app and you will see the homepage of your new app. Navigate to the automatically created "Countries" link in your navbar - you should see your countries listed in a table:
-
-![](https://files.readme.io/2aeb51f-countries.png "countries.png")
+Preview the app, then open the automatically created `Countries` link in the navbar to see the rows in a table.
 
 ***
 
 ## Manage access
 
-By default, the table **write** access will be *Basic*. This means if you have a public form, you may see an error message: `Session not authenticated` when trying to upload files.
+By default, table **write** access is *Basic*. If you use a public form, you may see `Session not authenticated` when uploading files.
 
 To fix this, click on the `Manage access` button.
 
-![](https://files.readme.io/520af17-Screenshot_2022-09-23_at_10.36.08.png)
+Set the write access to **public**.
 
-Set the write access to **public**
+This allows anyone to upload a file to your app instance, so use it with care.
 
-![](https://files.readme.io/2cdaa92-Screenshot_2022-09-23_at_10.36.59.png)
+You must also ensure that the table with your target attachment field is selected as the [form schema](doc:forms#form-schema). Budibase needs to know the target field of the attachment upload.
 
-**Note** this will allow anyone to upload a file to your app instance, so use with caution! 
-
-You must also ensure that the table with your target attachment field is selected as the [form schema](https://docs.budibase.com/docs/forms#form-schema). Budibase needs to know the target field of the attachment upload.
-
-> 👍
->
-> ![](https://files.readme.io/a2430f9-Screenshot_2022-09-23_at_11.10.13.png)
-
-> ❗
->
-> ![](https://files.readme.io/c4b0208-Screenshot_2022-09-23_at_11.10.35.png)
+If the form schema does not match the table that owns the attachment field, Budibase will not know where to store the uploaded file.
