@@ -32,6 +32,13 @@ Import lets you create multiple REST queries at once from API definitions.
 8. Open key queries and click **Send**
 9. Save any adjusted queries
 
+### Security validation
+
+When importing from a URL, Budibase applies the same security hardening and validation rules as the REST integration itself. This includes:
+* **Blacklist validation**: Preventing imports from blocked internal or sensitive hostnames.
+* **DNS Rebinding protection**: Request pinning to validated IP addresses to prevent host-switching during the import process.
+* **Protocol enforcement**: Only secure `http:` and `https:` protocols are permitted.
+
 ## Post-import hardening checklist
 
 1. Rename generic query names
