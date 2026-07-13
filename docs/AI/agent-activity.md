@@ -20,18 +20,22 @@ The Activity page displays a list of recent requests tracked by your agents. Eac
 
 *   **Requests**: A descriptive title generated based on the user's prompt and the triggered operation.
 *   **Source**: Indicates which agent handled the request.
-*   **Status**: Shows the current state of the request (e.g., Completed).
+*   **Status**: Shows the current state of the request (e.g., Completed, Processing, Needs input, or Failed).
 *   **Updated**: A relative timestamp showing when the request was last active.
 
 ### Metrics overview
 
 At the top of the Activity page, summary metrics provide a high-level view of your agent's performance:
 
-*   **All actions**: The total number of tracked interactions.
+*   **All requests**: The total number of tracked interactions.
 *   **Completed**: Requests that successfully finished processing.
 *   **Processing**: Active requests currently being handled by the agent.
-*   **Needs input**: Requests waiting for user clarification or additional data.
+*   **Needs input**: Requests waiting for user clarification or human approval (escalation).
 *   **Failed**: Requests that encountered errors during execution.
+
+### Filtering by status
+
+To help you find specific requests, you can use the status filter dropdown located above the requests table. This allows you to view only requests of a certain type, such as those currently **Processing** or those that have **Failed**.
 
 ## Request details and timeline
 
@@ -50,4 +54,11 @@ The details section provides granular data about a specific interaction:
 
 ### Timeline
 
-The timeline tracks the lifecycle of a request, from its creation through various operation stages. This is useful for debugging multi-step agent interactions or verifying that the correct logic was executed in response to a user prompt.
+The timeline tracks the lifecycle of a request in real-time, from its creation through various operation stages. It records critical events including:
+
+*   **User messages**: A summary of the intent behind each user prompt in the interaction.
+*   **Tool executions**: Which tools or automations were called and their outcome.
+*   **Escalations**: When human approval was requested, including the specified recipients.
+*   **Status changes**: Transitions between processing states (e.g., when a request moves from Processing to Completed).
+
+The timeline is useful for debugging multi-step agent interactions or verifying that the correct logic was executed in response to a user prompt.
