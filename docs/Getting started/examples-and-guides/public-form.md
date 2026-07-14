@@ -23,7 +23,7 @@ next:
 
 ## Scenario
 
-This is for situations where you want to collect data from unauthenticated users, but want to keep your table secure so that only App admins can see the submitted data. With the release of Budibase 3.0, table RBAC has been streamlined, so we'll use automations to write this data securely to the table. It's ideal for public forms like surveys where a user submits data and doesn't ever have to see it again.
+Use this pattern when you want to collect data from unauthenticated users but keep the table secure so only app admins can see the submitted data. Budibase 3.0 streamlined table RBAC, so this guide uses an automation to write form data securely to the table. It is a good fit for public forms such as surveys.
 
 <HTMLBlock>{`
 <u><b style="font-size: 14px;">Challenge: </b></u><br />
@@ -34,36 +34,36 @@ This is for situations where you want to collect data from unauthenticated users
 
 ## Steps
 
-1. In the Data section, create a **new table** with columns for the data you want to capture. By default, only App admins can access this table, which is fine for our example. 
+1. In the Data section, create a **new table** with columns for the data you want to capture. By default, only app admins can access this table, which is fine for this example.
 
    <Image align="center" src="https://files.readme.io/f119f4c27335cff66aaff1542f5bf8d4a2937ac97335f1ed6908d77a4bef2df2-Pasted_Graphic.png" />
-2. In the newly created app, create a **new screen** for your form
-3. Set the screen's **Access** to `Public user`
-4. Build a **Form** with field components that suit your table's schema. 
+2. In the new app, create a **new screen** for your form.
+3. Set the screen's **Access** to `Public user`.
+4. Build a **Form** with field components that match your table's schema.
 
    <Image align="center" src="https://files.readme.io/edc2394cfdc7fe085f1867fb1b99000163266ef9ca38266a645c61ac40c95323-Screenshot_2025-08-15_at_13.44.09.png" />
 
 > ℹ️ Generating fields from the Form Schema
 >
-> You can use your table as the Form Schema to generate the relevant field components in a Field Group, but please note that a public user won't have access to that schema, so they may see errors when using the app. Once you have created your form fields, switch the Form Schema to Custom to prevent any issues for public users.
+> You can use your table as the Form Schema to generate the relevant field components in a Field Group, but a public user will not have access to that schema, so they may see errors when using the app. After you create the form fields, switch the Form Schema to Custom to prevent issues for public users.
 
-5. In the Automation section, create a **new automation** that is triggered by an *App Action*
+5. In the Automation section, create a **new automation** triggered by an *App Action*.
 
    <Image align="center" src="https://files.readme.io/5ebb5ad52c16c92a8306005a156b60c0d8db5c4831d96fc439e16afc95b33342-Screenshot_2025-08-15_at_13.44.57.png" />
-6. **Change the role** for this automation to `Public user`
-7. **Add fields** that match the fields in your form 
+6. **Change the role** for this automation to `Public user`.
+7. **Add fields** that match the fields in your form.
 
    <Image align="center" src="https://files.readme.io/52a500785c1eaa3c444b34e99770a067d2c63cf571b5da0882b41ed604839eb5-Screenshot_2025-08-15_at_13.45.34.png" />
-8. **Add a Create Row step** to the automation
-9. Select the relevant table and use the relevant bindings from your automation trigger for each column value 
+8. **Add a Create Row step** to the automation.
+9. Select the relevant table and use the bindings from your automation trigger for each column value.
 
    <Image align="center" src="https://files.readme.io/d213f64003bbebbb88a6cc73b325557691f5b534ca38c535631ef1a10eed9c3d-Screenshot_2025-08-15_at_13.45.42.png" />
-10. Go back to your screen in the Data section and add a **Button component,** which we'll use to submit your form
-11. **Add a*Trigger Automation* On click action** to the Button that triggers the automation we made 
-12. **Add bindings** from your Form fields to send them to the automation
+10. Go back to your screen in the Data section and add a **Button component** to submit your form.
+11. **Add a Trigger Automation** On click action to the Button and select the automation you created.
+12. **Add bindings** from your form fields to send them to the automation.
 
     <Image align="center" src="https://files.readme.io/dbc7bec656e91a6fafd5da7808f682d1a6aa15e261ebd29358c0694256a0188e-Screenshot_2025-08-15_at_13.47.13.png" />
-13. **Publish the app** and test the public form in a private window
+13. **Publish the app** and test the public form in a private window.
 
 <br />
 

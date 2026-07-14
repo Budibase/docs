@@ -1,6 +1,6 @@
 ---
 title: Slack
-excerpt: This tutorial will help you add a Slack automation to your Budibase app.
+excerpt: Add Slack notifications to your Budibase automations.
 deprecated: false
 hidden: false
 metadata:
