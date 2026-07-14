@@ -20,7 +20,7 @@ next:
 
 [Forms](doc:forms) often include [number fields](https://docs.budibase.com/docs/text-inputs#number-field) for measurements that may be entered in different units, such as ounces and kilograms, centimetres and inches, or even different currencies.
 
-This guide shows how to let an <Glossary>End User</Glossary> choose a unit of measurement, convert the value automatically, and still save everything in meters.
+Use this pattern when you want the user to work in one unit but always save a standardised value in the table.
 
 <HTMLBlock>{`
 <u><b style="font-size: 14px;">Challenge: </b></u><br />
@@ -72,13 +72,13 @@ This guide shows how to let an <Glossary>End User</Glossary> choose a unit of me
 
 > 📘 Previous and new values on change
 >
-> It's worth bringing attention to the use of the options picker bindings. 
+> The options picker uses separate bindings for the previous value and the new value.
 >
-> `$("New Form.Fields.UnitPicker")` will get the value of the field before the change occurs.
+> `$("New Form.Fields.UnitPicker")` gets the value before the change occurs.
 >
-> `$("Field Value")` is the new value that will update the field when the *on change* finishes.
+> `$("Field Value")` is the new value that updates the field when the *on change* action finishes.
 
-9. Add a required validation setting to the options picker. The default error message is just `Error`, so replace it with something clearer such as `Please specify units`.
+9. Add a required validation setting to the options picker. Replace the default `Error` message with something clearer, such as `Please specify units`.
 
 <Image align="center" src="https://files.readme.io/71111d6f3a0da0fedab622dd1057ede51c6b2c3d50fde73f5a211c4af09c9bbd-Screenshot_2025-08-15_at_10.09.51.png" />
 

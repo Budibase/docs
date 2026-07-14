@@ -30,7 +30,7 @@ Open `Bindings >> New Repeater` to see the available columns. In this example, `
 
 ![](https://files.readme.io/6f1b3c9-image.png)
 
-Next, create a detail screen for each employee and set its URL to `/staff/:id`. The colon `:` marks `id` as a URL variable.
+Create a detail screen for each employee and set its URL to `/staff/:id`. The colon `:` marks `id` as a URL variable.
 
 ![](https://files.readme.io/236ee22-image.png)
 
