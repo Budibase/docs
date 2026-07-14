@@ -28,10 +28,10 @@ The Activity page displays a list of recent requests tracked by your agents. Eac
 At the top of the Activity page, summary metrics provide a high-level view of your agent's performance:
 
 *   **All actions**: The total number of tracked interactions.
-*   **Completed**: Requests that successfully finished processing.
+*   **Completed**: Requests where the underlying goal was successfully met, as judged by the agent's outcome evaluation.
 *   **Processing**: Active requests currently being handled by the agent.
-*   **Needs input**: Requests waiting for user clarification or additional data.
-*   **Failed**: Requests that encountered errors during execution.
+*   **Needs input**: Requests waiting for user clarification or human approval (escalation).
+*   **Failed**: Requests that could not be fulfilled or encountered terminal errors.
 
 ## Request details and timeline
 
@@ -41,7 +41,7 @@ Clicking on any request in the table opens a side panel with detailed informatio
 
 The details section provides granular data about a specific interaction:
 
-*   **Status**: The final or current status of the request.
+*   **Status**: The final or current status of the request. The final status is determined by evaluating whether the user's original goal was actually achieved.
 *   **Source**: The specific agent used.
 *   **Operation**: The names of the tools or automation workflows the agent utilized to fulfill the request.
 *   **Created by**: The user who initiated the prompt.
@@ -50,4 +50,12 @@ The details section provides granular data about a specific interaction:
 
 ### Timeline
 
-The timeline tracks the lifecycle of a request, from its creation through various operation stages. This is useful for debugging multi-step agent interactions or verifying that the correct logic was executed in response to a user prompt.
+The timeline tracks the lifecycle of a request, from its creation through every operational step. It provides a transparent record of how the agent attempted to fulfill the request:
+
+*   **User messages**: The original prompt and any follow-up clarifications.
+*   **Tool calls**: Each specific action the agent took (e.g., searching a database or triggering an automation), including a short summary of the result.
+*   **Escalations**: When an agent requires human intervention, the timeline records when the request was escalated and to whom.
+*   **Escalation outcomes**: Records whether a human approved, rejected, or allowed the escalation to expire.
+*   **Status changes**: Transitions between different request states.
+
+This visibility is essential for debugging multi-step agent interactions and verifying that the agent followed the intended logic and permissions.
