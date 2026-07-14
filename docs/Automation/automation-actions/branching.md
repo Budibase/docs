@@ -7,66 +7,64 @@ excerpt: >-
 deprecated: false
 hidden: false
 metadata:
-  title: 'banana'
+  title: ''
   description: ''
   robots: index
 next:
   description: ''
 ---
-The automation branching feature introduces a powerful new way to control the flow of your automation processes. Branching dramatically improves flexibility and efficiency by allowing you to create multiple conditional paths within a single automation workflow. Instead of progressing through a linear sequence of steps, you can now define different paths based on specific conditions, enabling dynamic and adaptive workflows.
+Branching lets you split an automation into multiple conditional paths instead of running every step in a single line.
 
-With this new feature, you can create branches by clicking the Branching Icon to the left of the "+" symbol on an existing step. This creates two branching paths that originate from the selected step. Additionally, an Add Additional Branch button allows you to add more branching conditions to the right of the existing branches. Each branch operates independently, with its own set of conditions that can be configured to control the automation flow.
+Create a branch from an existing step by clicking the branching icon to the left of the `+` symbol. This starts with two paths, and you can add more with **Add Additional Branch**.
 
 ## Key features
 
-1. **Create Multiple Conditional Paths**: You can split your automation into two or more paths based on specified conditions. This mimics the behavior of conditional statements, providing flexibility to route different inputs or events down other paths.
-2. **Add Additional Branches**: Beyond just two initial paths, you can continue adding branches by clicking the Add Additional Branch button, allowing you to handle complex workflows with multiple potential outcomes.
-3. **Configurable Conditions**: Each branch has its own set of conditions configured by clicking the Add Condition button. This opens a modal with a [dynamic filtering](doc:dynamic-filter) form, where you can compare values (e.g., if a value is equal to or not equal to a specified parameter) to determine the path that should be followed. Conditions are optional; if no conditions are defined for a branch, it will always evaluate as true and execute its steps if evaluation reaches that branch.
-4. **Order of Execution**: Arrows within the branching step allow you to change the order of conditions being evaluated. This ensures that you have control over which branch is checked first, giving you priority management for condition evaluation.
-5. **Deletion and Tooltip**: Branches can be deleted when no longer needed, and a helpful tooltip explains that "Only the first branch which matches its condition will run." This ensures users understand that the evaluation stops once a condition is met, preventing unnecessary steps.
+1. **Multiple conditional paths**: Split one automation into two or more paths based on specific conditions.
+2. **Add more branches**: Use **Add Additional Branch** to handle more than two outcomes.
+3. **Configurable conditions**: Click **Add Condition** to open a [dynamic filtering](doc:dynamic-filter) form and define when a branch should run. If a branch has no condition, it always evaluates to true.
+4. **Execution order**: Use the arrows in the branching step to change which branch is checked first.
+5. **Delete branches**: Remove branches you no longer need. Only the first matching branch runs.
 
 ## Branching benefits
 
-Greater flexibility: In older versions of Budibase, automation progressed linearly, where each step was executed sequentially without the ability to branch off into different directions. This often meant creating long, repetitive automation to handle different scenarios, which wasn't efficient and difficult to maintain. The new branching system in Budibase is more efficient as it allows the automation to split into multiple paths based on conditions, reducing the need for long, repetitive chains of steps.
+Branching is useful when different inputs need different actions. Instead of building long linear flows, you can route each case through its own path and keep the automation easier to maintain.
 
-The new branching system solves this by allowing the automation to split into multiple paths based on dynamic conditions. You no longer need to create long chains of steps to cover every possibility, which is done by setting conditions. This reduces complexity, saves time, and offers more powerful workflow customisation.
-
-It supports complex use cases. The ability to add numerous branches means that you can design automations that handle highly complex use cases. Whether you need to route customer requests based on various criteria, trigger different actions depending on product type, or segment workflows based on user attributes, automation branching enables this level of complexity without requiring a cumbersome setup.
+It also works well for more complex workflows. You can route customer requests by type, trigger different actions by product, or segment workflows by user attributes without duplicating the full automation.
 
 ## Branching Tutorial
 
-In this tutorial, we will create a customer support ticketing system. The aim here is to use branching to route tickets to different teams based on various factors; **type**, **urgency**, and **customer priority level**. We will be using the internal Budibase data source for this tutorial
+In this tutorial, you will create a customer support ticketing system. Use branching to route tickets based on **type**, **urgency**, and **customer priority level**. This tutorial uses the internal Budibase data source.
 
 1. Create a table called Support\_tickets
 2. Create 5 fields
 
-   1. Title - text type field
+   1. Title - text field
    2. Ticket\_type - Single select
-      1. Bug - Default to this value
+      1. Bug - default value
       2. Feature request
       3. Enquiry
       4. Other
    3. Urgency - Single select
-      1. Low - Default to this value
+      1. Low - default value
       2. Medium
       3. High
    4. Customer\_priority\_level - Single select
-      1. Low - Default to this value
+      1. Low - default value
       2. Medium
       3. High
-   5. Notes - Long form text field
+   5. Notes - long text field
 
      The table setup screen should show the five fields listed above.
 3. Click the **Automations** button shown in the table setup screen
 4. Click **Generate automation**
-   The automation picker should open next.
+   The automation picker opens.
 5. Click **Row is created**
    Select the row-created trigger for the table.
 6. You should now be redirected to the automations area with the correct automation type.
-7. Now lets start setting up our conditional branches
+7. Set up the conditional branches
 
    1. Click the branching icon beside the + symbol
-   2. Add an extra branch (By default you start with 2)
+   2. Add an extra branch. You start with 2 by default.
    3. Click the Add condition button to add conditions
 
      1. The first will cover bugs that are medium or high where the customer level is high
@@ -75,17 +73,16 @@ In this tutorial, we will create a customer support ticketing system. The aim he
          Use a fallback branch for other bug tickets that do not match the first condition.
       3. The last will handle any non bug related ticket submissions
          Use a final branch for all non-bug tickets.
-   4. Provide a descriptive name to each of the branches so you know what they do
-8. For this tutorial I will just output a different backend log for each branch. You can add any step or run any process here e.g. email, updating a row or even triggering a different automation to handle a specific flow.
-   1. Add different text to each backend log
-9. Head back to your data area and click screens in your table
+   4. Give each branch a descriptive name.
+8. For this tutorial, output a different backend log for each branch. You can add any step here, such as sending email, updating a row, or triggering another automation.
+   1. Add different text to each backend log.
+9. Return to your data area and click screens in your table
 10. Click **Generate app screen**
 11. Click Generate on your selected table
-12. Click side panel and then click done
-    Select the side panel layout, then confirm.
-13. This will bring you to an app screen where it has auto generated a screen.
-14. Click publish at the top right of your screen and then click the button publish inside
-15. Navigate to your published app and create 3 different records
+12. Select the side panel layout, then click Done
+13. This opens the generated app screen.
+14. Click Publish in the top right, then click Publish again in the dialog.
+15. Open the published app and create 3 different records
     1. The first is a high-priority bug for a high-priority customer. This should output the first branch's backend log.
     2. Create a bug that is high but for a medium-priority customer. This should output the second branch's backend log.
     3. Create a `support_type` value that is anything other than a bug. This should output the last branch's backend log.
