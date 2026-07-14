@@ -131,7 +131,7 @@ Visit the Ingress address in your browser and you will see that your Budibase in
 If you'd like to set up HTTPS, you can also create a certificate using [AWS ACM](https://aws.amazon.com/certificate-manager/) and specify the certificate ARN on your Ingress resource:
 
 ```shell
-helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase --set ingress.enabled=false --set awsAlbIngress.enabled=true --set awsAlbIngress.certificateArn=..
+helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase --set ingress.enabled=false --set awsAlbIngress.enabled=true --set awsAlbIngress.certificateArn=...
 ```
 
 From here, if you'd like to use a custom domain name make sure it's a CNAME that points to Ingress address and that your certificate includes the custom domain name.
@@ -165,7 +165,7 @@ helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase -f valu
 Now find the external address if your `ingress-nginx` installation by running:
 
 ```shell
-❯ kubectl -n ingress-nginx get services | grep LoadBalancer
+- ➜ kubectl -n ingress-nginx get services | grep LoadBalancer
 ingress-nginx-controller                   LoadBalancer   10.99.103.243    192.168.0.90   80:32221/TCP,443:32172/TCP   2y20d
 ```
 
@@ -205,7 +205,7 @@ couchdb:
   persistentVolume:
     enabled: true
     storageClass: "standard-rwo"
-    
+-     
 services:
   objectStore:
     storageClass: "standard-rwo"
