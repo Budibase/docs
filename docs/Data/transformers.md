@@ -10,72 +10,60 @@ metadata:
 next:
   description: ''
 ---
-In this section, we will cover how to use Budibase data transformers, which can be used as part of data source queries. It is often a requirement when retrieving data from various sources to transform to fit your app's use case - from simply extracting properties from deeper JSON objects to enriching your data with more information transformers can be used for a wide variety of applications. 
+Use data transformers to shape query results before they reach your app. They are useful when you need to extract properties from nested JSON or enrich data with additional values.
 
 > 📘 This section requires JavaScript knowledge
 >
-> We recommend the Modern [JavaScript Tutorial ](https://javascript.info/)to pick up the basics, for transformers you will specifically benefit from knowledge around data types, such as [Arrays](https://javascript.info/array), [Array Methods](https://javascript.info/array-methods) and [Objects](https://javascript.info/keys-values-entries).
+> We recommend the Modern [JavaScript Tutorial](https://javascript.info/) for the basics. For transformers, knowledge of [Arrays](https://javascript.info/array), [Array Methods](https://javascript.info/array-methods), and [Objects](https://javascript.info/keys-values-entries) is especially useful.
 
-To create a transformer first you need to create an external data source and a query, steps for this can be found in the [External Data Sources](doc:data-sources) section. 
+To create a transformer, first create an external data source and a query. See [External Data Sources](doc:data-sources) for the setup steps.
 
 ## Accessing bindings
 
-It is possible to access the bindings that your query received when it was called, through the `params` object that is available in the transformer context. For example if I've added a binding of `lastName` then I can access this property in the transformer under `params.lastName`. You can see a full example of this below.
-
-<Image align="center" src="https://files.readme.io/c553972c1729aee14507380baa987b213dc2d7e799811b3fcc04b1f7b0cbff4d-Screenshot_2024-09-20_at_15.05.01.png" />
+You can access query bindings through the `params` object in the transformer context. For example, if you add a binding called `lastName`, access it as `params.lastName`.
 
 ## Tutorial
 
-In the example below we will be transforming some data from the [Open Brewery Database](https://www.openbrewerydb.org/) - we will be creating an app that has tallies of the number of breweries by US state.
+In the example below, we transform data from the [Open Brewery Database](https://www.openbrewerydb.org/) to build an app that shows the number of breweries by US state.
 
-When you first create a query you'll see the transformer code editor in its own section, as seen below.
-
-![](https://files.readme.io/d0712b5-transformers.png "transformers.png")
+When you create a query, the transformer code editor appears in its own section.
 
 > 📘
 >
-> There are two properties that are accessible by default within the transformer. First, the data which as its name suggests contains the data retrieved by the query. Secondly, params, which contain the query bindings/parameters that were provided when it was called.
+> Two properties are available by default in the transformer: `data`, which contains the query results, and `params`, which contains the bindings passed to the query.
 
-This will return the data exactly the way it is retrieved from the data source, it is recommended to get your query up and running correctly first before altering your transformer, this will allow you to look at the initial schema of the data returned. In our example so far we have:
+The transformer initially returns the data exactly as it is retrieved from the data source. It is best to get the query working first, then adjust the transformer once you can see the returned schema. In this example so far:
 
-1. Setup a REST data source, with our URL set to
+1. Set up a REST data source with the URL set to:
 
 ```
 https://api.openbrewerydb.org
 ```
 
-2. Created a query and set the path to *breweries*
+2. Create a query and set the path to *breweries*
 3. Ran the query to see the schema
 
-The schema for this query appears as below:
+The schema for this query should match the data returned by the API.
 
-<Image align="center" src="https://files.readme.io/1fc1cad6d7f93e9a330b40666609627dba3adc9396c56fa9d7f802e156cc8bb1-Screenshot_2024-09-24_at_11.12.29.png" />
-
-Using this information we can now write the transformer function that will be used. Initially we just want to write a function which will:
+Use this information to write the transformer function. Initially, it should:
 
 1. Work through the array of breweries that are returned by the API, in the format shown above
 2. Extract the state and add it to a total count of states that have been seen
 3. Return a new structure that contains only the state name and the count of breweries within
 
-You can see the basic transformer we have written to do this below.
+You can write the transformer to do this with a loop that counts the breweries per state and returns a `state` and `count` property.
 
-<Image align="center" src="https://files.readme.io/15ab6883c0a5c7d353c24068211646910acc404ab827092e5350a3dd35e7f59b-Screenshot_2024-09-24_at_12.56.43.png" />
+Here, we take the data, loop through it, fill an object with counts for each state, and map the totals to the output structure. The output contains a `state` and `count` property. This shows how much you can change the shape of the returned data with JavaScript.
 
-Here we have taken the data, written a for loop that iterates through a fills up an object with counts for each state (using the state's name as the key into the object), and finally, we've mapped these totals to our output structure, an object with a state and count property. You can see from this that we can drastically change the format of the data; using JavaScript you can change the data in a multitude of ways.
+For the final part, add data that is not part of the query by building a URL for each state's flag. In this example, generate a URL dynamically from [http://flags.ox3.in/](http://flags.ox3.in/), a repository of SVG flags.
 
-For the last part, we want to add data that simply isn't a part of the query, enriching the application logic that we've provided as part of the transformer. We are going to add a URL that points to an image of the states flag for each of the state entries, to do this we will create a URL dynamically to [http://flags.ox3.in/](http://flags.ox3.in/) - a repository of SVG flags. You can see the final function which does this below.
+This adds a map of state names to state codes, then uses the code to build the final URL. The results now include a `flag` property, which you can use in the design section with an image or card component. The example shows how this works with a data provider, repeater, and card component bound to the `state`, `count`, and `flag` properties.
 
-<Image align="center" src="https://files.readme.io/a0650eb543897b411fcb8fec2705cd8d4bd5f4c11af2b11f631f4dcd606ff0da-Screenshot_2024-09-24_at_13.07.27.png" />
-
-This may look a little complicated, but all we have done is added a map of the state names to state codes, then at the end when we produce the final data we lookup the state name in the map and build a URL that has the code in it. You can see in our results section we now have a "flag" property, which can be used in the design section with something like an image or card component. We've thrown together a quick example of how this can all come together in your design, using only a data provider, repeater and card component bound to the "state", "count" and "flag" properties our transformer produced.
-
-![](https://files.readme.io/522188e-image_7.png "image (7).png")
-
-Hopefully, this has helped to demonstrate how transformers can be used to get the data you need for your application, happy coding!
+This should show how transformers can shape the data you need for your application.
 
 ## Response
 
-A query must always return an array as that is how Budibase handles data, it will always attempt to fit your data into a column/row type table structure. If you have an endpoint which returns a single object then the following conversion with occur:
+A query must always return an array because that is how Budibase handles data. It fits the response into a column and row structure. If an endpoint returns a single object, it is converted like this:
 
 ```json
 { 
@@ -89,7 +77,7 @@ A query must always return an array as that is how Budibase handles data, it wil
 ]
 ```
 
-This functionality is important to understand when building transformers as if you return an array it will be broken up into individual rows. An example of this would be the use of the `Object.keys` or `Object.values` functions, breaking an object up into an array of keys/values. Below we can see an example of how Budibase would treat a transformer which returns the direct result of these functions:
+This matters when building transformers because an array is broken up into individual rows. A common example is using `Object.keys` or `Object.values`, which produces an array of keys or values. Budibase treats those results like this:
 
 ```json
 // outputs [ "a", "b" ]
@@ -102,8 +90,6 @@ return Object.keys({ "a": 1, "b": 2 })
 ]
 ```
 
-If we were to take the above example and add it to a table within Budibase it would appear as seen below.
+If you add the above example to a table in Budibase, each array element appears as a row.
 
-![](https://files.readme.io/fadc6e2-image.png)
-
-If you instead would like to return all of these elements as an array you can do this, by wrapping the transformer response in an object, like `return { letters: Object.keys({ "a": 1, "b": 2 }) }` - however the query will still return an array, so that it can be used by a data provider + table/repeater.
+If you want to return the values as an array, wrap the transformer response in an object, for example `return { letters: Object.keys({ "a": 1, "b": 2 }) }`. The query still returns an array so it can be used by a data provider, table, or repeater.
