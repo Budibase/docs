@@ -50,6 +50,16 @@ To create a new filter:
 
 You can also save a filtered table directly as a new view.
 
+### Deleting or renaming filtered columns
+
+If you delete or rename a column that is currently used in a View filter, Budibase will display a warning in the deletion modal. 
+
+When a filter references a column that no longer exists:
+* **Data Safety**: The View will "fail closed," meaning it will return no rows. This prevents potentially sensitive data from being exposed due to a missing filter condition and prevents errors on external databases.
+* **UI Indicator**: In the Filter Builder, the invalid field will be highlighted with a warning icon and a tooltip: *"This field may have been deleted or renamed. No rows will be returned until it is updated or removed."*
+
+To resolve this, you must update the filter to reference a valid column or remove the stale filter entirely.
+
 ## View Calculations
 
 View calculations allow you to run certain mathematical operations on your data, akin to those available in traditional SQL-based databases.
