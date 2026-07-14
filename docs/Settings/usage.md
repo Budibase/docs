@@ -22,8 +22,8 @@ Each workspace will keep track of usage independently. For example, if you reach
 
 There are two types of quotas:
 
-* **static:** This sets a fixed upper limit for the lifespan of your workspace. For example, on the free plan shown above, there is a total limit of 5 users.
-* **monthly**: These quotas reset at the end of each month
+* **static:** This sets a fixed upper limit for the lifespan of your workspace. For example, on the free plan, there is a limit of 1 app and 5 users.
+* **monthly:** These quotas reset at the end of each month
 
 <br />
 
@@ -48,7 +48,7 @@ The reason it is an _estimate_ is that you can cancel a subscription at any time
 
 In the above example, the total cost is calculated as **$600 annual** + **$60 monthly**. The monthly cost of $60 is estimated to be $720 per year, therefore the total annual estimate is **$600 + $720 = $1320**, and the monthly estimate is simply a twelfth of that.
 
-> 📘 Additional creators and users
+> 💡 Additional creators and users
 >
 > If you have a yearly subscription, any additional creators or users will be billed monthly.
 > You can view these under _Cost breakdown_
