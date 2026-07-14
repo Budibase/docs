@@ -18,12 +18,13 @@ Use this guide to diagnose and fix common Agent issues.
 ## Common problems
 
 | Problem | Likely cause | Fix |
-| :------ | :----------- | :-- |
+| :--- | :--- | :--- |
 | Agent does not respond | Provider/model is not configured correctly | Re-check API credentials, model name, and provider status |
 | Agent fabricates values | Missing tool-use rule or no read tool enabled | Add strict tool rules and enable required read tools |
 | Agent updates data unexpectedly | Write rules are too vague | Add explicit write constraints and refusal rules |
 | Automation parsing fails | Output format changes between responses | Enforce a stable JSON schema in instructions |
 | Self-hosted AI requests fail | Network egress restrictions | Follow [Self-hosted AI features](doc:self-hosted-ai-features) requirements |
+| SharePoint files not ingested | File size exceeds 100MB limit | Ensure knowledge source files are under 100MB for ingestion |
 
 ## Debugging checklist
 
