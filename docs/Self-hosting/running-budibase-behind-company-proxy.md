@@ -26,23 +26,23 @@ There are 2 environment variables you will need to run budibase behind a company
 
 Bear in mind that these variables need to be made available to both the `worker` and `app` services, so if using docker compose, you must add them to your docker compose configuration:
 
-yaml YAML
+```yaml YAML
 services:
   app-service:
     restart: unless-stopped
     image: budibase.docker.scarf.sh/budibase/apps
     container_name: bbapps
-    environtment:
+    environment:
      GLOBAL_AGENT_HTTP_PROXY: http://my-proxy.net
      GLOBAL_AGENT_HTTPS_PROXY: https://my-proxy.net
   worker-service:
     restart: unless-stopped
     image: budibase.docker.scarf.sh/budibase/apps
     container_name: bbworker
-    environtment:
+    environment:
       GLOBAL_AGENT_HTTP_PROXY: http://my-proxy.net
       GLOBAL_AGENT_HTTPS_PROXY: https://my-proxy.net
-
+```
 
 For container to container communication using `docker-compose`  - you may need to add the following to avoid that local communication going through your proxy:
 
@@ -50,14 +50,14 @@ For container to container communication using `docker-compose`  - you may need 
 
 For single image setups, you can pass these environment variables using standard `docker run` syntax.
 
-shell Bash
+```shell Bash
 docker run -d -t 
 -e GLOBAL_AGENT_HTTP_PROXY=http://my-proxy.net 
 -p 10000:80 
 -v /local/path/data:/data  
 --restart unless-stopped 
 budibase/budibase:latest
-
+```
 
 ### Security and DNS resolution
 
