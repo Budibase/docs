@@ -165,7 +165,7 @@ helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase -f valu
 Now find the external address if your `ingress-nginx` installation by running:
 
 ```shell
-- ➜ kubectl -n ingress-nginx get services | grep LoadBalancer
+➜ kubectl -n ingress-nginx get services | grep LoadBalancer
 ingress-nginx-controller                   LoadBalancer   10.99.103.243    192.168.0.90   80:32221/TCP,443:32172/TCP   2y20d
 ```
 
@@ -205,7 +205,7 @@ couchdb:
   persistentVolume:
     enabled: true
     storageClass: "standard-rwo"
--     
+
 services:
   objectStore:
     storageClass: "standard-rwo"
@@ -239,6 +239,8 @@ For more control over your deployments, you can also configure the rollout strat
 
 ```yaml
 services:
+  proxy:
+    replicaCount: 1
   apps:
     replicaCount: 2
     # imagePullPolicy defaults to IfNotPresent
