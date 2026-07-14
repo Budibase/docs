@@ -1,9 +1,7 @@
 ---
 title: 'Quickstart: Budibase AI'
 excerpt: >-
-  This page will help you get Budibase AI up and running quickly so you can
-  start generating code or database tables or creating LLM-powered automations
-  in your Workspace
+  Set up Budibase AI and use it in columns, bindings, automations, and agents.
 deprecated: false
 hidden: false
 metadata:
@@ -20,7 +18,7 @@ next:
       slug: generating-javascript-with-ai
       title: Generating JavaScript with AI
 ---
-Use Budibase AI after you connect a model provider in your workspace settings.
+Connect a model provider in your workspace settings before you use Budibase AI.
 
 ## Enable AI
 
