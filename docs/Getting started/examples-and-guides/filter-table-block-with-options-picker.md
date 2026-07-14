@@ -18,9 +18,9 @@ next:
 
 ## Scenario
 
-The Table component allows you to use the head of each column as a search field, however there are cases were you may want to use different type of field for searching, such as an [Options picker](doc:option-picker). 
+The Table component can search from each column header, but some workflows need a different control, such as an [Options picker](doc:option-picker).
 
-This guide will show you how to add search that will display results for a selected *Region* from a preset list of values, or countries matching a *Country* field.
+Use this pattern to filter results by a selected *Region* from a fixed list, or by countries that match a *Country* field.
 
 <HTMLBlock>{`
 <u><b style="font-size: 14px;">Challenge: </b></u><br />
@@ -32,24 +32,24 @@ This guide will show you how to add search that will display results for a selec
 ## Steps
 
 1. Download the following .csv file containing the sample data for this guide [Sample Data](https://drive.google.com/file/d/1Pl8WQ14L4_7jVzD4UgHLMc032TfKlK0y/view?usp=sharing)
-2. In the Data tab of your Budibase workspace, click "Create new table", and select the "Create a Table from a CSV or JSON file" to upload the sample data. You may need to reject columns that have been unsuccessfully imported, and choose a display column.
+2. In the Data tab, click `Create new table` and choose `Create a Table from a CSV or JSON file` to upload the sample data. You may need to reject columns that import incorrectly and choose a display column.
 
    1. <Image align="center" src="https://files.readme.io/140d16e413f621ab46a48571d87c2532d0810448bbf170ae2801ea9d0814df07-Screenshot_2025-08-15_at_10.29.58.png" />
-3. You may need to reject columns that were unsuccessfully imported, and select a Display Column. 
+3. If needed, reject any failed imports and select a display column.
 
    ![](https://files.readme.io/8452873586fc5d800ad6bfd9ccd0213bb9d6089213b56e7212cf5d1a73ec5e8e-image.png)
-4. When the data has been successfully imported, you should see a table of sample sales data populated in the Data Tab.
-5. Create a new app
-6. Create a new blank screen. Add a new Table component, and set the Data option to Sales. 
+4. Once the data is imported, you should see the sample sales table in the Data tab.
+5. Create a new app.
+6. Create a new blank screen. Add a `Table` component and set the Data option to `Sales`.
 
    <Image align="center" src="https://files.readme.io/697e98e30e1a21f25af67cb7e9a5fe179e404e0578e90d5a96f1fe6bcb5c21bd-Screenshot_2025-08-15_at_10.35.14.png" />
-7. Next, add a Form component\* and add an Options Picker as a child of the form.\
+7. Add a `Form` component and add an `Options Picker` as a child of the form.\
    \*Form components are not to be confused with Form Blocks
-8. In the settings of the Options Picker, you'll need to add a field value, and you should add a label - we'll set both to "Region".
-9. Set the Options Source to Custom.  
+8. In the `Options Picker` settings, add a field value and label. Set both to `Region`.
+9. Set the Options Source to `Custom`.
 
    ![](https://files.readme.io/ccceae83f7577e14b24240c57bff967d28d08b3c5cf22d9ae50a8c565ba02864-image.png)
-10. Click Define options: `Add Option` for each region:
+10. Click `Define options`, then add an option for each region:
 
     1. Australia and Oceania
     2. Central America and the Caribbean
@@ -58,12 +58,12 @@ This guide will show you how to add search that will display results for a selec
     5. Asia
     6. North America
     7. Europe
-11. Head back to the Table settings, and add a filter. 
+11. Return to the table settings and add a filter.
 
     ![](https://files.readme.io/c4957e4a84ec7c8b1dd38d12aa088eca78256fae0070e923ce2aeef952f04c78-image.png)
-12. Once the filter is set, you'll be able to select a region from the dropdown from within the builder, but to fully test you should click the preview button to take a closer look.
+12. Once the filter is set, you can select a region from the dropdown in the builder. Use preview to test the full flow.
 
-You may also decide that you want to filter by multiple region, for example when looking for sales in Europe and Asia - In this case, you should use a Multi-Select Picker component, and your filter should use the "Is In" operator. 
+To filter by multiple regions, such as Europe and Asia, use a `Multi-Select Picker` and the `Is In` operator.
 
 ![](https://files.readme.io/1938cfa4d4d6644cd7212336107828c04d4b3eece342f22c048b903691f97e99-image.png)
 
