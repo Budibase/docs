@@ -16,6 +16,10 @@ The filter component can be used to allow your users to search and refine the da
 
 Using the filter component with a table can be achieved very simply. Add a Filter component to any screen that contains a table, and select your chosen table as the "Target component." With that done, you can choose the columns to filter on with the settings panel.
 
+### Interaction
+
+When a user interacts with a filter in the published app, the filter input is automatically focused for a faster entry. Once the desired value is entered, the filter can be applied by clicking the **Apply** button or by pressing the **Enter** key.
+
 
 ## Filtering Data providers
 
@@ -40,11 +44,11 @@ With this established, your users will now be able to filter the chart based on 
 
 ## Settings
 
-| Setting          |                                                                                               |
-| :--------------- | :-------------------------------------------------------------------------------------------- |
-| Target Component | Select any Table or Data provider on the screen to apply filters to.                          |
-| Default filter type | Sets the initial filter condition type when users add a new filter.                           |
+| Setting          |                                                                                                   |
+| :--------------- | :------------------------------------------------------------------------------------------------ |
+| Target Component | Select any Table or Data provider on the screen to apply filters to.                              |
+| Default filter type | Sets the initial filter condition type when users add a new filter.                               |
 | Persist Filters  | Similar to App State - applied filters will remain when the user leaves the page and returns. |
 | Clear Filters    | Displays a "Clear Filters" button so users can quickly reset all active filters.              |
-| Size             | Controls the visual size of the filter input/button UI.                                       |
-| :gear:  >> Label | Text input to rename filter (defaults to column).                                             |
+| Size             | Controls the visual size of the filter input/button UI.                                          |
+| :gear:  >> Label | Text input to rename filter (defaults to column).                                                 |
