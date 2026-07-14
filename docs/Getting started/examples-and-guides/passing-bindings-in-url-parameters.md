@@ -16,47 +16,47 @@ next:
 ---
 # Try it out!
 
-In this scenario, I will be using the sample data provided in the internal Budibase DB to make a list of staff, each element in the list can be clicked to navigate to a page that displays more detailed information about that particular staff member. Follow along by building your own version, or download the app-export at the end of the page to take a closer look.
+Use this pattern when a list screen needs to navigate to a detail screen for a specific row. The example below uses the sample data in Budibase DB, but you can follow along with any table that has a stable row ID.
 
-Firstly, I'll add a `Data Provider`, and nest a `Repeater` component, and then add `Container` component inside the Repeater.
+Start by adding a `Data Provider`, then nest a `Repeater` and add a `Container` inside it.
 
 ![](https://files.readme.io/c264816-image.png)
 
 <br />
 
-In the Data Provider settings, I'll select the *Employees* table as the *Data* source. Now, any components I add inside the `Repeater` will have access to the bindings that reflect the *Employees* table. 
+In the data provider settings, select the *Employees* table as the *Data* source. Components inside the repeater will then have access to the employee bindings.
 
-I can set this by going to `Bindings >> New Repeater` and see the column names offered as bindings. I've used a `Headline` component to show *First Name* and *Last name*, and another `Headline` component to show *Employee Level*. With a little bit of styling we can start to see this screen coming together.
+Open `Bindings >> New Repeater` to see the available columns. In this example, `Headline` components show *First Name*, *Last name*, and *Employee Level*.
 
 ![](https://files.readme.io/6f1b3c9-image.png)
 
-Next, I'll create a new screen that will become the detailed view of each employee. I'll set the URL of the screen to be `/staff/:id`. Pay close attention to the colon `:` - this is how we will denote a variable in a URL. 
+Next, create a detail screen for each employee and set its URL to `/staff/:id`. The colon `:` marks `id` as a URL variable.
 
 ![](https://files.readme.io/236ee22-image.png)
 
-On my new screen, I'll add a `Data Provider` to get information from the *Employees* table, and set a filter for the `_id` from the *Employees* table to match the binding passed in the URL.
+On the detail screen, add a `Data Provider` for the *Employees* table and filter `_id` to match the value passed in the URL.
 
-If a user accidentally managed to navigate to the `/staff/:id` screen without a valid `_id` being set, the default setting of "When filter empty: return all rows" would get every row in the table, and display the bindings of the first row it found. It's much better to catch that by returning no rows. I'll also disable pagination on the `Data Provider`.
+If the screen opens without a valid `_id`, set "When filter empty" to return no rows. That avoids showing the first row in the table by accident. Disable pagination as well.
 
 ![](https://files.readme.io/4da7075-image.png)
 
-Now inside my `Data Provider` I can add components that have access to my Data Provider in the bindings. It's important here to note that the `Data Provider` fetches rows from a table, which are returned as an array of objects, where each object is one row from the table. We will only ever get one row using these filters, but it will still be returned as an array. All that is to say that when digging into the bindings we should index the result of the Data Provider rows. Using `{{ New Data Provider.Rows.0 }}` will return the entire row as an object, and we can prop-drill one level further by adding a column name.
+Inside the data provider, remember that rows are returned as an array. Even when the filter returns one row, use `{{ New Data Provider.Rows.0 }}` to access the row object before reading a column value.
 
 ![](https://files.readme.io/413c875-image.png)
 
 <br />
 
-I've applied some details to the page, referencing the individual row, and it's now starting to take shape. The last part of this task is the most important. Head back to the `/staff` screen, and on the `Container` component in the `Repeater component`, add an *On Click* action. Set a *Navigate To* action, and open the bindings drawer. In this example the destination will be `/staff/{{ New Repeater.Employees._id }} `, which puts the clicked container's `_id` into the URL, and passes it through to the `/staff/:id` screen.
+Add the remaining detail components to the page, then return to the `/staff` screen. On the repeater container, add an *On Click* action with a *Navigate To* step. Set the destination to `/staff/{{ New Repeater.Employees._id }}` so the clicked row ID is passed through to the detail screen.
 
 <Image alt="Click the lightning bolt to open the Bindings Drawer..." align="center" src="https://files.readme.io/2d1b5e6-image.png">
   Click the lightning bolt to open the Bindings Drawer...
 </Image>
 
-Now, navigating from `/staff` will actually substitute `:id` for a row id, which the `Data Provider` uses to filter the table and present the information.
+When the user navigates from `/staff`, Budibase substitutes `:id` with the row ID and uses it to filter the detail screen.
 
 ## A few things to consider...
 
-Think  carefully about what you pass into the URL. In this example we passed `_id`. We could have used something more human-readable like email, but that would mean people could manipulate the URL to include an email that they shouldn't have access to, or a sequential number like EMPLOYEE ID. Imagine the URL had been `/staff/:email`, and On Click we navigate to `/staff/{{ New Data Provider.Employees.Email }}` but we only listed staff who were not managers, it would be easy to circumnavigate that by just editing the URL in the browser to an email address of a manager.
+Use a stable identifier such as `_id` rather than a human-readable value like email. Human-readable values are easier for users to guess or edit in the browser.
 
 ![](https://files.readme.io/ed82c1e-image.png)
 
@@ -64,15 +64,15 @@ Think  carefully about what you pass into the URL. In this example we passed `_i
 
 <br />
 
-You might want to remove the path to `/staff/:id` from the navigation bar, otherwise people will be able to visit the page without setting an `_id` 
+Remove `/staff/:id` from the navigation bar if you do not want users opening the page without a selected row.
 
 ![](https://files.readme.io/7fec6d5-image.png)
 
-When working in the builder on the `/staff/:id` screen, no `_id` will have been set or passed, so it can be tricky to know that your variables have been set properly. In this instance, in your `Data Provider`, temporarily set "When filter empty" to "return all table rows", so that you get some values to work with. Make sure to return it to "return no rows" when you're finished.
+When working in the builder on `/staff/:id`, no `_id` is set yet. Temporarily change the empty-filter behavior to return all rows while you test, then switch it back to return no rows.
 
 ![](https://files.readme.io/00d60ff-image.png)
 
-Try it for yourself, and click below to download the app used to create this guide.
+Try it yourself, then use the download below to inspect the example app.
 
 <HTMLBlock>{`
 <!-- Add icon library -->

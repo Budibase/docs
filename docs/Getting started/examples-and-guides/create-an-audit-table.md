@@ -19,12 +19,12 @@ next:
 
 ## Scenario
 
-This guide shows you how to track updates made to patient records by creating an audit log. When a user edits a row in the Patients table, an automation compares the previous and updated data, identifies which fields changed, and writes those changes to the Patient audit table.
+Track updates to patient records by writing each change to a separate audit table. When a user edits a row in `Patients`, an automation compares the previous and updated data, identifies the changed fields, and writes them to `Patient audit`.
 
 Use this to:
 
-* Maintain a history of edits for compliance or review
-* See which fields were changed, what the old value was, and what the new value is
+* Maintain a history of edits for review or compliance
+* See which fields changed, along with the old and new values
 
 <HTMLBlock>{`
 <u><b style="font-size: 14px;">Challenge: </b></u><br />
@@ -70,9 +70,9 @@ Use this to:
       <Image align="center" src="https://files.readme.io/3b34e5a877cb532e780162b29edc30e816c9eb4df0645cf12e9ea98f744d8be1-Screenshot_2025-07-09_at_08.46.28.png" />
 
       1. A table component to view all patients with a create row button
-      2. A form page were you can create new patient records
-      3. A form page were you can edit existing records by clicking on a row in the table
-3. Set Up Automation\
+      2. A form page where you can create new patient records
+      3. A form page where you can edit existing records by clicking a row in the table
+3. Set up automation\
    Navigate to the Automation area and create a new automation:
 
    1. Click the `Updated by` trigger type for your automation
@@ -130,10 +130,10 @@ Use this to:
 
       <Image align="center" src="https://files.readme.io/3dae6b1a0a95be4ea62d1728fa9f54ca6c8de872c452e4dc1c263f71bfa6152a-Screenshot_2025-07-09_at_08.49.14.png" />
 
-      1. Add looping
-      2. Use the output value from the JavaScript step for the loop
-      3. Add the looped outputs against each column
-         1. | Columns      | Binded values                         |
+      1. Add looping.
+      2. Use the output value from the JavaScript step for the loop.
+      3. Map the looped outputs to each column:
+         1. | Columns      | Bound values                          |
             | :----------- | :------------------------------------ |
             | Column\_name | `{{  loop.currentItem.Column_name }}` |
             | Old\_value   | `{{  loop.currentItem.Old_value }}`   |

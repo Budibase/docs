@@ -18,7 +18,7 @@ next:
 
 ## Scenario
 
-You're building an app and you want to set a project length in days, and then dynamically calculate start and end dates.
+Use this pattern when a duration field should update related start and end dates automatically.
 
 <HTMLBlock>{`
 <u><b style="font-size: 14px;">Challenge: </b></u><br />
@@ -30,32 +30,32 @@ You're building an app and you want to set a project length in days, and then dy
 ## Steps
 
 1. `Add component`: **Form**
-2. In the <Glossary>Settings Panel</Glossary> set *Schema* to 'Jobs'
+2. In the <Glossary>Settings Panel</Glossary>, set *Schema* to `Jobs`.
 3. `Add component`: **Container**
-4. In the <Glossary>Settings Panel</Glossary> set the layout to flex
-   1. Set *Direction* to 'Row' 
+4. In the <Glossary>Settings Panel</Glossary>, set the layout to flex.
+   1. Set *Direction* to `Row`.
 
 <Image align="center" width="450px" src="https://files.readme.io/71eacea36235aced8d7c7537f6de6c0c89c5484fbd309d09ef24878fe2ec4705-Screenshot_2025-08-18_at_09.28.28.png" />
 
 5. `Add component`: **Number Field**
-6. Manually enter 'Direction' into the *Field* name and set *Label* to 'Days of work'
-7. Set *Default value* to 7
+6. Enter `Duration` as the *Field* name and set *Label* to `Days of work`.
+7. Set *Default value* to `7`.
 8. `Configure validation`: 
-   1. `Add Rule`: Min value 'Value' 1 *Cannot be less than one day!*
-   2. `Add Rule`: Max value 'Value' 365 *Cannot be more than 365 days!*
-   3. `Save`
+   1. `Add Rule`: Min value `1` with the message `Cannot be less than one day!`
+   2. `Add Rule`: Max value `365` with the message `Cannot be more than 365 days!`
+   3. Save the validation.
 
 <Image align="center" src="https://files.readme.io/eaede95e21490e497085caafa114ff0ae3f5b7589f257fe5410fdbd2e3c750fc-Screenshot_2025-08-18_at_09.52.25.png" />
 
 9. `Add component`: **Date Picker**
-10. In the <Glossary>Settings Panel</Glossary> select 'Works Start' from the *Field* dropdown
-11. Set *Label* to 'Works Start'
-12. Untick *Show time*
+10. In the <Glossary>Settings Panel</Glossary>, select `Works Start` from the *Field* dropdown.
+11. Set *Label* to `Works Start`.
+12. Untick *Show time*.
 
 <Image align="center" src="https://files.readme.io/67aaa83ef94a70e7bc997f124783411ca3e66b5d58633d8b04d38087cbcd5371-Screenshot_2025-08-18_at_10.01.33.png" />
 
 13. [Duplicate](https://docs.budibase.com/docs/components#editing) the **Date Picker**
-14. Replace 'Start' with 'End' in the *Field* and *Label* settings
+14. Replace `Start` with `End` in the *Field* and *Label* settings.
 
 > 👍
 >
@@ -66,10 +66,10 @@ You're building an app and you want to set a project length in days, and then dy
     1. **Validate Form** - make sure to select the form in the dropdown
     2. **Update Field Value**
 
-       1. select the *Form* from the dropdown
-       2. select 'Set value' as the *Type*
-       3. select 'Works Start' as the *Field*
-       4. click the lightning bolt icon, and click on the `JavaScript` tab. Provide the following:
+       1. Select the *Form* from the dropdown.
+       2. Select `Set value` as the *Type*.
+       3. Select `Works Start` as the *Field*.
+       4. Click the lightning bolt icon, then open the `JavaScript` tab and use the following:
 
        ```javascript JavaScript
        //Source: https://stackoverflow.com/questions/563406/how-to-add-days-to-date
@@ -84,18 +84,18 @@ You're building an app and you want to set a project length in days, and then dy
 
 > 📘
 >
-> The **Validate Form** action will prevent the **Update Field Value** from firing if there's any validation errors.
+> The **Validate Form** action prevents the update from running if validation fails.
 >
-> The special `$("Field Value")` binding is used to indicate that the [On change](https://docs.budibase.com/docs/text-inputs#on-change) value should be used, and not the value before the change.
+> `$("Field Value")` uses the changed value rather than the previous value.
 >
-> Also note that you may need to replace the `$("Jobs Form.Fields.Duration")` binding to match your form name.
+> Update `$("Jobs Form.Fields.Duration")` to match your form name if needed.
 
 <Image align="center" src="https://files.readme.io/383b3c6e74585ce1a02012008ea5df3fd207131ff067a4e0ef041eaf7012ce9c-Screenshot_2025-08-18_at_09.58.10.png" />
 
-16. Select the **Works Start Date Picker**. Under *On change*: `Define actions`
+16. Select the **Works Start** date picker. Under *On change*: `Define actions`
 
     1. **Validate Form** - make sure to select the form in the dropdown
-    2. **Update Field Value** - similar to before, but this time we are setting the value of the 'Works End' field, and will add days instead of subtracting:
+    2. **Update Field Value** - set the value of the `Works End` field and add days instead of subtracting:
 
     ```javascript
     //Source: https://stackoverflow.com/questions/563406/how-to-add-days-to-date
@@ -107,16 +107,16 @@ You're building an app and you want to set a project length in days, and then dy
 
     return new Date($("Field Value")).addDays($("Jobs Form.Fields.Duration"));
     ```
-17. Finally click on the **Number Field**. Under *On change*: `Define actions`
+17. Finally, click the **Number Field**. Under *On change*: `Define actions`
 
     1. **Validate Form** - make sure to select the form in the dropdown
-    2. **Continue if / Stop if** - 'Stop if' `{{ Jobs Form.Fields.Works Start }}` 'Equals' ""
+    2. **Continue if / Stop if** - set `Stop if` to `{{ Jobs Form.Fields.Works Start }}` `Equals` `""`
     3. **Update Field Value**:
 
-       1. select the *Form* from the dropdown
-       2. select 'Set value' as the *Type*
-       3. select 'Works End' as the *Field*
-       4. click the lightning bolt icon, and click on the `JavaScript` tab. Provide the following:
+       1. Select the *Form* from the dropdown.
+       2. Select `Set value` as the *Type*.
+       3. Select `Works End` as the *Field*.
+       4. Click the lightning bolt icon, then open the `JavaScript` tab and use the following:
 
        ```javascript
        //Source: https://stackoverflow.com/questions/563406/how-to-add-days-to-date
@@ -131,9 +131,9 @@ You're building an app and you want to set a project length in days, and then dy
 
 > 📘
 >
-> In this case we first check that the number of days is a valid number. 
+> This action checks that the number of days is valid.
 >
-> Next we use the [Stop if](https://docs.budibase.com/docs/chaining-actions#continue-if--stop-if) action to make sure a 'Works Start' date has been chosen, because we need to know the start date in order to calculate the end date.
+> The [Stop if](https://docs.budibase.com/docs/chaining-actions#continue-if--stop-if) action prevents the update until a `Works Start` date has been chosen.
 
 <br />
 
