@@ -1,6 +1,6 @@
 ---
 title: Charts
-excerpt: Visualise your data
+excerpt: Visualise your data.
 deprecated: false
 hidden: false
 metadata:
@@ -10,56 +10,42 @@ metadata:
 next:
   description: ''
 ---
-Whilst there are a variety of chart types, all charts have some common properties:
+Use charts to present numeric data from a [Data provider](doc:data-provider).
+
+All charts share the same core settings:
 
 * Title
 * Provider
-* Label Column
-* Data Column(s)
-* Width & Height
+* Label column
+* Data column(s)
+* Width and height
 * Margin
 * Custom CSS
 * Conditions
 
-## Providing data
+## Choose a source
 
-Charts allow you to visualise data from a [Data Provider](doc:data-provider), which can have datasources such as:
+Charts can read from:
 
-* <Glossary>Budibase DB</Glossary> 
-* [REST Queries](doc:rest-queries) 
-* [Custom Queries](doc:custom-queries)
+* Budibase DB
+* REST queries
+* Custom queries
 
-## Displaying data
+## Use chart data
 
-The data displayed in your chart will be determined by the label and data columns. 
+The label column names each category.
 
-**Label Column** Provides the name of each categorical variable.\
-**Data Column(s)** Provides the value or range of values for each label.   
+The data column or columns provide the numeric values for each label.
 
-> 🚀 Data column type
->
-> Data columns must be numeric (eg; containing values that can be converted to numbers)
+REST queries and custom queries often need a transformer so the returned data matches the chart schema.
 
-## Generating the chart schema
+## Common chart types
 
-For table datasources, the available options for the label and data columns will match the columns of the table. 
-
-When using a **View** as a datasource, any **View Calculations** (such as Sum, Average, Minimum, or Maximum) you have configured will also be available as numeric data columns for your chart.
-
-Data from REST Queries on the other hand, will likely need to be transformed to be suitable for use in charts.
-
-In particular, your [Transformer](doc:transformers) and <Glossary>Schema</Glossary> should align with the following:
-
-![](https://files.readme.io/673ca59-Screenshot_2022-04-26_at_15.58.08.png "Screenshot 2022-04-26 at 15.58.08.png")
-
-Naturally you would replace the strings and numbers with response data from your API.
-
-### Many data columns
-
-Most chart types can make use of more than one value column. Thus, additional value fields would be needed in your schema.
-
-For example, you may want to display the change in average temperature between seasons for each country: 
-
-![](https://files.readme.io/1a25614-Screenshot_2022-04-26_at_16.48.50.png "Screenshot 2022-04-26 at 16.48.50.png")
-
-<Image align="center" src="https://files.readme.io/a1644054baa1546f9eb5dfbde7949c741b3a7cd6d2405e7d782647ae4ab1bd3a-Screenshot_2024-10-28_at_13.04.26.png" />
+* Area
+* Bar
+* Candlestick
+* Gauge
+* Histogram
+* Line
+* Pie
+* Progress donut

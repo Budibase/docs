@@ -10,6 +10,15 @@ metadata:
 next:
   description: ''
 ---
-It is common to save a static value when a user submits a form. For example, when an applicant applies for a job, you may want to save a value such as `Requires HR attention`.
+Use a static value when a form submission should always save the same value to a column.
 
-To do this, open the button in your form and add a **Save Row** action. Add the target column, then enter the static value. Every time the form is submitted, Budibase saves that value alongside the row.
+For example, you might always save `Requires HR attention` when a job application is submitted.
+
+To do this:
+
+1. Open the form button
+2. Add a `Save Row` action
+3. Choose the target column
+4. Enter the static value
+
+Budibase saves that value each time the form is submitted.

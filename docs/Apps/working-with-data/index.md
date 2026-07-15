@@ -10,22 +10,23 @@ metadata:
 next:
   description: ''
 ---
-A [Data provider](doc:data-provider) fetches data and passes it to child components. Any component that displays data has a **Data** setting where you can choose the provider.
+Use a [Data provider](doc:data-provider) to fetch rows and share them with child components.
 
-Data providers control filtering, sorting, and pagination. This keeps the components presentational and makes it easier to reuse the same source across a screen.
+Any component that displays data has a **Data** setting where you can choose the provider.
 
-> 👍 Blocks
->
-> For common data presentations, use [Blocks](doc:blocks).
->
-> Blocks bundle a data provider with other components and reduce nesting in your <Glossary>Component Tree</Glossary>.
+## What data providers do
 
-## Fetching data
+Data providers control:
 
-After adding a data provider, open the <Glossary>Settings Panel</Glossary> and select a <Glossary>Datasource</Glossary>.
+* Filtering
+* Sorting
+* Pagination
 
-> 🚧 Using Multiple Data Providers
->
-> Data providers can use other data providers as a source.
->
-> Reusing a single unfiltered provider can reduce extra network traffic when multiple components need the same data.
+This keeps display components focused on layout and makes it easier to reuse the same source across a screen.
+
+## Related pages
+
+* [Data provider](doc:data-provider)
+* [Fetching data](doc:fetching-data)
+* [Repeater](doc:repeater)
+* [Single Row Provider](doc:single-row-provider)

@@ -10,22 +10,22 @@ metadata:
 next:
   description: ''
 ---
-Components are the building blocks of Budibase apps. Use them to collect input, display data, and shape the layout of a screen.
+Components are the building blocks of Budibase apps. Use them to collect input, display data, and shape screen layout.
 
 ## Add components
 
-There are two common ways to add a component:
+Add components in one of two ways:
 
 1. Use the add component button in the builder.
 2. Select a component type from the searchable component list.
 
-When the component list is open, pressing `Enter` adds the highlighted component.
+When the component list is open, press `Enter` to add the highlighted component.
 
 ## Delete components
 
 Select a component and press `Backspace` or `Delete`.
 
-You can also open the component menu and choose the delete action.
+You can also delete a component from its menu.
 
 ## Component tree
 
@@ -61,7 +61,7 @@ Common shortcuts include:
 * `⌘ + C` to copy a component
 * `⌘ + V` to paste a component
 
-Use `CTRL` instead of `⌘` on Windows.
+Use `Ctrl` instead of `⌘` on Windows.
 
 ## Rename components
 
@@ -77,7 +77,7 @@ Use names that describe the component’s purpose, not just its type.
 
 Once a component is on the screen, its settings appear in the right-hand panel.
 
-Some components also expose additional controls in the canvas preview. Use these when you need to adjust layout or content without changing the underlying structure.
+Some components also expose controls in the canvas preview. Use those when you need to adjust layout or content without changing the component tree.
 
 ## Related guides
 

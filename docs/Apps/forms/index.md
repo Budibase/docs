@@ -10,30 +10,30 @@ metadata:
 next:
   description: ''
 ---
-Forms are the primary building blocks of data-heavy applications. Use them to create and edit data with a consistent layout and theme.
+Use forms to create and edit data with a consistent layout.
 
 Forms are built from three main component types:
 
-1. **Form component**
-2. **Field group component**
-3. **Input components**
+1. `Form`
+2. `Field group`
+3. Input components
 
 ## Form component
 
-The Form component is the top-level container. All [Field groups](doc:field-groups) must be placed inside it.
+The Form component is the top-level container. Place [Field groups](doc:field-groups) inside it.
 
-You can also use fields independently of a form when you need simpler input controls, such as search fields.
+Use a form when you want Budibase to handle submitted values, validation, and save actions together.
 
 ### Form schema
 
-Forms have an optional **Schema** setting. The schema can be a table, view, relationship, or custom source.
+A form can use a table, view, relationship, or custom source as its schema.
 
 Choosing a schema helps with:
 
 * Picking field names from a dropdown
 * Matching validation to the selected data type
 * Generating form components automatically
-* Creating rows with the correct table schema
+* Saving data with the expected table shape
 
 > 🚧 Schema from query
 >
@@ -41,24 +41,17 @@ Choosing a schema helps with:
 
 ### Form type
 
-A form can be in `Create` mode or `Update` mode.
-
-In `Create` mode, fields start blank unless they have a <Glossary>Default Value</Glossary>.
-
-In `Update` mode, fields are populated from the parent [Repeater](doc:repeater) data, unless the schema is custom.
+* `Create` starts with blank fields unless a default value is set
+* `Update` fills fields from the parent [Repeater](doc:repeater) or row binding
 
 ## Inputs
 
-Each input component represents a single field. The field name comes from the schema or can be typed manually if no schema is set.
+Each input represents a single field. The field name comes from the schema or can be typed manually if no schema is set.
 
-### Custom Inputs / Fields
+Use custom fields when the form needs values that are not part of the schema. Form bindings always reflect the field names in the form.
 
-You can add custom fields that are not part of the schema. Data <Glossary>Binding</Glossary>s always reflect the names of the fields in the form.
-
-### Help text setting
-
-Use help text to give context or explain validation. If validation fails, the help text is replaced with the error message.
+Help text gives users context or validation guidance. If validation fails, Budibase replaces the help text with the error message.
 
 ## Nesting non-form components
 
-Forms can contain any components, not just fields. Use [Field groups](doc:field-groups) to manage layout.
+Forms can contain other components as well. Use [Field groups](doc:field-groups) to manage layout.
