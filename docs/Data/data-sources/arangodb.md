@@ -24,15 +24,7 @@ The only prerequisites for this guide are that you need a Budibase instance, an 
 
 The first step is to create your ArangoDB datasource. When in the Data tab in the Budibase builder, click the *Add source* button in the top left corner. A modal will appear allowing you to select what type of datasource you want. Select *ArangoDB* and then click *Continue*.
 
-<Image alt="Select the ArangoDB datasource" align="center" src="https://files.readme.io/584a30f-1_arango.png">
-  Select the ArangoDB datasource
-</Image>
-
 The next step is to add the relevant connection info so that Budibase can connect to your ArangoDB instance. By default the Username will be *root* and the Database Name is \_*system*.
-
-<Image alt="ArangoDB connection info" align="center" width="600px" src="https://files.readme.io/5a4379b-SCR-20230215-kym.png">
-  ArangoDB connection info
-</Image>
 
 If you don't have a Collection yet, go to the URL of your ArangoDB instance - by default this is [localhost:8529](http://localhost:8529/) if you're running it locally - and then sign in to add a new collection.
 
@@ -47,10 +39,6 @@ To work with ArangoDB data in Budibase, we need to create queries. There are two
 Create queries are very simple in the Budibase ArangoDB integration. They run an insert statement for the collection specified in the datasource configuration with data you provide in JSON format.
 
 Simply enter the document object into the Fields field. If you want to use Bindings, you can set them up above with a Binding name and a default value. Then in your query, place the binding name where you want it to be used as shown below. We'll see the full power of bindings later in this guide.
-
-<Image alt="Adding a simple document to an ArangoDB collection" align="center" width="600px" src="https://files.readme.io/6435de9-SCR-20230216-mct.png">
-  Adding a simple document to an ArangoDB collection
-</Image>
 
 Once you're happy with your query, click *Run Query* to test it. If you are using Bindings the default value for them will be used. This type of query returns the newly created document as a response. You can use a JavaScript function in the [Transformer field](https://docs.budibase.com/docs/transformers) to modify this result, but most of the time the default `return data` will be sufficient. When you're finished working on the query, click *Save Query*.
 
@@ -71,10 +59,6 @@ for bag in beans
 
 Using AQL you can add a lot more logic to limit the query or change the structure of the data coming out. In my case here, I'm filtering the results, limiting the count to 10 and sorting them by name.
 
-<Image alt="Additional AQL filtering for our query" align="center" width="600px" src="https://files.readme.io/0d40707-SCR-20230217-f4m.png">
-  Additional AQL filtering for our query
-</Image>
-
 You can also query the database to get a single object where `{{id}}` is a binding like this:
 
 ```Text AQL
@@ -93,31 +77,17 @@ To tie this all together, let's build a full CRUD app in Budibase using ArangoDB
 
 We'll start by updating our [Create](#create) query we made above. I'm going to replace the rest of the hardcoded values in the JSON object to use bindings.
 
-<Image alt="Using bindings to create a new document with form values" align="center" width="600px" src="https://files.readme.io/d9963b6-SCR-20230217-on3.png">
-  Using bindings to create a new document with form values
-</Image>
-
 Now that we have those bindings in place, we can go to the Design tab to make use of them.
 
 I'm going to start by adding a Blank screen with the URL `/bag/new` where we will create a form for adding a new document to our collection. In my screen I'll add a Form component with a [Field group](doc:field-groups) and a [Button](doc:button). When setting up the form use your Create query as the Schema so that inside the field group we have the relevant fields for each column in the document. 
 
-<Image alt="Form component setup" align="center" src="https://files.readme.io/dff292a-SCR-20230217-pxl.png">
-  Form component setup
-</Image>
-
 To make the form fully functional, add an On Click Action to your button to execute the query. In the Execute Query action settings, add the field values from the form for each binding.
-
-<Image alt="Execute Query configuration" align="center" src="https://files.readme.io/1c189b9-SCR-20230217-q15.png">
-  Execute Query configuration
-</Image>
 
 Now whenever you fill in the fields and click the Create button, our Create query will run with the specified values and add a new document to our collection.
 
 ## Listing documents
 
 For listing documents we can use the Table block and our simple [Read](#read) query. All you need to do is create a new screen, add a Table block, and choose the query. The table will immediately be populated with data from your collection.
-
-![](https://files.readme.io/93a3027-SCR-20230217-ot6.png)
 
 Once you have this table in place, you can configure the columns however you like. You can easily add a button that will link to the New document screen we built above. You can also route to the Edit document screen that we're building below.
 
@@ -153,17 +123,9 @@ When creating our new edit screen, we need to pass in the document's key as a [U
 
 Our edit screen will be set up in a very similar way to our create screen shown above. The main difference is we will use a Repeater block to provide the existing form values as defaults for the field components. We will use the first query we made as the data source for this Repeater block, and use `beans/{{ URL.key }}` as the id binding for that. This query will only provide one document from the collection, but to be extra safe we can also filter the Repeater block by the URL param key and limit it to 1 result.
 
-<Image alt="The edit screen, with form fields populated by the Repeater block" align="center" width="600px" src="https://files.readme.io/a8d1569-SCR-20230217-rbg.png">
-  The edit screen, with form fields populated by the Repeater block
-</Image>
-
 You will need to configure the Form and Field Group similarly to the ones on the create page, but add the values from the Repeater block as default values for each field. The Form Type should be Update in this case and because we are using custom queries in ArangoDB, we need to use a Custom schema where we define each field variable manually.
 
 The last thing to do when making an edit screen is to hook up the On Click action for the Save button to execute the Update query we made above. In the Execute Query settings we can pass in the form field values to be used in the query bindings, like so:
-
-<Image alt="Our save button's On Click configuration" align="center" src="https://files.readme.io/ef52091-SCR-20230217-rfh.png">
-  Our save button's On Click configuration
-</Image>
 
 ## Deleting documents
 
@@ -174,14 +136,6 @@ remove "{{key}}" in beans
 ```
 
 Now that we have our query, all we need to do is add a button to our edit screen that will execute this query, passing in the key from our URL parameter for the binding.
-
-<Image alt="Executing the delete query on a button click" align="center" src="https://files.readme.io/ef98ed8-SCR-20230217-qu3.png">
-  Executing the delete query on a button click
-</Image>
-
-<Image alt="The final edit screen complete with delete button" align="center" width="600px" src="https://files.readme.io/e9568e7-SCR-20230217-rah.png">
-  The final edit screen complete with delete button
-</Image>
 
 > 👍 Nice work
 >

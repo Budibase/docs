@@ -24,54 +24,19 @@ To get started, follow the instructions from the [Database Star sample database]
 
 You may also find this video tutorial helpful for getting started: [How to Set Up the Oracle HR Schema](https://www.youtube.com/watch?v=x8C8w4JM3AU\&ab_channel=DatabaseStar).
 
+Budibase supports Oracle `12.1+` in Thin mode and `11.2+` in Thick mode.
+
 ## Adding the datasource
 
 With your Oracle instance running, and the sample database installed, we can begin pulling that data into Budibase.
 
 First create an app - no sample data needed.
 
-![](https://files.readme.io/e745f7b-oracle-create-your-app.png)
-
 Once the new app has been created, click `Add source` and select `Oracle`.
-
-<Image align="center" src="https://files.readme.io/5089ef2b71c9cc39cd0606ce7235552e1267b969084915bc34eed3c95469ee65-SCR-20250815-hdpj.png" />
-
-Click `Continue` and then fill out the connection config with the host, service name and user of your Oracle instance.
-
-![](https://files.readme.io/129f53b-Screenshot_2023-03-10_at_10.25.26.png)
-
-Click `Save and fetch tables` to finish.
-
-<br />
-
-## Defining relationships
-
-With our tables fetched, we can now [define relationships](https://docs.budibase.com/docs/sql-datasource#defining-relationships) within Budibase.
-
-Click the `Define relationship` button below the **Table** section to get started, and setup the following relationships:
-
-* One REGION -> Many COUNTRIES
-* One COUNTRY -> Many LOCATIONS
-* One LOCATION -> Many DEPARTMENTS
-* One DEPARTMENT -> Many EMPLOYEES
-
-<Image alt="Example relationship: One Country -> Many Locations" align="center" src="https://files.readme.io/c563ce4-Screenshot_2023-03-10_at_10.39.53.png">
-  Example relationship: One Country -> Many Locations
-</Image>
 
 Once finished you should see a list of your defined relationships:
 
-![](https://files.readme.io/4c0801f-Screenshot_2023-03-10_at_10.40.41.png)
-
 It is also worth changing the [display column](https://docs.budibase.com/docs/budibasedb#selecting-the-display-column) on some of the tables so that the links are more human readable. For example edit the **REGION\_NAME** column of the **REGIONS** table and toggle on `Use as table display column`.
-
-<Image alt="Setting the region name as the display column" align="center" src="https://files.readme.io/16c9a9d-Screenshot_2023-03-10_at_10.43.20.png">
-  Setting the region name as the display column
-</Image>
-
-<Image alt="Linked region in the countries table is now human readable" align="center" src="https://files.readme.io/c0d00f9-Screenshot_2023-03-10_at_10.44.20.png">
-  Linked region in the countries table is now human readable
-</Image>
 
 <br />
 
@@ -89,8 +54,6 @@ height: 100%;
 
 Next add three [Containers](doc:container). Within each container add a [Headline](https://docs.budibase.com/docs/displaying-text#headline) for each of the Regions: *Americas*, *Europe*, *Middle East and Africa*, and *Asia*. Add margin and adjust the container layouts as desired.
 
-![](https://files.readme.io/fc68bd8-Screenshot_2023-03-29_at_09.49.42.png)
-
 <br />
 
 ## Country screen
@@ -99,19 +62,9 @@ With our region map setup, we can add a country screen that will list the countr
 
 Click `Add screen` and select `List view`. 
 
-<Image alt="Adding an auto-generated screen" align="center" src="https://files.readme.io/6b645bb-Screenshot_2023-03-27_at_14.26.27.png">
-  Adding an auto-generated screen
-</Image>
-
 Click `Continue`, select the **COUNTRIES** table, and then `Confirm`. 
 
-![](https://files.readme.io/ceceb7e-Screenshot_2023-03-27_at_14.28.55.png)
-
 You will now see your new screen with a pre-populated countries [Table block](doc:table-block). Click `Configure columns` in the <Glossary>Settings Panel</Glossary>, `Add all columns`, and then click the `X` to remove the ID columns and the *REGIONS*. 
-
-<Image alt="Configuring table columns" align="center" src="https://files.readme.io/32dd26a-Screenshot_2023-03-27_at_14.34.18.png">
-  Configuring table columns
-</Image>
 
 You can see the locations are showing an ID field value, which isn't ideal. We can improve this by changing the [display column](https://docs.budibase.com/docs/budibasedb#selecting-the-display-column). Navigate to the **LOCATIONS** in the **Data** section and set the *City* column to the display column.
 
@@ -122,10 +75,6 @@ Untick the setting `Show button above table`. All the countries have already bee
 ### Search fields
 
 Adding searchable fields is straightforward. Within the settings panel, select the *COUNTRY\_NAME* and *LOCATIONS.CITY* options under the **Search Fields** property.
-
-<Image alt="Selecting search fields" align="center" src="https://files.readme.io/c6069b5-Screenshot_2023-03-27_at_14.45.27.png">
-  Selecting search fields
-</Image>
 
 The search fields will allow users to performa a "Starts with" search to find countries by name or city.
 
@@ -151,15 +100,9 @@ if (country === "israel") {
 return `https://images.mapsofworld.com/${country}/${country}-flag.gif`
 ```
 
-![](https://files.readme.io/a16da66-Screenshot_2023-03-28_at_15.46.26.png)
-
 ### Filter out countries with no locations
 
 We don't want to display countries if they have no departments. Click on the [Data provider](doc:data-provider) and `Define filters`. Add another filter to check if the locations relationship if empty.
-
-<Image alt="Don't retrieve locations with no city" align="center" src="https://files.readme.io/c17cb30-Screenshot_2023-03-29_at_11.36.42.png">
-  Don't retrieve locations with no city
-</Image>
 
 <br />
 
@@ -169,35 +112,17 @@ While the countries screen is setup, we still need to filter the countries by re
 
 First click on the *Screens* icon button on the left hand panel. In the *Settings Panel* on the right, edit the route to include a [URL variable](doc:url-parameters) for the **region\_name**.
 
-<Image alt="Adding a region id to the countries screen" align="center" src="https://files.readme.io/02576e6-Screenshot_2023-03-28_at_15.58.29.png">
-  Adding a region name to the countries screen
-</Image>
-
 Next in the components view, click on the [Data provider](doc:data-provider) and `Define filters`. Click `Add filter`, selecting *REGION\_ID* equals binding: `{{ URL.region_name }}`.
-
-<Image alt="Adding a filter on the Region ID" align="center" src="https://files.readme.io/74d6429-Screenshot_2023-03-28_at_16.09.02.png">
-  Adding a filter on the Region ID
-</Image>
 
 Next navigate to the `/home` screen. For each of the headline containers, click `Define actions` for the *On Click* property.
 
 Add the **Navigate To** action, and select the countries screen. Then replace `:region_id` with the particular ID (1-4) for the selected region.
 
-<Image alt="Navigate to the Region ID " align="center" src="https://files.readme.io/6932440-Screenshot_2023-03-29_at_09.42.08.png">
-  Navigate to the country screen for Region 2 (Americas)
-</Image>
-
 ### Adding the region name to the country screen
 
 Above the 'COUNTRIES' heading, add a [Repeater block](https://docs.budibase.com/docs/blocks#repeater-block) component, and nest the headline under it. Select the **REGIONS** table as the data source, and `Define filters`. Match the region ID against the ID passed in the URL. We can use the *default* handlebars helper to provide a title while in the builder.
 
-<Image alt="Filter on the Region ID from the URL, or default to 1 " align="center" src="https://files.readme.io/03529ea-Screenshot_2023-03-29_at_10.46.20.png">
-  Filter on the Region ID from the URL, or default to 1 
-</Image>
-
 For the heading value, select the *REGION\_NAME* binding from the dropdown:
-
-![](https://files.readme.io/d48887e-Screenshot_2023-03-29_at_10.48.01.png)
 
 <br />
 
@@ -209,8 +134,6 @@ In the `/countries/:region_id` screen, delete the **Details form block**. The co
 
 Now in the empty **Details side panel**, add a Repeater block, and nest a Headline component. The Repeater block should have **COUNTRIES** set as the data source, with a filter on the **\_id** column against the *State ID*. This state binding represents the ID of the clicked row. 
 
-![](https://files.readme.io/b1facbe-Screenshot_2023-03-29_at_10.59.23.png)
-
 > 🚧 Filtering on '\_id'
 >
 > The **\_id** field represents a URL-safe encoded id string.\
@@ -218,45 +141,21 @@ Now in the empty **Details side panel**, add a Repeater block, and nest a Headli
 
 The headline value should bind to the *COUNTRY\_NAME* of the repeater block:
 
-<Image alt="Selecting the country name from the repeater block" align="center" src="https://files.readme.io/3b896b1-Screenshot_2023-03-29_at_11.03.13.png">
-  Selecting the country name from the repeater block
-</Image>
-
 Below the country name headline, add a [Divider](doc:divider) as well as another Repeater block. This will be for the **LOCATIONS** pulled from the relationship of the **COUNTRIES** datasource.
 
-<Image alt="Selecting locations from the countries relationship" align="center" src="https://files.readme.io/9c95bd4-Screenshot_2023-03-29_at_11.19.39.png">
-  Selecting locations from the countries relationship
-</Image>
-
 Now within the Locations Repeater block, nest a [Cards block](https://docs.budibase.com/docs/blocks#cards-block) for the **DEPARTMENTS** relationship:
-
-<Image alt="Selecting departments from the locations relationship" align="center" src="https://files.readme.io/50fe8f4-Screenshot_2023-03-29_at_12.24.52.png">
-  Selecting departments from the locations relationship
-</Image>
 
 The *Title* of the Cards block should bind to the \_City\_of the location, which can be selected from the drop-down. 
 
 Scroll further down the right hand settings panel to get to the *Cards* section. Remove the *Subtitle* and *Description*, but add the following binding for the individual card *Title*: `{{ Departments Cards block.DEPARTMENTS.DEPARTMENT_NAME }}`. This can be selected from the dropdown.
 
-<Image alt="Final Details side panel component tree" align="center" src="https://files.readme.io/257dc2c-Screenshot_2023-03-29_at_12.38.41.png">
-  Final Details side panel component tree
-</Image>
-
 ### Hiding locations that have no departments
 
 Currently if a location has no departments, we will see the *No rows found* message.
 
-<Image alt="No rows found because Stretford has no departments" align="center" src="https://files.readme.io/68bbddd-Screenshot_2023-03-29_at_12.40.31.png">
-  No rows found because Stretford has no departments
-</Image>
-
 Ideally we should not display Stretford at all in this case. Click on the *Departments Cards block* and click on `Configure conditions`. Add a [Condition](doc:conditions) to hide the component if **LOCATIONS.DEPARTMENTS** is empty.
 
-![](https://files.readme.io/4d4bf12-Screenshot_2023-03-29_at_12.43.43.png)
-
 #### Result
-
-![](https://files.readme.io/c4592c1-departments.gif)
 
 <br />
 
@@ -270,10 +169,6 @@ You can also eject the table block so that you can deselect some of the employee
 
 Back to the `/countries` screen, click on the *Departments Cards block*. Find the setting called `Link card title` and tick the checkbox. Under *Link screen* select the `/employees/:department_id` screen. There is no need to replace the **:department\_id** in this instance, as Budibase knows to replace this with the **\_id** of the repeater.
 
-<Image alt="Linking the card title to the employees screen" align="center" src="https://files.readme.io/993856c-Screenshot_2023-03-31_at_10.42.26.png">
-  Linking the card title to the employees screen
-</Image>
-
 <br />
 
 ## Removing navigation links
@@ -281,10 +176,6 @@ Back to the `/countries` screen, click on the *Departments Cards block*. Find th
 As both the employees screen and the countries screen require an ID in the URL, we do not want to show the nav link for these screens.
 
 Click the [Configure links](https://docs.budibase.com/docs/navigation#configure-links) button and click the `X` to remove the link for employees and countries, and click `Save`.
-
-<Image alt="Only display the home screen link" align="center" src="https://files.readme.io/2cfaa9e-Screenshot_2023-03-31_at_10.55.16.png">
-  Only display the home screen link
-</Image>
 
 <br />
 
@@ -294,24 +185,8 @@ Currently the departments listed for a location are read-only. It may be the cas
 
 Create a new auto-generated List view screen for the **DEPARTMENTS** table, but in this case select *Admin* access level.
 
-<Image alt="Only Admin users can view this autogenerated screen" align="center" src="https://files.readme.io/c63e7f5-Screenshot_2023-03-31_at_10.58.06.png">
-  Only Admin users can view this autogenerated screen
-</Image>
-
 You will also want to make sure that the navigation link for the department screens only displays for admin users.
 
 Click on the [Navigation](doc:navigation) icon on the left hand pane, and `Configure links`. Beside the `/departments` link, click the dropdown and select *Admin*, then click `Save`.
 
-<Image alt="The departments link will be visible to admin users only - default is basic" align="center" src="https://files.readme.io/f4e0ac4-Screenshot_2023-03-31_at_11.09.59.png">
-  The departments link will be visible to admin users only - default is basic
-</Image>
-
 To verify the permissions, click `Preview` in the upper right hand corner of the **Design** view. You can toggle the user permissions in the blue bar along the top to test.
-
-<Image alt="Verifying that admin users can see the Departments link" align="center" src="https://files.readme.io/6d7baf0-Screenshot_2023-03-31_at_11.12.21.png">
-  Verifying that admin users can see the Departments link
-</Image>
-
-<Image alt="Verifying that power users (and below) cannot view Departments" align="center" src="https://files.readme.io/47af628-Screenshot_2023-03-31_at_11.13.18.png">
-  Verifying that power users (and below) cannot view Departments
-</Image>
