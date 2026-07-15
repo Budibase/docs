@@ -10,4 +10,6 @@ metadata:
 next:
   description: ''
 ---
-This page is the older v3 version of the search guide. Prefer [Adding search](doc:adding-a-search-field) for the current guidance.
+This is the older v3 search guide.
+
+Prefer [Adding search](doc:adding-a-search-field) for the current guidance.

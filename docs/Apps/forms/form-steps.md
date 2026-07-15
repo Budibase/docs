@@ -10,17 +10,15 @@ metadata:
 next:
   description: ''
 ---
-Use `Form Step` components when you want to split a form into multiple screens.
-
-> 👍 Multi-step form block
->
-> If your form uses one table, the [Multi-step form block](doc:multi-step-form-block) is usually the faster option.
+Use `Form Step` components to split a form into multiple steps.
 
 ## How it works
 
-`Form Step` components show one section of a form at a time. Use the `Change Form Step` action to move between steps.
+Only one step is shown at a time.
 
-Common step actions:
+Use the `Change Form Step` action to move between steps.
+
+## Step actions
 
 * `Next Step`
 * `Previous Step`
@@ -29,4 +27,6 @@ Common step actions:
 
 ## When to use it
 
-Use manual form steps when you need a single form to save data across multiple tables or when you need custom step-level control.
+Use manual form steps when one form needs to save data across multiple tables or needs custom step-level control.
+
+If the form uses one table, the [Multi-step form block](doc:multi-step-form-block) is usually faster.
