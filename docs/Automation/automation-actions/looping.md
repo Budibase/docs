@@ -14,35 +14,33 @@ next:
 ---
 > 🚧 Iteration hard limit
 >
-> Users who self-host can configure this by changing the `AUTOMATION_MAX_ITERATIONS`environment variable.
+> Users who self-host can configure this by changing the `AUTOMATION_MAX_ITERATIONS` environment variable.
 >
 > * For docker-compose users, update docker-compose.yaml > app-service > environment.
 > * For Kubernetes users update values.yaml > `automationMaxIterations`
 
-<Image align="center" border={false} src="https://files.readme.io/7100e0d3ae44ac03dfac85bab5d6e296cff62fb34b1b462d077f22da862ddd13-CleanShot_2025-10-16_at_15.50.462x.png" />
-
-The Loop step allows you to **repeat a single or series of automation actions across multiple records**. For example, when an automation is triggered, send an email to my top 10 contacts, and then update their status field. 
+The Loop step repeats one or more automation actions for each item in a list.
 
 ## Settings
 
 ### Binding / Value
 
-Binding / Value is the actual value that you want to loop over
+Binding / Value is the list or array that you want to iterate over.
 
 ### Max loop iterations
 
-Max Iterations is a soft limit that is set by the user that defines how many times that automation will run (this is superseded by a hard limit that we or the self-hosting user sets)
-` { "items": [ { "success": true } ], "iterations": 1, "success": false, "status": "MAX_ITERATIONS_REACHED" }`
+Max loop iterations sets a soft limit for the step. The platform hard limit still applies.
+
+If the loop reaches the limit, it stops and returns a `MAX_ITERATIONS_REACHED` status.
 
 ### Failure conditions
 
-Failure Condition stops the loop whenever the currentItem equals the value provided in the failure condition, then loop is then broken at that particular point and the results up to then provided
-`{ "items": [ { "success": true }, { "success": true } ], "iterations": 2, "success": false, "status": "FAILURE_CONDITION_MET" }`
+Failure Condition stops the loop when the current item matches the value you provide.
 
-This leads to how we provide the bindings for each step. A block that is being looped gets provided the following binding (in addition to any previous blocks):
+If the condition is met, the loop stops early and returns a `FAILURE_CONDITION_MET` status.
 
-<Image border={false} src="https://files.readme.io/84ff591-162908840-da9118f6-96c5-4283-b83d-813fe0b6734b.png" title="162908840-da9118f6-96c5-4283-b83d-813fe0b6734b.png" />
+## Bindings
 
-Any blocks after the loop block get provided with the entire output, such as:
+Steps inside the loop get the current item plus any bindings from earlier steps.
 
-<Image border={false} src="https://files.readme.io/515965d-162909302-0c9d0005-3efc-4daf-a68b-d67969cdadc1.png" title="162909302-0c9d0005-3efc-4daf-a68b-d67969cdadc1.png" />
+Steps after the loop get the full loop output.
