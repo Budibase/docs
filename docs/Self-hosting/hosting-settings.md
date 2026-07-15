@@ -94,11 +94,11 @@ The full set of variables can be found in our repo, in the file [.env](https://r
 
     <tr>
       <td>
-        COUCH_DB_USER
+        COUCH_DB_USERNAME
       </td>
 
       <td>
-        The username used to secure your hosted CouchDB service.  
+        The username used to secure your hosted CouchDB service. `COUCH_DB_USER` is also supported as a fallback. 
         _**We recommend changing this.**_
       </td>
     </tr>
@@ -111,6 +111,26 @@ The full set of variables can be found in our repo, in the file [.env](https://r
       <td>
         The password used to secure your hosted [CouchDB](https://couchdb.apache.org/) service.  
         _**We recommend changing this.**_
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        COUCH_DB_SQL_URL
+      </td>
+
+      <td>
+        The URL for the CouchDB SQL service. If not provided, it is derived from `COUCH_DB_URL` using the port specified by `COUCH_DB_SQS_PORT`.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        COUCH_DB_SQS_PORT
+      </td>
+
+      <td>
+        The port used to derive the CouchDB SQL URL from the main CouchDB URL. The default is 4984.
       </td>
     </tr>
 
