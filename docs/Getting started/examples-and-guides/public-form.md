@@ -5,69 +5,42 @@ deprecated: false
 hidden: false
 metadata:
   title: ''
-  description: >-
-    The document provides a step-by-step guide on creating a secure public form
-    using Budibase 3.0, allowing data collection from unauthenticated users
-    while ensuring only app admins can access the submitted data. It includes
-    instructions on setting up tables, designing forms, configuring automations,
-    and publishing the app.
+  description: ''
   robots: index
 next:
   description: ''
 ---
-## Try it out!
+Use this pattern when unauthenticated users should submit data, but only app admins should access the stored records.
 
-<HTMLBlock>{`
-<iframe width="800" height="600" frameborder="0" allow="clipboard-write;camera;geolocation;fullscreen" src="https://cprem.budibase.app/embed/guides-public-form"></iframe>
-`}</HTMLBlock>
+The public screen submits form data through an automation, which writes to the secure table.
 
-## Scenario
+## Build the table
 
-Use this pattern when you want to collect data from unauthenticated users but keep the table secure so only app admins can see the submitted data. Budibase 3.0 streamlined table RBAC, so this guide uses an automation to write form data securely to the table. It is a good fit for public forms such as surveys.
+Create the table that will store the submitted data.
 
-<HTMLBlock>{`
-<u><b style="font-size: 14px;">Challenge: </b></u><br />
-<span style="position: relative; font-size: 24px; color: currentColor;">★★☆☆☆</span>
-`}</HTMLBlock>
+## Build the screen
 
-***
+1. Create a new screen
+2. Set the screen access to `Public user`
+3. Add a form with fields that match the table schema
 
-## Steps
+## Build the automation
 
-1. In the Data section, create a **new table** with columns for the data you want to capture. By default, only app admins can access this table, which is fine for this example.
+1. Create an automation triggered by an app action
+2. Set the automation role to `Public user`
+3. Add fields that match the form
+4. Add a create row step for the secure table
+5. Bind the trigger fields into the row columns
 
-   <Image align="center" src="https://files.readme.io/f119f4c27335cff66aaff1542f5bf8d4a2937ac97335f1ed6908d77a4bef2df2-Pasted_Graphic.png" />
-2. In the new app, create a **new screen** for your form.
-3. Set the screen's **Access** to `Public user`.
-4. Build a **Form** with field components that match your table's schema.
+## Submit the form
 
-   <Image align="center" src="https://files.readme.io/edc2394cfdc7fe085f1867fb1b99000163266ef9ca38266a645c61ac40c95323-Screenshot_2025-08-15_at_13.44.09.png" />
+1. Add a button to the public screen
+2. Trigger the automation on click
+3. Pass the form field values into the automation
 
-> ℹ️ Generating fields from the Form Schema
->
-> You can use your table as the Form Schema to generate the relevant field components in a Field Group, but a public user will not have access to that schema, so they may see errors when using the app. After you create the form fields, switch the Form Schema to Custom to prevent issues for public users.
+## Why this works
 
-5. In the Automation section, create a **new automation** triggered by an *App Action*.
-
-   <Image align="center" src="https://files.readme.io/5ebb5ad52c16c92a8306005a156b60c0d8db5c4831d96fc439e16afc95b33342-Screenshot_2025-08-15_at_13.44.57.png" />
-6. **Change the role** for this automation to `Public user`.
-7. **Add fields** that match the fields in your form.
-
-   <Image align="center" src="https://files.readme.io/52a500785c1eaa3c444b34e99770a067d2c63cf571b5da0882b41ed604839eb5-Screenshot_2025-08-15_at_13.45.34.png" />
-8. **Add a Create Row step** to the automation.
-9. Select the relevant table and use the bindings from your automation trigger for each column value.
-
-   <Image align="center" src="https://files.readme.io/d213f64003bbebbb88a6cc73b325557691f5b534ca38c535631ef1a10eed9c3d-Screenshot_2025-08-15_at_13.45.42.png" />
-10. Go back to your screen in the Data section and add a **Button component** to submit your form.
-11. **Add a Trigger Automation** On click action to the Button and select the automation you created.
-12. **Add bindings** from your form fields to send them to the automation.
-
-    <Image align="center" src="https://files.readme.io/dbc7bec656e91a6fafd5da7808f682d1a6aa15e261ebd29358c0694256a0188e-Screenshot_2025-08-15_at_13.47.13.png" />
-13. **Publish the app** and test the public form in a private window.
-
-<br />
-
-***
+The public user can only call the automation, not read the secure table directly.
 
 ## App export
 
@@ -81,19 +54,17 @@ Use this pattern when you want to collect data from unauthenticated users but ke
 <button class="btn" onclick="window.open('https://drive.google.com/uc?export=download&id=1nInFRXnaX7N4u3F-zIOtKBdIQAP1SIsf')" style="width:100%"><i class="fa fa-download"></i> Download</button>
 
 <style>
-  /* Style buttons */
-.btn {
-  background-color: #3571de;
-  border: none;
-  color: white;
-  padding: 12px 30px;
-  cursor: pointer;
-  font-size: 16px;
-}
+  .btn {
+    background-color: #3571de;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 16px;
+  }
 
-/* Darker background on mouse-over */
-.btn:hover {
-  background-color: #2e64c9;
-}
+  .btn:hover {
+    background-color: #2e64c9;
+  }
 </style>
 `}</HTMLBlock>
