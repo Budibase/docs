@@ -8,7 +8,7 @@ metadata:
   robots: index
 ---
 
-Agent activity allows you to monitor all interactions with your AI agents across different channels. It provides a centralized view of requests, their statuses, and the specific operations triggered by your agents.
+Agent activity allows you to monitor operational actions performed by your AI agents across different channels. It provides a centralized view of requests that execute operations, their statuses, and the specific tools utilized to fulfill them.
 
 ## Accessing activity
 
@@ -22,6 +22,15 @@ The Activity page displays a list of recent requests tracked by your agents. Eac
 *   **Source**: Indicates which agent handled the request.
 *   **Status**: Shows the current state of the request (e.g., Completed).
 *   **Updated**: A relative timestamp showing when the request was last active.
+
+### Tracked interactions and intent classification
+
+To maintain a clean and focused activity log, the agent automatically classifies every message as either an **execute** or **query** intent. Only messages classified as **execute** create a new request entry in the log.
+
+*   **Execute**: These are actions where the agent fulfills a concrete goal, such as creating a record, triggering an automation, or updating data.
+*   **Query**: These are messages that ask about status, history, or capabilities without performing a new action (e.g., "What can you do?" or "Show me my open tickets").
+
+This ensures your activity history reflects the actual work performed by your agents rather than general conversation or status checks.
 
 ### Metrics overview
 
