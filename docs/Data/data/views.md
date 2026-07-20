@@ -54,4 +54,6 @@ This helps you understand the impact before changing or deleting it.
 
 * Views can be used as data sources in the Design section
 * View calculations are not supported by Generate app screen
+* If you rename or delete a column used by a view filter, update or remove the filter
+* Budibase fails closed when a filtered column is no longer valid, so the view returns no rows until it is fixed
 * You can save a filtered table directly as a new view

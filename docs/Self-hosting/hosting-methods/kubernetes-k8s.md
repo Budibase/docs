@@ -26,7 +26,7 @@ There are a few command-line utilities we have to set up before we can get start
 * [helm CLI](https://helm.sh/docs/intro/install/)
 * [kubectl CLI](https://kubernetes.io/docs/tasks/tools/#kubectl)
 
-> 📘 Info
+> ℹ️ Info
 >
 > We recommend running on Kubernetes nodes with at least 1GB of memory, but we recommend larger instances for higher volume use cases.
 
@@ -85,7 +85,7 @@ kubectl get pods -n budibase
 You should now be able to see your new Budibase installation up and running in your Kubernetes cluster.
 
 ```
-NAME                                READY   STATUS             RESTARTS         AGE
+NAME                                       READY   STATUS             RESTARTS         AGE
 app-service-69b7888b7-h25cp       1/1     Running            0                90m
 budibase-couchdb-0                1/1     Running            0                90m
 minio-service-59c757bb5-q6xt2     1/1     Running            0                90m
@@ -118,7 +118,7 @@ After a few minutes your new Ingress resource should be provisioned and you shou
 
 ```shell
 $ kubectl --context qa -n budibase get ingress
-NAME               CLASS    HOSTS   ADDRESS                                                                 PORTS   AGE
+NAME               CLASS    HOSTS   ADDRESS                                                             PORTS   AGE
 ingress-budibase   <none>   *       4372843243278.eu-west-1.elb.amazonaws.com   80      9m5s
 ```
 
@@ -205,7 +205,7 @@ couchdb:
   persistentVolume:
     enabled: true
     storageClass: "standard-rwo"
-   
+
 services:
   objectStore:
     storageClass: "standard-rwo"
@@ -231,9 +231,11 @@ helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase --reuse
 
 ## Configuration
 
-### Scaling Budibase
+### Scaling and Deployment Configuration
 
-You can scale up the number of pods in your installation by updating the `replicaCount` of a given service in the `values.yaml` of the Budibase helm chart. For example, if we wanted to scale up the worker and app service due to high load, we can update our `values.yaml` to have a higher `replicaCount`. Once updated, upgrade your chart to apply the changes.
+You can scale up the number of pods in your installation by updating the `replicaCount` of a given service in the `values.yaml` of the Budibase helm chart. 
+
+For more control over your deployments, you can also configure the rollout strategy and image pull policy for each service. This is useful for optimizing rollout speed or managing mutable image tags.
 
 ```yaml
 services:
@@ -241,8 +243,23 @@ services:
     replicaCount: 1
   apps:
     replicaCount: 2
+    # imagePullPolicy defaults to IfNotPresent
+    imagePullPolicy: Always
+    # Configure the rolling update strategy
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
   worker:
     replicaCount: 2
+```
+
+#### Forcing a Restart
+
+If you need to trigger a rolling restart of your pods without changing the Budibase version (for example, to pick up changes in external configuration or a mutable image tag like `latest`), you can use the `globals.deployTimestamp` setting. Changing this value triggers a rollout of all deployment pods.
+
+```yaml
+globals:
+  deployTimestamp: "2024-05-20T12:00:00Z"
 ```
 
 ### Secrets Management
