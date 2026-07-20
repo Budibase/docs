@@ -51,7 +51,6 @@ Use the **Screens** button in the Data toolbar to see where a view or view calcu
 This helps you understand the impact before changing or deleting it.
 
 ## Notes
-
 * Views can be used as data sources in the Design section
 * View calculations are not supported by Generate app screen
 * If you rename or delete a column used by a view filter, update or remove the filter
