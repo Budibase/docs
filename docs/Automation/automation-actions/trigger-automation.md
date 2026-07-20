@@ -1,6 +1,6 @@
 ---
 title: Trigger automation 🔒
-excerpt: Trigger an On demand automation from another automation
+excerpt: Run one automation from another automation
 deprecated: false
 hidden: false
 metadata:
@@ -10,31 +10,32 @@ metadata:
 next:
   description: ''
 ---
-Use the Trigger automation step to call an on-demand automation from another automation.
+Use the Trigger automation step when one automation needs to call another automation.
 
 ## Before you start
 
 The target automation must use the `On demand` trigger.
 
-## Step settings
+## Configure the step
 
-Choose the automation to run, then map any fields it expects.
-
-Use `Timeout (ms)` if you need to wait for the result.
+1. Choose the automation to run
+2. Map any fields it expects
+3. Set a timeout if needed
+4. Save the step
 
 ## Outputs
 
-The step exposes two outputs:
+The step returns:
 
-* `Success` - a boolean that indicates whether the target automation completed successfully
+* `Success` - whether the target automation completed successfully
 * `Value` - the output returned by the target automation
 
 ## Example
 
 If the target automation expects `employee_id`, pass `{{ trigger.id }}` from the calling automation.
 
-## Related guides
+## Notes
 
-* [Triggers](doc:trigger)
-* [Bindings in automations](doc:data-in-automations)
-* [Action steps](doc:automation-actions)
+* Use this step for chained automation flows
+* Keep field names clear so mappings are easy to read
+* Check the target automation first if the call fails

@@ -10,17 +10,17 @@ metadata:
 next:
   description: ''
 ---
-Use this workflow for SQL datasources once the connection is in place.
+Use this workflow after you connect a SQL datasource.
 
 ## Connect the datasource
 
-1. Open the **Data** section.
-2. Add a new source.
-3. Choose your SQL provider.
-4. Enter the connection details.
-5. Fetch the tables you need.
+1. Open the **Data** section
+2. Add a new source
+3. Choose your SQL provider
+4. Enter the connection details
+5. Fetch the tables you need
 
-See the provider page for connection-specific settings:
+See the provider page for connection-specific setup:
 
 * [PostgreSQL](doc:postgresql)
 * [MySQL / MariaDB](doc:mysql-mariadb)
@@ -29,15 +29,18 @@ See the provider page for connection-specific settings:
 
 ## Fetch tables
 
-Fetch only the tables you need. This keeps the schema easier to manage and reduces the amount of setup later.
+Fetch only the tables you need. This keeps the schema easier to manage and reduces setup later.
 
 ## Define relationships
 
 Add relationships for the joins you want to reuse in screens and bindings.
 
-Use one-to-many relationships for foreign keys and many-to-many relationships when you have a join table.
+Use:
 
-If Budibase rejects a join table, check the source constraints, fix them in the database, and fetch the table again.
+* One-to-many for foreign keys
+* Many-to-many when you have a join table
+
+If Budibase rejects a join table, fix the source constraints in the database and fetch the table again.
 
 ## Build screens
 
@@ -58,7 +61,7 @@ Custom queries are useful for:
 
 * Flattening nested relationships
 * Grouped or aggregated results
-* Write workflows that run from a form action
+* Write workflows from a form action
 * Returning a shape that is easier to bind in design
 
 For read operations, select `Read` when you want to use the query with a data provider.
@@ -67,7 +70,9 @@ For write operations, use `Execute Query` from a form or button action.
 
 ## Query bindings
 
-Add bindings when the query needs dynamic values. Use the query settings drawer to override defaults at runtime.
+Add bindings when the query needs dynamic values.
+
+Use the query settings drawer to override defaults at runtime.
 
 ## Related guides
 

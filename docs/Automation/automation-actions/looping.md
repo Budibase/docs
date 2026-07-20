@@ -1,8 +1,6 @@
 ---
 title: Loop
-excerpt: >-
-  Looping is useful when you want to process multiple items or perform an action
-  repeatedly, such as sending a message to every contact in your database.
+excerpt: Repeat actions for each item in a list
 deprecated: false
 hidden: false
 metadata:
@@ -12,35 +10,33 @@ metadata:
 next:
   description: ''
 ---
-> 🚧 Iteration hard limit
->
-> Users who self-host can configure this by changing the `AUTOMATION_MAX_ITERATIONS` environment variable.
->
-> * For docker-compose users, update docker-compose.yaml > app-service > environment.
-> * For Kubernetes users update values.yaml > `automationMaxIterations`
+Use the Loop step when you need to run one or more actions for each item in a list.
 
-The Loop step repeats one or more automation actions for each item in a list.
-
-## Settings
+## Configure the loop
 
 ### Binding / Value
 
-Binding / Value is the list or array that you want to iterate over.
+The list or array to iterate over.
 
 ### Max loop iterations
 
-Max loop iterations sets a soft limit for the step. The platform hard limit still applies.
+The soft limit for the step.
 
-If the loop reaches the limit, it stops and returns a `MAX_ITERATIONS_REACHED` status.
+If the loop reaches the limit, it stops and returns `MAX_ITERATIONS_REACHED`.
 
-### Failure conditions
+### Failure condition
 
-Failure Condition stops the loop when the current item matches the value you provide.
+Stop the loop when the current item matches the value you provide.
 
-If the condition is met, the loop stops early and returns a `FAILURE_CONDITION_MET` status.
+If the condition is met, the loop stops early and returns `FAILURE_CONDITION_MET`.
 
 ## Bindings
 
 Steps inside the loop get the current item plus any bindings from earlier steps.
 
 Steps after the loop get the full loop output.
+
+## Notes
+
+* Self-hosted installations can adjust the loop limit with `AUTOMATION_MAX_ITERATIONS`
+* Use loops for repeated notifications, row creation, or per-item processing

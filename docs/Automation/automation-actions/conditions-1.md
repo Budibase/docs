@@ -1,6 +1,6 @@
 ---
 title: Condition
-excerpt: Create conditional automation workflows
+excerpt: Run actions only when a check passes
 deprecated: false
 hidden: false
 metadata:
@@ -10,30 +10,32 @@ metadata:
 next:
   description: ''
 ---
-It is possible to perform an automation action only if certain trigger criteria are met.
+Use a condition when an automation should continue only if a check passes.
 
-For example, you may have a table of Orders with an `Accepted` flag, and you want to send an [Email](doc:email) to notify the shopper of their purchase, but _only_ if the order is accepted.
+## How it works
 
-## Steps
+The condition step evaluates the current row or trigger data.
 
-1. Create an automation using the **Row Updated** trigger.
+If the condition passes, the automation continues. If it fails, the automation stops.
 
-The automation builder should now show a **Row Updated** trigger configured for the Orders table.
+## Common use case
 
-2. Add a condition action.
-   The updated order must have had the _Accepted_ flag turned on to be able to continue.
+Use a condition when you want to:
 
-The condition step checks whether the `Accepted` flag is enabled before the automation continues.
+* Send an email only for accepted orders
+* Continue only when a flag is enabled
+* Stop a workflow when required data is missing
 
-### Notify on stop
+## Configure the step
 
-You can optionally enable the **Notify on stop** toggle. When enabled, if the automation stops at this condition because the criteria were not met, a notification will be displayed on the Budibase home page / builder dashboard. This is useful for monitoring specific business logic flows where a stop is noteworthy but not necessarily an error.
+1. Add a condition step
+2. Choose the field or binding to check
+3. Select the comparison
+4. Enter the value to compare against
+5. Add the next step after the condition
 
-3. Add the send email action.
+## Notes
 
-The final action sends the purchase notification after the condition passes.
-
-> 💡 Multiple Conditions
->
-> You can add as many condition actions as you like.
-> When chained in a row, it effectively creates a logical AND expression.
+* You can chain multiple condition steps
+* Each condition adds another check before later steps run
+* Use Notify on stop when you want a visible warning if the condition fails

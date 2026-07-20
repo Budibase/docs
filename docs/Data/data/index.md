@@ -25,9 +25,9 @@ next:
       slug: rest
       title: REST API
 ---
-Use the Data section to add and manage the tables, views, and datasources that power your workspace.
+Use the Data section to manage the tables, views, and datasources that power your workspace.
 
-Your data model should usually come first. It shapes the screens, automations, filters, and permissions you build later.
+Your data model usually comes first. It shapes the screens, automations, filters, and permissions you build later.
 
 ## What data is for
 
@@ -42,9 +42,9 @@ Use data to:
 
 Every workspace starts with a Budibase DB datasource.
 
-The built-in `Users` table lives there as well and cannot be removed.
+The built-in `Users` table lives there too and cannot be removed.
 
-Use Budibase DB when you want the simplest path to app data or when you are prototyping a new workflow.
+Use Budibase DB when you want the simplest path to app data or when you are prototyping a workflow.
 
 ## Add datasources
 
@@ -63,11 +63,11 @@ After you add a datasource, you can create tables, configure views, and reuse th
 
 A typical workflow looks like this:
 
-1. Define the data model.
-2. Add the datasource.
-3. Configure tables and columns.
-4. Add views and permissions.
-5. Build screens and automations on top of that data.
+1. Define the data model
+2. Add the datasource
+3. Configure tables and columns
+4. Add views and permissions
+5. Build screens and automations on top of that data
 
 ## Related guides
 
