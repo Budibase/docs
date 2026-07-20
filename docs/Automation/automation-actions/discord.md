@@ -10,11 +10,11 @@ metadata:
 next:
   description: ''
 ---
-Use the Discord action when an automation should post a message to a Discord channel.
+Use the Discord action to post a message to a Discord channel.
 
 ## Configure the action
 
-The Discord action has these settings:
+The Discord action uses these settings:
 
 | Setting | Purpose |
 | :-- | :-- |

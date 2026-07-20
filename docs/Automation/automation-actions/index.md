@@ -1,9 +1,6 @@
 ---
 title: Action steps
-excerpt: >-
-  Actions are the core of automations. Actions can carry out updates on a table,
-  send Slack notifications, call an external service, send emails, and much
-  more.
+excerpt: Run work after an automation trigger
 deprecated: false
 hidden: false
 metadata:
@@ -13,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-Actions do the work in an automation after the trigger runs.
+Use actions to do the work after a trigger runs.
 
 Use actions to:
 
@@ -35,11 +32,9 @@ Common built-in actions include:
 * Slack notification
 * Query rows
 * JavaScript scripting
-* Connect to Zapier or Integromat
+* Connect to Zapier or Make
 
 ## Use outputs
-
-Actions become more useful when they consume outputs from earlier steps.
 
 Use contextual bindings to pass values from one step to the next.
 
@@ -59,4 +54,4 @@ Name each step clearly so bindings are easier to read later.
 
 Renaming a step also updates the bindings that reference it.
 
-Keep names short and descriptive, especially in longer automations.
+Keep names short and descriptive.

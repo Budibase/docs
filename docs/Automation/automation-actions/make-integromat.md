@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-Use the Make action when an automation should send data to a Make scenario.
+Use the Make action to send data to a Make scenario.
 
 ## Before you start
 

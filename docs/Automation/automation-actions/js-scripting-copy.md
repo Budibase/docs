@@ -10,15 +10,19 @@ metadata:
 next:
   description: ''
 ---
-While [Bindings](doc:data-in-automations) in automations support JavaScript, you can also add a step to execute a JavaScript code block.
+Use the JS Scripting action when you need to transform data inside an automation.
 
-Commonly this action is used to compare and aggregate data from multiple <Glossary>Datasource</Glossary>s.
+Common uses include:
+
+* Comparing values from multiple datasources
+* Aggregating rows
+* Reshaping output before the next step
 
 ## Add the step
 
-1. Add a trigger to your automation.
-2. Add the `JS Scripting` step.
-3. Open the step details and use the bindings drawer if you need values from previous steps.
+1. Add a trigger to your automation
+2. Add the `JS Scripting` step
+3. Open the step details and add any bindings you need
 
 Make sure the script returns a value.
 
@@ -52,7 +56,9 @@ return birthdays
 
 ## Good practice
 
-Keep scripts focused on data shaping, not business logic that belongs in a table or app screen.
+Keep scripts focused on data shaping.
+
+Use a table, form, or app screen for logic that belongs elsewhere.
 
 ## Related guides
 
