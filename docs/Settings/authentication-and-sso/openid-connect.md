@@ -61,6 +61,8 @@ Fill in the following options from your IdP:
   * Your unique ID issued by your IdP
 * **Client Secret**
   * Your unique secret issued by your IdP
+* **Allow unverified email linking**
+  * When disabled (default), Budibase will only link an SSO login to an existing local account if the identity provider confirms the email address is verified. Only enable this if you fully trust the provider to assert email addresses - otherwise it can allow account takeover.
 
 Save the configuration to enable OIDC on your login page.
 
@@ -98,4 +100,4 @@ Some additional details on the OIDC integration are highlighted below.
 
 Unlike the Google integration which requires a local user account to exist in advance, OIDC users are created in Budibase automatically when they log in for the first time. It is important that only the users you wish to access Budibase have been assigned to the application configured in your IdP.
 
-You may still use email onboarding to create an account for a user in advance, provided the email matches the user's email in your IdP.
+You may still use email onboarding to create an account for a user in advance, provided the email matches the user's email in your IdP. Note that by default, Budibase will only link an SSO login to an existing account if the identity provider confirms the email is verified (via the `email_verified` claim).

@@ -1,5 +1,5 @@
 ---
-title: Budibase documentation
+title: What is Budibase?
 excerpt: Build internal tools and automate workflows with your data, LLMs, and APIs.
 deprecated: false
 hidden: false
