@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-Use actions to do the work after a trigger runs.
+Use actions to run work after a trigger.
 
 Use actions to:
 
@@ -53,5 +53,3 @@ Use logic when you need to:
 Name each step clearly so bindings are easier to read later.
 
 Renaming a step also updates the bindings that reference it.
-
-Keep names short and descriptive.

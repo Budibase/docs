@@ -37,4 +37,4 @@ If you plan to loop over the result set and then update or delete those rows, ma
 
 The output is available as `{{ steps.X.rows }}` where `X` is the Query Rows step number.
 
-For example, `{{ steps.1.rows }}` returns the rows from the first Query Rows action. This is commonly used with [Loop](doc:looping).
+For example, `{{ steps.1.rows }}` returns the rows from the first Query Rows action. Use it with [Loop](doc:looping) when you want to process each row.

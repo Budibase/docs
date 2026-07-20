@@ -32,12 +32,6 @@ This works with:
 
 The returned data is available to later steps in the automation.
 
-Use it with actions such as:
-
-* Create Row
-* Query Rows
-* Loop
-
 ## Notes
 
 * Template-based connectors may prompt you to connect before you can configure the action
