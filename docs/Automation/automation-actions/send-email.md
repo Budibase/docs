@@ -18,7 +18,7 @@ Before you can use the Send Email action step, please make sure you have configu
 
 ## Settings
 
-All of these settings support [Bindings](doc:data-in-automations). For email address settings, you can provide multiple addresses by separating them with a comma, e.g. `anna@company.com,bill@company.com`.
+All of these settings support [Bindings](doc:data-in-automations). For email address settings, you can provide multiple addresses by separating them with a comma, e.g. `anna@company.com,bill@company.com`. You can also include a display name by using the format `Display Name <email@example.com>`.
 
 <Table align={["left","left"]}>
   <thead>
@@ -40,7 +40,7 @@ All of these settings support [Bindings](doc:data-in-automations). For email add
       </td>
 
       <td>
-        The to / from email addresses
+        The to / from email addresses. Supports display names, e.g. `Budibase <hello@budibase.com>`.
       </td>
     </tr>
 
@@ -89,7 +89,7 @@ In this screenshot above, a start and end time for the meeting was manually sele
 
 Both the *Location* and *URL* properties are optional, as your meeting may be in person, or online. 
 
-The email will then be received with an **ics** invite file attached:
+The email will then be received with an **.ics** invite file attached:
 
 <Image align="center" src="https://files.readme.io/47ad50f8eac5614b4206edbba811e13ca6f80e24b01a48607b72649e92afe6ef-Screenshot_2025-04-14_at_14.00.00.png" />
 
@@ -105,11 +105,11 @@ These files will be attached to the email sent. Images attached this way may be 
 
 Alternatively, you can switch the "Use bindings" toggle to open the bindings draw. You should return an array of objects that match this pattern: `{url: string, filename: string}`. This is useful if you have an unspecified or undetermined number of attachments that you wish to attach.
 
-```javascript JavaScript
+javascript JavaScript
 return $("trigger.row.photos").map(photo => {
   return {url: photo.url, filename: photo.name}
 })
-```
+
 
 ***
 
@@ -137,7 +137,7 @@ Set *Send To* as `{{ trigger.fields.email_address }}`, and provide a *Send From*
 
 For the *HTML Contents* specify the email body text:
 
-```html HTML Contents
+html HTML Contents
 Hi {{ trigger.fields.first_name }},
 <p>
 The following item has been assigned to you:
@@ -153,7 +153,7 @@ The following item has been assigned to you:
     <td>{{ trigger.fields.price }}</td>
   </tr>
 </table>
-```
+
 
 <Image align="center" src="https://files.readme.io/107aa92d9aff7cbbc774af3cd38ae9ad01b7cbf84d153e8bf42c771cfbe27a3b-Screenshot_2025-04-15_at_08.55.34.png" />
 
@@ -179,7 +179,7 @@ Add a [Save Row](https://docs.budibase.com/docs/data-actions#save-row) action, s
 
 Click `Add Column`, and set *AssignedTo* as `{{ Current User._id }}`. 
 
-<Image align="center" src="https://files.readme.io/544dac37f27fcbc18b1a5a6ef40ba0cf6b4ffd1a73a552c118c854a8dfc45d4a-Screenshot_2025-04-15_at_09.03.53.png" />
+<Image align="center" src="https://files.readme.io/544dac37f27cbc18b1a5a6ef40ba0cf6b4ffd1a73a552c118c854a8dfc45d4a-Screenshot_2025-04-15_at_09.03.53.png" />
 
 #### Example of received email
 
