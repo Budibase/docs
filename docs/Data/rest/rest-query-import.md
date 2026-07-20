@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-Import lets you create multiple REST queries at once from API definitions.
+Use query import to create multiple REST queries at once from API definitions.
 
 ## Supported formats
 
@@ -28,7 +28,7 @@ Import lets you create multiple REST queries at once from API definitions.
    * **File**: upload spec file
    * **Raw text**: paste spec text
 6. Click **Import**
-7. Review imported queries
+7. Review the imported queries
 8. Open key queries and click **Send**
 9. Save any adjusted queries
 
@@ -36,10 +36,10 @@ Import lets you create multiple REST queries at once from API definitions.
 
 1. Rename generic query names
 2. Confirm auth config per query
-3. Confirm base URL/path compatibility with your environment
+3. Confirm base URL and path compatibility with your environment
 4. Add or correct bindings for runtime values
 5. Confirm request body formats
-6. Validate schema output after first successful run
+6. Validate the schema output after the first successful run
 
 ## Importing from Postman
 
@@ -52,9 +52,9 @@ Postman collections should be converted to OpenAPI first.
 
 ## Common import issues
 
-* Unknown/unsupported fields in spec: simplify or clean OpenAPI before import
-* Imported query fails auth: map to correct connection auth config
-* Paths duplicate base URL: correct path/full URL handling
+* Unknown or unsupported fields in the spec: simplify or clean the OpenAPI file before import
+* Imported query fails auth: map to the correct connection auth config
+* Paths duplicate the base URL: correct the path or full URL handling
 
 ## Related guides
 
