@@ -30,7 +30,7 @@ At the top of the Activity page, summary metrics provide a high-level view of yo
 *   **All actions**: The total number of tracked interactions.
 *   **Completed**: Requests that successfully finished processing.
 *   **Processing**: Active requests currently being handled by the agent.
-*   **Needs input**: Requests waiting for user clarification or additional data.
+*   **Needs input**: Requests waiting for human approval or additional user data. A request may return to this status multiple times if the agent requires several separate approvals to complete a task.
 *   **Failed**: Requests that encountered errors during execution.
 
 ## Request details and timeline
@@ -50,4 +50,4 @@ The details section provides granular data about a specific interaction:
 
 ### Timeline
 
-The timeline tracks the lifecycle of a request, from its creation through various operation stages. This is useful for debugging multi-step agent interactions or verifying that the correct logic was executed in response to a user prompt.
+The timeline tracks the lifecycle of a request, from its creation through various operation stages. This is useful for debugging multi-step agent interactions or verifying that the correct logic was executed in response to a user prompt. If an agent triggers multiple escalations, each approval event will be captured in the timeline.
