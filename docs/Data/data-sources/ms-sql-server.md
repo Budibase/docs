@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-> 👍 SQL Databases
+> 🎨 SQL Databases
 >
 > Budibase is designed to integrate with any core SQL database. 
 >
@@ -29,6 +29,18 @@ If you are using an MS SQL Server protected via Azure Active Directory, you can 
 <Image align="center" width="480px" src="https://files.readme.io/a7b40f6-ad.png" />
 
 The Azure documentation can be found [here](https://learn.microsoft.com/en-us/sql/relational-databases/security/authentication-access/azure-ad-authentication-sql-server-setup-tutorial?view=sql-server-ver16).
+
+<br />
+
+***
+
+## Temporal Tables
+
+Budibase supports MSSQL [System-Versioned Temporal Tables](https://learn.microsoft.com/en-us/sql/relational-databases/tables/temporal-tables). When you fetch the schema for an MS SQL Server database, Budibase handles temporal tables as follows:
+
+* **Primary Table**: The main temporal table is imported like any other base table.
+* **History Table**: Budibase automatically detects and excludes history tables from the fetch process. This prevents your data schema from being cluttered with read-only history entities.
+* **Generated Columns**: System-managed columns used for period definitions (such as `ValidFrom` and `ValidTo`, often defined as `GENERATED ALWAYS AS ROW START/END`) are automatically detected and marked as **Auto-columns** in Budibase. This ensures the table remains writable while respecting the system-managed nature of these specific fields.
 
 <br />
 
@@ -101,7 +113,7 @@ Click `Save` and you will see the relationship links successfully added in both 
   Brand links in the products table
 </Image>
 
-The same process can be followed for the other desired relationships mentioned. Alternatively you can [define relationships](https://docs.budibase.com/docs/sql-datasource#defining-relationships) from the datasource configuration page.
+The same process can be followed for the other desired relationships mentioned. Alternatively you can [define relationships](https://docs.budibase.com/doc/sql-datasource#defining-relationships) from the datasource configuration page.
 
 ## Adding a public products catalogue screen
 
@@ -115,7 +127,7 @@ This will display a modal for setting the read and write access levels. As we on
   Anyone can read the products, but write require authorization
 </Image>
 
-> 🚧 Manage access for relationships
+> 💡 Manage access for relationships
 >
 > When making data public, you must also give the related data public access.\
 > In this case, `products`, `brands` and `categories` must all have public read access.
@@ -134,9 +146,9 @@ Next click on `Add component` and add a [Cards block](https://docs.budibase.com/
 
 Bindings also allow you to combine static text with dynamic data pulled from your SQL table. For example, we can prefix the price with a dollar sign using the following handlebars expression:
 
-```
+
 ${{ Products Cards block.products.list_price }}
-```
+
 
 ![](https://files.readme.io/fef6581-Screenshot_2022-12-19_at_16.29.21.png)
 
