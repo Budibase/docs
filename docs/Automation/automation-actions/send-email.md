@@ -179,10 +179,10 @@ Add a [Save Row](https://docs.budibase.com/docs/data-actions#save-row) action, s
 
 Click `Add Column`, and set *AssignedTo* as `{{ Current User._id }}`. 
 
-<Image align="center" src="https://files.readme.io/544dac37f27cbc18b1a5a6ef40ba0cf6b4ffd1a73a552c118c854a8dfc45d4a-Screenshot_2025-04-15_at_09.03.53.png" />
+<Image align="center" src="https://files.readme.io/544dac37f27fcbc18b1a5a6ef40ba0cf6b4ffd1a73a552c118c854a8dfc45d4a-Screenshot_2025-04-15_at_09.03.53.png" />
 
 #### Example of received email
 
-<Image align="center" src="https://files.readme.io/544dac37f27fcbc18b1a5a6ef40ba0cf6b4ffd1a73a552c118c854a8dfc45d4a-Screenshot_2025-04-15_at_09.03.53.png" />
+<Image align="center" src="https://files.readme.io/788321c-Screenshot_2023-09-07_at_17.06.00.png" />
 
 Ideally you want to specify styling in the [custom automation email template](https://docs.budibase.com/docs/email#templates).
