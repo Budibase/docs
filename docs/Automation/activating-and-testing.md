@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-Automations are only active in published apps, however you can test each automation by clicking ‘Run test’.
+Automations are active in both the builder preview and published apps. In the builder, automations run against development data and skip logging, behaving similarly to a manual test run. You can also manually test each automation by clicking ‘Run test’.
 
 ![](https://files.readme.io/7abc2636a0710815e959cdc005f9a687025552657ed699f85c095b5ff6742c3e-image.png)
 
@@ -18,7 +18,7 @@ Automations are only active in published apps, however you can test each automat
 
 You will be prompted to provide test data, with the exception of web-hook and cron triggers.
 
-![](https://files.readme.io/e9edc892160806ea607067d1611082dcf6ae90158d1ae287ebabedd3a7888e8d-image.png)
+![](https://files.readme.io/e9edc892160806ea607067d1611082dc6bae90158d1ae287ebabedd3a7888e8d-image.png)
 
 <br />
 
