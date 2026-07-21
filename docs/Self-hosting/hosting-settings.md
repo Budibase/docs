@@ -210,6 +210,16 @@ The full set of variables can be found in our repo, in the file [.env](https://r
 
     <tr>
       <td>
+        OIDC_ALLOW_UNVERIFIED_EMAIL_LINKING
+      </td>
+
+      <td>
+        A global override for OIDC email linking behavior. When set to 'true', Budibase will link SSO logins to existing local accounts even if the identity provider has not verified the email address. This overrides the per-provider setting in the UI.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
         SQL_LOGGING_ENABLE
       </td>
 
