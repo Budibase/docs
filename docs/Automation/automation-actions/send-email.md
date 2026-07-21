@@ -18,7 +18,7 @@ Before you can use the Send Email action step, please make sure you have configu
 
 ## Settings
 
-All of these settings support [Bindings](doc:data-in-automations). For email address settings, you can provide multiple addresses by separating them with a comma, e.g. `anna@company.com,bill@company.com`.
+All of these settings support [Bindings](doc:data-in-automations). For email address settings, you can provide multiple addresses by separating them with a comma, e.g. `anna@company.com,bill@company.com`. You can also include a display name by using the format `Display Name <email@example.com>`.
 
 <Table align={["left","left"]}>
   <thead>
@@ -40,7 +40,7 @@ All of these settings support [Bindings](doc:data-in-automations). For email add
       </td>
 
       <td>
-        The to / from email addresses
+        The to / from email addresses. Supports display names, e.g. `Budibase <hello@budibase.com>`.
       </td>
     </tr>
 
@@ -89,7 +89,7 @@ In this screenshot above, a start and end time for the meeting was manually sele
 
 Both the *Location* and *URL* properties are optional, as your meeting may be in person, or online. 
 
-The email will then be received with an **ics** invite file attached:
+The email will then be received with an **.ics** invite file attached:
 
 <Image align="center" src="https://files.readme.io/47ad50f8eac5614b4206edbba811e13ca6f80e24b01a48607b72649e92afe6ef-Screenshot_2025-04-14_at_14.00.00.png" />
 
