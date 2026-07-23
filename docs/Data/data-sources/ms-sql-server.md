@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-> 🎨 SQL Databases
+> 👍 SQL Databases
 >
 > Budibase is designed to integrate with any core SQL database. 
 >
@@ -113,7 +113,7 @@ Click `Save` and you will see the relationship links successfully added in both 
   Brand links in the products table
 </Image>
 
-The same process can be followed for the other desired relationships mentioned. Alternatively you can [define relationships](https://docs.budibase.com/doc/sql-datasource#defining-relationships) from the datasource configuration page.
+The same process can be followed for the other desired relationships mentioned. Alternatively you can [define relationships](https://docs.budibase.com/docs/sql-datasource#defining-relationships) from the datasource configuration page.
 
 ## Adding a public products catalogue screen
 
@@ -146,9 +146,9 @@ Next click on `Add component` and add a [Cards block](https://docs.budibase.com/
 
 Bindings also allow you to combine static text with dynamic data pulled from your SQL table. For example, we can prefix the price with a dollar sign using the following handlebars expression:
 
-
+```
 ${{ Products Cards block.products.list_price }}
-
+```
 
 ![](https://files.readme.io/fef6581-Screenshot_2022-12-19_at_16.29.21.png)
 
