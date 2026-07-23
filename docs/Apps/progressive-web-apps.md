@@ -14,17 +14,17 @@ next:
 ---
 To turn your Budibase app into a Progressive Web App (PWA), open the app in the builder and head to Settings >> Progressive Web App. Here you can configure 
 
-> 📘
+> 💡
 >
 > Progressive Web Apps (PWAs) are limited to Enterprise-tier Budibase tenants.
 
 ## App Details
 
-| Attribute   | Usage                                                                                                                                                      |
-| :---------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| App Name    | The title given to your app, which it will be referred to in most circumstances.                                                                           |
+| Attribute   | Usage                                                                                                                                                                                                                                                                                             |
+| :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| App Name    | The title given to your app, which it will be referred to in most circumstances.                                                                                                                                                                                                                  |
 | Short Name  | Used to specify a short name for your web application, which may be used when the full name is too long for the available space.(Not supported in Firefox) |
-| Description | Displayed in the modal which prompts the user to download the PWA                                                                                          |
+| Description | Displayed in the modal which prompts the user to download the PWA                                                                                                                                                                                                                                 |
 
 ## Appearance
 
@@ -32,11 +32,17 @@ To turn your Budibase app into a Progressive Web App (PWA), open the app in the 
 
 ### App Icons
 
-In order to provide the required icons for all required formats, we recommend using a tool like [PWA Builder](https://www.pwabuilder.com/imageGenerator) to generate a .zip file containing all the required sizes and formats. The example below 
+In order to provide the required icons for all required formats, we recommend using a tool like [PWA Builder](https://www.pwabuilder.com/imageGenerator) to generate a .zip file containing all the required sizes and formats. 
+
+When uploading your zip file, the following limits apply:
+* **Max file count**: 100 files
+* **Max file size**: 10MB per file
+* **Max total uncompressed size**: 50MB 
+* **Max directory depth**: 10 levels
+
+The example below 
 
 <Image alt="An example modal when a user clicks to download a PWA" align="center" src="https://files.readme.io/fd51185ee3e1ae0087bf1c75b7989a6d2044b8136340b753bb86ec36de6a521a-image.png">
-  An example modal when a user clicks to download a PWA, featuring the App Name and Description settings
-</Image>
 
 ### Colors
 
@@ -50,7 +56,7 @@ The Theme color chosen will be used for the app's title-bar. The Background colo
 
 ### Display Mode
 
-Only available on mobile devices, these setting impacts how the app is displayed. Broken down explainations for each option are below.
+Only available on mobile devices, these setting impacts how the app is displayed. Broken down explanations for each option are below.
 
 #### Standalone
 
