@@ -8,7 +8,7 @@ metadata:
   description: kba_5hksi
   robots: index
 next:
-  description: ' drug '
+  description: ''
   pages:
     - type: basic
       slug: reverse-proxy
