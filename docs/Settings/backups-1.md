@@ -16,7 +16,7 @@ Budibase provides options for backing up, as well as restoring your applications
 
 If you are on a free tier of Budibase, you will be presented with the following screen in the backups section
 
-<Image align="center" src="https://files.readme.io/b27f7288e64c868a71395a76a0e40c2363c567ccf763299d125cd54f88c07c9-Screenshot_2025-08-20_at_13.22.28.png" />
+<Image align="center" src="https://files.readme.io/b27f7288e64c868a71395a76a0e40c2363c567ccef763299d125cd54f88c07c9-Screenshot_2025-08-20_at_13.22.28.png" />
 
 You can click [Upgrade](doc:usage) to unlock Backups or click `View Plans` to navigate to the [pricing page](https://www.budibase.com/pricing) to see the full range of options in more detail.
 
@@ -30,7 +30,7 @@ Clicking the `Create Backup` button will then present the following modal where 
 
 <Image align="center" width="300px" src="https://files.readme.io/9971644-image.png" />
 
-> 🥳 A backup will also be created every time you publish an application
+> 📘 A backup will also be created every time you publish an application
 
 ## Managing your backups
 
@@ -38,7 +38,7 @@ Clicking the `Create Backup` button will then present the following modal where 
 
 After creating your backup, you are presented with the above table, where you can see specific details about your backups, as well as manage them. The `types`column specifies what your backup actually is
 
-> 📋 Backup Types
+> 📘 Backup Types
 >
 > * *All* - Every backup type
 > * *Publish* - A backup that is created whenever your app is published
@@ -61,7 +61,7 @@ You can also filter by range, this will allow you to select backups from between
 
 <Image align="center" width="300px" src="https://files.readme.io/6fbd1e4-image.png" />
 
-> 🥳
+> 📘
 >
 > You can also filter by a combination of both. If using both, the filter will be done first on type `type` of backup, and then by the Date Range.
 
