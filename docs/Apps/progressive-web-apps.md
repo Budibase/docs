@@ -1,5 +1,5 @@
 ---
-title: Progressive Web Apps 📱
+title: Progressive Web Apps 🔒
 excerpt: >-
   PWAs allow your users to install your app on their device similar to a native
   app
@@ -42,9 +42,7 @@ When uploading your zip file, the following limits apply:
 
 The example below 
 
-<Image alt="An example modal when a user clicks to download a PWA" align="center" src="https://files.readme.io/fd51185ee3e1ae0087bf1c75b7989af6d2044b8136340b753bb86ec36de6a521a-image.png">
-  An example modal when a user clicks to download a PWA, featuring the App Name and Description settings
-</Image>
+<Image alt="An example modal when a user clicks to download a PWA" align="center" src="https://files.readme.io/fd51185ee3e1ae0087bf1c75b7989a6d2044b8136340b753bb86ec36de6a521a-image.png">
 
 ### Colors
 
