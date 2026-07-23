@@ -18,7 +18,7 @@ Automations are active in both the builder preview and published apps. In the bu
 
 You will be prompted to provide test data, with the exception of web-hook and cron triggers.
 
-![](https://files.readme.io/e9edc892160806ea607067d1611082dc6bae90158d1ae287ebabedd3a7888e8d-image.png)
+![](https://files.readme.io/e9edc892160806ea607067d1611082dcf6ae90158d1ae287ebabedd3a7888e8d-image.png)
 
 <br />
 
