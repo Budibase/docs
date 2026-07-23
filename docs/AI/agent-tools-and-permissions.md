@@ -62,6 +62,14 @@ Prefer clear tool names that map directly to real entities (`Tickets.Get Row`, `
 
 Ambiguous names increase wrong-tool calls and prompt complexity.
 
+### Naming constraints
+
+To ensure compatibility with AI providers (like OpenAI), tool names are subject to a **64-character limit**. 
+
+If a tool name derived from a table name or ID exceeds this limit, Budibase automatically truncates the name and appends a unique hash to prevent collisions. For example, a tool for a very long table name might appear as `VeryLongTableName_a1b2c3d4e5f6_get_row` instead of the full name. 
+
+Keep table names reasonably concise to ensure tool names remain human-readable for the Agent and in activity logs.
+
 ## Checklist before enabling a tool
 
 * Is this tool essential for the Agent's task?
