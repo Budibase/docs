@@ -49,7 +49,7 @@ The full set of variables can be found in our repo, in the file [.env](https://r
     <tr>
       <td>
         MAIN_PORT
-      </td>
+      <td>
 
       <td>
         The main port that your platform will run on, we have exposed this in case you need to change this.
@@ -365,6 +365,16 @@ The full set of variables can be found in our repo, in the file [.env](https://r
 
       <td>
         The default email address that appears in the "From" field of emails sent by the application. This environment variable is used to specify the sender's identity in outbound emails.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        SMTP_REJECT_UNAUTHORIZED
+      </td>
+
+      <td>
+        By default, Budibase verifies the TLS certificate of the SMTP server. If your mail server uses a self-signed certificate, you can set this variable to 'true' to disable certificate verification and allow unauthorized connections.
       </td>
     </tr>
 
