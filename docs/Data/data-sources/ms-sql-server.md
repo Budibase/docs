@@ -34,6 +34,18 @@ The Azure documentation can be found [here](https://learn.microsoft.com/en-us/sq
 
 ***
 
+## Temporal Tables
+
+Budibase supports MSSQL [System-Versioned Temporal Tables](https://learn.microsoft.com/en-us/sql/relational-databases/tables/temporal-tables). When you fetch the schema for an MS SQL Server database, Budibase handles temporal tables as follows:
+
+* **Primary Table**: The main temporal table is imported like any other base table.
+* **History Table**: Budibase automatically detects and excludes history tables from the fetch process. This prevents your data schema from being cluttered with read-only history entities.
+* **Generated Columns**: System-managed columns used for period definitions (such as `ValidFrom` and `ValidTo`, often defined as `GENERATED ALWAYS AS ROW START/END`) are automatically detected and marked as **Auto-columns** in Budibase. This ensures the table remains writable while respecting the system-managed nature of these specific fields.
+
+<br />
+
+***
+
 <br />
 
 # Tutorial: Building a Bike Store app
@@ -115,7 +127,7 @@ This will display a modal for setting the read and write access levels. As we on
   Anyone can read the products, but write require authorization
 </Image>
 
-> 🚧 Manage access for relationships
+> 💡 Manage access for relationships
 >
 > When making data public, you must also give the related data public access.\
 > In this case, `products`, `brands` and `categories` must all have public read access.
