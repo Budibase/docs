@@ -20,15 +20,28 @@ Budibase supports connection to a range of remote datasources. More information 
 
 Furthermore, if a datasource you want to use is missing, it is possible to build a [custom datasource](https://docs.budibase.com/docs/custom-datasource).
 
+## Organizing Data with Projects
+
+External datasources and internal tables can be assigned to **Projects** within your workspace. This allows you to group related data resources alongside the apps and automations that use them.
+
+To assign a data resource to a project:
+1. Navigate to the **Data** section or the workspace **Home** page.
+2. Locate the datasource or table and open its context menu (three dots icon).
+3. Click **Assign project** and select one or more projects.
+
+### Home search and filtering
+
+On the workspace home page, you can filter for data resources specifically by selecting the **Data** tab in the resource panel toolbar. Data resources are included in the **All resources** view by default.
+
 ## Schema
 
 When [Fetching tables](https://docs.budibase.com/docs/sql-datasource#fetching-tables) from external SQL databases, Budibase will attempt to match the external data types to the internal [Budibase DB](https://docs.budibase.com/docs/budibasedb) types. These default types can be changed by clicking the three dots icon beside the table column, and selecting `Edit column`:
 
-<Image alt="Editing a column type, demonstrated on an MS SQL database" align="center" src="https://files.readme.io/9cf0e74302083a93b28cb4462fd4c91adb79704a8dce1abfddf34692f5f71148-Screen_Recording_2024-11-18_at_14.11.39.gif">
+<Image alt="Editing a column type, demonstrated on an MS SQL database" align="center" src="https://files.readme.io/9cf0e74302083a93b28cb4462f4c91adb79704a8dce1abfddf34692f5f71148-Screen_Recording_2024-11-18_at_14.11.39.gif">
   Editing a column type, demonstrated on an MS SQL database
 </Image>
 
-<Image alt="Column types displayed in a dropdown when creating a new column for the internal Budibase DB" align="center" src="https://files.readme.io/3d31beae646454b039d6d5c5d4a03451eb1eb57b0f32bab14018c98e923ccd29-Screenshot_2024-11-18_at_14.06.43.png">
+<Image alt="Column types displayed in a dropdown when creating a new column for the internal Budibase DB" align="center" src="https://files.readme.io/3d31beae646454b039d6d5c5d4a03451eb1eb57b0f32bab14018c98e923cc29-Screenshot_2024-11-18_at_14.06.43.png">
   Column types displayed in a dropdown when creating a new column for the internal Budibase DB
 </Image>
 
@@ -68,7 +81,7 @@ Budibase supports the ability to write custom queries. These queries can be real
 
 To write custom queries, head over to your <Glossary>Datasource</Glossary>, and scroll down until you find the queries section. Click the `Add Query` button, which will guide you to a form to configure your query. 
 
-> 📘 Budibase DB
+> 💡 Budibase DB
 >
 > The internal Budibase DB is a unique datasource that does not support custom queries.\
 > It does however support [Views](https://docs.budibase.com/docs/views)
@@ -77,7 +90,7 @@ An example would be to query all pet names from a specific owner. For this demon
 
 ![](https://files.readme.io/3ffa1e1-4a73ef1-query-owners-pets.png "4a73ef1-query-owners-pets.png")
 
-> 📘 Read or Write
+> 💡 Read or Write
 >
 > If you want to use a custom query with a [Data provider](doc:data-provider), you must select **Read** as the function of your query.
 >
@@ -89,7 +102,7 @@ You can also override the default binding values.
 
 When you use the query as a data source for your provider, you can click on the cog icon.
 
-<Image align="center" src="https://files.readme.io/57a650621aadab43d4eafa8f9388d1ffc177ca7197536cc91447883962dff0c4-Screenshot_2024-11-18_at_14.43.48.png" />
+<Image align="center" src="https://files.readme.io/57a650621aadab43d4eaf8f9388d1ffc177ca7197536cc91447883962dff0c4-Screenshot_2024-11-18_at_14.43.48.png" />
 
 This will show a query bindings drawer where you can add a dynamic value to override the default.
 
