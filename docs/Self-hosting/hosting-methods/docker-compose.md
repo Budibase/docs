@@ -42,6 +42,7 @@ Once you have Docker fully installed the rest of the process should be simple! Y
 
 1. [docker-compose.yaml](https://raw.githubusercontent.com/Budibase/budibase/master/hosting/docker-compose.yaml) - this defines the images used by Budibase and how to orchestrate them.
 2. [.env](https://raw.githubusercontent.com/Budibase/budibase/master/hosting/.env) - this contains all the default settings for your Budibase platform.
+3. [litellm_config.yaml](https://raw.githubusercontent.com/Budibase/budibase/master/hosting/litellm_config.yaml) - this contains the default settings for litellm
 
 > 🚧 If running in production, update secrets in `.env`
 >
