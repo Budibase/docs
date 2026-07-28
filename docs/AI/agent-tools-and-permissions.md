@@ -47,6 +47,13 @@ Use one of these patterns:
 
 Start with `read-only`, then add writes only when validated by tests.
 
+### Approvals and Escalations
+
+When using tools that require manual approval (escalations), Budibase enforces a safety guardrail on tool execution:
+
+* **Tool Suspension**: Once an agent triggers an escalation and it is pending human approval, the agent is automatically prevented from calling any further tools in the same turn. This ensures that no additional actions are taken until the requested approval is granted or rejected.
+* **Text Output**: The agent can still provide text responses to explain its actions or wait for the decision, but tool access remains suspended for all subsequent steps in that message sequence.
+
 ## Guardrails for write actions
 
 When enabling `update` tools, include rules like:
