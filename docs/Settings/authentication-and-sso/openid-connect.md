@@ -14,7 +14,7 @@ next:
       slug: sso-with-auth0
       title: SSO with Auth0
     - type: basic
-      slug: sso-with-azur-ad
+      slug: sso-with-azure-ad
       title: SSO with Azure AD
     - type: basic
       slug: sso-with-okta
