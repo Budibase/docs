@@ -19,7 +19,7 @@ REST queries are configured in API Editor for a saved REST connection.
 3. Select the API connection to use
 4. Enter a clear query name
 5. Set HTTP method
-6. Enter endpoint path or full URL. Note that full URLs must include the protocol (e.g., `https://example.com`).
+6. Enter endpoint path or full URL. Note that full URLs must include the protocol (e.g., `https://example.com`) and must match the origin (protocol and host) of the datasource base URL.
 7. Configure Params, Headers, Body, and Bindings
 8. Select an auth config (if required)
 9. Click **Send**
@@ -33,7 +33,7 @@ You can also start from **Workspace Settings > Connections > APIs** and click **
 | Area | What to configure | Notes |
 | :-- | :-- | :-- |
 | Method | `GET`, `POST`, `PUT`, `PATCH`, `DELETE` | Must match endpoint contract |
-| URL/Path | Endpoint path or full URL | Usually path + connection base URL. Full URLs require a protocol prefix. |
+| URL/Path | Endpoint path or full URL | Usually path + connection base URL. Full URLs require a protocol prefix and must match the datasource origin. |
 | Params | Query-string key/value pairs | Supports bindings |
 | Headers | Request headers | Supports bindings and shared defaults |
 | Body | Payload for write/query APIs | Use valid JSON/XML/Text as required |
@@ -80,6 +80,8 @@ After applying a transformer:
 * **Missing protocol**: Full URLs must include `http://` or `https://` to be valid. The **Send** button will be disabled and a warning displayed if the protocol is missing.
 * `401/403`: wrong or missing auth config.
 * `404`: wrong path or base URL.
+* `400`: REST query path must remain on the datasource origin. This occurs if an absolute URL or dynamic binding targets a different origin than the one configured in the datasource.
+* `400`: Redirect to a different origin is not permitted. Cross-origin redirects are blocked for security to prevent datasource credentials from being sent off-origin.
 * `400/422`: request payload does not match API contract.
 * Empty rows with `200`: binding values not populated as expected.
 * Schema mismatch in app: query changed but app bindings not updated.
