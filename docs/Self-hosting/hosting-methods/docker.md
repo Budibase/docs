@@ -20,30 +20,30 @@ There are two methods for running the Budibase image, these are detailed below.
 
 The easiest way to try out the Budibase image is with a docker run command, the most basic version of this being:
 
-```shell
+shell
 docker run -d -t \
   --name=budibase \
   -p 10000:80 \
   -v /local/path/data:/data \
   --restart unless-stopped \
   budibase/budibase:latest
-```
 
-This command will start a Budibase container on your system, which you can then connect to on [\<\<\<http://localhost:10000>>>](http://localhost:10000). For this to work you will also need to specify an absolute path to mount as a volume for the container, replacing the `/local/path/data` component of the command.
+
+This command will start a Budibase container on your system, which you can then connect to on [\<\<http://localhost:10000>>](http://localhost:10000). For this to work you will also need to specify an absolute path to mount as a volume for the container, replacing the `/local/path/data` component of the command.
 
 There are a few other parts of this command we can change, as well as a range of environment variables that should be set before using this in a production environment.
 
 * The port which Budibase can be accessed on can be changed by altering the `-p 10000:80` component, changing from port 10000 to whatever else is desired.
 * The following environment variables should be set before putting this container into production (using the `-e <variable>` syntax).
 
-| Variable name                             | Description                                                                                                                                                                                                                                        |
-| :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `CUSTOM_DOMAIN`                           | If a domain in the format of `domain.com` is set, then Budibase will automatically attempt to create an SSL certificate and use HTTPS for this domain. The domain must already be directed to the Budibase container for this to verify correctly. |
-| `INTERNAL_API_KEY`                        | An API key which can be used to access many core components, this should be updated to some random string.                                                                                                                                         |
-| `JWT_SECRET`                              | A secret key used to secure all sessions to Budibase, this should be updated to a random string. Please note that changing this string will invalidate all existing sessions.                                                                      |
-| `MINIO_ACCESS_KEY` and `MINIO_SECRET_KEY` | These two environment variables should be set to some combination of random strings to secure access to MinIO. These can be used to login in to the MinIO browser if desired.                                                                      |
-| `REDIS_PASSWORD`                          | The password used to access the Redis instance, this should be set to a random string to guarantee security.                                                                                                                                       |
-| `COUCHDB_USER` and `COUCHDB_PASSWORD`     | These two environment variables define the CouchDB username and password used to access the main admin user. These can also be used to access the Fauxton user interface.                                                                          |
+| Variable name                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| :------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `CUSTOM_DOMAIN`                        | If a domain in the format of `domain.com` is set, then Budibase will automatically attempt to create an SSL certificate and use HTTPS for this domain. The domain must already be directed to the Budibase container for this to verify correctly. |
+| `INTERNAL_API_KEY`                     | An API key which can be used to access many core components, this should be updated to some random string.                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `JWT_SECRET`                           | A secret key used to secure all sessions to Budibase, this should be updated to a random string. Please note that changing this string will invalidate all existing sessions.                                                                                                                                                                                                                                                                                                                                                                                 |
+| `MINIO_ACCESS_KEY` and `MINIO_SECRET_KEY` | These two environment variables should be set to some combination of random strings to secure access to MinIO. These can be used to login in to the MinIO browser if desired.                                                                                                                                                                                                                                                                                                                                                                                |
+| `REDIS_PASSWORD`                       | The password used to access the Redis instance, this should be set to a random string to guarantee security.                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `COUCHDB_USER` and `COUCHDB_PASSWORD`      | These two environment variables define the CouchDB username and password used to access the main admin user. These can also be used to access the Fauxton user interface.                                                                                                                                                                                                                                                                                                                                                                                  |
 
 These environment variables will automatically be pre-seeded with UUIDs if no environment variable is set with the pre-seeded values being accessible in the `.env` file located in the mounted volume. If you wish to update any values then you will need to update them within the `.env` file.
 
@@ -51,9 +51,7 @@ These environment variables will automatically be pre-seeded with UUIDs if no en
 
 On some hosts will may be able to utilise Docker compose to simplify the configuration process, this will allow setting environment variables and easily controlling the mounted volume. Below we've provided an example `docker-compose.yml` that can be used in conjunction with the command `docker-compose up -d`.
 
-```yaml
-version: "3"
-
+yaml
 services:
   budibase:
     restart: unless-stopped
@@ -74,7 +72,7 @@ services:
 volumes:
   budibase_data:
     driver: local
-```
+
 
 This makes it easier to manage your Budibase image, including its configuration and volumes - all that is needed to utilise the configuration is replacing the `<secret>` options with secrets you have defined.
 
