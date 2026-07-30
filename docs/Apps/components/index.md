@@ -55,7 +55,7 @@ To assist with rearrangement, a green line will highlight the destination whilst
 
 ### Searching components
 
-You can search for components within the tree by clicking the magnifying glass icon at the top of the **Components** panel or by using the search bar when it is open. This allows you to find components by their instance name or their component type. Matching components will be highlighted, and their parent containers will automatically expand to reveal them.
+Click the search icon beside Screen in the Components panel to open the search field. You can search by a component’s name or type. Matching components are highlighted, and the tree automatically expands to reveal them.
 
 #### Editing
 
