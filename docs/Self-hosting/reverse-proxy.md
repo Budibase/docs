@@ -34,24 +34,24 @@ Caddy is an open-source web server with automatic HTTPS written in Go. If you wa
 Follow the [Caddy installation instructions](https://caddyserver.com/docs/install).  
 Once you have done this, you should be able to check that you have Caddy available on your machine, using the following command.
 
-```
+
 caddy version
-```
+
 
 Next, [create a Caddyfile](https://caddyserver.com/docs/quick-starts/caddyfile) with your domain in it - basically, create a text file named Caddyfile (no extension), then add your domain to the file.
 
-```
+
 yourdomain.com
 
 reverse_proxy localhost:10000
-```
+
 
 To set up HTTPS on your domain, you can simply restart the caddy server:
 
-```
+
 caddy stop
 caddy start
-```
+
 
 That's it! Full HTTPS and reverse proxy setup with Caddy and Budibase. Visit your domain and you will see your newly secured budibase instance with a custom domain.
 
@@ -69,7 +69,7 @@ Our recommendation for running Budibase is a "many app one server" approach, whe
 
 Here is a basic reverse proxy configuration that will simply pass all requests from a domain/sub-domain/path to your Budibase platform.
 
-```
+
 # Budibase
 
 server {
@@ -87,9 +87,9 @@ server {
     
     client_max_body_size 50m;
 }
-```
 
-In this configuration, all that needs to be updated for this to work is where the Budibase platform has been hosted. If it is hosted on a different machince, replace **localhost** with the correct address.
+
+In this configuration, all that needs to be updated for this to work is where the Budibase platform has been hosted. If it is hosted on a different machine, replace **localhost** with the correct address.
 
 There are a few ways this can be extended/altered:
 
@@ -99,18 +99,20 @@ There are a few ways this can be extended/altered:
 
 ## Proxy Buffer Settings
 
-Some users have reported problems when using a reverse proxy such as Nginx Proxy Manager and external authentication (e.g. OpenID). Users may see the error  `502 Bad Gateway openresty`
+Some users have reported problems when using a reverse proxy such as Nginx Proxy Manager and external authentication (e.g. OpenID). Users may see the error  `502 Bad Gateway openresty`.
 
-In this case amending the proxy buffer size may be helpful. Example config is shown below for Nginx:
+This is often caused by large headers (such as `Content-Security-Policy` with many custom whitelisted domains) exceeding the proxy's buffer limit. Budibase automatically mitigates this by removing CSP headers from JSON API responses and increasing the internal proxy buffer size to 16k.
 
-```
+If you are using an external proxy and still encounter these errors, amending the proxy buffer size may be helpful. Example config is shown below for Nginx:
+
+
 server {
  proxy_busy_buffers_size   512k;
  proxy_buffers   4 512k;
  proxy_buffer_size   256k;
  # rest of nginx config #
 }
-```
+
 
 ## Strict Referrer Policy and other security settings
 
@@ -120,13 +122,13 @@ There are a few caveats with reverse proxies that operators need to pay close at
 
 Budibase’s server **relies on the Referer header** in a specific part of the request lifecycle. The platform extracts the URL path from the incoming request’s Referer header. If a reverse proxy strips the Referer, changes it, or prevents it from flowing through, Budibase may fail to match the correct workspace app and respond with:
 
-```
+
 “No matching workspace app found for URL path…”
-```
+
 
 To preserve Budibase functionality while keeping sane security defaults, adjust your policy for the Budibase domain:
 
-```
+
 server {
     add_header Referrer-Policy same-origin;
 
@@ -138,6 +140,6 @@ server {
         proxy_pass http://your-budibase-upstream;
     }
 }
-```
+
 
 <br />
