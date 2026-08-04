@@ -15,7 +15,7 @@ Views are virtual tables that present data from a table with a preset filter or 
 When you create a View within Budibase, it presents you with all the data from its linked table. This provides you with a canvas to manipulate your data without changing the data within the original table. This is crucial, as it protects your original data. It also allows you to create:
 
 1. Filters
-2. Sort
+2. Sorts (including multi-column sorting)
 3. Hide columns
 
 When designing your UI, you can use a View with auto-generated screens, as well as for custom UI development. Say you have a table of Sales employees, and their total sales, you can create a view which gives you the total sales of all Sales employees. You can then reference the data from this View in the *Design* section of Budibase.
@@ -60,6 +60,20 @@ When a filter references a column that no longer exists:
 
 To resolve this, you must update the filter to reference a valid column or remove the stale filter entirely.
 
+## Sorting
+
+Views support both single and multi-column sorting, allowing you to establish a hierarchy for how your data is displayed.
+
+### Multi-column sorting
+
+Multi-column sorting allows you to sort by one column, and then by another for rows where the first column has identical values. To configure sorting:
+
+1. Click the **Sort** button in the data toolbar.
+2. Select your first **Column** and the desired **Order** (e.g., Ascending or Descending).
+3. Click **Add sort** to define a secondary sorting rule.
+4. You can continue adding sort levels to further refine the order of your data.
+5. Use the **X** icon next to a sort rule to remove it.
+
 ## View Calculations
 
 View calculations allow you to run certain mathematical operations on your data, akin to those available in traditional SQL-based databases.
@@ -90,9 +104,9 @@ This example returns 731 rows in total.
 
 ### Count
 
-The *Count* calculation can be used to find how many rows meet the specified criteria. Using "Calculate the `Count` of `Order ID` Group by `Country`" we can see how many unique order IDs there are per country.
+The *Count* calculation can be used to find how many rows meet the specified criteria. Using "Calculate the `Count` of `Order ID` Group By `Country`" we can see how many unique Order IDs there are per country.
 
-The count is grouped by country to show how many unique order IDs exist in each one.
+The count is grouped by country to show how many unique Order IDs exist in each one.
 
 We can then *Group by* additional criteria to refine the data further. For example grouping by country *and* sales channel will show us how many online and offline sales were made per country.
 
@@ -110,9 +124,9 @@ Inside the repeater block, add a container and nest inside it 3 Headline compone
 
 The repeater example is built from a container with three nested Headline components.
 
-Set the first headline component to `{{ add New Repeater Block.Row Index 1 }}` - This is taking the Row Index and adding 1 to it. (Index starts counting from Zero, so in order to use row-index as the rankings we must add 1)
+Set the first headline component to `{{ add New Repeater Block.Row Index 1 }}`  - This is taking the Row Index and adding 1 to it. (Index starts counting from Zero, so in order to use row-index as the rankings we must add 1)
 
-Set the second headline component to `{{ New Repeater Block.total_revete_by_country.Sum Total Revenue }}` - this fetches the sum total of the revenue. You can then set the third headline component to`{{ New Repeater Block.total_revete_by_country.Country }}`, and just like that we've built a basic leaderboard for Total Revenue by Country. 
+Set the second headline component to `{{ New Repeater Block.total_revete_by_country.Sum Total Revenue }}`  - this fetches the sum total of the revenue. You can then set the third headline component to`{{ New Repeater Block.total_revete_by_country.Country }}` , and just like that we've built a basic leaderboard for Total Revenue by Country. 
 
 ### Tracking View Usage
 
