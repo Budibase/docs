@@ -89,7 +89,7 @@ By default, Budibase provides a structured instruction template to help you defi
 
 For now we will use the below instructions:
 
-markdown instructions
+```markdown instructions
 **Agent role**
 You are a Service Desk AI Agent responsible for managing support tickets.
 
@@ -117,7 +117,7 @@ When categorising or prioritising, return structured JSON:
 - Only escalate tickets with High priority
 - Be concise and professional
 - Use British English where possible
-
+```
 
 After configuring and adding the above instructions, run a test and confirm that everything is working.
 
@@ -162,7 +162,7 @@ Once these tools and knowledge sources are enabled, Budibase injects them into t
 
 Here is our updated instruction prompt:
 
-markdown instructions
+```markdown instructions
 **Agent role**
 You are a Service Desk AI Agent responsible for managing support tickets.
 
@@ -197,7 +197,7 @@ When categorising or prioritising, return structured JSON:
 - Only escalate tickets with High priority
 - Be concise and professional
 - Use British English
-
+```
 
 Optionally, test again with some data and see how it handles the process.
 
