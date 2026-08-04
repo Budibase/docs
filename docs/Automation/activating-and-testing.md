@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-Test automations before you publish them.
+Automations run in both the builder preview and published apps. In the builder, they run against development data and skip logging, so test them before you publish them.
 
 ## Test an automation
 

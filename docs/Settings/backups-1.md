@@ -1,5 +1,5 @@
 ---
-title: Backups 🔒
+title: Backups 🔐
 excerpt: ''
 deprecated: false
 hidden: false
@@ -22,7 +22,7 @@ You can click [Upgrade](doc:usage) to unlock Backups or click `View Plans` to na
 
 ## Creating a backup
 
-With the feature enabled, you will be presented with the oppurtunity to create your first backup. 
+With the feature enabled, you will be presented with the opportunity to create your first backup. 
 
 <Image align="center" width="300px" src="https://files.readme.io/77327bc-image.png" />
 
@@ -64,6 +64,14 @@ You can also filter by range, this will allow you to select backups from between
 > 📘
 >
 > You can also filter by a combination of both. If using both, the filter will be done first on type `type` of backup, and then by the Date Range.
+
+## Backup retention
+
+Budibase automatically manages the retention of your backups to ensure you stay within your plan's limits and to keep your storage organized. Backups are automatically pruned based on the retention period defined by your license.
+
+* **Automatic Pruning**: A cleanup task runs daily to identify and remove backups that have exceeded their retention period.
+* **Retention Period**: The number of days a backup is kept depends on your Budibase plan. Once a backup exceeds this limit, both its metadata and the associated backup file are permanently deleted.
+* **Manual Deletion**: You can still manually delete backups at any time if you need to free up space or remove specific versions.
 
 ## Restoring your application from a backup
 

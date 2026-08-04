@@ -139,9 +139,24 @@ Together, these allow the Agent to:
 
 > As a best practice, only enable the minimum set of tools required. Limiting tool access helps keep behaviour predictable and safe.
 
+### Adding Knowledge
+
+In addition to tools, Agents can use **Knowledge Sources** to answer questions based on external documents or sites. This is commonly referred to as RAG (Retrieval-Augmented Generation).
+
+#### Connecting SharePoint Knowledge
+
+You can quickly add SharePoint sites as a knowledge source without manually configuring a REST connector:
+
+1. In the Agent builder, go to the **Knowledge** tab.
+2. Click **Add source** and select **SharePoint**.
+3. If you don't have an existing connection, enter your **Directory (tenant) ID**, **Application (client) ID**, and **Client secret**.
+4. Budibase will automatically create the connection and allow you to select the SharePoint sites you wish to sync.
+
+For more complex configurations, you can use the **Advanced setup** option within the connection modal to go directly to the SharePoint REST connector settings.
+
 #### Updating our instructions
 
-Once these tools are enabled, Budibase injects them into the Agent’s execution context. You then need to guide the Agent on when to use them.
+Once these tools and knowledge sources are enabled, Budibase injects them into the Agent’s execution context. You then need to guide the Agent on when to use them.
 
 Use the following updated instruction prompt:
 

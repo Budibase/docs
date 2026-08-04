@@ -22,7 +22,13 @@ You can run Budibase on your own infra using:
 
 Every self-hosted Budibase platform comes by default with some settings which we recommend you familiarise yourself with as well as updating to suit your needs. All of these settings are passed to your cluster through the use of environment variables. In this section, we'll cover the purpose of each of these.
 
-It should be noted that if you wish to modify any of these settings then you will need to restart your Budibase platform for it to recognise these new settings. If you have been running it already then changing some of these settings may affect the user experience, for example changing the **JWT_SECRET** will log everyone out.
+It should be noted that if you wish to modify any of these settings then you will need to restart your Budibase platform for it to recognise these new settings. 
+
+### Rotating secrets
+
+For single-image (runner.sh) deployments, you can rotate sensitive credentials by passing a new value as an environment variable when restarting the container. The runner detects if the runtime value differs from the previously persisted value in your `.env` file and will automatically update and persist the new secret. This applies to credentials such as `COUCH_DB_USER`, `COUCH_DB_PASSWORD`, `MINIO_ACCESS_KEY`, `MINIO_SECRET_KEY`, `JWT_SECRET`, and others.
+
+Note that changing some of these settings may affect the user experience; for example, changing the **JWT_SECRET** will log everyone out.
 
 The full set of variables can be found in our repo, in the file [.env](https://raw.githubusercontent.com/Budibase/budibase/master/hosting/.env) which should be included in your hosting solution:
 
@@ -43,7 +49,7 @@ The full set of variables can be found in our repo, in the file [.env](https://r
     <tr>
       <td>
         MAIN_PORT
-      </td>
+      <td>
 
       <td>
         The main port that your platform will run on, we have exposed this in case you need to change this.
@@ -210,6 +216,16 @@ The full set of variables can be found in our repo, in the file [.env](https://r
 
     <tr>
       <td>
+        OIDC_ALLOW_UNVERIFIED_EMAIL_LINKING
+      </td>
+
+      <td>
+        A global override for OIDC email linking behavior. When set to 'true', Budibase will link SSO logins to existing local accounts even if the identity provider has not verified the email address. This overrides the per-provider setting in the UI.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
         SQL_LOGGING_ENABLE
       </td>
 
@@ -349,6 +365,16 @@ The full set of variables can be found in our repo, in the file [.env](https://r
 
       <td>
         The default email address that appears in the "From" field of emails sent by the application. This environment variable is used to specify the sender's identity in outbound emails.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        SMTP_REJECT_UNAUTHORIZED
+      </td>
+
+      <td>
+        By default, Budibase verifies the TLS certificate of the SMTP server. If your mail server uses a self-signed certificate, you can set this variable to 'true' to disable certificate verification and allow unauthorized connections.
       </td>
     </tr>
 

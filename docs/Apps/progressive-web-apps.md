@@ -14,17 +14,17 @@ next:
 ---
 Use Progressive Web App settings to let users install your app on their device.
 
-> 📘
+> 💡
 >
 > Progressive Web Apps (PWAs) are limited to Enterprise-tier Budibase tenants.
 
 ## App Details
 
-| Attribute   | Usage                                                                                                                                                      |
-| :---------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| App Name    | The title given to your app, which it will be referred to in most circumstances.                                                                           |
+| Attribute   | Usage                                                                                                                                                                                                                                                                                             |
+| :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| App Name    | The title given to your app, which it will be referred to in most circumstances.                                                                                                                                                                                                                  |
 | Short Name  | Used to specify a short name for your web application, which may be used when the full name is too long for the available space.(Not supported in Firefox) |
-| Description | Displayed in the modal which prompts the user to download the PWA                                                                                          |
+| Description | Displayed in the modal which prompts the user to download the PWA                                                                                                                                                                                                                                 |
 
 Set these values to control how the app is named in the install prompt and on the user's device.
 
@@ -32,7 +32,7 @@ Set these values to control how the app is named in the install prompt and on th
 
 ### App Icons
 
-Generate the icon set with a tool such as [PWA Builder](https://www.pwabuilder.com/imageGenerator). Use the resulting sizes and formats for the app icon field.
+Generate the icon set with a tool such as [PWA Builder](https://www.pwabuilder.com/imageGenerator), then use the resulting sizes and formats for the app icon field.
 
 ### Colors
 

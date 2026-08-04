@@ -18,7 +18,7 @@ Make sure email is configured in `Settings > Email`.
 
 ## Configure the action
 
-All Send Email fields support bindings.
+All Send Email fields support bindings. Use `Send To` and `From` for email addresses. You can separate multiple addresses with commas and include display names such as `Budibase <hello@budibase.com>`.
 
 | Setting | Purpose |
 | :-- | :-- |
@@ -27,11 +27,9 @@ All Send Email fields support bindings.
 | Email subject | The subject line |
 | HTML Contents | The email body |
 
-You can separate multiple addresses with commas.
-
 ## Use bindings
 
-Use bindings to personalize the subject or body with values from the trigger or previous steps.
+Use bindings to personalise the subject or body with values from the trigger or previous steps.
 
 Example:
 

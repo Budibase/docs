@@ -16,13 +16,17 @@ Budibase supports SQL Server 2016 and later.
 
 ## Connect the datasource
 
-1. Open the **Data** section
-2. Add a new source
-3. Choose `MS SQL Server`
-4. Enter the connection details
-5. Fetch the tables you want to use
+1. Open the **Data** section.
+2. Add a new source.
+3. Choose `MS SQL Server`.
+4. Enter the connection details.
+5. Fetch the tables you want to use.
 
 If Budibase is running in Docker and the database is on the same machine, use `host.docker.internal` or `172.17.0.1` on Linux.
+
+## Temporal tables
+
+Budibase supports system-versioned temporal tables. It imports the main table, excludes history tables from fetch, and marks system-managed period columns as auto-columns.
 
 ## Fetch tables
 

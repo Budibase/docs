@@ -12,7 +12,7 @@ next:
 ---
 This page covers some key information you need to know about using the Budibase Public API and our OpenAPI 3.0 specification. The Budibase API provides access to resources including applications, users, tables and data through a RESTful API - allowing for much deeper integration with your business use cases.
 
-> 📘 Public API Reference
+> 💡 Public API Reference
 >
 > This article covers the important general points about the Budibase Public API, if you are looking for in-depth information about the individual endpoints please check out our [API Reference](https://docs.budibase.com/reference).
 
@@ -30,21 +30,21 @@ The "View API key" will open a menu, that allows generating a new API key (this 
   API key menu
 </Image>
 
-## Getting an App ID
+## Getting a Workspace ID
 
-Data-related endpoints will require an `x-budibase-app-id` header. Your App's ID can be retrieved by accessing your app from the Budibase dashboard, and locating your App ID from your browser's address bar after the URL's `/builder/app/` path. 
+Data-related endpoints will require an `x-budibase-app-id` header (this header is used to provide the unique Workspace ID for your app). Your Workspace ID can be retrieved by accessing your app from the Budibase dashboard, and locating the ID from your browser's address bar after the URL's `/builder/workspace/` path. 
 
-For example: `<hostname>/builder/app/<your-app-id>/other-path` where `<hostname>` could be `localhost` and `<your-app-id>` could be `app_dev_567abc890opq123`.
+For example: `<hostname>/builder/workspace/<your-workspace-id>/other-path` where `<hostname>` could be `localhost` and `<your-workspace-id>` could be `app_dev_567abc890opq123`.
 
-> 📘 Published data
+> 💡 Published data
 >
-> To interact with data on your published app, simply remove the '\_dev\_' part of the app id, e.g. *app\_567abc890opq123*
+> To interact with data on your published app, simply remove the '\_dev\_' part of the workspace ID, e.g. *app\_567abc890opq123*
 
 ## Getting a table's ID and row's ID
 
 Data-related endpoints in the Budibase API may call for a `tableId` or `rowId`. Your desired Table ID can be retrieved by accessing your app from the Budibase dashboard and then navigating to the "Data" editor. The Table ID can be found in the address bar after the URL's `/data/table/` path.
 
-Table ID example: `<hostname>/builder/app/<your-app-id>/data/table/<table-id>` where `<table-id>` could be `ta_123a456b789c123d345e678f`.
+Table ID example: `<hostname>/builder/workspace/<your-workspace-id>/data/table/<table-id>` where `<table-id>` could be `ta_123a456b789c123d345e678f`.
 
 While browsing database tables, you can retrieve a row's ID by locating the value under the row's `ID` column. You may have to toggle "Auto columns" in order for the `ID` column to be visible. 
 
@@ -71,7 +71,6 @@ Paste the URL below into the dialog box, then choose **Fetch and Import**
 
 ```
 https://raw.githubusercontent.com/Budibase/budibase/master/packages/server/specs/openapi.yaml
-
 ```
 
 ![1626](https://files.readme.io/020cf06-Insomnia_2022-05-10_16-22-491.jpg "Insomnia 2022-05-10 16-22-49(1).jpg")
