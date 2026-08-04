@@ -26,7 +26,7 @@ The Budibase API requires an API key be specified as a header, specifically the 
 
 The "View API key" will open a menu, that allows generating a new API key (this will invalidate your old API key), from here you can copy your API key and start using it!
 
-<Image title="Capture.PNG" alt={405} src="https://files.readme.io/5dda4f-Capture.PNG">
+<Image title="Capture.PNG" alt={405} src="https://files.readme.io/5ddaa4f-Capture.PNG">
   API key menu
 </Image>
 
@@ -69,9 +69,9 @@ We want to import a collection from a URL so choose the **Create** button, then 
 
 Paste the URL below into the dialog box, then choose **Fetch and Import**
 
-
+```
 https://raw.githubusercontent.com/Budibase/budibase/master/packages/server/specs/openapi.yaml
-
+```
 
 ![1626](https://files.readme.io/020cf06-Insomnia_2022-05-10_16-22-491.jpg "Insomnia 2022-05-10 16-22-49(1).jpg")
 
@@ -109,9 +109,9 @@ To generate code for this request choose the drop-down arrow beside **Search for
 
 The Budibase OpenAPI specification makes it easy to use Budibase with Postman, you can import the Budibase API as a new collection. With Postman open choose the "**Import**" button at the top-left. Choose **Import via link** and paste the following URL:
 
-
+```
 https://raw.githubusercontent.com/Budibase/budibase/master/packages/server/specs/openapi.yaml
-
+```
 
 Choose **continue** and you should see a new collection as shown below.
 
