@@ -7,11 +7,9 @@ metadata:
   robots: index
 ---
 
-:::caution Deprecated
-Discord will be removed in a future release.
-:::
-
-Use this guide to deploy an agent to Discord.
+> ⚠️
+>
+> Discord is deprecated and will be removed in a future release.
 
 ## Before you start
 
