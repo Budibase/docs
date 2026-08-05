@@ -7,7 +7,7 @@ metadata:
 ---
 Use this page to deploy an agent to external messaging channels where your users already work.
 
-Slack, Microsoft Teams, and Discord are the primary deployment paths for live agent conversations.
+Slack and Microsoft Teams are the primary deployment paths for live agent conversations.
 
 ## Before you start
 
@@ -36,7 +36,7 @@ If a user sends a normal message before linking, Budibase sends a private link p
 
 * [Slack](doc:messaging-channels-slack)
 * [Microsoft Teams](doc:messaging-channels-microsoft-teams)
-* [Discord](doc:messaging-channels-discord)
+* [Discord (deprecated)](doc:messaging-channels-discord)
 
 ## Important endpoint note
 
