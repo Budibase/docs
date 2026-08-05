@@ -69,9 +69,9 @@ Our recommendation for running Budibase is a "many app one server" approach, whe
 
 Here is a basic reverse proxy configuration that will simply pass all requests from a domain/sub-domain/path to your Budibase platform.
 
-```
-# Budibase
 
+# Budibase
+```
 server {
     listen 80;
     server_name yourdomain.com;
@@ -89,7 +89,7 @@ server {
 }
 ```
 
-In this configuration, all that needs to be updated for this to work is where the Budibase platform has been hosted. If it is hosted on a different machince, replace **localhost** with the correct address.
+In this configuration, all that needs to be updated for this to work is where the Budibase platform has been hosted. If it is hosted on a different machine, replace **localhost** with the correct address.
 
 There are a few ways this can be extended/altered:
 
@@ -99,9 +99,11 @@ There are a few ways this can be extended/altered:
 
 ## Proxy Buffer Settings
 
-Some users have reported problems when using a reverse proxy such as Nginx Proxy Manager and external authentication (e.g. OpenID). Users may see the error  `502 Bad Gateway openresty`
+When Budibase is deployed behind an external reverse proxy such as Nginx Proxy Manager and external authentication is enabled, requests can fail with `502 Bad Gateway openresty`.
 
-In this case amending the proxy buffer size may be helpful. Example config is shown below for Nginx:
+This usually happens when response headers, such as a `Content-Security-Policy` header with many whitelisted domains, exceed the proxy buffer limit. Budibase reduces the likelihood of this by removing CSP headers from JSON API responses and increasing the internal proxy buffer size to 16k.
+
+If you still see this error when using an external proxy, increase the proxy buffer size. An example Nginx configuration is shown below:
 
 ```
 server {
