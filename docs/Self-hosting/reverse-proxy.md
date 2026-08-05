@@ -99,11 +99,11 @@ There are a few ways this can be extended/altered:
 
 ## Proxy Buffer Settings
 
-Some users have reported problems when using a reverse proxy such as Nginx Proxy Manager and external authentication (e.g. OpenID). Users may see the error  `502 Bad Gateway openresty`.
+When Budibase is deployed behind an external reverse proxy such as Nginx Proxy Manager and external authentication is enabled, requests can fail with `502 Bad Gateway openresty`.
 
-This is often caused by large headers (such as `Content-Security-Policy` with many custom whitelisted domains) exceeding the proxy's buffer limit. Budibase automatically mitigates this by removing CSP headers from JSON API responses and increasing the internal proxy buffer size to 16k.
+This usually happens when response headers, such as a `Content-Security-Policy` header with many whitelisted domains, exceed the proxy buffer limit. Budibase reduces the likelihood of this by removing CSP headers from JSON API responses and increasing the internal proxy buffer size to 16k.
 
-If you are using an external proxy and still encounter these errors, amending the proxy buffer size may be helpful. Example config is shown below for Nginx:
+If you still see this error when using an external proxy, increase the proxy buffer size. An example Nginx configuration is shown below:
 
 ```
 server {
