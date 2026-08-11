@@ -58,6 +58,8 @@ Use this action to show a success, warning, error, or info message.
 
 You can include bindings in the message text.
 
+It is also possible to use some logic with the notification - if the result of the logic running is falsy, no message will show. This can be used in conjunction with a "Continue if/Stop If" step to show the user some feedback explaining why the action has stopped.
+
 ## Prompt user
 
 Use this action to confirm a user decision before continuing a chain of actions.
