@@ -24,6 +24,8 @@ If the destination is a URL, you can open it in a new tab.
 
 If the destination is a screen, you can open it in the current tab or in a modal.
 
+You can learn more about using URL parameters with the `Navigate To` action [here](https://docs.budibase.com/docs/url-parameters).
+
 ## Trigger automations
 
 Use this action to run an existing automation.
