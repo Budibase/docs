@@ -25,11 +25,13 @@ All charts share the same core settings:
 
 ## Choose a source
 
-Charts can read from:
-
-* Budibase DB
-* REST queries
-* Custom queries
+Charts allow you to visualise data from a [Data Provider](doc:data-provider), which can have datasources such as:
+ 
+* <Glossary>Budibase DB</Glossary>
+* External Data Tables like MS SQL
+* [REST Queries](doc:rest-queries) 
+* [Custom Queries](doc:custom-queries)
+* JSON/CSV
 
 ## Use chart data
 
