@@ -31,9 +31,9 @@ Use the action result binding from the previous step to read that output.
 
 Execute query actions also expose:
 
-* Status code
-* Response time
-* Payload size
+* Status code - `{{ Action 1.Query result.code }}`
+* Response time - `{{ Action 1.Query result.time }}`
+* Payload size - `{{ Action 1.Query result.size }}`
 
 You can use these values in conditions or display them in the UI.
 
