@@ -49,9 +49,9 @@ Keep the sender identity and the email template aligned so the message feels con
 
 ## Self-hosted login customisation
 
-Self-hosted instances can change the login page header and button text.
+Use these fields to customise the login page header and button text.
 
-Use this when you want the login experience to match your organisation’s terminology.
+These values apply to the Budibase login page and can be used to match your organisation’s terminology.
 
 ## App preview meta tags
 
@@ -69,4 +69,3 @@ Make sure the preview image is publicly reachable when the link is shared.
 
 * [Email](doc:email)
 * [User management](doc:user-management)
-* [Settings overview](doc:settings)
