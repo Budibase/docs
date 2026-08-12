@@ -1,8 +1,7 @@
 ---
 title: User management
 excerpt: >-
-  The user management page contains all you'll need to invite, delete and create
-  new users as well as change their Budibase application roles.
+  Manage users, roles, groups, and SCIM provisioning across Budibase.
 deprecated: false
 hidden: false
 metadata:
@@ -18,16 +17,31 @@ next:
     - type: basic
       slug: user-roles
       title: User Roles
+    - type: basic
+      slug: workspace-access
+      title: Workspace Access
+    - type: basic
+      slug: in-app-user-management
+      title: In-app User Management
+    - type: basic
+      slug: user-groups
+      title: User Groups
+    - type: basic
+      slug: scim-provisioning
+      title: SCIM Provisioning
 ---
-Use user management to control who can sign in, what roles they have, and whether they need a password reset.
+Use user management to control who can sign in, what access they have, and how they are grouped across Budibase.
 
 Users are shared across the whole Budibase installation.
 
 ## Invite users
 
-Invite users from the workspace invite flow.
+You can invite users from two places:
 
-Use the `Adding Users` guide when you need the full invite process.
+* The `Invite users` button in the builder sidebar
+* `Settings` > `People` in the Budibase portal
+
+Use [Adding users](doc:adding-users) for the full invite flow.
 
 ## Reset passwords
 
@@ -41,7 +55,7 @@ Budibase generates a temporary password and prompts the user to change it after 
 
 ## Roles
 
-Users can have both installation-level and workspace-level roles.
+Users can have both tenant-level and workspace-level access.
 
 Use `User Roles` to configure access to specific apps and workspaces.
 
@@ -55,3 +69,7 @@ Treat deletion as permanent. If you need the user again later, invite them again
 
 * [Adding Users](doc:adding-users)
 * [User Roles](doc:user-roles)
+* [Workspace Access](doc:workspace-access)
+* [In-app User Management](doc:in-app-user-management)
+* [User Groups](doc:user-groups)
+* [SCIM Provisioning](doc:scim-provisioning)
