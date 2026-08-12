@@ -9,8 +9,12 @@ metadata:
   robots: index
 next:
   description: ''
+  pages:
+    - type: basic
+      slug: email-templates
+      title: Email Templates
 ---
-Configure SMTP to let Budibase send email for invitations, password recovery, and automation actions.
+Configure SMTP so Budibase can send emails for invitations, password recovery, and automation actions.
 
 ## Before you start
 
@@ -26,7 +30,6 @@ Make sure you have:
 2. Go to `Settings > Email`.
 3. Enter the SMTP details.
 4. Save the configuration.
-5. Send a test email if your provider supports it.
 
 ### SMTP settings
 
@@ -44,21 +47,9 @@ Use the values required by your provider. For modern SMTP setups, ports `587` an
 
 ## Email templates
 
-Budibase includes templates for:
+Budibase email templates are managed on a separate page.
 
-* Password recovery
-* Invitation
-* Welcome
-* Custom templates
-
-To edit a template:
-
-1. Open the template from the email settings table.
-2. Add any bindings or static content you need.
-3. Preview the result.
-4. Save the template.
-
-Use bindings for values such as the recipient email address, your organisation name, or a logo URL.
+See [Email templates](doc:email-templates) for the available templates and how to edit them.
 
 ## Use email in automations
 
@@ -87,3 +78,4 @@ If email does not send:
 * [Automation actions](doc:automation-actions)
 * [User management](doc:user-management)
 * [Branding](doc:branding)
+* [Email templates](doc:email-templates)
