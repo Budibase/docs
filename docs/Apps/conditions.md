@@ -41,5 +41,7 @@ Conditions can also hide or show components based on the current user's role.
 Role values must be uppercase:
 
 * `BASIC`
-* `POWER`
+* `POWER` (Deprecated)
 * `ADMIN`
+
+NB: Custom Roles must be referenced by their ID, not their name.
