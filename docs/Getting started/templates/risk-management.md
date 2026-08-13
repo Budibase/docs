@@ -1,7 +1,7 @@
 ---
 title: Risk Management
 excerpt: ''
-deprecated: false
+deprecated: true
 hidden: false
 metadata:
   title: ''

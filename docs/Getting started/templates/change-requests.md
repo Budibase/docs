@@ -1,7 +1,7 @@
 ---
 title: Change Requests
 excerpt: ''
-deprecated: false
+deprecated: true
 hidden: false
 metadata:
   title: ''

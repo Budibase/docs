@@ -1,7 +1,7 @@
 ---
 title: Expense Approval
 excerpt: ''
-deprecated: false
+deprecated: true
 hidden: false
 metadata:
   title: ''
