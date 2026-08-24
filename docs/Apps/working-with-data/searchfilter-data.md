@@ -28,7 +28,7 @@ Once you have linked a <Glossary>Datasource</Glossary> to a component, you can a
 
 The filter drawer is where you select the columns you want to filter on. For example, you may want to return sales records only where any of the sales reps made more than 60 sales, or all sales made in the first week of the month.
 
-<Image align="center" src="https://files.readme.io/a786a27ef98122bd4742028c20f9dd363763714555e3976473bafdab6ab917ef-Screenshot_2025-08-18_at_10.16.20.png" />
+<Image align="center" src="https://files.readme.io/a786a27ef98122bd4742028c20f9dd363763714555e3976473ba7dab6ab917ef-Screenshot_2025-08-18_at_10.16.20.png" />
 
 It is also possible to filter on multiple columns, and even filter on the same column multiple times. 
 
@@ -40,9 +40,9 @@ Next, add a Form Component, and add two Number fields. set the first to be day\_
 
 In the data provider, select the define filters button. Next, add an expression and select the column you wish to filter on - in this case `day_of_month`, `More than or equal to` and `Binding`. Select the lightning bolt icon to the right and select the number field choose "start\_day". Repeat the process for the the upper-limit of the filter, this time using "less than or equal to". Now your user can specify a start and end day and view sales made in that particular timeframe.
 
-<Image align="center" src="https://files.readme.io/34b558aae741bea5c8c63fe3ff94aad67baa3fea32c44466f34eeea649e3db65-Screenshot_2024-10-28_at_15.19.47.png" />
+<Image align="center" src="https://files.readme.io/34b558aae741be15c8c63fe3ff94aa67ba33fea32c44466f34eeea649e3db65-Screenshot_2024-10-28_at_15.19.47.png" />
 
-<Image align="center" src="https://files.readme.io/f1eab353ce7dcf9ddd9af95303e05304eac1daa8bac26a49aecb9f73a09f89f7-Screenshot_2024-10-28_at_15.20.38.png" />
+<Image align="center" src="https://files.readme.io/f1eab353ce7dcf9dd9af95303e05304eac1da8aba26a49aecb9f73a09f89f7-Screenshot_2024-10-28_at_15.20.38.png" />
 
 ## Filtering options & Filter Groups
 
@@ -55,7 +55,7 @@ When filtering, there are a couple of settings that can be tweaked that determin
 #### Behaviour when combining Filter Groups
 
 * **Show data which matches all filter groups**: all filters must match when returning records
-* **Show data which matches any filter** : records are returned when they match on any of the provided filter groups
+* **Show data which matches any filter**: records are returned when they match on any of the provided filter groups
 
 #### Behaviour in Filter Groups themselves
 
@@ -68,9 +68,16 @@ When filtering, there are a couple of settings that can be tweaked that determin
 
 This setting is specific to filters that are using <Glossary>Binding</Glossary>s. It determines what data should be returned if the binding values are blank.
 
-By default, if all of the filter binding values are empty, then all the rows will be returned. If *Return no rows* is selected and the binding values are empty, then no rows will be returned. This can be particularly useful when pairing a table with search fields, as an empty search field will result in all rows being shown, but as a user types a search-term it will narrow the list down.
+By default, if all of the filter binding values are empty (undefined, null, or an empty string), then all the rows will be returned. If *Return no rows* is selected and the binding values are empty, then no rows will be returned. This can be particularly useful when pairing a table with search fields, as an empty search field will result in all rows being shown, but as a user types a search-term it will narrow the list down.
 
-<Image align="center" src="https://files.readme.io/78acfe3680e2c9a5e30e83f4edac80d310280cd5b647520cb61b00bb76fce7ad-Screenshot_2024-11-01_at_15.41.11.png" />
+**Empty sets and multi-select filters**
+
+For operators like **Is in** or **Contains**, selecting no values represents an empty set. 
+
+* If an **Is in** filter has no values selected and is the only filter configured, it is treated as empty, and the *When filter empty* setting above determines the result.
+* If an **Is in** filter has no values selected but is part of a group with other active filters (e.g., using **Match all**), it will correctly behave as an empty set. Since no record can be a member of an empty set, the filter will result in no rows being returned for that group.
+
+<Image align="center" src="https://files.readme.io/78acfe3680e2c9a5e30e83f4edac80d310280cd5b647520cb61b00b776fce7ad-Screenshot_2024-11-01_at_15.41.11.png" />
 
 As shown, the filters are bound to two form fields which are currently empty, therefore *all table rows* are returned.
 
@@ -86,4 +93,4 @@ In this screenshot we can see that the *Return no rows* option is selected, whic
 <div style="padding:50% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/742702875?h=69fa04afed&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="filter-with-options-pickers.mov"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 `}</HTMLBlock>
 
-You can also filter using a [relationship picker](https://docs.budibase.com/docs/filter-by-relationships).
+You can also filter using a [Relationship picker](https://docs.budibase.com/docs/filter-by-relationships).
