@@ -37,6 +37,26 @@ When a tool is enabled, you can configure its **Execution principal**:
 *   **Requester**: The tool runs using the permissions of the user interacting with the Agent. This is the safest default for most user-facing tools.
 *   **Admin**: The tool runs with full administrative permissions. Use this sparingly for background tasks or strictly controlled operations.
 
+## Agent data scope
+
+To ensure data security and optimize token usage, Budibase automatically restricts the data exposed to AI Agents.
+
+### Field exclusions
+
+When an Agent interacts with a table, it only sees plain-text and primitive data fields. The following field types are automatically excluded from the Agent's view:
+
+*   **Link fields**: Relationships to other tables (joined data) are not exposed to prevent accidental data leaks.
+*   **Formula fields**: Calculations and relationship-derived values are hidden from the Agent.
+
+These exclusions apply to both the table schema (metadata) and the actual row data returned by tools.
+
+### Helper tool scoping
+
+Budibase provides helper tools like `list_tables` and `get_table` to help Agents discover Workspace structure. These helpers are automatically scoped to the current operation:
+
+*   **list_tables**: Only returns tables that have at least one tool (e.g., `Search Rows`) explicitly enabled for the current operation.
+*   **get_table**: Can only retrieve details for tables that are already configured for the operation.
+
 ## Read vs write tools
 
 Separate read and write capabilities in both tooling and instructions.
