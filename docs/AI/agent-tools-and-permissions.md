@@ -50,12 +50,13 @@ When an Agent interacts with a table, it only sees plain-text and primitive data
 
 These exclusions apply to both the table schema (metadata) and the actual row data returned by tools.
 
-### Helper tool scoping
+### Restricted resource access
 
-Budibase provides helper tools like `list_tables` and `get_table` to help Agents discover workspace structure. These helpers are automatically scoped to the current operation:
+To prevent data leaks, Budibase automatically redacts tool metadata and result data when an Agent runs as a **Requester** who lacks sufficient permissions for a resource (such as a table).
 
-*   **list_tables**: Only returns tables that have at least one tool (e.g., `Search Rows`) explicitly enabled for the current operation.
-*   **get_table**: Can only retrieve details for tables that are already configured for the operation.
+*   **Redacted Metadata**: The Agent cannot see the resource's schema, field names, or specific configuration. Instead, it receives a generic tool description that prevents it from inferring the data structure.
+*   **Redacted Results**: For write operations (like creating or updating rows) on restricted resources, the tool returns a generic success message instead of the full object data to prevent unauthorized reading of records.
+*   **Discovery Tools**: Legacy discovery tools like `list_tables` and `get_table` are disabled by default. Agents should be provided with the specific tools they need for their tasks via the operation configuration.
 
 ## Read vs write tools
 
