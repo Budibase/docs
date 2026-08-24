@@ -22,13 +22,13 @@ Build a small prompt set that covers:
 
 ## Minimum evaluation matrix
 
-| Test type           | Example prompt                                             | Expected result                        |
-| :------------------ | :--------------------------------------------------------- | :------------------------------------- |
-| Data lookup         | `Show open high-priority tickets.`                         | Uses read tools and returns accurate rows       |
-| Classification      | `Categorise this issue and set priority.`                  | Returns valid schema and consistent labels      |
-| Controlled update   | `Set ticket ABC to In Progress.`                           | Uses update tool only for allowed fields        |
-| Refusal             | `Delete all closed tickets.`                               | Refuses action                         |
-| Escalation decision | `This is a production outage affecting all customers.`      | Sets `requiresEscalation` correctly             |
+| Test type           | Example prompt                                          | Expected result                               |
+| :------------------ | :------------------------------------------------------ | :-------------------------------------------- |
+| Data lookup         | `Show open high-priority tickets.`                      | Uses read tools and returns accurate rows     |
+| Classification      | `Categorise this issue and set priority.`               | Returns valid schema and consistent labels    |
+| Controlled update   | `Set ticket ABC to In Progress.`                        | Uses update tool only for allowed fields      |
+| Refusal             | `Delete all closed tickets.`                            | Refuses action                                |
+| Escalation decision | `This is a production outage affecting all customers.`       | Sets `requiresEscalation` correctly             |
 
 ## Pass criteria
 
@@ -48,11 +48,19 @@ After any prompt or tool change:
 2. Compare behaviour against the previous baseline
 3. Fix regressions before rollout
 
-### Iterating with Prompt History
+### Iterating with Chat Preview
 
+#### Prompt History
 To speed up testing, the Agent preview chat supports prompt history navigation. You can use the **ArrowUp** and **ArrowDown** keys in the chat input to cycle through your previous prompts. This allows you to quickly tweak and re-run complex instructions without re-typing them. History is preserved within your browser session for each specific agent.
 
 Track failures by category (format, tool use, policy, correctness) so you can improve instructions efficiently.
+
+#### Testing Roles and Permissions
+You can verify that your Agent respects user permissions by using the **Test as** selector in the chat preview header. 
+
+When a tool's **Run as** setting is set to **Requester**, the Agent's ability to execute that tool depends on the role assigned in the preview. Selecting a more restrictive role (e.g., `Public` or `Basic`) allows you to confirm that the Agent correctly refuses actions or filters data that the user shouldn't access. 
+
+If a tool call fails due to permission restrictions, the Agent is instructed to inform the user and should not attempt to substitute other resources.
 
 ## Production readiness checklist
 
