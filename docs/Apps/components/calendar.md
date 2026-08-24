@@ -26,7 +26,7 @@ Different views can be selected, depending on your needs.
 
 ### Month view
 
-Month view shows a full month grid with weekday headers (`Sun` to `Sat`) and day cells containing event summaries.  
+Month view shows a full month grid. By default, the calendar automatically detects and respects your browser locale to determine the starting day of the week (e.g., Sunday in the US, Monday in the UK). The grid contains day cells containing event summaries.  
 Each event entry typically includes a start time (for example `10:45`, `13:00`, `15:00`) and a title (for example `Marketing Call`, `Roadmap Planning`, `Product Sync`).
 
 If multiple events occur on the same day, they are listed together in that day’s cell. This makes recurring events and busy dates easy to scan at a glance.
@@ -45,7 +45,7 @@ Creators also have options to adjust the way the title is displayed, for example
 
 <br />
 
-Creators can also allow their users to move around to different dates or views using the "Show Controls" option. By default, the calendar component will open on the current day, but using the "Open on date" setting, and providing a date in YYYY-MM-DD format, the calendar will open on this date (or date range). This could be useful to show specific plans. 
+Creators can also allow their users to move around to different dates or views using the "Show controls" option. By default, the calendar component will open on the current day, but using the "Open on date" setting, and providing a date in YYYY-MM-DD format, the calendar will open on this date (or date range). This could be useful to show specific plans. 
 
 ## On click events
 
