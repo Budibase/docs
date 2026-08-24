@@ -36,9 +36,11 @@ To choose between the different types of pickers, you can use two checkboxes in 
 
 To get the results, only check the box which are mentioned below.
 
-* **Date/time**: ☑ Show Time
-* **Date**: ☐ Show Time + ☐ Time Only
-* **Time**: ☑ Time Only 
+* **Date/time**: ☑️ Show Time
+* **Date**: 🔘 Show Time + 🔘 Time Only
+* **Time**: ☑️ Time Only 
+
+When configuring a **Date** (date only) picker, you can also use the **Set time to** setting to specify a fixed time (e.g., `23:59:59`) that will be saved alongside the selected date. This is particularly useful for ensuring that "Less than or equal to" filters include records from the entire selected day.
 
 ## Using the calendar
 
@@ -49,10 +51,11 @@ In addition to clicking the navigation arrows, users can use gestures to move be
 
 ## Further configuration
 
-| Setting       | Description                                                                                                                                                                 |
-| :------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Field         | Connected field from the parent [Form](doc:forms) element, or custom by typing in a field name.                                                                             |
-| Label         | The text visible to the user next to the `Date Picker` as a descriptor of the field                                                                                         |
-| Placeholder   | The text displayed in a lighter tint inside the `Date Picker`. Will only display when the picker has no value                                                               |
+| Setting       | Description                                                                                                                                                                                                                            |
+| :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Field         | Connected field from the parent [Form](doc:forms) element, or custom by typing in a field name.                                                                                                                                        |
+| Label         | The text visible to the user next to the `Date Picker` as a descriptor of the field                                                                                                                                                    |
+| Placeholder   | The text displayed in a lighter tint inside the `Date Picker`. Will only display when the picker has no value                                                                                                                          |
 | Default Value | When a default value is provided, every time the form is opened this will be prefilled in the `Date Picker`. Entering this will also prevent the `Placeholder` from showing |
-| Disabled      | When checked, disables the field; The user cannot change the value.                                                                                                         |
+| Set time to   | Only available when **Show Time** is unchecked. Allows you to specify a fixed time that will be saved with the date. Useful for range-based filtering.                                                                                  |
+| Disabled      | When checked, disables the field; The user cannot change the value.                                                                                                                                                                    |
