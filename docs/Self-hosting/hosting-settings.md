@@ -20,9 +20,9 @@ You can run Budibase on your own infra using:
 * [Kubernetes](doc:kubernetes-k8s)
 * [DigitalOcean](doc:digitalocean).
 
-Every self-hosted Budibase platform comes by default with some settings which we recommend you familiarise yourself with as well as updating to suit your needs. All of these settings are passed to your cluster through the use of environment variables. In this section, we'll cover the purpose of each of these.
+Every self-hosted Budibase platform comes by default with some settings which we recommend you familiarize yourself with as well as updating to suit your needs. All of these settings are passed to your cluster through the use of environment variables. In this section, we'll cover the purpose of each of these.
 
-It should be noted that if you wish to modify any of these settings then you will need to restart your Budibase platform for it to recognise these new settings. 
+It should be noted that if you wish to modify any of these settings then you will need to restart your Budibase platform for it to recognize these new settings. 
 
 ### Rotating secrets
 
@@ -49,6 +49,7 @@ The full set of variables can be found in our repo, in the file [.env](https://r
     <tr>
       <td>
         MAIN_PORT
+      </td>
       <td>
 
       <td>
@@ -95,6 +96,26 @@ The full set of variables can be found in our repo, in the file [.env](https://r
       <td>
         This is another component used to secure Minio.  
         _**We recommend changing this.**_
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        REDIS_USERNAME
+      </td>
+
+      <td>
+        The username used to access the internal Redis instance. When provided with <b>REDIS_PASSWORD</b>, it configures a Redis ACL user with full permissions.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        REDIS_PASSWORD
+      </td>
+
+      <td>
+        The password used to secure the internal Redis instance. _**We recommend changing this.**_
       </td>
     </tr>
 
@@ -405,6 +426,16 @@ The full set of variables can be found in our repo, in the file [.env](https://r
 
       <td>
         The virtual key used for Budibase AI services. This key is required for self-hosted agents to function correctly, particularly when executed within automations. Ensure this key is available to both the app service and the automation worker.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        LITELLM_DB_READY_TIMEOUT_SECONDS
+      </td>
+
+      <td>
+        The duration in seconds to wait for the internal LiteLLM database to become ready during startup. The default is 60 seconds. If the timeout is reached, the container will continue to start but AI features will be unavailable.
       </td>
     </tr>
   </tbody>
