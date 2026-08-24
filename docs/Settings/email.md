@@ -84,11 +84,11 @@ For Budibase to send emails, you must configure an SMTP Mail Server, such as Gma
 
     <tr>
       <td>
-        From email address
+        Default from email address
       </td>
 
       <td>
-        The email address your onboarding emails are sent from.
+        Used by system emails and SMTP automations that do not specify a Send From address. Your SMTP provider may restrict or rewrite this address.
       </td>
 
       <td>
@@ -120,7 +120,7 @@ For Budibase to send emails, you must configure an SMTP Mail Server, such as Gma
       </td>
 
       <td>
-        AKIAX5ZKDVGGJ2SASAHT2M7Z
+        AKIAX5ZKVGGJ2SASAHT2M7Z
       </td>
     </tr>
 
