@@ -19,6 +19,24 @@ Example for a support triage Agent:
 * Required: list tickets, get ticket, update ticket
 * Not required: delete ticket, manage users, publish apps
 
+## Configuring tools for operations
+
+Tools are configured at the **Operation** level. While Budibase automatically discovers available tools from your data sources and automations, you must explicitly enable and configure them for each operation.
+
+### Adding tools
+
+You can add tools to an operation in two ways:
+
+1.  **Rail Actions**: Click the **Add tools** button in the Tools section of the operation rail.
+2.  **Editor Autocomplete**: While writing instructions, type `{{` and select **Add tool** from the autocomplete menu. This allows you to configure and insert a tool binding in a single step.
+
+### Execution principals
+
+When a tool is enabled, you can configure its **Execution principal**:
+
+*   **Requester**: The tool runs using the permissions of the user interacting with the Agent. This is the safest default for most user-facing tools.
+*   **Admin**: The tool runs with full administrative permissions. Use this sparingly for background tasks or strictly controlled operations.
+
 ## Read vs write tools
 
 Separate read and write capabilities in both tooling and instructions.
@@ -41,7 +59,7 @@ Use one of these patterns:
 1. Read-only Agent
    1. The agent can retrieve and analyse data, but cannot modify anything. This is a default starting point. It’s the safest option and ideal for validation, reporting, auditing, and insight generation.
 2. Read + controlled updates
-   1. The agent can read data and perform limited, explicitly scoped write operations. Writes should be constrained (e.g., specific fields, specific objects, or behind approval workflows) and validated through tests before being enabled in production.
+   1. The agent can read data and perform limited, explicitly scoped write operations. Writes should be constrained (e.g., specific fields, specific objects, or be behind approval workflows) and validated through tests before being enabled in production.
 3. Read + updates + automation triggers
    1. The agent can read data, make approved updates, and trigger downstream workflows or automations. This pattern is suitable for more mature, production-grade use cases where the agent is trusted to take actions that may have cascading effects.
 
