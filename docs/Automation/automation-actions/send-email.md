@@ -40,7 +40,7 @@ All of these settings support [Bindings](doc:data-in-automations). For email add
       </td>
 
       <td>
-        The to / from email addresses. Supports display names, e.g. `Budibase <hello@budibase.com>`.
+        The destination and source email addresses. The **From** address is optional and overrides the **Default from email address** in your SMTP settings. Supports display names, e.g. `Budibase <hello@budibase.com>`.
       </td>
     </tr>
 
@@ -105,11 +105,11 @@ These files will be attached to the email sent. Images attached this way may be 
 
 Alternatively, you can switch the "Use bindings" toggle to open the bindings draw. You should return an array of objects that match this pattern: `{url: string, filename: string}`. This is useful if you have an unspecified or undetermined number of attachments that you wish to attach.
 
-```javascript JavaScript
+javascript JavaScript
 return $("trigger.row.photos").map(photo => {
   return {url: photo.url, filename: photo.name}
 })
-```
+
 
 ***
 
@@ -133,11 +133,11 @@ Click the `+` button to add the **Send Email (SMTP)** action step.
 
 <Image align="center" src="https://files.readme.io/3bb36ca44c54014cb2e0efc63acc10001b644c6c16ae4fd44ae1ac102ab2c05d-Screenshot_2025-04-15_at_08.54.16.png" />
 
-Set *Send To* as `{{ trigger.fields.email_address }}`, and provide a *Send From* address and *Email Subject*.
+Set *Send To* as `{{ trigger.fields.email_address }}`.
 
 For the *HTML Contents* specify the email body text:
 
-```html HTML Contents
+html HTML Contents
 Hi {{ trigger.fields.first_name }},
 <p>
 The following item has been assigned to you:
@@ -153,7 +153,7 @@ The following item has been assigned to you:
     <td>{{ trigger.fields.price }}</td>
   </tr>
 </table>
-```
+
 
 <Image align="center" src="https://files.readme.io/107aa92d9aff7cbbc774af3cd38ae9ad01b7cbf84d153e8bf42c771cfbe27a3b-Screenshot_2025-04-15_at_08.55.34.png" />
 
