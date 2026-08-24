@@ -89,7 +89,7 @@ By default, Budibase provides a structured instruction template to help you defi
 
 For now we will use the below instructions:
 
-```markdown instructions
+markdown instructions
 **Agent role**
 You are a Service Desk AI Agent responsible for managing support tickets.
 
@@ -117,21 +117,25 @@ When categorising or prioritising, return structured JSON:
 - Only escalate tickets with High priority
 - Be concise and professional
 - Use British English where possible
-```
+
 
 After configuring and adding the above instructions, run a test and confirm that everything is working.
 
 ### Adding tools
 
-Tools allow an Agent to retrieve and modify real data inside your Workspace.
-
-When you connect data sources to an Agent, Budibase automatically makes relevant operations available as tools. As your Workspace grows, your Agent can be granted access to more tools, but it’s important to only enable what’s necessary for the task.
+Tools allow an Agent to retrieve and modify real data inside your Workspace. You must explicitly enable each tool an operation needs.
 
 For this example, we’ll give our Agent access to three tools from the Tickets table:
 
 * **Budibase: Tickets.List Rows** - Retrieves multiple tickets
 * **Budibase: Tickets.Get Row** - Retrieves a specific ticket
 * **Budibase: Tickets.Update Row** - Updates fields on an existing ticket
+
+To add these tools:
+1. In the instructions editor, type `{{` to open the autocomplete menu.
+2. Select **Add tool**.
+3. Search for and select the required tool (e.g., `Tickets.List Rows`).
+4. Configure the **Execution principal** (use **Requester** for this guide) and click **Add tool**.
 
 Together, these allow the Agent to:
 
@@ -158,11 +162,11 @@ For more complex configurations, you can use the **Advanced setup** option withi
 
 #### Updating our instructions
 
-Once these tools and knowledge sources are enabled, Budibase injects them into the Agent’s execution context. We now need to guide the Agent on when to use them.
+Once these tools and knowledge sources are enabled, we need to guide the Agent on when to use them. 
 
 Here is our updated instruction prompt:
 
-```markdown instructions
+markdown instructions
 **Agent role**
 You are a Service Desk AI Agent responsible for managing support tickets.
 
@@ -175,7 +179,7 @@ You receive ticket data, including Title, Description, Status, and Priority.
 {{ budibase.Tickets.update_row }}
 
 **Actions**
-- Categorise new tickets
+- Categorise new tickets.
 - Suggest a priority level (Low, Medium, High)
 - Escalate tickets marked as urgent
 - Answer questions about ticket status
@@ -197,7 +201,7 @@ When categorising or prioritising, return structured JSON:
 - Only escalate tickets with High priority
 - Be concise and professional
 - Use British English
-```
+
 
 Optionally, test again with some data and see how it handles the process.
 
