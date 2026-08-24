@@ -23,10 +23,24 @@ REST queries are configured in API Editor for a saved REST connection.
 7. Configure Params, Headers, Body, and Bindings
 8. Select an auth config (if required)
 9. Click **Send**
-10. Validate response and schema
+10. Validate request, response, and schema
 11. Click **Save Query**
 
 You can also start from **Workspace Settings > Connections > APIs** and click **Open in API Editor** on an existing connection.
+
+## Inspecting requests and responses
+
+After clicking **Send**, the side panel displays the results of your query. You can toggle between two views using the switcher at the top of the panel:
+
+### Response view
+Displays the status code, execution time, and payload size. You can inspect the raw response body, view the generated schema, and configure a transformer if needed.
+
+### Request view
+Displays the exact HTTP request that Budibase sent to the endpoint, including the final URL, headers, query parameters, and body. 
+
+To protect your security, Budibase automatically sanitizes this preview:
+* **Credentials**: Sensitive headers like `Authorization`, `Cookie`, or `x-api-key` are redacted and displayed as badges (e.g., `Auth token` or `Redacted`).
+* **Environment variables**: Any environment variables used in the query are displayed as their variable name (e.g., `{{ env.API_KEY }}`) rather than their resolved secret value.
 
 ## Query fields reference
 
@@ -46,8 +60,9 @@ You can also start from **Workspace Settings > Connections > APIs** and click **
 Before first use:
 
 1. Send query and confirm status code
-2. Validate response shape matches expected schema
-3. Save query
+2. Inspect the **Request** to ensure bindings and headers are correctly formed
+3. Validate response shape matches expected schema
+4. Save query
 
 Before production use:
 
@@ -57,7 +72,7 @@ Before production use:
 
 ## Transformer example (flatten nested response)
 
-```javascript
+javascript
 const from = data.from
 const to = data.to
 
@@ -67,7 +82,7 @@ return {
   toId: to.id,
   toSections: to.sections,
 }
-```
+
 
 After applying a transformer:
 
