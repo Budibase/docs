@@ -72,7 +72,7 @@ Before production use:
 
 ## Transformer example (flatten nested response)
 
-javascript
+```javascript
 const from = data.from
 const to = data.to
 
@@ -82,7 +82,7 @@ return {
   toId: to.id,
   toSections: to.sections,
 }
-
+```
 
 After applying a transformer:
 
