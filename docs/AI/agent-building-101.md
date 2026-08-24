@@ -89,7 +89,7 @@ By default, Budibase provides a structured instruction template to help you defi
 
 For now we will use the below instructions:
 
-markdown instructions
+```markdown instructions
 **Agent role**
 You are a Service Desk AI Agent responsible for managing support tickets.
 
@@ -117,7 +117,7 @@ When categorising or prioritising, return structured JSON:
 - Only escalate tickets with High priority
 - Be concise and professional
 - Use British English where possible
-
+```
 
 After configuring and adding the above instructions, run a test and confirm that everything is working.
 
@@ -149,7 +149,8 @@ Together, these allow the Agent to:
 
 In addition to tools, Agents can use **Knowledge Sources** to answer questions based on external documents or sites. This is commonly referred to as RAG (Retrieval-Augmented Generation).
 
-> [!NOTE]
+> 📘 NOTE
+>
 > Knowledge features require the `GEMINI_API_KEY` to be configured in your Budibase environment. If this key is missing, knowledge actions will be disabled in the builder.
 
 #### Connecting SharePoint Knowledge
@@ -169,7 +170,7 @@ Once these tools and knowledge sources are enabled, we need to guide the Agent o
 
 Here is our updated instruction prompt:
 
-markdown instructions
+```markdown instructions
 **Agent role**
 You are a Service Desk AI Agent responsible for managing support tickets.
 
@@ -204,7 +205,7 @@ When categorising or prioritising, return structured JSON:
 - Only escalate tickets with High priority
 - Be concise and professional
 - Use British English
-
+```
 
 Optionally, test again with some data and see how it handles the process.
 
@@ -217,7 +218,7 @@ When an agent has multiple live operations, Budibase uses an internal router to 
 - **Summarize capabilities** if the user asks broad questions like "What can you help me with?" or requests an overview of the agent's tasks.
 - **Proceed without an operation** if the request is unrelated to any defined capability.
 
-you do not need to manually configure this routing; it is handled automatically based on the names and instructions you provide for each operation.
+You do not need to manually configure this routing; it is handled automatically based on the names and instructions you provide for each operation.
 
 ### Testing the agent
 
