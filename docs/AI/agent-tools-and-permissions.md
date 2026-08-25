@@ -27,12 +27,12 @@ Tools are configured at the **Operation** level. While Budibase automatically di
 
 You can add tools to an operation in two ways:
 
-1.  **Rail Actions**: Click the **Add tools** button in the Tools section of the operation rail.
-2.  **Editor Autocomplete**: While writing instructions, type `{{` and select **Add tool** from the autocomplete menu. This allows you to configure and insert a tool binding in a single step.
+1.  **Rail Actions**: Click the **Add tools** button in the Tools section of the operation rail. When you select a tool, a configuration modal will appear allowing you to set its execution principal before it is added.
+2.  **Editor Autocomplete**: While writing instructions, type `{{` and select **Add tool** from the autocomplete menu. This will open the configuration modal and insert the tool binding in a single step.
 
 ### Execution principals
 
-When a tool is enabled, you can configure its **Run as** (Execution principal) setting in the tool configuration:
+When a tool is enabled, you can configure its **Run as** (Execution principal) setting. The current principal is displayed below the tool name in the operation rail. To change the configuration, simply click the tool in the list to re-open the configuration modal.
 
 *   **Requester**: The tool runs using the permissions of the user interacting with the Agent. This is the safest default for most user-facing tools.
 *   **Admin (elevated)**: The tool runs with full administrative permissions. Use this sparingly for background tasks or strictly controlled operations.
