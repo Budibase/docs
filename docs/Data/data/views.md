@@ -88,6 +88,8 @@ View calculations allow you to run certain mathematical operations on your data,
 
 Average, Sum, Minimum, and Maximum must all be performed on number columns. When used independently they will return a single row, and when used in conjunction with a "Group By" they will return a row for each unique value in the group by column.
 
+Columns supported for "Group By" include standard fields (Text, Number, Options, etc.) and **Static Formula** fields. Dynamic formulas are not supported for grouping.
+
 For example - "Sum Total Revenue" configured as "Calculate the `Sum` of `Total Revenue` Group By `None`" will return a single row, totalling all revenue.
 
 The first example returns a single total for all revenue without any grouping.
@@ -124,7 +126,7 @@ Inside the repeater block, add a container and nest inside it 3 Headline compone
 
 The repeater example is built from a container with three nested Headline components.
 
-Set the first headline component to `{{ add New Repeater Block.Row Index 1 }}`  - This is taking the Row Index and adding 1 to it. (Index starts counting from Zero, so in order to use row-index as the rankings we must add 1)
+Set the first headline component to `{{ add New Repeater Block.Row Index 1 }}`   - This is taking the Row Index and adding 1 to it. (Index starts counting from Zero, so in order to use row-index as the rankings we must add 1)
 
 Set the second headline component to `{{ New Repeater Block.total_revete_by_country.Sum Total Revenue }}`  - this fetches the sum total of the revenue. You can then set the third headline component to`{{ New Repeater Block.total_revete_by_country.Country }}` , and just like that we've built a basic leaderboard for Total Revenue by Country. 
 
