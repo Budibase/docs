@@ -86,6 +86,18 @@ Use one of these patterns:
 
 Start with `read-only`, then add writes only when validated by tests.
 
+## Escalation and Approvals
+
+You can configure an operation to require human approval before the Agent executes a tool or completes a task. This is managed in the **Approvals** section of the operation settings.
+
+### Configuring recipients
+
+To choose who gets notified when an operation escalates, you must first enable at least one messaging channel in the Agent's **Deployment** tab. 
+
+*   **Requirement**: You cannot select escalation recipients until a deployment (e.g., Slack, MS Teams) is configured with a valid endpoint URL.
+*   **Provider Filtering**: Only providers with active deployments will be available as options in the recipient selector.
+*   **Channel Lookup**: When selecting a channel, Budibase fetches a paginated list of available channels from your configured provider. Ensure your bot has the necessary permissions (e.g., `groups:read` for Slack or `Channel.ReadBasic.All` for Teams) to list these channels.
+
 ## Guardrails for write actions
 
 When enabling `update` tools, include rules like:
