@@ -20,9 +20,9 @@ You can run Budibase on your own infra using:
 * [Kubernetes](doc:kubernetes-k8s)
 * [DigitalOcean](doc:digitalocean).
 
-Every self-hosted Budibase platform comes by default with some settings which we recommend you familiarise yourself with as well as updating to suit your needs. All of these settings are passed to your cluster through the use of environment variables. In this section, we'll cover the purpose of each of these.
+Every self-hosted Budibase platform comes by default with some settings which we recommend you familiarize yourself with as well as updating to suit your needs. All of these settings are passed to your cluster through the use of environment variables. In this section, we'll cover the purpose of each of these.
 
-It should be noted that if you wish to modify any of these settings then you will need to restart your Budibase platform for it to recognise these new settings. 
+It should be noted that if you wish to modify any of these settings then you will need to restart your Budibase platform for it to recognize these new settings. 
 
 ### Rotating secrets
 
@@ -400,11 +400,31 @@ The full set of variables can be found in our repo, in the file [.env](https://r
 
     <tr>
       <td>
-        BBAI_LITELLM_KEY
+        BBAI_LITELM_KEY
       </td>
 
       <td>
         The virtual key used for Budibase AI services. This key is required for self-hosted agents to function correctly, particularly when executed within automations. Ensure this key is available to both the app service and the automation worker.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        DISABLE_SOURCE_MAPS
+      </td>
+
+      <td>
+        When set to '1', this disables source maps in the apps container, reducing the memory footprint by approximately 150MB per process.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        CLUSTER_INSTANCES
+      </td>
+
+      <td>
+        Allows you to override the number of worker instances started in cluster mode (when `CLUSTER_MODE` is enabled). Defaults to 'max' (one per CPU core).
       </td>
     </tr>
   </tbody>
