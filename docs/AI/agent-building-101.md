@@ -79,18 +79,22 @@ Onto creating our first Agent. Make sure you have done the initial setup of sele
 1. Click on the **Agents** link on the left side of the screen
 2. Click the **+ New Agent** button at the top right of your screen
 3. Provide a name. We're going with **Service Desk Agent**
-4. This will redirect you to a new screen specifically for your Agent
+4. This will redirect you to the Agent configuration screen.
 
 ### Configuring instructions
 
-Before configuring instructions, ensure your Agent is connected to an LLM. If you haven’t done this yet, click Connect AI Model at the top of the screen. Alternatively, if you have already set this up, select the LLM you are using. More information on connecting an LLM can be found [here](doc:agents-config).
+Agents perform tasks through **Operations**. An Agent can have one or many operations, each with its own set of instructions and tools. To get started, we need to create our first operation:
 
-By default, Budibase provides a structured instruction template to help you define your Agent clearly. More information on this can be found [here](doc:agent-instructions-guide#recommended-template).
+1. In the **Operations** section of the Agent configuration, click **Add operation**.
+2. Give your operation a name (e.g., "Support Triage") and click **Create**.
+3. You will be navigated to the operation detail page.
+
+By default, Budibase provides a structured instruction template to help you define your operation clearly. More information on this can be found [here](doc:agent-instructions-guide#recommended-template).
 
 For now we will use the below instructions:
 
 ```markdown instructions
-**Agent role**
+**Operation role**
 You are a Service Desk AI Agent responsible for managing support tickets.
 
 **Inputs**
@@ -149,7 +153,7 @@ Together, these allow the Agent to:
 
 In addition to tools, Agents can use **Knowledge Sources** to answer questions based on external documents or sites. This is commonly referred to as RAG (Retrieval-Augmented Generation).
 
-> 📘 NOTE
+> 💡 NOTE
 >
 > Knowledge features require the `GEMINI_API_KEY` to be configured in your Budibase environment. If this key is missing, knowledge actions will be disabled in the builder.
 
@@ -157,7 +161,7 @@ In addition to tools, Agents can use **Knowledge Sources** to answer questions b
 
 You can quickly add SharePoint sites as a knowledge source without manually configuring a REST connector:
 
-1. In the Agent builder, go to the **Knowledge** tab.
+1. In the operation detail page, go to the **Knowledge** tab in the settings rail on the right.
 2. Click **Add source** and select **SharePoint**.
 3. If you don't have an existing connection, enter your **Directory (tenant) ID**, **Application (client) ID**, and **Client secret**.
 4. Budibase will automatically create the connection and allow you to select the SharePoint sites you wish to sync.
@@ -171,7 +175,7 @@ Once these tools and knowledge sources are enabled, we need to guide the Agent o
 Here is our updated instruction prompt:
 
 ```markdown instructions
-**Agent role**
+**Operation role**
 You are a Service Desk AI Agent responsible for managing support tickets.
 
 **Inputs**
@@ -211,7 +215,7 @@ Optionally, test again with some data and see how it handles the process.
 
 ### Managing multiple operations
 
-As your agent grows more complex, you can define multiple **Operations**, each with its own niche instructions and set of tools. 
+As your agent grows more complex, you can define multiple **Operations**, each with its own dedicated detail page containing its own instructions, tools, and knowledge. 
 
 When an agent has multiple live operations, Budibase uses an internal router to detect the intent of the user's request. It will:
 - **Select a specific operation** if the request clearly matches one operation's focus.
