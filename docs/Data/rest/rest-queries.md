@@ -14,19 +14,33 @@ Create REST queries in the API Editor for a saved REST connection.
 
 ## Create a query
 
-1. Open the API builder.
-2. Click **New API** in the sidebar to create a draft query.
-3. Select the API connection to use.
-4. Enter a clear query name.
-5. Set the HTTP method.
-6. Enter the endpoint path or full URL. Full URLs must include the protocol, such as `https://example.com`, and must stay on the datasource origin.
-7. Configure Params, Headers, Body, and Bindings.
-8. Select an auth config, if required.
-9. Click **Send**.
-10. Validate the response and schema.
-11. Click **Save Query**.
+1. Open the API builder
+2. Click **New API** in the sidebar to create a draft query
+3. Select the API connection to use
+4. Enter a clear query name
+5. Set HTTP method
+6. Enter endpoint path or full URL. Note that full URLs must include the protocol (e.g., `https://example.com`) and must match the origin (protocol and host) of the datasource base URL.
+7. Configure Params, Headers, Body, and Bindings
+8. Select an auth config (if required)
+9. Click **Send**
+10. Validate request, response, and schema
+11. Click **Save Query**
 
 You can also start from **Workspace Settings > Connections > APIs** and click **Open in API Editor** on an existing connection.
+
+## Inspecting requests and responses
+
+After clicking **Send**, the side panel displays the results of your query. You can toggle between two views using the switcher at the top of the panel:
+
+### Response view
+Displays the status code, execution time, and payload size. You can inspect the raw response body, view the generated schema, and configure a transformer if needed.
+
+### Request view
+Displays the exact HTTP request that Budibase sent to the endpoint, including the final URL, headers, query parameters, and body. 
+
+To protect your security, Budibase automatically sanitizes this preview:
+* **Credentials**: Sensitive headers like `Authorization`, `Cookie`, or `x-api-key` are redacted and displayed as badges (e.g., `Auth token` or `Redacted`).
+* **Environment variables**: Any environment variables used in the query are displayed as their variable name (e.g., `{{ env.API_KEY }}`) rather than their resolved secret value.
 
 ## Query fields reference
 
@@ -45,9 +59,10 @@ You can also start from **Workspace Settings > Connections > APIs** and click **
 
 Before first use:
 
-1. Send the query and confirm the status code.
-2. Validate the response shape matches the expected schema.
-3. Save the query.
+1. Send query and confirm status code
+2. Inspect the **Request** to ensure bindings and headers are correctly formed
+3. Validate response shape matches expected schema
+4. Save query
 
 Before production use:
 

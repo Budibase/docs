@@ -20,7 +20,11 @@ Use the Date Picker to select a `Date`, `DateTime`, or `Time` value.
 
 ## Picker types
 
-Use the settings panel to choose one of these modes:
+* **Date/time**: ☑️ Show Time
+* **Date**: 🔘 Show Time + 🔘 Time Only
+* **Time**: ☑️ Time Only 
+
+When configuring a **Date** (date only) picker, you can also use the **Set time to** setting to specify a fixed time (e.g., `23:59:59`) that will be saved alongside the selected date. This is particularly useful for ensuring that "Less than or equal to" filters include records from the entire selected day.
 
 * Date and time
 * Date only

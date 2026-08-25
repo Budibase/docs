@@ -147,6 +147,10 @@ Together, these allow the Agent to:
 
 In addition to tools, Agents can use **Knowledge Sources** to answer questions based on external documents or sites. This is commonly referred to as RAG (Retrieval-Augmented Generation).
 
+> 📘 NOTE
+>
+> Knowledge features require the `GEMINI_API_KEY` to be configured in your Budibase environment. If this key is missing, knowledge actions will be disabled in the builder.
+
 #### Connecting SharePoint Knowledge
 
 You can quickly add SharePoint sites as a knowledge source without manually configuring a REST connector:
@@ -228,7 +232,7 @@ For each test, check:
 
 * **Tool usage**: The Agent should use list/get tools to retrieve live data, and only use update when explicitly asked.
 * **Output format**: Classification responses should follow the JSON schema we defined.
-* **Data accuracy**: Values returned should match the row data in your `Tickets` table.
+* **Data acccuracy**: Values returned should match the row data in your `Tickets` table.
 * **Safety rules**: The Agent should refuse to update or escalate unless your prompt asks it to.
 
 If behaviour is inconsistent, tighten your instructions. For example:
