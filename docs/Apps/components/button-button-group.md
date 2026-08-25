@@ -24,14 +24,14 @@ Use the button component to encourage users to take action and make choices with
 
 ## Customizing the button
 
-| Setting  | Description                                                                                                                                                                  |
-| :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Name     | Rename how the component reads in the tree.                                                                                                                                  |
-| Text     | Update the button text                                                                                                                                                       |
-| Variant  | Budibase buttons come in a number of different variants including, Action, Primary, Secondary, Warning, and Over Background (for colored backgrounds).                       |
-| Size     | Change the size of the button (Medium and Large)                                                                                                                             |
-| Quiet    | Whether the button should be displayed with a quiet style.                                                                                                                   |
-| Disabled | Whether the button is disabled.                                                                                                                                              |
+| Setting  | Description                                                                                                                                                                                                                                                                                             |
+| :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Name     | Rename how the component reads in the tree.                                                                                                                                                                                                                                                             |
+| Text     | Update the button text                                                                                                                                                                                                                                                                                  |
+| Variant  | Budibase buttons come in a number of different variants including, Action, Primary, Secondary, Warning, and Over Background (for colored backgrounds).                                                                                                                                                  |
+| Size     | Change the size of the button (Medium and Large)                                                                                                                                                                                                                                                        |
+| Quiet    | Whether the button should be displayed with a quiet style.                                                                                                                                                                                                                                              |
+| Disabled | Whether the button is disabled.                                                                                                                                                                                                                                                                         |
 | On Click | Clicking this button will bring up the Actions panel. In the Actions panel, you can configure and chain [Actions](doc:actions) in response to a user clicking on the button. |
 
 ## Adding buttons to table rows
@@ -40,7 +40,7 @@ Click on the table component in your component tree and scroll to the bottom of 
 
 # Button Group
 
-The Button Group component behaves in much the same way as a single Button component, with the added benefit of being able to configure and style multiple buttons at once. Adding a new button here will create a new button in just the same way as a Button component on it's own, but it will be part of this group. We can configure the button's actions and appearance using the cog-icon in the list of buttons. We can also drag-and-drop using the grab-handle (dots) to the left of the cog, to re-order the buttons, which will change the order they appear on the screen, as well as in the list.
+The Button Group component behaves in much the same way as a single Button component, with the added benefit of being able to configure and style multiple buttons at once. Adding a new button here will create a new button in just the same way as a Button component on it's own, but it will be part of this group. We can configure the button's actions and appearance using the cog-icon in the list of buttons. We can also duplicate an existing button using the copy-icon, or drag-and-drop using the grab-handle (dots) to the left of the cog, to re-order the buttons, which will change the order they appear on the screen, as well as in the list.
 
 In the button settings drawer, each button exposes controls such as `Text`, `Variant`, `Size`, `Quiet`, `Disabled`, `Icon`, `Gap`, and `On click`. For example, a `Submit Form` button might use `Variant: Action`, `Size: Medium`, with related actions for submitting the form.
 
