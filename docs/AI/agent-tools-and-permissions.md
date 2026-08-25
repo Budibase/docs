@@ -114,7 +114,7 @@ This ensures that reorganizing your data or APIs does not break your existing Ag
 
 To ensure compatibility with AI providers (like OpenAI), tool names are subject to a **64-character limit**. 
 
-If a tool name derived from an entity name (like a table or query) exceeds this limit, Budibase automatically truncates the name and appends a unique hash to prevent collisions. For example, a tool for a very long table name might appear as `VeryLongTableName_a1b2c3d4e5f6_get_row` instead of the full name. 
+Budibase uses stable, unique identifiers for tool bindings to ensure they remain consistent even if labels are long or names change. If a tool name derived from an entity name (like a table or query) is exceptionally long, Budibase may use a shortened version with a unique suffix to prevent collisions and stay within provider limits.
 
 Keep table and query names reasonably concise to ensure tool names remain human-readable for the Agent and in activity logs.
 
