@@ -27,15 +27,21 @@ Tools are configured at the **Operation** level. While Budibase automatically di
 
 You can add tools to an operation in two ways:
 
-1.  **Rail Actions**: Click the **Add tools** button in the Tools section of the operation rail. When you select a tool, a configuration modal will appear allowing you to set its execution principal before it is added.
+1.  **Rail Actions**: Click the **Add tools** button in the Tools section of the operation rail. When you select a tool, a configuration modal will appear allowing you to set its execution principal and escalation rules before it is added.
 2.  **Editor Autocomplete**: While writing instructions, type `{{` and select **Add tool** from the autocomplete menu. This will open the configuration modal and insert the tool binding in a single step.
 
 ### Execution principals
 
-When a tool is enabled, you can configure its **Run as** (Execution principal) setting. The current principal is displayed below the tool name in the operation rail. To change the configuration, simply click the tool in the list to re-open the configuration modal.
+When a tool is enabled, you can configure its **Run as** (Execution principal) setting in the tool configuration modal. This determines the role used to access data and perform the action.
 
 *   **Requester**: The tool runs using the permissions of the user interacting with the Agent. This is the safest default for most user-facing tools.
 *   **Admin (elevated)**: The tool runs with full administrative permissions. Use this sparingly for background tasks or strictly controlled operations.
+
+### Tool Escalation
+
+You can require human approval for specific tools by enabling **Escalation** in the tool configuration modal. When enabled, the Agent will pause and request approval before the tool is executed.
+
+Tools with configured approvals display a status indicator (e.g., "1 approval") in the operation rail.
 
 ## Agent data scope
 
@@ -88,11 +94,11 @@ Start with `read-only`, then add writes only when validated by tests.
 
 ## Escalation and Approvals
 
-You can configure an operation to require human approval before the Agent executes a tool or completes a task. This is managed in the **Approvals** section of the operation settings.
+Approvals ensure that high-impact actions are reviewed by a human. This can be configured at the tool level or via the legacy `escalate` tool for instruction-based triggers.
 
 ### Configuring recipients
 
-To choose who gets notified when an operation escalates, you must first enable at least one messaging channel in the Agent's **Deployment** tab. 
+To choose who gets notified when an action requires approval, you must first enable at least one messaging channel in the Agent's **Deployment** tab. 
 
 *   **Requirement**: You cannot select escalation recipients until a deployment (e.g., Slack, MS Teams) is configured with a valid endpoint URL.
 *   **Provider Filtering**: Only providers with active deployments will be available as options in the recipient selector.
