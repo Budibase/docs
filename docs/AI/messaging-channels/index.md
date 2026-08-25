@@ -19,7 +19,7 @@ Make sure you have:
 
 ## Link requirement for external channels
 
-Before a user can chat with an agent in Slack, Microsoft Teams, or Discord, they must link their messaging identity to a Budibase account.
+Before a user can chat with an agent in Slack or Microsoft Teams, they must link their messaging identity to a Budibase account.
 
 Use `/link` (Teams also accepts `link`) in the channel conversation to start linking.
 
@@ -36,7 +36,6 @@ If a user sends a normal message before linking, Budibase sends a private link p
 
 * [Slack](doc:messaging-channels-slack)
 * [Microsoft Teams](doc:messaging-channels-microsoft-teams)
-* [Discord (deprecated)](doc:messaging-channels-discord)
 
 ## Important endpoint note
 
@@ -44,6 +43,5 @@ Budibase channel webhooks are validated against the production workspace route. 
 
 ## Related guides
 
-* [Agent chat (deprecated)](doc:agent-chat)
-* [Agent building 101](doc:agent-building-101)
+* [Agent building 101](doc:agent-id-building-101)
 * [Agent testing guide](doc:agent-testing-guide)
