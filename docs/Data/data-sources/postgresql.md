@@ -54,6 +54,20 @@ You will then be presented with a connection configuration modal. Fill in the co
 
 ![](https://files.readme.io/393148de5b4106e9443e3eacc9347c29e09d4f29d74e113e488fab6eb8213fc2-image.png)
 
+### Database Privileges
+
+When connecting to PostgreSQL, the user provided in the connection configuration must have sufficient privileges to read the database schema. 
+
+Specifically, the user needs:
+* **USAGE** privilege on the schema (e.g., `public`).
+* **SELECT** privilege on the tables you wish to import.
+
+If the user has `USAGE` privilege but is missing `SELECT` privilege, Budibase may be able to see that the tables exist but will be unable to read their columns. In this case, you will see an error message indicating that the user is likely missing `SELECT` privileges. To resolve this, grant select access to the user in your database:
+
+sql
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO your_user;
+
+
 Now we have the Postgres <Glossary>Datasource</Glossary> added, and the configuration page should be displayed. 
 
 Under the **Tables** section press `Fetch tables`. Tick `Fetch listed tables only` and provide the following table names:
@@ -239,7 +253,7 @@ To make sure we're pulling the co-ordinates of the first result, add the followi
 return data.results[0]?.geometry
 ```
 
-After clicking the `Send` button, your <Glossary>Schema</Glossary> should include the latitude and longitude. Make sure to also click the `Save` button!
+After clicking the `Send` button, your <Glossary>Schema</Glossary> should include the latitude and longitude. Make sure to also click the `Saved` button!
 
 ![](https://files.readme.io/f049f53-Screenshot_2023-02-08_at_13.24.05.png)
 
@@ -327,7 +341,7 @@ else if (rating === 'PG') {
 	return `${baseUrl}/parental_guidance_badge.svg`
 }
 else if (rating === 'PG-13') {
-	return `${baseUrl}/parens_strongly_cautioned_badge.svg`
+	return `${baseUrl}/parents_strongly_cautioned_badge.svg`
 
 }
 else if (rating === 'R') {
