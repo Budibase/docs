@@ -23,12 +23,13 @@ Make sure you have:
 2. Go to **Deployment**
 3. In **Messaging channels**, click **Manage** for **Microsoft Teams**
 4. Enter:
-   * **App ID (client ID)**
+   * **App ID (client ID)** - This must be a valid UUID provided by Azure.
    * **Client secret (value)**
    * **Directory (tenant) ID (Azure AD tenant ID)**
    * **Idle timeout (minutes)** (optional)
 5. Click **Save channel**
 6. Copy the generated **Messaging endpoint URL**
+7. Click **Download app package** to download a zip file containing the manifest and icons for your Teams bot. This package can be sideloaded into Microsoft Teams.
 
 ## Configure your Teams bot endpoint
 
