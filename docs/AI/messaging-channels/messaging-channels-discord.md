@@ -44,6 +44,12 @@ Make sure you have:
 
 When channel enable runs successfully, Budibase syncs `/ask`, `/new`, and `/link` commands.
 
+### Mentions and Security
+
+To prevent accidental mass pings, Agent replies and escalation notifications sent to Discord have `@everyone` and `@here` mentions disabled. 
+
+When an Agent resumes a conversation in a server channel, it will deliberately mention the user who initiated the request, but all other mention tokens in the message text (such as those quoted from stored data) will remain inert.
+
 ## Enable and verify
 
 1. In Budibase **Deployment**, confirm Discord is **Enabled**
