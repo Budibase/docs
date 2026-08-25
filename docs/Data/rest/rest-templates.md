@@ -2,7 +2,7 @@
 title: REST Templates
 deprecated: false
 hidden: false
-metatadata:
+metadata:
   robots: index
 ---
 REST templates provide connection starters and allow you to reuse OpenAPI specifications across your workspace. You can find them under **Settings > APIs > API Specs**.
