@@ -72,7 +72,7 @@ Now we have the Postgres <Glossary>Datasource</Glossary> added, and the configur
 
 Under the **Tables** section press `Fetch tables`. Tick `Fetch listed tables only` and provide the following table names:
 
-
+```
 category
 film_category
 film
@@ -84,7 +84,7 @@ store
 address
 city
 country
-
+```
 
 <Image alt="Fetch the checked tables from the list" src="https://files.readme.io/f35e0d96e5dc2ae6f42d01f3275fd579ef602afec4d07a9bf1aeae9aff4bcc28-image.png">
   Fetch the checked tables from the list
@@ -168,11 +168,11 @@ Select the city relationship as the datasource.
 
 Finally we can nest an [Image](doc:image) component within the City repeater block. Provide the following [JavaScript](doc:javascript) binding:
 
-javascript
+```javascript
 const countryName = $("City Repeater block.city.country")[0].primaryDisplay.toLowerCase();
 
 return `https://images.mapsofworld.com/${countryName}/${countryName}-flag.gif`;
-
+```
 
 The *primaryDisplay* property works here because the country name is the [table display column](https://docs.budibase.com/docs/budibasedb#selecting-the-display-column).
 
@@ -184,12 +184,12 @@ Adding two nested repeater blocks is not ideal for performance, and is also not 
 
 In the **Data** section add a query to your PostgreSQL datasource. Give it the name 'Get Country Names', give it a <Glossary>Binding</Glossary> or the **address\_id** with the query:
 
-sql
+```sql
 SELECT LOWER(country) as country_name FROM address a
 JOIN city on a.city_id = city.city_id
 JOIN country c ON c.country_id = city.country_id
 WHERE a.address_id = {{ address_id }}
-
+```
 
 ![](https://files.readme.io/941232a-Screenshot_2023-02-08_at_12.23.28.png)
 
@@ -205,9 +205,9 @@ Now back to the **Design** section, the two existing repeater blocks can be repl
 
 Finally the image URL can be set to the following Handlebars expression: 
 
-
+```
 https://images.mapsofworld.com/{{ Image Repeater block.Get Country Names.country_name }}/{{ Image Repeater block.Get Country Names.country_name }}-flag.gif
-
+```
 
 <Image alt="Custom query reduces the number of repeater blocks needed" align="center" src="https://files.readme.io/c9cebc1-Screenshot_2023-02-08_at_12.26.19.png">
   Custom query reduces the number of repeater blocks needed
@@ -221,9 +221,9 @@ I used the [OpenCage API](https://opencagedata.com/api), which you can sign up t
 
 Select the `GET` method and paste in the URL: 
 
-
+```
 https://api.opencagedata.com/geocode/v1/json
-
+```
 
 Add a binding called 'location' and give it a default value. Next add two params. One for your API **key**, and another for the **q** (query string). Click the lightning bolt icon to select the *location* binding.
 
@@ -249,9 +249,9 @@ Add a binding called 'location' and give it a default value. Next add two params
 
 To make sure we're pulling the co-ordinates of the first result, add the following to your [Transformer](doc:transformers):
 
-javascript Transformer
+```javascript Transformer
 return data.results[0]?.geometry
-
+```
 
 After clicking the `Send` button, your <Glossary>Schema</Glossary> should include the latitude and longitude. Make sure to also click the `Saved` button!
 
@@ -261,12 +261,12 @@ We will need to pull the **city** name and **country** name for a given **addres
 
 Click on the *Get Country Names* query under the PostgreSQL datasource. Update the query to pull back the city name as follows:
 
-sql
+```sql
 SELECT LOWER(country) as country_name, city FROM address a
 JOIN city on a.city_id = city.city_id
 JOIN country c ON c.country_id = city.country_id
 WHERE a.address_id = {{ address_id }}
-
+```
 
 The schema should now have two fields: one for the country, and one for the city. Make sure to run and save the query.
 
@@ -276,17 +276,17 @@ With the REST query set up, go back to the **Design** section. Within the *Detai
 
 Currently the heading is displaying the ID value of the store. This isn't very nice, so let's replace it with the store location. Replace the [Heading](https://docs.budibase.com/docs/displaying-text#headline) *Text* handlebars with the following: 
 
-
+```
 {{ Location Repeater block.Get Country Names.city }}
-
+```
 
 You can use the bindings helper on the left hand panel to insert this value. It is also unlikely that you would want *\_id* fields in the form, so go ahead and delete those.
 
 Next nest a [Data provider](doc:data-provider) under the Location repeater block, below the form. Set the datasource to REST query we added earlier, and click the cog icon to pass in the following binding for the query string param:
 
-
+```
 {{ Location Repeater block.Get Country Names.city }}, {{ Location Repeater block.Get Country Names.country_name }}
-
+```
 
 Finally nest an [Embedded Map](doc:map) underneath the REST query data provider. Choose it as the *Provider* and select the *lat* and *lng* keys.
 
@@ -330,7 +330,7 @@ First remove the **rating** field, and any of the fields that you do not wish to
 
 Above the recently exposed form, add an image component. Give it the following JavaScript *URL* binding:
 
-javascript JavaScript
+```javascript JavaScript
 let baseUrl = "https://www.motionpictures.org/wp-content/uploads/2018/03";
 const rating = $("Repeater.film.rating");
 
@@ -349,7 +349,7 @@ else if (rating === 'R') {
 }
 
 return `${baseUrl}/no_17_and_under_badge.svg`
-
+```
 
 As these images are white, you'll also want to edit the [Custom CSS](doc:custom-css) and give it a black background: `background-color: black;`. Also set a *width* and *height*, e.g. 256px \* 96px.
 
@@ -363,11 +363,11 @@ Within the film view, it would also be useful to show the user what the current 
 
 In the **Data** section add another custom SQL query.
 
-sql
+```sql
 select COUNT(*) from inventory
 WHERE film_id = {{ film_id }} and store_id = {{ store_id }}
 GROUP BY film_id
-
+```
 
 ![](https://files.readme.io/dfabd7a-Screenshot_2023-02-09_at_14.50.30.png)
 
@@ -395,9 +395,9 @@ This enhanced security does have a small drawback in reducing the flexibility of
 
 Let's say you have the following query:
 
-sql
+```sql
 select * from public."ServiceLog" where "ServiceDate" > NOW() - INTERVAL '2 years'
-
+```
 
 And you want to add bindings to make the `INTERVAL` adjustable. This can be done like so:
 
