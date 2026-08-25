@@ -174,7 +174,7 @@ Once these tools and knowledge sources are enabled, we need to guide the Agent o
 
 Here is our updated instruction prompt:
 
-markdown instructions
+```markdown instructions
 **Operation role**
 You are a Service Desk AI Agent responsible for managing support tickets.
 
@@ -209,7 +209,7 @@ When categorising or prioritising, return structured JSON:
 - Only escalate tickets with High priority
 - Be concise and professional
 - Use British English
-
+```
 
 Optionally, test again with some data and see how it handles the process.
 
