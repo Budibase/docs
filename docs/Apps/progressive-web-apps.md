@@ -1,6 +1,7 @@
 ---
-title: Progressive Web Apps 🔒
-excerpt: >-
+title: Progressive Web Apps 📱
+excerpt:
+ >-
   PWAs allow your users to install your app on their device similar to a native
   app
 deprecated: false
@@ -20,11 +21,11 @@ To turn your Budibase app into a Progressive Web App (PWA), open the app in the 
 
 ## App Details
 
-| Attribute   | Usage                                                                                                                                                                                                                                                                                             |
-| :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| App Name    | The title given to your app, which it will be referred to in most circumstances.                                                                                                                                                                                                                  |
+| Attribute   | Usage                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| App Name    | The title given to your app, which it will be referred to in most circumstances.                                                                                                                                                                                                                                                                                                                                           |
 | Short Name  | Used to specify a short name for your web application, which may be used when the full name is too long for the available space.(Not supported in Firefox) |
-| Description | Displayed in the modal which prompts the user to download the PWA                                                                                                                                                                                                                                 |
+| Description | Displayed in the modal which prompts the user to download the PWA                                                                                                                                                                                                                                                                                                                                                          |
 
 ## Appearance
 
@@ -39,6 +40,7 @@ When uploading your zip file, the following limits apply:
 * **Max file size**: 10MB per file
 * **Max total uncompressed size**: 50MB 
 * **Max directory depth**: 10 levels
+* **Symlinks**: Symlinks are not supported and will cause the upload to fail
 
 The example below 
 
