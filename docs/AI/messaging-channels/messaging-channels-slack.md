@@ -75,7 +75,7 @@ Invite the bot to channels you want it to serve, for example:
 3. Run `/link` and complete the Budibase account linking flow
 4. Send a message and confirm the agent responds
 
-Slack threads are used as conversation boundaries automatically.
+Slack threads are used as conversation boundaries automatically. Once an agent is engaged in a thread (e.g., via a mention), it will automatically process and respond to subsequent replies in that same thread, even without further mentions.
 
 If you send a message before linking, Budibase prompts you privately to complete account linking first.
 
