@@ -27,15 +27,21 @@ Tools are configured at the **Operation** level. While Budibase automatically di
 
 You can add tools to an operation in two ways:
 
-1.  **Rail Actions**: Click the **Add tools** button in the Tools section of the operation rail.
-2.  **Editor Autocomplete**: While writing instructions, type `{{` and select **Add tool** from the autocomplete menu. This allows you to configure and insert a tool binding in a single step.
+1.  **Rail Actions**: Click the **Add tools** button in the Tools section of the operation rail. When you select a tool, a configuration modal will appear allowing you to set its execution principal and escalation rules before it is added.
+2.  **Editor Autocomplete**: While writing instructions, type `{{` and select **Add tool** from the autocomplete menu. This will open the configuration modal and insert the tool binding in a single step.
 
 ### Execution principals
 
-When a tool is enabled, you can configure its **Run as** (Execution principal) setting in the tool configuration:
+When a tool is enabled, you can configure its **Run as** (Execution principal) setting in the tool configuration modal. This determines the role used to access data and perform the action.
 
 *   **Requester**: The tool runs using the permissions of the user interacting with the Agent. This is the safest default for most user-facing tools.
 *   **Admin (elevated)**: The tool runs with full administrative permissions. Use this sparingly for background tasks or strictly controlled operations.
+
+### Tool Escalation
+
+You can require human approval for specific tools by enabling **Escalation** in the tool configuration modal. When enabled, the Agent will pause and request approval before the tool is executed.
+
+Tools with configured approvals display a status indicator (e.g., "1 approval") in the operation rail.
 
 ## Agent data scope
 
@@ -50,12 +56,13 @@ When an Agent interacts with a table, it only sees plain-text and primitive data
 
 These exclusions apply to both the table schema (metadata) and the actual row data returned by tools.
 
-### Helper tool scoping
+### Restricted resource access
 
-Budibase provides helper tools like `list_tables` and `get_table` to help Agents discover workspace structure. These helpers are automatically scoped to the current operation:
+To prevent data leaks, Budibase automatically redacts tool metadata and result data when an Agent runs as a **Requester** who lacks sufficient permissions for a resource (such as a table).
 
-*   **list_tables**: Only returns tables that have at least one tool (e.g., `Search Rows`) explicitly enabled for the current operation.
-*   **get_table**: Can only retrieve details for tables that are already configured for the operation.
+*   **Redacted Metadata**: The Agent cannot see the resource's schema, field names, or specific configuration. Instead, it receives a generic tool description that prevents it from inferring the data structure.
+*   **Redacted Results**: For write operations (like creating or updating rows) on restricted resources, the tool returns a generic success message instead of the full object data to prevent unauthorized reading of records.
+*   **Discovery Tools**: Legacy discovery tools like `list_tables` and `get_table` are disabled by default. Agents should be provided with the specific tools they need for their tasks via the operation configuration.
 
 ## Read vs write tools
 
@@ -85,6 +92,18 @@ Use one of these patterns:
 
 Start with `read-only`, then add writes only when validated by tests.
 
+## Escalation and Approvals
+
+Approvals ensure that high-impact actions are reviewed by a human. This can be configured at the tool level or via the legacy `escalate` tool for instruction-based triggers.
+
+### Configuring recipients
+
+To choose who gets notified when an action requires approval, you must first enable at least one messaging channel in the Agent's **Deployment** tab. 
+
+*   **Requirement**: You cannot select escalation recipients until a deployment (e.g., Slack, MS Teams) is configured with a valid endpoint URL.
+*   **Provider Filtering**: Only providers with active deployments will be available as options in the recipient selector.
+*   **Channel Lookup**: When selecting a channel, Budibase fetches a paginated list of available channels from your configured provider. Ensure your bot has the necessary permissions (e.g., `groups:read` for Slack or `Channel.ReadBasic.All` for Teams) to list these channels.
+
 ## Guardrails for write actions
 
 When enabling `update` tools, include rules like:
@@ -113,7 +132,7 @@ This ensures that reorganizing your data or APIs does not break your existing Ag
 
 To ensure compatibility with AI providers (like OpenAI), tool names are subject to a **64-character limit**. 
 
-If a tool name derived from an entity name (like a table or query) exceeds this limit, Budibase automatically truncates the name and appends a unique hash to prevent collisions. For example, a tool for a very long table name might appear as `VeryLongTableName_a1b2c3d4e5f6_get_row` instead of the full name. 
+Budibase uses stable, unique identifiers for tool bindings to ensure they remain consistent even if labels are long or names change. If a tool name derived from an entity name (like a table or query) is exceptionally long, Budibase may use a shortened version with a unique suffix to prevent collisions and stay within provider limits.
 
 Keep table and query names reasonably concise to ensure tool names remain human-readable for the Agent and in activity logs.
 
