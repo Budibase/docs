@@ -12,14 +12,24 @@ next:
 ---
 The Agent step runs a pre-configured AI Agent from your workspace inside an automation flow. Unlike single-prompt steps, it can use configured tools to complete multi-step tasks.
 
-> 📘 You need to [enable AI](doc:quickstart-budibase-ai) to use this feature.
+> 💡 You need to [enable AI](doc:quickstart-budibase-ai) to use this feature.
 
 ## Before you start
 
 Create and test an Agent first, then reference it in your automation:
 
 * [Agent building 101](doc:agent-building-101)
-* [Agents Config](doc:agents-config)
+* [Agents Config](doc:agent-config)
+
+## Behavior
+
+Automation agents run in a **goal-oriented** mode. Unlike interactive chat agents, they are optimized to focus on completing the specific task defined in the prompt rather than maintaining a conversational tone.
+
+## Permissions
+
+By default, agents executed via an automation step run with **Admin** permissions. This allows them to perform system tasks and access data without being constrained by the triggering user's role.
+
+If the agent triggers a tool that requires human approval (escalation), the automation will pause. Once the action is approved by a human, the agent will resume execution using the permissions of the original automation requester.
 
 ## Example use cases
 

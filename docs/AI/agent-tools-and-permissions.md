@@ -37,6 +37,9 @@ When a tool is enabled, you can configure its **Run as** (Execution principal) s
 *   **Requester**: The tool runs using the permissions of the user interacting with the Agent. This is the safest default for most user-facing tools.
 *   **Admin (elevated)**: The tool runs with full administrative permissions. Use this sparingly for background tasks or strictly controlled operations.
 
+> 📘 **Automations**
+> Agents triggered via an **Automation step** execute as **Admin** by default. If a tool requires escalation, the Agent will pause and, once approved, will resume using the role of the original automation requester.
+
 ### Tool Escalation
 
 You can require human approval for specific tools by enabling **Escalation** in the tool configuration modal. When enabled, the Agent will pause and request approval before the tool is executed.
