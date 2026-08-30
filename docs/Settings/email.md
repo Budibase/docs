@@ -9,151 +9,73 @@ metadata:
   robots: index
 next:
   description: ''
+  pages:
+    - type: basic
+      slug: email-templates
+      title: Email Templates
 ---
-For Budibase to send emails, you must configure an SMTP Mail Server, such as Gmail SMTP or SendGrid. After you have set this up, you can [invite users](doc:user-management) and send emails using the email [Action](doc:automation-actions).
+Configure SMTP so Budibase can send emails for invitations, password recovery, and automation actions.
 
-### Email setup
+## Before you start
 
-<HTMLBlock>{`
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/719112528?h=3d06fb10c7&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="02-smtp-with-head"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-`}</HTMLBlock>
+Make sure you have:
 
-<Table align={["left","left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Property
-      </th>
+* An SMTP provider such as Gmail SMTP or SendGrid
+* The host, port, username, and password for that provider
+* Access to the Budibase admin portal
 
-      <th>
-        Description
-      </th>
+## Configure SMTP
 
-      <th>
-        Example answer
-      </th>
-    </tr>
-  </thead>
+1. Open the Budibase admin portal.
+2. Go to `Settings > Email`.
+3. Enter the SMTP details.
+4. Save the configuration.
 
-  <tbody>
-    <tr>
-      <td>
-        Host
-      </td>
+### SMTP settings
 
-      <td>
-        An SMTP email server will have an address (or addresses) that can be set and is generally formatted as smtp.serveraddress.com.
-      </td>
+| Setting | Purpose |
+| :--- | :--- |
+| Host | SMTP server address. |
+| Security type | Encryption mode used by the server. |
+| Port | SMTP port exposed by the server. |
+| From email address | Address used as the sender. |
+| Require sign-in | Enables SMTP authentication. |
+| Username | SMTP account username. |
+| Password | SMTP account password. |
 
-      <td>
-        email-smtp.eu-east-1.amazonaws.com
-      </td>
-    </tr>
+Use the values required by your provider. For modern SMTP setups, ports `587` and `2525` are the most common choices.
 
-    <tr>
-      <td>
-        Security type
-      </td>
+## Email templates
 
-      <td>
-        Both SSL and TLS facilitate email sending
-      </td>
+Budibase email templates are managed on a separate page.
 
-      <td>
-        None/STARTTLS
-      </td>
-    </tr>
+See [Email templates](doc:email-templates) for the available templates and how to edit them.
 
-    <tr>
-      <td>
-        Port
-      </td>
+## Use email in automations
 
-      <td>
-        An “SMTP port” refers to the specific part of the Internet address that’s used to transfer email.
+Once SMTP is configured, you can send email from automation actions.
 
-        If you run your own SMTP server you can find the configured SMTP port number and address from the SMTP server configuration.
+Common uses include:
 
-        Ports 25, 465, 587, or 2525 for SMTP have all been considered standard SMTP ports at some point, but only 587 or 2525  really should be considered for modern use.
-      </td>
+* User invitations
+* Password recovery
+* Workflow notifications
+* Approval and rejection messages
 
-      <td>
-        587
-      </td>
-    </tr>
+Keep sender addresses and template content aligned with your domain so mail is less likely to be flagged as suspicious.
 
-    <tr>
-      <td>
-        Default from email address
-      </td>
+## Troubleshooting
 
-      <td>
-        Used by system emails and SMTP automations that do not specify a Send From address. Your SMTP provider may restrict or rewrite this address.
-      </td>
+If email does not send:
 
-      <td>
-        [noreply@budibase.com](mailto:noreply@budibase.com)
-      </td>
-    </tr>
+* Confirm the SMTP host and port are correct
+* Check whether authentication is required
+* Verify the from address is allowed by the provider
+* Confirm the provider is not blocking the connection
 
-    <tr>
-      <td>
-        Require sign-in
-      </td>
+## Related guides
 
-      <td>
-        SMTP auth - some SMTP server hosts require auth to send email.
-      </td>
-
-      <td>
-        True udibase to se
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Username (visible when require sign-in is checked)
-      </td>
-
-      <td>
-        Username for SMTP server
-      </td>
-
-      <td>
-        AKIAX5ZKVGGJ2SASAHT2M7Z
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Password (visible when require sign-in is checked)
-      </td>
-
-      <td>
-        Password for SMTP server
-      </td>
-
-      <td>
-        Password!23IhopeNot
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
- 
-
-## Templates
-
-Budibase comes with three different email templates: Password Recovery, Invitation, and Welcome. In addition to that, you can also create custom templates.
-
-To edit a template, simply select it in the table. To insert dynamic content you can use the Bindings on the right side of the page. This makes it easier to include things such as the user's email, your organization's logo, or the name of your organization. When you're done hit the preview button to make sure it looks OK. Then hit save.
-
-The email templates work on all devices, email platforms, and themes (light and dark modes). Below is an image of the invitation email template.
-
-<Image border={false} src="https://files.readme.io/824b249-CleanShot_2022-04-12_at_15.22.54.png" title="CleanShot 2022-04-12 at 15.22.54.png" />
-
-## Video tutorial
-
-<HTMLBlock>{`
-<iframe src="https://player.vimeo.com/video/746819079?h=20d911a679&title=0&portrait=0&byline=0" style="margin-top: -100px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-`}</HTMLBlock>
+* [Automation actions](doc:automation-actions)
+* [User management](doc:user-management)
+* [Branding](doc:branding)
+* [Email templates](doc:email-templates)

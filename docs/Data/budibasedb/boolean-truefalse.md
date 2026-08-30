@@ -1,6 +1,6 @@
 ---
 title: Boolean (True/False)
-excerpt: ''
+excerpt: Store yes/no values in Budibase DB
 deprecated: false
 hidden: false
 metadata:
@@ -10,15 +10,22 @@ metadata:
 next:
   description: ''
 ---
-True/False is a data type that has one of two possible values (usually denoted as true/false, yes/no, Boolean). Within your UI, this is usually displayed in the form of a checkbox.
+Use a boolean column for values that only have two states, such as yes/no or true/false.
 
-## Creating a Boolean column
+## Create a boolean column
 
-1. First, click the `+` button along the top-right
-2. Give your column a name
-3. Choose 'Boolean' as your data type
-4. Click `Save Column`
+1. Open the table
+2. Click `Create column`
+3. Enter a column name
+4. Set the type to `Boolean`
+5. Save the column
 
-## Using the boolean data type
+## Use boolean columns
 
-In the Design section, you can pull in information from your true/false column, using the [Repeater](doc:repeater) component and [bindings](doc:introduction-to-bindings)
+Boolean columns are commonly shown as:
+
+* Checkboxes
+* Toggles
+* Conditional display rules
+
+Use them when a value should only be on or off.

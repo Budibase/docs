@@ -37,12 +37,6 @@ For more information, the full catalogue of helpers is available <a href="https:
 >
 > Handlebars helpers can be used in automations, the design, and data table formula columns, but they cannot be used as part of data source queries - as part of a query you can only use singular Handlebars statements like `{{ value }}`.
 
-Below is a video showing some of the capabilities of Budibase bindings in the design panel - showing how to add a repeater to make use of table data and then displaying some date values as well as carrying out some complex string manipulation.
-
-<HTMLBlock>{`
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/699021696?h=8154e27b30&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Repeater Bindings"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-`}</HTMLBlock>
-
 ## Tips and tricks
 
  It is important to remember that Handlebars does allow quite complex statements, which can make use of comparative logic (especially with our comparison helpers). Below we've detailed a few tips which should help you get started with bindings and Handlebars syntax.

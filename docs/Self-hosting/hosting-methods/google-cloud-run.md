@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-[Cloud Run](https://console.cloud.google.com/run) is Google’s managed container service and in this guide we will install Budibase with persistent storage using [Google File Store](https://cloud.google.com/filestore). We will also install using the gcloud cli tool but the console UI could be used as an alternative. 
+[Cloud Run](https://console.cloud.google.com/run) is Google’s managed container service. This guide installs Budibase with persistent storage using [Google File Store](https://cloud.google.com/filestore) and the `gcloud` CLI.
 
 ### Set Global Variables
 
@@ -54,11 +54,11 @@ Next we set the zone for our file store:
 gcloud config set filestore/zone $ZONE
 ```
 
-At this point you may wish to check that billing is enabled for the new project. 
+Check that billing is enabled for the new project.
 
 ### Create the File Store and File Share
 
-The command below will create an NFS file store instance. You may change the storage tier to reduce latency and suit the needs of your audience ([details](https://cloud.google.com/filestore/docs/service-tiers)). 
+Create an NFS file store instance. You can change the storage tier to suit your latency and capacity needs. See the [service tiers](https://cloud.google.com/filestore/docs/service-tiers) for details.
 
 ```
 gcloud beta filestore instances create $PROJECT_NAME \
@@ -67,17 +67,9 @@ gcloud beta filestore instances create $PROJECT_NAME \
   --network=name="default"
 ```
 
-During creation of the file store you may be prompted to enable the file api on your project as shown below:
+During creation, you may be prompted to enable the File API on your project.
 
-![](https://files.readme.io/fab6036-image.png)
-
-After some time you will get confirmation that the file store instance has been created:
-
-![](https://files.readme.io/393c6a2-image.png)
-
-The file store configuration may also be viewed in the UI:
-
-![](https://files.readme.io/0b7f2c0-image.png)
+Wait for the file store instance to finish creating before continuing.
 
 Next we want to store the IP address of the file store instance to a variable: 
 
@@ -91,8 +83,6 @@ Then create a VPC connector:
 gcloud compute networks vpc-access connectors create $PROJECT_NAME --project $PROJECT_NAME --region $REGION --range "10.8.0.0/28"
 ```
 
-![](https://files.readme.io/d6f52b8-image.png)
-
 And next create a service account:
 
 ```
@@ -101,7 +91,7 @@ gcloud iam service-accounts create $PROJECT_NAME --project $PROJECT_NAME
 
 ### Container Registry
 
-With the file storage configured our next step is to make the Budibase container image available in a registry accessible to the Cloud Run service. Fetch the docker hub image with:
+With file storage configured, make the Budibase container image available in a registry accessible to Cloud Run. Fetch the Docker Hub image with:
 
 ```
 docker pull --platform=linux/amd64 budibase/budibase
@@ -113,7 +103,7 @@ Then tag that image with the path to GCR for your project:
 docker tag budibase/budibase gcr.io/$PROJECT_NAME/budibase/budibase:latest
 ```
 
-Next we want to instruct docker to use gcloud for autheticating to GCR :
+Next, configure Docker to use `gcloud` for authenticating to GCR:
 
 ```
 gcloud auth configure-docker
@@ -127,7 +117,7 @@ docker push gcr.io/$PROJECT_NAME/budibase/budibase:latest
 
 ### Run the Container
 
-With the image available in GCR we can now run the container service. Notice that we are passing in environment variables for the NFS file share IP address and share name. 
+With the image available in GCR, deploy the container service. Pass the NFS file share IP address and share name as environment variables.
 
 ```
 gcloud beta run deploy $PROJECT_NAME --image gcr.io/$PROJECT_NAME/budibase/budibase:latest \  
@@ -142,11 +132,7 @@ gcloud beta run deploy $PROJECT_NAME --image gcr.io/$PROJECT_NAME/budibase/budib
     --update-env-vars FILESHARE_IP=$FILESTORE_IP_ADDRESS,FILESHARE_NAME=$FILESHARE_NAME
 ```
 
-![](https://files.readme.io/970946b-image.png)
-
-Allow a few minutes for the service to initialise then visit the Service URL as output by the command above or as found on the UI.
-
-<Image width="400px" src="https://files.readme.io/503628e-image.png" />
+Allow a few minutes for the service to initialise, then visit the service URL shown by the command or in the Cloud Run console.
 
 ### Cleaning Up
 
@@ -164,6 +150,4 @@ gcloud projects delete $PROJECT_ID
 
 ### Troubleshooting
 
-The 'Cloud Run' service **Logs** tab can be used to look out for errors while mounting the file storage or running the app. 
-
-<Image width="460px" src="https://files.readme.io/8b2901d-image.png" />
+Use the Cloud Run **Logs** tab to look for errors while mounting the file storage or running the app.

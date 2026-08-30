@@ -1,6 +1,6 @@
 ---
 title: Triggers
-excerpt: ''
+excerpt: Start automations from events
 deprecated: false
 hidden: false
 metadata:
@@ -10,24 +10,44 @@ metadata:
 next:
   description: ''
 ---
-Each automation must have a single trigger step, which is essentially a watcher - waiting for a particular condition to be met, at which point the process will kick off.
+Every automation starts with a trigger.
 
-<Image align="center" src="https://files.readme.io/0d92924c457e2eecb9d55f10cbd41fb5c28d97a6bf206c60dca88b64d1b3a806-Screenshot_2026-04-09_at_11.16.38.png" />
+The trigger listens for an event and starts the automation when that event occurs.
 
-Currently, there are six ways to trigger an automation:
+## Trigger types
 
-1. When a new record/row is created in a table
-2. When a new record/row is deleted in a table
-3. When a new record/row is updated in a table
-4. An external trigger in the form of a JSON Webhook
-5. When a certain action happens in an app
-6. CRON trigger (trigger this automation at a specific time or day)
-7. Email received in a specific inbox
+Budibase supports these trigger types:
 
-> 📘 Row creation/update/deletion triggers
->
-> When utilising row-based triggers, it should be noted that this only works for rows created through Budibase. If you are using an external data source, like say Postgres or MySQL, then rows created externally within the database will not trigger automations.
+* Row created
+* Row deleted
+* Row updated
+* Webhook
+* App action
+* Cron schedule
+* Email received
 
-Triggers are internal to the Budibase system and therefore cannot easily be altered - if you have an idea for a good trigger, then [let us know](https://github.com/Budibase/budibase/discussions)!
+## Row triggers
 
-It is also possible to create custom triggers using the external Webhook - create an external application that will trigger on your required conditions, and target your Budibase Webhook!
+Row triggers respond to rows created, updated, or deleted through Budibase.
+
+Changes made directly in an external datasource do not fire Budibase row triggers.
+
+## Webhook triggers
+
+Use a webhook trigger when another application needs to start a Budibase automation.
+
+Use this when:
+
+* The event starts in another service
+* You need to pass a JSON payload into Budibase
+* You want an external system to call Budibase on demand
+
+## Trigger guidance
+
+Keep triggers narrow and predictable:
+
+* Use one trigger per automation
+* Pick the trigger type that matches the source of the event
+* Use app action, cron, or email triggers only when they fit the workflow
+
+If Budibase does not provide the trigger type you need, use a webhook-based integration.

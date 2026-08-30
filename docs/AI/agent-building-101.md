@@ -6,24 +6,22 @@ metadata:
   description: kba_5v2bm
   robots: index
 ---
-In Budibase, Agents enable AI to interact with the data, tools, and automations in your Workspace.
+In Budibase, Agents let AI interact with data, tools, and automations in your Workspace.
 
-In this guide, we’ll build a simple AI Service Desk Agent that can:
+In this guide, you will build a simple AI Service Desk Agent that can:
 
 * Answer questions about tickets
 * Categorise and summarise new tickets
 * Update ticket statuses
 * Escalate urgent issues automatically
 
-Along the way, we’ll learn how to:
+Along the way, you will learn how to:
 
 * Configure an Agent’s instructions
 * Connect Workspace data as tools
 * Define structured outputs
 * Trigger automations from Agent actions
 * Test and iterate safely
-
-Let’s jump in.
 
 ## Before you start
 
@@ -49,15 +47,15 @@ Make sure you have:
 
 ### Setting up our data layer
 
-In Budibase, Agents can interact with any tables, API calls, or automations within your Workspace, as long as they’re explicitly given access.
+In Budibase, Agents can interact with any tables, API calls, or automations within your Workspace, as long as they are explicitly given access.
 
-Before creating an Agent, it’s important to understand the data it will work with and define what actions it should be allowed to perform.
+Before creating an Agent, define the data it will work with and the actions it should be allowed to perform.
 
-Take a look at our [Introduction to Data ](https://docs.budibase.com/docs/data) documentation to learn more about how data works in Budibase.
+See [Introduction to Data](https://docs.budibase.com/docs/data) for more detail on how data works in Budibase.
 
 #### Our tickets table
 
-For this guide, we’ll use a Budibase DB table called Tickets.
+For this guide, use a Budibase DB table called Tickets.
 
 This contains the following columns:
 
@@ -74,7 +72,7 @@ This contains the following columns:
 
 ### Creating our agent
 
-Onto creating our first Agent. Make sure you have done the initial setup of selecting a provider and configuring a model before doing this. You can find out how to do this [here](doc:agents-config).
+To create your first Agent, make sure you have selected a provider and configured a model first. See [Agents config](doc:agents-config).
 
 1. Click on the **Agents** link on the left side of the screen
 2. Click the **+ New Agent** button at the top right of your screen
@@ -91,7 +89,7 @@ Agents perform tasks through **Operations**. An Agent can have one or many opera
 
 By default, Budibase provides a structured instruction template to help you define your operation clearly. More information on this can be found [here](doc:agent-instructions-guide#recommended-template).
 
-For now we will use the below instructions:
+Use the following instructions for this guide:
 
 ```markdown instructions
 **Operation role**
@@ -123,7 +121,7 @@ When categorising or prioritising, return structured JSON:
 - Use British English where possible
 ```
 
-After configuring and adding the above instructions, run a test and confirm that everything is working.
+After adding the instructions, run a test and confirm that everything works.
 
 ### Adding tools
 
@@ -147,7 +145,7 @@ Together, these allow the Agent to:
 * Retrieve specific ticket details
 * Update ticket status, priority, or resolution notes when required
 
-> As a best practice, only enable the minimum set of tools required. Limiting tool access helps ensure predictable and safe behaviour.
+> As a best practice, only enable the minimum set of tools required. Limiting tool access helps keep behaviour predictable and safe.
 
 ### Adding Knowledge
 
@@ -172,7 +170,7 @@ For more complex configurations, you can use the **Advanced setup** option withi
 
 Once these tools and knowledge sources are enabled, we need to guide the Agent on when to use them. 
 
-Here is our updated instruction prompt:
+Use the following updated instruction prompt:
 
 ```markdown instructions
 **Operation role**
@@ -226,7 +224,7 @@ You do not need to manually configure this routing; it is handled automatically 
 
 ### Testing the agent
 
-Now that our Agent has instructions and tools, we can test whether it behaves safely and predictably.
+Now that your Agent has instructions and tools, you can test whether it behaves safely and predictably.
 
 Start with a few representative prompts:
 

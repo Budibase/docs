@@ -10,228 +10,37 @@ metadata:
 next:
   description: ''
 ---
-## Generic Shortcuts
+Use keyboard shortcuts to move faster in the builder and data views.
 
-<br />
+## General
 
-| Key    | Function    |
-| :----- | :---------- |
-| ESCAPE | Close Modal |
+| Key | Action |
+| --- | --- |
+| `Escape` | Close modal |
 
-## Data Shortcuts
+## Data
 
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Key
-      </th>
+| Key | Action |
+| --- | --- |
+| `Cmd + Enter` / `Ctrl + Enter` | Create a new row or save the current row |
+| `Escape` | Cancel editing |
+| `Tab` | Move one cell to the right |
+| `Shift + Click` | Select a range of cells |
+| `Shift + Arrow keys` | Extend the current selection |
 
-      <th>
-        Function
-      </th>
-    </tr>
-  </thead>
+## Component tree
 
-  <tbody>
-    <tr>
-      <td>
-        ⌘ + Enter
-        CTRL + Enter
-      </td>
-
-      <td>
-        Create new row\
-        Save current row (while editing a row)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ESCAPE
-      </td>
-
-      <td>
-        Cancels edit
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ⇥ (TAB)
-      </td>
-
-      <td>
-        Shift focus one cell to the right
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        SHIFT + Click
-      </td>
-
-      <td>
-        With a cell selected, SHIFT + CLICK will select all cells between
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        SHIFT + ↑↓←→
-      </td>
-
-      <td>
-        With a cell selected, SHIFT + ↑↓←→ will select another row or column depending on which arrow pressed
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-<br />
-
-## Component Tree Shortcuts
-
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Key
-      </th>
-
-      <th>
-        Function
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        ⌘ + ↑
-        CTRL + ↑
-      </td>
-
-      <td>
-        Move the component up
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ↑
-      </td>
-
-      <td>
-        Select the next component above
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ⌘ + ↓\
-        CTRL + ↓
-      </td>
-
-      <td>
-        Move the component down
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ↓
-      </td>
-
-      <td>
-        Select the next component below
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ⌘ + D\
-        CTRL + D
-      </td>
-
-      <td>
-        Duplicate the component (and it's children)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ⌘ + X\
-        CTRL + X
-      </td>
-
-      <td>
-        Cut the component (and it's children)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ⌘ + C\
-        CTRL + C
-      </td>
-
-      <td>
-        Copy the component (and it's children)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ⌘ + V\
-        CTRL + V
-      </td>
-
-      <td>
-        Paste from the clipboard (clipboard must hold a component, component must be valid child-component for the location)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ⌘ + ←\
-        CTRL + ←
-      </td>
-
-      <td>
-        Collapse all nested components
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ←
-      </td>
-
-      <td>
-        Collapse selected component
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ⌘ + →\
-        CTRL + →
-      </td>
-
-      <td>
-        Expand all nested components
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        →
-      </td>
-
-      <td>
-        Expand selected component
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Key | Action |
+| --- | --- |
+| `Cmd + Up` / `Ctrl + Up` | Move component up |
+| `Up` | Select the component above |
+| `Cmd + Down` / `Ctrl + Down` | Move component down |
+| `Down` | Select the component below |
+| `Cmd + D` / `Ctrl + D` | Duplicate component |
+| `Cmd + X` / `Ctrl + X` | Cut component |
+| `Cmd + C` / `Ctrl + C` | Copy component |
+| `Cmd + V` / `Ctrl + V` | Paste component |
+| `Cmd + Left` / `Ctrl + Left` | Collapse all nested components |
+| `Left` | Collapse selected component |
+| `Cmd + Right` / `Ctrl + Right` | Expand selected component |
+| `Right` | Expand selected component |

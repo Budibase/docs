@@ -19,6 +19,8 @@ Our core SQL datasource connections include:
 * [Oracle](doc:oracle)
 * [PostgreSQL](doc:postgresql)
 
+For the shared workflow after connecting, see [Working with SQL datasources](doc:sql-workflow).
+
 <HTMLBlock>{`
 <iframe src="https://player.vimeo.com/video/746819514?h=c95914762f" style="margin-top: -20px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 `}</HTMLBlock>
