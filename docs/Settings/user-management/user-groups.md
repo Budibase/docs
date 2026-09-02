@@ -1,5 +1,5 @@
 ---
-title: User groups 🔒
+title: User groups 👥
 excerpt: ''
 deprecated: false
 hidden: false
@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-User groups allow an **Account Admin** to easily assign and manage users' access to apps.
+User groups allow **Admins** and **App Builders** to easily assign and manage users' access to apps.
 
 ## Unlocking user groups
 
@@ -52,7 +52,7 @@ If you set a new default group, Budibase automatically removes the default flag 
 
 If you delete the current default group, new users will no longer be auto-assigned to a group until another default group is configured.
 
-> 📘
+> 💡
 >
 > If one or more groups are explicitly selected during invite or create, those selected groups are used and the default-group fallback is not applied.
 
@@ -80,7 +80,7 @@ To add this user to another group, click `Add to user group`. This will provide 
 
 From the builder, open your workspace and click on the settings navigation link. Then users
 
-This will open up a side panel from which you can add groups or individual users by setting their permission-level for that app.
+This will open up a side panel from which you can add groups or individual users by setting their permission-level for that app. **App Builders** can manage group access for the specific apps they have permission to edit.
 
 <br />
 
