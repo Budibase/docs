@@ -72,6 +72,7 @@ You can control whether users are allowed to download knowledge sources through 
 * Authentication failures from Teams: check bot credentials and tenant alignment.
 * Teams prompts to link before answering: run `link` or `/link` and complete the account link handoff.
 * Webhook route errors: use the exact Budibase-generated endpoint URL from **Deployment**.
+* `Invalid Microsoft Teams service URL`: Budibase validates that all Teams interactions use trusted Microsoft service origins. If you are using a region-specific or custom Microsoft Teams environment, you may need to configure the `TEAMS_API_URL` environment variable on your Budibase server (e.g., `TEAMS_API_URL=https://smba.trafficmanager.net/apis/`) to match your environment.
 
 ## Related guides
 
