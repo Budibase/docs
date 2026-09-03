@@ -38,6 +38,7 @@ When importing from a URL, Budibase applies the same security hardening and vali
 * **Blacklist validation**: Preventing imports from blocked internal or sensitive hostnames.
 * **DNS Rebinding protection**: Request pinning to validated IP addresses to prevent host-switching during the import process.
 * **Protocol enforcement**: Only secure `http:` and `https:` protocols are permitted.
+* **External reference blocking**: External file references (`$ref`) within the specification are not resolved. This prevents unauthorized file access or external network requests during the parsing phase.
 
 ## Post-import hardening checklist
 
@@ -62,6 +63,7 @@ Postman collections should be converted to OpenAPI first.
 * Unknown/unsupported fields in spec: simplify or clean OpenAPI before import
 * Imported query fails auth: map to correct connection auth config
 * Paths duplicate base URL: correct path/full URL handling
+* External references in spec: Budibase does not resolve external file references for security reasons. Ensure your specification is self-contained (bundled) before importing.
 
 ## Related guides
 
