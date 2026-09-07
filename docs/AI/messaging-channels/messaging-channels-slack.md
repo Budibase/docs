@@ -73,7 +73,8 @@ Invite the bot to channels you want it to serve, for example:
 1. In Budibase **Deployment**, toggle Slack to **Enabled**
 2. In Slack, mention the bot in a channel or send a DM
 3. Run `/link` and complete the Budibase account linking flow
-4. Send a message and confirm the agent responds
+4. Run `/unlink` to disconnect your Budibase account
+5. Send a message and confirm the agent responds
 
 Slack threads are used as conversation boundaries automatically. Once an agent is engaged in a thread (e.g., via a mention), it will automatically process and respond to subsequent replies in that same thread, even without further mentions.
 

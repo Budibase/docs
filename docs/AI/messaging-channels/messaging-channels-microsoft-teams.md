@@ -45,6 +45,7 @@ Use a single-tenant setup that matches your tenant ID.
 4. Test commands:
    * `ask <message>` to continue the current conversation
    * `new <message>` to start a new conversation
+   * `unlink` or `/unlink` to disconnect your Budibase account
 
 Plain text messages are treated as `ask`.
 If you send a normal message before linking, Budibase sends a private link prompt.
