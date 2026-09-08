@@ -1,5 +1,5 @@
 ---
-title: Audit logs 🕵️
+title: Audit logs 🔒
 excerpt: ''
 deprecated: false
 hidden: false
@@ -40,7 +40,7 @@ You can see numerous pieces of metadata including the IP address, User Agent as 
 
 As shown in the above image, there are a number of different ways to filter your audit logs. 
 
-### 🔍 Filter types
+### 📘 Filter types
 
 #### User
 
