@@ -27,7 +27,10 @@ Automation agents run in a **goal-oriented** mode. Unlike interactive chat agent
 
 ## Permissions
 
-By default, agents executed via an automation step run with **Admin** permissions. This allows them to perform system tasks and access data without being constrained by the triggering user's role.
+Agents executed via an automation step can run using either the **Requester**'s identity or an **Admin** identity.
+
+* **Requester (Default)**: The agent uses the identity and permissions of the user who triggered the automation. If the automation was not triggered by an authenticated user (e.g. a cron trigger), the step will fail if configured to run as the requester.
+* **Admin**: The agent runs with full administrative permissions. This allows it to perform system tasks and access data without being constrained by the triggering user's role.
 
 If the agent triggers a tool that requires human approval (escalation), the automation will pause. Once the action is approved by a human, the agent will resume execution using the permissions of the original automation requester.
 
@@ -41,6 +44,7 @@ If the agent triggers a tool that requires human approval (escalation), the auto
 
 * Agent (required) - The Agent configuration to run.
 * Prompt (required) - The task or question sent to the Agent.
+* Run as (required) - Choose which identity the agent uses to access data. Options are **Requester** (default) or **Admin**.
 * Use structured output (optional) - Enables schema-constrained output.
 * Output Schema (optional) - JSON schema used when structured output is enabled.
 
