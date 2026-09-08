@@ -26,7 +26,7 @@ It should be noted that if you wish to modify any of these settings then you wil
 
 ### Rotating secrets
 
-For single-image (runner.sh) deployments, you can rotate sensitive credentials by passing a new value as an environment variable when restarting the container. The runner detects if the runtime value differs from the previously persisted value in your `.env` file and will automatically update and persist the new secret. This applies to credentials such as `COUCH_DB_USER`, `COUCH_DB_PASSWORD`, `MINIO_ACCESS_KEY`, `MINIO_SECRET_KEY`, `JWT_SECRET`, and others.
+For single-image (runner.sh) deployments, you can rotate/sensitive credentials by passing a new value as an environment variable when restarting the container. The runner detects if the runtime value differs from the previously persisted value in your `.env` file and will automatically update and persist the new secret. This applies to credentials such as `COUCH_DB_USER`, `COUCH_DB_PASSWORD`, `MINIO_ACCESS_KEY`, `MINIO_SECRET_KEY`, `JWT_SECRET`, and others.
 
 Note that changing some of these settings may affect the user experience; for example, changing the **JWT_SECRET** will log everyone out.
 
@@ -117,6 +117,46 @@ The full set of variables can be found in our repo, in the file [.env](https://r
       <td>
         The password used to secure your hosted [CouchDB](https://couchdb.apache.org/) service.  
         _**We recommend changing this.**_
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        PASSWORD_MIN_LENGTH
+      </td>
+
+      <td>
+        The minimum number of characters required for a user password. The default is 12.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        PASSWORD_MAX_LENGTH
+      </td>
+
+      <td>
+        The maximum number of characters allowed for a user password. The default is 512.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        PASSWORD_REGEX
+      </td>
+
+      <td>
+        A JavaScript regular expression used to enforce password complexity (e.g., requiring numbers or special characters). This must be used in conjunction with <code>PASSWORD_REGEX_ERROR_MESSAGE</code>.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        PASSWORD_REGEX_ERROR_MESSAGE
+      </td>
+
+      <td>
+        The error message displayed to users when their password does not meet the requirements defined in <code>PASSWORD_REGEX</code>.
       </td>
     </tr>
 
