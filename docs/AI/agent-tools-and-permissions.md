@@ -27,7 +27,7 @@ Tools are configured at the **Operation** level. While Budibase automatically di
 
 You can add tools to an operation in two ways:
 
-1.  **Rail Actions**: Click the **Add tools** button in the Tools section of the operation rail. When you select a tool, a configuration modal will appear allowing you to set its execution principal and escalation rules before it is added.
+1.  **Rail Actions**: Click the **Add tools** button in the Tools section of the operation rail. When you select a tool, a configuration modal will appear allowing you to set its execution principal and approval rules before it is added.
 2.  **Editor Autocomplete**: While writing instructions, type `{{` and select **Add tool** from the autocomplete menu. This will open the configuration modal and insert the tool binding in a single step.
 
 ### Execution principals
@@ -38,13 +38,25 @@ When a tool is enabled, you can configure its **Run as** (Execution principal) s
 *   **Admin (elevated)**: The tool runs with full administrative permissions. Use this sparingly for background tasks or strictly controlled operations.
 
 > 📘 **Automations**
-> Agents triggered via an **Automation step** execute as **Admin** by default. If a tool requires escalation, the Agent will pause and, once approved, will resume using the role of the original automation requester.
+> Agents triggered via an **Automation step** execute as **Admin** by default. If a tool requires approval, the Agent will pause and, once approved, will resume using the role of the original automation requester.
 
-### Tool Escalation
+### Approval rules and policies
 
-You can require human approval for specific tools by enabling **Escalation** in the tool configuration modal. When enabled, the Agent will pause and request approval before the tool is executed.
+Approval rules ensure that high-impact actions are reviewed by a human before they are executed. You can configure rules to always apply, or only apply when specific conditions are met.
 
-Tools with configured approvals display a status indicator (e.g., "1 approval") in the operation rail.
+#### Approval policies
+An approval policy defines **who** is notified and responsible for reviewing a gated action. Policies are reusable and managed in the **Approvals** tab of an operation. 
+
+*   **Name**: A recognizable name for the policy, shown on approval rules.
+*   **Notification**: The messaging channel and recipient (user or channel) that will receive the approval request.
+
+#### Approval rules
+An approval rule determines **when** a policy should be applied to a specific tool. Rules are configured within the tool configuration modal.
+
+*   **Unconditional rules**: Require approval every time the tool is called.
+*   **Conditional rules**: Only require approval if the tool's input data matches specific criteria (e.g., only escalate a `create_row` tool if the `Total` field is greater than 1000).
+
+Tools with configured rules display a status indicator (e.g., "1 rule") in the operation rail.
 
 ## Agent data scope
 
@@ -54,7 +66,7 @@ To ensure data security and optimize token usage, Budibase automatically restric
 
 When an Agent interacts with a table, it only sees plain-text and primitive data fields. The following field types are automatically excluded from the Agent's view:
 
-*   **Link fields**: Relationships to other tables (joined data) are not exposed to prevent accidental data leaks.
+*   **Link fields**: Relationships to other tables (joined data) are not exposed to prevent accidental data leaks
 *   **Formula fields**: Calculations and relationship-derived values are hidden from the Agent.
 
 These exclusions apply to both the table schema (metadata) and the actual row data returned by tools.
@@ -93,18 +105,14 @@ Use one of these patterns:
 3. Read + updates + automation triggers
    1. The agent can read data, make approved updates, and trigger downstream workflows or automations. This pattern is suitable for more mature, production-grade use cases where the agent is trusted to take actions that may have cascading effects.
 
-Start with `read-only`, then add writes only when validated by tests.
+Start with `read-only`, then add writes only when validated by tests
 
-## Escalation and Approvals
-
-Approvals ensure that high-impact actions are reviewed by a human. This can be configured at the tool level or via the legacy `escalate` tool for instruction-based triggers.
-
-### Configuring recipients
+## Configuring recipients
 
 To choose who gets notified when an action requires approval, you must first enable at least one messaging channel in the Agent's **Deployment** tab. 
 
-*   **Requirement**: You cannot select escalation recipients until a deployment (e.g., Slack, MS Teams) is configured with a valid endpoint URL.
-*   **Provider Filtering**: Only providers with active deployments will be available as options in the recipient selector.
+*   **Requirement**: You cannot select approval recipients until a deployment (e.g., Slack, MS Teams) is configured with a valid endpoint URL.
+*   **Provider Filtering**: Only providers with active deployments will be available as options in the policy configuration.
 *   **Channel Lookup**: When selecting a channel, Budibase fetches a paginated list of available channels from your configured provider. Ensure your bot has the necessary permissions (e.g., `groups:read` for Slack or `Channel.ReadBasic.All` for Teams) to list these channels.
 
 ## Guardrails for write actions
@@ -144,7 +152,7 @@ Keep table and query names reasonably concise to ensure tool names remain human-
 * Is this tool essential for the Agent's task?
 * What is the worst-case outcome if it is misused?
 * Do instructions define when it can be used?
-* Is this tool covered by tests?
+* Is the tool covered by tests?
 
 ## Related guides
 
