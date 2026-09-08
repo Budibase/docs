@@ -10,146 +10,108 @@ metadata:
 next:
   description: ''
 ---
-SCIM (System for Cross-domain Identity Management) is an open standard for managing user identity information. 
+SCIM lets you manage users and groups in an external identity provider and sync them into Budibase.
 
-It allows you to manage your users and groups outside of Budibase using any Identity and Access Management service that supports SCIM. Examples include *Azure Active Directory* and *Okta*.
+It is designed for one-way provisioning:
 
-Changes to users and groups made in your external IAM can be synced across to Budibase users and groups through a process known as **provisioning**.
+* Budibase receives users and groups from your identity provider.
+* Synced users and groups are then managed externally.
+* Manual users and groups can still be created and edited in Budibase.
 
-It's worth noting that this is a one-way process. Once SCIM is enabled, you will no longer be able to edit AD users and groups within Budibase, any changes must be made via your external identity provider.
+Common providers include Azure Active Directory and Okta.
 
-You can still manually add or import users outside your organization; these users will remain fully configurable within Budibase.
+## Access
 
-## Unlocking SCIM provisioning
+SCIM provisioning is available on the enterprise plan.
 
-Contact sales to enquire about upgrading to the enterprise plan [https://budibase.com/contact/](https://budibase.com/contact/)
+Contact sales to upgrade: [budibase.com/contact](https://budibase.com/contact/)
 
 ## Enable SCIM
 
-Login to the Budibase portal, and click on the `Settings` tab. Select the `Auth` tab. 
+Open `Settings` > `Auth` in the Budibase portal.
 
-<Image align="center" src="https://files.readme.io/44a9a9db5f559e8869f52173a040090efbe546573559ca79d382ad11568e6817-Screenshot_2024-09-09_at_13.55.16.png" />
+Turn on `Activated` under the SCIM section.
 
-Scroll to the bottom of the page, and under SCIM toggle *Activated* on. The provisioning *URL* and *Token* will become available to quickly copy using the clipboard buttons to the right of the fields.  
+When SCIM is enabled, Budibase shows:
 
-<Image align="center" src="https://files.readme.io/1242196-settings_auth_scim.png" />
+* `Provisioning URL`
+* `Provisioning Token`
 
-> 👍 Enforced SSO
->
-> When using SCIM, users can only log-in to Budibase using [SSO](doc:authentication-and-sso). With this in mind, we recommend that you [Enforce SSO 🔒](doc:enforced-sso).
+Copy both values into your identity provider.
 
-***
+The provisioning URL uses the current platform URL and the SCIM endpoint:
 
-## Example: Azure Active Directory
+```text
+{platformUrl}/api/global/scim/v2
+```
 
-This example will look at provisioning active directory users from Azure into Budibase
+The provisioning token is the current user API key shown in the SCIM settings screen.
 
-### Step 1 - Create an enterprise application
+## SSO requirement
 
-First, we need to create an Enterprise application to manage the users and groups that we want to provision for Budibase.
+SCIM provisioning does not disable password-based sign-in on its own.
 
-Log in to Azure Active Directory, and Navigate to `Enterprise applications`.
+If you want to require SSO-only login, enable [Enforce SSO](doc:enforced-sso) separately.
 
-Click on `New application`
+## Disable SCIM
 
-<Image align="center" src="https://files.readme.io/490a35324402396291773e97bbe1759ffdfc2f2e51eb6eb94797725d4ed03713-Screenshot_2025-01-31_at_15.27.21.png" />
+If SCIM is already enabled and you turn it off, Budibase asks what to do with existing SCIM-provisioned users.
 
-Then click on `Create your own application`. A side panel should appear on the right hand side of your screen.
+You can choose between:
 
-<Image alt="Create new application" align="center" src="https://files.readme.io/d17ae6eedb5f0c10512876f5b0eba229336275671d411b7a8f00258b4cbe18c5-create_your_own_application.png">
-  Create new application
-</Image>
+* Remove SCIM users
+* Convert to regular users
 
-Select the *(Non-gallery)* option and give your app a name.
+Removing SCIM users deletes them permanently.
 
-<Image align="center" src="https://files.readme.io/7db5c5403f6ffd05c6df1ad3bae330591e769c56f400aca7b001ef354f6a6003-Screenshot_2025-01-13_at_14.05.21.webp" />
+Converting them keeps the users in Budibase, but they are no longer synced with your identity provider.
 
-Assuming you already have some users in your active directory, you can now add them to your enterprise application.
+## Manage synced users
 
-Click on your application, and then click `Users and groups` under the *Manage* section. You can then click on `Add user/group` to add users individually or as user groups.
+Synced users are matched by email.
 
-<Image align="center" src="https://files.readme.io/0debe66ff28ffea535b2a93a8f36907ef3833660f20c8bda538221241d15c1f4-Screenshot_2025-01-24_at_14.19.58.webp" />
+When a user is managed through SCIM:
 
-### Step 2 - Provisioning
+* Their email, first name, and last name are read-only in Budibase.
+* Other non-synced fields can still be edited.
+* The user is marked as externally synced in the builder.
 
-Under the *Manage* section, click on `Provisioning`. Then click `Connect your application`.
+## Manage synced groups
 
-<Image align="center" src="https://files.readme.io/323d41d0a5af817706b995d8c7a7a6ecf6d1309b41412a4a8dfd997f2432700f-Screenshot_2025-01-31_at_14.56.01.png" />
+Synced groups are matched by name.
 
-Copy and paste the URL and Token from the Budibase settings page as the admin credentials.
+When a group is managed through SCIM:
 
-<Image align="center" src="https://files.readme.io/cb73d271933fc3b8732d4f6618b4c9fb3b3ac364879aff38ba9193209512e31f-Screenshot_2025-01-13_at_14.08.00.webp" />
+* The group name is read-only in Budibase.
+* Non-synced fields can still be edited.
+* The group is marked as externally synced in the builder.
 
-Click `Test Connection` to verify everything is correct. If all the information is correct, a notification will appear saying the connection was successful. The Create button at the bottom of this page will change from grayed out to blue when you successfully test the Budibase connection. Click the `Create` button.
+## First sync
 
-You will then be redirected to the Overview area for Provisioning. You can now click `Start provisioning` to sync your users and groups from your Azure enterprise app into Budibase.
+When SCIM is activated for the first time:
 
-<Image align="center" src="https://files.readme.io/d3a3f27-start_provisioning.png" />
+* Existing Budibase users are matched to SCIM users by email.
+* Existing groups are matched by name.
+* Members already assigned to matched groups are replaced by the SCIM-provisioned members.
 
-The Budibase portal now shows the users who have synced under the `Users` tab.
+## Azure Active Directory example
 
-<Image align="center" src="https://files.readme.io/0d45176a39fea58c48f469879516726ef883e1263d4e0b6325e4d5361c108b53-image_copy.png" />
+If you are using Azure AD, the provisioning flow is:
 
-There is also a note in this section indicating that users are being synced from your AD.
+1. Create an enterprise application in Azure AD.
+   <Image align="center" src="https://files.readme.io/490a35324402396291773e97bbe1759ffdfc2f2e51eb6eb94797725d4ed03713-Screenshot_2025-01-31_at_15.27.21.png" />
+2. Add the users and groups you want to provision.
+3. Open Azure provisioning settings and connect the application.
+   <Image alt="Create new application" align="center" src="https://files.readme.io/d17ae6eedb5f0c10512876f5b0eba229336275671d411b7a8f00258b4cbe18c5-create_your_own_application.png">
+     Create new application
+   </Image>
+4. Paste the Budibase provisioning URL and token into Azure.
+   <Image align="center" src="https://files.readme.io/323d41d0a5af817706b995d8c7a7a6ecf6d1309b41412a4a8dfd997f2432700f-Screenshot_2025-01-31_at_14.56.01.png" />
+   <Image align="center" src="https://files.readme.io/cb73d271933fc3b8732d4f6618b4c9fb3b3ac364879aff38ba9193209512e31f-Screenshot_2025-01-13_at_14.08.00.webp" />
+5. Test the connection, create the provisioning setup, and start provisioning.
+   <Image align="center" src="https://files.readme.io/d3a3f27-start_provisioning.png" />
+6. Give the provisioned users app access in Budibase.
 
-If you provide a first and last name for your Azure users, this will also be passed through, however other settings such as [User roles](doc:user-roles) and [App roles](https://docs.budibase.com/docs/user-roles#app-specific-roles) must be set within Budibase.
+If you also need SSO, follow the [SSO with Azure AD](doc:sso-with-azure-ad) guide.
 
-<Image align="center" src="https://files.readme.io/45086bb-first_and_lastnames.png" />
-
-<Image align="center" src="https://files.readme.io/2bd32d87ae9d6b83ee360cfc8343de67311924547ce2bbf52a50a5e8f2847058-image.webp" />
-
-### Step 3 - Setup SSO and give app access
-
-Finally, we need to ensure that provisioned users can log in to Budibase. In this case, you can follow the [SSO with Azure AD](doc:sso-with-azure-ad) guide.
-
-Furthermore, make sure you have given your users and groups [Application access](doc:application-access).
-
-<Image alt="Giving Carol basic app access" align="center" width="640px" src="https://files.readme.io/b449fc0-carol_app_access.png">
-  Giving Carol basic app access
-</Image>
-
-<HTMLBlock>{`
-<div style="padding:49.77% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/846757473?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:90%;height:100%;" title="SCIM: User log-in with SSO"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-`}</HTMLBlock>
-
-## Managing SCIM
-
-### Initial SCIM Sync Activation
-
-#### What happens when a SCIM sync is activated for the first time?
-
-* User Matching
-  * Existing Budibase users are matched with SCIM users by email.
-  * Matched users are marked as externally synced and managed externally thereafter.
-* Group Matching:
-  * Existing groups are matched by name.
-  * Groups with matching names (e.g., “engineering”) are taken over as externally synced.
-* User Assignment in Synced Groups:
-  * Existing assigned users will be wiped out
-  * SCIM specified users will be mapped to the group.
-
-### Managing SCIM Users
-
-#### How to manage SCIM users?
-
-* Identifying Synced Users:
-  * Synced users are marked with a sync logo in the Budibase builder.
-  * Certain fields will be read-only for synced users.
-* Fields for Synced Users:
-  * Read-Only Fields: Email, name, and surname (managed via external SCIM datasource).
-  * Editable Fields: Role and other non-synced fields can be edited in Budibase.
-* Non-SCIM Users:
-  * Users created manually or not matched with SCIM are fully editable in Budibase.
-
-### Managing SCIM Groups
-
-### How to manage SCIM groups?
-
-* Identifying Synced Groups:
-  * Synced groups are marked with a sync logo in the Budibase builder.
-  * Some fields will be read-only for synced groups.
-* Editable Fields for Synced Groups:
-  * Read-Only Fields: Group name (managed via SCIM).
-  * Editable Fields: Icons and other non-synced fields can be edited in Budibase.
-* Non-SCIM Groups:
-  * Groups created manually or not matched with SCIM are fully managed in Budibase.
+After provisioning, assign the required [user roles](doc:user-roles) and [application access](doc:application-access) in Budibase.

@@ -10,54 +10,45 @@ metadata:
 next:
   description: ''
 ---
-Sometimes you need to pass information between screens. This takes two main forms:
+Sometimes you need to pass information between screens. There are two common ways to do that:
 
 1. [Link element](doc:link)
 2. 'Navigate To' Action
 
-A common example is opening a detailed view for a row entry.
+One common example is opening a detailed view for a row.
 
 ## Navigate To
 
-Some templates such as the *Client Contact List* app use <a href="https://docs.budibase.com/docs/button#adding-buttons-to-table-rows">row buttons</a> instead of links. Tables also allow you to define actions [on row click](https://docs.budibase.com/docs/table-block#on-row-click).
+Some templates, such as the *Client Contact List* app, use <a href="https://docs.budibase.com/docs/button#adding-buttons-to-table-rows">row buttons</a> instead of links. Tables also let you define actions [on row click](https://docs.budibase.com/docs/table-block#on-row-click).
 
 In these cases, navigation is controlled by the navigation action:
 
-![](https://files.readme.io/39afb8b-Screenshot_2022-04-20_at_17.05.15.png "Screenshot 2022-04-20 at 17.05.15.png")
+Here, pass the client's row ID into the URL path.
 
-Here we are passing the row id of the client into the URL path. 
+In the `/clients/:id` details screen, you can use that row ID. A word prefixed with a colon in a route denotes a path variable.
 
-In the `/clients/:id` details screen we will be able to make use of this row id.\
-A word prefixed with a colon within a route denotes a path variable. 
+Access the ID using the `{{ URL.id }}` <Glossary>Binding</Glossary>.
 
-The id is accessed using the `{{ URL.id }}` <Glossary>Binding</Glossary>
+For example, if you only want to show the chosen client, add the following <a href="https://docs.budibase.com/docs/searchfilter-data#static-filtering">Filter</a> to the client's <a href="https://docs.budibase.com/docs/data-provider">Data Provider</a>.
 
-For example, because we only want to show the chosen client, we can add the following <a href="https://docs.budibase.com/docs/searchfilter-data#static-filtering">Filter</a> to the clients' <a href="https://docs.budibase.com/docs/data-provider">Data Provider</a>
-
-![](https://files.readme.io/e0eff42-Screenshot_2022-04-20_at_19.01.31.png "Screenshot 2022-04-20 at 19.01.31.png")
-
-This can then be used in conjunction with a [Repeater](doc:repeater) to access the fields of the filtered client:
+Use it with a [Repeater](doc:repeater) to access the fields of the filtered client.
 
 ## Multiple variables
 
-Whilst passing a row id is the most common use case, you can pass many variables into the URL, with each being separated by a slash, e.g. `/clients/:id/:companyId/:timestamp/:customName/:etc`
+While passing a row ID is the most common use case, you can pass multiple variables in the URL, each separated by a slash, for example `/clients/:id/:companyId/:timestamp/:customName/:etc`.
 
-A detailed example can be found in this [discussion](https://github.com/Budibase/budibase/discussions/5299#discussioncomment-2530261).
+A detailed example is available in this [discussion](https://github.com/Budibase/budibase/discussions/5299#discussioncomment-2530261).
 
 <br />
 
 ## Testing URL Variables
 
-A `Temporary URL variables` input has been added to the Screen Settings area. This feature displays a preview of how a URL will be structured, such as `edit/{variable}`, allowing users to pass variables dynamically while building screens.
+A `Temporary URL variables` input is available in the Screen Settings area. It previews how a URL is structured, such as `edit/{variable}`, so you can pass variables while building screens.
 
-<Image align="center" src="https://files.readme.io/ed3caf2ff2e2415fb40cc42cc46fc521a9c85b3dd3494939a2642036ac3005f9-Screenshot_2025-03-07_at_09.09.04.png" />
-
-This feature lets you see real-time data population within components without previewing or publishing changes. This helps you quickly understand how different records affect the layout of your screens.
-
-<Image align="center" src="https://files.readme.io/f279acdd0ff3b81b3f1b21431db8b22a4728f9f066109c1231bd3be2a0b9b87b-Screenshot_2025-03-07_at_09.11.06.png" />
+This lets you see data populate components without previewing or publishing changes. It helps you understand how different records affect the layout.
 
 ### Benefits:
 
-* Eliminates the need to hit "Preview repeatedly" or "Publish" to test variable driven screens.
+* Eliminates the need to repeatedly use Preview or Publish to test variable-driven screens.
 * Speeds up development by reducing context switching.
 * Provides instant feedback on how records populate within components.

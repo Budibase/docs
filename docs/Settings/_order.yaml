@@ -12,6 +12,8 @@
 - audit-logs
 - backups-1
 - metrics
+- email
+- email-templates
 - branding
 - v2-recaptcha
 - translations

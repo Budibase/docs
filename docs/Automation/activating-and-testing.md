@@ -10,26 +10,51 @@ metadata:
 next:
   description: ''
 ---
-Automations are active in both the builder preview and published apps. In the builder, automations run against development data and skip logging, behaving similarly to a manual test run. You can also manually test each automation by clicking ‘Run test’.
+Automations run in both the builder preview and published apps. In the builder, they run against development data and skip logging, so test them before you publish them.
 
-![](https://files.readme.io/7abc2636a0710815e959cdc005f9a687025552657ed699f85c095b5ff6742c3e-image.png)
+## Test an automation
 
-<br />
+1. Open the automation.
+2. Click `Run test`.
+3. Provide test data when prompted.
+4. Review the run output and step-by-step progress.
 
-You will be prompted to provide test data, with the exception of web-hook and cron triggers.
+Webhook and cron triggers do not always require the same prompt data as row-based triggers.
 
-![](https://files.readme.io/e9edc892160806ea607067d1611082dcf6ae90158d1ae287ebabedd3a7888e8d-image.png)
+## What to check
 
-<br />
+Use the run output to confirm:
 
-After running the test, you will be able to view the progress of the automation.
+* The trigger fired with the expected input
+* Each step ran in the right order
+* Outputs passed correctly between steps
+* Errors were handled in the intended place
 
-![](https://files.readme.io/6c24f44a3fce100406c1806989e0c1003e1d19f149cabf49414e21ebf42df303-image.png)
+If the automation writes data, verify the target rows or records changed as expected.
 
-To ensure you obtain the intended outcome, you should check the automation-debugging tools. Here, nested within these headings, you will be able to trace any unexpected behaviours in order to remedy them.
+## Debugging
 
-![](https://files.readme.io/fce5e552f8106f66df51b6b766b3d0a27f8d8bfc5565579b8c38b3be9dbd97f7-image.png)
+Use the debugging tools when a test does not behave as expected.
 
-In the event that an automation doesn't run as expected, you should consult the "Errors" panel, where you should see an error message that helps to debug the issue.
+Focus on:
 
-<Image align="center" src="https://files.readme.io/6b1a8b3bbf6de49008a48c48ad0d6b1a25b194ae3242e89ad0a436df75663a96-image.png" />
+* The step that failed first
+* Any upstream output that differs from the expected shape
+* The `Errors` panel for a direct error message
+
+When a failure is hard to trace, re-run the automation with a smaller input set and confirm each step separately.
+
+## Production readiness
+
+Before activating an automation, make sure:
+
+* The happy path passes
+* Error handling has been tested
+* Any external services are reachable
+* Any write actions are safe to repeat
+
+## Related guides
+
+* [Automation steps](doc:automation-steps)
+* [Automation building 101](doc:automation-building-101)
+* [User management](doc:user-management)

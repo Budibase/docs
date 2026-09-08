@@ -10,59 +10,38 @@ metadata:
 next:
   description: ''
 ---
-A lot of the time you want to change the state of some component when certain conditions are true or false. This might be changing color from red to green, showing or hiding a component. You will find the condition settings at the very bottom of the settings panel of your components. 
+Use conditional UI when a component should change based on a value or piece of logic.
 
-Adding a condition is simple. Once you click the settings button a drawer will pop up and you will be able to add, edit or remove your conditions. It will look something like this
+Common uses include showing, hiding, disabling, or updating a setting.
 
-![](https://files.readme.io/38f0f21-conditions.png "conditions.png")
+## Add a condition
 
-### Enabling and disabling conditions
+1. Select a component
+2. Open the `Conditions` section in the settings panel
+3. Select `Add condition`
+4. Choose the action you want to apply
+5. Define the comparison
 
-You can temporarily disable a condition without deleting it by using the toggle switch located next to each condition in the drawer. This is useful for testing different UI states or temporarily pausing logic during development. Disabled conditions are ignored when evaluating component settings or visibility in both the builder preview and the published app.
+## Condition actions
 
-When conditions are configured, the **Conditions** tab in the component settings panel displays a status indicator dot:
-* **Green**: All conditions are enabled.
-* **Orange**: Some conditions are disabled.
-* **Red**: All conditions are disabled.
+* Show
+* Hide
+* Update setting
 
-## Adding a condition
+## Enable or disable a condition
 
-To add a condition, simply click the `Add condition` button. As explained above, you can choose whether to `Show`, `Hide` or `Update setting`. Depending on what you choose you will be presented with different options. They will all contain settings for comparing some value against another.
+Use the toggle in the conditions drawer to disable a condition without deleting it.
 
-![](https://files.readme.io/6cfa595-conditionsexplainer_1.png "conditionsexplainer (1).png")
+Disabled conditions are ignored in the builder preview and the published app.
 
-> 👍 Show/Hide
->
-> When using a Show on boolean condition, the Hide occurs automatically for the opposite case, and vice versa.
+## Use role-based conditions
 
-## Tutorial
+Conditions can also hide or show components based on the current user's role.
 
-In the example we're going to discuss we have a simple backend table that contains three records. It looks like this:
+Role values must be uppercase:
 
-![](https://files.readme.io/1b1464a-Screenshot_2023-07-04_at_14.15.19.png)
+* `BASIC`
+* `POWER` (Deprecated)
+* `ADMIN`
 
-As we can see, there are four fields, Company, Due Data, Value, and Paid. In the Design section, we have designed a simple interface showing each of our invoices in rows. It looks like so:
-
-![](https://files.readme.io/4653b06-conditionaldesign.png "conditionaldesign.png")
-
-It would be great if the `Pay Invoice` button was in a disabled state if the invoice has been paid. So let's go ahead and add a condition to do just that!
-
-Select the button component in the tree view on the left. Open the conditions drawer and select ``Update setting` and then pick the Disabled setting in the dropdown. Make sure the checkbox is checked. We then need to figure out which field we want to check. In our case, it's found under `{{ Repeater.Invoices.Paid }}`. This will of course differ depending on the structure of your application. If you click the little lightning bolt icon you will be able to see which fields are available for use.  Now we just make sure that it equals TRUE. Hit save, and that's it!
-
-![](https://files.readme.io/31b6181-conditiondisablebutton.png "conditiondisablebutton.png")
-
-Now that we have this condition set up we might also want to change the text of the button to say "PAID". To do that, simply click the copy button and change the setting to "text". Change the text to "PAID" and hit save.
-
-And here's the end result.
-
-![](https://files.readme.io/f65410b-conditionresultend.png "conditionresultend.png")
-
-## Showing and hiding a component based on the user's role
-
-When building apps, we often want to limit a user's access to specific components. For example, we may not want a user to see certain data or access a particular action.
-
-Below is a quick demonstration of how to hide a button if the user's role is BASIC. Please remember, when typing the value of the user role, it must be in capitals: `BASIC`, `POWER`, `ADMIN`.
-
-<HTMLBlock>{`
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/699368827?h=d2541f59bf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="New Recording - 14/04/2022, 10:44:02"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-`}</HTMLBlock>
+NB: Custom Roles must be referenced by their ID, not their name.

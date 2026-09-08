@@ -10,20 +10,20 @@ metadata:
 next:
   description: ''
 ---
-This quick guide demonstrates how to create a JavaScript snippet that converts date times into hours, days, minutes, and seconds from the current moment.
+This quick guide shows how to create a JavaScript snippet that converts date times into hours, days, minutes, and seconds from the current moment.
 
 ## Steps
 
-1. Create a Budibase internal table this should include some form of date (In my case I will theme this around a blog)
-2. Add data to your table 
+1. Create a Budibase internal table that includes a date field. In this example, it is based on a blog.
+2. Add data to your table.
 
    <Image align="center" src="https://files.readme.io/742dc97-Screenshot_2024-04-19_at_13.48.04.png" />
 3. Go to the design screen and add a [Card block](doc:card)
-4. Fill in the relevant bindings for Title, description etc
+4. Fill in the relevant bindings for Title, description, and other fields.
 5. Go to the subtitle bindable area.
-6. Switch the tab from text to javaScript
-7. Click on the `</>` icon and create a new snippet called `timeago`
-8. Paste the below code into it and click save
+6. Switch the tab from text to JavaScript.
+7. Click the `</>` icon and create a new snippet called `timeago`.
+8. Paste the code below into it and click save.
 
 ```Text JavaScript
 return function(pastTimeString) {
@@ -60,11 +60,11 @@ return function(pastTimeString) {
 }
 ```
 
-9. Click the snippet and add the date binding you wish to use inside its brackets
-10. Then click save
+9. Click the snippet and add the date binding you want to use inside its brackets.
+10. Click save.
 
 <Image align="center" src="https://files.readme.io/af76113-Screenshot_2024-04-05_at_13.21.07.png" />
 
-## The end result!
+## The end result
 
 <Embed url="https://cprem.budibase.app/embed/guide-snippets#/timeago" title="iframe" provider="cprem.budibase.app" href="https://cprem.budibase.app/embed/guide-snippets#/timeago" typeOfEmbed="iframe" height="300px" width="100%" iframe="true" />

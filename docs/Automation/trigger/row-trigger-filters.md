@@ -10,42 +10,18 @@ metadata:
 next:
   description: ''
 ---
-# Row Triggers with Filters
+Row trigger filters let you limit when a row created or row updated automation runs.
 
-## Overview
+## Use filters
 
-Row triggers allow you to automate actions based on changes in your database. With the addition of filters, you can now create more specific triggers that only fire when certain conditions are met.
+Add a filter when the automation should only run for rows that match a specific condition, such as an `Approved` flag or a particular status value.
 
-## Types of Row Triggers
+## Row created
 
-1. **Row Created**: Triggers when a new row is added to the database.
-2. **Row Updated**: Triggers when an existing row is modified.
+For row created triggers, the filter is checked against the new row. If the row matches, the automation runs.
 
-## Adding Filters to Triggers
+## Row updated
 
-Both "Row Created" and "Row Updated" triggers now support filters. Filters allow you to specify conditions that must be met for the trigger to fire.
+For row updated triggers, the automation only runs when the row changes into a matching state.
 
-### Example filter
-
-<Image align="center" src="https://files.readme.io/5d62030df4ee9a6fa32df5b9417c3eb3f500a7dfcd7a780b7ddcb55388646aa0-Screenshot_2024-11-06_at_13.38.15.png" />
-
-This filter would cause the trigger to fire only when the Approved column of the affected row equals "true".
-
-## Special Behavior for Row Updated Trigger
-
-The Row Updated trigger has a special behavior when filters are applied:
-
-By default, the trigger will only fire when a row transitions from not meeting the filter criteria to meeting the filter criteria. 
-
-### Example
-
-Consider a filter: `Status = Approved`
-
-* The trigger will fire when a row's status changes from "Requested" to "Approved".
-* The trigger will not fire if a row's status is already "Approved" and some other field (like "Due Date") changes.
-
-This behavior ensures that the trigger only fires when the specific condition you're interested in is met, rather than on any update to a row that already meets the condition.
-
-## Row Created Trigger Behavior
-
-For the Row Created trigger, the filter is applied to the newly created row. If the new row meets the filter criteria, the trigger will fire.
+For example, if the filter is `Status = Approved`, the trigger runs when a row changes from `Requested` to `Approved`. It does not run again on later edits if the row is already approved.

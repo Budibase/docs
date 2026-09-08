@@ -12,13 +12,13 @@ metadata:
 next:
   description: ''
 ---
-The On demand trigger runs when invoked from the UI of your Budibase application, or by an agent workflow.
+Use the On demand trigger when you want an app action or agent workflow to start an automation.
 
 > 📘 Fire and forget
 >
-> Automations run asynchronously on a background thread; therefore, once an automation is triggered from the client, there will be no returned response by default. 
+> On demand automations run asynchronously. By default, they do not return a response to the client.
 >
-> To receive a response, you can make use of [Synchronous automations 🔒](doc:synchronous-automations).
+> If you need a response, use [Synchronous automations 🔒](doc:synchronous-automations).
 
 ## Creating the Automation
 
@@ -26,36 +26,36 @@ Create a new automation in the Automation section, choose `On demand` as the tri
 
 ## Defining Fields
 
-Click the trigger step to open the right-hand panel and define your fields. These fields are the input data passed into your automation for use in later steps.
+Click the trigger step to open the right-hand panel and define your fields. These fields are the input data passed into your automation for later steps.
 
 Supported field types are `Text`, `Number`, `DateTime`, `Boolean`, and `Array`.
 
-You can use these fields in the next steps, check the [Working with data in automations guide](doc:data-in-automations) to learn how.
+You can use these fields in later steps. For more detail, see [Working with data in automations](doc:data-in-automations).
 
 ## Populating Fields from the UI
 
-Now that you have defined fields to be used in your automation, you can call this automation from the UI and populate the fields you just selected.
+Now that the fields are defined, you can call the automation from the UI and populate those values.
 
 Add a button in the Design section, then open its `No actions set` option in the <Glossary>Settings Panel</Glossary>.
 
-A modal will open where you can define [Actions](doc:actions). Create a new action by choosing `Trigger Automation` from the options and clicking the `Add Action` button.
+A modal opens where you can define [Actions](doc:actions). Create a new action by choosing `Trigger Automation` and clicking `Add Action`.
 
-Then select your On demand automation from the dropdown list. Only On demand automations will appear in this list.
+Then select your On demand automation from the dropdown list. Only On demand automations appear here.
 
-After selecting your On demand automation and any fields you created, they will be pulled through below the select automation. You can freely type the values you wish to pass. Or you can use any available bindings and pass those to the automation instead.
+After selecting the automation and fields, they appear below the selector. You can enter static values or use bindings instead.
 
-After selecting the field you want to populate, you can enter the value. This can be static text, or through [Bindings](doc:bindings). You could even use [JavaScript Bindings](doc:javascript) for it.
+After selecting a field, enter the value. This can be static text, a [Binding](doc:bindings), or a [JavaScript Binding](doc:javascript).
 
-Whatever you choose for bindings, you will receive the result back in your automation, which you can then use in the next steps.
+Whatever values you choose, the automation can use them in later steps.
 
 ## Using Trigger Fields
 
-This subject touches upon [working with data in automations](doc:data-in-automations), but I wanted to highlight the specific data that comes in with this trigger.
+This section focuses on the data that comes in with the trigger. For related guidance, see [Working with data in automations](doc:data-in-automations).
 
-One popular thing to do with an `On demand` trigger is creating one or multiple database rows. You could use this action to populate various tables, or even <Glossary>Data Sources</Glossary> at once.
+One common use for an `On demand` trigger is creating one or more database rows. You can use it to populate tables or even <Glossary>Data Sources</Glossary> at once.
 
-Let's take a look at the `Create Row` action. Click the step to open its settings, select your table, and use [Bindings](doc:bindings) with `trigger.fields` to map incoming values.
+The `Create Row` action is a good example. Click the step to open its settings, select your table, and use [Bindings](doc:bindings) with `trigger.fields` to map incoming values.
 
-As you can see, we're using the same names for the fields we defined in the first step.
+Use the same field names you defined in the trigger step.
 
-And if you want, at this stage, you could create another `Create Row`, or another action to create a row in another table, or somewhere else entirely. This could also be a good moment to duplicate data to [MongoDB](doc:mongodb).
+You can also add another `Create Row` action, or send data to another table or data source. This is also a good place to duplicate data to [MongoDB](doc:mongodb).

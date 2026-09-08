@@ -12,28 +12,20 @@ metadata:
 next:
   description: ''
 ---
+Row triggers let you run an automation when a row is created, deleted, or updated.
+
 ## Row created
 
-This trigger type allows users to create automations based on newly created rows. When a row is created, the entire row’s object will be passed to the automation and referenced through trigger <Glossary>Binding</Glossary>s. Various steps can be added to manipulate the data, such as updating information in another table or sending the data to a [REST API](doc:external-data-connector) endpoint.
-
-<Image align="center" src="https://files.readme.io/965dfd46b095a8adbf413c8e97e968b6ad09e322bd7ed917c6f6de5f5b90b41e-Screenshot_2025-04-04_at_13.49.43.png" />
+Use this trigger when a new record should start a workflow. The trigger passes the full row object into the automation, so later steps can create related records, send notifications, or sync the new data to another system.
 
 ## Row deleted
 
-This trigger works similarly to created rows. It will pass in a row’s object whenever a row is deleted. This can then be used to do other operations e.g. removing it from an API or deleting a related row elsewhere within Budibase.
-
-<Image align="center" src="https://files.readme.io/ddd99e49ddd0a0eb216bf344d134936f05287eb75183e11f9b5ca026132772ac-Screenshot_2025-04-04_at_13.50.02.png" />
+Use this trigger when the workflow should react to a delete. Common uses include cleaning up related records, revoking access, or logging the change elsewhere.
 
 ## Row updated
 
-Like the other two triggers listed above, this automation will run whenever a row within the chosen table is updated. 
+Use this trigger when a workflow should react to edits on an existing row. The trigger exposes both the previous row values and the updated row values, so you can compare fields and branch the automation based on what changed.
 
-<Image align="center" src="https://files.readme.io/04339955310dbf2dfc07829ce9ba876c68124c476f1e2cdf3d1c2487d560eb33-Screenshot_2025-04-04_at_13.50.10.png" />
+## Typical outputs
 
-It will provide both the old row's object (before the change). Additionally you also have access to the current values these are displayed as <Glossary>Binding</Glossary>s the names will reflect the columns of your table. 
-
-<Image align="center" src="https://files.readme.io/ff2d9e0b432ac59542852da319eed21196f1452b30de42f5b64be6a66f166d3e-Screenshot_2025-04-04_at_13.51.41.png" />
-
-With the addition of the oldRow object, you can now perform more complex operations, such as testing if a specific value has changed and then continuing or ending the automation based on that condition.
-
-This trigger can also be used similarly to the creation and deletion triggers, such as updating additional related records or posting updates to an API or query.
+The row payload is available as trigger bindings. For updates, the automation also receives the old row object, which is useful when you only want to continue if a specific field changed.

@@ -26,12 +26,12 @@ next:
       slug: rest-variables
       title: REST Variables
 ---
-Budibase REST integrations are configured from **Workspace Settings > Connections > APIs**.
+Use the REST data source when you want Budibase to connect to an external API.
 
-A REST integration has two layers:
+REST setup has two parts:
 
-* **Connection-level config** in Settings (auth, base URL, shared headers/variables)
-* **Query-level config** in API Editor (method, path, body, bindings, pagination, transformer, projects)
+* **Connection settings** in **Workspace Settings > Connections > APIs**
+* **Query settings** in the API Editor
 
 ## Create a REST connection
 
@@ -46,7 +46,7 @@ A REST integration has two layers:
 7. Add any required shared headers/URL params/static variables
 8. Click **Save**
 
-## Connection tabs reference
+## Connection tabs
 
 | Tab | Purpose | Typical fields |
 | :-- | :-- | :-- |
@@ -54,23 +54,21 @@ A REST integration has two layers:
 | Credentials | Shared request defaults | Base URL, URL parameters, headers, static variables |
 | Advanced | Transport behavior | Reject unauthorized, Download images |
 
-## Open the API Editor and create your first query
+## Create a query
 
-You can start query creation from either path below:
-
-1. In the API builder sidebar, click **New API** to start a draft query
-2. In Settings, open a saved connection and click **Open in API Editor**
-3. Select or create the connection for your draft query
-4. Set method and endpoint path
-5. Add required params/headers/body
-6. Pick auth config if needed
+1. Open the API builder sidebar and click **New API**
+2. Or open an existing connection and click **Open in API Editor**
+3. Select or create the connection
+4. Set the method and endpoint path
+5. Add any required params, headers, body fields, or bindings
+6. Select an auth config if needed
 7. Click **Send**
-8. Review response and schema
+8. Review the response and schema
 9. Click **Save Query**
 
 ## Common migration notes (old to new UI)
 
-* Older docs and workflows may reference **APIs** or **datasources** from legacy menus
+* Older docs may reference **APIs** or **datasources** from legacy menus
 * Current workflow for REST setup starts in **Settings > Connections > APIs**
 * Query authoring still happens in the API Editor via **Open in API Editor**
 
