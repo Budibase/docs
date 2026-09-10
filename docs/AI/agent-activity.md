@@ -42,6 +42,7 @@ Clicking on any request in the table opens a side panel with detailed informatio
 The details section provides granular data about a specific interaction:
 
 *   **Status**: The final or current status of the request.
+*   **Error**: The specific error message if the request has a **Failed** status.
 *   **Source**: The specific agent used.
 *   **Operation**: The names of the tools or automation workflows the agent utilized to fulfill the request.
 *   **Created by**: The user who initiated the prompt.
@@ -51,3 +52,5 @@ The details section provides granular data about a specific interaction:
 ### Timeline
 
 The timeline tracks the lifecycle of a request, from its creation through various operation stages. This is useful for debugging multi-step agent interactions or verifying that the correct logic was executed in response to a user prompt.
+
+If an operation fails, the timeline provides detailed error feedback to help you understand what went wrong during execution.

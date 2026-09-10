@@ -37,7 +37,7 @@ When a tool is enabled, you can configure its **Run as** (Execution principal) s
 *   **Requester**: The tool runs using the permissions of the user interacting with the Agent. This is the safest default for most user-facing tools.
 *   **Admin (elevated)**: The tool runs with full administrative permissions. Use this sparingly for background tasks or strictly controlled operations.
 
-> 📘 **Automations**
+> 💡 **Automations**
 > Agents triggered via an **Automation step** execute as **Admin** by default. If a tool requires escalation, the Agent will pause and, once approved, will resume using the role of the original automation requester.
 
 ### Tool Escalation
@@ -45,6 +45,12 @@ When a tool is enabled, you can configure its **Run as** (Execution principal) s
 You can require human approval for specific tools by enabling **Escalation** in the tool configuration modal. When enabled, the Agent will pause and request approval before the tool is executed.
 
 Tools with configured approvals display a status indicator (e.g., "1 approval") in the operation rail.
+
+#### Handling failures of approved actions
+
+If a reviewer approves an action but the tool fails to execute (e.g. due to a validation error or database issue), the Agent will inform the user. The response will include a message such as: *"Your request was approved, but I couldn't complete it. Please try again."*
+
+Detailed failure information is recorded in the **Activity** timeline to assist with troubleshooting.
 
 ## Agent data scope
 
@@ -150,4 +156,4 @@ Keep table and query names reasonably concise to ensure tool names remain human-
 
 * [Agent instructions guide](doc:agent-instructions-guide)
 * [Agent testing guide](doc:agent-testing-guide)
-* [Agent troubleshooting](doc:agent-troubleshooting)
+* [Agent troubleshooting guide](doc:agent-troubleshooting)
