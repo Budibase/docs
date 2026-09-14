@@ -16,7 +16,7 @@ Automations are active in both the builder preview and published apps. In the bu
 
 <br />
 
-You will be prompted to provide test data, with the exception of web-hook and cron triggers.
+You will be prompted to provide test data, with the exception of web-hook and cron triggers. You can also choose to **Test as** a specific role. This allows you to verify that the automation behaves correctly under different permission levels, especially when using steps that depend on the triggering user's identity.
 
 ![](https://files.readme.io/e9edc892160806ea607067d1611082dcf6ae90158d1ae287ebabedd3a7888e8d-image.png)
 
