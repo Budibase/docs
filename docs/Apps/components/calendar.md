@@ -284,6 +284,20 @@ On-click events can be established to surface the values for an event's `row_id`
 
     <tr>
       <td>
+        Show weekend
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        Show or hide weekends (Saturday and Sunday) in the calendar view.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
         Button Type
       </td>
 

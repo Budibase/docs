@@ -38,7 +38,7 @@ When a tool is enabled, you can configure its **Run as** (Execution principal) s
 *   **Admin (elevated)**: The tool runs with full administrative permissions. Use this sparingly for background tasks or strictly controlled operations.
 
 > 💡 **Automations**
-> Agents triggered via an **Automation step** execute as **Admin** by default. If a tool requires escalation, the Agent will pause and, once approved, will resume using the role of the original automation requester.
+> Agents triggered via an Automation step execute as **Admin** by default. If a tool requires escalation, the Agent will pause and, once approved, will resume using the role of the original automation requester.
 
 ### Tool Escalation
 
@@ -103,7 +103,7 @@ Start with `read-only`, then add writes only when validated by tests.
 
 ## Escalation and Approvals
 
-Approvals ensure that high-impact actions are reviewed by a human. This can be configured at the tool level or via the legacy `escalate` tool for instruction-based triggers.
+Approvals ensure that high-impact actions are reviewed by a human. This is configured at the tool level within the Agent operation.
 
 ### Configuring recipients
 
