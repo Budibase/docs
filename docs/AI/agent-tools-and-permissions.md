@@ -58,6 +58,12 @@ An approval rule determines **when** a policy should be applied to a specific to
 
 Tools with configured rules display a status indicator (e.g., "1 rule") in the operation rail.
 
+#### Handling failures of approved actions
+
+If a reviewer approves an action but the tool fails to execute (e.g. due to a validation error or database issue), the Agent will inform the user. The response will include a message such as: *"Your request was approved, but I couldn't complete it. Please try again."*
+
+Detailed failure information is recorded in the **Activity** timeline to assist with troubleshooting.
+
 ## Agent data scope
 
 To ensure data security and optimize token usage, Budibase automatically restricts the data exposed to AI Agents.
