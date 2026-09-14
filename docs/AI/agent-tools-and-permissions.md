@@ -37,8 +37,8 @@ When a tool is enabled, you can configure its **Run as** (Execution principal) s
 *   **Requester**: The tool runs using the permissions of the user interacting with the Agent. This is the safest default for most user-facing tools.
 *   **Admin (elevated)**: The tool runs with full administrative permissions. Use this sparingly for background tasks or strictly controlled operations.
 
-> 📘 **Automations**
-> Agents triggered via an **Automation step** execute as **Admin** by default. If a tool requires approval, the Agent will pause and, once approved, will resume using the role of the original automation requester.
+> 💡 **Automations**
+> Agents triggered via an Automation step execute as **Admin** by default. If a tool requires escalation, the Agent will pause and, once approved, will resume using the role of the original automation requester.
 
 ### Approval rules and policies
 
@@ -105,7 +105,11 @@ Use one of these patterns:
 3. Read + updates + automation triggers
    1. The agent can read data, make approved updates, and trigger downstream workflows or automations. This pattern is suitable for more mature, production-grade use cases where the agent is trusted to take actions that may have cascading effects.
 
-Start with `read-only`, then add writes only when validated by tests
+Start with `read-only`, then add writes only when validated by tests.
+
+## Escalation and Approvals
+
+Approvals ensure that high-impact actions are reviewed by a human. This is configured at the tool level within the Agent operation.
 
 ## Configuring recipients
 
@@ -158,4 +162,4 @@ Keep table and query names reasonably concise to ensure tool names remain human-
 
 * [Agent instructions guide](doc:agent-instructions-guide)
 * [Agent testing guide](doc:agent-testing-guide)
-* [Agent troubleshooting](doc:agent-troubleshooting)
+* [Agent troubleshooting guide](doc:agent-troubleshooting)
