@@ -49,6 +49,8 @@ You can self-host Budibase in under 5 minutes. We understand a lot of users need
 
 To read more about self-hosting, check the [Docker](doc:docker-compose), [Windows Server](doc:windows-server), [Kubernetes](doc:kubernetes-k8s) and [DigitalOcean](doc:digitalocean) pages.
 
+You can also deploy Budibase with one click using the official [Easypanel](https://easypanel.io/) template: https://easypanel.io/templates/budibase
+
 ## Unsupported Install Methods
 
 While Budibase offers a fair bit of flexibility with deployment options, there are some methods that are currently unsupported. 
