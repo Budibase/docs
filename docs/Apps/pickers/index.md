@@ -36,6 +36,10 @@ A special field type that only works with the [User](doc:users-1) data type. If 
 
 It can also be optionally searched on the users email address.
 
+To further refine the list of users displayed in the picker, you can use the following settings:
+* **Groups**: Filter the list to users belonging to specific User Groups. This feature requires a **Business** plan or higher.
+* **Workspace role**: Filter the list to users with a specific workspace role. This option is available when the **Workspace users** toggle is enabled.
+
 <Image alt="Adding a user field" align="center" src="https://files.readme.io/8342404-Screenshot_2023-11-03_at_16.45.55.png">
   Adding a user field
 </Image>
