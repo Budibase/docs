@@ -27,6 +27,7 @@ Make sure you have:
    * **Idle timeout (minutes)** (optional)
 5. Click **Save channel**
 6. Copy the generated **Messaging endpoint URL**
+7. (Optional) Toggle **File attachments** to **Enabled**. This requires a `GEMINI_API_KEY` to be set in your Budibase server environment.
 
 ## Configure your Slack app
 
@@ -45,6 +46,7 @@ In **OAuth & Permissions**, add:
 * `groups:history`
 * `mpim:history`
 * `users:read`
+* `files:read`
 
 ### 3. Configure event subscriptions
 
@@ -73,11 +75,19 @@ Invite the bot to channels you want it to serve, for example:
 1. In Budibase **Deployment**, toggle Slack to **Enabled**
 2. In Slack, mention the bot in a channel or send a DM
 3. Run `/link` and complete the Budibase account linking flow
-4. Send a message and confirm the agent responds
+4. Run `/unlink` to disconnect your Budibase account
+5. Send a message and confirm the agent responds
 
-Slack threads are used as conversation boundaries automatically.
+Slack threads are used as conversation boundaries. In a channel thread, you must mention the agent in each message you want it to process. In direct messages (DMs), the agent will respond to every message automatically.
 
 If you send a message before linking, Budibase prompts you privately to complete account linking first.
+
+### Slash commands
+
+* `/ask <message>`: Continue the current conversation.
+* `/new <message>`: Start a new conversation, clearing the message and file history for the current thread.
+* `/link`: Link your Slack user to your Budibase account.
+* `/unlink`: Unlink your accounts.
 
 ## Working with documents (RAG)
 
@@ -88,6 +98,13 @@ In **personal conversations (DMs)**, your agent will automatically append a list
 
 To ensure privacy and security, source download links are **not** provided when the agent is chatting in a **channel or group conversation**.
 
+### Conversation attachments
+If **File attachments** is enabled in the agent deployment settings, users can upload files directly in Slack conversations. The agent will process these files and use their content to answer subsequent questions in that thread. 
+
+* **Supported formats**: PDF, CSV, TXT, Markdown, JSON, YAML, and XML.
+* **Limits**: Up to 3 files per conversation, maximum 20MB per file.
+* **Clearing files**: Use the `/new` command to clear attached files and start a fresh conversation.
+
 ## Troubleshooting
 
 * `Not configured` in Budibase: confirm both **Bot token** and **Signing secret** are saved.
@@ -95,6 +112,7 @@ To ensure privacy and security, source download links are **not** provided when 
 * Bot does not respond in channels: confirm the bot was invited to that channel.
 * Bot prompts to link before answering: run `/link` in Slack and complete the link handoff.
 * Webhook route errors: use the exact Budibase-generated endpoint URL from **Deployment**.
+* **File processing fails**: ensure `GEMINI_API_KEY` is correctly configured and the Slack app has the `files:read` scope.
 
 ## Related guides
 

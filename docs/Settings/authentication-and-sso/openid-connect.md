@@ -62,7 +62,7 @@ Fill in the following options from your IdP:
 * **Client Secret**
   * Your unique secret issued by your IdP
 * **Allow unverified email linking**
-  * When disabled (default), Budibase will only link an SSO login to an existing local account if the identity provider confirms the email address is verified. Only enable this if you fully trust the provider to assert email addresses - otherwise it can allow account takeover. This setting can be globally overridden at boot time using the `OIDC_ALLOW_UNVERIFIED_EMAIL_LINKING` environment variable.
+  * When disabled (default), Budibase will only link an SSO login to an existing local account or a pending invite if the identity provider confirms the email address is verified. Only enable this if you fully trust the provider to assert email addresses - otherwise it can allow account takeover. Note that global admin invites always require a verified email regardless of this setting. This setting can be globally overridden at boot time using the `OIDC_ALLOW_UNVERIFIED_EMAIL_LINKING` environment variable.
 
 Save the configuration to enable OIDC on your login page.
 
@@ -102,4 +102,4 @@ Unlike the Google integration which requires a local user account to exist in ad
 
 You may still use email onboarding to create an account for a user in advance. When the user logs in via SSO for the first time, Budibase will automatically reconcile their SSO identity with any matching pending invite. This ensures the user inherits the roles and permissions from the invite without needing to set a local password first.
 
-By default, Budibase will only link an SSO login to an existing, claimed account if the identity provider confirms the email is verified (via the `email_verified` claim). However, if an account exists but has never been claimed (e.g. created via invite but no password has been set), Budibase will allow the SSO link even if the email is unverified, provided it comes from the same identity provider. This behavior for verified emails can be globally controlled using the `OIDC_ALLOW_UNVERIFIED_EMAIL_LINKING` environment variable.
+By default, Budibase will only link an SSO login to an existing account or a pending invite if the identity provider confirms the email is verified (via the `email_verified` claim). If the email is unverified, the login will be rejected with an error unless **Allow unverified email linking** is enabled. When enabled, Budibase will allow reconciling existing accounts and non-admin invites, but global admin invites will still strictly require a verified email for security. This behavior can be globally controlled using the `OIDC_ALLOW_UNVERIFIED_EMAIL_LINKING` environment variable.

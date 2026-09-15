@@ -13,7 +13,6 @@ In this guide, you will build a simple AI Service Desk Agent that can:
 * Answer questions about tickets
 * Categorise and summarise new tickets
 * Update ticket statuses
-* Escalate urgent issues automatically
 
 Along the way, you will learn how to:
 
@@ -101,7 +100,6 @@ You receive ticket data, including Title, Description, Status, and Priority.
 **Actions**
 - Categorise new tickets.
 - Suggest a priority level (Low, Medium, High)
-- Escalate tickets marked as urgent
 - Answer questions about ticket status
 - Use available tools when reading or updating tickets
 
@@ -110,18 +108,17 @@ Respond clearly and concisely.
 When categorising or prioritising, return structured JSON:
 {
   "category": "string",
-  "priority": "Low | Medium | High",
-  "requiresEscalation": "boolean"
+  "priority": "Low | Medium | High"
 }
 
 **Rules**
 - Do not modify tickets unless explicitly instructed
-- Only escalate tickets with High priority
 - Be concise and professional
 - Use British English where possible
 ```
 
-After adding the instructions, run a test and confirm that everything works.
+
+After configuring and adding the above instructions, run a test and confirm that everything is working.
 
 ### Adding tools
 
@@ -151,7 +148,7 @@ Together, these allow the Agent to:
 
 In addition to tools, Agents can use **Knowledge Sources** to answer questions based on external documents or sites. This is commonly referred to as RAG (Retrieval-Augmented Generation).
 
-> 💡 NOTE
+> 📘 NOTE
 >
 > Knowledge features require the `GEMINI_API_KEY` to be configured in your Budibase environment. If this key is missing, knowledge actions will be disabled in the builder.
 
@@ -187,7 +184,6 @@ You receive ticket data, including Title, Description, Status, and Priority.
 **Actions**
 - Categorise new tickets.
 - Suggest a priority level (Low, Medium, High)
-- Escalate tickets marked as urgent
 - Answer questions about ticket status
 - Use the appropriate tool when retrieving or updating ticket data
 
@@ -196,18 +192,17 @@ Respond clearly and concisely.
 When categorising or prioritising, return structured JSON:
 {
   "category": "string",
-  "priority": "Low | Medium | High",
-  "requiresEscalation": "boolean"
+  "priority": "Low | Medium | High"
 }
 
 **Rules**
 - Always use the provided tools when accessing ticket data
 - Do not fabricate ticket information
 - Do not modify tickets unless explicitly instructed
-- Only escalate tickets with High priority
 - Be concise and professional
 - Use British English
 ```
+
 
 Optionally, test again with some data and see how it handles the process.
 
@@ -236,14 +231,13 @@ For each test, check:
 
 * **Tool usage**: The Agent should use list/get tools to retrieve live data, and only use update when explicitly asked.
 * **Output format**: Classification responses should follow the JSON schema we defined.
-* **Data acccuracy**: Values returned should match the row data in your `Tickets` table.
-* **Safety rules**: The Agent should refuse to update or escalate unless your prompt asks it to.
+* **Data accuracy**: Values returned should match the row data in your `Tickets` table.
+* **Safety rules**: The Agent should refuse to update unless your prompt asks it to.
 
 If behaviour is inconsistent, tighten your instructions. For example:
 
 * Clarify when updates are allowed.
 * Add examples of valid and invalid requests.
-* Add stricter wording around escalation rules.
 
 Small prompt edits and frequent tests are the quickest path to reliable behaviour.
 
@@ -257,10 +251,9 @@ In this example, we’ll use an Automation to classify and prioritise tickets as
 2. Add an **LLM Prompt** action to process `Title` and `Description` and return:
    * `category`
    * `priority`
-   * `requiresEscalation`
 3. Add an **Update Row** action to write the generated `Category` and `Priority` back to the created ticket.
 4. Add a **Condition** step:
-   * If `requiresEscalation` is `true`, trigger your escalation path (for example, set `Status` to `Escalated` and send an external notification).
+   * If `priority` is `High`, trigger your notification path (for example, send an external notification).
 5. Test with multiple sample tickets to confirm the full flow.
 
 This gives you a practical split of responsibilities:

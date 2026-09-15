@@ -19,7 +19,7 @@ Automations run in both the builder preview and published apps. In the builder, 
 3. Provide test data when prompted.
 4. Review the run output and step-by-step progress.
 
-Webhook and cron triggers do not always require the same prompt data as row-based triggers.
+You will be prompted to provide test data, with the exception of web-hook and cron triggers. You can also choose to **Test as** a specific role. This allows you to verify that the automation behaves correctly under different permission levels, especially when using steps that depend on the triggering user's identity.
 
 ## What to check
 
