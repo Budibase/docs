@@ -1,8 +1,7 @@
 ---
 title: Export and import workspaces
 excerpt: >-
-  Methods for moving an application or backing up the design and data of an
-  application
+  Methods for moving a workspace or backing up its design and data
 deprecated: false
 hidden: false
 metadata:
@@ -12,7 +11,7 @@ metadata:
 next:
   description: ''
 ---
-You can use the methods below to move a Budibase workspace from one Budibase installation to another or back up your workspace app and data. Admins and Developers can export any app as a JSON blob text file.
+You can use the methods below to move a Budibase workspace from one Budibase installation to another or back up your workspace and data. Admins and Developers can export any workspace as a JSON blob text file.
 
 The exported file will include all [Budibase DB](doc:budibasedb) data, data connector configurations, query configs, and builder data for all your screens.
 
@@ -21,7 +20,7 @@ The exported file will include all [Budibase DB](doc:budibasedb) data, data conn
 > When exporting a production workspace, be vigilant about whom you share the workspace export files with.  
 > Are you confident you won't leak database credentials, user identity information, authentication keys, or other sensitive information?
 >
-> We also recommend that you make use of the password-based app export encryption.
+> We also recommend that you make use of the password-based workspace export encryption.
 
 ## Export a workspace
 
@@ -41,7 +40,7 @@ The exported file will include all [Budibase DB](doc:budibasedb) data, data conn
 
 This will bring up a few options to choose from:
 
-* **Export latest edited** will export the development version of your app, including any changes since your last publish
+* **Export latest edited** will export the development version of your workspace, including any changes since your last publish
 * **Export latest published** will export only the last published version of your workspace
 
 After choosing an export option, you will be given the option to _Export rows from internal tables_. This will include or exclude all the data rows from your internal [Budibase DB](doc:budibasedb)  tables in the export; however, data source **configuration and credentials will still be exported**.
@@ -56,7 +55,7 @@ In addition to that, you'll be presented with the option _Encrypt my export_ whi
 
 > 💡 Environment variables
 >
-> By using [Environment variables 🔒](doc:environment-variables), you can exclude secrets and datasource credentials from your workspace exports.
+> By using [Environment variables 🔗](doc:environment-variables), you can exclude secrets and datasource credentials from your workspace exports.
 
 ## Import a workspace
 
@@ -72,15 +71,15 @@ If you click the import button, the UI will change slightly. This will change th
 
 > 💡 Backups
 >
-> [Workspace backups 🔒](doc:backups-1) can be imported like you would import a manual export.
+> [Workspace backups 🔗](doc:backups-1) can be imported like you would import a manual export.
 >
-> The benefit of using backups is that they will automatically be created when publishing your app.
+> The benefit of using backups is that they will automatically be created when publishing your workspace.
 
 ## Import into an existing workspace
 
-You can import a workspace export into an existing workspace by going to **Settings > General > Import**. This is useful if you want to update the design of an existing app or add new functionality without affecting your existing data.
+You can import a workspace export into an existing workspace by going to **Settings > General > Import**. This is useful if you want to update the design of an existing workspace or add new functionality without affecting your existing data.
 
-<Image align="center" border={false} src="https://files.readme.io/ef9690b32c948fc45a022bd3ab6342f65eaa66f85e71c2bb23bb0711d06b50ad-Screenshot_2025-08-20_at_12.52.50.png" />
+<Image align="center" border={false} src="https://files.readme.io/ef9690b32c948fc45a022bd3ab6342f65ea6a6f85e71c2bb23bb0711d06b50ad-Screenshot_2025-08-20_at_12.52.50.png" />
 
 When importing into an existing workspace:
 * **Existing data is preserved**: Tables and rows that already exist in your workspace will not be overwritten or deleted.
