@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-MongoDB is a modern NoSQL database, that can be connected to Budibase with a few clicks. 
+MongoDB is a modern NoSQL database that can be connected to Budibase with a few clicks.
 
 Before we get started, make sure you've got the following: 
 
@@ -34,15 +34,7 @@ Now that you have everything you need to hook up your MongoDB installation to Bu
 
 To connect your MongoDB <Glossary>Data Source</Glossary>, head over to the data section in the Budibase builder UI. Then, click the `Add source` button in the left-hand settings panel to add a new data source.
 
-<Image alt="Press the `+` icon to add a data source" align="center" src="https://files.readme.io/7a77d59-Screenshot_2023-06-27_at_12.10.36.png">
-  Press the `+` icon to add a data source
-</Image>
-
 You will be presented a dialog, in which you choose `MongoDB`. Then you will be presented with the connection configuration.
-
-<Image title="mongo-connectionstring.jpeg" alt={673} align="center" src="https://files.readme.io/7acce0f-mongo-connectionstring.jpeg">
-  A standard connectionstring when connecting to MongoDB Atlas
-</Image>
 
 Paste your ConnectionString, and enter the database name which you want to connect with, and click `Save and continue to query`.
 
@@ -58,11 +50,9 @@ Now that you have added the connection to your database, you can start querying 
 
 The first step is to click the 'Add query' button, which is located on the data source page you just added. If you're not on this page, click on the MongoDB connection in the list of data sources on the left.
 
-![](https://files.readme.io/29d5e4b-queries.png "queries.png")
+Choose the query name, collection, function, and access level first. Then use the action type to define which MongoDB operation Budibase should run.
 
 ### Query configuration
-
-![](https://files.readme.io/d478411-query-configuration.png "query-configuration.png")
 
 Configuring your query is essential in making sure it runs correctly. In the table below you'll find what each field means.
 
@@ -84,12 +74,10 @@ You have the option to insert one or many documents into a collection.
 
 When inserting a single document, provide a payload within the query box. 
 
-![](https://files.readme.io/cd3e4b3-Screenshot_2022-06-17_at_11.50.46.png "Screenshot 2022-06-17 at 11.50.46.png")
-
 In this case, an ObjectId is automatically generated for the new document.\
-If you want to specify an ObjectId, you can do that as follows: 
+If you want to specify an ObjectId, you can do that as follows:
 
-![](https://files.readme.io/2a5b095-Screenshot_2022-06-17_at_11.54.46.png "Screenshot 2022-06-17 at 11.54.46.png")
+If you are inserting multiple documents, provide an array of objects instead of a single object.
 
 > 🚧 Document ID
 >
@@ -97,18 +85,12 @@ If you want to specify an ObjectId, you can do that as follows:
 
 When inserting many, you must provide an array of objects.
 
-![](https://files.readme.io/1139ebd-Screenshot_2022-06-17_at_12.03.59.png "Screenshot 2022-06-17 at 12.03.59.png")
-
 ### Read query
 
 The most basic query you can do is a *find* with no query body.\
 This will return all data available within the specified collection.
 
-![](https://files.readme.io/b80361e-Screenshot_2022-06-17_at_11.44.02.png "Screenshot 2022-06-17 at 11.44.02.png")
-
-A filter object can be added to the query box. For example, get all documents in the collection where age is greater than 40:
-
-![](https://files.readme.io/18cecf7-Screenshot_2022-06-17_at_11.43.33.png "Screenshot 2022-06-17 at 11.43.33.png")
+A filter object can be added to the query box. For example, return only documents where age is greater than 40.
 
 A full list of query operators can be found here: [https://www.mongodb.com/docs/manual/reference/operator/query/](https://www.mongodb.com/docs/manual/reference/operator/query/)
 
@@ -116,13 +98,11 @@ A full list of query operators can be found here: [https://www.mongodb.com/docs/
 
 When performing an update you must provide two objects:
 
-1. **uired]** F** Filter - find the documents to change.
-2. **uired]** U** Update - instructions for the modifications to make.
-3. **ional]** O** Options - additional update parameters (more [here](https://www.mongodb.com/docs/v4.4/reference/method/db.collection.updateOne/))
+1. **Required** Filter - find the documents to change.
+2. **Required** Update - instructions for the modifications to make.
+3. **Optional** Options - additional update parameters (more [here](https://www.mongodb.com/docs/v4.4/reference/method/db.collection.updateOne/))
 
-For example, set the *retired* property to true for all documents that have an age over 65:
-
-![](https://files.readme.io/f5d94e4-Screenshot_2022-06-17_at_12.23.37.png "Screenshot 2022-06-17 at 12.23.37.png")
+For example, set the *retired* property to true for all documents that have an age over 65.
 
 If *updateOne* was used instead, then only the first filter match would have been updated.
 
@@ -133,9 +113,7 @@ A full list of update operators can be found here: [https://www.mongodb.com/docs
 To delete ALL records from a collection, run a query with no filter and the *deleteMany* action type set.\
 **Careful!**
 
-Otherwise, you can add a filter to delete all matching records: 
-
-![](https://files.readme.io/b172b92-Screenshot_2022-06-17_at_17.13.47.png "Screenshot 2022-06-17 at 17.13.47.png")
+Otherwise, you can add a filter to delete all matching records.
 
 If *deleteOne* was used instead, then only the first filter match would have been deleted.
 
@@ -151,19 +129,11 @@ Bindings in Queries allow you to insert data when using the query. You can use H
 
 Let's take a look at an example where we pass the ID from a binding into the query. Our binding looks like this.
 
-![](https://files.readme.io/f13b018-Screenshot_2022-06-17_at_12.51.35.png "Screenshot 2022-06-17 at 12.51.35.png")
-
 Then, adjusting our query, we add the `id` using handlebars directly into the string
 
-![](https://files.readme.io/2830edf-Screenshot_2022-06-17_at_12.47.08.png "Screenshot 2022-06-17 at 12.47.08.png")
+Now, wherever you use the created query as a data source in a [Data Provider](doc:data-provider), you can configure the bindings directly from there using the gearwheel behind the provider selection.
 
-Now, wherever you use the created query as a data source in a [Data Provider](doc:data-provider), you can configure the bindings directly from there, using the gearwheel behind the provider selection
-
-![](https://files.readme.io/c136975-configure-binding.png "configure-binding.png")
-
-This will then open up the configuration modal, where you can bind the value, for example using a [Form](doc:forms) input. 
-
-![](https://files.readme.io/d6e9ca3-mongodb-query-binding.png "mongodb-query-binding.png")
+This will then open up the configuration modal, where you can bind the value, for example using a [Form](doc:forms) input.
 
 ### Transformer
 
@@ -179,19 +149,15 @@ The `transformer` box accepts JavaScript, and is ran within a function. This mea
 
 Now that you have configured the entire query correctly, it's time to save the query. You can't save the query without running it first so we know it actually is working.
 
-So the first thing you want to do now, is click the `Run Query` button
-
-![](https://files.readme.io/b2b5724-mongo-run-query.png "mongo-run-query.png")
+So the first thing you want to do now is click the `Run Query` button.
 
 As soon as you click the button, the query will be executed. When the query is successful, the result will be displayed below. There you can inspect the result, configure the schema and preview it in a table.
-
-![](https://files.readme.io/70ff61e-mongo-runquery-result.png "mongo-runquery-result.png")
 
 ### Configuring schema
 
 Configuring the schema is important for Budibase, as it allows the interface to understand what kind of data it is dealing with. In order for you to configure the data, click the `Schema` Tab, which is next to the `JSON` tab in the results section. You should then be presented with a page like this:
 
-![](https://files.readme.io/2edbd43-mongo-results-schema.png "mongo-results-schema.png")
+Use this view to confirm the shape of the data before you save the query.
 
 ## Aggregations
 
@@ -201,23 +167,19 @@ This is done through *pipelines* which contain a number of *stages*. More from t
 
 To use aggregations within Budibase, select the **Aggregate** function.
 
-![](https://files.readme.io/db42f82-Screenshot_2022-11-11_at_10.34.04.png)
-
 There are two modes in which you can interact with aggregations: JSON and Pipeline.
 
 ### Json
 
 This is the default mode. Simply enter an array of stages to be processed.
 
-![](https://files.readme.io/95a2d7d-Screenshot_2022-11-11_at_10.42.11.png)
+Use this when you already know the pipeline and want to paste it directly.
 
 ### Pipeline
 
 Whilst the JSON mode can do everything you need, you may find the GUI mode makes your pipeline easier to manage. 
 
 Add as many stages as you like with the `+` button, delete stages with the trashcan icon, and use the arrows to swap stages.
-
-![](https://files.readme.io/0efef57-Screenshot_2022-11-11_at_10.47.35.png)
 
 A benefit of using the Pipeline mode is that it provides the available aggregation stages in a dropdown, and selecting a stage will fill out a template of relevant properties, which can be easily altered.
 
@@ -237,35 +199,11 @@ A benefit of using the Pipeline mode is that it provides the available aggregati
 
 In MongoDB it is common to use nested documents instead of relationships. For example, this **transactions** collection returns an array of transaction meta data, with nested transaction data:
 
-<Image align="center" src="https://files.readme.io/967a23d-nested_schema.png" />
-
-Looking at the `Schema` tab, we can see a property called *transactions* of type *Array*:
-
-<Image alt="Array of transactions" align="center" src="https://files.readme.io/0c6e00d-array_type.png">
-  Array of transactions
-</Image>
-
-When displaying nested array query data, Budibase will automatically generate the schema for the nested objects.
+Budibase will generate schema for the nested objects automatically once the query returns the data.
 
 To make use of the nested data, first add a Repeater [Block](doc:blocks) to your screen for the query.
 
-<Image alt="Selecting the query" align="center" src="https://files.readme.io/ec47d35-Screenshot_2024-02-19_at_11.55.12.png">
-  Selecting the query
-</Image>
-
-Next nest a [Table block](doc:table-block) under the repeater block. The nested data source can be selected under the *JSON Arrays* section:
-
-<Image align="center" src="https://files.readme.io/5042e35-Screenshot_2024-02-19_at_11.57.08.png" />
-
-Alternatively you can nest another **Repeater block**, which would give you access to the nested data row [bindings](doc:introduction-to-bindings):
-
-<Image align="center" src="https://files.readme.io/4931ab3-repeater.png" />
-
-The data types are determined automatically based on the primitive types provided by the Mongo query:
-
-<Image alt="Example nested transaction data in Mongo Atlas" align="center" src="https://files.readme.io/d6b85ac-mongo.png">
-  Example nested transaction data in Mongo Atlas
-</Image>
+Next nest a [Table block](doc:table-block) under the repeater block. Select the nested array from the *JSON Arrays* section of the table block.
 
 <br />
 
@@ -275,40 +213,16 @@ In the previous example we had a nested array of objects. Sometimes you will hav
 
 In this tutorial you will see how to display a list of product tags underneath each account. Here is the result of the Mongo query:
 
-<Image align="center" src="https://files.readme.io/9ba62f1-Screenshot_2024-02-23_at_10.27.08.png" />
-
-<Image alt="Account schema with products array" align="center" src="https://files.readme.io/376a01a-Screenshot_2024-02-23_at_10.29.48.png">
-  Account schema with products array
-</Image>
+The pattern is the same: use one repeater for the parent records, a second repeater for the nested `products` array, and a Tag component inside that repeater.
 
 To begin create your screen and add a **Repeater block**. Select the *Read accounts* query.
 
-<Image align="center" src="https://files.readme.io/4379932-Screenshot_2024-02-23_at_10.30.44.png" />
-
-Next add a [Headline](https://docs.budibase.com/docs/displaying-text#headline) and display the *account\_id* with the following <Glossary>Binding</Glossary>: `Account ID: {{ Accounts Repeater Block.Read accounts.account_id }}`
-
-Now we'll nest a second **Repeater block**, this time for the associated account products. Under the *Fields* section of the *Data* setting, select the *products* field:
-
-<Image alt="Selecting the related account products" align="center" src="https://files.readme.io/f7331e9-Screenshot_2024-02-23_at_10.37.48.png">
-  Selecting the related account products
-</Image>
-
 Under the second repeater block, nest a **Tag** component. Your final <Glossary>Component Tree</Glossary> should look roughly like so:
-
-<Image alt="Final component tree" align="center" src="https://files.readme.io/16bc62a-Screenshot_2024-02-23_at_10.39.11.png">
-  Final component tree
-</Image>
 
 In the <Glossary>Settings Panel</Glossary>, set the *Text* property of the tag to the products value: `{{ Products Repeater Block.products.value }}`
 
-<Image alt="Select the 'Value' binding from the products repeater" align="center" src="https://files.readme.io/b736afa-Screenshot_2024-02-23_at_10.41.04.png">
-  Select the 'Value' binding from the products repeater
-</Image>
-
 Use [Conditional UI](doc:conditions) to give the tags a custom colour based on the product:
-
-<Image align="center" src="https://files.readme.io/c6199ef-Screenshot_2024-02-23_at_10.42.59.png" />
 
 #### Result
 
-<Image align="center" src="https://files.readme.io/ecdb242-Screenshot_2024-02-23_at_10.44.26.png" />
+The final screen shows each account with its related product tags styled by value.
