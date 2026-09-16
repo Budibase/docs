@@ -33,8 +33,8 @@ You can then resize and position the component like other screen components.
 
 ## Chatbox settings
 
-| Setting           | Description                                   |
-| :---------------- | :-------------------------------------------- |
+| Setting           | Description                                 |
+| :---------------- | :------------------------------------------ |
 | Intro text        | Short text shown above the conversation area. |
 | Input placeholder | Placeholder text in the chat input box.       |
 | Send button label | Label shown on the send action button.        |
@@ -57,6 +57,7 @@ In app runtime, Chatbox:
 * Uses the configured default agent for starting new chats
 * Shows per-agent conversation starters when configured
 * Hides unavailable agents from the enabled list
+* Renders escalation cards (human-in-the-loop requests) at the bottom of the relevant message
 
 If no agents are configured or enabled, users see an empty-state message instead of a chat session.
 
