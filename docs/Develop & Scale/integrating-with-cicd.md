@@ -1,5 +1,5 @@
 ---
-title: Integrating with CI/CD 🔒
+title: Integrating with CI/CD 🚀
 excerpt: How to deploy apps between 2 or more Budibase instances
 deprecated: false
 hidden: false
@@ -18,7 +18,7 @@ You can set up this deployment process using the following steps, using the Budi
 
 1. [Export the app](https://docs.budibase.com/reference/appexport) from the development environment.
 2. [Import the app](https://docs.budibase.com/reference/appimport) into the production environment.
-3. (Optionally) [Publish the app](https://docs.budibase.com/reference/apppublish) in the production environment. If you don’t publish, then you have the opportunity to test the app in the production environment before manually publishing the app to your users.
+3. (Optional) [Publish the app](https://docs.budibase.com/reference/apppublish) in the production environment. If you don’t publish, then you have the opportunity to test the app in the production environment before manually publishing the app to your users.
 
 We've written a bash script ([below](https://docs.budibase.com/docs/integrating-with-cicd#bash-script-for-cicd)) that automates this process. Most CI/CD platforms support bash scripting inside their pipelines. You can use this script directly in your CI/CD process.
 
@@ -70,7 +70,7 @@ The bash script below uses the following variables. You'll need to supply these 
   <tbody>
     <tr>
       <td>
-        BUDIBASE\_SOURCE\_TENANT
+        BUDIBASE\\_SOURCE\\_TENANT
       </td>
 
       <td>
@@ -86,7 +86,7 @@ The bash script below uses the following variables. You'll need to supply these 
 
     <tr>
       <td>
-        BUDIBASE\_SOURCE\_API\_KEY
+        BUDIBASE\\_SOURCE\\_API\\_KEY
       </td>
 
       <td>
@@ -126,7 +126,7 @@ The bash script below uses the following variables. You'll need to supply these 
 
     <tr>
       <td>
-        BUDIBASE\_DESTINATION\_TENANT
+        BUDIBASE\\_DESTINATION\\_TENANT
       </td>
 
       <td>
@@ -142,7 +142,7 @@ The bash script below uses the following variables. You'll need to supply these 
 
     <tr>
       <td>
-        BUDIBASE\_DESTINATION\_API\_KEY
+        BUDIBASE\\_DESTINATION\\_API\\_KEY
       </td>
 
       <td>
@@ -160,7 +160,7 @@ The bash script below uses the following variables. You'll need to supply these 
 
     <tr>
       <td>
-        BUDIBASE\_DESTINATION\_APP\_ID
+        BUDIBASE\\_DESTINATION\\_APP\\_ID
       </td>
 
       <td>
@@ -186,7 +186,7 @@ The bash script below uses the following variables. You'll need to supply these 
       </td>
 
       <td>
-        `true`or`false`
+        `true` or `false`
       </td>
     </tr>
   </tbody>
@@ -198,7 +198,7 @@ The bash script below uses the following variables. You'll need to supply these 
 
 The script below saves the exported app to `export.tar.gz`. You may save this file as an artifact during your CI/CD process. The script could also be modified to export the existing app in your destination tenant, to store as an artifact.
 
-```shell bash
+bash
 #!/bin/bash
 
 # 1. Set local variables from environment variables
@@ -298,18 +298,22 @@ else
     echo "App import successful. HTTP status code: $HTTP_STATUS_IMPORT"
 fi
 
-#6 Optionally- publish the app in the destination environment
+# 6 Optionally- publish the app in the destination environment
 if [[ "$BUDIBASE_PUBLISH_DESTINATION_APP" == "true" ]]; then
   echo "Publishing destination app with ID: $BUDIBASE_DESTINATION_APP_ID..."
   HTTP_STATUS_PUBLISH=$(curl \
-     --silent \
-     --output /dev/null \
-     --write-out "%{http_code}" \
-     --request POST \
-     --url $BUDIBASE_DESTINATION_TENANT/api/public/v1/applications/$BUDIBASE_DESTINATION_APP_ID/publish \
-     --header 'accept: application/json' \
-     --header "x-budibase-api-key: $BUDIBASE_DESTINATION_API_KEY")
-  if [[ "$HTTP_STATUS_PUBLISH" -ne 200 ]]; then
+      --silent \
+      --output /dev/null \
+      --write-out "%{http_code}" \
+      --request POST \
+      --url $BUDIBASE_DESTINATION_TENANT/api/public/v1/applications/$BUDIBASE_DESTINATION_APP_ID/publish \
+      --header 'accept: application/json' \
+      --header "x-budibase-api-key: $BUDIBASE_DESTINATION_API_KEY")
+  
+  if [[ "$HTTP_STATUS_PUBLISH" -eq 429 ]]; then
+      echo "Warning: A publish for this app is already in progress. Your new app exists in the destination but was not published."
+      exit 1
+  elif [[ "$HTTP_STATUS_PUBLISH" -ne 200 ]]; then
       echo "Error: Failed to publish app. HTTP status code: $HTTP_STATUS_PUBLISH. Your new app exists in the destination but is not published. You can publish or revert manually via Budibase."
       exit 1
   else
@@ -319,4 +323,3 @@ else
   echo "Skipping publishing of destination app - please publish manually via Budibase."
 fi
 
-```
