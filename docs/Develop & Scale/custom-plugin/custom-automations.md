@@ -10,97 +10,110 @@ metadata:
 next:
   description: ''
 ---
-## Purpose
+Custom automation steps let you extend Budibase automations with your own backend logic.
 
-Automation action plugins can be used to extend the functionality of automations. [Automations](https://docs.budibase.com/docs/automation-steps) can be used in conjunction with the various triggers Budibase provides, like webhooks or row created/updated/deleted events to create custom backend functionality, API endpoints or background processes. With plugins we can extend this further, for example we could build an automation plugin that integrates with a local IoT system, allowing you to trigger real world actions through Budibase. Currently, automation plugins can only be used in self host.
+Use them when you need an action that is not covered by the built-in automation steps.
 
-Datasource plugins can also be used to provide similar functionality through the "External Data Connector" action in automations - however the integration with automations is more complex, the plugin is more complex (requiring [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations to be fully defined) and is more data centric in functionality; automations in contrast are more action focused.
+## Before you start
 
-## Getting started
+Make sure you have:
 
-Make sure you have the latest [Budibase CLI](https://docs.budibase.com/docs/budibase-cli-setup) installed. Even if you have previously installed the CLI, you may want to install it again to be sure you have the latest version.
+* The latest [Budibase CLI](https://docs.budibase.com/docs/budibase-cli-setup)
+* Node.js `v20` or later
+* A self-hosted Budibase installation
 
-Also make sure that you have **node v20+** installed. You can run `node --version` to see if you need to upgrade.
+Automation step plugins are not available in Budibase Cloud.
 
-Please note that automation action plugins can only be used in self host installations - they cannot be imported to the Budibase Cloud.
+## Create the step
 
-Once that's done, we need to initialise a template for our automation action. 
-
-> 📘 Automation actions - not triggers
->
-> It is important to note that you can only build automation actions, triggers are built into Budibase and can only be extended through the core project. If you need a new automation trigger type please create an [issue](https://github.com/Budibase/budibase/issues/new?assignees=\&labels=enhancement\&template=feature_request.md\&title=) describing what you need.
-
-Navigate to the folder location you want to create your plugin, and execute the following command:
+1. Go to the folder where you want to create the plugin.
+2. Run:
 
 ```shell
 budi plugins --init automation
 ```
 
-Next you will receive a series of prompts to enter details about your automation. You can press enter without providing a value if you are happy to use the placeholder.
+3. Complete the setup prompts.
+4. Open the generated project in your editor.
 
-![](https://files.readme.io/ed400a6-image.png)
+The template includes:
 
-This will create an automation skeleton project, with the following structure:
+* `src/index.ts` for the entry point
+* `src/automation.ts` for the step implementation
+* `schema.json` for builder configuration
+* `test/index.spec.ts` for template tests
 
-```Text YAML
-src:
-  index.ts: The main entry file - this should not change under normal circumstances.
-  automation.ts: The code for your custom automation action. Do not rename.
+## Build and watch
 
-test:
-  index.spec.ts: A Jest test file that includes a template test for the action runner.
-
-package.json: The version, license and dependencies for your automation action.
-
-schema.json: The metadata which describes your automation action - like settings displayed in builder.
-```
-
- There will be a lot of generated files/directories, such as `node_modules` and build/test configuration files - you will not usually need to edit these, if you do need to change these it may be worth raising an [issue](https://github.com/Budibase/budibase/issues/new?assignees=\&labels=enhancement\&template=feature_request.md\&title=).
-
-## Building your automation
-
-After you have created your new automation action directory, execute the following:
+Build the project with:
 
 ```shell
 cd budibase-automation
 yarn build
 ```
 
-Assuming you have [updated the server env variable](https://docs.budibase.com/docs/custom-plugin#hot-reloading-developers-only) you should now be able to see your automation plugin in Budibase, as a selectable automation step.
+During development, run `yarn watch` so changes are reflected in your local Budibase instance.
 
-### Automation.ts
+If you change `schema.json`, refresh the builder so the new action shape appears.
 
-This is where the code will live for your automation action. It is recommended that it is developed in TypeScript, this allows use of the [@budibase/types](https://www.npmjs.com/package/@budibase/types) package if you desire access to any of the Budibase types.
+## Implement the step
 
-To make sure your saved changes are passed through to your Budibase server, you must execute a `yarn watch` within your custom automation project. This will allow your local Budibase app builder to see those changes in real-time, which is very handy for getting your automation to behave just right. Please note that if you change the `stepId` in your `schema.json` then any automations currently using the plugin will break, the `stepId` should not change.
+`automation.ts` exports a single `run` function.
 
-#### Methods
+Use it to:
 
-The `automation.ts` file contains a single exported function - `run`. This takes the inputs from the prior automation steps, as configured by the user and performs the steps required for this action. This can be quite daunting, as you can do anything with this function, for some inspiration as to how this can be used you can look through the [built-in actions](https://github.com/Budibase/budibase/tree/develop/packages/server/src/automations/steps).
+* Read inputs from prior automation steps
+* Perform the required action
+* Return the next output for the automation chain
 
-Types involved with the automation runner can be found [here](https://github.com/Budibase/budibase/blob/develop/packages/types/src/documents/app/automation.ts). Importantly the `AutomationStepInput` which is provided to the automation runner, contains the following:
+Keep the action focused on one responsibility. If you need multiple behaviours, create separate steps.
 
-| Property  | Type   | Description                                                                                                                                                                         |
-| :-------- | :----- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `inputs`  | object | A map of the specific inputs the user has specified for this automation, these may have been extracted from context                                                                 |
-| `context` | object | The full automation context, containing the outputs of all prior steps                                                                                                              |
-| `emitter` | object | An event emitter, used to trigger other events in Budibase (can trigger other automations)                                                                                          |
-| `appId`   | string | The app ID which this automation is being ran within; can be used with the Budibase API, or functions in [@budibase/backend-core](https://npmjs.com/package/@budibase/backend-core) |
+The `run` function receives the automation context, step inputs, and an event emitter. Use those to read data, return outputs, or trigger downstream behaviour.
 
-### Test
+The template also includes a `stepId`. Keep that identifier stable once the step is in use, because changing it can break existing automations.
 
-The `index.spec.ts` test file includes a template unit test for the runner function. testing can be quite simple, just pass in the require inputs and check that the function returns the expected outputs/performs the expected actions; the design of your test will depend on the function of your automation action.
+## Configure the schema
 
-Testing is not required for developing an automation plugin, but can be useful when developing, rather than having to run an automation within Budibase, you can check your automation action performs its expected result through a test.
+`schema.json` defines:
 
-### Schema
+* The step name and icon
+* The inputs the user configures in the builder
+* The outputs the step returns
 
-The schema defines various properties such as the name, icon and the inputs/outputs of your automation action.
+Keep the public configuration narrow and explicit.
 
-You can jump to the automation schema page [here](https://docs.budibase.com/docs/automation-schema#schema-structure).
+For most actions, set `type` to `action`. Use a logic step only when the plugin is meant to control flow rather than perform an action.
 
-### Adding an icon
+Use `inputs` for defaults and `schema.inputs` and `schema.outputs` for the structured contract that the builder and runtime share.
 
-Adding an icon to your automation action is quite simple, first pick the icon you would like to use on the [Phosphor Icon](https://phosphoricons.com/) site. For example if we you want to use the "list-magnifying-glass" icon shown [here](https://phosphoricons.com/?q=list+magnifying+glass).
+## Testing
 
-Then all you need to do is update your `schema.json` - find the top level `icon` field and set it to `list-magnifying-glass` - this is case sensitive and should not contain spaces.
+Use `test/index.spec.ts` to verify the step behaves correctly with representative inputs.
+
+Focus on:
+
+* Input handling
+* Returned outputs
+* Error paths
+* Any side effects triggered by the step
+
+When the action interacts with external services, add tests for auth failures and invalid input as well as the happy path.
+
+## Add an icon
+
+Pick an icon from the [Phosphor icons](https://phosphoricons.com/) set, then set the icon name in `schema.json`.
+
+Keep the icon name stable once the step is in use, because changing it can affect existing automations.
+
+## Development notes
+
+* Automation step plugins are action focused
+* They are only available in self-hosted Budibase
+* `stepId` stability matters more than the display name
+* The built-in trigger types are not extended through this plugin path
+
+## Related guides
+
+* [Automation schema](https://docs.budibase.com/docs/automation-schema#schema-structure)
+* [Budibase CLI setup](https://docs.budibase.com/docs/budibase-cli-setup)
+* [Custom plugin overview](https://docs.budibase.com/docs/custom-plugin)

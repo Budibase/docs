@@ -1,8 +1,6 @@
 ---
 title: Application actions
-excerpt: >-
-  These actions can be anything from notifications, to triggering automations or
-  navigating between screens.
+excerpt: Actions for navigation, notifications, modals, and automations.
 deprecated: false
 hidden: false
 metadata:
@@ -16,69 +14,62 @@ next:
       slug: form-actions
       title: Form actions
 ---
+Use application actions when a user interaction should change screens, open UI, show feedback, or trigger automation.
+
 ## Navigate To
 
-Use this action if you want to go to another web page or app screen.\
-For example: [Navigation on row button click](doc:url-parameters)
+Use this action to open a URL or another screen.
 
-When the *Destination* is set to 'URL', you have the option to open the link in a new tab.
+If the destination is a URL, you can open it in a new tab.
 
-![](https://files.readme.io/8f018e8-new_tab.png)
-
-Alternatively, if the *Destination* is set to 'Screen', then you can select a screen to navigate to from the dropdown. The screen can optionally be opened in the current tab, or in a [modal](https://docs.budibase.com/docs/screens#modal-screen).
+If the destination is a screen, you can open it in the current tab or in a modal.
 
 You can learn more about using URL parameters with the `Navigate To` action [here](https://docs.budibase.com/docs/url-parameters).
 
-![](https://files.readme.io/a455654-open_modal.png)
+## Trigger automations
 
-## Trigger Automations
+Use this action to run an existing automation.
 
-Often there are times where you would like to trigger a automation after a user has performed an action. There are a range of different [Automations](doc:custom-automations). You are able reference any created automations by clicking the `Use an existing automation` radio button and then selecting an existing previously created automations to use and run. 
+Pass values into the automation with fields on the action.
 
-<Image align="center" src="https://files.readme.io/d09d42c-224bfaf-Screenshot_2023-05-19_at_11.27.45.png" />
-
-Lastly, creating fields within the automation itself allows data/bindings to be sent to it, this can then be used in your automation to perform whatever task you require. An example of this would be passing an `_id` of a row to the automation to then update the row's state e.g. from `Pending` to `In progress`.
-
-<Image align="center" src="https://files.readme.io/15a00b5-6bfc5bc-Screenshot_2023-05-19_at_11.50.58.png" />
+This is useful when a user action should kick off a background process.
 
 ## Logout
 
-If you want to log a user out, you can use this action. It has redirect functionality built in meaning you can redirect to whatever url you desire.
+Use this action to sign the current user out and optionally redirect them.
 
-## Close Screen Modal
+## Close screen modal
 
-If the current screen has been opened as a [Modal](https://docs.budibase.com/docs/screens#modal-screen), then close it. Additionally, you can navigate to a new screen or open a different screen modal afterwords also using this action.
+Use this action to close the current screen modal.
 
-## Close Modal
+You can also navigate to another screen after closing.
 
-This action takes no settings, and will close any modal component open on screen.
+## Close modal
 
-## Open Modal
+Use this action to close the currently open modal component.
 
-Opens a modal component on a screen - different to a "Navigate to" action with "Open screen in modal", which opens an entire screen in a modal, this action opens a modal component that is already on the current screen. See [modal component]()
+## Open modal
 
-## Show Notification
+Use this action to open a modal component that already exists on the current screen.
 
-This allows you to show a popup notification, of which there are four different types; `Success`, `Warning`, `Error` and `Info`. Changing the type will change the styling of the popup for example: success will be have a green background where as error will have a red background. Additionally you can make use of the bindings to output more informative messages. E.g. `Hi {{ Current User.email }} welcome to Budibase.` 
+## Show notification
 
-<Image align="center" src="https://files.readme.io/5045b379a19194c916869fcab88a0fde2a2bd7e099318bb67e02e715fcbb66d0-Screenshot_2024-09-04_at_16.03.18.png" />
+Use this action to show a success, warning, error, or info message.
 
-### Logic within notifications
+You can include bindings in the message text.
 
-It is possible to use some logic with the notification - if the result of the logic running is falsy, no message will show. This can be used in conjunction with a "Continue if/Stop If" step to show the user some feedback explaining why the action has stopped.
+It is also possible to use some logic with the notification - if the result of the logic running is falsy, no message will show. This can be used in conjunction with a "Continue if/Stop If" step to show the user some feedback explaining why the action has stopped.
 
-## Prompt User
+## Prompt user
 
-This action adds an additional step before other actions are run. The title, message, and button text can all be customised. It provides a prompt to the user, and won't run any other action after it unless they click the confirm button. This is very useful for a longer chain of actions, as it provides context and gives the option to cancel the process before it starts
+Use this action to confirm a user decision before continuing a chain of actions.
 
-![](https://files.readme.io/8499167ec5c02eb383158fb8bf283960a3e4426483ae9edb667a76707e8179df-image.png)
+If the user cancels, later actions do not run.
 
-<br />
+## Open side panel
 
-## Open Side Panel
+Use this action to open one of the screen's side panels.
 
-Provides a list of all side panels within a current screen, selecting one will open that side panel whenever the action is hit.
+## Close side panel
 
-## Close Side Panel
-
-Closes the currently open side panel.
+Use this action to close the currently open side panel.

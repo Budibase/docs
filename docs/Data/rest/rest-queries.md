@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-REST queries are configured in API Editor for a saved REST connection.
+Create REST queries in the API Editor for a saved REST connection.
 
 ## Create a query
 
@@ -47,7 +47,7 @@ To protect your security, Budibase automatically sanitizes this preview:
 | Area | What to configure | Notes |
 | :-- | :-- | :-- |
 | Method | `GET`, `POST`, `PUT`, `PATCH`, `DELETE` | Must match endpoint contract |
-| URL/Path | Endpoint path or full URL | Usually path + connection base URL. Full URLs require a protocol prefix and must match the datasource origin. |
+| URL/Path | Endpoint path or full URL | Usually path plus the connection base URL. Full URLs require a protocol prefix and must stay on the datasource origin. |
 | Params | Query-string key/value pairs | Supports bindings |
 | Headers | Request headers | Supports bindings and shared defaults |
 | Body | Payload for write/query APIs | Use valid JSON/XML/Text as required |
@@ -66,9 +66,9 @@ Before first use:
 
 Before production use:
 
-1. Test with realistic runtime bindings
-2. Validate empty-state response behavior
-3. Validate error-state handling in app actions
+1. Test with realistic runtime bindings.
+2. Validate empty-state response behavior.
+3. Validate error-state handling in app actions.
 
 ## Transformer example (flatten nested response)
 
@@ -92,14 +92,13 @@ After applying a transformer:
 
 ## Common issues
 
-* **Missing protocol**: Full URLs must include `http://` or `https://` to be valid. The **Send** button will be disabled and a warning displayed if the protocol is missing.
-* `401/403`: wrong or missing auth config.
-* `404`: wrong path or base URL.
-* `400`: REST query path must remain on the datasource origin. This occurs if an absolute URL or dynamic binding targets a different origin than the one configured in the datasource.
-* `400`: Redirect to a different origin is not permitted. Cross-origin redirects are blocked for security to prevent datasource credentials from being sent off-origin.
-* `400/422`: request payload does not match API contract.
-* Empty rows with `200`: binding values not populated as expected.
-* Schema mismatch in app: query changed but app bindings not updated.
+* **Missing protocol**: Full URLs must include `http://` or `https://` to be valid.
+* `401/403`: wrong or missing auth config
+* `404`: wrong path or base URL
+* `400`: the query must stay on the datasource origin. Cross-origin redirects are blocked.
+* `400/422`: request payload does not match the API contract
+* Empty rows with `200`: binding values were not populated as expected
+* Schema mismatch in app: the query changed but app bindings were not updated
 
 ## Related guides
 
