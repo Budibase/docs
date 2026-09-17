@@ -16,7 +16,7 @@ Budibase supports SQL Server 2016 and later.
 
 ## Connect the datasource
 
-1. Open the **Data** section.
+1. Open the **Data tables** link.
 2. Add a new source.
 3. Choose `MS SQL Server`.
 4. Enter the connection details.

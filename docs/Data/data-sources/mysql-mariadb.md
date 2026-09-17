@@ -19,7 +19,7 @@ Budibase supports:
 
 ## Connect the datasource
 
-1. Open the **Data** section
+1. Open the **Data tables** link
 2. Add a new source
 3. Choose `MySQL / MariaDB`
 4. Enter the connection details

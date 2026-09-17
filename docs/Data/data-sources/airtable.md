@@ -25,7 +25,7 @@ Airtable can be connected to Budibase through some simple configuration. This al
 
 ## Connect Airtable to Budibase
 
-To connect Airtable to Budibase, you need to add a new Data Source. Head over to the data section in the Budibase UI, and click the `Add source` button in the left navigation.
+To connect Airtable to Budibase, you need to add a new Data Source. Open the **Data tables** link in the Budibase UI, and click the `Add source` button in the left navigation.
 
 A dialog will open, allowing you to choose which data source you want to add. Choose Airtable, and click continue.
 

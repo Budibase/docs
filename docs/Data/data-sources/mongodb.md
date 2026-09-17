@@ -32,7 +32,7 @@ Now that you have everything you need to hook up your MongoDB installation to Bu
 
 ## Connect your MongoDB
 
-To connect your MongoDB <Glossary>Data Source</Glossary>, head over to the data section in the Budibase builder UI. Then, click the `Add source` button in the left-hand settings panel to add a new data source.
+To connect your MongoDB <Glossary>Data Source</Glossary>, open the **Data tables** link in the Budibase builder UI. Then, click the `Add source` button in the left-hand settings panel to add a new data source.
 
 You will be presented a dialog, in which you choose `MongoDB`. Then you will be presented with the connection configuration.
 

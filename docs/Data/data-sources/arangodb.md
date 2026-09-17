@@ -22,7 +22,7 @@ The only prerequisites for this guide are that you need a Budibase instance, an 
 
 ## Add the ArangoDB datasource
 
-The first step is to create your ArangoDB datasource. When in the Data tab in the Budibase builder, click the *Add source* button in the top left corner. A modal will appear allowing you to select what type of datasource you want. Select *ArangoDB* and then click *Continue*.
+The first step is to create your ArangoDB datasource. Open the **Data tables** link in the Budibase builder, then click the *Add source* button in the top left corner. A modal will appear allowing you to select what type of datasource you want. Select *ArangoDB* and then click *Continue*.
 
 The next step is to add the relevant connection info so that Budibase can connect to your ArangoDB instance. By default the Username will be *root* and the Database Name is \_*system*.
 
