@@ -56,6 +56,17 @@ An approval rule determines **when** a policy should be applied to a specific to
 *   **Unconditional rules**: Require approval every time the tool is called.
 *   **Conditional rules**: Only require approval if the tool's input data matches specific criteria (e.g., only escalate a `create_row` tool if the `Total` field is greater than 1000).
 
+##### Sharing parameters with reviewers
+To help reviewers make informed decisions without leaving their messaging app, you can select which tool parameters should be included in the notification card.
+
+* **Default behavior**: No parameters are shared by default.
+* **Selection**: Use the **Shared with reviewers** multiselect in the rule configuration to pick the relevant fields.
+* **Limits**: You can share up to 40 parameters per rule.
+* **Context**: Notifications also include the identity of the requester (the user's name and email, or the Agent name for automations) and the specific tool being used.
+
+> ⚠️ **Privacy and Security**
+> Parameters are shared as plain text in Slack or MS Teams. Avoid sharing parameters that contain sensitive information like passwords or API keys unless the messaging channel is secure.
+
 Tools with configured rules display a status indicator (e.g., "1 rule") in the operation rail.
 
 #### Handling failures of approved actions
@@ -168,4 +179,4 @@ Keep table and query names reasonably concise to ensure tool names remain human-
 
 * [Agent instructions guide](doc:agent-instructions-guide)
 * [Agent testing guide](doc:agent-testing-guide)
-* [Agent troubleshooting guide](doc:agent-troubleshooting)
+* [Agent troubleshooting guide](doc:agent-troubleshooting-guide)
