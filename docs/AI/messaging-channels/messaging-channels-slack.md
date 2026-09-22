@@ -40,7 +40,7 @@ Create a Slack app for your workspace, or use an existing one.
 In **OAuth & Permissions**, add:
 
 * `chat:write`
-* `app_mentions:read`
+* `app_metentions:read`
 * `im:history`
 * `channels:history`
 * `groups:history`
@@ -80,7 +80,7 @@ Invite the bot to channels you want it to serve, for example:
 
 Slack threads are used as conversation boundaries. In a channel thread, you must mention the agent in each message you want it to process. In direct messages (DMs), the agent will respond to every message automatically.
 
-If you send a message before linking, Budibase prompts you privately to complete account linking first.
+If you send a message before linking, Budibase prompts you privately to complete account linking first. Similarly, if you respond to an approval request (escalation) before linking, your response won't be counted until you complete the linking flow.
 
 ### Slash commands
 
@@ -103,7 +103,7 @@ If **File attachments** is enabled in the agent deployment settings, users can u
 
 * **Supported formats**: PDF, CSV, TXT, Markdown, JSON, YAML, and XML.
 * **Limits**: Up to 3 files per conversation, maximum 20MB per file.
-* **Clearing files**: Use the `/new` command to clear attached files and start a fresh conversation.
+* **Cleaning files**: Use the `/new` command to clear attached files and start a fresh conversation.
 
 ## Troubleshooting
 
