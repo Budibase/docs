@@ -13,82 +13,55 @@ next:
 ---
 ### Launch Marketplace App
 
-After logging in to your Linode account choose [Marketplace](https://cloud.linode.com/linodes/create?type=One-Click) from the menu.
+After logging in to your Linode account, choose [Marketplace](https://cloud.linode.com/linodes/create?type=One-Click) from the menu and select the Budibase app.
 
-Select the Budibase app as shown below:
-
-<Image width="400px" src="https://files.readme.io/7a6c80d-image.png" />
-
-Scroll down the page to set options for the Budibase app including:
+Set the Budibase app options:
 
 * **Budibase Port**: The default port is 80 but you can choose another port number if you plan to add a load balancer or proxy in front of your installation
 * **Select an Image**: The base operating system you would like Budibase installed on. Choose from Debian 11 or Ubuntu 22.04
 * **Region**: Choose to launch the app in a region close to your intended audience
 
-<Image width="400px" src="https://files.readme.io/311617d-image.png" />
-
 Choose a plan to match your requirements and budget:
+Provide a **Linode Label** such as the domain name you plan to use, set a **Root Password**, and add your public **SSH Key** if you want SSH access.
 
-<Image width="400px" src="https://files.readme.io/a03b0e9-image.png" />
+The remaining choices are optional. Consider enabling **Backups** if you do not have another backup strategy.
 
-Under **Linode Label** provide a useful reference such as the domain name you will use and enter a **Root Password** that can be used if you need to manage your server instance over SSH
+When the options are set, click **Create Linode**.
 
-<Image width="400px" src="https://files.readme.io/e1ac115-image.png" />
-
-Add your public **SSH Key** that can be used if you need to manage your server instance over SSH. There are many guides and videos online demonstrating how to generate SSH keys for your own desktop operating system.
-
-<Image width="400px" src="https://files.readme.io/2913f31-image.png" />
-
-The remaining choices are optional. You may wish to choose to add **Backups** unless you have an alternative backup strategy. 
-
-<Image width="400px" src="https://files.readme.io/ca70155-image.png" />
-
-With all the options set, click the '**Create Linode**' button at the bottom of the page:
-
-<Image width="400px" src="https://files.readme.io/fd80b3c-image.png" />
-
-You will see a summary of your Linode server instance and a status indicating that it is currently provisioning. Please allow a few minutes for the provisioning of the server to complete.
+You will see a summary of the server and a status showing that it is provisioning. Wait for provisioning to complete.
 
 Note that the summary shows:
 
-* **IP Addresses** of your server ( 139.162.155.223 in the example below ). We will use this IP address in a web browser to display Budibase but if you have already purchased a domain name this would be a good time to use the DNS settings of your domain name provider to add a DNS A record pointing to the IP address you have been provided by Linode.
-* **SSH Access** command that you can use from your computer’s command-line terminal to connect to the server
+* **IP Addresses** of your server. Use this IP address in a browser to access Budibase. If you already have a domain name, add a DNS A record that points to this IP address.
+* **SSH Access** command you can use from a terminal to connect to the server.
 
-![](https://files.readme.io/e0f4a8a-image.png)
+When the status is **Running**, wait a few more minutes for the Budibase installation to complete.
 
-When the status appears as **Running** please allow a further few minutes for the Budibase installation to complete.
+Then open the IP address or domain in a browser to create the initial admin user.
 
-<Image width="500px" src="https://files.readme.io/a58ee1e-image.png" />
-
-When the server status is shown as **Running** you can visit the IP address (or the domain name if you created a DNS entry) in a web browser to create the initial admin user:
-
-<Image width="500px" src="https://files.readme.io/bd06617-image.png" />
-
-Next login as the admin user to start creating Budibase applications. There are many templates to help you get started and you can learn more about connecting to existing database and building your own custom apps from the Budibase Docs. 
+Sign in as the admin user to start creating Budibase applications.
 
 ### Further Configuration
 
-If you would like to examine the installation you can SSH to the server using the IP address supplied by Linode and the SSH key you provided during the setup. Running `docker ps` should display the list of docker containers that run Budibase:
+If you want to inspect the installation, SSH to the server using the IP address and SSH key you provided during setup. Running `docker ps` shows the Budibase containers.
 
-![](https://files.readme.io/71466bd-image.png)
+You may wish to examine the files under `/opt/budibase`.
 
-You may wish to examine the files under  `/opt/budibase` 
-
-* `docker-compose.yml` Use this file for future management/customisation of your budibase install
-* `.env `The .env file contains the passwords used to access various budibase components. 
+* `docker-compose.yml` Use this file for future management or customisation of your Budibase install.
+* `.env` The `.env` file contains the passwords used to access various Budibase components.
 
 ### SMTP
 
-By default Linode will block connections to external SMTP ports to reduce abuse by spammers. You will need to open a support ticket with Linode to unblock your Linode server if you want to send emails via an SMTP server.
+By default, Linode blocks connections to external SMTP ports. Open a support ticket with Linode if you need SMTP access.
 
 ### Backups
 
-Backing up your data is beyond the scope of this introduction but you should investigate storing regular copies of your docker volumes stored under `/var/lib/docker/volumes`
+Backing up your data is beyond the scope of this introduction, but you should store regular copies of your Docker volumes under `/var/lib/docker/volumes`.
 
 ### Security
 
-Server security is beyond the scope of this introduction but you should investigate methods to secure your server by regularly applying operating system updates with: `apt update && apt upgrade`  You should also add a firewall and intrusion prevention utilities such as fail2ban. 
+Server security is beyond the scope of this introduction, but you should regularly apply operating system updates with `apt update && apt upgrade`. You should also add a firewall and intrusion prevention tools such as fail2ban.
 
 ### HTTPS
 
-Although beyond the scope of this introduction there are a variety of ways to add a certificate to your installation including using a Linode NodeBalancer or Cloudflare. There is also the possibility of using Let’s Encrypt certbot on the server and configuring an nginx proxy listening on port 443 to proxy traffic to your Budibase container.
+Although beyond the scope of this introduction, there are several ways to add HTTPS, including Linode NodeBalancer, Cloudflare, or Let’s Encrypt with an NGINX proxy on port 443.

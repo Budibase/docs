@@ -10,29 +10,29 @@ metadata:
 next:
   description: ''
 ---
-REST variables let you reuse values across multiple queries in the same connection.
+Use REST variables to reuse values across multiple queries in the same connection.
 
 ## Variable types
 
 * **Static variables**: manually defined constant values
-* **Dynamic variables**: values extracted from response headers/body
+* **Dynamic variables**: values extracted from response headers or body data
 
 ## Static variables
 
 Use static variables for shared constants:
 
 * API version
-* Host/tenant identifiers
-* Shared language/region codes
+* Host or tenant identifiers
+* Shared language or region codes
 * Reused query fragments
 
 ### Create static variables
 
 1. Open **Settings > Connections > APIs**
-2. Open your connection
+2. Open the connection
 3. Go to **Credentials**
 4. Add entries under **Static Variables**
-5. Click **Save**
+5. Save the connection
 
 ## Dynamic variables
 
@@ -40,25 +40,25 @@ Use dynamic variables to chain queries.
 
 Common patterns:
 
-* Auth query returns token used by later queries
-* Lookup query returns ID used by update/delete query
+* Auth query returns a token used by later queries
+* Lookup query returns an ID used by an update or delete query
 * Cursor response field reused for pagination calls
 
 ### Create dynamic variables
 
-1. Open connection in API Editor
+1. Open the connection in API Editor
 2. Run a source query
-3. Create dynamic variable from response header or schema field.
-4. Name the variable clearly.
-5. Save query changes.
+3. Create a dynamic variable from a response header or schema field
+4. Name the variable clearly
+5. Save the query changes
 
 ### Edit dynamic variables
 
-1. Open connection in **Settings > Connections > APIs**.
-2. Go to **Credentials**.
-3. Open **Dynamic Variables**.
-4. Update expression/path.
-5. Save and retest downstream queries.
+1. Open the connection in **Settings > Connections > APIs**
+2. Go to **Credentials**
+3. Open **Dynamic Variables**
+4. Update the expression or path
+5. Save and retest downstream queries
 
 ## Expression examples
 
@@ -87,9 +87,9 @@ Use **bindings** when values are supplied per execution.
 
 ## Common issues
 
-* Variable resolves empty: source query response shape changed.
-* Variable points to object instead of scalar: expression path too broad.
-* Query retries/fails with variable errors: source variable query not returning expected value.
+* Variable resolves empty: the source query response shape changed
+* Variable points to an object instead of a scalar: the expression path is too broad
+* Query retries or fails with variable errors: the source variable query is not returning the expected value
 
 ## Related guides
 

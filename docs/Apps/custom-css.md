@@ -10,58 +10,31 @@ metadata:
 next:
   description: ''
 ---
-All [Components](doc:components), including [Screens](doc:screens), have the option to add custom css. 
+Use custom CSS when you need to override the default styling of a component.
 
-To do so, click on a component, and in the <Glossary>Settings Panel</Glossary> click on the *Styles* tab. Finally click on the  *Edit custom CSS* button
+## Add custom CSS to a component
 
-![](https://files.readme.io/ea72d9a-Screenshot_2023-07-04_at_14.17.18.png)
+1. Select the component
+2. Open the `Styles` tab in the settings panel
+3. Select `Edit custom CSS`
+4. Enter inline CSS for the component
 
-This will present a box in which you can enter CSS for the selected component.\
-For example:
+Custom CSS here applies only to that component.
 
-![](https://files.readme.io/82dd3a4-Screenshot_2023-07-04_at_14.21.30.png)
+Selectors are not supported in this field.
 
-> 🚧 Inline CSS
->
-> Selectors cannot be used here, and you must enter inline CSS.
+## Apply global styles
 
-## Global styling
+Use an [Embed](doc:embed) component when you need page-wide CSS selectors.
 
-If you are determined to apply your own style to the entire screen, you can achieve this through an [Embed](doc:embed) component.
+Add a `<style>` tag inside the Embed component and place it where the styles should load.
 
-This will allow you to add a `<style>` tag with CSS selectors, but this will apply to the entire page regardless of where you place the Embed component. 
+## Use bindings
 
-To inject the style, add the Embed component and click on the lightning bolt icon:
+You can use bindings to set CSS values dynamically.
 
-![](https://files.readme.io/4af3e59-Screenshot_2023-07-04_at_14.24.23.png)
+This is useful when styling depends on app state or other runtime values.
 
-This will open a drawer in which you can enter the style:
+## Use conditions
 
-![](https://files.readme.io/c70860d-Screenshot_2023-07-04_at_14.23.49.png)
-
-This CSS code above demonstrates how to use a class selector, but the **button** element selector could be interchanged.
-
-As Budibase uses the Spectrum design system, you can see the list of available classes here: [https://opensource.adobe.com/spectrum-css](https://opensource.adobe.com/spectrum-css)
-
-Alternatively, you can right-click and inspect the elements.  
-
-> 🚧 !Important
->
-> To override the existing styles, the important tags must be added.\
-> This will also override the styles of the builder UI itself, so it is advisable to use component level custom CSS or scoping to avoid conflicts.
-
-The end result is that you are able to style many elements without needing to duplicate the CSS:
-
-<Image align="center" src="https://files.readme.io/708a7ba73bcb9cc860b31668f3ed13217d90bfa66e2be26a9adf29a48b6a75d6-Screenshot_2024-09-12_at_11.50.30.png" />
-
-## Bindings
-
-If you need to dynamically set styling, you can do that through the use of a <Glossary>Binding</Glossary>.
-
-For example, you could set the background color of a container, via *Custom CSS* based on [App state](doc:app-state) as follows:
-
-![](https://files.readme.io/4388466-Screenshot_2023-07-04_at_14.27.11.png)
-
-Alternatively you can set styling through [Conditional UI](doc:conditions). 
-
-![](https://files.readme.io/0bcbe55-Screenshot_2022-10-17_at_08.24.22.png)
+Use [Conditional UI](doc:conditions) when you want to change a setting or hide a component based on logic instead of CSS.

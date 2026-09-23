@@ -1,65 +1,71 @@
 ---
 title: Redis
-excerpt: ''
+excerpt: Connect Redis as a datasource
 deprecated: false
 hidden: false
 metadata:
   title: ''
-  description: kba_5hgjm
+  description: ''
   robots: index
 next:
   description: ''
 ---
-Redis is an open source (BSD licensed), in-memory data structure store used as a database, cache, message broker, and streaming engine.
+Use Redis when you need a fast key-value store for simple read and write operations.
 
-More information can be found in the [official Redis docs](https://redis.io/docs/about/).
+For the official Redis documentation, see the [Redis docs](https://redis.io/docs/about/).
 
-## Connect
+## Connect Redis
 
-Add a data source and select Redis.
+1. Open the **Data tables** link
+2. Add a datasource and select `Redis`
+3. Enter the connection details
+4. Save the datasource
 
-![](https://files.readme.io/a9c9734-Screenshot_2022-09-02_at_15.55.33.png)
+## Connection details
 
-![](https://files.readme.io/ad48705-Screenshot_2022-09-02_at_17.05.09.png)
+You will usually need:
 
-You will then be prompted to provide the URL, port, username and password. The default database index is 0.
+* Host
+* Port
+* Username, if your Redis server requires one
+* Password, if your Redis server requires one
+* TLS settings, if your Redis server requires TLS
 
-![](https://files.readme.io/346b986-small-Screenshot_2023-05-10_at_09.45.17.png)
+If Budibase Cloud is connecting to your Redis server, allow the Budibase IP addresses through your firewall. See [Whitelisting](doc:whitelisting).
 
-> 📘 Connecting to a local docker instance
->
-> If you are hosting Redis locally with docker, then use **host.docker.internal**
+If you are using Redis locally in Docker, `localhost` points to the Budibase container, not your host machine. Use `host.docker.internal`, or `172.17.0.1` on Linux.
 
-## Redis Command
+## Test the connection
 
-Select `Redis Command` from the *Function* dropdown. You will now be able to enter any valid Redis command into the query box below.
+After saving the datasource, create a simple read query such as `GET my-key` or a write query such as `SET my-key test-value` to confirm Budibase can reach Redis.
 
-![](https://files.readme.io/a761999-Screenshot_2022-09-02_at_17.01.49.png)
+If the connection fails, check the host, port, authentication details, TLS requirements, and firewall rules.
 
-This is the recommended function as it is the most flexible. The basic commands can be found below.
+## Use the Redis Command query
 
-For more information on the range of Redis data types and commands, click [here](https://redis.io/docs/data-types/).
+`Redis Command` is the most flexible query type. Use it when you want to run a Redis command directly.
+
+1. Open the Redis datasource
+2. Create a query with the `Redis Command` function
+3. Enter a valid Redis command in the query box
+4. Test and save the query
+
+## Common operations
 
 ### Create
 
-This is the equivalent of Redis' SET command. Enter a **key / string value** pair. 
-
-**Ttl** stands for *Time-to-live* and is the number of seconds that the data structure will exist. Leave this blank if you want your key/value to never expire. 
-
-![](https://files.readme.io/9cf3e6d-Screenshot_2022-09-02_at_16.02.14.png)
-
-Only **strings** are supported by this function. 
+Use `SET` to create or update a key. You can also set a TTL in seconds.
 
 ### Read
 
-This is the equivalent of Redis' GET command. Simply enter a **key** you want to get. The response will return the mapped value.
-
-![](https://files.readme.io/546ebe2-Screenshot_2022-09-02_at_16.07.40.png)
-
-![](https://files.readme.io/f335d90-Screenshot_2022-09-02_at_16.07.57.png)
+Use `GET` to return the stored value for a key.
 
 ### Delete
 
-This is the equivalent of Redis' DEL command, except you can only delete a single **key** at a time. 
+Use `DEL` to remove a key.
 
-![](https://files.readme.io/7a41cbc-Screenshot_2022-09-02_at_16.15.12.png)
+## Notes
+
+* The basic query examples only support string values
+* Use the command query when you need more than the built-in helpers
+* Refer to the Redis docs for supported data types and commands

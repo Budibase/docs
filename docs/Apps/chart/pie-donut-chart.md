@@ -10,123 +10,31 @@ metadata:
 next:
   description: ''
 ---
-The Pie and Donut Charts are both circular charts. They're great in visualizing percentages, like how much of a pie you're going to get. 
+Use pie and donut charts to compare parts of a whole.
 
-They both behave and look the same, with the exception of the shape. The Donut Chart has a hole in the middle, where the Pie chart does not. 
+Pie and donut charts use the same settings. The donut chart just leaves a hole in the center.
 
-<Image title="pie-donut-chart.png" alt={1856} align="center" src="https://files.readme.io/198da10-pie-donut-chart.png">
-  Comparison of the Pie Chart (left) and the Donut Chart (right)
-</Image>
+## Setup
 
-## Adding a Pie or Donut Chart
+1. Add a [Data provider](doc:data-provider)
+2. Add a Pie chart or Donut chart inside the provider
+3. Select the provider in the chart settings
+4. Choose a label column
+5. Choose a numeric data column
 
-To add a Pie or Donut chart, head over to the design section in the Budibase UI. Then, you'll need a wrapping [Data Provider](doc:data-provider). After you've added the data provider, add a `Chart > Pie Chart` or `Chart > Donut Chart` to the design as a child of the data provider. This should connect your chart to the database directly.
+## Settings
 
-![](https://files.readme.io/c330098-Screenshot_2023-07-04_at_13.42.13.png)
+Common settings include:
 
-Then, in the <Glossary>Settings Panel</Glossary>, you will want to configure how to display the data. This kind of chart is probably often filled with data coming from a [View](doc:views), but can of course be connected directly to a table as well.
+* Provider
+* Label column
+* Data column
+* Colours
+* Width and height
+* Data labels
+* Animate
+* Legend
 
-First, in the `Label column` setting, you want to select which column represents the label of the data you want to display, then in the `Data column` you want to select the column which represents data in a [Number](doc:number) format to display in the chart. Once this is done, your chart should already be ready to view!
+## Requirements
 
-For more customization, check the reference table below.
-
-## Settings panel
-
-The settings panel has quite a few customization options, allowing you to get the most out of your pie or donut chart.
-
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Setting
-      </th>
-
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        Provider
-      </td>
-
-      <td>
-        The [Data Provider](doc:data-provider) as a parent of your chart
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Label Column
-      </td>
-
-      <td>
-        The Labels you want to display with your data. These are displayed on the legend
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Data Column
-      </td>
-
-      <td>
-        The data you want to display as the segments. This has to be [numeric.](doc:number)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Colours
-      </td>
-
-      <td>
-        Choose from one of the predefined colour-palettes
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Width\
-        Height
-      </td>
-
-      <td>
-        The size you want the chart to be, supports all CSS supported sizes
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Data Labels
-      </td>
-
-      <td>
-        Shows the percentage of each section on the segment.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Animate
-      </td>
-
-      <td>
-        Will animate when the data changes or on startup. Data-change can happen through [Dynamic filter's](doc:dynamic-filter) for example.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Legend
-      </td>
-
-      <td>
-        Will display, in the upper-right corner, the label for each of the data columns displayed on the chart
-      </td>
-    </tr>
-  </tbody>
-</Table>
+Pie and donut chart data columns must be numeric.
