@@ -14,13 +14,25 @@ Use Google Sheets when you want Budibase to read and write sheet data directly.
 
 Budibase works best with simple tabular sheets. Make sure the first row contains headers.
 
+## Before you start
+
+Make sure you have:
+
+* A Google account with access to the spreadsheet
+* A Google Sheet URL
+* A header row in each worksheet you want to use
+* Consistent column names that Budibase can use as field names
+
+Avoid merged cells, multi-row headers, and heavily formatted report-style sheets. Budibase works best when each worksheet behaves like a table: one header row followed by data rows.
+
 ## Connect the sheet
 
-1. Add a datasource and select `Google Sheets`
-2. Sign in with a Google account that can access the spreadsheet
-3. Paste the Google Sheet URL
-4. Select the worksheets to import
-5. Save the datasource
+1. Open the **Data tables** link
+2. Add a datasource and select `Google Sheets`
+3. Sign in with a Google account that can access the spreadsheet
+4. Paste the Google Sheet URL
+5. Select the worksheets to import
+6. Save the datasource
 
 ## Work with sheet data
 
@@ -60,6 +72,16 @@ Update an existing row by providing the sheet name, row index, and new values. R
 ### Delete
 
 Delete a row by providing the sheet name and row index. Rows below the deleted row shift up.
+
+## Troubleshooting
+
+If Budibase cannot read the sheet:
+
+* Confirm the signed-in Google account can open the spreadsheet
+* Check that the sheet URL is correct
+* Confirm the worksheet has a header row
+* Use exact worksheet and column names in queries
+* For self-hosted installations, confirm Google SSO is configured
 
 ## Notes
 

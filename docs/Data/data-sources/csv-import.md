@@ -14,15 +14,27 @@ Use CSV import when you already have data and want to create a table from it.
 
 Budibase can also import JSON files using the same flow.
 
+## Before you start
+
+For CSV files:
+
+* Include a header row
+* Use one column per field
+* Keep column names unique
+* Check date and number formats before importing
+
+For JSON files, use an array of objects where each object represents a row.
+
 ## Create a new table
 
-1. Click `Add source`
-2. Select `Upload CSV / JSON`
-3. Upload the file
-4. Enter a table name
-5. Review the detected columns
-6. Choose the data type for each column
-7. Click `Create`
+1. Open the **Data tables** link
+2. Click `Add source`
+3. Select `Upload CSV / JSON`
+4. Upload the file
+5. Enter a table name
+6. Review the detected columns
+7. Choose the data type for each column
+8. Click `Create`
 
 When you import a CSV, the first row is used as the column header row.
 
@@ -47,6 +59,17 @@ You can also update rows from an import.
 4. Import the file
 
 Budibase uses the identifier field to match incoming rows against existing records.
+
+## Review imported data
+
+After importing, open the new or updated table and check:
+
+* Column names and data types
+* Date and number formatting
+* Empty values
+* Relationship fields that may need to be configured manually
+
+If the import does not look right, adjust the source file and import again before building screens or automations on top of the table.
 
 ## Notes
 

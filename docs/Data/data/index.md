@@ -25,7 +25,7 @@ next:
       slug: rest
       title: REST API
 ---
-Use the Data section to manage the tables, views, and datasources that power your workspace.
+Use the **Data tables** link to manage the tables, views, and datasources that power your workspace.
 
 Your data model usually comes first. It shapes the screens, automations, filters, and permissions you build later.
 
@@ -48,7 +48,7 @@ Use Budibase DB when you want the simplest path to app data or when you are prot
 
 ## Add datasources
 
-Add datasources from the Data tab.
+Add datasources from the **Data tables** link.
 
 Common source types include:
 

@@ -16,11 +16,30 @@ For the official Redis documentation, see the [Redis docs](https://redis.io/docs
 
 ## Connect Redis
 
-1. Add a datasource and select `Redis`
-2. Enter the connection details
-3. Save the datasource
+1. Open the **Data tables** link
+2. Add a datasource and select `Redis`
+3. Enter the connection details
+4. Save the datasource
 
-If you are using Redis locally in Docker, use `host.docker.internal` as the host value.
+## Connection details
+
+You will usually need:
+
+* Host
+* Port
+* Username, if your Redis server requires one
+* Password, if your Redis server requires one
+* TLS settings, if your Redis server requires TLS
+
+If Budibase Cloud is connecting to your Redis server, allow the Budibase IP addresses through your firewall. See [Whitelisting](doc:whitelisting).
+
+If you are using Redis locally in Docker, `localhost` points to the Budibase container, not your host machine. Use `host.docker.internal`, or `172.17.0.1` on Linux.
+
+## Test the connection
+
+After saving the datasource, create a simple read query such as `GET my-key` or a write query such as `SET my-key test-value` to confirm Budibase can reach Redis.
+
+If the connection fails, check the host, port, authentication details, TLS requirements, and firewall rules.
 
 ## Use the Redis Command query
 
