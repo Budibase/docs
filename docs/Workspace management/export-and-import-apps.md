@@ -79,7 +79,7 @@ If you click the import button, the UI will change slightly. This will change th
 
 You can import a workspace export into an existing workspace by going to **Settings > General > Import**. This is useful if you want to update the design of an existing workspace or add new functionality without affecting your existing data.
 
-<Image align="center" border={false} src="https://files.readme.io/ef9690b32c948fc45a022bd3ab6342f65ea6a6f85e71c2bb23bb0711d06b50ad-Screenshot_2025-08-20_at_12.52.50.png" />
+<Image align="center" border={false} src="https://files.readme.io/ef9690b32c948fc45a022bd3ab6342f65eaa66f85e71c2bb23bb0711d06b50ad-Screenshot_2025-08-20_at_12.52.50.png" />
 
 When importing into an existing workspace:
 * **Existing data is preserved**: Tables and rows that already exist in your workspace will not be overwritten or deleted.
