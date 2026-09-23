@@ -40,7 +40,7 @@ Create a Slack app for your workspace, or use an existing one.
 In **OAuth & Permissions**, add:
 
 * `chat:write`
-* `app_metentions:read`
+* `app_mentions:read`
 * `im:history`
 * `channels:history`
 * `groups:history`
