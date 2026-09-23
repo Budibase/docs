@@ -29,7 +29,7 @@ User columns are commonly used for:
 * Assignment
 * Approvals
 
-In forms, use the [User Field](https://docs.budibase.com/docs/pickers#user-field) component.
+In forms, use the [User Field](doc:pickers#user-field) component.
 
 ## Filter by current user
 
