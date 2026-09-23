@@ -173,4 +173,4 @@ Keep table and query names reasonably concise to ensure tool names remain human-
 
 * [Agent instructions guide](doc:agent-instructions-guide)
 * [Agent testing guide](doc:agent-testing-guide)
-* [Agent troubleshooting guide](doc:agent-troubleshooting-guide)
+* [Agent troubleshooting guide](doc:agent-troubleshooting)
