@@ -70,7 +70,7 @@ The bash script below uses the following variables. You'll need to supply these 
   <tbody>
     <tr>
       <td>
-        BUDIBASE\\_SOURCE\\_TENANT
+        BUDIBASE\_SOURCE\_TENANT
       </td>
 
       <td>
@@ -86,7 +86,7 @@ The bash script below uses the following variables. You'll need to supply these 
 
     <tr>
       <td>
-        BUDIBASE\\_SOURCE\\_API\\_KEY
+        BUDIBASE\_SOURCE\_API\_KEY
       </td>
 
       <td>
@@ -126,7 +126,7 @@ The bash script below uses the following variables. You'll need to supply these 
 
     <tr>
       <td>
-        BUDIBASE\\_DESTINATION\\_TENANT
+        BUDIBASE\_DESTINATION\_TENANT
       </td>
 
       <td>
@@ -142,7 +142,7 @@ The bash script below uses the following variables. You'll need to supply these 
 
     <tr>
       <td>
-        BUDIBASE\\_DESTINATION\\_API\\_KEY
+        BUDIBASE\_DESTINATION\_API\_KEY
       </td>
 
       <td>
@@ -160,7 +160,7 @@ The bash script below uses the following variables. You'll need to supply these 
 
     <tr>
       <td>
-        BUDIBASE\\_DESTINATION\\_APP\\_ID
+        BUDIBASE\_DESTINATION\_APP\_ID
       </td>
 
       <td>
@@ -198,7 +198,7 @@ The bash script below uses the following variables. You'll need to supply these 
 
 The script below saves the exported app to `export.tar.gz`. You may save this file as an artifact during your CI/CD process. The script could also be modified to export the existing app in your destination tenant, to store as an artifact.
 
-bash
+```bash
 #!/bin/bash
 
 # 1. Set local variables from environment variables
@@ -323,3 +323,4 @@ else
   echo "Skipping publishing of destination app - please publish manually via Budibase."
 fi
 
+```
