@@ -18,7 +18,7 @@ The pretty URLs feature allows you to set your own URL path for your Budibase ap
 
 `<your-budibase-url>/yourprettyurl`
 
-Inside the app settings screen on the portal, Budibase lets you edit the:
+Inside the app settings screen on the portal (accessible at `/apps`), Budibase lets you edit the:
 
 * name of an app
 * URL of an app (If the app is not published.)
