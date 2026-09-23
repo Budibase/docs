@@ -37,7 +37,7 @@ When a tool is enabled, you can configure its **Run as** (Execution principal) s
 *   **Requester**: The tool runs using the permissions of the user interacting with the Agent. This is the safest default for most user-facing tools.
 *   **Admin (elevated)**: The tool runs with full administrative permissions. Use this sparingly for background tasks or strictly controlled operations.
 
-> 💡 **Automations**
+> 🚀 **Automations**
 > Agents triggered via an Automation step execute as **Admin** by default. If a tool requires escalation, the Agent will pause and, once approved, will resume using the role of the original automation requester.
 
 ### Approval rules and policies
@@ -47,8 +47,13 @@ Approval rules ensure that high-impact actions are reviewed by a human before th
 #### Approval policies
 An approval policy defines **who** is notified and responsible for reviewing a gated action. Policies are reusable and managed in the **Approvals** tab of an operation. 
 
-*   **Name**: A recognizable name for the policy, shown on approval rules.
-*   **Notification**: The messaging channel and recipient (user or channel) that will receive the approval request.
+*   **Policy name**: A recognisable name for the policy, shown on approval rules.
+*   **Approval type**: Determines how many responses are needed to resolve the request.
+    *   **Any approver**: Approval from any one approver is enough to proceed.
+    *   **Unanimous**: Every approver must approve before it can proceed. A single rejection will reject the request.
+    *   **Majority**: More than half of the approvers must approve to proceed.
+*   **Approvers**: A list of Budibase users responsible for reviewing and responding to the escalated request.
+*   **Notification**: The messaging channel and destination (user or channel) where the approval request will appear.
 
 #### Approval rules
 An approval rule determines **when** a policy should be applied to a specific tool. Rules are configured within the tool configuration modal.

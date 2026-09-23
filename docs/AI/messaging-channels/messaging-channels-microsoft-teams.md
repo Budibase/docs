@@ -48,7 +48,7 @@ Use a single-tenant setup that matches your tenant ID.
    * `unlink` or `/unlink` to disconnect your Budibase account
 
 Plain text messages are treated as `ask`.
-If you send a normal message before linking, Budibase sends a private link prompt.
+If you send a normal message before linking, Budibase sends a private link prompt. Similarly, if you respond to an approval request (escalation) before linking, your response won't be counted until you complete the linking flow.
 
 ## Working with documents (RAG)
 
