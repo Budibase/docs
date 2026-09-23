@@ -116,9 +116,9 @@ A full list of query operators can be found here: [https://www.mongodb.com/docs/
 
 When performing an update you must provide two objects:
 
-1. **uired]** F** Filter - find the documents to change.
-2. **uired]** U** Update - instructions for the modifications to make.
-3. **ional]** O** Options - additional update parameters (more [here](https://www.mongodb.com/docs/v4.4/reference/method/db.collection.updateOne/))
+1. **[Required] Filter** - find the documents to change.
+2. **[Required] Update** - instructions for the modifications to make.
+3. **[Optional] Options** - additional update parameters (more [here](https://www.mongodb.com/docs/v4.4/reference/method/db.collection.updateOne/))
 
 For example, set the *retired* property to true for all documents that have an age over 65:
 
