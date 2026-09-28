@@ -144,7 +144,9 @@ For Budibase to send emails, you must configure an SMTP Mail Server, such as Gma
 
 ## Templates
 
-Budibase comes with three different email templates: Password Recovery, Invitation, and Welcome. In addition to that, you can also create custom templates.
+Budibase comes with three different email templates: Password Recovery, Invitation, and Welcome. 
+
+> Customising email templates and creating custom templates is a feature available on the **Pro plan** and above. 
 
 To edit a template, simply select it in the table. To insert dynamic content you can use the Bindings on the right side of the page. This makes it easier to include things such as the user's email, your organization's logo, or the name of your organization. When you're done hit the preview button to make sure it looks OK. Then hit save.
 
