@@ -92,7 +92,7 @@ For Budibase to send emails, you must configure an SMTP Mail Server, such as Gma
       </td>
 
       <td>
-        no-reply@example.invalid
+        [no-reply@example.invalid](mailto:no-reply@example.invalid)
       </td>
     </tr>
 
@@ -144,13 +144,15 @@ For Budibase to send emails, you must configure an SMTP Mail Server, such as Gma
 
 ## Templates
 
-Budibase comes with three different email templates: Password Recovery, Invitation, and Welcome. In addition to that, you can also create custom templates.
+Budibase comes with five different email templates: Password Recovery, User Invitation, User Welcome, Base Format, and Custom.
 
 To edit a template, simply select it in the table. To insert dynamic content you can use the Bindings on the right side of the page. This makes it easier to include things such as the user's email, your organization's logo, or the name of your organization. When you're done hit the preview button to make sure it looks OK. Then hit save.
 
+Editing email templates requires at least a Pro license.
+
 The email templates work on all devices, email platforms, and themes (light and dark modes). Below is an image of the invitation email template.
 
-<Image border={false} src="https://files.readme.io/824b249-CleanShot_2022-04-12_at_15.22.54.png" title="CleanShot 2022-04-12 at 15.22.54.png" />
+![](https://files.readme.io/824b249-CleanShot_2022-04-12_at_15.22.54.png "CleanShot 2022-04-12 at 15.22.54.png")
 
 ## Video tutorial
 
