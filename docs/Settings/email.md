@@ -14,7 +14,50 @@ next:
       slug: email-templates
       title: Email Templates
 ---
-Configure SMTP so Budibase can send emails for invitations, password recovery, and automation actions.
+For Budibase to send emails, you must configure an SMTP Mail Server, such as Gmail SMTP or SendGrid. After you have set this up, you can [invite users](doc:user-management) and send emails using the email [Action](doc:automation-actions).
+
+### Email setup
+
+<HTMLBlock>{`
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/719112528?h=3d06fb10c7&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="02-smtp-with-head"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+`}</HTMLBlock>
+
+<Table align={["left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Property
+      </th>
+
+      <th>
+        Description
+      </th>
+
+      <th>
+        Example answer
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Host
+      </td>
+
+      <td>
+        An SMTP email server will have an address (or addresses) that can be set and is generally formatted as smtp.serveraddress.com.
+      </td>
+
+      <td>
+        smtp.example.invalid
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Security type
+      </td>
 
 ## Before you start
 
@@ -47,15 +90,33 @@ Use the values required by your provider. For modern SMTP setups, ports `587` an
 
 ## Email templates
 
-Budibase email templates are managed on a separate page.
+      <td>
+        no-reply@example.invalid
+      </td>
+    </tr>
 
 See [Email templates](doc:email-templates) for the available templates and how to edit them.
 
 ## Use email in automations
 
-Once SMTP is configured, you can send email from automation actions.
+      <td>
+        True
+      </td>
+    </tr>
 
-Common uses include:
+    <tr>
+      <td>
+        Username (visible when require sign-in is checked)
+      </td>
+
+      <td>
+        Username for SMTP server
+      </td>
+
+      <td>
+        example-user
+      </td>
+    </tr>
 
 * User invitations
 * Password recovery
@@ -64,7 +125,12 @@ Common uses include:
 
 Keep sender addresses and template content aligned with your domain so mail is less likely to be flagged as suspicious.
 
-## Troubleshooting
+      <td>
+        example-password
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 If email does not send:
 
