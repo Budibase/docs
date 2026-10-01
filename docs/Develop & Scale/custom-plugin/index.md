@@ -10,167 +10,82 @@ metadata:
 next:
   description: ''
 ---
-Budibase allows no-code users to build apps quickly, with more functionality available with a little bit of inline code. Despite this, not every conceivable scenario can be covered by default - but that's where custom plugins come in! 
+Custom plugins extend Budibase when the built-in component and datasource options are not enough.
 
-Developers can write their own plugins for where custom datasources and components are needed. Some software development experience is required, however, the process for building plugins is designed to be streamlined and sleekly integrated into the Budibase platform.
+Use them to add:
 
-## Importing plugins
+* Custom components
+* Custom datasources
+* Custom automation steps
 
-An admin user can see a list of your plugins under the *Plugins* section of the Settings Modal. To get started using custom plugins, click "Add Plugin". Alternatively you can check our curated list of Budibase plugins, including data sources and components, contributed by the community.
+## When to use plugins
 
-<br />
+Use a plugin when you need:
 
-You can import a plugin by pressing the `Add plugin` button. This will display a dialog box from which you choose a *Source*.
+* A UI component that is not built into Budibase
+* A datasource integration with custom CRUD behaviour
+* A custom automation action for backend logic
 
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Source name
-      </th>
+Keep the plugin surface area as small as possible. Plugins are easier to maintain when they do one thing well.
 
-      <th>
-        Expected input
-      </th>
-    </tr>
-  </thead>
+## Install plugins
 
-  <tbody>
-    <tr>
-      <td>
-        URL
-      </td>
+Admin users can import plugins from the Settings modal.
 
-      <td>
-        A URL path to a tarball, e.g. `.tar.gz` file.  
+Supported import sources include:
 
-        *Allows authentication headers to be added if needed.*
-      </td>
-    </tr>
+* URL
+* NPM package
+* GitHub release asset
+* File upload
 
-    <tr>
-      <td>
-        NPM
-      </td>
+After import, custom components appear in the builder component list and custom datasources appear in the datasource picker.
 
-      <td>
-        The URL of an NPM package of a Budibase plugin
-      </td>
-    </tr>
+Custom automation steps appear in the automation builder as selectable actions.
 
-    <tr>
-      <td>
-        Github
-      </td>
+## Develop locally
 
-      <td>
-        The URL of a Github repository, that has a tarball asset in the latest release.  
+For local development, Budibase needs a watched plugins directory.
 
-        *Allows a Github Token to be added for accessing private repositories.*
-      </td>
-    </tr>
+Use one of these setups:
 
-    <tr>
-      <td>
-        File Upload
-      </td>
+* Budibase CLI
+* Docker Compose
+* A local Budibase repository
 
-      <td>
-        Allows an admin user to directly upload a plugin tarball.
-      </td>
-    </tr>
-  </tbody>
-</Table>
+In each case, point Budibase at your plugins folder, then run `yarn watch` in the plugin project so changes are picked up automatically.
 
-Once your plugin has been imported, you will now be able to make use of it within all of your apps!
+The CLI path is usually the simplest option for plugin development because it gives you a local Budibase instance and a watched plugin folder in one flow.
 
-In the case of a **custom datasource**, it will appear as a new datasource at the bottom of the *Add datasource* dialog and can be used just like any other [data source](https://docs.budibase.com/docs/data-sources).
+## Limits and hosting
 
+* Custom datasources are self-host only
+* Custom components can also be used in cloud environments
+* Free plans have a plugin limit
 
-In the case of a **custom component**, it will appear in the builder components list under the *Plugins* section.
+Check the pricing page if you need more than the free tier allows.
 
-> 🚧 Cloud hosting
->
-> While custom components can also be imported in the cloud environment, custom datasources can only be used in a self-hosted environment, for security reasons.
+When you are developing locally, make sure the plugin directory path stays stable. Budibase watches that path for updates.
 
-<br />
+## Update and delete plugins
 
-### Hot reloading (developers only)
+To update a plugin, import a new version with the same name.
 
-You must provide a path to your plugins folder so that Budibase knows where to import the plugins that you update while developing. 
+To delete a plugin, select it from the plugin list and remove it from the settings UI.
 
-There are three main approaches to this, with the handiest being to run Budibase via the [CLI](https://docs.budibase.com/docs/budibase-cli-setup). Alternatively, you can run Budibase via [Docker compose](🔗) or a local repository. 
+## Plugin types
 
-#### Budibase CLI
+Keep the plugin type aligned to the problem you are solving:
 
-Make sure you have installed the latest [Budibase CLI](https://docs.budibase.com/docs/budibase-cli-setup), and initialize Budibase.
+* Use a component plugin for UI building blocks
+* Use a datasource plugin for CRUD access to external systems
+* Use an automation step plugin for backend actions
 
-If Budibase is already running, stop the service using the command:
+If the use case can be handled by a built-in component or action, prefer that first.
 
-`budi hosting --stop`
+## Related guides
 
-Add the plugins directory path using the command:
-
-`budi hosting --watch-plugin-dir /path-to-your-plugins-directory`
-
-Finally, run `budi hosting --start` and then do a `yarn watch` within your plugin repo.
-
-#### Docker compose
-
-Make sure you have installed the latest [Budibase CLI](https://docs.budibase.com/docs/budibase-cli-setup), and initialize Budibase.
-
-Add the plugins directory path (**case sensitive!**) to the **app-service** volumes of your docker compose file:
-
-```yaml Yaml
-services:
-  app-service:
-    volumes:
-      - /Users/<username>/Documents/MyBudibasePlugins:/MyBudibasePlugins
-```
-
-Next, update your `.env` file to include the relative plugins directory, e.g. `PLUGINS_DIR=/MyBudibasePlugins`
-
-> 📘
->
-> The `.env` file will be hidden within the same folder as your `docker-compose.yaml`.\
-> Showing hidden files on [Windows](https://support.microsoft.com/en-gb/windows/show-hidden-files-0320fe58-0117-fd59-6851-9b7f9840fdb2).\
-> On macOS, press `Cmd+Shift+.` within the folder.
-
-Finally, run `budi hosting --start` and then do a `yarn watch` within your plugin repo.
-
-#### Budibase repo
-
-Assuming you have cloned the [Budibase repo](https://github.com/Budibase/budibase) and have it running locally, navigate to `packages/server/.env` and add the following variable:
-
-`PLUGINS_DIR=/Users/<username>/Documents/MyBudibasePlugins`
-
-Naturally, you should replace the value with the path to your plugins folder.
-
-If your server is already running, you will need to stop it and then start it with another `yarn dev` so that the new environment variable is loaded.
-
-You will also need to make sure you have run `yarn watch` in your plugin repo. See the custom component and datasource pages for more information on development.
-
-<br />
-
-### Maximum number of plugins
-
-On the free plan you can add a maximum of 10 plugins. Upgrade to unlock *unlimited* plugins. 
-
-A full list of pricing plans can be seen here: [https://budibase.com/pricing/](https://budibase.com/pricing/)
-
-<br />
-
-## Updating a plugin
-
-To update an existing plugin, simply import a plugin with a matching name. 
-
-Currently, the versioning must be handled manually, where you can have multiple folders for each version of your plugin.
-
-<br />
-
-## Deleting a plugin
-
-Click on one of the plugins from the plugins list. This will pop up a dialog from which you can press `Delete`
-
-What’s Next\
-Tell your users what they should do after they've finished this page
+* [Custom component](https://docs.budibase.com/docs/custom-component)
+* [Custom datasource](https://docs.budibase.com/docs/custom-datasource)
+* [Custom automation step](https://docs.budibase.com/docs/custom-automations)
+* [Budibase CLI setup](https://docs.budibase.com/docs/budibase-cli-setup)

@@ -16,7 +16,7 @@ At Budibase we use CouchDB as the underlying technology of our internal [Budibas
 
 ## Connect
 
-To start, click on the `Add source` button of the **Data** section, select *CouchDB*, and click `Continue`.
+To start, open the **Data tables** link, click `Add source`, select *CouchDB*, and click `Continue`.
 
 <Image alt="CouchDB datasource" align="center" src="https://files.readme.io/3c00104-Screenshot_2023-02-03_at_13.32.37.png">
   CouchDB datasource

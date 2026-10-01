@@ -9,6 +9,10 @@ metadata:
   robots: index
 next:
   description: ''
+  pages:
+    - type: basic
+      slug: email-templates
+      title: Email Templates
 ---
 For Budibase to send emails, you must configure an SMTP Mail Server, such as Gmail SMTP or SendGrid. After you have set this up, you can [invite users](doc:user-management) and send emails using the email [Action](doc:automation-actions).
 
@@ -55,55 +59,45 @@ For Budibase to send emails, you must configure an SMTP Mail Server, such as Gma
         Security type
       </td>
 
-      <td>
-        Both SSL and TLS facilitate email sending
-      </td>
+## Before you start
 
-      <td>
-        None/STARTTLS
-      </td>
-    </tr>
+Make sure you have:
 
-    <tr>
-      <td>
-        Port
-      </td>
+* An SMTP provider such as Gmail SMTP or SendGrid
+* The host, port, username, and password for that provider
+* Access to the Budibase admin portal
 
-      <td>
-        An “SMTP port” refers to the specific part of the Internet address that’s used to transfer email.
+## Configure SMTP
 
-        If you run your own SMTP server you can find the configured SMTP port number and address from the SMTP server configuration.
+1. Open the Budibase admin portal.
+2. Go to `Settings > Email`.
+3. Enter the SMTP details.
+4. Save the configuration.
 
-        Ports 25, 465, 587, or 2525 for SMTP have all been considered standard SMTP ports at some point, but only 587 or 2525  really should be considered for modern use.
-      </td>
+### SMTP settings
 
-      <td>
-        587
-      </td>
-    </tr>
+| Setting | Purpose |
+| :--- | :--- |
+| Host | SMTP server address. |
+| Security type | Encryption mode used by the server. |
+| Port | SMTP port exposed by the server. |
+| From email address | Address used as the sender. |
+| Require sign-in | Enables SMTP authentication. |
+| Username | SMTP account username. |
+| Password | SMTP account password. |
 
-    <tr>
-      <td>
-        Default from email address
-      </td>
+Use the values required by your provider. For modern SMTP setups, ports `587` and `2525` are the most common choices.
 
-      <td>
-        Used by system emails and SMTP automations that do not specify a Send From address. Your SMTP provider may restrict or rewrite this address.
-      </td>
+## Email templates
 
       <td>
         no-reply@example.invalid
       </td>
     </tr>
 
-    <tr>
-      <td>
-        Require sign-in
-      </td>
+See [Email templates](doc:email-templates) for the available templates and how to edit them.
 
-      <td>
-        SMTP auth - some SMTP server hosts require auth to send email.
-      </td>
+## Use email in automations
 
       <td>
         True
@@ -124,14 +118,12 @@ For Budibase to send emails, you must configure an SMTP Mail Server, such as Gma
       </td>
     </tr>
 
-    <tr>
-      <td>
-        Password (visible when require sign-in is checked)
-      </td>
+* User invitations
+* Password recovery
+* Workflow notifications
+* Approval and rejection messages
 
-      <td>
-        Password for SMTP server
-      </td>
+Keep sender addresses and template content aligned with your domain so mail is less likely to be flagged as suspicious.
 
       <td>
         example-password
@@ -140,20 +132,16 @@ For Budibase to send emails, you must configure an SMTP Mail Server, such as Gma
   </tbody>
 </Table>
 
- 
+If email does not send:
 
-## Templates
+* Confirm the SMTP host and port are correct
+* Check whether authentication is required
+* Verify the from address is allowed by the provider
+* Confirm the provider is not blocking the connection
 
-Budibase comes with three different email templates: Password Recovery, Invitation, and Welcome. In addition to that, you can also create custom templates.
+## Related guides
 
-To edit a template, simply select it in the table. To insert dynamic content you can use the Bindings on the right side of the page. This makes it easier to include things such as the user's email, your organization's logo, or the name of your organization. When you're done hit the preview button to make sure it looks OK. Then hit save.
-
-The email templates work on all devices, email platforms, and themes (light and dark modes). Below is an image of the invitation email template.
-
-<Image border={false} src="https://files.readme.io/824b249-CleanShot_2022-04-12_at_15.22.54.png" title="CleanShot 2022-04-12 at 15.22.54.png" />
-
-## Video tutorial
-
-<HTMLBlock>{`
-<iframe src="https://player.vimeo.com/video/746819079?h=20d911a679&title=0&portrait=0&byline=0" style="margin-top: -100px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-`}</HTMLBlock>
+* [Automation actions](doc:automation-actions)
+* [User management](doc:user-management)
+* [Branding](doc:branding)
+* [Email templates](doc:email-templates)

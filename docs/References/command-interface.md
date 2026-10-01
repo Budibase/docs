@@ -71,7 +71,7 @@ This shows a list of all tables you have fetched within an app. Allows you to ea
 
 ## Query
 
-Find all [queries](doc:postgresql#better-approach-using-a-custom-query) related to data sources here. Navigate to view and manage these queries.
+Find all [queries](doc:sql-workflow#custom-queries) related to data sources here. Navigate to view and manage these queries.
 
 * **Query**: Create Row
 * **Query**: Get User Record

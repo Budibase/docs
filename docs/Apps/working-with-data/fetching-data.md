@@ -10,20 +10,25 @@ metadata:
 next:
   description: ''
 ---
-After adding a data provider and selecting a datasource, the next step is to add a component that allows you to display your data. In many cases you will use one of the following components:
+After you add a Data provider, connect a component that can display the returned rows.
+
+Common display components include:
 
 * [Card](doc:card)
-* [Chart](doc:chart) 
+* [Chart](doc:chart)
 * [Repeater](doc:repeater)
 
-In the below example, a single Data Provider can supply information to the Sales Bar Chart, as well as a Repeater that displays a Container with a Text component *for every row the data provider returns*.
+## Share one data source
 
-<Image align="center" src="https://files.readme.io/a9f7d6f55f32a684ca3483aabfbe61b11dd960a092b5536372da893ba11b5b69-Screenshot_2025-08-14_at_10.38.06.png" />
+Use a single Data provider when multiple components need the same rows. This reduces duplicate queries and keeps the screen easier to maintain.
 
-<br />
+## Common pattern
 
-> 🚧 Using Multiple Data Providers
->
-> Data Providers can use other Data Providers as a source
->
-> Each time a Data Provider is set to fetch information from a table or query, it creates extra network traffic on screen-load. If you're re-using data in multiple components on your screen, consider using a Data Provider to fetch the table without filters, and then any subsequent Data Providers can fetch from that first Data Provider and filter as needed, cutting down on the amount of queries to your database.
+1. Add a Data provider
+2. Choose a datasource
+3. Add a display component such as a Table, Chart, Card, or Repeater
+4. Bind the display component to the provider
+
+## Reuse data
+
+If a screen needs the same data in several places, fetch it once and reuse the provider rather than building separate queries for each component.

@@ -1,7 +1,7 @@
 ---
 title: Templates
 excerpt: ''
-deprecated: false
+deprecated: true
 hidden: true
 metadata:
   title: ''

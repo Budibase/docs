@@ -1,6 +1,6 @@
 ---
 title: Number
-excerpt: This topic describes the number data types, supported in Budibase
+excerpt: Store numeric values in Budibase DB
 deprecated: false
 hidden: false
 metadata:
@@ -10,23 +10,27 @@ metadata:
 next:
   description: ''
 ---
-A number column is a good choice if you want to store data like age, scores, IDs, etc. The number column type is important when you need to do calculations within your data. Within the Number data type, you can provide min and max values. This allows you to add additional validation to your data type.
+Use a number column for values such as quantities, scores, prices, and IDs.
 
-## Creating a number column
+## Create a number column
 
-The process for creating a number column takes a few seconds.
+1. Open the table
+2. Click `Create column`
+3. Enter a column name
+4. Set the type to `Number`
+5. Add any minimum or maximum values you need
+6. Save the column
 
-1. First, click the `+` button along the top-right
-2. Give your column a name
-3. Choose Number as your data type
-4. Give it a min of 1, and a max of 5
-5. Click Save Column
+## Use number columns
 
-## Using the number data type
+Number columns are useful when you need:
 
-In the Design section, you can pull in information from your number column, using the [Repeater](doc:repeater) component and [bindings](doc:introduction-to-bindings)
+* Calculations
+* Range validation
+* Numeric filtering and sorting
 
-## Important considerations
+## Notes
 
-* A number column can only include numeric values and cannot include letters and symbols. 
-* Telephone numbers need to be stored as a text/string data type because they often begin with a 0 and if they were stored as an integer then the leading zero would be discounted.
+* Number columns only accept numeric values
+* Use text for values that can include leading zeros, such as phone numbers
+* Add min and max constraints when the valid range is limited
