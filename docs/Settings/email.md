@@ -46,7 +46,7 @@ For Budibase to send emails, you must configure an SMTP Mail Server, such as Gma
       </td>
 
       <td>
-        email-smtp.eu-east-1.amazonaws.com
+        smtp.example.invalid
       </td>
     </tr>
 
@@ -92,7 +92,7 @@ For Budibase to send emails, you must configure an SMTP Mail Server, such as Gma
       </td>
 
       <td>
-        [noreply@budibase.com](mailto:noreply@budibase.com)
+        no-reply@example.invalid
       </td>
     </tr>
 
@@ -106,7 +106,7 @@ For Budibase to send emails, you must configure an SMTP Mail Server, such as Gma
       </td>
 
       <td>
-        True udibase to se
+        True
       </td>
     </tr>
 
@@ -120,7 +120,7 @@ For Budibase to send emails, you must configure an SMTP Mail Server, such as Gma
       </td>
 
       <td>
-        AKIAX5ZKVGGJ2SASAHT2M7Z
+        example-user
       </td>
     </tr>
 
@@ -134,7 +134,7 @@ For Budibase to send emails, you must configure an SMTP Mail Server, such as Gma
       </td>
 
       <td>
-        Password!23IhopeNot
+        example-password
       </td>
     </tr>
   </tbody>
