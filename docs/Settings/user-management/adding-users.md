@@ -54,7 +54,7 @@ You can choose one of two onboarding methods:
 
 If SMTP is configured, email onboarding is recommended. If SMTP is unavailable, use generated passwords.
 
-> 组织 Configure SMTP
+> 🚧 Configure SMTP
 >
 > For emails to be sent from Budibase you will need to have [SMTP configured](doc:email). Make sure this is set up before attempting to invite users through the email onboarding flow.
 
@@ -68,13 +68,13 @@ If you need to add many users, you can bulk import by CSV. This feature is only 
 4. Select the role to apply to imported users.
 5. Complete import and securely share any generated temporary credentials.
 
-> 组织 User emails CSV format
+> 📘 User emails CSV format
 >
 > The format for the CSV file should just be the emails for the users on their own separated by line break. No columns or commas are necessary.
 >
-> Text users.csv
+> ```Text users.csv
 > andy@example.com
 > conor@example.com
 > joe@example.com
 > mel@example.com
-> 
+> ```
