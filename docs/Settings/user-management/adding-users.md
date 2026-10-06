@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-To invite new users into Budibase, you need an admin-level role. See [User roles](doc:user-roles) for role requirements.
+To invite new users into Budibase, you need an **Organisation admin** role. See [User roles](doc:user-roles) for role requirements.
 
 ## Where to invite users
 
@@ -60,7 +60,7 @@ If SMTP is configured, email onboarding is recommended. If SMTP is unavailable, 
 
 ## Import users
 
-If you need to add many users, you can bulk import by CSV.
+If you need to add many users, you can bulk import by CSV. This feature is only available to **Organisation admins**.
 
 1. Open **Portal** > **Settings** > **People** > **Organisation**.
 2. Click **Import users**.
