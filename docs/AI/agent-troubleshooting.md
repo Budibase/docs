@@ -25,6 +25,7 @@ Use this guide to diagnose and fix common Agent issues.
 | Automation parsing fails | Output format changes between responses | Enforce a stable JSON schema in instructions |
 | Self-hosted AI requests fail | Network egress restrictions | Follow [Self-hosted AI features](doc:self-hosted-ai-features) requirements |
 | Agent Knowledge actions disabled | `GEMINI_API_KEY` is not configured | Set `GEMINI_API_KEY` in your environment and restart Budibase |
+| Gemini store ingestion fails | Inaccessible (403 Forbidden) or not found (404) | Ingestion will fail immediately without retrying. Use 'Reset store' to recreate it. |
 | SharePoint files not ingested | File size exceeds 100MB limit | Ensure knowledge source files are under 100MB for ingestion |
 | Approved tool fails to execute | Backend error or validation failure | Check the Activity timeline for the specific error message |
 
