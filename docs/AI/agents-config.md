@@ -95,7 +95,7 @@ If model connection or Agent tests fail:
 * Confirm outbound internet access is allowed from your environment
 * Re-run a simple prompt test after saving changes
 
-If you are self-hosting and using Budibase AI, ensure the `BBAI_LITExLM_KEY` environment variable is correctly configured and available to every service that runs agents, including the automation worker. To use Agent Knowledge features (such as file uploads and SharePoint ingestion), you must also configure the `GEMINI_API_KEY` environment variable, which by default communicates via targeted Gemini flash models and passes requests smoothly if no override deployment is predefined. For more details on network requirements, see [Self-hosted AI features](doc:self-hosted-ai-features).
+If you are self-hosting and using Budibase AI, ensure the `BBAI_LITELLM_KEY` environment variable is correctly configured and available to every service that runs agents, including the automation worker. To use Agent Knowledge features (such as file uploads and SharePoint ingestion), you must also configure the `GEMINI_API_KEY` environment variable, which by default communicates via targeted Gemini flash models and passes requests smoothly if no override deployment is predefined. For more details on network requirements, see [Self-hosted AI features](doc:self-hosted-ai-features).
 
 ## Related guides
 
