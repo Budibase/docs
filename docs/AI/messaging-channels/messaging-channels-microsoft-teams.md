@@ -52,19 +52,22 @@ If you send a normal message before linking, Budibase sends a private link promp
 
 ## Working with documents (RAG)
 
-When your agent uses documents to answer questions (Retrieval-Augmented Generation), Budibase can provide direct download links to those sources within Teams.
+When your agent uses documents to answer questions (Retrieval-Augmented Generation), Budibase provides the specific source citations within Teams.
 
 ### Source citations
-In **personal conversations**, your agent will automatically provide the specific document sources it used to generate its reply as a set of interactive buttons below the message. Each button includes a direct, authenticated link to download the file.
+In **personal conversations**, your agent will automatically provide the specific document sources it used to generate its reply below the message. 
 
-To ensure privacy and security, source download links are **not** provided when the agent is chatting in a **channel or group conversation**.
+* **With downloads enabled**: Sources are displayed as interactive buttons, each containing a direct, authenticated link to download the file.
+* **With downloads disabled**: Sources are displayed as plain text labels showing the filename, without download links.
+
+To ensure privacy and security, source citations are **not** provided when the agent is chatting in a **channel or group conversation**.
 
 ### Disabling source downloads
 You can control whether users are allowed to download knowledge sources through the agent's operation settings:
 1. Open your agent in **Agents**
 2. Select the **Operations** tab
 3. Locate your live operation and click the settings icon
-4. Toggle **Allow knowledge source download** off if you want to prevent download links from being generated in personal chats.
+4. Toggle **Allow knowledge source download** off if you want to prevent download links from being generated. Source names will still be visible in personal chats, but the interactive download buttons will be replaced with plain text.
 
 ## Troubleshooting
 
@@ -73,7 +76,7 @@ You can control whether users are allowed to download knowledge sources through 
 * Authentication failures from Teams: check bot credentials and tenant alignment.
 * Teams prompts to link before answering: run `link` or `/link` and complete the account link handoff.
 * Webhook route errors: use the exact Budibase-generated endpoint URL from **Deployment**.
-* `Invalid Microsoft Teams service URL`: Budibase validates that all Teams interactions use trusted Microsoft service origins. If you are using a region-specific or custom Microsoft Teams environment, you may need to configure the `TEAMS_API_URL` environment variable on your Budibase server (e.g., `TEAMS_API_URL=https://smba.trafficmanager.net/apis/`) to match your environment.
+* `Invalid Microsoft Teams service URL`: Budibase validates that all Teams House interactions use trusted Microsoft service origins. If you are using a region-specific or custom Microsoft Teams environment, you may need to configure the `TEAMS_API_URL` environment variable on your Budibase server (e.g., `TEAMS_API_URL=https://smba.trafficmanager.net/apis/`) to match your environment.
 
 ## Related guides
 
