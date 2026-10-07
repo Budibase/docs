@@ -37,7 +37,7 @@ When a tool is enabled, you can configure its **Run as** (Execution principal) s
 *   **Requester**: The tool runs using the permissions of the user interacting with the Agent. This is the safest default for most user-facing tools.
 *   **Admin (elevated)**: The tool runs with full administrative permissions. Use this sparingly for background tasks or strictly controlled operations.
 
-> 🚀 **Automations**
+> 🤖 **Automations**
 > Agents triggered via an Automation step execute as **Admin** by default. If a tool requires escalation, the Agent will pause and, once approved, will resume using the role of the original automation requester.
 
 ### Approval rules and policies
@@ -54,6 +54,12 @@ An approval policy defines **who** is notified and responsible for reviewing a g
     *   **Majority**: More than half of the approvers must approve to proceed.
 *   **Approvers**: A list of Budibase users responsible for reviewing and responding to the escalated request.
 *   **Notification**: The messaging channel and destination (user or channel) where the approval request will appear.
+*   **Approval expiration**: How long approvers have to respond before the approval expires. You can choose from presets (e.g., 1 day, 1 week), set a custom duration, or set it to never expire.
+    *   **Limits**: The maximum expiration duration is determined by your Budibase plan.
+*   **What happens on expiry**: Choose the automatic outcome if the approval expires before a human responds.
+    *   **Expire**: The request simply expires and the Agent will inform the user it timed out.
+    *   **Approve request**: The request is automatically approved and the tool execution proceeds.
+    *   **Reject request**: The request is automatically rejected.
 
 #### Approval rules
 An approval rule determines **when** a policy should be applied to a specific tool. Rules are configured within the tool configuration modal.
@@ -184,4 +190,4 @@ Keep table and query names reasonably concise to ensure tool names remain human-
 
 * [Agent instructions guide](doc:agent-instructions-guide)
 * [Agent testing guide](doc:agent-testing-guide)
-* [Agent troubleshooting guide](doc:agent-troubleshooting)
+* [Agent troubleshooting guide](doc:agent-troubleshooting-guide)
