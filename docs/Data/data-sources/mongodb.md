@@ -17,12 +17,12 @@ Before we get started, make sure you've got the following:
 * `ConnectionString` for connecting to the database remotely including username and password
 * The Database name 
 
-In addition, ensure you have added the Budibase IP to the Mongo Atlas IP Access List.\
+In addition, ensure you have added the Budibase IP to the MongoDB Atlas IP Access List.\
 Check [Whitelisting](doc:whitelisting) for the Budibase IP if you're using the cloud-hosted solution.
 
 Now that you have everything you need to hook up your MongoDB installation to Budibase, let's get started.
 
-> 📘 ConnectionString
+> 🔗 ConnectionString
 >
 > Don't know how to get the ConnectionString? Check this useful [guide by MongoDB](https://docs.mongodb.com/drivers/node/current/fundamentals/connection/).
 
@@ -48,9 +48,13 @@ Paste your ConnectionString, and enter the database name which you want to conne
 
 Pressing this button will save the ConnectionString into your Budibase installation. 
 
-> 📘 Connect to MongoDB Atlas
+> 🔗 Connect to MongoDB Atlas
 >
 > Connecting to a hosted instance of MongoDB Atlas should be straightforward, but do check the useful guide on <a href="https://www.mongodb.com/docs/atlas/connect-to-database-deployment/#use-the-connect-to-your-database-deployment-dialog-to-connect" target="_blank">connecting to a database</a>
+
+> ⚠️ MongoDB TLS file options on Cloud
+>
+> If you are using Budibase Cloud, TLS file-based connection options (such as `tlsCAFile`, `tlsCertificateKeyFile`, or `tlsCRLFile`) are not supported in connection strings. These options are only available for self-hosted Budibase installations.
 
 ## Adding a query
 
@@ -66,13 +70,13 @@ The first step is to click the 'Add query' button, which is located on the data 
 
 Configuring your query is essential in making sure it runs correctly. In the table below you'll find what each field means.
 
-| Field        | Description                                                                                                                                               |
-| :----------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Field        | Description                                                                                                                                                                                                                                         |
+| :---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Query Name   | The name you want to give the query, this is a visual name. The name is used when selecting a <Glossary>Data Sources</Glossary> inside the design section |
 | Function     | The action you want to perform. This is a MongoDB specified function. Choosing a function influences the options you get offered to you for actionTypes   |
-| Access Level | Which level do you want to be able to access this query?                                                                                                  |
-| Collection   | The MongoDB collection you want to query                                                                                                                  |
-| Action Types | The action-type defined by MongoDB, based on the Function you've selected.                                                                                |
+| Access Level | Which level do you want to be able to access this query?                                                                                                                                                                                            |
+| Collection   | The MongoDB collection you want to query                                                                                                                                                                                                            |
+| Action Types | The action-type defined by MongoDB, based on the Function you've selected.                                                                                                                                                                       |
 
 > 👍 What do the action types mean?
 >
@@ -91,7 +95,7 @@ If you want to specify an ObjectId, you can do that as follows:
 
 ![](https://files.readme.io/2a5b095-Screenshot_2022-06-17_at_11.54.46.png "Screenshot 2022-06-17 at 11.54.46.png")
 
-> 🚧 Document ID
+> 💡 Document ID
 >
 > In MongoDB you can use most data types as a document ID, however the default and recommended type is [ObjectId](https://www.mongodb.com/docs/manual/reference/method/ObjectId/)
 
@@ -141,7 +145,7 @@ If *deleteOne* was used instead, then only the first filter match would have bee
 
 In addition, a number of non-mandatory options are available: [https://www.mongodb.com/docs/v4.4/reference/method/db.collection.deleteOne/](https://www.mongodb.com/docs/v4.4/reference/method/db.collection.deleteOne/)
 
-> 🚧 Stringify the queries
+> 💡 Stringify the queries
 >
 > If you take a look at the MongoDB documentation, and you find queries there, they're most likely not stringified. As the `Fields` box only supports JSON objects, you should convert it to strings.
 
@@ -285,7 +289,7 @@ To begin create your screen and add a **Repeater block**. Select the *Read accou
 
 <Image align="center" src="https://files.readme.io/4379932-Screenshot_2024-02-23_at_10.30.44.png" />
 
-Next add a [Headline](https://docs.budibase.com/docs/displaying-text#headline) and display the *account\_id* with the following <Glossary>Binding</Glossary>: `Account ID: {{ Accounts Repeater Block.Read accounts.account_id }}`
+Next add a [Headline](https://docs.budibase.com/docs/displaying-text#headline) and display the *account\\_id* with the following <Glossary>Binding</Glossary>: `Account ID: {{ Accounts Repeater Block.Read accounts.account_id }}`
 
 Now we'll nest a second **Repeater block**, this time for the associated account products. Under the *Fields* section of the *Data* setting, select the *products* field:
 
