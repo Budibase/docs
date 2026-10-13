@@ -22,6 +22,11 @@ The exported file will include all [Budibase DB](doc:budibasedb) data, data conn
 >
 > We also recommend that you make use of the password-based workspace export encryption.
 
+### Runtime data exclusion
+To prevent environment leakage, runtime documents are excluded from workspace exports and are not synchronized between development and production workspaces. These include:
+* **Agent requests**: History and logs from AI Agent interactions.
+* **Escalations**: Active or historical Human-in-the-loop escalation contexts and notifications.
+
 ## Export a workspace
 
 1. To export a workspace, first select the workspace you wish to export from the workspace dropdown.
@@ -33,7 +38,7 @@ The exported file will include all [Budibase DB](doc:budibasedb) data, data conn
    <Image align="center" border={false} src="https://files.readme.io/4d60219260719c3c3d6386277bbf937be94126a086210ce47c0da73025e554a0-Screenshot_2026-02-09_at_14.50.01.png" />
 3. Click on **General**
 
-   <Image align="center" border={false} src="https://files.readme.io/f91294f6b6c7ec7f481cdffc7e2f89744e044688ca172453e6e83b15471edb67-Screenshot_2026-02-09_at_14.51.08.png" />
+   <Image align="center" border={false} src="https://files.readme.io/f91294f6b6c7ec7f481cdffc7e2f89744e0446888ca172453e6e83b15471edb67-Screenshot_2026-02-09_at_14.51.08.png" />
 4. Scroll down to where it says **Export** section
 
    <Image align="center" border={false} src="https://files.readme.io/505e744e2a12ce0f07ae64fa0d468393e2a57e20f05cd02f5b7136d4a279e89a-Screenshot_2026-02-09_at_14.53.23.png" />
@@ -51,7 +56,7 @@ After choosing an export option, you will be given the option to _Export rows fr
 
 In addition to that, you'll be presented with the option _Encrypt my export_ which will allow you to add a password to encrypt your export:
 
-<Image align="center" border={false} width="450px" src="https://files.readme.io/371a3b3db5041098d5de42776c27c8934462e404598d136d85b4d1013bdbe006-Screenshot_2025-08-20_at_12.48.46.png" />
+<Image align="center" border={false} width="450px" src="https://files.readme.io/371a3b3db5041098d5de42776c27c8934462e404598d136d85b4d1013bdb e006-Screenshot_2025-08-20_at_12.48.46.png" />
 
 > 💡 Environment variables
 >
@@ -79,7 +84,7 @@ If you click the import button, the UI will change slightly. This will change th
 
 You can import a workspace export into an existing workspace by going to **Settings > General > Import**. This is useful if you want to update the design of an existing workspace or add new functionality without affecting your existing data.
 
-<Image align="center" border={false} src="https://files.readme.io/ef9690b32c948fc45a022bd3ab6342f65eaa66f85e71c2bb23bb0711d06b50ad-Screenshot_2025-08-20_at_12.52.50.png" />
+<Image align="center" border={false} src="https://files.readme.io/ef9690b32c9488fc45a022bd3ab6342f65eaa66f85e71c2bb23bb0711d06b50ad-Screenshot_2025-08-20_at_12.52.50.png" />
 
 When importing into an existing workspace:
 * **Existing data is preserved**: Tables and rows that already exist in your workspace will not be overwritten or deleted.
