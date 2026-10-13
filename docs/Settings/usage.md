@@ -20,10 +20,11 @@ Each workspace will keep track of usage independently. For example, if you reach
 
 <br />
 
-There are two types of quotas:
+There are three types of quotas:
 
 * **static:** This sets a fixed upper limit for the lifespan of your workspace. For example, on the free plan, there is a limit of 1 app and 5 users.
-* **monthly:** These quotas reset at the end of each month
+* **monthly:** These quotas reset at the end of each month.
+* **retention:** These determine how long certain data, such as automation logs or platform actions, are stored before being expired. For example, platform actions are retained for 1 day on the free plan and up to 365 days on Enterprise plans.
 
 <br />
 
@@ -42,7 +43,7 @@ In this example, the account has two Premium tier workspaces:
 
 The **Estimated total cost** is displayed at the top, which sums the cost of all your workspace subscriptions.
 
-<Image align="center" alt="Click the arrows to cycle through your workspace subscriptions" border={false} caption="Click the arrows to cycle through your workspace subscriptions" src="https://files.readme.io/aa7bf6db5aaef3209d3c390f505c94b971514ec415156e9166ee61efa35cde3c-page2.png" />
+<Image align="center" alt="Click the arrows to cycle through your workspace subscriptions" border={false} caption="Click the arrows to cycle through your workspace subscriptions" src="https://files.readme.io/aa7bf6db5aef3209d3c390f505c94b971514ec415156e9166ee61efa35cde3c-page2.png" />
 
 The reason it is an _estimate_ is that you can cancel a subscription at any time, and the payment periods for each workspace subscription can differ between monthly and yearly.
 
