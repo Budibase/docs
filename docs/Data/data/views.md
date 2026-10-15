@@ -35,7 +35,11 @@ One of the core features of views is the ability to filter rows according to par
 Try adding filters when:
 
 * You need to focus on rows that meet certain conditions (e.g. Classes between May and June, and taught by Albert Einstein).
-* You need to display certain information, to certain people (e.g Each salesperson can only view their own commission).
+* You need to display certain information, to certain people (e.g. Each salesperson can only view their own commission).
+
+### API Enforcement
+
+Budibase strictly enforces view filters at the API level. This ensures that if a row does not meet the view's filter criteria, it cannot be accessed through that view—even when using direct row-level operations like row enrichment or downloading attachments. Similarly, hidden columns are omitted from row data returned via the view's API endpoints.
 
 ### How to create a new filter
 
@@ -118,7 +122,7 @@ Adding sales channel to the grouping breaks the counts down by both country and 
 
 The Screens button in the Data toolbar shows where a view or view calculation is currently being used.
 
-Views and View Counts can be used as Data Sources, and manipulated in the same ways. Using a view calculation like "Calculate the Sum of Total Revenue, Group by Country" allows us to find the total revenue of sale per country. This data can then be used in components like **Charts** or **Repeater Blocks**. 
+Views and View Counts can be used as Data Sources, and manipulated in the same ways. Using a view calculation like "Calculate the Sum of Total Revenue, Group by Country" allows us to find the total revenue of sale per country. This data can then be used in components like **Charts** or **Repeater Blocks**.
 
 Add a Repeater Block, and set the Data Source to the `view total_revenue_by_country`, then set the Sort Column to be Sum Total Revenue, descending, limited to 10. This will show us the top 10 countries by sum total sales revenue.
 
@@ -126,9 +130,9 @@ Inside the repeater block, add a container and nest inside it 3 Headline compone
 
 The repeater example is built from a container with three nested Headline components.
 
-Set the first headline component to `{{ add New Repeater Block.Row Index 1 }}`   - This is taking the Row Index and adding 1 to it. (Index starts counting from Zero, so in order to use row-index as the rankings we must add 1)
+Set the first headline component to `{{ add New Repeater Block.Row Index 1 }}`    - This is taking the Row Index and adding 1 to it. (Index starts counting from Zero, so in order to use row-index as the rankings we must add 1)
 
-Set the second headline component to `{{ New Repeater Block.total_revete_by_country.Sum Total Revenue }}`  - this fetches the sum total of the revenue. You can then set the third headline component to`{{ New Repeater Block.total_revete_by_country.Country }}` , and just like that we've built a basic leaderboard for Total Revenue by Country. 
+Set the second headline component to `{{ New Repeater Block.total_revete_by_country.Sum Total Revenue }}`   - this fetches the sum total of the revenue. You can then set the third headline component to`{{ New Repeater Block.total_revete_by_country.Country }}` , and just like that we've built a basic leaderboard for Total Revenue by Country. 
 
 ### Tracking View Usage
 
