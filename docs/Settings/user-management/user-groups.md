@@ -1,5 +1,5 @@
 ---
-title: User groups 🔒
+title: User groups 👥
 excerpt: ''
 deprecated: false
 hidden: false
@@ -36,7 +36,7 @@ You can also mark the group as **Default**. When a default group is configured, 
 
 Next you will be brought to screen where you can [Add user](https://docs.budibase.com/docs/user-groups#adding-a-user-to-a-group) and [Add app](https://docs.budibase.com/docs/user-groups#adding-apps-to-a-user-group) for your new group. When finished, the back button will take you back to the table of user groups.
 
-If you want to change the team name, icon or colour, this can be done through the context menu in the top right corner. The user group can also be deleted if you decide you no longer need it.
+If you want to change the team name, icon or colour, this can be done through the context menu in the top right corner. From this screen, you can also click the **Copy group ID** button to copy the unique identifier for the group, which is required for using groups with the [Public API](doc:public-api). The user group can also be deleted if you decide you no longer need it.
 
 ## Default group behavior
 
@@ -52,7 +52,7 @@ If you set a new default group, Budibase automatically removes the default flag 
 
 If you delete the current default group, new users will no longer be auto-assigned to a group until another default group is configured.
 
-> 📘
+> 💡
 >
 > If one or more groups are explicitly selected during invite or create, those selected groups are used and the default-group fallback is not applied.
 
