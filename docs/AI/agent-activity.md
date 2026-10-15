@@ -27,7 +27,7 @@ The Activity page displays a list of recent requests tracked by your agents. Eac
 
 At the top of the Activity page, summary metrics provide a high-level view of your agent's performance:
 
-*   **All actions**: The total number of tracked interactions.
+*   **All actions**: The total number of metered tool and agent executions. Only successful executions count toward your monthly action quota; failed attempts, pending approvals, or gated actions that are refused do not increment this count.
 *   **Completed**: Requests that successfully finished processing.
 *   **Processing**: Active requests currently being handled by the agent.
 *   **Needs input**: Requests waiting for user clarification or additional data.
@@ -51,6 +51,8 @@ The details section provides granular data about a specific interaction:
 
 ### Timeline
 
-The timeline tracks the lifecycle of a request, from its creation through various operation stages. This is useful for debugging multi-step agent interactions or verifying that the correct logic was executed in response to a user prompt.
+The timeline tracks the lifecycle of a request, from its creation through individual tool executions and operation stages. This is useful for debugging multi-step agent interactions or verifying that the correct logic was executed in response to a user prompt.
 
-If an operation fails, the timeline provides detailed error feedback to help you understand what went wrong during execution.
+Each tool call is logged independently in the timeline. If a specific tool fails or requires human approval before running, the timeline will reflect that specific state. Once a gated tool is approved and successfully executes, it is recorded as a metered action.
+
+If an operation fails, the timeline provides detailed error feedback for the specific tool or step that encountered an issue to help you understand what went wrong during execution.
