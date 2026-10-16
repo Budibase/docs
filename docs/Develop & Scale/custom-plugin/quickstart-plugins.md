@@ -10,43 +10,34 @@ metadata:
 next:
   description: ''
 ---
-### Creating a Budibase Dev Environment Locally
+Use the plugin quickstart to spin up a local Budibase development environment for plugin work.
 
-The budibase CLI provides an all-in-one command for spinning up a local dev environment. This will spin up a fresh budibase server with a setup wizard that will allow you to develop plugins. Let's create a directory where we will store our budibase plugins. You can name this anything that you want, but we are going to call ours `budibase-plugins`.
+## Start the dev environment
 
-`mkdir budibase-plugins`
+1. Create a workspace folder for your plugins.
+2. Go to that folder.
+3. Run:
 
-`cd budibase-plugins`
-
-You can then use the budibase CLI command to start the dev environment.
-
-`budi plugins --dev` 
-
-You will see the output below. Since we already navigated to the directory where we will create plugins, we can just hit enter on the `Directory to watch` step, since we are already in there. If you are running the `dev` command in another directory, you will need to point budibase to the directory where you plan to develop your plugins. 
-
-```Text she
-? Directory to watch ./
-Starting services, this may take a moment - first time this may take a few minutes to download images.
-Recreating plugins_budibase_1 ...
-Recreating plugins_budibase_1 ... done
-Services started, please go to http://localhost:10000 for next steps.
-Configuration has been written to docker-compose.yaml
-Development environment started successfully - connect at: http://localhost:10000
-Use the following credentials to login:
-Email: admin@admin.com
-Password: admin
+```text
+budi plugins --dev
 ```
 
-Credentials to your dev instance will be printed to the console and you can then access your instance: `localhost:10000` and log in.
+4. Accept the default directory to watch if you are already inside the plugins folder.
 
-<Image align="center" width="400px" src="https://files.readme.io/8d88eb0fc0b4a037ba6bbf63f07ebcea4f9602176a823de793be595f681ea5b6-Screenshot_2024-10-22_at_16.00.32.png" />
+The CLI prints the local Budibase URL and login credentials when the environment starts.
 
-From here, you will be able to access all of your budibase plugins inside the `budibase-plugins` directory.
+## Open the environment
 
-<Image align="center" src="https://files.readme.io/cd7daec0a8675566a41e31e08a98f0d7ec89b34fe8c7ed6dde2eb64f8344567b-Screenshot_2024-10-22_at_16.01.59.png" />
+1. Open the local Budibase URL shown in the CLI output.
+2. Log in with the printed credentials.
+3. Open the plugins area in the builder.
 
-To get started with creating a plugin or a datasource, follow the specific guides.
+From there, you can work on any plugin stored in the watched directory.
 
-[Custom component](https://docs.budibase.com/docs/custom-component)
+## Next steps
 
-[Custom datasource](https://docs.budibase.com/docs/custom-datasource)
+Use the dedicated guides for the plugin type you want to build:
+
+* [Custom component](https://docs.budibase.com/docs/custom-component)
+* [Custom datasource](https://docs.budibase.com/docs/custom-datasource)
+* [Custom automation step](https://docs.budibase.com/docs/custom-automations)
