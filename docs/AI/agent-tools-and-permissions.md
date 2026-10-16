@@ -106,6 +106,12 @@ To prevent data leaks, Budibase automatically redacts tool metadata and result d
 *   **Redacted Results**: For write operations (like creating or updating rows) on restricted resources, the tool returns a generic success message instead of the full object data to prevent unauthorized reading of records.
 *   **Discovery Tools**: Legacy discovery tools like `list_tables` and `get_table` are disabled by default. Agents should be provided with the specific tools they need for their tasks via the operation configuration.
 
+### Authoritative validation
+
+Budibase performs server-side validation before running tools that create or update rows, trigger automations, or run REST queries. The input must match the current schema of the table, automation trigger, or REST query. Validation occurs before an approval request is created or the tool runs. If a request is approved later, Budibase validates the input again against the current schema before execution.
+
+If a tool is redacted because the requester does not have permission to view its resource, Budibase replaces validation details with the generic `Tool input is invalid` message. This prevents error responses from revealing the resource schema.
+
 ## Read vs write tools
 
 Separate read and write capabilities in both tooling and instructions.
