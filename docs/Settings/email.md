@@ -91,7 +91,7 @@ Use the values required by your provider. For modern SMTP setups, ports `587` an
 ## Email templates
 
       <td>
-        no-reply@example.invalid
+        [no-reply@example.invalid](mailto:no-reply@example.invalid)
       </td>
     </tr>
 
@@ -134,10 +134,7 @@ Keep sender addresses and template content aligned with your domain so mail is l
 
 If email does not send:
 
-* Confirm the SMTP host and port are correct
-* Check whether authentication is required
-* Verify the from address is allowed by the provider
-* Confirm the provider is not blocking the connection
+Budibase comes with five different email templates: Password Recovery, User Invitation, User Welcome, Base Format, and Custom.
 
 ## Related guides
 

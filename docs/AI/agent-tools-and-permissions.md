@@ -54,6 +54,11 @@ An approval policy defines **who** is notified and responsible for reviewing a g
     *   **Majority**: More than half of the approvers must approve to proceed.
 *   **Approvers**: A list of Budibase users responsible for reviewing and responding to the escalated request.
 *   **Notification**: The messaging channel and destination (user or channel) where the approval request will appear.
+*   **Approval expiration**: How long approvers have to respond before the approval expires. The default is 1 day. Available presets are 1 day, 3 days, 1 week, 30 days, and 90 days, subject to the limit for your Budibase plan. Enterprise plans can also use a custom duration or choose **Never expires**.
+*   **What happens on expiry**: Choose the automatic outcome if the approval expires before a human responds.
+    *   **Expire**: The request expires without running the tool, and the Agent tells the user that the request timed out.
+    *   **Approve request**: The request is automatically approved and the tool runs.
+    *   **Reject request**: The request is automatically rejected and the tool does not run.
 
 #### Approval rules
 An approval rule determines **when** a policy should be applied to a specific tool. Rules are configured within the tool configuration modal.
@@ -100,6 +105,12 @@ To prevent data leaks, Budibase automatically redacts tool metadata and result d
 *   **Redacted Metadata**: The Agent cannot see the resource's schema, field names, or specific configuration. Instead, it receives a generic tool description that prevents it from inferring the data structure.
 *   **Redacted Results**: For write operations (like creating or updating rows) on restricted resources, the tool returns a generic success message instead of the full object data to prevent unauthorized reading of records.
 *   **Discovery Tools**: Legacy discovery tools like `list_tables` and `get_table` are disabled by default. Agents should be provided with the specific tools they need for their tasks via the operation configuration.
+
+### Authoritative validation
+
+Budibase performs server-side validation before running tools that create or update rows, trigger automations, or run REST queries. The input must match the current schema of the table, automation trigger, or REST query. Validation occurs before an approval request is created or the tool runs. If a request is approved later, Budibase validates the input again against the current schema before execution.
+
+If a tool is redacted because the requester does not have permission to view its resource, Budibase replaces validation details with the generic `Tool input is invalid` message. This prevents error responses from revealing the resource schema.
 
 ## Read vs write tools
 

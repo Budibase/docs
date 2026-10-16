@@ -88,6 +88,16 @@ See this [discussion answer](https://github.com/Budibase/budibase/discussions/39
 
 <br />
 
+### Local image structure validation
+
+Run `yarn test:docker:single` from the Budibase repository to build the local `budibase:latest` image and run the container structure tests against it. This ensures that the tests do not accidentally use an older or pulled image with the same tag.
+
+To test an existing image without building `budibase:latest`, set `IMAGE` explicitly:
+
+```shell
+IMAGE=budibase/custom:tag yarn test:docker:single
+```
+
 ## Recommended resources
 
-The number of processing cores and amount of RAM required by Budibase docker containers will depend greatly on expected usage, however for most use cases **2 core and 6GB of RAM** should be enough. 
+The number of processing cores and amount of RAM required by Budibase docker containers will depend greatly on expected usage, however for most use cases **2 core and 6GB of RAM** should be enough.
