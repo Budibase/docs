@@ -306,7 +306,7 @@ The full set of variables can be found in our repo, in the file [.env](https://r
 
     <tr>
       <td>
-        PROXE_RATE_LIMIT_WEBHOOKS_PER_SECOND
+        PROXY_RATE_LIMIT_WEBHOOKS_PER_SECOND
       </td>
 
       <td>
