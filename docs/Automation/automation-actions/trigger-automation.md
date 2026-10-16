@@ -14,7 +14,7 @@ Use the Trigger automation step when one automation needs to call another automa
 
 ## Before you start
 
-The target automation must use the `On demand` trigger.
+The target automation must use the [On demand](doc:app-action) trigger.
 
 ## Configure the step
 
@@ -39,3 +39,10 @@ If the target automation expects `employee_id`, pass `{{ trigger.id }}` from the
 * Use this step for chained automation flows
 * Keep field names clear so mappings are easy to read
 * Check the target automation first if the call fails
+
+## Related guides
+
+* [On demand triggers](doc:app-action)
+* [Bindings in automations](doc:data-in-automations)
+* [Testing automations](doc:activating-and-testing)
+* [Automation history](doc:logs)
