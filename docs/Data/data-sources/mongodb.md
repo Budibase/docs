@@ -17,7 +17,7 @@ Before we get started, make sure you've got the following:
 * `ConnectionString` for connecting to the database remotely including username and password
 * The Database name 
 
-In addition, ensure you have added the Budibase IP to the Mongo Atlas IP Access List.\
+In addition, ensure you have added the Budibase IP to the MongoDB Atlas IP Access List.\
 Check [Whitelisting](doc:whitelisting) for the Budibase IP if you're using the cloud-hosted solution.
 
 Now that you have everything you need to hook up your MongoDB installation to Budibase, let's get started.
@@ -51,6 +51,10 @@ Pressing this button will save the ConnectionString into your Budibase installat
 > 📘 Connect to MongoDB Atlas
 >
 > Connecting to a hosted instance of MongoDB Atlas should be straightforward, but do check the useful guide on <a href="https://www.mongodb.com/docs/atlas/connect-to-database-deployment/#use-the-connect-to-your-database-deployment-dialog-to-connect" target="_blank">connecting to a database</a>
+
+> ⚠️ MongoDB TLS file options on Cloud
+>
+> If you are using Budibase Cloud, TLS file-based connection options (such as `tlsCAFile`, `tlsCertificateKeyFile`, or `tlsCRLFile`) are not supported in connection strings. These options are only available for self-hosted Budibase installations.
 
 ## Adding a query
 
@@ -285,7 +289,7 @@ To begin create your screen and add a **Repeater block**. Select the *Read accou
 
 <Image align="center" src="https://files.readme.io/4379932-Screenshot_2024-02-23_at_10.30.44.png" />
 
-Next add a [Headline](https://docs.budibase.com/docs/displaying-text#headline) and display the *account\_id* with the following <Glossary>Binding</Glossary>: `Account ID: {{ Accounts Repeater Block.Read accounts.account_id }}`
+Next add a [Headline](doc:displaying-text#headline-deprecated) and display the *account\_id* with the following <Glossary>Binding</Glossary>: `Account ID: {{ Accounts Repeater Block.Read accounts.account_id }}`
 
 Now we'll nest a second **Repeater block**, this time for the associated account products. Under the *Fields* section of the *Data* setting, select the *products* field:
 

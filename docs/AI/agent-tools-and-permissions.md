@@ -54,6 +54,11 @@ An approval policy defines **who** is notified and responsible for reviewing a g
     *   **Majority**: More than half of the approvers must approve to proceed.
 *   **Approvers**: A list of Budibase users responsible for reviewing and responding to the escalated request.
 *   **Notification**: The messaging channel and destination (user or channel) where the approval request will appear.
+*   **Approval expiration**: How long approvers have to respond before the approval expires. The default is 1 day. Available presets are 1 day, 3 days, 1 week, 30 days, and 90 days, subject to the limit for your Budibase plan. Enterprise plans can also use a custom duration or choose **Never expires**.
+*   **What happens on expiry**: Choose the automatic outcome if the approval expires before a human responds.
+    *   **Expire**: The request expires without running the tool, and the Agent tells the user that the request timed out.
+    *   **Approve request**: The request is automatically approved and the tool runs.
+    *   **Reject request**: The request is automatically rejected and the tool does not run.
 
 #### Approval rules
 An approval rule determines **when** a policy should be applied to a specific tool. Rules are configured within the tool configuration modal.

@@ -394,7 +394,7 @@ The full set of variables can be found in our repo, in the file [.env](https://r
       </td>
 
       <td>
-        The port number used to connect to the SMTP server. This environment variable defines the communication channel for the email service, typically 587 for TLS or 465 for SSL
+        The port number used to connect to the SMTP server. This environment variable defines the communication channel for the email service, typically 587 for TLS or 465 for SSL.
       </td>
     </tr>
 
@@ -434,7 +434,7 @@ The full set of variables can be found in our repo, in the file [.env](https://r
       </td>
 
       <td>
-        Controls which IP addresses/hostnames/CIDR subnets Budibase's outbound REST query integration is prevented from connecting to. This is an **SSRF (Server-Side Request Forgery) protection** mechanism.
+        Controls which IP addresses/hostnames/CIDR subnets Budibase's outbound REST query integration is prevented from connecting to. In self-hosted environments, setting this variable replaces the default internal blacklist; an empty value will disable all blacklisting. This is an **SSRF (Server-Side Request Forgery) protection** mechanism.
       </td>
     </tr>
 
