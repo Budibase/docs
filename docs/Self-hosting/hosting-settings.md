@@ -440,7 +440,7 @@ The full set of variables can be found in our repo, in the file [.env](https://r
 
     <tr>
       <td>
-        BBAI_LITEMLLM_KEY
+        BBAI_LITELLM_KEY
       </td>
 
       <td>
