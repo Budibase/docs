@@ -44,7 +44,7 @@ The details section provides granular data about a specific interaction:
 *   **Status**: The final or current status of the request.
 *   **Error**: The specific error message if the request has a **Failed** status.
 *   **Source**: The specific agent used.
-*   **Operation**: The names of the tools or automation workflows the agent utilized to fulfill the request.
+*   **Operation**: The name of the specific agent operation triggered. If the operation has since been removed from the agent configuration, this will display as **Deleted operation**.
 *   **Created by**: The user who initiated the prompt.
 *   **Channel**: The communication channel where the request originated (e.g., Slack, MS Teams, Discord, or Portal Chat).
 *   **Created at**: The exact timestamp of the initial prompt.
