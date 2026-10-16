@@ -103,9 +103,9 @@ To prevent data leaks, Budibase automatically redacts tool metadata and result d
 
 ### Authoritative validation
 
-Budibase performs strict server-side validation on all tool inputs before execution. For mutating tools (like creating or updating rows, triggering automations, or running queries), the input must match the authoritative schema of the resource. This validation occurs before any approval gates are triggered.
+Budibase performs server-side validation before running tools that create or update rows, trigger automations, or run REST queries. The input must match the current schema of the table, automation trigger, or REST query. Validation occurs before an approval request is created or the tool runs. If a request is approved later, Budibase validates the input again against the current schema before execution.
 
-If a tool is redacted due to insufficient permissions, any validation errors are sanitized to a generic "Tool input is invalid" message to avoid leaking schema information through error responses.
+If a tool is redacted because the requester does not have permission to view its resource, Budibase replaces validation details with the generic `Tool input is invalid` message. This prevents error responses from revealing the resource schema.
 
 ## Read vs write tools
 
