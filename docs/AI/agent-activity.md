@@ -33,6 +33,10 @@ At the top of the Activity page, summary metrics provide a high-level view of yo
 *   **Needs input**: Requests waiting for user clarification or additional data.
 *   **Failed**: Requests that encountered errors during execution.
 
+### Retention
+
+Action history is subject to retention limits based on your Budibase plan. Once a session reaches a terminal state (Completed or Failed), it will be preserved for the duration defined by your plan's retention policy. After this period, the session and its associated event timeline are automatically cleaned up.
+
 ## Request details and timeline
 
 Clicking on any request in the table opens a side panel with detailed information and an interaction timeline.
