@@ -43,7 +43,7 @@ In this example, the account has two Premium tier workspaces:
 
 The **Estimated total cost** is displayed at the top, which sums the cost of all your workspace subscriptions.
 
-<Image align="center" alt="Click the arrows to cycle through your workspace subscriptions" border={false} caption="Click the arrows to cycle through your workspace subscriptions" src="https://files.readme.io/aa7bf6db5aef3209d3c390f505c94b971514ec415156e9166ee61efa35cde3c-page2.png" />
+<Image align="center" alt="Click the arrows to cycle through your workspace subscriptions" border={false} caption="Click the arrows to cycle through your workspace subscriptions" src="https://files.readme.io/aa7bf6db5aaef3209d3c390f505c94b971514ec415156e9166ee61efa35cde3c-page2.png" />
 
 The reason it is an _estimate_ is that you can cancel a subscription at any time, and the payment periods for each workspace subscription can differ between monthly and yearly.
 
