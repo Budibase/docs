@@ -1,6 +1,5 @@
 ---
 title: queries
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

@@ -1,6 +1,5 @@
 ---
 title: views
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
