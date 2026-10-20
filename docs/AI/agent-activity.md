@@ -54,3 +54,15 @@ The details section provides granular data about a specific interaction:
 The timeline tracks the lifecycle of a request, from its creation through various operation stages. This is useful for debugging multi-step agent interactions or verifying that the correct logic was executed in response to a user prompt.
 
 If an operation fails, the timeline provides detailed error feedback to help you understand what went wrong during execution.
+
+## Checking status via chat
+
+In addition to monitoring requests in the Budibase builder, users can ask agents directly about the status of their requests in any supported [messaging channel](doc:messaging-channels).
+
+When a user asks a question like "How is my request going?" or "Is my laptop order approved?", the agent will:
+
+1.  **Search history**: Look through the user's tracked request history for that specific agent.
+2.  **Report progress**: Provide a concise update on the current status (e.g., *Needs input*, *Completed*, or *Failed*) based on the recorded activity.
+3.  **Clarify ambiguity**: If multiple requests match the query, the agent will ask a simple clarification question to identify the correct one.
+
+This allows users to stay informed about long-running operations or approval workflows without needing to access the Budibase builder.
