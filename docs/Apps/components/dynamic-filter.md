@@ -29,7 +29,7 @@ To add a filter, click the "Filter" button and Add Filter button. This will open
 
 The Dynamic Filter settings panel includes:
 - `Provider` to choose the data source.
-- `Allowed filter columns` to restrict which fields users can filter on.
+- `Allowed filter columns` to restrict which fields users can filter on. This includes support for relationship columns (e.g. `Author.Name`). By default, if no columns are selected, all available columns can be filtered.
 - `Button size` to control the filter trigger button UI size.
 
 
