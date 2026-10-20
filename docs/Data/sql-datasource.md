@@ -18,10 +18,11 @@ Our core SQL datasource connections include:
 * [MySQL / MariaDB](doc:mysql-mariadb)
 * [Oracle](doc:oracle)
 * [PostgreSQL](doc:postgresql)
+* [Snowflake](doc:snowflake)
 
 <HTMLBlock>{`
 <iframe src="https://player.vimeo.com/video/746819514?h=c95914762f" style="margin-top: -20px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-`}</HTMLBlock>
+`} </HTMLBlock>
 
 ## Adding the remote datasource
 
@@ -135,7 +136,7 @@ Existing queries are also indicated by the _Search_ icon instead of the usual ta
 
 <Image align="center" alt="A MySQL datasource with two queries" border={false} caption="A MySQL datasource with two queries" src="https://files.readme.io/6477596-Screenshot_2023-02-07_at_11.33.30.png" />
 
-> 🚧 Limitations
+> ⚠️ Limitations
 >
 > Whilst custom queries offer a lot of flexibility in terms of the SQL query itself, you will lose some of the automatic functionality such as pagination and sorting.
 >
