@@ -47,10 +47,12 @@ Use this section to go from initial setup to production-ready Agent workflows.
    Run repeatable tests and regression checks before production rollout
 9. [Agent activity](doc:agent-activity)  
    Monitor agent actions, statuses, and operation history in real-time
-10. [Agent troubleshooting](doc:agent-troubleshooting)  
-   Diagnose model, tool, and output issues quickly
-11. [Agent chat](doc:agent-chat)  
-   Deprecated path retained for migration context
+10. [Agent requests portal](doc:agent-requests-portal)  
+   Monitor your own agent interactions and manage pending escalations
+11. [Agent troubleshooting](doc:agent-troubleshooting)  
+    Diagnose model, tool, and output issues quickly
+12. [Agent chat](doc:agent-chat)  
+    Deprecated path retained for migration context
 
 ## What this section covers
 
