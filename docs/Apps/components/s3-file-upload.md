@@ -17,7 +17,9 @@ Visually the `S3 File Upload` component looks the same as the [Attachment](doc:a
 
 ## Adding the S3 File Upload
 
-An [S3 datasource](doc:s3) must also have been added to the **Data** section in Budibase. After the S3 connection is established, you can select the <Glossary>Datasource</Glossary>, and enter a bucket and file name in the <Glossary>Settings Panel</Glossary>.
+An [S3 datasource](doc:s3) must also have been added to the **Data** section in Budibase. After the S3 connection is established, you can select the Datasource, and enter a bucket and file name in the Settings Panel.
+
+Both **Bucket** and **File name** support dynamic [Bindings](doc:bindings), including Handlebars and JavaScript. This allows you to programmatically define upload paths—for example, using a unique user ID or a timestamp in the filename.
 
 You will also need to provide a custom field name.
 
@@ -45,15 +47,15 @@ By default any file, with any file extension, will be accepted. To restrict this
 
 When [Using Handlebars](doc:bindings), use the `split` helper:
 
-```handlebars
+handlebars
 {{ split ".png,.jpg,.jpeg,.svg,.gif,.webp" "," }}
-```
+
 
 When [Using JavaScript](doc:javascript), return an array of strings:
 
-```javascript
+javascript
 return ['.png','.jpg','.jpeg','.svg','.gif','.webp']
-```
+
 
 ## Upload File to S3 action
 
