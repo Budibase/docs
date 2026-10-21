@@ -19,6 +19,22 @@ Visually the `S3 File Upload` component looks the same as the [Attachment](doc:a
 
 An [S3 datasource](doc:s3) must also have been added to the **Data** section in Budibase. After the S3 connection is established, you can select the <Glossary>Datasource</Glossary>, and enter a bucket and file name in the <Glossary>Settings Panel</Glossary>.
 
+Both **Bucket** and **File name** support dynamic [Bindings](doc:bindings). For upload paths, Handlebars is recommended because it restricts dynamic values to the filename or validated **Current User** bindings.
+
+For example, the following keeps the directory fixed and allows only the filename to change:
+
+```handlebars
+requests/{{ nameOfFile }}
+```
+
+A `/` in the `filename` binding is blocked, so it cannot be used to create another directory. Validated **Current User** bindings can also be used for user-specific or role-based folders:
+
+```handlebars
+requests/{{ user._id }}/{{ nameOfFile }}
+```
+
+Avoid dynamic directory segments based on other values, such as `requests/{{ dynamicFolder }}/{{ nameOfFile }}`, because the value could be changed to target a different folder. JavaScript bindings are fully dynamic and should only be used when the configuration and input values are trusted. For apps used by untrusted or third-party users, use Handlebars instead.
+
 You will also need to provide a custom field name.
 
 Required settings checklist:
