@@ -14,16 +14,25 @@ next:
       slug: looping
       title: Looping
 ---
-## Usage
+Use the External Data Connector action to run a query from the Data section.
 
-External Data Connector action steps can be used to run a query from the Data section, either from a [Data Source Custom Query](https://docs.budibase.com/docs/data-sources#custom-queries), or from a [REST query](https://docs.budibase.com/docs/rest-queries).
+This works with:
 
-When using a connector template that does not yet have an active connection, the setup panel will display a **Connect to [Connector Name]** button. Clicking this button will automatically open the API explorer and guide you through setting up a new connection for that template, streamlining the integration process.
+* Custom queries
+* REST queries
 
-If the query to your External Data Connector takes parameters, they can be set as part of the flow by using the bindings drawer or simply manually-typed.
+## Configure the action
 
-Parameters can be passed in through bindings or entered manually.
+1. Choose the query to run
+2. Add any required parameters
+3. Use bindings or manual values as needed
+4. Save the action
 
-The response from the query will then be available in bindings for the subsequent steps in your automation, for example, if your query returns an array, it will be possible to pass that array on to another Action step such as Create Row, and use the Looping feature to create a row per element in the array.
+## Use the output
 
-The returned data is then available to later steps in the automation, including looped actions over arrays.
+The returned data is available to later steps in the automation.
+
+## Notes
+
+* Template-based connectors may prompt you to connect before you can configure the action
+* Query results are available to later steps as bindings

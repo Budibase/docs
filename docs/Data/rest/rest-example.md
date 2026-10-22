@@ -6,17 +6,17 @@ hidden: false
 metadata:
   robots: index
 ---
-This tutorial builds a simple users app backed by a REST API with read/create/update workflows.
+This tutorial builds a simple users app backed by a REST API.
 
 ## Target architecture
 
 * One REST connection (`Users API`)
 * Four queries (`getUsers`, `getUser`, `createUser`, `updateUser`)
-* One table view + two side-panel forms
+* One table view and two side-panel forms
 
 ## Part 1: Prepare sample API
 
-1. Create a sample endpoint (for example MockAPI)
+1. Create a sample endpoint, such as MockAPI
 2. Add fields:
    * `id`
    * `name`
@@ -27,10 +27,10 @@ This tutorial builds a simple users app backed by a REST API with read/create/up
 ## Part 2: Create connection
 
 1. Open **Settings > Connections > APIs**
-2. Click **Add connection > Create custom**
-3. Set display name to `Users API`
-4. In **Credentials**, set **Base URL**
-5. Save
+2. Click **Add connection** and choose **Create custom**
+3. Set the display name to `Users API`
+4. In **Credentials**, set the base URL
+5. Save the connection
 6. Click **Open in API Editor**
 
 ## Part 3: Create CRUD queries
@@ -46,7 +46,7 @@ For each query:
 
 1. Set method and path
 2. Configure bindings
-3. Configure body for write queries
+3. Configure the body for write queries
 4. Click **Send**
 5. Save query
 
@@ -70,9 +70,9 @@ For each query:
 
 ## Part 5: Edit existing user
 
-1. Add edit side panel with form (`name`, `address`)
+1. Add an edit side panel with a form for `name` and `address`
 2. Set default values from selected-row state
-3. Add **Update** button
+3. Add an **Update** button
 4. Button actions:
    * Execute query `updateUser`
    * Map `id`, `name`, `address`
@@ -82,9 +82,9 @@ For each query:
 
 ## Part 6: Create new user
 
-1. Add **Add new user** button
-2. Open create side panel with required fields
-3. Add **Save** button
+1. Add an **Add new user** button
+2. Open a create side panel with the required fields
+3. Add a **Save** button
 4. Button actions:
    * Execute query `createUser`
    * Refresh table
@@ -95,15 +95,15 @@ For each query:
 ## Validation checklist
 
 * Query tests return expected response codes
-* Table loads initial data
-* Edit flow updates row and refreshes UI
-* Create flow inserts row and refreshes UI
+* The table loads initial data
+* The edit flow updates the row and refreshes the UI
+* The create flow inserts the row and refreshes the UI
 * Error responses surface user-visible notifications
 
 ## Common improvements
 
-* Add delete query/action (`DELETE /users/{{id}}`)
-* Add client-side search/filter
+* Add a delete query and action (`DELETE /users/{{id}}`)
+* Add client-side search and filtering
 * Add form validation rules before execute-query actions
 
 ## Related guides

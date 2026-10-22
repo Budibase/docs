@@ -1,83 +1,59 @@
 ---
 title: Environment variables 🔒
-excerpt: Configuration for apps which switches per environment
+excerpt: Configure values that change by environment
 deprecated: false
 hidden: false
 metadata:
   title: ''
-  description: kba_5hgqq
+  description: ''
   robots: index
 next:
   description: ''
 ---
-Environment variables provide a mechanism for easily re-using secrets/datasource configuration across different <Glossary>Workspace</Glossary>s, as well as allowing for different values to be used in development apps versus production apps. The environment variable configuration can be found under Settings, then Environment.
+Use environment variables when you need different values in development and production.
 
-This feature is most useful when working with data that is already used in production or updating an app that is already being used. For example lets say you have two Postgres databases, one used locally for testing and one used in production for the applications real data. Environment variables can be utilised in this scenario to allow the connection details for the two different databases to be parameterised and changed depending on whether the app is in development, or in production.
+They are useful for secrets, datasource credentials, and environment-specific endpoints.
 
-## Unlocking environment variables
+## Unlock environment variables
 
-If you are using the free tier you will see the following under the environment variables section:
+Environment variables are locked on the free tier.
 
-<Image align="center" src="https://files.readme.io/3f907e370d850b3ef26fea51829a3425ee7aa58fe64bfac8e38a9340f26af5d2-SCR-20250819-hxkp.png" />
+Upgrade your plan to use them.
 
-You can click [Upgrade](doc:usage) to unlock environment variables or click `View Plans` to navigate to the [pricing page](https://www.budibase.com/pricing) to see the full range of options in more detail.
+## Create environment variables
 
-## Managing environment variables
+1. Open **Settings > Environment**
+2. Add a new variable
+3. Set the development value
+4. Set the production value
+5. Save the variable
 
-Once you have navigated to the environment variable section of the Budibase portal, you will see an option to add a new variable as shown below, but you can also edit and delete your environment variables too.
+Variable names cannot contain spaces. Use underscores instead.
 
-<Image align="center" width="600px" src="https://files.readme.io/3c8c81ca6d1142d897b04c3bc6e0009ce0479e940ac38c3d0a8961b37f9fa3b6-SCR-20250819-icme.png" />
+Values are encrypted and cannot be retrieved after saving.
 
-Once the modal opens you'll be able to set the environment variable name and its value in production and development. Note that once these values have been set they will be encrypted (uses **AES-256** encryption), stored and you will no longer be able to retrieve it. By default this will use the same value for development as production, incase you have not yet setup two separate datasources, this way you can build your apps utilising environment variables, then later update them if you want to separate the development and production values.
+## Use environment variables in datasources
 
-![](https://files.readme.io/543d5d3-image.png)
+Use environment variables in datasource settings when the connection details change by environment.
 
-> 🚧 Environment variable naming
->
-> It is important to pick recognisable names for your environment variables, as these will be how you pick which variables to use within your apps. Your variables also cannot contain spaces, we recommend the use of underscores instead.
+After you select a variable, the field is locked to that value.
 
-At this point you should have created your required environment variables and they should have appeared within the variable table list. From here you can also edit or delete an environment variable, it is important to note the change will be immediate, if you change a value or remove an environment variable, production apps will be affected.
+## Use environment variables in queries
 
-![](https://files.readme.io/07c2455-image.png)
+Use environment variables in query bindings when the value should be shared across requests.
 
-To edit or delete an existing environment variables, click the `Edit` button.
+Example:
 
-<Image align="center" src="https://files.readme.io/31a150a-Screenshot_2023-08-29_at_10.04.42.png" />
+```handlebars
+{{ env.env_variable }}
+```
 
-## Using environment variables in datasources
+## Use environment variables in automations
 
-Once you've configured some environment variables we can progress to creating or updating an app to use these new variables. Enter an app and create or update a [datasource](doc:data-sources) from the data section, in this example we will be creating a Postgres connection. Below you can see the default Postgres connection details, you will also notice that the small key icon on the end of the input field.
+Use environment variables in automations for reusable values such as webhook URLs or external service credentials.
 
-![](https://files.readme.io/013c423-image.png)
+## Notes
 
-Clicking on this icon will open the environment variable menu, which allows you to select from a list of variables that have been created. You will also have the option to create a new environment variable.
-
-![](https://files.readme.io/a98e757-image.png)
-
-Once configured the input fields will be disabled, with the environment variable contained within, as shown below.
-
-![](https://files.readme.io/9dd0d24-image.png)
-
-It is important to note that while they appear to look like bindings, they cannot be used as such. The environment variable values are only available in a few key locations and cannot be used in the same way that bindings function. Once this is complete you can save the datasource and it will now utilise the variable.
-
-At this point your app is now utilising these environment variables, within the app builder you will be using the development values, once you publish the app it will utilise the production values. It is important to note that these environments are entirely independent, you can be using the builder, with the development values for your datasources while your users are utilising the currently released version of your app and the production values.
-
-## Using environment variables in queries
-
-Another useful feature of environment variables is their ability to be used in [queries](https://docs.budibase.com/docs/data-sources#custom-queries) as well as datasource configuration. If you open the [binding drawer](doc:bindings) you will see a new environment section has been added, as seen below.
-
-![](https://files.readme.io/8ee9866-image.png)
-
-Expanding the environment section will list all of the variables which are available to the query, unlike datasource configuration, these can be used as normal bindings in queries. In the example below we have configured a header in [REST query](doc:rest) to use an environment variable.
-
-![](https://files.readme.io/0398294-image.png)
-
-These can also be used in an [SQL query](https://docs.budibase.com/docs/data-sources#custom-queries), in the same format as the binding drawer, like `{{ env.env_variable }}` this is shown below.
-
-![](https://files.readme.io/d36d61a-image.png)
-
-## Using environment variables in automations
-
-The last place that variables can be accessed is as part of an [automation](doc:automation-steps) run. This can be very useful if connecting to an external service, or triggering a notification e.g. Slack or Discord. Like queries environment variables can be used as [bindings](doc:bindings) within automation steps. Below we have configured a Discord step in an automation, which utilises an environment variable for the webhook URL. Not only is this more re-usable and secure, but it also allows using different URLs for testing and for production.
-
-<Image align="center" src="https://files.readme.io/2d3fc10b86748f3a3a4097218d3218735f093d87bbaf457ba325727ab9e799d9-Screenshot_2024-09-20_at_15.00.48.png" />
+* Development and production values are separate
+* Publishing pushes the development configuration to production
+* Environment variables are available in datasources, queries, and automations where supported

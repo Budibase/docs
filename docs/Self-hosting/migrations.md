@@ -10,19 +10,15 @@ metadata:
 next:
   description: ''
 ---
-Occasionally as part of a Budibase update we will need to make an update to the infrastructure which is used by the platform - in self host this can impact you.
+Budibase updates sometimes require infrastructure changes. In self-hosted installations, those changes can affect your deployment.
 
-Budibase will warn you that your installation is not up to date/is missing components of the infrastructure, this warning will look like:
-
-<Image alt="Your installation requires an upgrade" align="center" src="https://files.readme.io/ab77c2a-image.png">
-  Your installation requires an upgrade
-</Image>
+Budibase will warn you if your installation is missing required infrastructure components.
 
 Below is a list of migrations which may be needed for your installation.
 
 ## Budibase DB SQL Support
 
-If you have reached this page then you have been alerted to an issue with your self-host installation. As of version 2.33.0, Budibase relies on a service called the Structured Query Server ([SQS](https://neighbourhood.ie/products-and-services/structured-query-server)). This runs alongside CouchDB to provide relational searching functionality.
+If you have reached this page, your self-hosted installation needs an update. As of version 2.33.0, Budibase relies on the Structured Query Server ([SQS](https://neighbourhood.ie/products-and-services/structured-query-server)) running alongside CouchDB to provide relational search.
 
 Below is what's required for each installation method to get SQS running.
 
@@ -32,9 +28,9 @@ If you are using any of the [single image/docker install methods](/docs/docker) 
 
 ### `docker-compose`
 
-You need to update your `docker-compose.yaml` file - the quickest way to do this is using the [Budibase CLI](/docs/updating-budibase#budibase-cli-docker-compose). If you would prefer to do this manually then you will need to make sure your CouchDB installation is using the latest version of the `budibase/couchdb` image. This image runs SQS for you.
+Update your `docker-compose.yaml` file. The quickest way is to use the [Budibase CLI](/docs/updating-budibase#budibase-cli-docker-compose). If you update manually, make sure your CouchDB service uses the latest `budibase/couchdb` image, which includes SQS.
 
-You will also need to set a new environment variable called `TARGETBUILD`. Here's how your `couchdb-service` block in your `docker-compose.yaml` file should look:
+You also need to set the `TARGETBUILD` environment variable. Your `couchdb-service` block should look like this:
 
 ```yaml docker-compose.yaml
 couchdb-service:
@@ -50,9 +46,9 @@ couchdb-service:
 
 ### Kubernetes
 
-You will need to make sure you are using the latest version of the Budibase Helm chart alongside the latest version of the Budibase images. **If your upgrade workflow for Kubernetes involves just updating image tags in your`values.yaml` file, this will break your installation.**
+Make sure you are using the latest version of the Budibase Helm chart and the latest Budibase images. Updating only the image tags in `values.yaml` will break the installation.
 
-If you followed the steps in [Kubernetes](doc:kubernetes-k8s), you'll need to run the following commands to update your Helm chart.
+If you followed the steps in [Kubernetes](doc:kubernetes-k8s), run the following command to update your Helm chart.
 
 ```shell
 helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase
@@ -60,4 +56,4 @@ helm upgrade -n budibase budibase oci://ghcr.io/budibase/charts/budibase
 
 ***
 
-If you are still having issues and have confirmed that your installation is running the latest `budibase/couchdb` image for your CouchDB service then please reach out to Budibase support for further help, in the meantime you can downgrade to the previously used version safely.
+If you are still having issues after confirming that your CouchDB service uses the latest `budibase/couchdb` image, contact Budibase support. You can safely downgrade to the previous version in the meantime.

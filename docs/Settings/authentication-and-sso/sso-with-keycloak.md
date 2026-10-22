@@ -12,78 +12,106 @@ next:
 ---
 > 📘 OpenID Connect
 >
-> To become familiar with OpenID Connect in Budibase, see: [OpenID Connect](doc:openid-connect)
+> To become familiar with OpenID Connect in Budibase, see [OpenID Connect](doc:openid-connect)
 
-## Configuration
+Use Keycloak to configure OIDC-based SSO in Budibase.
 
-<br />
+## Realm setup
 
-### Realm Setup
+Use a realm other than `master`. In Keycloak, `master` is reserved for top-level administration.
 
-It's advised to use a realm other than the `master` realm in keycloak. The `master` realm in Keycloak contains your admin user and is meant to only be used as a top level admin space, where you can provision and manage other admin users and new realms.
+To create a new realm:
 
-To create a new realm, log in as your admin user at `<keycloak-url>/admin` and go to the realm dropdown on the left. Click "Create realm" and name your new realm, then save.
+1. Sign in to Keycloak at `<keycloak-url>/admin`.
+2. Open the realm dropdown on the left.
+3. Select `Create realm`.
+4. Save the new realm name.
 
 <Image align="center" border={false} src="https://files.readme.io/957c91a662ca8696665cc22ecbe319692f24b7d07e23fabdc054367afa0aaa23-Screenshot_2025-02-04_at_10.51.08.png" />
 
-### Add a Client
+## Create a client
 
-The first step of configuring Keycloak for OIDC in Budibase is to create a client. Log into Keycloak admin console with your admin credentials:
+Create a client in Keycloak before you configure Budibase.
 
-Visit the 'Clients' pane on the left side of your Keycloak admin console and click the 'Create client' button.
+Open the **Clients** pane in the Keycloak admin console and click **Create client**.
 
 <Image align="center" border={false} src="https://files.readme.io/112a5b17673f3a9f3313d942145f8b4affcc597a6a7561041462e1b61ee9614a-Screenshot_2024-11-22_at_10.30.07.png" />
 
-Give your new client an ID and select 'OpenID Connect' from the dropdown. Then click next. This client ID will be the one you use in Budibase to connect your Keycloak instance for OIDC authentication.
+Give the client an ID, select **OpenID Connect**, and continue. Use this client ID in Budibase.
 
-(If you have a client already created, bypass this step.)
+If you already have a suitable client, you can skip this step.
 
 <Image align="center" border={false} src="https://files.readme.io/07ae55f746ca8d70c5b9694d2ceb86770ced2e8a83bb624efbe1bbd17d66d17e-Screenshot_2024-11-22_at_10.32.33.png" />
 
-### Capability config
+## Enable client authentication
 
-In the Capability config screen, toggle on 'Client authentication'. This will generate a **secret key** for the client, which you will use within the Budibase OIDC configuration later. Click the 'next' button.
+In the capability configuration screen, enable **Client authentication**.
+
+This generates the client secret you will use in Budibase.
 
 <Image align="center" border={false} src="https://files.readme.io/df22126ffb44bbbdf5112fbaafb83c5f61288f69625a97df526a234d7da799b0-Screenshot_2024-11-22_at_10.35.53.png" />
 
-Next, we will get the Callback URL that we need to paste into Keycloak. You will find this in your Budibase portal under Settings > Auth > OpenID Connect.
+## Add the Budibase callback URL
 
-Copy the callback URL and add it to the 'Valid Redirect URIs' field in Keycloak then click 'Save'.
+Copy the callback URL from Budibase under `Settings > Auth > OpenID Connect`.
+
+In Budibase, this field is labeled **Callback URL**.
+
+Add that URL to **Valid Redirect URIs** in Keycloak, then save.
 
 <Image align="center" border={false} src="https://files.readme.io/127f9072c684c38084d1a9f670d00e5b576cd66b718ab0d5fa206b0c15112aac-Screenshot_2024-11-22_at_10.39.16.png" />
 
-### Find your configuration details
+## Find your configuration details
 
-#### Client ID
+### Config URL
 
-The Client ID field in Budibase shuld be the same ID as you gave the Client in Keycloak earlier.
+Open **Realm settings** in the Keycloak admin console, then open the **General** tab.
+
+Scroll to **OpenID Endpoint Configuration** and copy the URL.
+
+Paste the URL into the **Config URL** field in Budibase.
+
+### Client ID
+
+The Client ID in Budibase should match the client ID you created in Keycloak.
 
 <Image align="center" border={false} src="https://files.readme.io/6fe793e019bdc6e370c598ba095b1c29515756442bd9afa8271b115af8272e6c-Screenshot_2024-11-22_at_10.42.05.png" />
 
-#### Client Secret
+### Client secret
 
-You can find the Client Secret from the Credentials tab in the Client Configuration screen
+Find the Client secret on the **Credentials** tab in the client configuration screen.
 
 <Image align="center" border={false} src="https://files.readme.io/1019ca8e37fa5a7b48e28198d60b5032a3c96291f83de5c0a267fcd621576b2b-Screenshot_2024-11-22_at_10.42.52.png" />
 
-Add this to the "Client secret" field in your Budibase OIDC panel.
+Paste it into the **Client secret** field in the Budibase OIDC panel.
 
-#### Configuration URL
+### Optional settings
 
-Visit the 'Realms settings' pane on the left hand side of your Keycloak admin console. Click into the general tab at the top of this page. Scroll down to the bottom and then click on the **OpenID Endpoint Configuration** link and copy the URL.
+Budibase also lets you configure:
 
-You can then paste this URL into your Budibase OIDC Config as the Configuration URL, and Budibase will be integrated with Keycloak for OIDC.
+* **Name**: The text shown on the login button
+* **Icon**: The provider icon shown on the login button
+* **PKCE Method**: Available on enterprise licenses
+* **Activated**: Enables the OIDC provider
+* **Allow unverified email linking**: Only use this if you trust the identity provider to assert verified email addresses
+* **Auth Scopes**: Includes `openid` plus any additional scopes you need
 
-# Managing Users
+## Activate OIDC in Budibase
 
-Now that Budibase is set up to authenticate using OIDC through Keycloak, we need to make sure we have users set up in our realm. To create a new user, you need to go to the **Users** tab in the Keycloak admin panel under your realm, and click "Create user"
+After you finish the configuration fields, turn on **Activated** in the Budibase OpenID Connect settings and save.
 
-Make sure you enter a username and email address for your user.
+<Image align="center" border={false} src="https://files.readme.io/f86697d99b9e945cc79df97924cc31c0915320b5111a0b1ef4fbb9b33f23a4fd-Screenshot_2025-09-25_at_09.20.55.png" />
+
+## Manage users
+
+After Budibase is set up, create users in the Keycloak realm.
+
+Open the **Users** tab in the Keycloak admin panel and click **Create user**.
+
+Enter a username and email address.
 
 <Image align="center" border={false} src="https://files.readme.io/3d0f45fba07dbc51b77be0eee219bbd0c55d4bbb25a92d30eb101a837be9ceda-Screenshot_2025-02-04_at_11.16.03.png" />
 
-To add a password for the user, click the "Credentials" tab of the new user, and add a password by clicking the "Set Password" button. If you don't want the user to have to change the password on first log in, make sure to toggle the "Temporary" toggle off.
+To add a password, open the **Credentials** tab and click **Set Password**. Turn off **Temporary** if the user should not change the password on first sign in.
 
-Now the user is created, you can sign in as that user through Budibase OIDC using Keycloak!
-
-<Image align="center" border={false} src="https://files.readme.io/f86697d99b9e945cc79df97924cc31c0915320b5111a0b1ef4fbb9b33f23a4fd-Screenshot_2025-09-25_at_09.20.55.png" />
+You can now sign in through Budibase using Keycloak.

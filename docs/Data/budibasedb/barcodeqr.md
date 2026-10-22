@@ -1,40 +1,38 @@
 ---
 title: Barcode/QR
-excerpt: This topic describes the barcode/qr data types, supported in Budibase
+excerpt: Store barcode or QR values in Budibase DB
 deprecated: false
 hidden: false
 metadata:
   title: ''
-  description: kba_5ifb6
+  description: ''
   robots: index
 next:
   description: ''
 ---
-Barcodes and QR codes come in a huge range of formats, from simple product numbers to complex text patterns and URLs.
+Use a Barcode/QR column when a field should store text that is displayed as a barcode or QR code.
 
-To accommodate the wide variety of content the field can handle, the Barcode/QR column type is stored as text, or a string.
+## Create a Barcode/QR column
 
-Fields configured as Barcode/QR types in the database will appear as [Barcode/QR components](https://docs.budibase.com/docs/barcodeqr-field) in the builder.
+1. Open the table
+2. Click `Create column`
+3. Set the type to `Barcode/QR`
+4. Save the column
 
-## Creating a Barcode/QR column
+## Use Barcode/QR columns
 
-The process for creating the column only takes a few seconds.
+Barcode/QR columns are stored as text, so they can hold values such as:
 
-1. First, navigate to your Datasource and click the `+` button along the top-right
-2. Give the column a Name, e.g "ProductCode"
-3. Select **Barcode/QR** from the **Type**
-4. Click **Save Column**
+* Product codes
+* URLs
+* Reference strings
 
-![](https://files.readme.io/59ea977-qr_column.png)
+In the builder, these columns appear as Barcode/QR components.
 
-## Convertible types
+## Convert the column
 
-In Budibase, depending on the field type, you can update the type of a column to another
+You can convert a Barcode/QR column to or from related text types such as:
 
-In this instance, a Barcode/QR can be updated to any of the following and vice versa.
-
-* [Text](doc:text)
-* [Options](https://docs.budibase.com/docs/text#options)
-* [Long Form Text](https://docs.budibase.com/docs/text#long-form-text)
-
-This can be handy when you've been manually entering QR code and Barcode data for years as `Text` and you finally switch the field type to Barcode/QR!
+* Text
+* Options
+* Long Form Text

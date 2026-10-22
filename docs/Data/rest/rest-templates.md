@@ -1,22 +1,25 @@
 ---
-title: REST Templates
+title: REST templates
+excerpt: Start REST connections from a template
 deprecated: false
 hidden: false
 metadata:
+  title: ''
+  description: ''
   robots: index
 ---
 REST templates provide connection starters and allow you to reuse OpenAPI specifications across your workspace. You can find them under **Settings > APIs > API Specs**.
 
-Templates are useful when you want known endpoint structures, default headers, and static variables preloaded.
+Templates can include endpoint structure, default headers, static variables, and suggested auth.
 
 ## What templates usually include
 
 Templates can provide:
 
 * Base URL defaults
-* Suggested endpoint actions
-* Required static variables (for example owner/repo, project identifiers)
-* Suggested auth pattern
+* Suggested endpoints
+* Required static variables such as owner, repo, or project identifiers
+* Suggested auth patterns
 * Template collections with child APIs for the same provider
 
 Template content can still be edited after creation.
@@ -54,8 +57,8 @@ Once imported, your spec will appear in the **Imported API specs** section, wher
 
 Some template collections include child APIs and use one of two connection modes:
 
-* **Shared**: child APIs share connection settings (for example base URL and auth). You choose the child API when creating or editing queries.
-* **Independent**: each child API is treated as its own connection choice. You select the child API when creating the connection.
+* **Shared**: child APIs share connection settings such as base URL and auth
+* **Independent**: each child API is treated as its own connection choice
 
 ## Validate the template connection
 
@@ -69,10 +72,10 @@ Some template collections include child APIs and use one of two connection modes
 ## Troubleshooting template setup
 
 * `401/403` after template import: auth is missing or invalid
-* `404` on template query: base URL/path mismatch for your target service
-* Empty response: required bindings not set or wrong defaults
-* Template variable locked/required: ensure value exists in **Credentials > Static Variables**
-* Missing endpoint list for a child API: confirm the correct child API is selected for the connection or query
+* `404` on a template query: the base URL or path does not match the target service
+* Empty response: required bindings are missing or have the wrong defaults
+* Template variable locked or required: ensure the value exists in **Credentials > Static Variables**
+* Missing endpoint list for a child API: confirm the correct child API is selected
 
 ## When to use Create custom instead
 
