@@ -578,6 +578,18 @@
             }
           ]
         }
+      },
+      "userGroups": {
+        "value": {
+          "data": [
+            {
+              "_id": "gr_engineering",
+              "name": "Engineering",
+              "isDefault": false,
+              "managedByScim": false
+            }
+          ]
+        }
       }
     },
     "securitySchemes": {
@@ -2030,6 +2042,15 @@
               "type": "string",
               "description": "A map of app ID (production app ID, minus the _dev component) to a role ID, e.g. ADMIN."
             }
+          },
+          "userGroups": {
+            "description": "The IDs of the user's groups. Find group IDs using GET /workspaces/{workspaceId}/groups or the Copy group ID button in Settings > People > Groups. Requires a global admin and the user groups and expanded public API features. On update, replaces memberships; omit to preserve them or provide an empty array to remove all memberships. SCIM-managed memberships cannot be added or removed. New users without group assignments receive the default group, if configured.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^gr_"
+            }
           }
         },
         "required": [
@@ -2095,6 +2116,15 @@
                 "additionalProperties": {
                   "type": "string",
                   "description": "A map of app ID (production app ID, minus the _dev component) to a role ID, e.g. ADMIN."
+                }
+              },
+              "userGroups": {
+                "description": "The IDs of the groups the user belongs to.",
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "pattern": "^gr_"
                 }
               },
               "_id": {
@@ -2173,6 +2203,15 @@
                   "additionalProperties": {
                     "type": "string",
                     "description": "A map of app ID (production app ID, minus the _dev component) to a role ID, e.g. ADMIN."
+                  }
+                },
+                "userGroups": {
+                  "description": "The IDs of the groups the user belongs to.",
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "pattern": "^gr_"
                   }
                 },
                 "_id": {
@@ -2557,6 +2596,7 @@
                               "notContains",
                               "containsAny",
                               "oneOf",
+                              "notOneOf",
                               "range"
                             ]
                           },
@@ -2621,6 +2661,7 @@
                                     "notContains",
                                     "containsAny",
                                     "oneOf",
+                                    "notOneOf",
                                     "range"
                                   ]
                                 },
@@ -2660,32 +2701,67 @@
             }
           },
           "sort": {
-            "type": "object",
-            "required": [
-              "field"
-            ],
-            "properties": {
-              "field": {
-                "type": "string",
-                "description": "The field from the table/view schema to sort on."
+            "oneOf": [
+              {
+                "type": "object",
+                "required": [
+                  "field"
+                ],
+                "properties": {
+                  "field": {
+                    "type": "string",
+                    "description": "The field from the table/view schema to sort on."
+                  },
+                  "order": {
+                    "type": "string",
+                    "description": "The order in which to sort.",
+                    "enum": [
+                      "ascending",
+                      "descending"
+                    ]
+                  },
+                  "type": {
+                    "type": "string",
+                    "description": "The type of sort to perform (by number, or by alphabetically).",
+                    "enum": [
+                      "string",
+                      "number"
+                    ]
+                  }
+                }
               },
-              "order": {
-                "type": "string",
-                "description": "The order in which to sort.",
-                "enum": [
-                  "ascending",
-                  "descending"
-                ]
-              },
-              "type": {
-                "type": "string",
-                "description": "The type of sort to perform (by number, or by alphabetically).",
-                "enum": [
-                  "string",
-                  "number"
-                ]
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "field"
+                  ],
+                  "properties": {
+                    "field": {
+                      "type": "string",
+                      "description": "The field from the table/view schema to sort on."
+                    },
+                    "order": {
+                      "type": "string",
+                      "description": "The order in which to sort.",
+                      "enum": [
+                        "ascending",
+                        "descending"
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "The type of sort to perform (by number, or by alphabetically).",
+                      "enum": [
+                        "string",
+                        "number"
+                      ]
+                    }
+                  }
+                }
               }
-            }
+            ]
           },
           "schema": {
             "type": "object",
@@ -2839,6 +2915,7 @@
                                   "notContains",
                                   "containsAny",
                                   "oneOf",
+                                  "notOneOf",
                                   "range"
                                 ]
                               },
@@ -2903,6 +2980,7 @@
                                         "notContains",
                                         "containsAny",
                                         "oneOf",
+                                        "notOneOf",
                                         "range"
                                       ]
                                     },
@@ -2942,32 +3020,67 @@
                 }
               },
               "sort": {
-                "type": "object",
-                "required": [
-                  "field"
-                ],
-                "properties": {
-                  "field": {
-                    "type": "string",
-                    "description": "The field from the table/view schema to sort on."
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "required": [
+                      "field"
+                    ],
+                    "properties": {
+                      "field": {
+                        "type": "string",
+                        "description": "The field from the table/view schema to sort on."
+                      },
+                      "order": {
+                        "type": "string",
+                        "description": "The order in which to sort.",
+                        "enum": [
+                          "ascending",
+                          "descending"
+                        ]
+                      },
+                      "type": {
+                        "type": "string",
+                        "description": "The type of sort to perform (by number, or by alphabetically).",
+                        "enum": [
+                          "string",
+                          "number"
+                        ]
+                      }
+                    }
                   },
-                  "order": {
-                    "type": "string",
-                    "description": "The order in which to sort.",
-                    "enum": [
-                      "ascending",
-                      "descending"
-                    ]
-                  },
-                  "type": {
-                    "type": "string",
-                    "description": "The type of sort to perform (by number, or by alphabetically).",
-                    "enum": [
-                      "string",
-                      "number"
-                    ]
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "field"
+                      ],
+                      "properties": {
+                        "field": {
+                          "type": "string",
+                          "description": "The field from the table/view schema to sort on."
+                        },
+                        "order": {
+                          "type": "string",
+                          "description": "The order in which to sort.",
+                          "enum": [
+                            "ascending",
+                            "descending"
+                          ]
+                        },
+                        "type": {
+                          "type": "string",
+                          "description": "The type of sort to perform (by number, or by alphabetically).",
+                          "enum": [
+                            "string",
+                            "number"
+                          ]
+                        }
+                      }
+                    }
                   }
-                }
+                ]
               },
               "schema": {
                 "type": "object",
@@ -3132,6 +3245,7 @@
                                     "notContains",
                                     "containsAny",
                                     "oneOf",
+                                    "notOneOf",
                                     "range"
                                   ]
                                 },
@@ -3196,6 +3310,7 @@
                                           "notContains",
                                           "containsAny",
                                           "oneOf",
+                                          "notOneOf",
                                           "range"
                                         ]
                                       },
@@ -3235,32 +3350,67 @@
                   }
                 },
                 "sort": {
-                  "type": "object",
-                  "required": [
-                    "field"
-                  ],
-                  "properties": {
-                    "field": {
-                      "type": "string",
-                      "description": "The field from the table/view schema to sort on."
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "required": [
+                        "field"
+                      ],
+                      "properties": {
+                        "field": {
+                          "type": "string",
+                          "description": "The field from the table/view schema to sort on."
+                        },
+                        "order": {
+                          "type": "string",
+                          "description": "The order in which to sort.",
+                          "enum": [
+                            "ascending",
+                            "descending"
+                          ]
+                        },
+                        "type": {
+                          "type": "string",
+                          "description": "The type of sort to perform (by number, or by alphabetically).",
+                          "enum": [
+                            "string",
+                            "number"
+                          ]
+                        }
+                      }
                     },
-                    "order": {
-                      "type": "string",
-                      "description": "The order in which to sort.",
-                      "enum": [
-                        "ascending",
-                        "descending"
-                      ]
-                    },
-                    "type": {
-                      "type": "string",
-                      "description": "The type of sort to perform (by number, or by alphabetically).",
-                      "enum": [
-                        "string",
-                        "number"
-                      ]
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "field"
+                        ],
+                        "properties": {
+                          "field": {
+                            "type": "string",
+                            "description": "The field from the table/view schema to sort on."
+                          },
+                          "order": {
+                            "type": "string",
+                            "description": "The order in which to sort.",
+                            "enum": [
+                              "ascending",
+                              "descending"
+                            ]
+                          },
+                          "type": {
+                            "type": "string",
+                            "description": "The type of sort to perform (by number, or by alphabetically).",
+                            "enum": [
+                              "string",
+                              "number"
+                            ]
+                          }
+                        }
+                      }
                     }
-                  }
+                  ]
                 },
                 "schema": {
                   "type": "object",
@@ -3331,6 +3481,44 @@
                   "type": "string"
                 }
               }
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "userGroupList": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "_id": {
+                  "description": "The group ID to use in a user's userGroups array.",
+                  "type": "string"
+                },
+                "name": {
+                  "description": "The group's name.",
+                  "type": "string"
+                },
+                "isDefault": {
+                  "description": "Whether new users are automatically assigned to this group.",
+                  "type": "boolean"
+                },
+                "managedByScim": {
+                  "description": "Whether the group is managed by SCIM. Memberships in these groups cannot be changed through the public user API.",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "_id",
+                "name",
+                "isDefault",
+                "managedByScim"
+              ]
             }
           }
         },
@@ -4063,50 +4251,6 @@
         }
       }
     },
-    "/views/{viewId}/rows/search": {
-      "post": {
-        "operationId": "rowViewSearch",
-        "summary": "Search for rows in a view",
-        "tags": [
-          "rows"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/viewId"
-          },
-          {
-            "$ref": "#/components/parameters/appId"
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/rowSearch"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "The response will contain an array of rows that match the search parameters.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/searchOutput"
-                },
-                "examples": {
-                  "search": {
-                    "$ref": "#/components/examples/rows"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/tables": {
       "post": {
         "operationId": "tableCreate",
@@ -4685,6 +4829,50 @@
         }
       }
     },
+    "/views/{viewId}/rows/search": {
+      "post": {
+        "operationId": "rowViewSearch",
+        "summary": "Search for rows in a view",
+        "tags": [
+          "rows"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/viewId"
+          },
+          {
+            "$ref": "#/components/parameters/appId"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/rowSearch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The response will contain an array of rows that match the search parameters.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/searchOutput"
+                },
+                "examples": {
+                  "search": {
+                    "$ref": "#/components/examples/rows"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/workspaces": {
       "post": {
         "operationId": "workspaceCreate",
@@ -4944,6 +5132,38 @@
                   "type": "string",
                   "format": "binary",
                   "example": "Tarball containing database and object store contents..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/groups": {
+      "get": {
+        "operationId": "workspaceListGroups",
+        "summary": "List user groups for a workspace",
+        "description": "Returns groups that grant role or builder access to this workspace. Requires a global admin API key and the user groups and expanded public API features. Both development and production workspace IDs are accepted. SCIM-managed groups are included but their memberships cannot be changed through the public user API.",
+        "tags": [
+          "workspaces"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/workspaceId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the groups associated with the workspace.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/userGroupList"
+                },
+                "examples": {
+                  "userGroups": {
+                    "$ref": "#/components/examples/userGroups"
+                  }
                 }
               }
             }

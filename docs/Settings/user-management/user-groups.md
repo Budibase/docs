@@ -1,5 +1,5 @@
 ---
-title: User groups 🔒
+title: User groups 👥
 excerpt: ''
 deprecated: false
 hidden: false
@@ -52,7 +52,7 @@ If you set a new default group, Budibase automatically removes the default flag 
 
 If you delete the current default group, new users will no longer be auto-assigned to a group until another default group is configured.
 
-> 📘
+> 💡
 >
 > If one or more groups are explicitly selected during invite or create, those selected groups are used and the default-group fallback is not applied.
 
@@ -60,7 +60,7 @@ If you delete the current default group, new users will no longer be auto-assign
 
 ## Adding a user to a group
 
-When you click `Add user` you will be presented with a searchable list of all the user email addresses. For your convenience, when you select a user it will float to the top of the dropdown, which itself will remain expanded so you can easily click through and add multiple users. When done simply click and empty part of the page.
+When you click `Add user` you will be presented with a searchable list of all the user email addresses. The list is paginated and will automatically load more users as you scroll down. When you select a user, they remain in their current position in the list to maintain the order of the results and prevent the list from jumping. The dropdown itself will remain expanded so you can easily click through and add multiple users. When done simply click an empty part of the page.
 
 To remove users, click the entries with the blue tick to unselect them.
 
@@ -102,7 +102,7 @@ Because Harold is a member of the Super group, he will be given _Power_ permissi
 
 ## User groups limit
 
-Some plans have a limit on the number of available user groups, for example the **Pro plan** offers five user groups. As you approach your limit, you should receive a warning email similar to the following:
+Some plans have a limit on the number of available user groups, for example the **Pro plan** offers five user groups. As you approach your limits, you should receive a warning email similar to the following:
 
 Budibase will show a warning and can also send a notification email as you approach your plan limit.
 

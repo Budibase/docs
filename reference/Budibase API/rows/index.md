@@ -1,6 +1,5 @@
 ---
 title: rows
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

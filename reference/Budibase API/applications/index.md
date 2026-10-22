@@ -1,6 +1,5 @@
 ---
 title: applications
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

@@ -24,7 +24,7 @@ Make sure you have:
 
 Datasource plugins are not available in Budibase Cloud.
 
-## Create the plugin
+Also make sure that you have **node v20+** installed. You can run `node --version` to see if you need to upgrade.
 
 1. Go to the folder where you want to create the plugin.
 2. Run:
@@ -46,6 +46,8 @@ The template includes:
 ## Build and watch
 
 Build the project with:
+
+After you have created your new datasource directory, execute the following:
 
 ```shell
 cd my-datasource

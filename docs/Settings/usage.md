@@ -20,10 +20,11 @@ Each workspace will keep track of usage independently. For example, if you reach
 
 <br />
 
-There are two types of quotas:
+There are three types of quotas:
 
 * **static:** This sets a fixed upper limit for the lifespan of your workspace. For example, on the free plan, there is a limit of 1 app and 5 users.
-* **monthly:** These quotas reset at the end of each month
+* **monthly:** These quotas reset at the end of each month.
+* **retention:** These determine how long certain data, such as automation logs or platform actions, are stored before being expired. For example, platform actions are retained for 1 day on the free plan and up to 365 days on Enterprise plans.
 
 <br />
 
