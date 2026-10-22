@@ -66,7 +66,7 @@ schema.json: The meta data and available builder settings for your datasource.
 
 After you have created your new datasource directory, execute the following:
 
-```shell Shell
+```shell
 cd my-datasource
 yarn build
 ```
