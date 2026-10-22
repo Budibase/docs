@@ -38,9 +38,9 @@ Once that's done, we need to initialise a template for our datasource.
 
 Navigate to the folder location you want to create your plugin, and execute the following command:
 
-shell
+```shell
 budi plugins --init datasource
-
+```
 
 Next you will receive a series of prompts to enter details about your datasource. You can press enter without providing a value if you are happy to use the placeholder.
 
@@ -48,7 +48,7 @@ Next you will receive a series of prompts to enter details about your datasource
 
 Within the newly created custom datasource project you should see a tree structure as follows:
 
-yaml
+```yaml
 src:
   datasource.ts: The code for your custom datasource. Do not rename.
 
@@ -58,7 +58,7 @@ test:
 package.json: The version, license and dependencies for your datasource.
 
 schema.json: The meta data and available builder settings for your datasource. 
-
+```
 
 <br />
 
@@ -66,14 +66,14 @@ schema.json: The meta data and available builder settings for your datasource.
 
 After you have created your new datasource directory, execute the following:
 
-shell Shell
+```shell Shell
 cd my-datasource
 yarn build
-
+```
 
 Assuming you have [updated the server env variable](https://docs.budibase.com/docs/custom-plugin#hot-reloading-developers-only) you should now be able to see your datasource template in Budibase:
 
-![Custom Datasource in Budibase](https://files.readme.io/23a1d4c72cb27cabacba529cd55577ae4d2aff8c66cfd06c3a010efb24f5fb6a8-customdatasource_2.png)
+![Custom Datasource in Budibase](https://files.readme.io/23a1d4c72cb27cabcba529cd55577ae4d2aff8c66cfd06c3a010efb24f5fb6a8-customdatasource_2.png)
 
 
 <br />
@@ -86,17 +86,17 @@ To make sure your saved changes are passed through to your Budibase server, you 
 
 As the file is TypeScript, it is recommended that you use the **import** keyword over **require**. E.g
 
->  
+> 👍
 > 
-> javascript
+> ```javascript
 > import Surreal from "surrealdb.js"
-> 
+> ```
 
-> ❌ 
+> ❗
 > 
-> javascript
+> ```javascript
 > const Surreal = require("surrealdb.js");
-> 
+> ```
 
 #### Methods
 
@@ -191,7 +191,7 @@ First lets replace the existing config properties with the new ones: **host** an
 
 Next update the `read` method as follows:
 
-javascript
+```javascript
 async read(query: { id: number, active: string, tags: string, limit: number, cursor: string }) {
     const opts = {
       method: "GET",
@@ -214,7 +214,7 @@ async read(query: { id: number, active: string, tags: string, limit: number, cur
     }
     return this.request(`${this.host}/api/v1/workflows?${queryParams}`, opts)
   }
-
+```
 
 If an ID is provided then get the data for that particular workflow, otherwise grab all workflows using the optional query params.
 
@@ -246,7 +246,7 @@ Upon refreshing your local Budibase builder webpage (you may also need to naviga
 
 Next add another method to your `CustomIntegration` class as follows:
 
-javascript
+```javascript
 async activate(query: { id: string, active: string }) {
     const opts = {
       method: "POST",
@@ -259,7 +259,7 @@ async activate(query: { id: string, active: string }) {
     }
     throw new Error("Active must be 'true' or 'false'")
   }
-
+```
 
 Depending on the state of the active flag, the `activate` or `deactivate` endpoint is called. An error is thrown if a boolean is not provided.
 
@@ -271,7 +271,7 @@ You can view the finished datasource plugin, and also use the GitHub URL to impo
 
 The previous example shows you how to include functions with _field_ type. You may want your custom datasource to support SQL queries with basic syntax highlighting.
 
->  
+> 📘
 > 
 > This example is taken from the [SurrealDB custom datasource integration](https://github.com/melohagan/budibase-datasource-surrealdb)
 
@@ -297,13 +297,13 @@ The previous example shows you how to include functions with _field_ type. You m
 
 So far we have looked at examples where we perform CRUD operations within a single domain/mode. In this example we will look at handling different modes for when you want to mostly share CRUD functionality, but make slightly different calls depending on the selected mode.
 
->  
+> 📘
 > 
 > Specifically, we will be looking at handling CRUD operations for Subscriptions, Subscription Items and Subscription Schedules, all in one [datasource plugin](https://github.com/melohagan/budibase-datasource-stripe-subscriptions)
 
 Update the schema to include the `extra` property. In this case it was placed _after_ the `query` property:
 
- json
+```json json
 "extra": {
       "type": {
         "displayName": "Type",
@@ -344,17 +344,17 @@ Update the schema to include the `extra` property. In this case it was placed _a
         }
       }
     }
-
+```
 
 The lists indicate which options are available depending on which function has been selected. For example:
 
 ![](https://files.readme.io/3ae1a76-Screenshot_2022-09-20_at_17.44.50.png)
 
-![](https://files.readme.io/3c1c52d-Screenshot_2022-09-16_at_17.45.27.png)
+![](https://files.readme.io/3c1c52d-Screenshot_2022-09-20_at_17.45.27.png)
 
 Next we can use the _extra_ information to make a decision about which endpoint to hit. For example, the **create** method can be changed to the following:
 
-javascript
+```javascript
 async create(query: { json: object; extra: { [key: string]: string } }) {
     if (query.extra.type === "Subscriptions") {
       return await this.stripe.subscriptions.create(query.json as Stripe.SubscriptionCreateParams)
@@ -367,3 +367,4 @@ async create(query: { json: object; extra: { [key: string]: string } }) {
     }
     throw new Error("You must provide a type!")
   }
+```
