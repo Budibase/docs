@@ -20,6 +20,7 @@ A workspace is a container that holds everything you need to build and automate 
 * Automations: Create backend workflows that run independently of user interaction. For example, schedule monthly processes (like summarising orders at the end of a billing cycle).
 * Sources (<Glossary>Datasource</Glossary>s): Workspaces support shared data sources that can be accessed by all components within the workspace. You can sync your data once and leverage it across multiple use cases without redundancy.
 * Workflows: You can build workflows that define how data moves and transforms through user interaction or automation.
+* Project Notes: Document your projects directly within the workspace home using Markdown. This helps your team understand the project's purpose, setup instructions, and building guidelines.
 
 ## Shared automations
 
