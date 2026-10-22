@@ -30,7 +30,7 @@ Datasource plugins are simple in their nature, allowing you to write an extensio
 
 Make sure you have the latest [Budibase CLI](https://docs.budibase.com/docs/budibase-cli-setup) installed. Even if you have previously installed the CLI, you may want to install it again to be sure you have the latest version.
 
-Also make sure that you have **node v16+** installed. You can run `node --version` to see if you need to upgrade.
+Also make sure that you have **node v20+** installed. You can run `node --version` to see if you need to upgrade.
 
 Please note that datasource plugins can only be used in self host installations - they cannot be imported to the Budibase Cloud.
 
@@ -66,7 +66,7 @@ schema.json: The meta data and available builder settings for your datasource.
 
 After you have created your new datasource directory, execute the following:
 
-```shell Shel
+```shell
 cd my-datasource
 yarn build
 ```
@@ -86,13 +86,13 @@ To make sure your saved changes are passed through to your Budibase server, you 
 
 As the file is TypeScript, it is recommended that you use the **import** keyword over **require**. E.g
 
-> 👍 
+> 👍
 > 
 > ```javascript
 > import Surreal from "surrealdb.js"
 > ```
 
-> ❗ 
+> ❗
 > 
 > ```javascript
 > const Surreal = require("surrealdb.js");
@@ -181,7 +181,7 @@ And the **Read** query:
 
 <br />
 
-### Step 3- Read method implementation
+### Step 3 - Read method implementation
 
 Whilst we have provided the interface to let Budibase know which fields to expect for the custom datasource read method, we still have to write the implementation.
 
@@ -271,7 +271,7 @@ You can view the finished datasource plugin, and also use the GitHub URL to impo
 
 The previous example shows you how to include functions with _field_ type. You may want your custom datasource to support SQL queries with basic syntax highlighting.
 
-> 📘 
+> 📘
 > 
 > This example is taken from the [SurrealDB custom datasource integration](https://github.com/melohagan/budibase-datasource-surrealdb)
 
@@ -297,7 +297,7 @@ The previous example shows you how to include functions with _field_ type. You m
 
 So far we have looked at examples where we perform CRUD operations within a single domain/mode. In this example we will look at handling different modes for when you want to mostly share CRUD functionality, but make slightly different calls depending on the selected mode.
 
-> 📘 
+> 📘
 > 
 > Specifically, we will be looking at handling CRUD operations for Subscriptions, Subscription Items and Subscription Schedules, all in one [datasource plugin](https://github.com/melohagan/budibase-datasource-stripe-subscriptions)
 
