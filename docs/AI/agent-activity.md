@@ -10,6 +10,9 @@ metadata:
 
 Agent activity allows you to monitor all interactions with your AI agents across different channels. It provides a centralized view of requests, their statuses, and the specific operations triggered by your agents.
 
+> [!NOTE]
+> Agent activity and the associated Requests portal are currently subject to feature flag availability. If these sections are not visible in your workspace or portal, ensure the `AI_AGENT_ACTIVITY` flag is enabled.
+
 ## Accessing activity
 
 You can find the **Activity** section in the side navigation of your Budibase builder workspace. This view is available for all applications containing agents and provides a history of agent actions and automation runs in both your development and production environments.
