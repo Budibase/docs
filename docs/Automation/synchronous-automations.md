@@ -1,5 +1,5 @@
 ---
-title: Synchronous automations 🔒
+title: Synchronous automations ⏱️
 excerpt: ''
 deprecated: false
 hidden: false
@@ -20,7 +20,7 @@ Synchronous automations allow users to receive feedback from their automation, i
 
 Automations are usually asynchronous, this means that when an automation runs, it does so in the background and the user is unable to access its result, but with synchronous automations the result is available to the user. 
 
-> 📘 Licensing🔒
+> 📘 Licensing⏱️
 >
 > The following features are available to:
 >
@@ -37,6 +37,8 @@ You can make an automation synchronous by adding a **Collect Data** step.
 A **Collect** step will simply return whatever binding or value is passed to it. 
 
 Once this step has been added, you can access the result of your automation as a Budibase user, or external user depending on whether your automation trigger is [On demand](doc:app-action) or [Webhook](doc:webhook). 
+
+Even without a **Collect Data** step, if a synchronous automation is triggered, it will return a default success response.
 
 > 📘 Last step
 >
@@ -84,7 +86,7 @@ For users to access the result of your automations in a published Budibase app, 
 
 ![](https://files.readme.io/210e91308bf6e0799e5f5c7b1d8a67f84ada077a4b5182e095777b26c8b44bba-image.png)
 
-<Image alt="Filter attached to the query rows step" align="center" src="https://files.readme.io/94ee5c118656a97d93e44b350bae98b8246ef5e02ca8603e9fddfaa5c535625a-image.png">
+<Image alt="Filter attached to the query rows step" align="center" src="https://files.readme.io/94ee5c118656a97d93e44b350ba98b8246ef5e02ca8603e9fddfaa5c535625a-image.png">
   Filter attached to the query rows step
 </Image>
 
@@ -92,7 +94,7 @@ With this done we can start setting up our screen. Create a new screen and add a
 
 ![](https://files.readme.io/6c4d0b235c13af62487b3dd037b6c19dd8c11ff2bc6a2fd86a4cb793eaa94d20-image.png)
 
-> 🚧 Timeout
+> ⚠️ Timeout
 >
 > As shown in the screenshot, a synchronous automation can run for up to 120 seconds, or less if required.
 
@@ -106,7 +108,7 @@ When the button with these actions attached is clicked, state will now be update
 
 To display this we now simply to need bind the state to the Text component.
 
-<Image align="center" width="300px" src="https://files.readme.io/2c25ca235df88584e338ab37662d36aac26367ed7d2d6fa65ffbb6d10743362f-image.png" />
+<Image align="center" width="300px" src="https://files.readme.io/2c25ca235df88584e338ab37662d36aac26367ed7d2d6fa65ffb6d10743362f-image.png" />
 
 We can now preview our app and click the [Button](doc:button) for which our actions are defined.
 
@@ -118,4 +120,4 @@ Instead of displaying the result in a component, you could just as easily use th
 
 > 📘 Automation Result
 >
-> The automation result binding will only be available if your automation has a **Collect Data** step.
+> The automation result binding is always available for synchronous automations. If your automation has a **Collect Data** step, it will return the data you've specified. If no data is collected (for example, if a logic branch completes without reaching a collect step), it will return a success object: `{ "success": true }`.
