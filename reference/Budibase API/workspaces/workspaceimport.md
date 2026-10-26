@@ -1,10 +1,7 @@
 ---
-title: Import a workspace to an existing workspace 🔒
-excerpt: This endpoint is only available on an enterprise license.
 api:
   file: budibase-api.json
   operationId: workspaceImport
-deprecated: false
 hidden: false
 metadata:
   title: ''

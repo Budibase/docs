@@ -1,6 +1,5 @@
 ---
 title: workspaces
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
