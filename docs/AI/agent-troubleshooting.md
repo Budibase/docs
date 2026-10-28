@@ -20,6 +20,7 @@ Use this guide to diagnose and fix common Agent issues.
 | Problem | Likely cause | Fix |
 | :--- | :--- | :--- |
 | Agent does not respond | Provider/model is not configured correctly | Re-check API credentials, model name, and provider status |
+| Model calls return 404 after setup succeeds | Custom provider base URL is missing the versioned API path | Include the full API root in the base URL, for example `https://proxy.example.com/v1` |
 | Agent fabricates values | Missing tool-use rule or no read tool enabled | Add strict tool rules and enable required read tools |
 | Agent updates data unexpectedly | Write rules are too vague | Add explicit write constraints and refusal rules |
 | Automation parsing fails | Output format changes between responses | Enforce a stable JSON schema in instructions |
