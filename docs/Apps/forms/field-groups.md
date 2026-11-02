@@ -35,3 +35,9 @@ Use field groups to control how fields are displayed. Available layouts include:
 Choose whether labels are aligned `Left` or `Above`.
 
 Layout options only apply when labels are aligned `Above`.
+
+## Related pages
+
+* [Forms](doc:forms)
+* [Form block](doc:form-block)
+* [Form validation](doc:form-validation)

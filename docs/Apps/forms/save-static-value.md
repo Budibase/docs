@@ -22,3 +22,10 @@ To do this:
 4. Enter the static value
 
 Budibase saves that value each time the form is submitted.
+
+## Related pages
+
+* [Forms](doc:forms)
+* [Data actions](doc:data-actions)
+* [Form bindings](doc:form-bindings)
+* [Bindings](doc:bindings)

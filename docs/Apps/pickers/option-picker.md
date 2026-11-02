@@ -30,7 +30,8 @@ This works best for static values that do not change often.
 
 ## Use a data provider
 
-Use a data provider when the options should come from another datasource.
+Use a [Data provider](doc:data-provider) when the options should come from
+another datasource.
 
 You need a provider, a label column, and a value column.
 
@@ -51,3 +52,10 @@ This is useful for public forms, API-driven values, and other custom workflows.
 * Default value
 * Disabled
 * Validation
+
+## Related pages
+
+* [Forms](doc:forms)
+* [Multi-select picker](doc:multi-select-picker)
+* [Relationship picker](doc:filter-by-relationships)
+* [Bindings](doc:bindings)

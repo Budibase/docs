@@ -22,7 +22,7 @@ To add the multi-select picker, choose it from `Form > Multi-select Picker`. Mak
 
 ## Adding options to the picker
 
-To add options, head over to the [Option Picker](doc:option-picker#displaying-options-in-the-options-picker) page.
+To add options, head over to the [Option Picker](doc:option-picker#option-sources) page.
 
 ## Retrieving data from the picker
 

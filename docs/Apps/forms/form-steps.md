@@ -30,3 +30,10 @@ Use the `Change Form Step` action to move between steps.
 Use manual form steps when one form needs to save data across multiple tables or needs custom step-level control.
 
 If the form uses one table, the [Multi-step form block](doc:multi-step-form-block) is usually faster.
+
+## Related pages
+
+* [Forms](doc:forms)
+* [Multi-step form block](doc:multi-step-form-block)
+* [Form validation](doc:form-validation)
+* [Chaining actions](doc:chaining-actions)
