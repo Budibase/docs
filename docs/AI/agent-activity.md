@@ -8,7 +8,7 @@ metadata:
   robots: index
 ---
 
-Agent activity allows you to monitor all interactions with your AI agents across different channels. It provides a centralized view of requests, their statuses, and the specific operations triggered by your agents.
+Agent activity allows you to monitor all interactions with your AI agents across different channels. It provides a centralized view of requests, tool executions, their statuses, and the specific operations triggered by your agents.
 
 ## Accessing activity
 
