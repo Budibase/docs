@@ -10,16 +10,25 @@ metadata:
 next:
   description: ''
 ---
-A histogram allows you to display the frequency of data within ranges, known as buckets. For example, here is a histogram showing the frequency of sales for different unit cost buckets.
+Use a histogram to show how often values fall into numeric ranges.
 
-<Image align="center" src="https://files.readme.io/3a22939ae36e24e98491fdd732eacb37aa391bc7d53b8579ba347264889a6b5c-Screenshot_2024-10-28_at_13.32.18.png" />
+## Setup
 
-## Displaying data
+1. Add a [Data provider](doc:data-provider)
+2. Add a Histogram chart inside the provider
+3. Select the provider in the chart settings
+4. Choose the numeric value column
+5. Set the bucket count
 
-Add the **Chart Block** or a [Data provider](doc:data-provider) to your screen, and select the data source, which could be a table, view, or [Custom query](https://docs.budibase.com/docs/data-sources#custom-queries). Apply any limits or filtering to the data source that you want.
+## Settings
 
-Next in the <Glossary>Settings Panel</Glossary> of the histogram component, select the *Value column*. This field must be a [Number](doc:number), and will determine the range for each bucket. 
+Common settings include:
 
-The number of buckets can be adjusted by the *Bucket count*. A checkbox is also available to determine if you want your Histogram to be displayed horizontally or vertically. You can provide labels for the x and y axis.
+* Value column
+* Bucket count
+* Horizontal or vertical layout
+* X-axis and Y-axis labels
 
-<Image align="center" src="https://files.readme.io/f4d1382c3ca7ac3474e1ff34d4a9c9805b04306864f3c23e8e9b02ea29f7db03-Screenshot_2024-10-28_at_13.32.39.png" />
+## Requirements
+
+Histogram value columns must be numeric.

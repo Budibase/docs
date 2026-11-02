@@ -10,13 +10,9 @@ metadata:
 next:
   description: ''
 ---
-Bindings pass runtime values into REST queries.
+Use bindings to pass runtime values into REST queries.
 
-Use bindings for values that vary by user, row, form input, URL parameter, or action context.
-
-## Binding syntax
-
-Use handlebars syntax:
+Bindings are useful for values that change by user, row, form input, URL parameter, or action context.
 
 ```handlebars
 {{ bindingName }}
@@ -25,10 +21,10 @@ Use handlebars syntax:
 ## Create a binding in a query
 
 1. Open a query in API Editor
-2. Add a value in URL/Params/Headers/Body using binding syntax
+2. Add a value in the URL, params, headers, or body using binding syntax
 3. Define binding name and default value
-4. Click **Send** to test defaults
-5. Save query
+4. Click **Send** to test the default
+5. Save the query
 
 ## Where bindings can be used
 
@@ -38,9 +34,9 @@ Use handlebars syntax:
 * Request body
 * Transformer scripts
 
-## Example: filtered list query
+## Example
 
-Query goal: return records by status.
+Return records by status.
 
 1. Create a `GET` query for the list endpoint
 2. Add query param `status`
@@ -52,8 +48,6 @@ Query goal: return records by status.
 
 ## Passing bindings from forms
 
-Typical flow:
-
 1. Add form fields
 2. Configure button action **Execute query**
 3. Map form values to query bindings
@@ -62,16 +56,16 @@ Typical flow:
 
 ## Binding design guidelines
 
-* Use descriptive names (`userId`, `status`, `startDate`).
-* Set safe defaults for optional values.
-* Avoid reusing one binding name for different concepts.
-* Validate string/number/date formatting expected by API.
+* Use descriptive names such as `userId`, `status`, and `startDate`
+* Set safe defaults for optional values
+* Avoid reusing one binding name for different concepts
+* Match the string, number, or date format expected by the API
 
 ## Troubleshooting
 
-* Binding appears literal in request: syntax not parsed correctly
-* Value missing at runtime: no input mapped in action
-* Wrong filter result: default value taking precedence unexpectedly
+* Binding appears literal in request: syntax is not parsed correctly
+* Value missing at runtime: no input is mapped in the action
+* Wrong filter result: the default value is taking precedence
 
 ## Related guides
 

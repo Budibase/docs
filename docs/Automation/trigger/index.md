@@ -1,6 +1,6 @@
 ---
 title: Triggers
-excerpt: ''
+excerpt: Start automations from events
 deprecated: false
 hidden: false
 metadata:
@@ -10,24 +10,32 @@ metadata:
 next:
   description: ''
 ---
-Each automation must have a single trigger step, which is essentially a watcher - waiting for a particular condition to be met, at which point the process will kick off.
+Every automation starts with one trigger. The trigger defines what starts the automation and what data is available to its steps.
 
-<Image align="center" src="https://files.readme.io/0d92924c457e2eecb9d55f10cbd41fb5c28d97a6bf206c60dca88b64d1b3a806-Screenshot_2026-04-09_at_11.16.38.png" />
+## Choose a trigger
 
-Currently, there are six ways to trigger an automation:
+When you create an automation, choose the trigger that matches the source of the event:
 
-1. When a new record/row is created in a table
-2. When a new record/row is deleted in a table
-3. When a new record/row is updated in a table
-4. An external trigger in the form of a JSON Webhook
-5. When a certain action happens in an app
-6. CRON trigger (trigger this automation at a specific time or day)
-7. Email received in a specific inbox
+* [Row created](doc:row-triggers#row-created) runs after Budibase adds a row to the selected table.
+* [Row updated](doc:row-triggers#row-updated) runs after Budibase changes an existing row in the selected table.
+* [Row deleted](doc:row-triggers#row-deleted) runs after Budibase removes a row from the selected table.
+* [On demand](doc:app-action) runs when it is invoked by a user or agent. Define fields on the trigger to pass data into the automation.
+* [Webhook](doc:webhook) runs when an external application sends an HTTP POST request to its endpoint.
+* [Schedule](doc:cronjob) runs at a recurring interval or specified time.
+* [Email received](doc:email-listener) runs when a new message arrives in the configured mailbox.
 
-> 📘 Row creation/update/deletion triggers
->
-> When utilising row-based triggers, it should be noted that this only works for rows created through Budibase. If you are using an external data source, like say Postgres or MySQL, then rows created externally within the database will not trigger automations.
+## Row actions
 
-Triggers are internal to the Budibase system and therefore cannot easily be altered - if you have an idea for a good trigger, then [let us know](https://github.com/Budibase/budibase/discussions)!
+[Row actions](doc:row-actions) also start automations, but you create them from a table or view rather than from the automation trigger list. Use a row action when a user should start a workflow for a specific row.
 
-It is also possible to create custom triggers using the external Webhook - create an external application that will trigger on your required conditions, and target your Budibase Webhook!
+After creating the row action, build its automation and choose which views and roles can use it.
+
+## Row trigger behavior
+
+Row triggers respond to rows created, updated, or deleted through Budibase.
+
+Changes made directly in an external datasource do not fire Budibase row triggers.
+
+For row created and row updated triggers, you can add [trigger filters](doc:row-trigger-filters) to run the automation only when a row meets specific conditions.
+
+If an event occurs outside Budibase, use a webhook or another integration to notify Budibase when it happens.

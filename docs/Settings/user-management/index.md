@@ -1,8 +1,7 @@
 ---
 title: User management
 excerpt: >-
-  The user management page contains all you'll need to invite, delete and create
-  new users as well as change their Budibase application roles.
+  Manage users, roles, groups, and SCIM provisioning across Budibase.
 deprecated: false
 hidden: false
 metadata:
@@ -18,21 +17,59 @@ next:
     - type: basic
       slug: user-roles
       title: User Roles
+    - type: basic
+      slug: workspace-access
+      title: Workspace Access
+    - type: basic
+      slug: in-app-user-management
+      title: In-app User Management
+    - type: basic
+      slug: user-groups
+      title: User Groups
+    - type: basic
+      slug: scim-provisioning
+      title: SCIM Provisioning
 ---
-In Budibase, users are shared across your whole Budibase installation. Users can sign into any app that they have access to. To give users access to specific apps, check the [User Roles](doc:user-roles) page.
+Use user management to control who can sign in, what access they have, and how they are grouped across Budibase.
 
-> 📘 Adding new users
->
-> Invite users from the workspace **Invite user** flow. Read more in [Adding Users](doc:adding-users).
+Users are shared across the whole Budibase installation.
 
-## Resetting passwords
+## Invite users
 
-If you need to reset a users' password, you need to click the ellipsis (...) next to their email, and `Force password reset` button on the users` detail page. You get displayed a new password for the user with which they can only log in once. Once logged in they will be prompted to change their password before continuing on.
+You can invite users from two places:
 
-## Configure user roles
+* The `Invite users` button in the builder sidebar
+* `Settings` > `People` in the Budibase portal
 
-Users can have roles for both the Budibase installation and workspaces, read more about that in [User Roles](doc:user-roles).
+Use [Adding users](doc:adding-users) for the full invite flow.
 
-## Deleting a user
+## Reset passwords
 
-In the ellipsis menu next to the user's email address, you can find a Delete user option. Click the `delete user` button and confirm in the dialogue. Keep in mind deleting users _cannot_ be undone.
+If a user needs a password reset:
+
+1. Open the user list.
+2. Open the user menu next to the email address.
+3. Select `Force password reset`.
+
+Budibase generates a temporary password and prompts the user to change it after sign-in.
+
+## Roles
+
+Users can have both tenant-level and workspace-level access.
+
+Use `User Roles` to configure access to specific apps and workspaces.
+
+## Delete users
+
+Delete users from the user menu when they no longer need access.
+
+Treat deletion as permanent. If you need the user again later, invite them again instead.
+
+## Related guides
+
+* [Adding Users](doc:adding-users)
+* [User Roles](doc:user-roles)
+* [Workspace Access](doc:workspace-access)
+* [In-app User Management](doc:in-app-user-management)
+* [User Groups](doc:user-groups)
+* [SCIM Provisioning](doc:scim-provisioning)

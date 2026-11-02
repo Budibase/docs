@@ -10,54 +10,43 @@ metadata:
 next:
   description: ''
 ---
-Sometimes you need to pass information between screens. This takes two main forms:
+URL variables let you pass information from one screen to another. For example, you can pass a row ID from a list screen to a detail screen and use it to load the selected record.
+
+You can pass URL variables from:
 
 1. [Link element](doc:link)
-2. 'Navigate To' Action
-
-A common example is opening a detailed view for a row entry.
+2. A `Navigate To` action
 
 ## Navigate To
 
-Some templates such as the *Client Contact List* app use <a href="https://docs.budibase.com/docs/button#adding-buttons-to-table-rows">row buttons</a> instead of links. Tables also allow you to define actions [on row click](https://docs.budibase.com/docs/table-block#on-row-click).
+Some templates, such as the *Client Contact List* app, use [row buttons](doc:button) instead of links. Tables can also run actions [when a user clicks a row](doc:table#on-row-click).
 
-In these cases, navigation is controlled by the navigation action:
+To open a detail screen for the selected row:
 
-![](https://files.readme.io/39afb8b-Screenshot_2022-04-20_at_17.05.15.png "Screenshot 2022-04-20 at 17.05.15.png")
+1. Create a detail screen with a path such as `/clients/:id`. A word prefixed with a colon in a screen path defines a URL variable.
+2. Add a `Navigate To` action to the link, button, or table row on the list screen.
+3. In the action's URL, pass a binding for the selected row ID in place of `:id`. Depending on the component, this could be a repeater row binding or `{{ Clicked row._id }}`. At runtime, the resulting path will look like `/clients/12345`.
 
-Here we are passing the row id of the client into the URL path. 
+On the detail screen, access the value with the `{{ URL.id }}` <Glossary>Binding</Glossary>. The binding name must match the name after the colon in the screen path.
 
-In the `/clients/:id` details screen we will be able to make use of this row id.\
-A word prefixed with a colon within a route denotes a path variable. 
+To load only the selected client, add a filter to the [Data provider](doc:data-provider) on the detail screen:
 
-The id is accessed using the `{{ URL.id }}` <Glossary>Binding</Glossary>
+1. Set the filter field to `_id`.
+2. Set the operator to `Equals`.
+3. Set the value to the `{{ URL.id }}` binding.
 
-For example, because we only want to show the chosen client, we can add the following <a href="https://docs.budibase.com/docs/searchfilter-data#static-filtering">Filter</a> to the clients' <a href="https://docs.budibase.com/docs/data-provider">Data Provider</a>
-
-![](https://files.readme.io/e0eff42-Screenshot_2022-04-20_at_19.01.31.png "Screenshot 2022-04-20 at 19.01.31.png")
-
-This can then be used in conjunction with a [Repeater](doc:repeater) to access the fields of the filtered client:
+You can then use a [Repeater](doc:repeater) or another component to display fields from the filtered client.
 
 ## Multiple variables
 
-Whilst passing a row id is the most common use case, you can pass many variables into the URL, with each being separated by a slash, e.g. `/clients/:id/:companyId/:timestamp/:customName/:etc`
+While passing a row ID is the most common use case, you can define multiple variables in a screen path. Separate each variable with a slash, for example `/clients/:id/:companyId/:timestamp`.
 
-A detailed example can be found in this [discussion](https://github.com/Budibase/budibase/discussions/5299#discussioncomment-2530261).
+Access each value through its corresponding URL binding, such as `{{ URL.id }}` or `{{ URL.companyId }}`.
 
-<br />
+A detailed example is available in this [discussion](https://github.com/Budibase/budibase/discussions/5299#discussioncomment-2530261).
 
-## Testing URL Variables
+## Test URL variables
 
-A `Temporary URL variables` input has been added to the Screen Settings area. This feature displays a preview of how a URL will be structured, such as `edit/{variable}`, allowing users to pass variables dynamically while building screens.
+When you edit a screen that contains URL variables, the **Screen settings** panel shows the route structure and lets you enter a temporary value for each variable. Enter a representative value, such as a row ID, to make it available under **URL** in the bindings drawer.
 
-<Image align="center" src="https://files.readme.io/ed3caf2ff2e2415fb40cc42cc46fc521a9c85b3dd3494939a2642036ac3005f9-Screenshot_2025-03-07_at_09.09.04.png" />
-
-This feature lets you see real-time data population within components without previewing or publishing changes. This helps you quickly understand how different records affect the layout of your screens.
-
-<Image align="center" src="https://files.readme.io/f279acdd0ff3b81b3f1b21431db8b22a4728f9f066109c1231bd3be2a0b9b87b-Screenshot_2025-03-07_at_09.11.06.png" />
-
-### Benefits:
-
-* Eliminates the need to hit "Preview repeatedly" or "Publish" to test variable driven screens.
-* Speeds up development by reducing context switching.
-* Provides instant feedback on how records populate within components.
+Temporary values only affect the builder. Use them to check how different records populate your components without repeatedly previewing or publishing the app.

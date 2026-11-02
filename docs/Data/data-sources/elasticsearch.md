@@ -14,7 +14,7 @@ Elasticsearch is a distributed, RESTful search and analytics engine capable of a
 
 ## Connect
 
-To start, click on the `Add source` button of the **Data** section, select *Elasticsearch*, and click `Continue`.
+To start, open the **Data tables** link, click `Add source`, select *Elasticsearch*, and click `Continue`.
 
 Next enter the connection configuration to your Elasticsearch service. The URL field should include the protocol, address and port as shown below.
 

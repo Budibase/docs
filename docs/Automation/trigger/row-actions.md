@@ -12,55 +12,39 @@ metadata:
 next:
   description: ''
 ---
-A Row Action is configured against the table but can be enabled or disabled per view. This allows you to control which users can trigger specific workflow stages. 
+Row actions let you trigger a workflow from a table row.
 
-Using row actions allows you to securely ensure that only specific users with the correct permissions can progress row data through a pipeline
+Configure the action on the table, then enable it per view to control who can run it.
 
 ## Setup
 
-Below are the steps on how you can setup your first row action.
-
 1. Go to the data and select the table/view you wish to create a row action on
 2. Click the **Row actions** button beside **Access** above your table
-
-   <Image align="center" src="https://files.readme.io/492e4e5ed4e348ae7cab59120fc199897ab481b18d297e908af368ae094b1fb9-Screenshot_2024-10-18_at_09.23.40.png" />
+   This opens the row action controls for the selected table or view.
 3. A context menu will appear, providing you with some information about row actions
 4. Click the **Create row action** button
-5. You will be prompted with a modal. Type a relevant name for the row action e.g. accept, deny, assign etc
-
-   <Image align="center" src="https://files.readme.io/55de99af29b3983cd2bb9784c43aaa488149fd3a54474280c9fd729412b3ead1-Screenshot_2024-10-18_at_09.27.59.png" />
+5. Type a name for the row action, such as `accept`, `deny`, or `assign`
 6. Click the **Create** button
-7. You will now be redirected to the row action automation. You can begin building out your workflow for this row action here
-
-   <Image align="center" src="https://files.readme.io/ba7451ff7d04a999a4dd3daee013809b79ec7e08a37a9786bbc1661d5d280394-Screenshot_2025-04-04_at_14.30.43.png" />
-8. Returning to your table, you can see how many row actions have been created for a table. You can also create views with relevant access roles. This will carry over to your row actions. If a certain user doesn't have the correct permissions, they won't have access to the row action. These can be managed on a view-per-view basis by toggling them on and off.
-
-   <Image align="center" src="https://files.readme.io/025f4ea98ad6234596556b2ce62f139bcdbc78c039fa43fd8f242a15a81ec41c-Screenshot_2024-10-18_at_13.39.58.png" />
-9. After toggling these on, you should see a new dropdown button on the table's right-hand side. 
-
-   <Image align="center" src="https://files.readme.io/3284496082e39430479dac4f3746654f75dd98ba603e008716cab939b6424c17-Screenshot_2024-10-21_at_08.07.41.png" />
-10. Clicking on the dropdown button on the far right will display all available row actions. You can then click one of the row actions to trigger the corresponding workflow.
-
-    <Image align="center" src="https://files.readme.io/68bd1b80640a5c19d4a261c5d65971bccc7afbb820af583f4a096a337de67484-Screenshot_2024-10-22_at_13.14.04.png" />
+7. Build the automation that should run for this row action
+8. Return to the table and enable the action for the views and roles that should see it
+9. Users will then see a dropdown on the table row with the available actions
 
 ## Design
 
-A new action with the same name has been added to trigger these row actions. You can learn more about configuring this action [here](doc:data-actions#row-action).
+Row actions are also available as a design-time action. See [Row action](doc:data-actions#row-action) for configuration details.
 
-From the design perspective, there are two ways to quickly add row actions to your components.
+There are two common ways to add them to a screen:
 
-The first is with a [table](doc:table) component. Start by adding a table component to your design area. Select the table component, scroll to the bottom of its settings, and click `Add button`. This will let you choose either a custom button or a row action. The button title will match the name of your row action. 
+1. Add a [table](doc:table) component and use `Add button` in the settings panel.
+2. Choose a custom button or a row action.
+3. The button label matches the row action name.
 
-<Image align="center" src="https://files.readme.io/b24adf24e25e76f4b67ea5f55ac109aef0aec4a8ebb9d510acf60152dd50ee90-Screenshot_2024-10-21_at_09.37.08.png" />
+The button appears in the table and can be made collapsible if you have several actions.
 
-When selected, a new button will appear in the table. You can review the button's settings to see how it’s configured. There is also an option to make the button collapsible, which is helpful when you have numerous buttons attached to the table, as they will be grouped into a dropdown menu.
-
-Once everything is set up, users can use these buttons to trigger your row action automation, allowing users to process your workflows.
+You can use the button to trigger the row action automation directly from the table.
 
 ### Form block
 
-A [form block](doc:form-block) can also generate buttons with row actions. The setup here is even easier than the table, as it will auto-generate the button based on your selected schema. Ensure you use an update form type, as row actions are meant to progress existing data through a workflow.
+A [form block](doc:form-block) can also generate row action buttons automatically. Use an update form type so the action works on existing data rather than creating new rows.
 
-<Image align="center" src="https://files.readme.io/92e56192ea887b89064190a13ac6b8a7ece55a1957c3577712558a9843776616-20241021_132924.gif" />
-
-You can also add a [Row action](doc:data-actions#row-action) to any component that allows [actions](doc:actions) to be applied.
+You can add a [Row action](doc:data-actions#row-action) to any component that supports [actions](doc:actions).

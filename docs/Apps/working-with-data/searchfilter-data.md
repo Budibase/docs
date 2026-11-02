@@ -10,80 +10,35 @@ metadata:
 next:
   description: ''
 ---
-Below are the different methods of filtering within Budibase.
+Use filtering when the screen should only show a subset of rows.
 
 ## Dynamic filtering
 
-If you have a [Table](doc:table) component connected to a [Data provider](doc:data-provider) component, you can add dynamic filtering by simply adding the [Dynamic filter](doc:dynamic-filter) component. This should work as soon as you add it.
-
-<Image align="center" src="https://files.readme.io/9af2ffe07b04cf4e219b17428ef9f7d7b6b7daf70778b92270260eaafda149df-Screen_Recording_2025-08-18_at_10.03.35.gif" />
+Use the Dynamic filter component with a Table and Data provider when you want users to build their own filters in the UI.
 
 ## Static filtering
 
-Once you have linked a <Glossary>Datasource</Glossary> to a component, you can access the filter drawer by clicking the button beside the *Filtering* setting in the <Glossary>Settings Panel</Glossary>.
+Use the Data provider filter drawer when the filter values are known ahead of time or controlled by bindings.
 
-<Image alt="Adding filters to a Data provider" align="center" src="https://files.readme.io/04c8c2e700300fc2431a475d40418f0e1e85ea636ffd99abd0dd2873c2a55c31-Screenshot_2025-08-18_at_10.14.44.png">
-  Adding filters to a Data provider
-</Image>
+Common filter uses include:
 
-The filter drawer is where you select the columns you want to filter on. For example, you may want to return sales records only where any of the sales reps made more than 60 sales, or all sales made in the first week of the month.
+* Exact matches
+* Partial text matches
+* Range filters
+* Multiple conditions across one or more columns
 
-<Image align="center" src="https://files.readme.io/a786a27ef98122bd4742028c20f9dd363763714555e3976473bafdab6ab917ef-Screenshot_2025-08-18_at_10.16.20.png" />
+## Front-end filters
 
-It is also possible to filter on multiple columns, and even filter on the same column multiple times. 
+Add form inputs and bind them into Data provider filters when users should control the filter values on the screen.
 
-## Filtering data from the front-end
+This is useful for search bars, range filters, and other interactive filtering controls.
 
-Often you will find yourself wanting to let the user filter the data on the front-end. This can be achieved as well but requires a bit more work.To get started, add a Data Provider and set the data source. In this example we want to let the user filter to narrow down by day\_of\_month.
+## Filter groups
 
-Next, add a Form Component, and add two Number fields. set the first to be day\_start, and label it "Day of month (start)". Take similar steps i for the other Text Field, naming it day\_end and labelling it "Day of month (end)"
+Filter groups let you decide whether rows must match all filters or any filter.
 
-In the data provider, select the define filters button. Next, add an expression and select the column you wish to filter on - in this case `day_of_month`, `More than or equal to` and `Binding`. Select the lightning bolt icon to the right and select the number field choose "start\_day". Repeat the process for the the upper-limit of the filter, this time using "less than or equal to". Now your user can specify a start and end day and view sales made in that particular timeframe.
+When a filter uses a binding and that binding is empty, choose whether to return all rows or no rows.
 
-<Image align="center" src="https://files.readme.io/34b558aae741bea5c8c63fe3ff94aad67baa3fea32c44466f34eeea649e3db65-Screenshot_2024-10-28_at_15.19.47.png" />
+## Related guide
 
-<Image align="center" src="https://files.readme.io/f1eab353ce7dcf9ddd9af95303e05304eac1daa8bac26a49aecb9f73a09f89f7-Screenshot_2024-10-28_at_15.20.38.png" />
-
-## Filtering options & Filter Groups
-
-When filtering, there are a couple of settings that can be tweaked that determine how the filters are handled. 
-
-<Image alt="Notice the change in the second filter group from And to Or" align="center" src="https://files.readme.io/f98f3f42b0fabfc4f17b28a10814b96ad789836d993d882b18ef4987ca88e0f7-Screen_Recording_2024-10-28_at_15.49.08.gif">
-  Notice the change in the second filter group from And to Or
-</Image>
-
-#### Behaviour when combining Filter Groups
-
-* **Show data which matches all filter groups**: all filters must match when returning records
-* **Show data which matches any filter** : records are returned when they match on any of the provided filter groups
-
-#### Behaviour in Filter Groups themselves
-
-* **Show data when any of the following filters are matches**: Only one of the filters needs to match in order to return this record
-* **Show data when all of the following filters are matches** : All of the filters in this group need to match in order to return this record
-
-<br />
-
-#### When filter empty
-
-This setting is specific to filters that are using <Glossary>Binding</Glossary>s. It determines what data should be returned if the binding values are blank.
-
-By default, if all of the filter binding values are empty, then all the rows will be returned. If *Return no rows* is selected and the binding values are empty, then no rows will be returned. This can be particularly useful when pairing a table with search fields, as an empty search field will result in all rows being shown, but as a user types a search-term it will narrow the list down.
-
-<Image align="center" src="https://files.readme.io/78acfe3680e2c9a5e30e83f4edac80d310280cd5b647520cb61b00bb76fce7ad-Screenshot_2024-11-01_at_15.41.11.png" />
-
-As shown, the filters are bound to two form fields which are currently empty, therefore *all table rows* are returned.
-
-<Image align="center" src="https://files.readme.io/298de251b99ae44e9f4b8015c42d06e2d00dfd9c0bc9b4a931b8f99b0c42f7db-Screenshot_2024-11-01_at_15.43.20.png" />
-
-In this screenshot we can see that the *Return no rows* option is selected, which prevents rows being displayed as the bound form values are empty. Below we can see that now rows are returned when filters are empty, rows matching the search term are found and returned, and then no rows are returned when nothing matches the filter.
-
-<Image align="center" src="https://files.readme.io/c1bd1c4408cc71fee5b90ac995c6a57e9e8eb2af31424dd7e3edd9d52f8c0f16-Screen_Recording_2024-11-01_at_16.11.53.gif" />
-
-## Video tutorial: filter with two option pickers
-
-<HTMLBlock>{`
-<div style="padding:50% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/742702875?h=69fa04afed&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="filter-with-options-pickers.mov"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-`}</HTMLBlock>
-
-You can also filter using a [relationship picker](https://docs.budibase.com/docs/filter-by-relationships).
+* [Adding search](doc:adding-a-search-field)

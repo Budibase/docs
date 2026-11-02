@@ -10,52 +10,46 @@ metadata:
 next:
   description: ''
 ---
-The Date Picker allows you to select a `Date`, `DateTime` or `Time`, depending on your settings.
+Use the Date Picker to select a `Date`, `DateTime`, or `Time` value.
 
-<Image title="datepicker-options.jpg" alt={1418} align="center" src="https://files.readme.io/86452b5-datepicker-options.jpg">
-  Left: Date/time; Top-right: Date; Bottom-right: Time
-</Image>
+Add the Date Picker inside a [Form](doc:forms), then choose its type in the
+settings panel.
 
-As you can see above there's three flavours of the date and/or time pickers.
+## Picker types
 
-## Add a date picker
+Configure `Show time` and `Time only` for the value you want:
 
-The `Date Picker` needs to be a child of the [Form](doc:forms) component. 
+| Picker | Show time | Time only | Stored value |
+| :----- | :-------- | :-------- | :----------- |
+| Date and time | On | Off | ISO date and time |
+| Date only | Off | Off | `YYYY-MM-DD`, or a timestamp with `Set time to` |
+| Time only | Either | On | `HH:mm` |
 
-To add the `Date Picker` component, click `Form > Date Picker`. 
+## Set a fixed time for a date
 
-![](https://files.readme.io/7a390a5-Screenshot_2023-07-04_at_12.15.43.png)
+For a date-only picker, use `Set time to` to save a fixed time with the selected
+date. For example, set it to `23:59:59` when a `Less than or equal to` filter
+should include the entire selected day.
 
-After the Date Picker is added you can start to configure it.
+This setting is available only when both `Show time` and `Time only` are off.
 
-## Date, Date/Time or Time?
+## Time zones
 
-To choose between the different types of pickers, you can use two checkboxes in the <Glossary>Settings Panel</Glossary> to get three different results.
+Date and time values are normally converted to an ISO timestamp with timezone
+information. Enable `Ignore time zones` when the selected wall-clock time must
+be stored exactly as entered without conversion to UTC.
 
-![](https://files.readme.io/13f6cc1-date-picker-checkboxes.png "date-picker-checkboxes.png")
+Time-only values always ignore time zones.
 
-To get the results, only check the box which are mentioned below.
+## Calendar settings
 
-* **Date/time**: ☑️ Show Time
-* **Date**: 🔘 Show Time + 🔘 Time Only
-* **Time**: ☑️ Time Only 
+Use `Week starts on` to override the browser locale for the calendar.
 
-When configuring a **Date** (date only) picker, you can also use the **Set time to** setting to specify a fixed time (e.g., `23:59:59`) that will be saved alongside the selected date. This is particularly useful for ensuring that "Less than or equal to" filters include records from the entire selected day.
+## Calendar navigation
 
-## Using the calendar
+Users can move between months by scrolling on desktop or swiping on touch devices.
 
-In addition to clicking the navigation arrows, users can use gestures to move between months:
+## Related pages
 
-* **Scroll**: On desktop, use a mouse wheel or trackpad to scroll over the calendar body to change months.
-* **Swipe**: On touch devices, swipe horizontally across the calendar body to move to the next or previous month.
-
-## Further configuration
-
-| Setting       | Description                                                                                                                                                                                                                            |
-| :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Field         | Connected field from the parent [Form](doc:forms) element, or custom by typing in a field name.                                                                                                                                        |
-| Label         | The text visible to the user next to the `Date Picker` as a descriptor of the field                                                                                                                                                    |
-| Placeholder   | The text displayed in a lighter tint inside the `Date Picker`. Will only display when the picker has no value                                                                                                                          |
-| Default Value | When a default value is provided, every time the form is opened this will be prefilled in the `Date Picker`. Entering this will also prevent the `Placeholder` from showing |
-| Set time to   | Only available when **Show Time** is unchecked. Allows you to specify a fixed time that will be saved with the date. Useful for range-based filtering.                                                                                  |
-| Disabled      | When checked, disables the field; The user cannot change the value.                                                                                                                                                                    |
+* [Forms](doc:forms)
+* [Form validation](doc:form-validation)
