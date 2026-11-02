@@ -10,7 +10,9 @@ metadata:
 next:
   description: ''
 ---
-Use forms to create and edit data with a consistent layout.
+Use forms to collect and validate input when creating or updating data.
+
+The Form component does not save a row by itself. Add button actions to validate and save the form, or use a [Form block](doc:form-block) for a generated form with save behaviour included.
 
 Forms are built from three main component types:
 
@@ -20,13 +22,13 @@ Forms are built from three main component types:
 
 ## Form component
 
-The Form component is the top-level container. Place [Field groups](doc:field-groups) inside it.
+The Form component is the top-level container. Place [Field groups](doc:field-groups) inside it. Input components can also be used without a form, for example as search fields.
 
-Use a form when you want Budibase to handle submitted values, validation, and save actions together.
+Use a form when you want Budibase to collect field values and apply validation rules before an action runs.
 
 ### Form schema
 
-A form can use a table, view, relationship, or custom source as its schema.
+A form can use a table, view, query, relationship, field, JSON array, or custom schema.
 
 Choosing a schema helps with:
 
@@ -37,12 +39,12 @@ Choosing a schema helps with:
 
 > 🚧 Schema from query
 >
-> When using a [custom query](https://docs.budibase.com/docs/custom-queries) or [REST query](https://docs.budibase.com/docs/rest-queries) as the schema source, the form fields cannot be linked to the query schema.
+> When using a [custom query](https://docs.budibase.com/docs/custom-queries) or [REST query](https://docs.budibase.com/docs/rest-queries), the field list comes from the query parameters rather than the response schema.
 
 ### Form type
 
 * `Create` starts with blank fields unless a default value is set
-* `Update` fills fields from the parent [Repeater](doc:repeater) or row binding
+* `Update` fills fields from matching table or view data provided by an ancestor component, such as a [Repeater](doc:repeater)
 
 ## Inputs
 
