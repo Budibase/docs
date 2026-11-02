@@ -12,32 +12,44 @@ next:
 ---
 Use the Date Picker to select a `Date`, `DateTime`, or `Time` value.
 
-## Add a date picker
-
-1. Add a [Form](doc:forms)
-2. Add a `Date Picker` inside the form
-3. Set the picker type in the settings panel
+Add the Date Picker inside a [Form](doc:forms), then choose its type in the
+settings panel.
 
 ## Picker types
 
-* **Date/time**: ☑️ Show Time
-* **Date**: 🔘 Show Time + 🔘 Time Only
-* **Time**: ☑️ Time Only 
+Configure `Show time` and `Time only` for the value you want:
 
-When configuring a **Date** (date only) picker, you can also use the **Set time to** setting to specify a fixed time (e.g., `23:59:59`) that will be saved alongside the selected date. This is particularly useful for ensuring that "Less than or equal to" filters include records from the entire selected day.
+| Picker | Show time | Time only | Stored value |
+| :----- | :-------- | :-------- | :----------- |
+| Date and time | On | Off | ISO date and time |
+| Date only | Off | Off | `YYYY-MM-DD`, or a timestamp with `Set time to` |
+| Time only | Either | On | `HH:mm` |
 
-* Date and time
-* Date only
-* Time only
+## Set a fixed time for a date
 
-## Common settings
+For a date-only picker, use `Set time to` to save a fixed time with the selected
+date. For example, set it to `23:59:59` when a `Less than or equal to` filter
+should include the entire selected day.
 
-* Field
-* Label
-* Placeholder
-* Default value
-* Disabled
+This setting is available only when both `Show time` and `Time only` are off.
+
+## Time zones
+
+Date and time values are normally converted to an ISO timestamp with timezone
+information. Enable `Ignore time zones` when the selected wall-clock time must
+be stored exactly as entered without conversion to UTC.
+
+Time-only values always ignore time zones.
+
+## Calendar settings
+
+Use `Week starts on` to override the browser locale for the calendar.
 
 ## Calendar navigation
 
 Users can move between months by scrolling on desktop or swiping on touch devices.
+
+## Related pages
+
+* [Forms](doc:forms)
+* [Form validation](doc:form-validation)
