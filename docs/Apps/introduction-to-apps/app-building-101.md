@@ -10,52 +10,54 @@ metadata:
 next:
   description: ''
 ---
-This guide walks through a simple ticketing app using Budibase DB, role-based views, bindings, filters, and an automation.
-
-## What you will build
-
-You will create:
-
-* A ticket table with role-specific views
-* A screen for end users to submit tickets
-* A screen for service agents to review and update tickets
-* An email notification when a ticket is created
+This guide walks through a simple ticketing app using Budibase DB, role-based
+views, bindings, filters, and an automation.
 
 ## Set up the data
 
 Create a `Tickets` table with these columns:
 
-* `Title`
-* `Description`
-* `Status`
-* `Priority`
-* `Time Created`
-* `Resolution Notes`
-* `Created By`
-* `Category`
+| Column | Type |
+| :----- | :--- |
+| `Title` | Text |
+| `Description` | Long-form text |
+| `Status` | Single select |
+| `Priority` | Single select |
+| `Time Created` | Date |
+| `Resolution Notes` | Long-form text |
+| `Created By` | Single user |
+| `Category` | AI or text |
 
 Use default values for `Status`, `Time Created`, and `Created By`.
 
-Set `Category` using an AI column with text categorization.
+Optionally use an [AI column](doc:ai-column) with `Categorise Text` for
+`Category`. This requires an AI model provider; otherwise, use a text or
+single-select column.
 
-Create two views:
+Create two [views](doc:views):
 
 * `End User Tickets` for end users
 * `Service Desk Agent Tickets` for service agents
 
-The end user view should only allow users to edit `Title` and `Description`.
+Configure `End User Tickets` to:
 
-The service agent view should allow full read and write access.
+* Allow the End User role to access it
+* Filter rows so users only see tickets they created
+* Allow users to write `Title` and `Description`, with other columns read-only
 
-## Create the app
-
-Create a new app and name it `Ticketing System`.
+Configure `Service Desk Agent Tickets` to allow the Service Desk Agent role
+full read and write access.
 
 ## Build the end user screen
+
+Create an app named `Ticketing System`.
 
 Generate a screen from the `End User Tickets` view using a table layout.
 
 Use modal forms for create and edit actions.
+
+The generated screen uses the view's write-access role. Check the screen access
+setting before continuing.
 
 Then make these changes:
 
@@ -67,9 +69,8 @@ Then make these changes:
 
 ## Use bindings
 
-Update the form title to include both `Category` and `Title` from the selected row.
-
-Use a binding like this:
+Update the form title with values from the edit form's row. The exact component
+name depends on your screen; the binding will look like this:
 
 ```handlebars
 {{ [Edit row form block].End User Tickets.Category }}: {{ [Edit row form block].End User Tickets.Title }}
@@ -89,23 +90,19 @@ Then make these changes:
 
 ## Add filtering
 
-Add a Filter component to the service agent screen.
+Add a [Filter component](doc:searchfilter-data) to the service agent screen.
 
-Set the target component to the table and choose the fields agents should filter by.
-
-This lets agents narrow the list without changing the underlying data.
+Set its target to the table and choose the fields agents can filter.
 
 ## Set up email notifications
 
-Create an automation that runs when a row is created in `Tickets`.
+First, make sure [SMTP email](doc:email) is configured.
 
-Add a `Send Email (SMTP)` action and set:
+Create an automation with a [Row Created trigger](doc:row-triggers) for the
+`Tickets` table.
 
-* `Send To`
-* `Send From`
-* `Subject`
-
-Then bind the message body to the created ticket data:
+Add a `Send Email (SMTP)` action. Configure `Send To`, `Send From`, and
+`Subject`, then bind the message body to the created ticket data:
 
 ```markdown
 ## A new ticket has been submitted by {{ trigger.row.Created By.email }}
@@ -115,6 +112,8 @@ Then bind the message body to the created ticket data:
 {{ trigger.row.Description }}
 ```
 
+Run a test with an existing ticket row, then activate the automation.
+
 ## Test the flow
 
 Create a new ticket and confirm that:
@@ -122,3 +121,9 @@ Create a new ticket and confirm that:
 * The end user screen only exposes the intended fields
 * The service agent screen can filter and update tickets
 * The automation sends the expected email
+
+## Related pages
+
+* [Screens](doc:screens)
+* [Views](doc:views)
+* [Automation building 101](doc:automation-building-101)
