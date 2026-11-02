@@ -6,30 +6,8 @@ hidden: true
 metadata:
   title: ''
   description: ''
-  robots: index
+  robots: noindex
 next:
   description: ''
 ---
-Use the Date Picker to select a `Date`, `DateTime`, or `Time` value.
-
-This hidden copy exists for older links. Prefer [Date picker](doc:date-picker).
-
-## Add a date picker
-
-Add the component inside a [Form](doc:forms) and set the picker type in the settings panel.
-
-## Picker types
-
-Use the settings panel to choose one of these modes:
-
-* Date and time
-* Date only
-* Time only
-
-## Common settings
-
-* Field
-* Label
-* Placeholder
-* Default value
-* Disabled
+This page has moved. See [Date picker](doc:date-picker) for the current guide.
