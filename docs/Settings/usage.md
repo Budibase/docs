@@ -14,7 +14,7 @@ next:
 
 Within a [Workspace](doc:introduction-to-workspaces) the `Usage` tab allows you to see if you are nearing any limits for the current plan.
 
-Each workspace will keep track of usage independently. For example, if you reach the maximum number of [Creators](https://docs.budibase.com/docs/application-access#creators-) in one workspace, you won't be prevented from adding creators in another workspace.
+Each workspace will keep track of usage independently. For example, if you reach the maximum number of [Creators](doc:workspace-access#creators-) in one workspace, you won't be prevented from adding creators in another workspace.
 
 <Image align="center" border={false} src="https://files.readme.io/407f25d4befb69bc078cbc6b34800c07e7a1d4357f8a08fd7de2ceec6c5cc62a-Screenshot_2025-09-29_at_13.32.06.png" />
 

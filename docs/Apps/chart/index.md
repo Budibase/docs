@@ -30,7 +30,7 @@ Charts allow you to visualise data from a [Data Provider](doc:data-provider), wh
 * <Glossary>Budibase DB</Glossary>
 * External Data Tables like MS SQL
 * [REST Queries](doc:rest-queries) 
-* [Custom Queries](doc:custom-queries)
+* [Custom Queries](doc:sql-workflow#custom-queries)
 * JSON/CSV
 
 ## Use chart data

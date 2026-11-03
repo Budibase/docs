@@ -113,7 +113,7 @@ To perform an update, an update expression must also be provided. For example:
 
 ![](https://files.readme.io/7b15c2e-Screenshot_2022-08-16_at_18.27.42.png)
 
-As you can see, you can also include [bindings](https://docs.budibase.com/docs/custom-queries#using-query-bindings) within your expressions. 
+As you can see, you can also include [bindings](doc:sql-workflow#custom-queries) within your expressions.
 
 ## Delete
 

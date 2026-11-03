@@ -11,8 +11,8 @@ next:
   description: ''
   pages:
     - type: basic
-      slug: logic-actions
-      title: Logic actions
+      slug: chaining-actions
+      title: Chaining actions
 ---
 Use form actions when an action needs to change a form field, move between steps, or validate a form.
 

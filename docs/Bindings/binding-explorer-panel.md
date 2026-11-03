@@ -43,7 +43,7 @@ As you add components to your screen, new bindings will appear in the panel. Com
 
 * [Data Providers](doc:data-provider)
 * [Tables](doc:table)
-* [Repeater Blocks](doc:repeater-block)
+* [Repeater](doc:repeater)
 * [Form Blocks](doc:form-block)
 * [Input Fields](doc:text-inputs)
 

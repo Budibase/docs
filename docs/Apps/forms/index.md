@@ -39,7 +39,7 @@ Choosing a schema helps with:
 
 > 🚧 Schema from query
 >
-> When using a [custom query](https://docs.budibase.com/docs/custom-queries) or [REST query](https://docs.budibase.com/docs/rest-queries), the field list comes from the query parameters rather than the response schema.
+> When using a [custom query](doc:sql-workflow#custom-queries) or [REST query](https://docs.budibase.com/docs/rest-queries), the field list comes from the query parameters rather than the response schema.
 
 ### Form type
 
