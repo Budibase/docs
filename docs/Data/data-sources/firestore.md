@@ -52,7 +52,7 @@ With your Firestore config saved, you will now be able to add a query.
 
 #### Bindings
 
-You can also use <a href="https://docs.budibase.com/docs/custom-queries#using-query-bindings">bindings</a> like so:
+You can also use <a href="https://docs.budibase.com/docs/sql-workflow#custom-queries">bindings</a> like so:
 
 ![](https://files.readme.io/3ef13c8-Screenshot_2022-06-10_at_16.52.48.png "Screenshot 2022-06-10 at 16.52.48.png")
 
@@ -86,7 +86,7 @@ The full list of supported filter comparisons can be found <a href="https://fire
 
 #### Bindings
 
-You can also use <a href="https://docs.budibase.com/docs/custom-queries#using-query-bindings">bindings</a> like so:
+You can also use <a href="https://docs.budibase.com/docs/sql-workflow#custom-queries">bindings</a> like so:
 
 ![](https://files.readme.io/9dda221-Screenshot_2022-06-10_at_16.27.03.png "Screenshot 2022-06-10 at 16.27.03.png")
 

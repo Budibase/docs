@@ -77,7 +77,7 @@ budi hosting --init
 
 The commands below can be viewed in this recipe if desired:
 
-🤖 [Budibase CLI setup [NPM]](https://docs.budibase.com/v1.0.9/recipes/budibase-cli-setup-npm)
+🤖 [Budibase CLI setup [NPM]](https://docs.budibase.com/recipes/budibase-cli-setup-npm)
 
 You can view, copy or backup your `.env` file at this point:
 

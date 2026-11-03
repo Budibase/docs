@@ -39,7 +39,7 @@ Use component settings to control:
 
 ## Related components
 
-* [Button](doc:button)
+* [Button](doc:button-button-group)
 * [Card](doc:card)
 * [Embed](doc:embed)
 * [Link](doc:link)

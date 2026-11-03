@@ -43,5 +43,5 @@ Budibase channel webhooks are validated against the production workspace route. 
 
 ## Related guides
 
-* [Agent building 101](doc:agent-id-building-101)
+* [Agent building 101](doc:agent-building-101)
 * [Agent testing guide](doc:agent-testing-guide)

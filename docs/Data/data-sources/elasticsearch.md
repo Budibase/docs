@@ -72,7 +72,7 @@ You can also add and use a <Glossary>Binding</Glossary> within your query as sho
 
 > 📘
 >
-> More on using datasource bindings within the Design section can be found in the [Custom queries](doc:custom-queries) page.
+> More on using datasource bindings within the Design section can be found in the [Custom queries](doc:sql-workflow#custom-queries) page.
 
 ### Create
 

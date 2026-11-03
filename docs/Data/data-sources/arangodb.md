@@ -79,7 +79,7 @@ We'll start by updating our [Create](#create) query we made above. I'm going to 
 
 Now that we have those bindings in place, we can go to the Design tab to make use of them.
 
-I'm going to start by adding a Blank screen with the URL `/bag/new` where we will create a form for adding a new document to our collection. In my screen I'll add a Form component with a [Field group](doc:field-groups) and a [Button](doc:button). When setting up the form use your Create query as the Schema so that inside the field group we have the relevant fields for each column in the document. 
+I'm going to start by adding a Blank screen with the URL `/bag/new` where we will create a form for adding a new document to our collection. In my screen I'll add a Form component with a [Field group](doc:field-groups) and a [Button](doc:button-button-group). When setting up the form use your Create query as the Schema so that inside the field group we have the relevant fields for each column in the document.
 
 To make the form fully functional, add an On Click Action to your button to execute the query. In the Execute Query action settings, add the field values from the form for each binding.
 

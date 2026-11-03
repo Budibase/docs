@@ -114,4 +114,4 @@ If you are using Azure AD, the provisioning flow is:
 
 If you also need SSO, follow the [SSO with Azure AD](doc:sso-with-azure-ad) guide.
 
-After provisioning, assign the required [user roles](doc:user-roles) and [application access](doc:application-access) in Budibase.
+After provisioning, assign the required [user roles](doc:user-roles) and [workspace access](doc:workspace-access) in Budibase.

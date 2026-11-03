@@ -19,7 +19,7 @@ You can pass URL variables from:
 
 ## Navigate To
 
-Some templates, such as the *Client Contact List* app, use [row buttons](doc:button) instead of links. Tables can also run actions [when a user clicks a row](doc:table#on-row-click).
+Some templates, such as the *Client Contact List* app, use [row buttons](doc:button-button-group) instead of links. Tables can also run actions [when a user clicks a row](doc:table#on-row-click).
 
 To open a detail screen for the selected row:
 

@@ -75,4 +75,4 @@ return ['.png','.jpg','.jpeg','.svg','.gif','.webp']
 
 Whilst the upload component has been added, you still need to use an upload [Action](doc:actions) so that the user can submit their selected files to the S3 bucket.
 
-The easiest way to do this is to add a [Button](doc:button). Click `Define actions`, add the **Upload File to S3** action, and select your `S3 File Upload` component from the dropdown. Be sure to click `Save`.
+The easiest way to do this is to add a [Button](doc:button-button-group). Click `Define actions`, add the **Upload File to S3** action, and select your `S3 File Upload` component from the dropdown. Be sure to click `Save`.
