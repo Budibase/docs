@@ -13,7 +13,7 @@ next:
   description: ''
   pages:
     - type: basic
-      slug: backups
+      slug: backups-1
       title: Backups
 ---
 The Budibase CLI tool can be used to create a new Budibase installation, to manage an existing installation, make backups or update a Budibase installation to a new version. The video below summarises the tool with further instructions below.
