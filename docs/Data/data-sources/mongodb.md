@@ -26,7 +26,7 @@ Now that you have everything you need to hook up your MongoDB installation to Bu
 >
 > Don't know how to get the ConnectionString? Check this useful [guide by MongoDB](https://docs.mongodb.com/drivers/node/current/fundamentals/connection/).
 
-> 👍 Don't have a MongoDB instance?
+> 🫵 Don't have a MongoDB instance?
 >
 > The easiest way to get started is by signing up for the (from) free offering from Mongo directly: <a href="https://www.mongodb.com/atlas/database" target="_blank">MongoDB Atlas</a>. We've also used MongoDB Atlas for writing this guide, and testing our integrations!
 
@@ -60,15 +60,15 @@ Choose the query name, collection, function, and access level first. Then use th
 
 Configuring your query is essential in making sure it runs correctly. In the table below you'll find what each field means.
 
-| Field        | Description                                                                                                                                               |
-| :----------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Query Name   | The name you want to give the query, this is a visual name. The name is used when selecting a <Glossary>Data Sources</Glossary> inside the design section |
-| Function     | The action you want to perform. This is a MongoDB specified function. Choosing a function influences the options you get offered to you for actionTypes   |
-| Access Level | Which level do you want to be able to access this query?                                                                                                  |
-| Collection   | The MongoDB collection you want to query                                                                                                                  |
-| Action Types | The action-type defined by MongoDB, based on the Function you've selected.                                                                                |
+| Field         | Description                                                                                                                                              |
+| :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Query Name    | The name you want to give the query, this is a visual name. The name is used when selecting a <Glossary>Data Sources</Glossary> inside the design section |
+| Function      | The action you want to perform. This is a MongoDB specified function. Choosing a function influences the options you get offered to you for actionTypes   |
+| Access Level  | Which level do you want to be able to access this query? MongoDB queries cannot be granted public access.                                                |
+| Collection    | The MongoDB collection you want to query                                                                                                                 |
+| Action Types  | The action-type defined by MongoDB, based on the Function you've selected.                                                                               |
 
-> 👍 What do the action types mean?
+> 🫵 What do the action types mean?
 >
 > The action types are defined by MongoDB. You can read more about those in the [MongoDB Documentation](https://docs.mongodb.com/v4.4/reference/method/js-collection/)
 
@@ -83,7 +83,7 @@ If you want to specify an ObjectId, you can do that as follows:
 
 If you are inserting multiple documents, provide an array of objects instead of a single object.
 
-> 🚧 Document ID
+> 🫵 Document ID
 >
 > In MongoDB you can use most data types as a document ID, however the default and recommended type is [ObjectId](https://www.mongodb.com/docs/manual/reference/method/ObjectId/)
 
@@ -123,7 +123,7 @@ If *deleteOne* was used instead, then only the first filter match would have bee
 
 In addition, a number of non-mandatory options are available: [https://www.mongodb.com/docs/v4.4/reference/method/db.collection.deleteOne/](https://www.mongodb.com/docs/v4.4/reference/method/db.collection.deleteOne/)
 
-> 🚧 Stringify the queries
+> 🫵 Stringify the queries
 >
 > If you take a look at the MongoDB documentation, and you find queries there, they're most likely not stringified. As the `Fields` box only supports JSON objects, you should convert it to strings.
 
@@ -145,7 +145,7 @@ The transformer is intended for you to have a layer between the data received fr
 
 The `transformer` box accepts JavaScript, and is ran within a function. This means you have to return the data you want to get back from the query.
 
-> 👍 Transformer
+> 🫵 Transformer
 >
 > To understand how Transformers work, read about them on the [Transformers page](doc:transformers)
 
@@ -193,7 +193,7 @@ A benefit of using the Pipeline mode is that it provides the available aggregati
 
 ## Video tutorial
 
-<Embed url="https://www.youtube.com/watch?v=OjGZ841KgBk" title="How to build a MongoDB admin panel in just a few minutes | Budibase | MongoDB" favicon="https://www.google.com/favicon.ico" image="https://i.ytimg.com/vi/OjGZ841KgBk/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=OjGZ841KgBk" typeOfEmbed="youtube" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FOjGZ841KgBk%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DOjGZ841KgBk%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252FOjGZ841KgBk%252Fhqdefault.jpg%26key%3D7788cb384c9f4d5dbbdbeffd9fe4b92f%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
+<Embed url="https://www.youtube.com/watch?v=OjGZ841KgBk" title="How to build a MongoDB admin panel in just a few minutes | Budibase | MongoDB" favicon="https://www.google.com/favicon.ico" image="https://i.ytimg.com/vi/OjGZ841KgBk/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=OjGZ841KgBk" typeOfEmbed="youtube" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FOjGZ841KgBk%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DOjGZ841KgBk%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252FOjGZ841KgBk%252Fhqdefault.jpg%26key%3D7788cb384c9f4d5dbbdbefd9fe4b92f%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
 
 ***
 
