@@ -53,7 +53,7 @@ An approval policy defines **who** is notified and responsible for reviewing a g
     *   **Unanimous**: Every approver must approve before it can proceed. A single rejection will reject the request.
     *   **Majority**: More than half of the approvers must approve to proceed.
 *   **Approvers**: A list of Budibase users responsible for reviewing and responding to the escalated request.
-*   **Notification**: The messaging channel and destination (user or channel) where the approval request will appear.
+*   **Notification**: The messaging channel and destination (user or channel) where the approval request will appear. This is optional if at least one **Approver** is defined.
 *   **Approval expiration**: How long approvers have to respond before the approval expires. The default is 1 day. Available presets are 1 day, 3 days, 1 week, 30 days, and 90 days, subject to the limit for your Budibase plan. Enterprise plans can also use a custom duration or choose **Never expires**.
 *   **What happens on expiry**: Choose the automatic outcome if the approval expires before a human responds.
     *   **Expire**: The request expires without running the tool, and the Agent tells the user that the request timed out.
@@ -69,10 +69,10 @@ An approval rule determines **when** a policy should be applied to a specific to
 ##### Sharing parameters with reviewers
 To help reviewers make informed decisions without leaving their messaging app, you can select which tool parameters should be included in the notification card.
 
-* **Default behavior**: No parameters are shared by default.
-* **Selection**: Use the **Shared with reviewers** multiselect in the rule configuration to pick the relevant fields.
-* **Limits**: You can share up to 40 parameters per rule.
-* **Context**: Notifications also include the identity of the requester (the user's name and email, or the Agent name for automations) and the specific tool being used.
+*   **Default behaviour**: No parameters are shared by default.
+*   **Selection**: Use the **Shared with reviewers** multiselect in the rule configuration to pick the relevant fields.
+*   **Limits**: You can share up to 40 parameters per rule.
+*   **Context**: Notifications also include the identity of the requester (the user's name and email, or the Agent name for automations) and the specific tool being used.
 
 > ⚠️ **Privacy and Security**
 > Parameters are shared as plain text in Slack or MS Teams. Avoid sharing parameters that contain sensitive information like passwords or API keys unless the messaging channel is secure.
@@ -87,7 +87,7 @@ Detailed failure information is recorded in the **Activity** timeline to assist 
 
 ## Agent data scope
 
-To ensure data security and optimize token usage, Budibase automatically restricts the data exposed to AI Agents.
+To ensure data security and optimise token usage, Budibase automatically restricts the data exposed to AI Agents.
 
 ### Field exclusions
 
@@ -103,7 +103,7 @@ These exclusions apply to both the table schema (metadata) and the actual row da
 To prevent data leaks, Budibase automatically redacts tool metadata and result data when an Agent runs as a **Requester** who lacks sufficient permissions for a resource (such as a table).
 
 *   **Redacted Metadata**: The Agent cannot see the resource's schema, field names, or specific configuration. Instead, it receives a generic tool description that prevents it from inferring the data structure.
-*   **Redacted Results**: For write operations (like creating or updating rows) on restricted resources, the tool returns a generic success message instead of the full object data to prevent unauthorized reading of records.
+*   **Redacted Results**: For write operations (like creating or updating rows) on restricted resources, the tool returns a generic success message instead of the full object data to prevent unauthorised reading of records.
 *   **Discovery Tools**: Legacy discovery tools like `list_tables` and `get_table` are disabled by default. Agents should be provided with the specific tools they need for their tasks via the operation configuration.
 
 ### Authoritative validation
@@ -146,11 +146,9 @@ Approvals ensure that high-impact actions are reviewed by a human. This is confi
 
 ## Configuring recipients
 
-To choose who gets notified when an action requires approval, you must first enable at least one messaging channel in the Agent's **Deployment** tab. 
+To choose who gets notified when an action requires approval, you must first enable at least one messaging channel in the Agent's Deployment tab. 
 
-*   **Requirement**: You cannot select approval recipients until a deployment (e.g., Slack, MS Teams) is configured with a valid endpoint URL.
-*   **Provider Filtering**: Only providers with active deployments will be available as options in the policy configuration.
-*   **Channel Lookup**: When selecting a channel, Budibase fetches a paginated list of available channels from your configured provider. Ensure your bot has the necessary permissions (e.g., `groups:read` for Slack or `Channel.ReadBasic.All` for Teams) to list these channels.
+*   **Requirement**: You cannot select approval recipients until a deployment (e.g., Slack, MS Teams) is configured with a valid endpoint URL. However, you can still save an approval policy without notifications if you have assigned at least one **Approver**.
 
 ## Guardrails for write actions
 
@@ -174,7 +172,7 @@ Budibase automatically maintains connections between your Agents and their tools
 1. Any references to that tool in Agent **prompt instructions**.
 2. The **enabled tools** list for all affected Agents.
 
-This ensures that reorganizing your data or APIs does not break your existing Agent configurations.
+This ensures that reorganising your data or APIs does not break your existing Agent configurations.
 
 ### Naming constraints
 
