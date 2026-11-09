@@ -58,6 +58,8 @@ Depending on the provider, you may need values such as:
 
 Use the exact values expected by your provider. Incorrect values can allow setup to save but still fail during runtime.
 
+For OpenAI-compatible providers, the **API base URL** must include the versioned path of the API root — typically `/v1`. For example, use `https://proxy.example.com/v1`, not `https://proxy.example.com`. A base URL without the versioned path often lets setup save successfully but fails on the first model call with 404 errors.
+
 ## Validate your provider setup
 
 Before attaching a model to an Agent:
