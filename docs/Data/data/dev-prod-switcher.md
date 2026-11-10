@@ -25,15 +25,15 @@ This is your data sandbox. The Dev environment is where you can freely build, ed
 * **What it's for:** Configuring your schema, experimenting with data, and making changes that aren't ready to go live.
 * **The data:** Any data (records) you see or edit in Dev is test data. It is not connected to your live users. This means you can't accidentally mess up or delete real user data while you're in this environment.
 
-> ❗️ Editing/Deleting columns
+> 🤿 Editing/Deleting columns
 >
 > If you edit/delete a column in Dev, then click publish, the column and its data within Prod will be updated/deleted.
 
 ## Prod Environment
 
-> 📘 Access Prod environment
+> 💡 Access Prod environment
 >
-> To access the Prod environment, your table must be published. If it is not published, when switching to the Prod environment you will be prompted to either Publish (without copying any data), or _Seed & Publish_, which will copy over the rows from your Development Environment. Seeding to production can only be done when the production table is empty.
+> To access the Prod environment, your table must be published. If it is not published, when switching to the Prod environment you will be prompted to either Publish (without copying any data), or _Seed & Publish_, which will copy over the rows from your Development Environment. Seeding to production can only be done when the production table is empty, or when resuming an incomplete seed using **Retry seed**. A loading indicator is displayed while seeding, and any incomplete table seeds must be retried before publishing the workspace.
 
 The Prod environment contains live data. Any changes you make here will be immediately live.
 
