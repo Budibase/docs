@@ -28,6 +28,10 @@ Template content can still be edited after creation.
 
 You can upload your own OpenAPI 2.0 or 3.0 schemas (JSON or YAML) to create custom templates. This allows you to standardize API connections across your workspace without manually configuring the same endpoints repeatedly.
 
+> 📘
+>
+> Importing, updating, and deleting custom OpenAPI specifications requires administrator access. Workspace builders can create connections from imported templates, but cannot add, edit, or delete specs.
+
 ### Importing a custom spec
 
 1. Go to **Workspace Settings > APIs > API Specs**.
@@ -36,7 +40,7 @@ You can upload your own OpenAPI 2.0 or 3.0 schemas (JSON or YAML) to create cust
 4. Upload your `.json` or `.yaml` file.
 5. Click **Import**.
 
-Once imported, your spec will appear in the **Imported API specs** section, where you can update the metadata or delete it if it is not in use.
+Once imported, your spec will appear in the **Imported API specs** section, where administrators can update the metadata or delete it if it is not in use.
 
 ## Create a connection from a template
 
