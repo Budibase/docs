@@ -7,10 +7,10 @@ metadata:
   description: kba_5hjpe
   robots: index
 ---
-We release features behind feature flags, before they are generally available.
+We release some features behind feature flags before they are generally available.
 
 <Callout icon="❗️" theme="error">
-  Flagged features are still under development. We cannot guarantee their stability and they are subject to change. We recommend that you use them in a test environment. Proceed at your own risk!
+  Flagged features are still under development. They may change and are not guaranteed to be stable. Use them in a test environment.
 </Callout>
 
 ## Enabling a feature flag on self-host
@@ -31,11 +31,11 @@ Copy this line exactly. This will pass the value from the `.env` file, into your
 
 ## Enabling a feature flag on Budibase Cloud
 
-We will need to enable this from our end. Contact [support@budibase.com](mailto:support@budibase.com). Make sure to include
+We need to enable this from our side. Contact [support@budibase.com](mailto:support@budibase.com) and include:
 
 * The name of the feature flag that you'd like enabled.
 * The URL of your Budibase tenant.
 
-We cannot guarantee that we will enable the feature on your account - we will consider on a case-by-case basis.
+We cannot guarantee that we will enable the feature on your account. We review requests case by case.
 
 <br />

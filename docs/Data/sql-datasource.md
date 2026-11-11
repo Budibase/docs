@@ -19,13 +19,11 @@ Our core SQL datasource connections include:
 * [Oracle](doc:oracle)
 * [PostgreSQL](doc:postgresql)
 
-<HTMLBlock>{`
-<iframe src="https://player.vimeo.com/video/746819514?h=c95914762f" style="margin-top: -20px;" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-`}</HTMLBlock>
+For the shared workflow after connecting, see [Working with SQL datasources](doc:sql-workflow).
 
 ## Adding the remote datasource
 
-To add a new remote datasource choose the **Data** tab in Budibase , then click the `+` button in the left-hand panel.
+To add a new remote datasource, open the **Data tables** link in Budibase, then click the `+` button in the left-hand panel.
 
 <Image align="center" alt="Add datasource" border={false} caption="Add datasource" src="https://files.readme.io/2ef46dc-add_ds.png" />
 

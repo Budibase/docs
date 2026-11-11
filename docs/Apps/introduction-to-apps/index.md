@@ -12,7 +12,7 @@ next:
 ---
 Budibase Apps are end-user tools that can interact with any data or automations within a Workspace.
 
-These are managed within the Apps page of each individual Workspace.
+These are managed within the **Apps** tab of the Budibase portal.
 
 ## Creating a new App
 
@@ -34,10 +34,10 @@ We can publish a Workspace under its `General Settings` menu.
 
 Individual Apps can be set live or stopped using the deployment control in the Budibase Builder.
 
-We can also do this from the Apps screen, using the `Set live` / `Stop` option for each App.
+We can also do this from the Apps screen, using the `Set live`  / `Stop` option for each App.
 
 | Where | Action | Result |
-| :---- | :----- | :----- |
+| :--- | :--- | :--- |
 | Workspace `General Settings` | Publish workspace | Changes become deployable to end users |
 | App Builder toolbar/panel | `Set live` | App is deployed and available to users |
 | App Builder toolbar/panel | `Stop` | App is no longer deployed |
@@ -48,7 +48,13 @@ We can also do this from the Apps screen, using the `Set live` / `Stop` option f
 By default, the Apps screen displays all Apps within our Workspace. However, we can use the filtering tabs at the top left of our Apps list to only display apps with a `Live`, `Stopped`, or `Not Deployed` status.
 
 | Status | Meaning |
-| :----- | :------ |
+| :--- | :--- |
 | `Live` | The app is currently deployed and accessible to end users |
 | `Stopped` | The app has been deployed before, but is currently stopped |
 | `Not Deployed` | The app has not yet been deployed live |
+
+## The Budibase Portal
+
+The Budibase portal serves as the primary entry point for end-users. It is divided into two main areas:
+*   **Apps**: Access and use the applications published in the workspace.
+*   **Requests**: Monitor interactions with AI agents and respond to pending approvals. See the [Agent requests portal](doc:agent-requests-portal) guide for more details.

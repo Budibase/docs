@@ -85,7 +85,7 @@ If you want to increase the number of rows displayed on screen, simply increase 
 
 ## Search
 
-Search can be added to a table through the use of <Glossary>Binding</Glossary>s and filtering [Using a form and text input](https://docs.budibase.com/docs/adding-a-search-field#2-using-a-form-and-text-input-flexible-way).
+Search can be added to a table through the use of <Glossary>Binding</Glossary>s and filtering [Using a form and text input](https://docs.budibase.com/docs/adding-a-search-field#form-field-search).
 
 Some field types also allow searching directly within the table's column. If you hover over a column and see a magnifying glass icon, you can click it to add a search input field in the column header. Typing into this field will perform a basic search on the data in that column.
 

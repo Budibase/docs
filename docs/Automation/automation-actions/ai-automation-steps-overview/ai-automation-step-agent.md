@@ -19,7 +19,7 @@ The Agent step runs a pre-configured AI Agent from your workspace inside an auto
 Create and test an Agent first, then reference it in your automation:
 
 * [Agent building 101](doc:agent-building-101)
-* [Agents Config](doc:agent-config)
+* [Agents Config](doc:agents-config)
 
 ## Behavior
 

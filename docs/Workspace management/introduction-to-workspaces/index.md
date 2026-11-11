@@ -16,10 +16,12 @@ Workspaces are a powerful way to organise and scale how you work with your data 
 
 A workspace is a container that holds everything you need to build and automate data-driven solutions:
 
+* Projects: Group related resources so teams can work on separate initiatives in the same workspace.
 * Interface and Design: This is where you design user experiences and define how your data is presented and interacted with. Theme and font settings can be configured independently for each workspace.
 * Automations: Create backend workflows that run independently of user interaction. For example, schedule monthly processes (like summarising orders at the end of a billing cycle).
 * Sources (<Glossary>Datasource</Glossary>s): Workspaces support shared data sources that can be accessed by all components within the workspace. You can sync your data once and leverage it across multiple use cases without redundancy.
 * Workflows: You can build workflows that define how data moves and transforms through user interaction or automation.
+* Project Notes: Document your projects directly within the workspace home using Markdown. This helps your team understand the project's purpose, setup instructions, and building guidelines.
 
 ## Shared automations
 
@@ -29,5 +31,6 @@ Workspaces introduce the concept of reusable automations. These are user-specifi
 
 * Centralised data access: Sync your data sources once and use them across your entire workspace.
 * Modular architecture: Build and manage complex solutions within a single workspace.
+* Logical grouping: Use projects to organise related resources and move a set of work between workspaces.
 * Reusable logic: Create automations that can be reused for consistent and efficient workflows.
 * Flexible automation: Design front and backend workflows tailored to your business processes.

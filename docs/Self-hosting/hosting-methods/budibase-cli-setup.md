@@ -13,7 +13,7 @@ next:
   description: ''
   pages:
     - type: basic
-      slug: backups
+      slug: backups-1
       title: Backups
 ---
 The Budibase CLI tool can be used to create a new Budibase installation, to manage an existing installation, make backups or update a Budibase installation to a new version. The video below summarises the tool with further instructions below.
@@ -77,7 +77,7 @@ budi hosting --init
 
 The commands below can be viewed in this recipe if desired:
 
-🤖 [Budibase CLI setup [NPM]](https://docs.budibase.com/v1.0.9/recipes/budibase-cli-setup-npm)
+🤖 [Budibase CLI setup [NPM]](https://docs.budibase.com/recipes/budibase-cli-setup-npm)
 
 You can view, copy or backup your `.env` file at this point:
 

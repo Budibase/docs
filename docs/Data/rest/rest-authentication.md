@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-REST authentication is configured at the **connection** level and selected at the **query** level.
+Configure REST authentication on the connection, then select it on each query.
 
 ## Supported auth types in Connections
 
@@ -21,28 +21,28 @@ REST authentication is configured at the **connection** level and selected at th
 ## Configure authentication on a connection
 
 1. Open **Settings > Connections > APIs**
-2. Open your connection
+2. Open the connection
 3. Go to **Authentication**
 4. Click **Add authentication**
-5. Select auth type
-6. Fill required fields
-7. Click **Save**
+5. Select the auth type
+6. Fill in the required fields
+7. Save the auth config
 
 You can store multiple auth configs on one connection.
 
 ## Select auth in a query
 
-1. Open connection in **API Editor**
-2. Open/create a query
+1. Open the connection in **API Editor**
+2. Open or create a query
 3. Select auth config for the query
 4. Click **Send**
-5. Save query
+5. Save the query
 
 ## Auth configuration guidance
 
-* Create separate auth entries per environment when needed.
-* Use clear names (`Prod Bearer`, `Staging OAuth2`).
-* Re-test all affected queries after editing a shared auth config.
+* Create separate auth entries per environment when needed
+* Use clear names such as `Prod Bearer` and `Staging OAuth2`
+* Re-test affected queries after editing a shared auth config
 
 ## Using SSO token bindings
 

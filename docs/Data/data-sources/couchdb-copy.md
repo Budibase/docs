@@ -16,7 +16,7 @@ At Budibase we use CouchDB as the underlying technology of our internal [Budibas
 
 ## Connect
 
-To start, click on the `Add source` button of the **Data** section, select *CouchDB*, and click `Continue`.
+To start, open the **Data tables** link, click `Add source`, select *CouchDB*, and click `Continue`.
 
 <Image alt="CouchDB datasource" align="center" src="https://files.readme.io/3c00104-Screenshot_2023-02-03_at_13.32.37.png">
   CouchDB datasource
@@ -64,7 +64,7 @@ Performs an **allDocs** query against your configured database. If you choose to
 
 Allows you to retrieve or remove a single document by **id**.
 
-In this example a <Glossary>Binding</Glossary> called *doc\_id* is being used, so that the query can be used to obtain any document specified in your app. See more here: [Custom queries](doc:custom-queries) 
+In this example a <Glossary>Binding</Glossary> called *doc\_id* is being used, so that the query can be used to obtain any document specified in your app. See more here: [Custom queries](doc:sql-workflow#custom-queries)
 
 ![](https://files.readme.io/8101bbd-Screenshot_2023-02-03_at_14.24.26.png)
 

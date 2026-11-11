@@ -79,9 +79,16 @@ To help reviewers make informed decisions without leaving their messaging app, y
 
 Tools with configured rules display a status indicator (e.g., "1 rule") in the operation rail.
 
+##### Table column changes
+
+* **Renaming columns**: If you rename a table column, Budibase automatically updates any approval rule conditions and shared review parameters that reference that column.
+* **Deleted columns**: If a column used in an approval rule condition is deleted, the tool will refuse calls until the rule is updated. In the rule configuration modal, the missing condition field is marked as `(unavailable)` and must be removed before the rule can be saved.
+
 #### Handling failures of approved actions
 
 If a reviewer approves an action but the tool fails to execute (e.g. due to a validation error or database issue), the Agent will inform the user. The response will include a message such as: *"Your request was approved, but I couldn't complete it. Please try again."*
+
+If the data the request writes to changed after it was requested (such as when a column is renamed or deleted while an approval is pending), the tool is not executed and the Agent informs the user: *"Your request was approved, but the data it writes to changed after it was requested, so it wasn't run. Please ask again."*
 
 Detailed failure information is recorded in the **Activity** timeline to assist with troubleshooting.
 
@@ -172,7 +179,9 @@ Budibase automatically maintains connections between your Agents and their tools
 1. Any references to that tool in Agent **prompt instructions**.
 2. The **enabled tools** list for all affected Agents.
 
-This ensures that reorganising your data or APIs does not break your existing Agent configurations.
+Renaming a **Table column** also automatically updates any approval rule conditions and shared review parameters that reference that column.
+
+This ensures that reorganizing your data or APIs does not break your existing Agent configurations.
 
 ### Naming constraints
 

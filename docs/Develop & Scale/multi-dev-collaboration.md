@@ -11,8 +11,8 @@ next:
   description: ''
   pages:
     - type: basic
-      slug: application-access
-      title: Application access
+      slug: workspace-access
+      title: Workspace access
 ---
 In Budibase more than one user can structure, amend, create data sources and change the row data within them. Currently this functionality is limited to the data tab. However, we will to expand on this in the future to include both the design and automation tabs.
 

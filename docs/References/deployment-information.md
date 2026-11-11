@@ -10,21 +10,22 @@ metadata:
 next:
   description: ''
 ---
-A common question asked about deployment is how does it work and where does it go - an important question to ask before considering a platform to build your tools on top of.
+Deployment questions usually come down to two things: where the app goes and what gets deployed.
 
 ## Where deployments go
 
 ### Self-hosted
 
-In the case of a self-hosted deployment, the answer is very simple, the app, attachments and all data will be uploaded to the self-hosted platform, this data will be spread between your MinIO and CouchDB services, being served by the Budibase apps service. 
+For a self-hosted deployment, the app, attachments, and data are uploaded to your own platform. They are stored across MinIO and CouchDB and served by the Budibase apps service.
 
 ## How does deployment work
 
-Another important question is the technical side of what actually happens when your app is deployed. Here I'll give a quick overview of the steps taken by the Budibase builder and platform to get your app live! This process is nearly identical whether you're deploying to a self-hosted service or if you're deploying to the Budibase Cloud; the only differences being around how Budibase keeps everyone's apps separate and within user quota limits in the Cloud.
+The deployment process is mostly the same whether you deploy to self-hosted infrastructure or Budibase Cloud. The main differences are how apps are separated and how Cloud quotas are enforced.
 
-1. First the builder sends up your hosting/API key to confirm you have access to the platform, if accepted the platform will return tokens to allow for a one-time deployment to the various services
-2. Next the builder uses these tokens to talk through our proxy service to the database and object store engines, storing app data, metadata about the app and the Budibase client, the Svelte app that is the base of every Budibase app.
-3. All metadata and app data is stored in [CouchDB](https://couchdb.apache.org), a NoSQL database that importantly supports [replication](https://docs.couchdb.org/en/stable/replication/protocol.html). We replicate the data from your builder to the CouchDB service, meaning we can merge data from existing apps with any updates you've made in the builder as well as deploying fresh apps.
-4. Lastly the builder confirms if the deployment was successful and returns the information about how to access the app to the user. This will also include working our the URLs for any webhooks which are now running in the deployed app.
+1. The builder sends your hosting or API key to confirm access.
+2. If the request is accepted, the platform returns deployment tokens.
+3. The builder uses those tokens to write app data, metadata, and the Budibase client through the proxy service.
+4. App and metadata storage live in [CouchDB](https://couchdb.apache.org), which supports [replication](https://docs.couchdb.org/en/stable/replication/protocol.html). Budibase replicates data from the builder to CouchDB so updates can be merged with existing apps.
+5. The builder confirms the deployment and returns access details, including webhook URLs for the deployed app.
 
-As you can see the deployment process is quite simple, secure, upload, and then confirm, then you're ready to start using the app!
+The process is simple: authenticate, upload, confirm, and then use the deployed app.

@@ -10,9 +10,7 @@ metadata:
 next:
   description: ''
 ---
-The budibase command palette allows you to quickly navigate through your datasources, screens, and automations, as well as publish your app and view the app preview. It is designed to streamline your workflow and improve overall productivity when working on your Budibase projects.
-
-![](https://files.readme.io/d03601b-image.png)
+The Command Palette gives you quick access to common builder actions without using the mouse.
 
 > 📘 Accessing the command palette
 >
@@ -20,27 +18,20 @@ The budibase command palette allows you to quickly navigate through your datasou
 
 ## Accessing the Command Palette
 
-To open the Command Palette:
-
-Press Ctrl + K (or Cmd + K on OSX) while inside the Budibase Builder.
-
-The Command Palette will appear, allowing you to search for and access various elements and actions within your app.
+Press `Ctrl + K` on Windows or `Cmd + K` on macOS while you are in the builder.
 
 ### Features
 
-* Search: Start typing the name of the element or action you are looking for, and the Command Palette will display the relevant results. You can use the arrow keys to navigate through the search results and press Enter to select a result.
-* Datasources: Quickly access your project's datasources, databases and APIs.
-* Screens: Easily navigate to any screen within your app.
-* Automations: Navigate directly to any automation in your app.
-* Invite users: Open the user invite panel to directly assign access and even invite new users into your budibase installation.
-* App Preview: Open the app preview to test and debug your app.
-* Change builder theme: You can even change the theme of your builder directly from the app panel.
-* Publish App: Publish your app directly from the Command Palette, making it accessible to end-users.
+Use the palette to:
 
-![](https://files.readme.io/250b64e-image.png)
+* Search for screens, datasources, and automations
+* Open the app preview
+* Publish the app
+* Open the invite users panel
+* Switch builder theme
+
+Start typing to narrow the results, then use the arrow keys and `Enter` to select one.
 
 ## Closing the Command Palette
 
-To close the Command Palette without selecting an option, press Esc or click anywhere outside the Command Palette.
-
-The Command Palette simplifies navigation and improves your productivity. With quick access to datasources, screens, automations, app publishing, and app previews, you can focus more on building amazing apps and less on navigating and clicking through the platform.
+Press `Esc` or click outside the palette to close it.

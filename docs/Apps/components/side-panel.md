@@ -46,7 +46,7 @@ The side panel component itself has some settings.
 
 ### App state & Side panel
 
-When using the side panel you may want to create/update [App state](doc:app-state) for use by a component nested within. An example of this would be; the [Form](doc:form) / [Form Block](doc:form-block) components, app state can be passed into these. The aim of this is to prevent users from jumping between pages and providing a more enriched interactive experience.
+When using the side panel you may want to create/update [App state](doc:app-state) for use by a component nested within. An example of this would be; the [Form](doc:forms) / [Form Block](doc:form-block) components, app state can be passed into these. The aim of this is to prevent users from jumping between pages and providing a more enriched interactive experience.
 
 Additionally you can use the side panel as an area which contains additional information of the selected item.
 
@@ -58,7 +58,7 @@ Additionally you can use the side panel as an area which contains additional inf
 2. Add the side panel component.
 3. Within the table component `ON ROW CLICK` add 2 different actions: `Update state` and `Open side panel`\
 4. Add a key name, I've used selectedRow and updated the value with `{{ Clicked row._id }}`.\
-5. Add a [Form](doc:form) / [Form Block](doc:form-block) for this example I will be using the [Form Block](doc:form-block)
+5. Add a [Form](doc:forms) / [Form Block](doc:form-block) for this example I will be using the [Form Block](doc:form-block)
 6. Change the form to update/read only, then add the selectedRow app state to the `Row ID`
 
 A similar approach to the above can be done for simply displaying additional information.
