@@ -12,6 +12,8 @@ next:
 ---
 Project Notes allow you to document your projects directly within the workspace home. Using Markdown, you can provide your team with setup instructions, project goals, and technical details, ensuring everyone is aligned and can contribute effectively.
 
+For creating projects, assigning resources, or exporting and importing a project, see [Managing projects](doc:managing-projects).
+
 ## Adding and editing notes
 
 Builders can add or edit notes for any project within a workspace. 
@@ -40,4 +42,4 @@ If multiple builders edit the same project notes simultaneously, Budibase will d
 
 ## Export and import
 
-Project notes are part of the project's metadata and are automatically included when you export a project. When the project is imported into a new workspace, the notes will be preserved exactly as they were.
+Project notes are part of the project's metadata and are automatically included when you export a project. When the project is imported into a new workspace, the notes will be preserved exactly as they were. See [Managing projects](doc:managing-projects#export-a-project) for the export and import steps.
