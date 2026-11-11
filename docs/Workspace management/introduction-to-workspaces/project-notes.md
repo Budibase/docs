@@ -16,7 +16,7 @@ For creating projects, assigning resources, or exporting and importing a project
 
 ## Adding and editing notes
 
-Builders can add or edit notes for any project within a workspace. 
+Builders can add or edit notes for any project within a workspace.
 
 1. Select a project from the project tabs at the top of the workspace home.
 2. Click the **Read project notes** button (the book icon) or scroll down to the **Project notes** section.
