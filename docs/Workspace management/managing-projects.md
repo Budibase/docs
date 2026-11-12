@@ -42,11 +42,21 @@ You can assign an app, automation, agent, data source, or table to one or more p
 To assign an existing resource:
 
 1. Open **Workspace Home** and locate the resource.
-2. Open the resource's actions menu and select **Assign project**.
+2. Open the resource's actions menu and select **Assign projects**.
 3. Select one or more projects.
 4. Review any dependent resources and confirm the assignment.
 
-Resources created while a project tab is selected are assigned to that project automatically. Removing a resource from a project does not delete the resource.
+Resources created while a project tab is selected are assigned to that project automatically.
+
+## Remove a resource from a project
+
+Removing a resource from a project unassigns it without deleting it from the workspace.
+
+1. Select the project tab on **Workspace Home**.
+2. Open the resource's actions menu and select **Remove from project**.
+3. Select **Remove** to confirm.
+
+The resource remains available in the workspace and any other projects.
 
 ## Export a project
 
