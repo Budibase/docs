@@ -1,6 +1,8 @@
 ---
 title: Managing projects
-excerpt: Organise related resources, document them with notes, and move them between workspaces
+excerpt: >-
+  Organise related resources, document them with notes, and move them between
+  workspaces
 deprecated: false
 hidden: false
 metadata:
@@ -50,7 +52,7 @@ Resources created while a project tab is selected are assigned to that project a
 
 ## Export a project
 
-Export a project when you want to reuse it in another workspace. A project package contains the project and its assigned resources, plus the dependencies Budibase needs to make those resources work together.
+Export a project when you want to reuse it in another workspace. A project package contains the project and its assigned resources, plus the dependencies Budibase needs to make those resources work together, including custom OpenAPI specifications used by project REST data sources.
 
 1. Select the project tab.
 2. Open the project's actions menu and select **Export project**.
