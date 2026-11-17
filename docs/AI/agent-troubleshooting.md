@@ -40,6 +40,16 @@ When behaviour is inconsistent:
 * Add explicit examples of valid and invalid behaviour
 * Test each instruction change against a fixed regression set
 
+## Downloading session logs
+
+To inspect complete execution traces or troubleshoot unexpected agent behavior offline, you can download the full logs for any agent session:
+
+1. Open your Agent in the Budibase builder and navigate to the **Logs** tab.
+2. Select the session you want to investigate from the session list.
+3. In the session detail header, click **Download logs**.
+
+This downloads a JSON file named `agent-session-<sessionId>.json` containing the session metadata along with full details for every execution step, including model prompts, completions, token usage, latency, and tool inputs and outputs.
+
 ## When to change instructions vs tools
 
 Change instructions when:
