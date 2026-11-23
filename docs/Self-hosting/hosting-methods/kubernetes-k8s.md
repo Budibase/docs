@@ -286,6 +286,24 @@ kubectl get secret budibase-budibase -o go-template='{{ .data.objectStoreAccess 
 kubectl get secret budibase-budibase -o go-template='{{ .data.objectStoreSecret }}' -n budibase | base64 --decode
 ```
 
+#### External Secrets Management
+
+If you manage secrets externally using a controller such as [External Secrets Operator (ESO)](https://external-secrets.io/), set `globals.createSecrets` to `false`. When disabled, the chart does not create a Secret and instead configures workloads to read from a pre-provisioned Secret named `<release>-budibase-runtime` (e.g. `budibase-budibase-runtime`):
+
+```yaml
+globals:
+  createSecrets: false
+```
+
+#### Stakater Reloader
+
+To automatically restart Deployments when Secrets or ConfigMaps change, first deploy and configure [Stakater Reloader](https://github.com/stakater/Reloader) in your cluster. Then set `reloader.enabled` to `true` in the Budibase chart to add the `reloader.stakater.com/auto: "true"` annotation to Budibase Deployments:
+
+```yaml
+reloader:
+  enabled: true
+```
+
 ### Redis
 
 The Budibase Helm chart ships with a [Redis](https://redis.io/) server that will be included by default. If you want to use your own external Redis cluster, you can configure the `values.yaml` file in the helm chart to switch off the Budibase one by turning enabled off. Here's what your configuration may look like if you wanted to disable the default bundled Redis and use an external Redis cluster hosted on `myrediscluster.io`.
