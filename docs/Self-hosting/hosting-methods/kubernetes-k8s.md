@@ -297,7 +297,7 @@ globals:
 
 #### Stakater Reloader
 
-To automatically restart Deployments when Secrets or ConfigMaps change, you can enable [Stakater Reloader](https://github.com/stakater/Reloader) support. Setting `reloader.enabled` to `true` adds the `reloader.stakater.com/auto: "true"` annotation to Budibase Deployments:
+To automatically restart Deployments when Secrets or ConfigMaps change, first deploy and configure [Stakater Reloader](https://github.com/stakater/Reloader) in your cluster. Then set `reloader.enabled` to `true` in the Budibase chart to add the `reloader.stakater.com/auto: "true"` annotation to Budibase Deployments:
 
 ```yaml
 reloader:
