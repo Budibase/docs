@@ -37,7 +37,7 @@ When a tool is enabled, you can configure its **Run as** (Execution principal) s
 *   **Requester**: The tool runs using the permissions of the user interacting with the Agent. This is the safest default for most user-facing tools.
 *   **Admin (elevated)**: The tool runs with full administrative permissions. Use this sparingly for background tasks or strictly controlled operations.
 
-> 🚀 **Automations**
+> 💡 **Automations**
 > Agents triggered via an Automation step execute as **Admin** by default. If a tool requires escalation, the Agent will pause and, once approved, will resume using the role of the original automation requester.
 
 ### Approval rules and policies
@@ -104,6 +104,17 @@ When an Agent interacts with a table, it only sees plain-text and primitive data
 *   **Formula fields**: Calculations and relationship-derived values are hidden from the Agent.
 
 These exclusions apply to both the table schema (metadata) and the actual row data returned by tools.
+
+### Table views
+
+You can also use table views as agent tools to restrict an Agent's access to specific rows and columns:
+
+*   **Row restrictions**: The Agent can only view, search, and update rows that meet the view's filter criteria. Saved view filters cannot be bypassed.
+*   **Visible columns**: Only columns marked as visible in the view schema are exposed to the Agent and included in tool results.
+*   **Write protection**: Columns that are hidden or marked as read-only in the view are not writable. Attempting to create or update rows with restricted fields is rejected.
+*   **Sort and filter validation**: Sorting or filtering by columns that are not visible in the view is rejected.
+
+View tools appear in tool lists using the format `Table name / View name`.
 
 ### Restricted resource access
 
@@ -181,7 +192,7 @@ Budibase automatically maintains connections between your Agents and their tools
 
 Renaming a **Table column** also automatically updates any approval rule conditions and shared review parameters that reference that column.
 
-This ensures that reorganizing your data or APIs does not break your existing Agent configurations.
+This ensures that reorganising your data or APIs does not break your existing Agent configurations.
 
 ### Naming constraints
 
@@ -202,4 +213,4 @@ Keep table and query names reasonably concise to ensure tool names remain human-
 
 * [Agent instructions guide](doc:agent-instructions-guide)
 * [Agent testing guide](doc:agent-testing-guide)
-* [Agent troubleshooting guide](doc:agent-troubleshooting)
+* [Agent troubleshooting guide](doc:agent-troubleshooting-guide)
