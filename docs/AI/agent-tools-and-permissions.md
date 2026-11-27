@@ -105,6 +105,17 @@ When an Agent interacts with a table, it only sees plain-text and primitive data
 
 These exclusions apply to both the table schema (metadata) and the actual row data returned by tools.
 
+### Table views
+
+You can also use table views as agent tools to restrict an Agent's access to specific rows and columns:
+
+*   **Row restrictions**: The Agent can only view, search, and update rows that meet the view's filter criteria. Saved view filters cannot be bypassed.
+*   **Visible columns**: Only columns marked as visible in the view schema are exposed to the Agent and included in tool results.
+*   **Write protection**: Columns that are hidden or marked as read-only in the view are not writable. Attempting to create or update rows with restricted fields is rejected.
+*   **Sort and filter validation**: Sorting or filtering by columns that are not visible in the view is rejected.
+
+View tools appear in tool lists using the format `Table name / View name`.
+
 ### Restricted resource access
 
 To prevent data leaks, Budibase automatically redacts tool metadata and result data when an Agent runs as a **Requester** who lacks sufficient permissions for a resource (such as a table).
@@ -181,7 +192,7 @@ Budibase automatically maintains connections between your Agents and their tools
 
 Renaming a **Table column** also automatically updates any approval rule conditions and shared review parameters that reference that column.
 
-This ensures that reorganizing your data or APIs does not break your existing Agent configurations.
+This ensures that reorganising your data or APIs does not break your existing Agent configurations.
 
 ### Naming constraints
 
